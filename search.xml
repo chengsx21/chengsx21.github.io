@@ -4,6 +4,60 @@
   
     
     <entry>
+      <title>计算机系统概论 作业2</title>
+      <link href="/13/"/>
+      <url>/13/</url>
+      
+        <content type="html"><![CDATA[<h1 id="hw-2">HW 2</h1><ol type="1"><li>使用不超过 <span class="math inline">\(3\)</span> 条 <span class="math inline">\(x86\)</span> 指令实现如下函数: 其中 <span class="math inline">\(x, y, z, w\)</span> 分别存储于 $</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> CS </category>
+          
+          <category> CSAPP </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CSAPP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>计算机系统概论 作业1</title>
+      <link href="/12/"/>
+      <url>/12/</url>
+      
+        <content type="html"><![CDATA[<h1 id="csapp-hw-1">CSAPP HW 1</h1><ol type="1"><li>在所有由五个 <span class="math inline">\(1\)</span> 和三个 <span class="math inline">\(0\)</span> 组成的 8 位二进制整数 (补码形式) 中,最小的数是 <u><strong>10001111</strong></u>, 最大的数是<u><strong>01111100</strong></u>.<br></li><li>已知 <span class="math inline">\([X]_{补码}\)</span>＝0x0043, <span class="math inline">\([Y]_{补码}\)</span>＝0xCE50, 则 <span class="math inline">\([X+Y]_{补码}\)</span>＝<u><strong>0xCE93</strong></u>, <span class="math inline">\([X-Y]_{补码}\)</span>＝<u><strong>0x31F3</strong></u>. (<span class="math inline">\(X\)</span>、<span class="math inline">\(Y\)</span>的数据位宽均为 16 位, 计算结果用 16 进制的补码表示)</li><li>假设存在一种 16 位的浮点数表示, <span class="math inline">\(exp\)</span> 位数是 7, <span class="math inline">\(frac\)</span> 位数是 8, 符号位数是 1,其所能表示的最大的非规格化数的 <span class="math inline">\(exp\)</span>是 <u><strong>0000000</strong></u>, <span class="math inline">\(frac\)</span> 是 <u><strong>11111111</strong></u>;250 (十进制数) 的 <span class="math inline">\(exp\)</span> 是<u><strong>1000110</strong></u>, <span class="math inline">\(frac\)</span> 是 <u><strong>11110100</strong></u>.(请用 0、1 位串表示答案)</li><li>假设存在一种 9 位浮点数 (符合 IEEE 浮点数标准), 符号位数是 1, <span class="math inline">\(exp\)</span> 位数是 4, <span class="math inline">\(frac\)</span> 位数是 4. 其数值被表示为 <span class="math inline">\(V = (-1)^S × M × 2^E\)</span> 形式.请在下表中填空. <span class="math inline">\(Binary\)</span>: 该浮点数的9 位二进制表示; <span class="math inline">\(M\)</span>：表示为十进制数;<span class="math inline">\(E\)</span>：表示为十进制整数; <span class="math inline">\(Value\)</span>: 被表示的具体数值,十进制数表示.</li></ol><table><colgroup><col style="width: 29%"><col style="width: 20%"><col style="width: 15%"><col style="width: 9%"><col style="width: 25%"></colgroup><thead><tr class="header"><th style="text-align: center;">描述</th><th style="text-align: center;">Binary</th><th style="text-align: center;">M</th><th style="text-align: center;">E</th><th style="text-align: center;">Value</th></tr></thead><tbody><tr class="odd"><td style="text-align: center;">5.0</td><td style="text-align: center;"><strong>010010100</strong></td><td style="text-align: center;"><strong>1.25</strong></td><td style="text-align: center;"><strong>2</strong></td><td style="text-align: center;">5.0</td></tr><tr class="even"><td style="text-align: center;">最小的大于 0 浮点数</td><td style="text-align: center;"><strong>000000001</strong></td><td style="text-align: center;"><strong>0.0625</strong></td><td style="text-align: center;"><strong>-6</strong></td><td style="text-align: center;"><strong>0.0009765625</strong></td></tr></tbody></table><ol start="5" type="1"><li><p>给定相同的字长 (例如 32 位) , 能表示的定点数多还是浮点数多？</p><p><strong>答:</strong></p><ul><li>能表示的定点数个数多.</li><li>对32位浮点数而言, 如果exp位置全为1, 会产生 <span class="math inline">\(\infty\)</span> 与 <span class="math inline">\(NaN\)</span>, 进而个数少于 <span class="math inline">\(2^{32}\)</span>;</li><li>而对32位定点数而言, 固定小数点都能产生 <span class="math inline">\(2^{32}\)</span> 个不一样的数.</li><li>推广到其他字长, 这都是成立的.</li><li>因此给定相同的字长, 能表示的定点数个数更多.</li></ul></li><li><p>假设存在一种 16 位浮点数 (符合 IEEE 浮点数标准) , <span class="math inline">\(exp\)</span> 位数是 5, <span class="math inline">\(frac\)</span> 位数是 10, 符号位数是 1.某同学对该格式的一个数 <span class="math inline">\(x\)</span> 执行了(整数的) 按位右移操作, 得到了 80.5. 若右移操作按有符号数执行 (算术右移), 原来的数可能是 <u><strong>不存在</strong></u>,若右移操作按无符号数执行 (逻辑右移) , 原来的数可能是<u><strong>-0.04736328125 或 -0.047393798828125</strong></u>(列出所有情况或填入“不存在”, 数可以用小数或分数来表示,必须精确).</p></li><li><p>使用不超过 4 次位运算或加减运算完成整数运算 <span class="math inline">\(y = x * 85\)</span> (允许引入临时变量,不需考虑溢出的情况) .</p><p><strong>答:</strong></p><ul><li><strong><span class="math inline">\(tmp1 = x &lt;&lt; 2\)</span> (<span class="math inline">\(tmp1 = x * 4\)</span> )</strong></li><li><strong><span class="math inline">\(tmp2 = tmp1 + x\)</span> ( <span class="math inline">\(tmp2 = x * 5\)</span> )</strong></li><li><strong><span class="math inline">\(tmp3 = tmp2 &lt;&lt; 4\)</span>( <span class="math inline">\(tmp3 = x * 80\)</span> )</strong></li><li><strong><span class="math inline">\(y = tmp3 + tmp2\)</span> ( <span class="math inline">\(y = x * 85\)</span> )</strong></li></ul></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> CS </category>
+          
+          <category> CSAPP </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CSAPP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Graphics</title>
       <link href="/11/"/>
       <url>/11/</url>
