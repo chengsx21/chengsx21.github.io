@@ -6,7 +6,7 @@
   <link href="http://chengsx21.github.io/atom.xml" rel="self"/>
   
   <link href="http://chengsx21.github.io/"/>
-  <updated>2022-10-11T01:25:08.295Z</updated>
+  <updated>2022-10-11T05:16:10.715Z</updated>
   <id>http://chengsx21.github.io/</id>
   
   <author>
@@ -17,11 +17,42 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>俄罗斯概况</title>
+    <link href="http://chengsx21.github.io/14/"/>
+    <id>http://chengsx21.github.io/14/</id>
+    <published>2022-10-09T01:32:40.000Z</published>
+    <updated>2022-10-11T05:16:10.715Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;俄罗斯概况&quot;&gt;俄罗斯概况&lt;/h1&gt;
+&lt;h2 id=&quot;政治与经济&quot;&gt;政治与经济&lt;/h2&gt;
+&lt;h3 id=&quot;国名&quot;&gt;国名&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;俄罗斯联邦(Российская Федерация), 俄罗斯(Россия)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3</summary>
+        
+      
+    
+    
+    
+    <category term="Russian" scheme="http://chengsx21.github.io/categories/Russian/"/>
+    
+    
+    <category term="Russian" scheme="http://chengsx21.github.io/tags/Russian/"/>
+    
+  </entry>
+  
+  <entry>
     <title>计算机系统概论 作业2</title>
     <link href="http://chengsx21.github.io/13/"/>
     <id>http://chengsx21.github.io/13/</id>
     <published>2022-10-06T01:22:42.000Z</published>
-    <updated>2022-10-11T01:25:08.295Z</updated>
+    <updated>2022-10-11T05:24:38.410Z</updated>
     
     
       
@@ -30,7 +61,7 @@
         
     <summary type="html">&lt;h1 id=&quot;hw-2&quot;&gt;HW 2&lt;/h1&gt;
 &lt;ol type=&quot;1&quot;&gt;
-&lt;li&gt;使用不超过 &lt;span class=&quot;math inline&quot;&gt;\(3\)&lt;/span&gt; 条 &lt;span class=&quot;math inline&quot;&gt;\(x86\)&lt;/span&gt; 指令实现如下函数:</summary>
+&lt;li&gt;&lt;p&gt;使用不超过 &lt;span class=&quot;math inline&quot;&gt;\(3\)&lt;/span&gt; 条 &lt;span class=&quot;math inline&quot;&gt;\(x86\)&lt;/span&gt;</summary>
         
       
     

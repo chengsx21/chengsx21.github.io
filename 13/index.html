@@ -374,14 +374,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    29
+                    688
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -406,7 +406,137 @@
             <div id="articleContent">
                 <h1 id="hw-2">HW 2</h1>
 <ol type="1">
-<li>使用不超过 <span class="math inline">\(3\)</span> 条 <span class="math inline">\(x86\)</span> 指令实现如下函数: 其中 <span class="math inline">\(x, y, z, w\)</span> 分别存储于 $</li>
+<li><p>使用不超过 <span class="math inline">\(3\)</span> 条 <span class="math inline">\(x86\)</span> 指令实现如下函数: 其中 <span class="math inline">\(x, y, z, w\)</span> 分别存储于 %rdi, %rsi, %rdx,
+%rcx. 返回值存储于 %rax.</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">long</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">long</span> x<span class="token punctuation">,</span> <span class="token keyword">long</span> y<span class="token punctuation">,</span> <span class="token keyword">long</span> z<span class="token punctuation">,</span> <span class="token keyword">long</span> w<span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+	<span class="token keyword">return</span> <span class="token number">32</span> <span class="token operator">*</span> x <span class="token operator">+</span> <span class="token number">8</span> <span class="token operator">*</span> y <span class="token operator">+</span> <span class="token number">4</span> <span class="token operator">*</span> z <span class="token operator">+</span> w<span class="token punctuation">;</span> 
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">add:
+	leaq (%rsi,%rdi,4), %rsi
+	leaq (%rcx,%rsi,8), %rcx
+	leaq (%rcx,%rdx,4), %rcx
+	ret<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p><span class="math inline">\(X86-64\)</span>
+体系结构中的条件跳转指令 <span class="math inline">\(jg\)</span>
+是用于带符号数比较还是无符号数比较的? 其产生跳转的成立条件是 ~(SF^OF)
+&amp; ~ZF​ 为真, 请解释为何是这一条件.</p>
+<p><strong>答:</strong></p>
+<p>条件跳转指令 <span class="math inline">\(jg\)</span>
+是用于带符号数比较的.</p>
+<p>考虑被比较的两个数 <span class="math inline">\(a, b\)</span>, 当
+<span class="math inline">\(\text{~(SF^OF)&amp;~ZF}\)</span> 为真时:</p>
+<p>有 <span class="math inline">\(\text{~(SF^OF)}\)</span> 为真, 则
+<span class="math inline">\(\text{SF^OF}\)</span>为假, 从而 <span class="math inline">\(\text{SF = OF = 1}\)</span> 或 <span class="math inline">\(\text{SF = OF = 0}\)</span>,</p>
+<p>即此时 <span class="math inline">\(a\le b\)</span>.</p>
+<p>同时有 <span class="math inline">\(\text{~ZF}\)</span> 为真, 则 <span class="math inline">\(\text{ZF}\)</span>为假, 从而 <span class="math inline">\(\text{ZF = 0}\)</span>,</p>
+<p>即此时 <span class="math inline">\(a\ne b\)</span>.</p>
+<p>故 <span class="math inline">\(a &lt; b\)</span> 成立.</p></li>
+<li><p>有如下对应的 <span class="math inline">\(C\)</span>
+代码与汇编代码 <span class="math inline">\((x86-64)\)</span>,
+请对照着填上代码中缺失的部分(数字请用十进制表示).</p>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">call_swap: 
+	subq 	$24, %rsp 
+	movl 	__①__, 12(%rsp) 
+	movl 	$91125, 8(%rsp) 
+	leaq 	8(%rsp), %rsi 
+	leaq 	12(%rsp), __④__ 
+	movl 	$0, %eax 
+	call 	swap<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">swap</span><span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token operator">*</span>a<span class="token punctuation">,</span> <span class="token keyword">int</span> <span class="token operator">*</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token keyword">void</span> <span class="token function">call_swap</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
+<span class="token punctuation">{</span> 
+	<span class="token keyword">int</span> zip1 <span class="token operator">=</span> <span class="token number">15213</span><span class="token punctuation">;</span> 
+	<span class="token keyword">int</span> zip2 <span class="token operator">=</span> __②__<span class="token punctuation">;</span> 
+	__③__<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>① : <u>$15213</u></p>
+<p>② : <u>91125</u></p>
+<p>③ : <u>swap(&amp;zip1, &amp;zip2)</u></p>
+<p>④ : <u>%rdi</u></p></li>
+<li><p>一个 <span class="math inline">\(C\)</span> 语言的 <span class="math inline">\(for\)</span> 循环代码 (部分) 及其 <span class="math inline">\(64\)</span> 位 <span class="math inline">\(Linux\)</span> 汇编如下所示, 请对照汇编填充 <span class="math inline">\(C\)</span> 语言里的缺失部分.</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">looper</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">,</span> <span class="token keyword">int</span> <span class="token operator">*</span>a<span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+	<span class="token keyword">int</span> i<span class="token punctuation">;</span> 
+	<span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> 
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>x <span class="token operator">&lt;</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> 
+            x <span class="token operator">=</span> <span class="token number">2</span> <span class="token operator">*</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span> 
+        <span class="token keyword">else</span> 
+            x <span class="token operator">+=</span> <span class="token number">1</span><span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span> 
+    <span class="token keyword">return</span> x<span class="token punctuation">;</span> 
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">looper: 
+    movl 	$0, %eax 
+    movl 	$0, %edx 
+    jmp 	.L2 
+.L4: 
+    movslq 	%edx, %rcx 
+    movl 	(%rsi,%rcx,4), %ecx 
+    addl 	$1, %eax 
+    cmpl 	%eax, %ecx 
+    jle 	.L3 
+    leal 	(%rcx,%rcx), %eax 
+.L3: 
+    addl 	$1, %edx 
+.L2: 
+    cmpl 	%edi, %edx 
+    jl 	    .L4 
+    ret<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>对于如下代码</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">long</span> <span class="token function">v2permute</span><span class="token punctuation">(</span><span class="token keyword">long</span> <span class="token operator">*</span>array<span class="token punctuation">,</span> <span class="token keyword">long</span> x<span class="token punctuation">,</span> <span class="token keyword">long</span> y<span class="token punctuation">,</span> <span class="token keyword">long</span> z<span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+    <span class="token keyword">long</span> t1 <span class="token operator">=</span> <span class="token number">8253</span> <span class="token operator">*</span> x<span class="token punctuation">;</span> 
+    <span class="token keyword">long</span> t2 <span class="token operator">=</span> array<span class="token punctuation">[</span>t1 <span class="token operator">+</span> <span class="token number">2</span> <span class="token operator">*</span> y<span class="token punctuation">]</span><span class="token punctuation">;</span> 
+    <span class="token keyword">long</span> t3 <span class="token operator">=</span> array<span class="token punctuation">[</span>t2 <span class="token operator">*</span> <span class="token number">16</span> <span class="token operator">+</span> z<span class="token punctuation">]</span><span class="token punctuation">;</span> 
+    <span class="token keyword">long</span> t4 <span class="token operator">=</span> t1 <span class="token operator">+</span> t2 <span class="token operator">+</span> t3<span class="token punctuation">;</span> 
+    <span class="token keyword">long</span> t5 <span class="token operator">=</span> array<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">*</span> t1<span class="token punctuation">;</span> 
+    <span class="token keyword">long</span> ret <span class="token operator">=</span> t3 <span class="token operator">&amp;</span> t5<span class="token punctuation">;</span> 
+    <span class="token keyword">return</span> ret<span class="token punctuation">;</span> 
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>对应如下汇编指令,
+请写出每条指令之后目标寄存器存储的变量/临时变量值.</p>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">v2permute: 
+    movq 	%rdx, %r8
+    movq 	%rcx, %rdx 
+    imulq 	$8253, %rsi, %rax 
+    leaq 	(%rax,%r8,2), %rcx 
+    movq 	(%rdi,%rcx,8), %rcx 
+    salq 	$4, %rcx 
+    addq 	%rdx, %rcx 
+    imulq 	(%rdi), %rax 
+    andq 	(%rdi,%rcx,8), %rax<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>① : <u>y</u></p>
+<p>② : <u>z</u></p>
+<p>③ : <u>8253 * x</u></p>
+<p>④ : <u>8253 * x + 2 * y</u></p>
+<p>⑤ : <u>array[8253 * x + 2 * y]</u></p>
+<p>⑥ : <u>16 * array[8253 * x + 2 * y]</u></p>
+<p>⑦ : <u>16 * array[8253 * x + 2 * y] + z</u></p>
+<p>⑧ : <u>array[0] * 8253 * x</u></p>
+<p>⑨ : <u>array[16 * array[8253 * x + 2 * y] + z] &amp; (array[0] * 8253
+* x)</u></p></li>
+<li><p>请对照下面的 <span class="math inline">\(C\)</span>
+语言代码与相应汇编 <span class="math inline">\((Linux X86-64)\)</span>,
+给出 <span class="math inline">\(M\)</span>、<span class="math inline">\(N\)</span> 的值.</p>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">copy_element: 
+    movslq  %edi, %rdi 
+    movslq  %esi, %rsi 
+    leaq    (%rsi,%rsi,2), %rax 
+    leaq    (%rsi,%rax,4), %rax 
+    addq    %rdi, %rax 
+    movl    mat2(,%rax,4), %edx 
+    leaq    0(,%rdi,8), %rax 
+    subq    %rdi, %rax 
+    addq    %rax, %rsi 
+    movl    %edx, mat1(,%rsi,4) 
+    ret<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">M</span> <span class="token expression"><span class="token number">13</span></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">N</span> <span class="token expression"><span class="token number">7</span></span></span>
+<span class="token keyword">int</span> mat1<span class="token punctuation">[</span>M<span class="token punctuation">]</span><span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span> 
+<span class="token keyword">int</span> mat2<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">[</span>M<span class="token punctuation">]</span><span class="token punctuation">;</span> 
+<span class="token keyword">int</span> <span class="token function">copy_element</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token punctuation">,</span> <span class="token keyword">int</span> j<span class="token punctuation">)</span> 
+<span class="token punctuation">{</span> 
+	mat1<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> mat2<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ol>
 
                 
@@ -579,51 +709,45 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/13/">
+                <a href="/14/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="计算机系统概论 作业2">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="俄罗斯概况">
                         
-                        <span class="card-title">计算机系统概论 作业2</span>
+                        <span class="card-title">俄罗斯概况</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            CSAPP Hw2
+                            俄语(第二外国语)(1) 文化常识
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-06
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-10-09
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/CS/" class="post-category">
-                                    CS
-                                </a>
-                            
-                            <a href="/categories/CS/CSAPP/" class="post-category">
-                                    CSAPP
+                            <a href="/categories/Russian/" class="post-category">
+                                    Russian
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/CSAPP/">
-                        <span class="chip bg-color">CSAPP</span>
+                    <a href="/tags/Russian/">
+                        <span class="chip bg-color">Russian</span>
                     </a>
                     
                 </div>
@@ -825,7 +949,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">10.7k</span>
+                        class="white-color">13.9k</span>
             
             
             
@@ -1098,9 +1222,24 @@ $(function () {
     
 
     
-    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
     
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 </html>
