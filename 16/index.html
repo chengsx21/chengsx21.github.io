@@ -4,8 +4,8 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="计算机系统概论 作业1, Endeavor">
-    <meta name="description" content="CSAPP Hw1">
+    <meta name="keywords" content="形式语言与自动机 作业2, Endeavor">
+    <meta name="description" content="FL&amp;A Hw2">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>计算机系统概论 作业1 | Endeavor</title>
+    <title>形式语言与自动机 作业2 | Endeavor</title>
     <link rel="icon" type="image/png" href="/image/favicon.png">
     
     <style>
@@ -302,12 +302,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">计算机系统概论 作业1</h1>
+                    <h1 class="description center-align post-title">形式语言与自动机 作业2</h1>
                 </div>
             </div>
         </div>
@@ -331,8 +331,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/CSAPP/">
-                                <span class="chip bg-color">CSAPP</span>
+                            <a href="/tags/FL-A/">
+                                <span class="chip bg-color">FL&amp;A</span>
                             </a>
                         
                     </div>
@@ -347,8 +347,8 @@
                                 CS
                             </a>
                         
-                            <a href="/categories/CS/CSAPP/" class="post-category">
-                                CSAPP
+                            <a href="/categories/CS/FL-A/" class="post-category">
+                                FL&A
                             </a>
                         
                     </div>
@@ -360,21 +360,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-10-03
+                    2022-10-15
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-10-11
+                    2022-10-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    634
+                    557
                 </div>
                 
 
@@ -404,92 +404,125 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="csapp-hw-1">CSAPP HW 1</h1>
-<ol type="1">
-<li>在所有由五个 <span class="math inline">\(1\)</span> 和三个 <span class="math inline">\(0\)</span> 组成的 8 位二进制整数 (补码形式) 中,
-最小的数是 <u><strong>10001111</strong></u>, 最大的数是
-<u><strong>01111100</strong></u>.<br>
-</li>
-<li>已知 <span class="math inline">\([X]_{补码}\)</span>＝0x0043, <span class="math inline">\([Y]_{补码}\)</span>＝0xCE50, 则 <span class="math inline">\([X+Y]_{补码}\)</span>＝
-<u><strong>0xCE93</strong></u>, <span class="math inline">\([X-Y]_{补码}\)</span>＝
-<u><strong>0x31F3</strong></u>. (<span class="math inline">\(X\)</span>、<span class="math inline">\(Y\)</span>
-的数据位宽均为 16 位, 计算结果用 16 进制的补码表示)</li>
-<li>假设存在一种 16 位的浮点数表示, <span class="math inline">\(exp\)</span> 位数是 7, <span class="math inline">\(frac\)</span> 位数是 8, 符号位数是 1,
-其所能表示的最大的非规格化数的 <span class="math inline">\(exp\)</span>
-是 <u><strong>0000000</strong></u>, <span class="math inline">\(frac\)</span> 是 <u><strong>11111111</strong></u>;
-250 (十进制数) 的 <span class="math inline">\(exp\)</span> 是
-<u><strong>1000110</strong></u>, <span class="math inline">\(frac\)</span> 是 <u><strong>11110100</strong></u>.
-(请用 0、1 位串表示答案)</li>
-<li>假设存在一种 9 位浮点数 (符合 IEEE 浮点数标准), 符号位数是 1, <span class="math inline">\(exp\)</span> 位数是 4, <span class="math inline">\(frac\)</span> 位数是 4. 其数值被表示为 <span class="math inline">\(V = (-1)^S × M × 2^E\)</span> 形式.
-请在下表中填空. <span class="math inline">\(Binary\)</span>: 该浮点数的
-9 位二进制表示; <span class="math inline">\(M\)</span>：表示为十进制数;
-<span class="math inline">\(E\)</span>：表示为十进制整数; <span class="math inline">\(Value\)</span>: 被表示的具体数值,
-十进制数表示.</li>
-</ol>
-<table>
-<colgroup>
-<col style="width: 29%">
-<col style="width: 20%">
-<col style="width: 15%">
-<col style="width: 9%">
-<col style="width: 25%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">描述</th>
-<th style="text-align: center;">Binary</th>
-<th style="text-align: center;">M</th>
-<th style="text-align: center;">E</th>
-<th style="text-align: center;">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">5.0</td>
-<td style="text-align: center;"><strong>010010100</strong></td>
-<td style="text-align: center;"><strong>1.25</strong></td>
-<td style="text-align: center;"><strong>2</strong></td>
-<td style="text-align: center;">5.0</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">最小的大于 0 浮点数</td>
-<td style="text-align: center;"><strong>000000001</strong></td>
-<td style="text-align: center;"><strong>0.0625</strong></td>
-<td style="text-align: center;"><strong>-6</strong></td>
-<td style="text-align: center;"><strong>0.0009765625</strong></td>
-</tr>
-</tbody>
-</table>
-<ol start="5" type="1">
-<li><p>给定相同的字长 (例如 32 位) , 能表示的定点数多还是浮点数多？</p>
-<p><strong>答:</strong></p>
-<ul>
-<li>能表示的定点数个数多.</li>
-<li>对32位浮点数而言, 如果exp位置全为1, 会产生 <span class="math inline">\(\infty\)</span> 与 <span class="math inline">\(NaN\)</span>, 进而个数少于 <span class="math inline">\(2^{32}\)</span>;</li>
-<li>而对32位定点数而言, 固定小数点都能产生 <span class="math inline">\(2^{32}\)</span> 个不一样的数.</li>
-<li>推广到其他字长, 这都是成立的.</li>
-<li>因此给定相同的字长, 能表示的定点数个数更多.</li>
-</ul></li>
-<li><p>假设存在一种 16 位浮点数 (符合 IEEE 浮点数标准) , <span class="math inline">\(exp\)</span> 位数是 5, <span class="math inline">\(frac\)</span> 位数是 10, 符号位数是 1.
-某同学对该格式的一个数 <span class="math inline">\(x\)</span> 执行了
-(整数的) 按位右移操作, 得到了 80.5. 若右移操作按有符号数执行 (算术右移)
-, 原来的数可能是 <u><strong>不存在</strong></u>,
-若右移操作按无符号数执行 (逻辑右移) , 原来的数可能是
-<u><strong>-0.04736328125 或 -0.047393798828125</strong></u>
-(列出所有情况或填入“不存在”, 数可以用小数或分数来表示,
-必须精确).</p></li>
-<li><p>使用不超过 4 次位运算或加减运算完成整数运算 <span class="math inline">\(y = x * 85\)</span> (允许引入临时变量,
-不需考虑溢出的情况) .</p>
-<p><strong>答:</strong></p>
-<ul>
-<li><strong><span class="math inline">\(tmp1 = x &lt;&lt; 2\)</span> (
-<span class="math inline">\(tmp1 = x * 4\)</span> )</strong></li>
-<li><strong><span class="math inline">\(tmp2 = tmp1 + x\)</span> ( <span class="math inline">\(tmp2 = x * 5\)</span> )</strong></li>
-<li><strong><span class="math inline">\(tmp3 = tmp2 &lt;&lt; 4\)</span>
-( <span class="math inline">\(tmp3 = x * 80\)</span> )</strong></li>
-<li><strong><span class="math inline">\(y = tmp3 + tmp2\)</span> ( <span class="math inline">\(y = x * 85\)</span> )</strong></li>
-</ul></li>
-</ol>
+                <h2 id="必做题">必做题</h2>
+<h3 id="ex-3.1.1-b">Ex 3.1.1 (b)</h3>
+<p>​ 一个符合要求的正则表达式是:</p>
+<p>​ <span class="math display">\[\begin{equation*}
+
+​        \begin{aligned}
+
+​            \boldsymbol{(0 + 1)^*1(0 + 1)^9.}
+
+​        \end{aligned}
+
+​    \end{equation*}\]</span></p>
+<h3 id="ex-3.1.1-c">Ex 3.1.1 (c)</h3>
+<p>​ 一个符合要求的正则表达式是:</p>
+<p>​ <span class="math display">\[\begin{equation*}
+
+​        \begin{aligned}
+
+​            \boldsymbol{(\varepsilon + 1)(00^*1)^*(\varepsilon +
+1)(00^*1)^*0^*.}
+
+​        \end{aligned}
+
+​    \end{equation*}\]</span></p>
+<h3 id="ex-3.1.2-b">Ex 3.1.2 (b)</h3>
+<p>​ 一个符合要求的正则表达式是:</p>
+<p>​ <span class="math display">\[\begin{equation*}
+
+​        \begin{aligned}
+
+​            \boldsymbol{(1^*01^*01^*01^*01^*0)^* + 1^*.}
+
+​        \end{aligned}
+
+​    \end{equation*}\]</span></p>
+<h3 id="ex-3.1.3-a">Ex 3.1.3 (a)</h3>
+<p>​ 一个符合要求的正则表达式是:</p>
+<p>​ <span class="math display">\[\begin{equation*}
+
+​        \begin{aligned}
+
+​            \boldsymbol{0^*(1^*000^*)^*1^*0^*.}
+
+​        \end{aligned}
+
+​    \end{equation*}\]</span></p>
+<h3 id="ex-3.1.3-b">Ex 3.1.3 (b)</h3>
+<p>​ 一个符合要求的正则表达式是:</p>
+<p>​ <span class="math display">\[\begin{equation*}
+
+​        \begin{aligned}
+
+​            \boldsymbol{(10 + 01)^*.}
+
+​        \end{aligned}
+
+​    \end{equation*}\]</span></p>
+<h3 id="ex-3.1.5">Ex 3.1.5</h3>
+<p>​ 闭包有穷的两个语言分别为:</p>
+<p>​ <span class="math display">\[\varnothing,
+\thinspace\left\{\varepsilon\right\}.\]</span></p>
+<p>​ 且</p>
+<p>​ <span class="math display">\[\varnothing^* =
+\left\{\varepsilon\right\}^* = \left\{\varepsilon\right\}.\]</span></p>
+<h3 id="ex-3.4.1-c">Ex 3.4.1 (c)</h3>
+<p>​ 将两个表达式具体化:</p>
+<p>​ 将 <span class="math inline">\(R\)</span> 替换为 <span class="math inline">\(a\)</span>, 将 <span class="math inline">\(S\)</span> 替换为 <span class="math inline">\(b\)</span>, 将 <span class="math inline">\(T\)</span> 替换为 <span class="math inline">\(c\)</span>.</p>
+<p>​ 从而 <span class="math inline">\((RS)T\)</span> 具体化为 <span class="math inline">\((ab)c\)</span>, <span class="math inline">\(R(ST)\)</span>具体化为 <span class="math inline">\(a(bc)\)</span>.</p>
+<p>​ 而</p>
+<p>​ <span class="math display">\[L((ab)c) = \left\{abc\right\} =
+L(a(bc)),\]</span></p>
+<p>​ 故原式成立.</p>
+<h3 id="ex-3.4.1-g">Ex 3.4.1 (g)</h3>
+<p>​ 将两个表达式具体化: 将 <span class="math inline">\(R\)</span> 替换为
+<span class="math inline">\(a\)</span>,</p>
+<p>​ 从而 <span class="math inline">\((\varepsilon + R)^*\)</span>
+具体化为 <span class="math inline">\((\varepsilon + a)^*\)</span>, <span class="math inline">\(R^*\)</span>具体化为 <span class="math inline">\(a^*\)</span>.</p>
+<p>​ 注意到</p>
+<p>​ <span class="math display">\[\left\{\varepsilon, a\right\}^* =
+\left\{\varepsilon, a, a^2, a^3, \cdots\right\} =
+\left\{a\right\}^*,\]</span></p>
+<p>​ 由此得</p>
+<p>​ <span class="math display">\[L((\varepsilon + a)^*) =
+L(a^*).\]</span></p>
+<p>​ 故原式成立.</p>
+<h3 id="ex-3.4.2-b">Ex 3.4.2 (b)</h3>
+<p>​ 将两个表达式具体化:</p>
+<p>​ 将 <span class="math inline">\(R\)</span> 替换为 <span class="math inline">\(a\)</span>, 将 <span class="math inline">\(S\)</span> 替换为 <span class="math inline">\(b\)</span>,</p>
+<p>​ 从而 <span class="math inline">\((RS + R)^*R\)</span> 具体化为 <span class="math inline">\((ab + a)^*a\)</span>,</p>
+<p>​ 而<span class="math inline">\(R(SR + R)^*\)</span> 具体化为 <span class="math inline">\(a(ba + a)^*\)</span>.</p>
+<p>​ 下证</p>
+<p>​ <span class="math display">\[L((ab + a)^*a) = L(a(ba +
+a)^*).\]</span></p>
+<p>​ 归纳易得 <span class="math inline">\(\forall\thinspace
+k\in\mathbb{N}\)</span>, 有</p>
+<p>​ <span class="math display">\[\left\{ab, a\right\}^k\left\{a\right\}
+= \left\{a\right\}\left\{ba, a\right\}^k\]</span></p>
+<p>​ 进而由连接运算的分配律可知</p>
+<p>​ <span class="math display">\[L((ab+a)^*a) =
+\mathop{\bigcup}_{k\in\mathbb{N}}\left\{ab,
+a\right\}^k\left\{a\right\},\]</span></p>
+<p>​ <span class="math display">\[L(a(ba+a)^*) =
+\mathop{\bigcup}_{k\in\mathbb{N}}\left\{a\right\}\left\{ab,
+a\right\}^k.\]</span></p>
+<p>​ 由此得</p>
+<p>​ <span class="math display">\[L((ab + a)^*a) = L(a(ba +
+a)^*).\]</span></p>
+<p>​ 故原式成立.</p>
+<h3 id="ex-3.4.2-d">Ex 3.4.2 (d)</h3>
+<p>​ 将两个表达式具体化: 将 <span class="math inline">\(R\)</span> 替换为
+<span class="math inline">\(a\)</span>, 将 <span class="math inline">\(S\)</span> 替换为 <span class="math inline">\(b\)</span>,</p>
+<p>​ 从而 <span class="math inline">\((R + S)^*S\)</span> 具体化为 <span class="math inline">\((a + b)^*b\)</span>, <span class="math inline">\((R^*S)^*\)</span>化为 <span class="math inline">\((a^*b)^*\)</span>.</p>
+<p>​ 注意到</p>
+<p>​ <span class="math display">\[\varepsilon\in L((a^*b)^*),
+\thinspace\varepsilon\notin L((a + b)^*b)\]</span></p>
+<p>​ 从而</p>
+<p>​ <span class="math display">\[L((a + b)^*b) \ne
+L((a^*b)^*).\]</span></p>
+<p>​ 故原式不成立.</p>
 
                 
             </div>
@@ -516,7 +549,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://chengsx21.github.io/12/">http://chengsx21.github.io/12/</a>
+                    <a href="http://chengsx21.github.io/16/">http://chengsx21.github.io/16/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -554,8 +587,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/CSAPP/">
-                                    <span class="chip bg-color">CSAPP</span>
+                                <a href="/tags/FL-A/">
+                                    <span class="chip bg-color">FL&amp;A</span>
                                 </a>
                             
                         </div>
@@ -633,7 +666,7 @@
         repo: 'chengsx21.github.io',
         owner: 'chengsx21',
         admin: "chengsx21",
-        id: '2022-10-03T09-21-57',
+        id: '2022-10-15T10-59-38',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -661,28 +694,29 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/13/">
+                <a href="/16/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="计算机系统概论 作业2">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="形式语言与自动机 作业2">
                         
-                        <span class="card-title">计算机系统概论 作业2</span>
+                        <span class="card-title">形式语言与自动机 作业2</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            CSAPP Hw2
+                            FL&A Hw2
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-10-06
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-15
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -691,19 +725,20 @@
                                     CS
                                 </a>
                             
-                            <a href="/categories/CS/CSAPP/" class="post-category">
-                                    CSAPP
+                            <a href="/categories/CS/FL-A/" class="post-category">
+                                    FL&A
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/CSAPP/">
-                        <span class="chip bg-color">CSAPP</span>
+                    <a href="/tags/FL-A/">
+                        <span class="chip bg-color">FL&amp;A</span>
                     </a>
                     
                 </div>
@@ -717,23 +752,23 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/11/">
+                <a href="/15/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Graphics">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="形式语言与自动机 作业1">
                         
-                        <span class="card-title">Graphics</span>
+                        <span class="card-title">形式语言与自动机 作业1</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            DSA CST 1-2 解题报告
+                            FL&A Hw1
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-12
                             </span>
                         <span class="publish-author">
                             
@@ -743,8 +778,8 @@
                                     CS
                                 </a>
                             
-                            <a href="/categories/CS/DSA/" class="post-category">
-                                    DSA
+                            <a href="/categories/CS/FL-A/" class="post-category">
+                                    FL&A
                                 </a>
                             
                             
@@ -754,8 +789,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/DSA/">
-                        <span class="chip bg-color">DSA</span>
+                    <a href="/tags/FL-A/">
+                        <span class="chip bg-color">FL&amp;A</span>
                     </a>
                     
                 </div>

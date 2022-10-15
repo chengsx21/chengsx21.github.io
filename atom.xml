@@ -6,7 +6,7 @@
   <link href="http://chengsx21.github.io/atom.xml" rel="self"/>
   
   <link href="http://chengsx21.github.io/"/>
-  <updated>2022-10-11T05:16:10.715Z</updated>
+  <updated>2022-10-15T03:07:16.488Z</updated>
   <id>http://chengsx21.github.io/</id>
   
   <author>
@@ -15,6 +15,70 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>形式语言与自动机 作业2</title>
+    <link href="http://chengsx21.github.io/16/"/>
+    <id>http://chengsx21.github.io/16/</id>
+    <published>2022-10-15T02:59:38.000Z</published>
+    <updated>2022-10-15T03:07:16.488Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;必做题&quot;&gt;必做题&lt;/h2&gt;
+&lt;h3 id=&quot;ex-3.1.1-b&quot;&gt;Ex 3.1.1 (b)&lt;/h3&gt;
+&lt;p&gt;​ 一个符合要求的正则表达式是:&lt;/p&gt;
+&lt;p&gt;​ &lt;span class=&quot;math display&quot;&gt;\[\begin{equation*}
+
+​ </summary>
+        
+      
+    
+    
+    
+    <category term="CS" scheme="http://chengsx21.github.io/categories/CS/"/>
+    
+    <category term="FL&amp;A" scheme="http://chengsx21.github.io/categories/CS/FL-A/"/>
+    
+    
+    <category term="FL&amp;A" scheme="http://chengsx21.github.io/tags/FL-A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>形式语言与自动机 作业1</title>
+    <link href="http://chengsx21.github.io/15/"/>
+    <id>http://chengsx21.github.io/15/</id>
+    <published>2022-10-12T02:03:03.000Z</published>
+    <updated>2022-10-15T02:52:26.250Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;必做题&quot;&gt;必做题&lt;/h2&gt;
+&lt;h3 id=&quot;ex-5.1.1-b&quot;&gt;Ex 5.1.1 (b)&lt;/h3&gt;
+&lt;p&gt;​ 一个可行的上下文无关文法是:&lt;/p&gt;
+&lt;p&gt;​ &lt;span class=&quot;math display&quot;&gt;\[\begin{equation*}
+
+​ </summary>
+        
+      
+    
+    
+    
+    <category term="CS" scheme="http://chengsx21.github.io/categories/CS/"/>
+    
+    <category term="FL&amp;A" scheme="http://chengsx21.github.io/categories/CS/FL-A/"/>
+    
+    
+    <category term="FL&amp;A" scheme="http://chengsx21.github.io/tags/FL-A/"/>
+    
+  </entry>
   
   <entry>
     <title>俄罗斯概况</title>

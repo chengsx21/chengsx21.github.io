@@ -4,8 +4,8 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="计算机系统概论 作业1, Endeavor">
-    <meta name="description" content="CSAPP Hw1">
+    <meta name="keywords" content="形式语言与自动机 作业1, Endeavor">
+    <meta name="description" content="FL&amp;A Hw1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>计算机系统概论 作业1 | Endeavor</title>
+    <title>形式语言与自动机 作业1 | Endeavor</title>
     <link rel="icon" type="image/png" href="/image/favicon.png">
     
     <style>
@@ -302,12 +302,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">计算机系统概论 作业1</h1>
+                    <h1 class="description center-align post-title">形式语言与自动机 作业1</h1>
                 </div>
             </div>
         </div>
@@ -331,8 +331,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/CSAPP/">
-                                <span class="chip bg-color">CSAPP</span>
+                            <a href="/tags/FL-A/">
+                                <span class="chip bg-color">FL&amp;A</span>
                             </a>
                         
                     </div>
@@ -347,8 +347,8 @@
                                 CS
                             </a>
                         
-                            <a href="/categories/CS/CSAPP/" class="post-category">
-                                CSAPP
+                            <a href="/categories/CS/FL-A/" class="post-category">
+                                FL&A
                             </a>
                         
                     </div>
@@ -360,28 +360,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-10-03
+                    2022-10-12
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-10-11
+                    2022-10-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    634
+                    3.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    15 分
                 </div>
                 
 
@@ -404,92 +404,598 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="csapp-hw-1">CSAPP HW 1</h1>
-<ol type="1">
-<li>在所有由五个 <span class="math inline">\(1\)</span> 和三个 <span class="math inline">\(0\)</span> 组成的 8 位二进制整数 (补码形式) 中,
-最小的数是 <u><strong>10001111</strong></u>, 最大的数是
-<u><strong>01111100</strong></u>.<br>
-</li>
-<li>已知 <span class="math inline">\([X]_{补码}\)</span>＝0x0043, <span class="math inline">\([Y]_{补码}\)</span>＝0xCE50, 则 <span class="math inline">\([X+Y]_{补码}\)</span>＝
-<u><strong>0xCE93</strong></u>, <span class="math inline">\([X-Y]_{补码}\)</span>＝
-<u><strong>0x31F3</strong></u>. (<span class="math inline">\(X\)</span>、<span class="math inline">\(Y\)</span>
-的数据位宽均为 16 位, 计算结果用 16 进制的补码表示)</li>
-<li>假设存在一种 16 位的浮点数表示, <span class="math inline">\(exp\)</span> 位数是 7, <span class="math inline">\(frac\)</span> 位数是 8, 符号位数是 1,
-其所能表示的最大的非规格化数的 <span class="math inline">\(exp\)</span>
-是 <u><strong>0000000</strong></u>, <span class="math inline">\(frac\)</span> 是 <u><strong>11111111</strong></u>;
-250 (十进制数) 的 <span class="math inline">\(exp\)</span> 是
-<u><strong>1000110</strong></u>, <span class="math inline">\(frac\)</span> 是 <u><strong>11110100</strong></u>.
-(请用 0、1 位串表示答案)</li>
-<li>假设存在一种 9 位浮点数 (符合 IEEE 浮点数标准), 符号位数是 1, <span class="math inline">\(exp\)</span> 位数是 4, <span class="math inline">\(frac\)</span> 位数是 4. 其数值被表示为 <span class="math inline">\(V = (-1)^S × M × 2^E\)</span> 形式.
-请在下表中填空. <span class="math inline">\(Binary\)</span>: 该浮点数的
-9 位二进制表示; <span class="math inline">\(M\)</span>：表示为十进制数;
-<span class="math inline">\(E\)</span>：表示为十进制整数; <span class="math inline">\(Value\)</span>: 被表示的具体数值,
-十进制数表示.</li>
-</ol>
-<table>
-<colgroup>
-<col style="width: 29%">
-<col style="width: 20%">
-<col style="width: 15%">
-<col style="width: 9%">
-<col style="width: 25%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">描述</th>
-<th style="text-align: center;">Binary</th>
-<th style="text-align: center;">M</th>
-<th style="text-align: center;">E</th>
-<th style="text-align: center;">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">5.0</td>
-<td style="text-align: center;"><strong>010010100</strong></td>
-<td style="text-align: center;"><strong>1.25</strong></td>
-<td style="text-align: center;"><strong>2</strong></td>
-<td style="text-align: center;">5.0</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">最小的大于 0 浮点数</td>
-<td style="text-align: center;"><strong>000000001</strong></td>
-<td style="text-align: center;"><strong>0.0625</strong></td>
-<td style="text-align: center;"><strong>-6</strong></td>
-<td style="text-align: center;"><strong>0.0009765625</strong></td>
-</tr>
-</tbody>
-</table>
-<ol start="5" type="1">
-<li><p>给定相同的字长 (例如 32 位) , 能表示的定点数多还是浮点数多？</p>
-<p><strong>答:</strong></p>
-<ul>
-<li>能表示的定点数个数多.</li>
-<li>对32位浮点数而言, 如果exp位置全为1, 会产生 <span class="math inline">\(\infty\)</span> 与 <span class="math inline">\(NaN\)</span>, 进而个数少于 <span class="math inline">\(2^{32}\)</span>;</li>
-<li>而对32位定点数而言, 固定小数点都能产生 <span class="math inline">\(2^{32}\)</span> 个不一样的数.</li>
-<li>推广到其他字长, 这都是成立的.</li>
-<li>因此给定相同的字长, 能表示的定点数个数更多.</li>
-</ul></li>
-<li><p>假设存在一种 16 位浮点数 (符合 IEEE 浮点数标准) , <span class="math inline">\(exp\)</span> 位数是 5, <span class="math inline">\(frac\)</span> 位数是 10, 符号位数是 1.
-某同学对该格式的一个数 <span class="math inline">\(x\)</span> 执行了
-(整数的) 按位右移操作, 得到了 80.5. 若右移操作按有符号数执行 (算术右移)
-, 原来的数可能是 <u><strong>不存在</strong></u>,
-若右移操作按无符号数执行 (逻辑右移) , 原来的数可能是
-<u><strong>-0.04736328125 或 -0.047393798828125</strong></u>
-(列出所有情况或填入“不存在”, 数可以用小数或分数来表示,
-必须精确).</p></li>
-<li><p>使用不超过 4 次位运算或加减运算完成整数运算 <span class="math inline">\(y = x * 85\)</span> (允许引入临时变量,
-不需考虑溢出的情况) .</p>
-<p><strong>答:</strong></p>
-<ul>
-<li><strong><span class="math inline">\(tmp1 = x &lt;&lt; 2\)</span> (
-<span class="math inline">\(tmp1 = x * 4\)</span> )</strong></li>
-<li><strong><span class="math inline">\(tmp2 = tmp1 + x\)</span> ( <span class="math inline">\(tmp2 = x * 5\)</span> )</strong></li>
-<li><strong><span class="math inline">\(tmp3 = tmp2 &lt;&lt; 4\)</span>
-( <span class="math inline">\(tmp3 = x * 80\)</span> )</strong></li>
-<li><strong><span class="math inline">\(y = tmp3 + tmp2\)</span> ( <span class="math inline">\(y = x * 85\)</span> )</strong></li>
-</ul></li>
-</ol>
+                <h2 id="必做题">必做题</h2>
+<h3 id="ex-5.1.1-b">Ex 5.1.1 (b)</h3>
+<p>​ 一个可行的上下文无关文法是:</p>
+<p>​ <span class="math display">\[\begin{equation*}
+
+​        \begin{aligned}
+
+​            S &amp;\rightarrow AB \mid CD \\
+
+​            A &amp;\rightarrow aA \mid \varepsilon \\
+
+​            B &amp;\rightarrow bBc \mid bE \mid cD \\
+
+​            C &amp;\rightarrow aCb \mid bE \mid aA \\
+
+​            D &amp;\rightarrow cD \mid \varepsilon \\
+
+​            E &amp;\rightarrow bE \mid \varepsilon
+
+​        \end{aligned}
+
+​    \end{equation*}\]</span></p>
+<h3 id="ex-5.1.2-c">Ex 5.1.2 (c)</h3>
+<p>​ 一个最左推导:</p>
+<p>​ <span class="math display">\[\begin{equation*}
+
+​        \begin{aligned}
+
+​            S &amp;\mathop{\Longrightarrow}_{lm} A1B
+\mathop{\Longrightarrow}_{lm} 0A1B \mathop{\Longrightarrow}_{lm} 00A1B
+\\
+
+​              &amp;\mathop{\Longrightarrow}_{lm} 000A1B
+\mathop{\Longrightarrow}_{lm} 0001B \mathop{\Longrightarrow}_{lm} 00011B
+\\
+
+​              &amp;\mathop{\Longrightarrow}_{lm} 00011;
+
+​        \end{aligned}
+
+​    \end{equation*}\]</span></p>
+<p>​ 一个最右推导:</p>
+<p>​ <span class="math display">\[\begin{equation*}
+
+​        \begin{aligned}
+
+​            S &amp;\mathop{\Longrightarrow}_{rm} A1B
+\mathop{\Longrightarrow}_{rm} A11B \mathop{\Longrightarrow}_{rm} A11 \\
+
+​              &amp;\mathop{\Longrightarrow}_{rm} 0A11
+\mathop{\Longrightarrow}_{rm} 00A11 \mathop{\Longrightarrow}_{rm} 000A11
+\\
+
+​              &amp;\mathop{\Longrightarrow}_{rm} 00011.
+
+​        \end{aligned}
+
+​    \end{equation*}\]</span></p>
+<h3 id="ex-5.1.6-b">Ex 5.1.6 (b)</h3>
+<p>​ 对推导 <span class="math inline">\(\beta\mathop{\Longrightarrow}^{*}\limits\gamma\)</span>
+中的步数进行归纳:</p>
+<p>​ 如果该推导是一步完成的, 即<span class="math inline">\(\thinspace\beta\Longrightarrow\gamma\)</span>,
+那么由</p>
+<p>​ <span class="math display">\[\alpha\mathop{\Longrightarrow}^{*}\limits\beta,
+\thinspace\beta\Longrightarrow\gamma,\]</span></p>
+<p>​ 可得</p>
+<p>​ <span class="math display">\[\alpha\mathop{\Longrightarrow}^{*}\limits\gamma,\]</span></p>
+<p>​ 因而基础得证.</p>
+<p>​ 现在假定该推导共包含 <span class="math inline">\(n + 1\)</span> 步,
+其中 <span class="math inline">\(n\ge 1\)</span>, 并且对于任何 <span class="math inline">\(n\)</span> 步完成的推导上述命题都为真; 也就是说,
+如果 <span class="math inline">\(\beta\mathop{\Longrightarrow}^{*}\limits\gamma\)</span>
+可在 <span class="math inline">\(n\)</span> 步内完成, 那么有 <span class="math inline">\(\alpha\mathop{\Longrightarrow}^{*}\limits\gamma\)</span>
+成立.</p>
+<p>​ 考虑一个 <span class="math inline">\(\beta\mathop{\Longrightarrow}^{*}\limits\gamma\)</span>
+的<span class="math inline">\(n + 1\)</span>步推导,
+它一定是如下形式:</p>
+<p>​ <span class="math display">\[\beta\mathop{\Longrightarrow}^{*}\limits\omega\Longrightarrow\gamma,\]</span></p>
+<p>​ 其中 <span class="math inline">\(\beta\mathop{\Longrightarrow}^{*}\limits\omega\)</span>
+是一个 <span class="math inline">\(n\)</span> 步推导.</p>
+<p>​ 那么根据归纳假设可知, 有 <span class="math inline">\(\alpha\mathop{\Longrightarrow}^{*}\limits\omega\)</span>
+成立,</p>
+<p>​</p>
+<p>​ 进而由 <span class="math inline">\(\omega\Longrightarrow\gamma\)</span> 可得</p>
+<p>​ <span class="math display">\[\alpha\mathop{\Longrightarrow}^{*}\limits\gamma.\]</span></p>
+<h3 id="ex-5.1.8">Ex 5.1.8</h3>
+<p>​ 分为两步来证明.</p>
+<p>​ <span class="math inline">\(\centerdot\)</span> 先证明若串 <span class="math inline">\(\omega\)</span> 中包含相同个数的 <span class="math inline">\(a\)</span> 和 <span class="math inline">\(b\)</span>, 则 <span class="math inline">\(\omega\in L(G)\)</span>.</p>
+<p>​ 易知此时 <span class="math inline">\(\vert\omega\vert\)</span>
+为偶数, 对 <span class="math inline">\(\vert\omega\vert\)</span>
+进行归纳:</p>
+<p>​ 如果 <span class="math inline">\(\vert\omega\vert = 0\)</span> 或者
+<span class="math inline">\(\vert\omega\vert = 2\)</span>, 即 <span class="math inline">\(\omega\)</span> 是 <span class="math inline">\(\varepsilon, ab, ba\)</span>, 那么由产生式</p>
+<p>​ <span class="math display">\[S \rightarrow aSbS \mid bSaS \mid
+\varepsilon,\]</span></p>
+<p>​ 可得</p>
+<p>​ <span class="math display">\[S\mathop{\Longrightarrow}^{*}\limits\varepsilon,
+ab, ba,\]</span></p>
+<p>​ 即</p>
+<p>​ <span class="math display">\[S\mathop{\Longrightarrow}^{*}\limits\omega,
+\thinspace\omega\in L(G).\]</span></p>
+<p>​ 至此基础得证.</p>
+<p>​ 现在假定 <span class="math inline">\(\vert\omega\vert = 2n\)</span>,
+其中 <span class="math inline">\(n\ge 2\)</span>, 并且对任何 <span class="math inline">\(\vert\omega_0\vert \le 2n -
+2\)</span>上述命题都为真; 也就是说, 如果 <span class="math inline">\(\vert\omega_0\vert \le 2n - 2\)</span>, 那么有
+<span class="math inline">\(\omega_0\in L(G)\)</span>成立.</p>
+<p>​ 由于 <span class="math inline">\(\omega\)</span> 包含的 <span class="math inline">\(a, b\)</span> 的数量相等, 不妨设 <span class="math inline">\(\omega\)</span> 以 <span class="math inline">\(a\)</span> 开头, 并取其中所包含的一个 <span class="math inline">\(b\)</span>, 使得</p>
+<p>​ <span class="math display">\[\omega = aubv,\]</span></p>
+<p>​ 其中 <span class="math inline">\(u, v\in \left\{a,
+b\right\}^{*}\)</span>, 当然有 <span class="math inline">\(\vert u\vert,
+\vert v\vert \le 2n - 2\)</span>.</p>
+<p>​ 那么由归纳假设, 有</p>
+<p>​ <span class="math display">\[u, v\in L(G),\]</span></p>
+<p>​ 即</p>
+<p>​ <span class="math display">\[S\mathop{\Longrightarrow}^{*}\limits u,
+v.\]</span></p>
+<p>​ 那么容易得到</p>
+<p>​ <span class="math display">\[S\Longrightarrow aSbS
+\mathop{\Longrightarrow}^{*}\limits aubS
+\mathop{\Longrightarrow}^{*}\limits aubv = \omega,\]</span></p>
+<p>​ 进而</p>
+<p>​ <span class="math display">\[S\mathop{\Longrightarrow}^{*}\limits
+\omega, \thinspace\omega\in L(G).\]</span></p>
+<p>​ 至此归纳得证.</p>
+<p>​ <span class="math inline">\(\centerdot\)</span> 再证明若 <span class="math inline">\(\omega\in L(G)\)</span>, 即 <span class="math inline">\(S\mathop{\Longrightarrow}^{*}\limits\omega\)</span>,
+则<span class="math inline">\(\omega\)</span>中包含相同个数的 <span class="math inline">\(a\)</span> 和 <span class="math inline">\(b\)</span>.</p>
+<p>​ 对推导 <span class="math inline">\(S\mathop{\Longrightarrow}^{*}\limits\omega\)</span>
+中的步数进行归纳:</p>
+<p>​ 如果该推导是<span class="math inline">\(1\)</span>步完成的, 那么由
+<span class="math inline">\(S\Longrightarrow\varepsilon\)</span></p>
+<p>​ 可得</p>
+<p>​ <span class="math display">\[\omega = \varepsilon,\]</span></p>
+<p>​ 其包含的 <span class="math inline">\(a, b\)</span> 个数均为 <span class="math inline">\(0\)</span>. 至此基础得证.</p>
+<p>​ 现在假定该推导共包含 <span class="math inline">\(n + 1\)</span> 步,
+其中 <span class="math inline">\(n\ge 3\)</span>, 并且对于任何 <span class="math inline">\(n\)</span> 步以内完成的推导上述命题都为真;
+也就是说, 如果 <span class="math inline">\(S\mathop{\Longrightarrow}^{*}\limits\omega\)</span>
+可在 <span class="math inline">\(n\)</span> 步内完成, 那么有<span class="math inline">\(\omega\)</span>中包含相同个数的 <span class="math inline">\(a\)</span> 和 <span class="math inline">\(b\)</span>.</p>
+<p>​ 考虑一个 <span class="math inline">\(S\mathop{\Longrightarrow}^{*}\limits\omega\)</span>
+的 <span class="math inline">\(n + 1\)</span> 步推导,
+它一定是如下形式:</p>
+<p>​ <span class="math display">\[S\Longrightarrow
+aSbS\mathop{\Longrightarrow}^{*}\limits\omega,\]</span></p>
+<p>​ 或</p>
+<p>​ <span class="math display">\[S\Longrightarrow
+bSaS\mathop{\Longrightarrow}^{*}\limits\omega,\]</span></p>
+<p>​ 其中 <span class="math inline">\(aSbS\mathop{\Longrightarrow}^{*}\limits\omega\)</span>,
+<span class="math inline">\(bSaS\mathop{\Longrightarrow}^{*}\limits\omega\)</span>
+均是一个 <span class="math inline">\(n\)</span> 步推导.</p>
+<p>​ 由 <span class="math inline">\(a, b\)</span> 地位的对称性,
+只需考虑第一种情况, 由 <span class="math inline">\(aSbS\mathop{\Longrightarrow}^{*}\limits\omega\)</span>
+可得</p>
+<p>​ <span class="math display">\[\omega = aubv,\]</span></p>
+<p>​ 其中 <span class="math inline">\(u, v\in \left\{a,
+b\right\}^{*}\)</span>,</p>
+<p>​ 那么容易知道推导 <span class="math inline">\(S\mathop{\Longrightarrow}^{*}\limits u\)</span>,
+<span class="math inline">\(S\mathop{\Longrightarrow}^{*}\limits
+v\)</span> 的步数都在 <span class="math inline">\(n\)</span> 步以内.</p>
+<p>​ 根据归纳假设可知, $u, v $中包含相同个数的 <span class="math inline">\(a\)</span> 和 <span class="math inline">\(b\)</span>.</p>
+<p>​ 进而可得 <span class="math inline">\(\omega = aubv\)</span>
+中包含相同个数的 <span class="math inline">\(a\)</span> 和 <span class="math inline">\(b\)</span>.</p>
+<p>​ 至此归纳得证.</p>
+<h3 id="ex-5.2.2">Ex 5.2.2</h3>
+<p>​ 对推导 <span class="math inline">\(S\mathop{\Longrightarrow}^{*}\limits\omega\)</span>
+中的步数 <span class="math inline">\(m\)</span> 进行归纳:</p>
+<p>​ 如果 <span class="math inline">\(m = 1\)</span>, 那么有产生式 <span class="math inline">\(S\rightarrow\omega\)</span>, 其中 <span class="math inline">\(\omega\ne\varepsilon\)</span>.</p>
+<p>​ 从而有以下 <span class="math inline">\(n + 1\)</span>
+个节点的分析树:</p>
+<p>​ <img src="/pic/06.png"></p>
+<p>​ 至此基础得证.</p>
+<p>​ 现在假定 <span class="math inline">\(m\ge 2\)</span>, 且对 <span class="math inline">\(m - 1\)</span> 步以内完成的推导上述命题为真.</p>
+<p>​ 设第一步使用了产生式 <span class="math inline">\(S\rightarrow
+X_1X_2\cdots X_k\)</span>,</p>
+<p>​</p>
+<p>​ 那么全部推导形如 <span class="math inline">\(S\rightarrow
+X_1X_2\cdots X_k\mathop{\Longrightarrow}^{*}\limits\omega\)</span>.</p>
+<p>​ 可以将 <span class="math inline">\(\omega\)</span> 断开成 <span class="math inline">\(\omega = \omega_1\omega_2\cdots\omega_k\)</span>,
+其中</p>
+<p>​ <span class="math inline">\((1)\)</span> 若 <span class="math inline">\(\omega_i\)</span> 为终结符, 则 <span class="math inline">\(\omega_i = X_i\)</span>, 可以认为<span class="math inline">\(m_i = 0\)</span>;</p>
+<p>​ <span class="math inline">\((2)\)</span> 若 <span class="math inline">\(\omega_i\)</span> 为非终结符, 则 <span class="math inline">\(X_i\mathop{\Longrightarrow}^{*}\limits\omega_i\)</span>,
+且推导步数 <span class="math inline">\(m_i &lt; m\)</span>. 由归纳假设,
+存在根节点为 <span class="math inline">\(X_i\)</span> 的子分析树,
+其节点数为 <span class="math inline">\(\vert\omega_i\vert +
+m_i\)</span>.</p>
+<p>​ 因此我们得到如下关系:</p>
+<p>​ <span class="math display">\[m = m_1 + m_2 + \cdots + m_k +
+1.\]</span></p>
+<p>​ 从而有一棵结果为 <span class="math inline">\(\omega\)</span>
+的分析树:</p>
+<p><img src="/pic/07.png"></p>
+<p>​ 其节点数为:</p>
+<p>​ <span class="math display">\[1 + \sum_{i =
+1}^{k}\limits\left(\vert\omega_i\vert + m_i\right) = \sum_{i =
+1}^{k}\vert\omega_i\vert + \left(\sum_{i = 1}^{k}m_i + 1\right) = n +
+m.\]</span></p>
+<p>​ 至此归纳得证.</p>
+<h3 id="ex-5.4.7-a">Ex 5.4.7 (a)</h3>
+<p>一个最左推导:</p>
+<p>​ <span class="math display">\[\begin{equation*}
+
+​        \begin{aligned}
+
+​            E &amp;\mathop{\Longrightarrow}_{lm} {+}EE
+\mathop{\Longrightarrow}_{lm} {+}{*}EEE \mathop{\Longrightarrow}_{lm}
+{+}{*}{-}EEEE \\
+
+​              &amp;\mathop{\Longrightarrow}_{lm} {+}{*}{-}xEEE
+\mathop{\Longrightarrow}_{lm} {+}{*}{-}xyEE
+\mathop{\Longrightarrow}_{lm} {+}{*}{-}xyxE \\
+
+​              &amp;\mathop{\Longrightarrow}_{lm} {+}{*}{-}xyxy;
+
+​        \end{aligned}
+
+​    \end{equation*}\]</span></p>
+<p>​ 一个最右推导:</p>
+<p>​ <span class="math display">\[\begin{equation*}
+
+​        \begin{aligned}
+
+​            E &amp;\mathop{\Longrightarrow}_{rm} {+}EE
+\mathop{\Longrightarrow}_{rm} {+}Ey \mathop{\Longrightarrow}_{rm}
+{+}{*}EEy \\
+
+​              &amp;\mathop{\Longrightarrow}_{rm} {+}{*}Exy
+\mathop{\Longrightarrow}_{rm} {+}{*}{-}EExy
+\mathop{\Longrightarrow}_{rm} {+}{*}{-}Eyxy \\
+
+​              &amp;\mathop{\Longrightarrow}_{rm} {+}{*}{-}xyxy;
+
+​        \end{aligned}
+
+​    \end{equation*}\]</span></p>
+<p>​ 一棵语法分析树为:</p>
+<p><img src="/pic/08.png"></p>
+<h3 id="ex-1-1">*Ex 1 (1)</h3>
+<p>​ 一个可行的上下文无关文法是:</p>
+<p>​ <span class="math display">\[\begin{equation*}
+
+​        \begin{aligned}
+
+​            S &amp;\rightarrow AB \\
+
+​            A &amp;\rightarrow aAbb \mid \varepsilon \\
+
+​            B &amp;\rightarrow Bc \mid \varepsilon.
+
+​        \end{aligned}
+
+​    \end{equation*}\]</span></p>
+<h3 id="ex-1-2">*Ex 1 (2)</h3>
+<p>​ 一个可行的上下文无关文法是:</p>
+<p>​ <span class="math display">\[\begin{equation*}
+
+​        \begin{aligned}
+
+​            S &amp;\rightarrow AB \\
+
+​            A &amp;\rightarrow aAb \mid \varepsilon \\
+
+​            B &amp;\rightarrow bBc \mid \varepsilon.
+
+​        \end{aligned}
+
+​    \end{equation*}\]</span></p>
+<h3 id="ex-1-3">*Ex 1 (3)</h3>
+<p>​ 一个可行的上下文无关文法是:</p>
+<p>​ <span class="math display">\[\begin{equation*}
+
+​        \begin{aligned}
+
+​            S &amp;\rightarrow aSd \mid A \mid B \\
+
+​            A &amp;\rightarrow aAc \mid C \\
+
+​            B &amp;\rightarrow bBd \mid C \\
+
+​            C &amp;\rightarrow bCc \mid \varepsilon.
+
+​        \end{aligned}
+
+​    \end{equation*}\]</span></p>
+<h3 id="ex-1-4">*Ex 1 (4)</h3>
+<p>​ 一个可行的上下文无关文法是:</p>
+<p>​ <span class="math display">\[\begin{equation*}
+
+​        \begin{aligned}
+
+​            S &amp;\rightarrow AB \mid CD \\
+
+​            A &amp;\rightarrow aAb \mid \varepsilon \\
+
+​            B &amp;\rightarrow bBd \mid D \\
+
+​            C &amp;\rightarrow aCc \mid A \\
+
+​            D &amp;\rightarrow cDd \mid \varepsilon.
+
+​        \end{aligned}
+
+​    \end{equation*}\]</span></p>
+<h3 id="ex-1-5">*Ex 1 (5)</h3>
+<p>​ 一个可行的上下文无关文法是:</p>
+<p>​ <span class="math display">\[\begin{equation*}
+
+​        \begin{aligned}
+
+​            S &amp;\rightarrow Ab \\
+
+​            A &amp;\rightarrow BAC \mid a \\
+
+​            B &amp;\rightarrow a \mid b \\
+
+​            C &amp;\rightarrow a \mid b.
+
+​        \end{aligned}
+
+​    \end{equation*}\]</span></p>
+<h3 id="ex-1-6">*Ex 1 (6)</h3>
+<p>​ 一个可行的上下文无关文法是:</p>
+<p>​ <span class="math display">\[\begin{equation*}
+
+​        \begin{aligned}
+
+​            S &amp;\rightarrow D \mid AC \mid ABC \\
+
+​            A &amp;\rightarrow aA \mid \varepsilon \\
+
+​            B &amp;\rightarrow bB \mid bb \\
+
+​            C &amp;\rightarrow cC \mid \varepsilon \\
+
+​            D &amp;\rightarrow aDc \mid b.
+
+​        \end{aligned}
+
+​    \end{equation*}\]</span></p>
+<p>\end{proof}</p>
+<p>\begin{proof}[Solution:]</p>
+<p>​ 题中文法所定义语言的一个无二义文法是:</p>
+<p>​ <span class="math display">\[\begin{equation*}
+
+​        \begin{aligned}
+
+​            S &amp;\rightarrow Sad \mid Sbd \mid Scd \mid d.
+
+​        \end{aligned}
+
+​    \end{equation*}\]</span></p>
+<h3 id="ex-4">*Ex 4</h3>
+<p>​ 我们证明更强的结论:</p>
+<p>​ 若 <span class="math inline">\(S\mathop{\Longrightarrow}^{*}\limits\omega\)</span>,
+推导步数为 <span class="math inline">\(l + 1\)</span>, 其中 <span class="math inline">\(l\ge 0\)</span>, 那么</p>
+<p>​ <span class="math display">\[\omega = (01)^k \in L =
+\left\{(01)^k\mid k\ge 0\right\}.\]</span></p>
+<p>​ 若 <span class="math inline">\(T\mathop{\Longrightarrow}^{*}\limits\phi\)</span>,
+推导步数为 <span class="math inline">\(l + 1\)</span>, 其中 <span class="math inline">\(l\ge 0\)</span>, 那么</p>
+<p>​ <span class="math display">\[\phi = (10)^k \in M = \left\{(10)^k\mid
+k\ge 0\right\}.\]</span></p>
+<p>​ 对推导步数进行归纳:</p>
+<p>​ 如果 <span class="math inline">\(l = 0\)</span>, 那么有推导 <span class="math inline">\(S\Longrightarrow\varepsilon = \omega =
+(01)^0\)</span>,</p>
+<p>​</p>
+<p>​ 因此 omega = (01)^0L = {(01)^kk}$.</p>
+<p>​ 同理有推导 <span class="math inline">\(T\Longrightarrow\varepsilon =
+\phi = (10)^0\)</span>,</p>
+<p>​</p>
+<p>​ 因此 <span class="math inline">\(\phi = (10)^0\in M =
+\left\{(10)^k\mid k\ge 0\right\}\)</span>.</p>
+<p>​ 至此基础得证.</p>
+<p>​ 现在假定推导步数为 <span class="math inline">\(l + 1\)</span>, 且对
+<span class="math inline">\(l\)</span> 步完成的推导上述命题为真.</p>
+<p>​ 考虑推导</p>
+<p>​ <span class="math display">\[S\Longrightarrow
+0T1\mathop{\Longrightarrow}^{*}\limits\omega = 0\phi_01,\]</span></p>
+<p>​ 其中 <span class="math inline">\(T\mathop{\Longrightarrow}^{*}\limits\phi_0\)</span>
+是一个 <span class="math inline">\(l\)</span> 步的推导.</p>
+<p>​ 那么由归纳假设, 得</p>
+<p>​ <span class="math display">\[\phi_0 = (10)^{l - 1},\]</span></p>
+<p>​ 此时</p>
+<p>​ <span class="math display">\[\omega = 0\phi_01 = 0(10)^{l - 1}1 =
+(01)^l.\]</span></p>
+<p>​</p>
+<p>​ 再考虑推导</p>
+<p>​ <span class="math display">\[T\Longrightarrow
+1S0\mathop{\Longrightarrow}^{*}\limits\phi = 1\omega_00,\]</span></p>
+<p>​ 其中 <span class="math inline">\(S\mathop{\Longrightarrow}^{*}\limits\omega_0\)</span>
+是一个<span class="math inline">\(l\)</span>步的推导.</p>
+<p>​ 那么由归纳假设, 得</p>
+<p>​ <span class="math display">\[\omega_0 = (01)^{l - 1},\]</span></p>
+<p>​ 进而</p>
+<p>​ <span class="math display">\[\phi = 1\omega_00 = 1(01)^{l - 1}0 =
+(10)^l.\]</span></p>
+<p>​</p>
+<p>​ 至此归纳得证.</p>
+<p>​ 综上所述, 我们证明了若 <span class="math inline">\(S\mathop{\Longrightarrow}^{*}\limits\omega\)</span>,
+则有</p>
+<p>​ <span class="math display">\[\omega\in L = \left\{(01)^k\mid k\ge
+0\right\}.\]</span></p>
+<h2 id="思考题">思考题</h2>
+<h3 id="ex-5.1.1-c">Ex 5.1.1 (c)</h3>
+<p>​ 一个可行的上下文无关文法是:</p>
+<p>​ <span class="math display">\[\begin{equation*}
+
+​        \begin{aligned}
+
+​            S &amp;\rightarrow O \mid E \\
+
+​            O &amp;\rightarrow COC \mid a \mid b \\
+
+​            E &amp;\rightarrow AB \mid BA \\
+
+​            A &amp;\rightarrow CAC \mid a \\
+
+​            B &amp;\rightarrow CBC \mid b \\
+
+​            C &amp;\rightarrow a \mid b.
+
+​        \end{aligned}
+
+​    \end{equation*}\]</span></p>
+<h3 id="ex-5.1.7-a">Ex 5.1.7 (a)}</h3>
+<p>​ 对任意 <span class="math inline">\(\omega\in L(G)\)</span>, 我们证明
+<span class="math inline">\(\omega\)</span> 不含子串 <span class="math inline">\(ba\)</span>.</p>
+<p>​ 对 <span class="math inline">\(\vert\omega\vert\)</span>
+进行归纳:</p>
+<p>​ 如果 <span class="math inline">\(\vert\omega\vert = 1\)</span>, 那么
+<span class="math inline">\(\omega\)</span> 是 <span class="math inline">\(a\)</span> 或者 <span class="math inline">\(b\)</span>,</p>
+<p>​ 因此 <span class="math inline">\(\omega\)</span> 当然不含子串 <span class="math inline">\(ba\)</span>. 至此基础得证.</p>
+<p>​ 现在假定 <span class="math inline">\(\vert\omega\vert = n\)</span>,
+其中 <span class="math inline">\(n\ge 2\)</span>, 并且对任何长度小于
+<span class="math inline">\(n\)</span> 的串 <span class="math inline">\(\omega_0\in L(G)\)</span> 上述命题都为真.</p>
+<p>​</p>
+<p>​ 也就是说, 如果 <span class="math inline">\(\vert\omega_0\vert \le n
+- 1\)</span>, 那么 <span class="math inline">\(\omega_0\)</span>
+不含子串 <span class="math inline">\(ba\)</span>.</p>
+<p>​ 考虑推导 <span class="math inline">\(S\mathop{\Longrightarrow}^{*}\limits\omega\)</span>
+的第一步.</p>
+<p>​ 若该推导形如</p>
+<p>​ <span class="math display">\[S\Longrightarrow aS
+\mathop{\Longrightarrow}^{*}\limits \omega = a\omega_1,\]</span></p>
+<p>​ 可知 <span class="math inline">\(\vert\omega_1\vert = n -
+1\)</span>. 由归纳假设得 <span class="math inline">\(\omega_1\)</span>
+中不含子串 <span class="math inline">\(ba\)</span>.</p>
+<p>​ 又因为 <span class="math inline">\(\omega = a\omega_1\)</span> 以
+<span class="math inline">\(a\)</span> 开头, 所以 <span class="math inline">\(\omega\)</span> 中不含子串 <span class="math inline">\(ba\)</span>.</p>
+<p>​ 若该推导形如</p>
+<p>​ <span class="math display">\[S\Longrightarrow Sb
+\mathop{\Longrightarrow}^{*}\limits \omega = \omega_2b,\]</span></p>
+<p>​ 可知 <span class="math inline">\(\vert\omega_2\vert = n -
+1\)</span>. 由归纳假设得 <span class="math inline">\(\omega_2\)</span>
+中不含子串 <span class="math inline">\(ba\)</span>.</p>
+<p>​ 又因为 <span class="math inline">\(\omega = \omega_2b\)</span> 以
+<span class="math inline">\(b\)</span> 结尾, 所以 <span class="math inline">\(\omega\)</span> 中不含子串 <span class="math inline">\(ba\)</span>.</p>
+<p>​ 至此归纳得证.</p>
+<h3 id="ex-5.4.7-b">Ex 5.4.7 (b)</h3>
+<p>​ 给出:</p>
+<p>​ 一个前缀表达式的运算符节点数比操作数节点数少 <span class="math inline">\(1\)</span>.</p>
+<p>​ 一个前缀表达式从后往前计数, 操作数严格多于运算符节点数.</p>
+<p>​ 下面反证: 假设这个文法是有歧义的, 也即存在一个长 <span class="math inline">\(n\)</span> 的前缀表达式, 有 <span class="math inline">\(2\)</span>
+种不同的方法将其解析为一棵语法分析树.</p>
+<p>​</p>
+<p>​ 假设方法 <span class="math inline">\(1\)</span> 中 <span class="math inline">\([1, m]\)</span> 为第一棵子树, <span class="math inline">\([m + 1, n]\)</span> 为第二棵子树;</p>
+<p>​</p>
+<p>​ 方法 <span class="math inline">\(2\)</span> 中 <span class="math inline">\([1, k]\)</span> 为第一棵子树, <span class="math inline">\([k + 1, n]\)</span> 为第二棵子树, 并且 <span class="math inline">\(k &gt; m\)</span>.</p>
+<p>​</p>
+<p>​ 由引理 <span class="math inline">\(1\)</span>, 区间 <span class="math inline">\([m + 1, k]\)</span>
+必须包含同样数目的运算符节点与操作数节点, 而这个区间是方法 <span class="math inline">\(2\)</span> 中左子树对应表达式的末尾, 这与引理
+<span class="math inline">\(2\)</span> 矛盾.</p>
+<p>​</p>
+<p>​ 所以一个前缀表达式不可能有多于一种解析为语法分析树方法,
+即题中所给文法是无歧义的.</p>
+<h3 id="ex-1">*Ex 1</h3>
+<p>​ 分为两步来证明.</p>
+<p>​ <span class="math inline">\(\centerdot\)</span> 先证明若串 <span class="math inline">\(\omega\)</span> 形如 <span class="math inline">\(a^ib^jc^k\thinspace(\mbox{其中}\thinspace i + j
+\le k)\)</span>, 则 <span class="math inline">\(\omega\in
+L(G)\)</span>.</p>
+<p>​ 记 <span class="math inline">\(l = k - i - j\)</span>,
+我们给出一个推导 <span class="math inline">\(S\mathop{\Longrightarrow}^{*}\limits\omega\)</span>
+的构造.</p>
+<p>​ <span class="math display">\[\begin{equation*}
+
+​        \begin{aligned}
+
+​            S &amp;\Longrightarrow aSc
+\mathop{\Longrightarrow}^{*}\limits a^iSc^i \\
+
+​              &amp;\Longrightarrow a^iAc^i \Longrightarrow a^ibAc^{i +
+1} \\
+
+​              &amp;\mathop{\Longrightarrow}^{*}\limits a^ib^jAc^{i + j}
+\Longrightarrow a^ib^jBc^{i + j} \\
+
+​              &amp;\Longrightarrow a^ib^jBc^{i + j + 1}
+\mathop{\Longrightarrow}^{*}\limits a^ib^jBc^{i + j + l} \\
+
+​              &amp;\Longrightarrow a^ib^jc^{i + j + l} = a^ib^jc^k =
+\omega.
+
+​        \end{aligned}
+
+​    \end{equation*}\]</span></p>
+<p>​ 从而 <span class="math inline">\(\omega\in L(G)\)</span>.</p>
+<p>​ <span class="math inline">\(\centerdot\)</span> 再证明若 <span class="math inline">\(\omega\in L(G)\)</span>, 即 <span class="math inline">\(S\mathop{\Longrightarrow}^{*}\limits\omega\)</span>,
+则 <span class="math inline">\(\omega\)</span> 形如 <span class="math inline">\(a^ib^jc^k\thinspace(\mbox{其中}\thinspace i + j
+\le k)\)</span>.</p>
+<p>​ 容易得到这个推导的步数至少为 <span class="math inline">\(3\)</span>.
+对推导 <span class="math inline">\(S\mathop{\Longrightarrow}^{*}\limits\omega\)</span>
+中的步数进行归纳:</p>
+<p>​ 如果该推导是 <span class="math inline">\(3\)</span> 步完成的, 那么由
+<span class="math inline">\(S\Longrightarrow A\Longrightarrow
+B\Longrightarrow\varepsilon\)</span>,</p>
+<p>​ 可得</p>
+<p>​ <span class="math display">\[\omega = \varepsilon =
+a^0b^0c^0,\]</span></p>
+<p>​ 满足 $i + j = 0 + 0 = k $成立. 至此基础得证.</p>
+<p>​ 现在假定该推导共包含 <span class="math inline">\(n + 1\)</span> 步,
+其中 <span class="math inline">\(n\ge 3\)</span>, 并且对于任何 <span class="math inline">\(n\)</span> 步以内完成的推导上述命题都为真.</p>
+<p>​ 容易知道第 <span class="math inline">\(n + 1\)</span>
+步推导一定使用了产生式:</p>
+<p>​ <span class="math display">\[B\longrightarrow\varepsilon,\]</span></p>
+<p>​ 若第 <span class="math inline">\(n\)</span> 步推导使用了产生式:</p>
+<p>​ <span class="math display">\[B\longrightarrow Bc,\]</span></p>
+<p>​ 那么全部推导过程形如</p>
+<p>​ <span class="math display">\[S\mathop{\Longrightarrow}^{*}\limits
+uBv \Longrightarrow uBcv \Longrightarrow ucv = \omega.\]</span></p>
+<p>​ 不妨考虑一个 <span class="math inline">\(n\)</span> 步的推导</p>
+<p>​ <span class="math display">\[S\mathop{\Longrightarrow}^{*}\limits
+uBv \Longrightarrow uv.\]</span></p>
+<p>​ 由归纳假设, 串 <span class="math inline">\(uv\)</span> 形如 <span class="math inline">\(a^{i'}b^{j'}c^{k'},
+\mbox{其中}\thinspace i' + j' \le k'\)</span>.</p>
+<p>​ 那么串 <span class="math inline">\(\omega = ucv\)</span> 形如 <span class="math inline">\(a^ib^jc^k = a^{i'}b^{j'}c^{k' +
+1}\)</span>,</p>
+<p>​</p>
+<p>​ 其中 $ i + j = i' + j' k' &lt; k' + 1 = k.$ 从而 <span class="math inline">\(\omega\in L(G)\)</span>.</p>
+<p>​ 若第 <span class="math inline">\(n\)</span> 步推导使用了产生式:</p>
+<p>​ <span class="math display">\[A\longrightarrow B,\]</span></p>
+<p>​ 考虑第 <span class="math inline">\(n - 1\)</span> 步. 若第 <span class="math inline">\(n - 1\)</span> 步推导使用了产生式:</p>
+<p>​ <span class="math display">\[A\longrightarrow bAc,\]</span></p>
+<p>​ 那么全部推导过程形如</p>
+<p>​ <span class="math display">\[S\mathop{\Longrightarrow}^{*}\limits
+pAq \Longrightarrow pbAcq \Longrightarrow pbBcq \Longrightarrow pbcq =
+\omega.\]</span></p>
+<p>​ 不妨考虑一个 <span class="math inline">\(n\)</span> 步的推导</p>
+<p>​ <span class="math display">\[S\mathop{\Longrightarrow}^{*}\limits
+pAq \Longrightarrow pBq \Longrightarrow pq.\]</span></p>
+<p>​ 由归纳假设, 串 <span class="math inline">\(pq\)</span> 形如 <span class="math inline">\(a^{i'}b^{j'}c^{k'},
+\mbox{其中}\thinspace i' + j' \le k'\)</span>.</p>
+<p>​ 那么串 <span class="math inline">\(\omega = pbcq\)</span> 形如 <span class="math inline">\(a^ib^jc^k = a^{i'}b^{j' + 1}c^{k' +
+1}\)</span>,</p>
+<p>​</p>
+<p>​ 其中 <span class="math inline">\(i + j = i' + j' + 1 \le
+k' + 1 = k.\)</span> 从而 <span class="math inline">\(\omega\in
+L(G)\)</span>.</p>
+<p>​ 若第 <span class="math inline">\(n - 1\)</span>
+步推导使用了产生式:</p>
+<p>​ <span class="math display">\[S\longrightarrow A,\]</span></p>
+<p>​ 那么考虑第 <span class="math inline">\(n - 2\)</span> 步. 易知第
+<span class="math inline">\(n - 2\)</span> 步推导只能使用了产生式:</p>
+<p>​ <span class="math display">\[S\longrightarrow aSc,\]</span></p>
+<p>​</p>
+<p>​ 那么全部推导过程形如</p>
+<p>​ <span class="math display">\[S\mathop{\Longrightarrow}^{*}\limits
+xSy \Longrightarrow xaScy \Longrightarrow xaAcy \Longrightarrow xaBcy =
+\Longrightarrow xacy \omega.\]</span></p>
+<p>​ 不妨考虑一个 <span class="math inline">\(n\)</span> 步的推导</p>
+<p>​ <span class="math display">\[S\mathop{\Longrightarrow}^{*}\limits
+xSy \Longrightarrow xAy \Longrightarrow xBy \Longrightarrow
+xy.\]</span></p>
+<p>​ 由归纳假设, 串 <span class="math inline">\(xy\)</span> 形如 <span class="math inline">\(a^{i'}b^{j'}c^{k'},
+\mbox{其中}\thinspace i' + j' \le k'\)</span>.</p>
+<p>​ 那么串 <span class="math inline">\(\omega = xacy\)</span> 形如 <span class="math inline">\(a^ib^jc^k = a^{i' + 1}b^{j'}c^{k' +
+1}\)</span>,</p>
+<p>​</p>
+<p>​ 其中 <span class="math inline">\(i + j = i' + 1 + j' \le
+k' + 1 = k.\)</span> 从而 <span class="math inline">\(\omega\in
+L(G)\)</span>.</p>
+<p>​ 至此归纳得证.</p>
+<h3 id="ex-3">*Ex 3</h3>
+<p>​ 一个可行的上下文无关文法是:</p>
+<p>​ <span class="math display">\[\begin{equation*}
+
+​        \begin{aligned}
+
+​            S &amp;\rightarrow BA \\
+
+​            A &amp;\rightarrow aAa \mid bAb \mid acBca \mid bcBcb \\
+
+​            B &amp;\rightarrow aB \mid bB \mid acB \mid bcB \mid
+\varepsilon.
+
+​        \end{aligned}
+
+​    \end{equation*}\]</span></p>
 
                 
             </div>
@@ -516,7 +1022,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://chengsx21.github.io/12/">http://chengsx21.github.io/12/</a>
+                    <a href="http://chengsx21.github.io/15/">http://chengsx21.github.io/15/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -554,8 +1060,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/CSAPP/">
-                                    <span class="chip bg-color">CSAPP</span>
+                                <a href="/tags/FL-A/">
+                                    <span class="chip bg-color">FL&amp;A</span>
                                 </a>
                             
                         </div>
@@ -633,7 +1139,7 @@
         repo: 'chengsx21.github.io',
         owner: 'chengsx21',
         admin: "chengsx21",
-        id: '2022-10-03T09-21-57',
+        id: '2022-10-12T10-03-03',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -665,23 +1171,23 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/13/">
+                <a href="/16/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="计算机系统概论 作业2">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="形式语言与自动机 作业2">
                         
-                        <span class="card-title">计算机系统概论 作业2</span>
+                        <span class="card-title">形式语言与自动机 作业2</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            CSAPP Hw2
+                            FL&A Hw2
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-10-06
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-10-15
                         </span>
                         <span class="publish-author">
                             
@@ -691,8 +1197,8 @@
                                     CS
                                 </a>
                             
-                            <a href="/categories/CS/CSAPP/" class="post-category">
-                                    CSAPP
+                            <a href="/categories/CS/FL-A/" class="post-category">
+                                    FL&A
                                 </a>
                             
                             
@@ -702,8 +1208,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/CSAPP/">
-                        <span class="chip bg-color">CSAPP</span>
+                    <a href="/tags/FL-A/">
+                        <span class="chip bg-color">FL&amp;A</span>
                     </a>
                     
                 </div>
@@ -717,34 +1223,30 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/11/">
+                <a href="/14/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Graphics">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="俄罗斯概况">
                         
-                        <span class="card-title">Graphics</span>
+                        <span class="card-title">俄罗斯概况</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            DSA CST 1-2 解题报告
+                            俄语(第二外国语)(1) 文化常识
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-09
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/CS/" class="post-category">
-                                    CS
-                                </a>
-                            
-                            <a href="/categories/CS/DSA/" class="post-category">
-                                    DSA
+                            <a href="/categories/Russian/" class="post-category">
+                                    Russian
                                 </a>
                             
                             
@@ -754,8 +1256,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/DSA/">
-                        <span class="chip bg-color">DSA</span>
+                    <a href="/tags/Russian/">
+                        <span class="chip bg-color">Russian</span>
                     </a>
                     
                 </div>
