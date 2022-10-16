@@ -343,38 +343,20 @@
                 
                 
                 
-                <a href="/categories/CS/" title="CS: 8">
+                <a href="/categories/CS/" title="CS: 9">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
                             style="background-color: #F9EBEA;">CS
-                        <span class="tag-length">8</span>
+                        <span class="tag-length">9</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/Maths/" title="Maths: 7">
+                <a href="/categories/CS/DSA/" title="DSA: 3">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F5EEF8;">Maths
-                        <span class="tag-length">7</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/CS/DSA/" title="DSA: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #D5F5E3;">DSA
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/Russian/" title="Russian: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #E8F8F5;">Russian
-                        <span class="tag-length">1</span>
+                            style="background-color: #F5EEF8;">DSA
+                        <span class="tag-length">3</span>
                     </span>
                 </a>
                 
@@ -382,8 +364,17 @@
                 <a href="/categories/CS/Other/" title="Other: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-active "
-                            style="background-color: #FEF9E7;">Other
+                            style="background-color: #D5F5E3;">Other
                         <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/Maths/" title="Maths: 7">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #E8F8F5;">Maths
+                        <span class="tag-length">7</span>
                     </span>
                 </a>
                 
@@ -391,7 +382,16 @@
                 <a href="/categories/CS/Git/" title="Git: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F8F9F9;">Git
+                            style="background-color: #FEF9E7;">Git
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/Russian/" title="Russian: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F8F9F9;">Russian
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -406,19 +406,10 @@
                 </a>
                 
                 
-                <a href="/categories/Maths/Algebra/" title="Algebra: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #D7BDE2;">Algebra
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/categories/CS/CSAPP/" title="CSAPP: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #A3E4D7;">CSAPP
+                            style="background-color: #D7BDE2;">CSAPP
                         <span class="tag-length">2</span>
                     </span>
                 </a>
@@ -427,7 +418,16 @@
                 <a href="/categories/Maths/Test/" title="Test: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #85C1E9;">Test
+                            style="background-color: #A3E4D7;">Test
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/Maths/Algebra/" title="Algebra: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #85C1E9;">Algebra
                         <span class="tag-length">2</span>
                     </span>
                 </a>
@@ -525,7 +525,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">17.7k</span>
+                        class="white-color">19.1k</span>
             
             
             
@@ -798,9 +798,24 @@ $(function () {
     
 
     
-    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
     
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 </html>

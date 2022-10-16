@@ -6,7 +6,7 @@
   <link href="http://chengsx21.github.io/atom.xml" rel="self"/>
   
   <link href="http://chengsx21.github.io/"/>
-  <updated>2022-10-15T03:07:16.488Z</updated>
+  <updated>2022-10-16T14:02:17.882Z</updated>
   <id>http://chengsx21.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Risk</title>
+    <link href="http://chengsx21.github.io/17/"/>
+    <id>http://chengsx21.github.io/17/</id>
+    <published>2022-10-17T13:51:21.000Z</published>
+    <updated>2022-10-16T14:02:17.882Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;cst-pa2&quot;&gt;CST PA2&lt;/h1&gt;
+&lt;h2 id=&quot;risk&quot;&gt;2-1 Risk&lt;/h2&gt;
+&lt;h3 id=&quot;算法构思&quot;&gt;算法构思&lt;/h3&gt;
+&lt;p&gt;本题的思路是先求出由每一天回溯所得的最大单日确诊病例数,
+然后使用前缀和算法处理得到的最大病例数数组,</summary>
+        
+      
+    
+    
+    
+    <category term="CS" scheme="http://chengsx21.github.io/categories/CS/"/>
+    
+    <category term="DSA" scheme="http://chengsx21.github.io/categories/CS/DSA/"/>
+    
+    
+    <category term="DSA" scheme="http://chengsx21.github.io/tags/DSA/"/>
+    
+  </entry>
   
   <entry>
     <title>形式语言与自动机 作业2</title>
