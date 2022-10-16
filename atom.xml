@@ -6,7 +6,7 @@
   <link href="http://chengsx21.github.io/atom.xml" rel="self"/>
   
   <link href="http://chengsx21.github.io/"/>
-  <updated>2022-10-16T14:02:17.882Z</updated>
+  <updated>2022-10-16T16:16:12.448Z</updated>
   <id>http://chengsx21.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Zuma</title>
+    <link href="http://chengsx21.github.io/18/"/>
+    <id>http://chengsx21.github.io/18/</id>
+    <published>2022-10-18T16:13:42.000Z</published>
+    <updated>2022-10-16T16:16:12.448Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;cst-lab1&quot;&gt;CST LAB1&lt;/h1&gt;
+&lt;h2 id=&quot;zuma&quot;&gt;Zuma&lt;/h2&gt;
+&lt;h3 id=&quot;代码-1&quot;&gt;代码 1&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;错误类型: &lt;code&gt;Runtime</summary>
+        
+      
+    
+    
+    
+    <category term="CS" scheme="http://chengsx21.github.io/categories/CS/"/>
+    
+    <category term="DSA" scheme="http://chengsx21.github.io/categories/CS/DSA/"/>
+    
+    
+    <category term="DSA" scheme="http://chengsx21.github.io/tags/DSA/"/>
+    
+  </entry>
   
   <entry>
     <title>Risk</title>
@@ -464,7 +495,7 @@ folder and its contents</summary>
     <link href="http://chengsx21.github.io/2/"/>
     <id>http://chengsx21.github.io/2/</id>
     <published>2022-08-29T06:00:00.000Z</published>
-    <updated>2022-10-11T01:16:52.816Z</updated>
+    <updated>2022-10-16T16:16:25.411Z</updated>
     
     
       
