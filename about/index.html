@@ -575,7 +575,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"CS","value":8},{"name":"DSA","value":2},{"name":"Maths","value":7},{"name":"Git","value":1},{"name":"Other","value":1},{"name":"Russian","value":1},{"name":"FL&A","value":2},{"name":"Algebra","value":2},{"name":"Geometry","value":3},{"name":"Test","value":2},{"name":"CSAPP","value":2}],
+                data: [{"name":"CS","value":8},{"name":"Maths","value":7},{"name":"DSA","value":2},{"name":"Russian","value":1},{"name":"Other","value":1},{"name":"Git","value":1},{"name":"FL&A","value":2},{"name":"Algebra","value":2},{"name":"CSAPP","value":2},{"name":"Test","value":2},{"name":"Geometry","value":3}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -599,7 +599,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["Maths","DSA","FL&A","CSAPP","Git","Programming","Russian"]
+                data: ["Maths","DSA","FL&A","CSAPP","Git","Russian","Programming"]
             }
         ],
         yAxis: [
@@ -720,12 +720,6 @@
             
             
             
-            <a href="/tags/Programming/">
-                <span class="chip center-align waves-effect waves-light chip-default">Programming</span>
-            </a>
-            
-            
-            
             <a href="/tags/Maths/">
                 <span class="chip center-align waves-effect waves-light chip-default">Maths</span>
             </a>
@@ -734,6 +728,12 @@
             
             <a href="/tags/Russian/">
                 <span class="chip center-align waves-effect waves-light chip-default">Russian</span>
+            </a>
+            
+            
+            
+            <a href="/tags/Programming/">
+                <span class="chip center-align waves-effect waves-light chip-default">Programming</span>
             </a>
             
             
@@ -1098,24 +1098,9 @@ $(function () {
     
 
     
-    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
     
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 </html>
