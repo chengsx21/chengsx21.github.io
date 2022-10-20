@@ -6,7 +6,7 @@
   <link href="http://chengsx21.github.io/atom.xml" rel="self"/>
   
   <link href="http://chengsx21.github.io/"/>
-  <updated>2022-10-16T16:16:12.448Z</updated>
+  <updated>2022-10-20T09:20:27.311Z</updated>
   <id>http://chengsx21.github.io/</id>
   
   <author>
@@ -17,11 +17,41 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Polynomial</title>
+    <link href="http://chengsx21.github.io/19/"/>
+    <id>http://chengsx21.github.io/19/</id>
+    <published>2022-10-20T09:18:57.000Z</published>
+    <updated>2022-10-20T09:20:27.311Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;cst-pa2&quot;&gt;CST PA2&lt;/h1&gt;
+&lt;h2 id=&quot;polynomial&quot;&gt;2-1 Polynomial&lt;/h2&gt;
+&lt;h3 id=&quot;算法构思&quot;&gt;算法构思&lt;/h3&gt;
+&lt;p&gt;将待计算字符串中的常数对象和变量</summary>
+        
+      
+    
+    
+    
+    <category term="CS" scheme="http://chengsx21.github.io/categories/CS/"/>
+    
+    <category term="DSA" scheme="http://chengsx21.github.io/categories/CS/DSA/"/>
+    
+    
+    <category term="DSA" scheme="http://chengsx21.github.io/tags/DSA/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Zuma</title>
     <link href="http://chengsx21.github.io/18/"/>
     <id>http://chengsx21.github.io/18/</id>
     <published>2022-10-18T16:13:42.000Z</published>
-    <updated>2022-10-16T16:16:12.448Z</updated>
+    <updated>2022-10-20T09:18:59.838Z</updated>
     
     
       
