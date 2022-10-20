@@ -6,7 +6,7 @@
   <link href="http://chengsx21.github.io/atom.xml" rel="self"/>
   
   <link href="http://chengsx21.github.io/"/>
-  <updated>2022-10-20T09:26:46.409Z</updated>
+  <updated>2022-10-20T09:41:22.288Z</updated>
   <id>http://chengsx21.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://chengsx21.github.io/19/"/>
     <id>http://chengsx21.github.io/19/</id>
     <published>2022-10-20T09:18:57.000Z</published>
-    <updated>2022-10-20T09:26:46.409Z</updated>
+    <updated>2022-10-20T09:41:22.288Z</updated>
     
     
       
@@ -29,7 +29,7 @@
         
         
     <summary type="html">&lt;h1 id=&quot;cst-pa2&quot;&gt;CST PA2&lt;/h1&gt;
-&lt;h2 id=&quot;polynomial&quot;&gt;2-1 Polynomial&lt;/h2&gt;
+&lt;h2 id=&quot;polynomial&quot;&gt;2-2 Polynomial&lt;/h2&gt;
 &lt;h3 id=&quot;算法构思&quot;&gt;算法构思&lt;/h3&gt;
 &lt;p&gt;将待计算字符串中的常数对象和变量</summary>
         
