@@ -6,7 +6,7 @@
   <link href="http://chengsx21.github.io/atom.xml" rel="self"/>
   
   <link href="http://chengsx21.github.io/"/>
-  <updated>2022-10-20T09:41:22.288Z</updated>
+  <updated>2022-10-29T08:11:41.932Z</updated>
   <id>http://chengsx21.github.io/</id>
   
   <author>
@@ -17,11 +17,41 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>计算机系统概论 作业3</title>
+    <link href="http://chengsx21.github.io/20/"/>
+    <id>http://chengsx21.github.io/20/</id>
+    <published>2022-10-26T07:42:44.000Z</published>
+    <updated>2022-10-29T08:11:41.932Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;hw-3&quot;&gt;HW 3&lt;/h1&gt;
+&lt;ol type=&quot;1&quot;&gt;
+&lt;li&gt;&lt;p&gt;编程解决猴子吃桃问题: 每天吃一半再多吃一个,
+第十天想吃时候只剩一个, 问总共有多少. 该程序的 &lt;span class=&quot;math inline&quot;&gt;\(C\)&lt;/span&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="CS" scheme="http://chengsx21.github.io/categories/CS/"/>
+    
+    <category term="CSAPP" scheme="http://chengsx21.github.io/categories/CS/CSAPP/"/>
+    
+    
+    <category term="CSAPP" scheme="http://chengsx21.github.io/tags/CSAPP/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Polynomial</title>
     <link href="http://chengsx21.github.io/19/"/>
     <id>http://chengsx21.github.io/19/</id>
-    <published>2022-10-20T09:18:57.000Z</published>
-    <updated>2022-10-20T09:41:22.288Z</updated>
+    <published>2022-10-22T09:18:57.000Z</published>
+    <updated>2022-10-29T07:45:34.460Z</updated>
     
     
       
