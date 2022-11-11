@@ -2100,7 +2100,7 @@ p.search-result-summary{
     color: #000;
 }
 
-.nav-show i[aria-hidden=true] {
+.nav-show i[aria-hidden=false] {
     -webkit-transform: rotate(180deg) !important;
     -moz-transform: rotate(180deg) !important;
     -o-transform: rotate(180deg) !important;

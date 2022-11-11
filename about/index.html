@@ -62,8 +62,8 @@
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
     <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
 <meta name="generator" content="Hexo 6.2.0">
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="Endeavor" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<link rel="alternate" href="/atom.xml" title="Endeavor" type="application/atom+xml">
 </head>
 
 
@@ -523,7 +523,7 @@
         },
         xAxis: {
             type: 'category',
-            data: ["2021-10","2021-11","2021-12","2022-01","2022-02","2022-03","2022-04","2022-05","2022-06","2022-07","2022-08","2022-09","2022-10"]
+            data: ["2021-11","2021-12","2022-01","2022-02","2022-03","2022-04","2022-05","2022-06","2022-07","2022-08","2022-09","2022-10","2022-11"]
         },
         yAxis: {
             type: 'value',
@@ -533,7 +533,7 @@
                 name: '文章篇数',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [0,0,0,0,0,0,0,0,0,0,2,9,9],
+                data: [0,0,0,0,0,0,0,0,0,2,9,9,0],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
@@ -575,7 +575,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"CS","value":12},{"name":"DSA","value":5},{"name":"Other","value":1},{"name":"Git","value":1},{"name":"Maths","value":7},{"name":"Russian","value":1},{"name":"FL&A","value":2},{"name":"Algebra","value":2},{"name":"Geometry","value":3},{"name":"CSAPP","value":3},{"name":"Test","value":2}],
+                data: [{"name":"CS","value":12},{"name":"DSA","value":5},{"name":"Other","value":1},{"name":"Maths","value":7},{"name":"Git","value":1},{"name":"Russian","value":1},{"name":"Algebra","value":2},{"name":"Geometry","value":3},{"name":"CSAPP","value":3},{"name":"FL&A","value":2},{"name":"Test","value":2}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -738,14 +738,14 @@
             
             
             
-            <a href="/tags/FL-A/">
-                <span class="chip center-align waves-effect waves-light chip-default">FL&A</span>
+            <a href="/tags/CSAPP/">
+                <span class="chip center-align waves-effect waves-light chip-default">CSAPP</span>
             </a>
             
             
             
-            <a href="/tags/CSAPP/">
-                <span class="chip center-align waves-effect waves-light chip-default">CSAPP</span>
+            <a href="/tags/FL-A/">
+                <span class="chip center-align waves-effect waves-light chip-default">FL&A</span>
             </a>
             
             
@@ -837,11 +837,6 @@
                     <span id="busuanzi_value_site_pv" class="white-color"></span>
             </span>
             
-            
-                <span id="busuanzi_container_site_uv">
-                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
-                    <span id="busuanzi_value_site_uv" class="white-color"></span>
-            </span>
             
             <br>
 
@@ -1098,9 +1093,24 @@ $(function () {
     
 
     
-    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
     
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 </html>
