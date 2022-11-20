@@ -374,14 +374,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.3k
+                    2.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    9 分
+                    10 分
                 </div>
                 
 
@@ -680,14 +680,23 @@ coroutine_entry:
 <li><p><strong>设计更加高效的实现方法:</strong></p>
 <ul>
 <li>在进行 <code>parallel_execute_all()</code> 时, 首先将所有协程的
-<code>index</code> 依次加入一个有序 <code>list</code>, 通过轮询该
-<code>list</code> 获取 <code>index</code>, 并切换至相应的协程,
-若该协程状态为 <code>ready</code>, 则将其 <code>index</code>
-从链表中删除, 并切换至该协程运行;</li>
-<li>同时在每次轮询时维护一个变量 <code>time</code>, 记录当前各协程的
-<code>ready_func</code> 可将自身协程状态置为 <code>ready</code>
-的时间点中最小的那一个, 在此时间之前不进行轮询.</li>
-<li>如此进行操作可以节省无效轮询的时间占用.</li>
+<code>index</code> 依次加入一个 <code>_coroutine</code> 队列,
+依次弹出队首 <code>index</code> 并切换至相应的协程. 若从该协程切出时,
+协程状态为 <code>unready</code>, 则将其 <code>index</code> 加入一个
+<code>_sleep</code> 优先队列; 若从该协程切出时, 协程状态为
+<code>ready</code> 且 <code>unfinished</code>, 则将其加入原
+<code>_coroutine</code> 队列.</li>
+<li>在每次向 <code>_sleep</code> 加入 <code>index</code> 时为
+<code>index</code> 维护一个变量 <code>time</code>, 它记录当前协程调用
+<code>sleep(ms)</code> 后可将自身协程状态置为 <code>ready</code>
+的时间点, 即 <code>time = ms + passed_time</code>, 其中
+<code>passed_time</code> 为调用 <code>parallel_execute_all()</code>
+后经过的时间. 以 <code>time</code> 为排序依据将 <code>index</code> 加入
+<code>_sleep</code>.</li>
+<li>在 <code>_coroutine</code> 为空队列后, 且时间到达队首元素的
+<code>time</code> 时, 弹出 <code>_sleep</code> 队首元素, 更新其
+<code>ready</code> 状态并切入相应协程.
+通过如此操作可以节省无效轮询的时间占用.</li>
 </ul></li>
 </ul>
 <h2 id="task-3-利用协程优化二分查找">Task 3: 利用协程优化二分查找</h2>
@@ -1330,7 +1339,7 @@ coroutine_entry:
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">30.2k</span>
+                        class="white-color">30.3k</span>
             
             
             
