@@ -6,7 +6,7 @@
   <link href="http://chengsx21.github.io/atom.xml" rel="self"/>
   
   <link href="http://chengsx21.github.io/"/>
-  <updated>2022-11-20T06:57:30.164Z</updated>
+  <updated>2022-11-20T07:04:01.548Z</updated>
   <id>http://chengsx21.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Russian Midterm Revision</title>
+    <link href="http://chengsx21.github.io/25/"/>
+    <id>http://chengsx21.github.io/25/</id>
+    <published>2022-11-10T07:00:13.000Z</published>
+    <updated>2022-11-20T07:04:01.548Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;及物动词&quot;&gt;&lt;strong&gt;及物动词&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;есть;&lt;/li&gt;
+&lt;li&gt;делать, читать, считать, искать, знать, слушать;&lt;/li&gt;
+&lt;li&gt;смотреть,</summary>
+        
+      
+    
+    
+    
+    <category term="Russian" scheme="http://chengsx21.github.io/categories/Russian/"/>
+    
+    
+    <category term="Russian" scheme="http://chengsx21.github.io/tags/Russian/"/>
+    
+  </entry>
   
   <entry>
     <title>形式语言与自动机 作业5</title>
@@ -576,34 +605,6 @@ folder and its contents</summary>
     <category term="Maths" scheme="http://chengsx21.github.io/categories/Maths/"/>
     
     <category term="Algebra" scheme="http://chengsx21.github.io/categories/Maths/Algebra/"/>
-    
-    
-    <category term="Maths" scheme="http://chengsx21.github.io/tags/Maths/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>几何一窥</title>
-    <link href="http://chengsx21.github.io/5/"/>
-    <id>http://chengsx21.github.io/5/</id>
-    <published>2022-09-09T08:33:04.000Z</published>
-    <updated>2022-11-20T05:49:12.156Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;strong&gt;Problem:&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;设&lt;span class=&quot;math inline&quot;&gt;\(O, H\)&lt;/span&gt;分别为&lt;span class=&quot;math inline&quot;&gt;\(\triangle ABC\)&lt;/span&gt;的外心和垂心,</summary>
-        
-      
-    
-    
-    
-    <category term="Maths" scheme="http://chengsx21.github.io/categories/Maths/"/>
-    
-    <category term="Geometry" scheme="http://chengsx21.github.io/categories/Maths/Geometry/"/>
     
     
     <category term="Maths" scheme="http://chengsx21.github.io/tags/Maths/"/>
