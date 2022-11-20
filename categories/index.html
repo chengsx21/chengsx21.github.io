@@ -361,19 +361,10 @@
                 </a>
                 
                 
-                <a href="/categories/CS/Git/" title="Git: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #D5F5E3;">Git
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/categories/Russian/" title="Russian: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #E8F8F5;">Russian
+                            style="background-color: #D5F5E3;">Russian
                         <span class="tag-length">2</span>
                     </span>
                 </a>
@@ -382,8 +373,17 @@
                 <a href="/categories/Maths/" title="Maths: 7">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #FEF9E7;">Maths
+                            style="background-color: #E8F8F5;">Maths
                         <span class="tag-length">7</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/CS/Git/" title="Git: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #FEF9E7;">Git
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
@@ -484,7 +484,7 @@
                     color: '#3C4858'
                 }
             },
-            indicator: [{"name":"CS","max":17},{"name":"DSA","max":17},{"name":"Git","max":17},{"name":"Russian","max":17},{"name":"Maths","max":17},{"name":"Other","max":17},{"name":"FL&A","max":17},{"name":"CSAPP","max":17},{"name":"Algebra","max":17},{"name":"Test","max":17},{"name":"Geometry","max":17}],
+            indicator: [{"name":"CS","max":17},{"name":"DSA","max":17},{"name":"Russian","max":17},{"name":"Maths","max":17},{"name":"Git","max":17},{"name":"Other","max":17},{"name":"FL&A","max":17},{"name":"CSAPP","max":17},{"name":"Algebra","max":17},{"name":"Test","max":17},{"name":"Geometry","max":17}],
             nameGap: 5,
             center: ['50%','55%'],
             radius: '66%'
@@ -495,7 +495,7 @@
             itemStyle: {normal: {areaStyle: {type: 'default'}}},
             data : [
                 {
-                    value : [16,5,1,2,7,1,5,4,2,2,3],
+                    value : [16,5,2,7,1,1,5,4,2,2,3],
                     name : '文章分类数量'
                 }
             ]
@@ -799,9 +799,24 @@ $(function () {
     
 
     
-    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
     
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 </html>
