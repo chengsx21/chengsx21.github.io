@@ -6,7 +6,7 @@
   <link href="http://chengsx21.github.io/atom.xml" rel="self"/>
   
   <link href="http://chengsx21.github.io/"/>
-  <updated>2022-11-19T18:24:37.386Z</updated>
+  <updated>2022-11-20T06:54:37.369Z</updated>
   <id>http://chengsx21.github.io/</id>
   
   <author>
@@ -17,11 +17,40 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>形式语言与自动机 作业5</title>
+    <link href="http://chengsx21.github.io/24/"/>
+    <id>http://chengsx21.github.io/24/</id>
+    <published>2022-11-20T06:46:33.000Z</published>
+    <updated>2022-11-20T06:54:37.369Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;必做题&quot;&gt;必做题&lt;/h2&gt;
+&lt;h3 id=&quot;ex-4.1.1-e&quot;&gt;Ex 4.1.1 (e)&lt;/h3&gt;
+&lt;p&gt;​ 对于任意的 &lt;span class=&quot;math inline&quot;&gt;\(n \ge 1\)&lt;/span&gt;, 存在 &lt;span class=&quot;math</summary>
+        
+      
+    
+    
+    
+    <category term="CS" scheme="http://chengsx21.github.io/categories/CS/"/>
+    
+    <category term="FL&amp;A" scheme="http://chengsx21.github.io/categories/CS/FL-A/"/>
+    
+    
+    <category term="FL&amp;A" scheme="http://chengsx21.github.io/tags/FL-A/"/>
+    
+  </entry>
+  
+  <entry>
     <title>计算机系统概论 Lab 1</title>
-    <link href="http://chengsx21.github.io/21/"/>
-    <id>http://chengsx21.github.io/21/</id>
-    <published>2022-11-19T18:19:39.000Z</published>
-    <updated>2022-11-19T18:24:37.386Z</updated>
+    <link href="http://chengsx21.github.io/23/"/>
+    <id>http://chengsx21.github.io/23/</id>
+    <published>2022-11-03T18:19:39.000Z</published>
+    <updated>2022-11-20T06:43:21.017Z</updated>
     
     
       
@@ -41,6 +70,66 @@
     
     
     <category term="CSAPP" scheme="http://chengsx21.github.io/tags/CSAPP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>形式语言与自动机 作业4</title>
+    <link href="http://chengsx21.github.io/22/"/>
+    <id>http://chengsx21.github.io/22/</id>
+    <published>2022-11-01T05:51:36.000Z</published>
+    <updated>2022-11-20T06:43:20.224Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;必做题&quot;&gt;必做题&lt;/h2&gt;
+&lt;h3 id=&quot;ex-3.2.1-c&quot;&gt;Ex 3.2.1 (c)&lt;/h3&gt;
+&lt;p&gt;​ 构造基础表达式:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/pic/27.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;​ 考虑只经过状态 &lt;span class=&quot;math</summary>
+        
+      
+    
+    
+    
+    <category term="CS" scheme="http://chengsx21.github.io/categories/CS/"/>
+    
+    <category term="FL&amp;A" scheme="http://chengsx21.github.io/categories/CS/FL-A/"/>
+    
+    
+    <category term="FL&amp;A" scheme="http://chengsx21.github.io/tags/FL-A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>形式语言与自动机 作业3</title>
+    <link href="http://chengsx21.github.io/21/"/>
+    <id>http://chengsx21.github.io/21/</id>
+    <published>2022-10-29T05:51:27.000Z</published>
+    <updated>2022-11-20T06:34:30.099Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;必做题&quot;&gt;必做题&lt;/h2&gt;
+&lt;h3 id=&quot;ex-2.2.2&quot;&gt;Ex 2.2.2&lt;/h3&gt;
+&lt;p&gt;​ 对任意状态 &lt;span class=&quot;math inline&quot;&gt;\(q\)&lt;/span&gt; 及串 &lt;span class=&quot;math</summary>
+        
+      
+    
+    
+    
+    <category term="CS" scheme="http://chengsx21.github.io/categories/CS/"/>
+    
+    <category term="FL&amp;A" scheme="http://chengsx21.github.io/categories/CS/FL-A/"/>
+    
+    
+    <category term="FL&amp;A" scheme="http://chengsx21.github.io/tags/FL-A/"/>
     
   </entry>
   
@@ -79,7 +168,7 @@
     <link href="http://chengsx21.github.io/19/"/>
     <id>http://chengsx21.github.io/19/</id>
     <published>2022-10-22T09:18:57.000Z</published>
-    <updated>2022-10-29T07:45:34.460Z</updated>
+    <updated>2022-11-20T05:48:21.057Z</updated>
     
     
       
@@ -140,7 +229,7 @@
     <link href="http://chengsx21.github.io/17/"/>
     <id>http://chengsx21.github.io/17/</id>
     <published>2022-10-17T13:51:21.000Z</published>
-    <updated>2022-10-16T14:02:17.882Z</updated>
+    <updated>2022-11-20T05:49:32.462Z</updated>
     
     
       
@@ -171,7 +260,7 @@
     <link href="http://chengsx21.github.io/16/"/>
     <id>http://chengsx21.github.io/16/</id>
     <published>2022-10-15T02:59:38.000Z</published>
-    <updated>2022-10-15T03:07:16.488Z</updated>
+    <updated>2022-11-20T05:49:42.558Z</updated>
     
     
       
@@ -498,7 +587,7 @@ folder and its contents</summary>
     <link href="http://chengsx21.github.io/5/"/>
     <id>http://chengsx21.github.io/5/</id>
     <published>2022-09-09T08:33:04.000Z</published>
-    <updated>2022-10-11T01:17:37.446Z</updated>
+    <updated>2022-11-20T05:49:12.156Z</updated>
     
     
       
@@ -515,92 +604,6 @@ folder and its contents</summary>
     <category term="Maths" scheme="http://chengsx21.github.io/categories/Maths/"/>
     
     <category term="Geometry" scheme="http://chengsx21.github.io/categories/Maths/Geometry/"/>
-    
-    
-    <category term="Maths" scheme="http://chengsx21.github.io/tags/Maths/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>高联一试模拟试题解答</title>
-    <link href="http://chengsx21.github.io/4/"/>
-    <id>http://chengsx21.github.io/4/</id>
-    <published>2022-09-05T07:00:00.000Z</published>
-    <updated>2022-10-11T01:17:22.765Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;全国高中数学联合竞赛一试模拟试题&quot;&gt;全国高中数学联合竞赛一试模拟试题&lt;/h1&gt;
-&lt;h4 id=&quot;一填空题&quot;&gt;&lt;strong&gt;一、填空题&lt;/strong&gt;&lt;/h4&gt;
-&lt;p&gt;&lt;strong&gt;1. &lt;/strong&gt; 若点&lt;span class=&quot;math</summary>
-        
-      
-    
-    
-    
-    <category term="Maths" scheme="http://chengsx21.github.io/categories/Maths/"/>
-    
-    <category term="Test" scheme="http://chengsx21.github.io/categories/Maths/Test/"/>
-    
-    
-    <category term="Maths" scheme="http://chengsx21.github.io/tags/Maths/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>几何一窥</title>
-    <link href="http://chengsx21.github.io/3/"/>
-    <id>http://chengsx21.github.io/3/</id>
-    <published>2022-09-02T08:33:04.000Z</published>
-    <updated>2022-10-11T01:17:06.595Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;strong&gt;Problem:&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;在&lt;span class=&quot;math inline&quot;&gt;\(\triangle ABC\)&lt;/span&gt;中, &lt;span class=&quot;math inline&quot;&gt;\(\angle</summary>
-        
-      
-    
-    
-    
-    <category term="Maths" scheme="http://chengsx21.github.io/categories/Maths/"/>
-    
-    <category term="Geometry" scheme="http://chengsx21.github.io/categories/Maths/Geometry/"/>
-    
-    
-    <category term="Maths" scheme="http://chengsx21.github.io/tags/Maths/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>高联一试模拟试题</title>
-    <link href="http://chengsx21.github.io/2/"/>
-    <id>http://chengsx21.github.io/2/</id>
-    <published>2022-08-29T06:00:00.000Z</published>
-    <updated>2022-10-16T16:16:25.411Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;全国高中数学联合竞赛一试模拟试题&quot;&gt;全国高中数学联合竞赛一试模拟试题&lt;/h1&gt;
-&lt;h4 id=&quot;一填空题&quot;&gt;&lt;strong&gt;一、填空题&lt;/strong&gt;&lt;/h4&gt;
-&lt;p&gt;&lt;strong&gt;1. &lt;/strong&gt; 若点&lt;span class=&quot;math</summary>
-        
-      
-    
-    
-    
-    <category term="Maths" scheme="http://chengsx21.github.io/categories/Maths/"/>
-    
-    <category term="Test" scheme="http://chengsx21.github.io/categories/Maths/Test/"/>
     
     
     <category term="Maths" scheme="http://chengsx21.github.io/tags/Maths/"/>
