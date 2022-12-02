@@ -6,7 +6,7 @@
   <link href="http://chengsx21.github.io/atom.xml" rel="self"/>
   
   <link href="http://chengsx21.github.io/"/>
-  <updated>2022-11-20T07:06:53.534Z</updated>
+  <updated>2022-12-02T10:01:02.836Z</updated>
   <id>http://chengsx21.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>HashFun</title>
+    <link href="http://chengsx21.github.io/26/"/>
+    <id>http://chengsx21.github.io/26/</id>
+    <published>2022-11-13T09:58:01.000Z</published>
+    <updated>2022-12-02T10:01:02.836Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;cst-lab2&quot;&gt;CST LAB2&lt;/h1&gt;
+&lt;h2 id=&quot;hashfun&quot;&gt;HashFun&lt;/h2&gt;
+&lt;h3 id=&quot;策略实现-396字&quot;&gt;策略实现 (396字)&lt;/h3&gt;
+&lt;h4</summary>
+        
+      
+    
+    
+    
+    <category term="CS" scheme="http://chengsx21.github.io/categories/CS/"/>
+    
+    <category term="DSA" scheme="http://chengsx21.github.io/categories/CS/DSA/"/>
+    
+    
+    <category term="DSA" scheme="http://chengsx21.github.io/tags/DSA/"/>
+    
+  </entry>
   
   <entry>
     <title>Russian Midterm Revision</title>
@@ -227,7 +257,7 @@
     <link href="http://chengsx21.github.io/18/"/>
     <id>http://chengsx21.github.io/18/</id>
     <published>2022-10-18T16:13:42.000Z</published>
-    <updated>2022-10-20T09:18:59.838Z</updated>
+    <updated>2022-12-02T10:00:11.458Z</updated>
     
     
       
@@ -569,34 +599,6 @@ folder and its contents</summary>
 &lt;h3 id=&quot;definition-1&quot;&gt;Definition 1&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;给定线性空间 &lt;span class=&quot;math</summary>
-        
-      
-    
-    
-    
-    <category term="Maths" scheme="http://chengsx21.github.io/categories/Maths/"/>
-    
-    <category term="Algebra" scheme="http://chengsx21.github.io/categories/Maths/Algebra/"/>
-    
-    
-    <category term="Maths" scheme="http://chengsx21.github.io/tags/Maths/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>代数一隅</title>
-    <link href="http://chengsx21.github.io/6/"/>
-    <id>http://chengsx21.github.io/6/</id>
-    <published>2022-09-12T01:59:14.000Z</published>
-    <updated>2022-10-11T01:18:00.224Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;strong&gt;Problem:&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;正项数列 &lt;span class=&quot;math inline&quot;&gt;\(\{a_n\}\)&lt;/span&gt; 满足 &lt;span class=&quot;math</summary>
         
       
     
