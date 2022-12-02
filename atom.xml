@@ -6,7 +6,7 @@
   <link href="http://chengsx21.github.io/atom.xml" rel="self"/>
   
   <link href="http://chengsx21.github.io/"/>
-  <updated>2022-12-02T10:04:10.024Z</updated>
+  <updated>2022-12-02T10:16:47.815Z</updated>
   <id>http://chengsx21.github.io/</id>
   
   <author>
@@ -15,6 +15,127 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Nearest Neighbour</title>
+    <link href="http://chengsx21.github.io/30/"/>
+    <id>http://chengsx21.github.io/30/</id>
+    <published>2022-11-23T10:11:36.000Z</published>
+    <updated>2022-12-02T10:16:47.815Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;cst-pa3&quot;&gt;CST PA3&lt;/h1&gt;
+&lt;h2 id=&quot;nearest-neighbour&quot;&gt;3-6 Nearest Neighbour&lt;/h2&gt;
+&lt;h3 id=&quot;算法构思&quot;&gt;算法构思&lt;/h3&gt;
+&lt;p&gt;本题需使用 &lt;code&gt;KD-Tree&lt;/code&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="CS" scheme="http://chengsx21.github.io/categories/CS/"/>
+    
+    <category term="DSA" scheme="http://chengsx21.github.io/categories/CS/DSA/"/>
+    
+    
+    <category term="DSA" scheme="http://chengsx21.github.io/tags/DSA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Build</title>
+    <link href="http://chengsx21.github.io/29/"/>
+    <id>http://chengsx21.github.io/29/</id>
+    <published>2022-11-21T10:11:03.000Z</published>
+    <updated>2022-12-02T10:15:43.170Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;cst-pa3&quot;&gt;CST PA3&lt;/h1&gt;
+&lt;h2 id=&quot;build&quot;&gt;3-1 Build&lt;/h2&gt;
+&lt;h3 id=&quot;算法构思&quot;&gt;算法构思&lt;/h3&gt;
+&lt;p&gt;采用 &lt;code&gt;node&lt;/code&gt; 类存储每个节点对应的信息.&lt;/p&gt;
+&lt;pre</summary>
+        
+      
+    
+    
+    
+    <category term="CS" scheme="http://chengsx21.github.io/categories/CS/"/>
+    
+    <category term="DSA" scheme="http://chengsx21.github.io/categories/CS/DSA/"/>
+    
+    
+    <category term="DSA" scheme="http://chengsx21.github.io/tags/DSA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Kidd</title>
+    <link href="http://chengsx21.github.io/28/"/>
+    <id>http://chengsx21.github.io/28/</id>
+    <published>2022-11-18T10:10:48.000Z</published>
+    <updated>2022-12-02T10:14:35.929Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;cst-pa3&quot;&gt;CST PA3&lt;/h1&gt;
+&lt;h2 id=&quot;kidd&quot;&gt;3-4-2 Kidd&lt;/h2&gt;
+&lt;h3 id=&quot;算法构思&quot;&gt;算法构思&lt;/h3&gt;
+&lt;p&gt;本题需使用 &lt;code&gt;Segment Tree&lt;/code&gt; 数据结构,</summary>
+        
+      
+    
+    
+    
+    <category term="CS" scheme="http://chengsx21.github.io/categories/CS/"/>
+    
+    <category term="DSA" scheme="http://chengsx21.github.io/categories/CS/DSA/"/>
+    
+    
+    <category term="DSA" scheme="http://chengsx21.github.io/tags/DSA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Not Found</title>
+    <link href="http://chengsx21.github.io/27/"/>
+    <id>http://chengsx21.github.io/27/</id>
+    <published>2022-11-16T10:11:23.000Z</published>
+    <updated>2022-12-02T10:13:16.217Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;cst-pa3&quot;&gt;CST PA3&lt;/h1&gt;
+&lt;h2 id=&quot;not-found&quot;&gt;3-2 Not Found&lt;/h2&gt;
+&lt;h3 id=&quot;算法构思&quot;&gt;算法构思&lt;/h3&gt;
+&lt;p&gt;注意到 &lt;span class=&quot;math inline&quot;&gt;\(A\)&lt;/span&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="CS" scheme="http://chengsx21.github.io/categories/CS/"/>
+    
+    <category term="DSA" scheme="http://chengsx21.github.io/categories/CS/DSA/"/>
+    
+    
+    <category term="DSA" scheme="http://chengsx21.github.io/tags/DSA/"/>
+    
+  </entry>
   
   <entry>
     <title>HashFun</title>
@@ -494,122 +615,6 @@
     
     
     <category term="DSA" scheme="http://chengsx21.github.io/tags/DSA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>A+B Problem</title>
-    <link href="http://chengsx21.github.io/10/"/>
-    <id>http://chengsx21.github.io/10/</id>
-    <published>2022-09-27T01:45:16.000Z</published>
-    <updated>2022-10-11T01:18:58.155Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;cst-pa1&quot;&gt;CST PA1&lt;/h1&gt;
-&lt;h2 id=&quot;ab-problem&quot;&gt;1-1 A+B Problem&lt;/h2&gt;
-&lt;h3</summary>
-        
-      
-    
-    
-    
-    <category term="CS" scheme="http://chengsx21.github.io/categories/CS/"/>
-    
-    <category term="DSA" scheme="http://chengsx21.github.io/categories/CS/DSA/"/>
-    
-    
-    <category term="DSA" scheme="http://chengsx21.github.io/tags/DSA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Git入门学习</title>
-    <link href="http://chengsx21.github.io/9/"/>
-    <id>http://chengsx21.github.io/9/</id>
-    <published>2022-09-23T11:26:23.000Z</published>
-    <updated>2022-10-11T01:18:41.768Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;what-are-vcss&quot;&gt;What Are VCSs?&lt;/h2&gt;
-&lt;p&gt;Version control systems (VCSs) are tools used to track changes to a
-folder and its contents</summary>
-        
-      
-    
-    
-    
-    <category term="CS" scheme="http://chengsx21.github.io/categories/CS/"/>
-    
-    <category term="Git" scheme="http://chengsx21.github.io/categories/CS/Git/"/>
-    
-    
-    <category term="Git" scheme="http://chengsx21.github.io/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>几何一窥</title>
-    <link href="http://chengsx21.github.io/8/"/>
-    <id>http://chengsx21.github.io/8/</id>
-    <published>2022-09-19T08:33:04.000Z</published>
-    <updated>2022-10-11T01:18:27.905Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;strong&gt;Problem:&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;math inline&quot;&gt;\(I\)&lt;/span&gt;是&lt;span class=&quot;math inline&quot;&gt;\(\triangle ABC\)&lt;/span&gt;内心, &lt;span</summary>
-        
-      
-    
-    
-    
-    <category term="Maths" scheme="http://chengsx21.github.io/categories/Maths/"/>
-    
-    <category term="Geometry" scheme="http://chengsx21.github.io/categories/Maths/Geometry/"/>
-    
-    
-    <category term="Maths" scheme="http://chengsx21.github.io/tags/Maths/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>高等代数选讲</title>
-    <link href="http://chengsx21.github.io/7/"/>
-    <id>http://chengsx21.github.io/7/</id>
-    <published>2022-09-16T14:45:24.000Z</published>
-    <updated>2022-10-11T01:18:13.139Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;chapter-1-抽象线性空间理论&quot;&gt;Chapter 1 抽象线性空间理论&lt;/h2&gt;
-&lt;h3 id=&quot;definition-1&quot;&gt;Definition 1&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;给定线性空间 &lt;span class=&quot;math</summary>
-        
-      
-    
-    
-    
-    <category term="Maths" scheme="http://chengsx21.github.io/categories/Maths/"/>
-    
-    <category term="Algebra" scheme="http://chengsx21.github.io/categories/Maths/Algebra/"/>
-    
-    
-    <category term="Maths" scheme="http://chengsx21.github.io/tags/Maths/"/>
     
   </entry>
   

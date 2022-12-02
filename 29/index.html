@@ -4,8 +4,8 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="A+B Problem, Endeavor">
-    <meta name="description" content="DSA CST 1-1 解题报告">
+    <meta name="keywords" content="Build, Endeavor">
+    <meta name="description" content="DSA CST 3-1 解题报告">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>A+B Problem | Endeavor</title>
+    <title>Build | Endeavor</title>
     <link rel="icon" type="image/png" href="/image/favicon.png">
     
     <style>
@@ -302,12 +302,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">A+B Problem</h1>
+                    <h1 class="description center-align post-title">Build</h1>
                 </div>
             </div>
         </div>
@@ -360,28 +360,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-09-27
+                    2022-11-21
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-10-11
+                    2022-12-02
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    744
+                    1.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    6 分
                 </div>
                 
 
@@ -404,78 +404,189 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="cst-pa1">CST PA1</h1>
-<h2 id="ab-problem">1-1 A+B Problem</h2>
+                <h1 id="cst-pa3">CST PA3</h1>
+<h2 id="build">3-1 Build</h2>
 <h3 id="算法构思">算法构思</h3>
-<p>一开始考虑使用普通的高精度乘法处理本题:</p>
-<blockquote>
-<p>使用 <span class="math inline">\(\text{string}\)</span>
-存储读入的长正整数 <span class="math inline">\(a = \overline{a_{n -
-1}a_{n - 2}\cdots a_1a_0}\)</span>, <span class="math inline">\(b =
-\overline{b_{m - 1}b_{m - 2}\cdots b_1b_0}\)</span>, 并逐位计算乘积
-<span class="math inline">\(c = \overline{c_{l - 1}c_{l - 2}\cdots
-c_1c_0}\)</span>, 满足 <span class="math inline">\(c_k = (\Sigma a_ib_{k
-- i} + d_k) / 10\)</span>, 其中 <span class="math inline">\(d_k\)</span>
-为计算 <span class="math inline">\(c_{k - 1}\)</span>
-过程产生的进位溢出, 满足 <span class="math inline">\(d_k = (\Sigma
-a_ib_{k - 1 - i} + d_{k - 1}) \% 10\)</span>.</p>
-</blockquote>
-<p>美中不足的是, 这种处理方法计算次数过多, 消耗时间过长,
-因此考虑采用压位高精度乘法, 即在上述算法中乘数的每位数字均存入一个 <span class="math inline">\(8\)</span> 位整数, 而非一个简单的十进制整数.
-这样扩大了参与单次计算的数据位数, 进而减少了计算次数,
-降低了算法耗时.</p>
-<p>由于 <span class="math inline">\(\text{int}\)</span> 的范围为 <span class="math inline">\([- 2^{31}, 2^{31} - 1]\)</span>, 其中 <span class="math inline">\(2^{31} - 1 &lt; 10^8 * 10^8\)</span>, 在进行 <span class="math inline">\(8\)</span> 位数运算时可能会产生溢出, 因此不可选用
-<span class="math inline">\(\text{int}\)</span> 存储乘数;</p>
-<p>注意到 <span class="math inline">\(\text{long long}\)</span> 的范围为
-<span class="math inline">\([- 2^{63}, 2^{63} - 1]\)</span>, 其中 <span class="math inline">\(2^{63} - 1 &gt; 10^8 * 10^8\)</span>, 因此这里选用
-<span class="math inline">\(\text{long long}\)</span> 数组来存储乘数.
-本题也就相当于模拟 <span class="math inline">\(100,000,000\)</span>
-进制的乘法. 本题算法思路如下:</p>
-<blockquote>
-<p>使用 <span class="math inline">\(\text{long long}\)</span>
-数组存储读入的长正整数 <span class="math inline">\(a =
-\overline{a_{n' - 1}a_{n' - 2}\cdots a_1a_0}\)</span>, <span class="math inline">\(b = \overline{b_{m' - 1}b_{m' - 2}\cdots
-b_1b_0}\)</span>, 其中 <span class="math inline">\(a_i, b_j (1\le i\le
-n', 1\le j\le m')\)</span> 均为 <span class="math inline">\(8\)</span> 位整数.
-剩下的仿照上文所述的乘法计算及进位过程即可.</p>
-</blockquote>
-<p>代码中的 <code>mul1</code>、 <code>mul2</code> 数组相当于此处的 <span class="math inline">\(a, b\)</span>, 而 <code>answer</code>
-数组记录了相应 <span class="math inline">\(c\)</span> 的取值.</p>
-<h3 id="参考资料">参考资料</h3>
-<p>使用了一个快速将 <span class="math inline">\(\text{string}\)</span>
-按每八位读入数组的 <span class="math inline">\(trick\)</span>,
-主要参考了<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/369302523">此文章</a>,
-调用了 <code>&lt;stdio.h&gt;</code> 中的 <code>sscanf()</code> 函数.</p>
-<h3 id="复杂度估计">复杂度估计</h3>
-<p>算法时间复杂度主要来自乘法运算与进位过程:</p>
-<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> 
-<span class="token comment">// Line 48 </span>
-<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> LEN<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">int</span> start <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> i <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">-</span> real_len2<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> finish <span class="token operator">=</span> <span class="token function">min</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> real_len1 <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> start<span class="token punctuation">;</span> j <span class="token operator">&lt;=</span> finish<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
-        answer<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+=</span> mul1<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">*</span> mul2<span class="token punctuation">[</span>i <span class="token operator">-</span> j<span class="token punctuation">]</span><span class="token punctuation">;</span> 
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>answer<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&gt;=</span> MAX<span class="token punctuation">)</span> <span class="token punctuation">{</span>                 
-        answer<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+=</span> answer<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">/</span> MAX<span class="token punctuation">;</span>
-        answer<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">%=</span> MAX<span class="token punctuation">;</span>
+<p>采用 <code>node</code> 类存储每个节点对应的信息.</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">// Line 23</span>
+class node <span class="token punctuation">{</span>
+public<span class="token operator">:</span>
+    <span class="token keyword">int</span> parent<span class="token punctuation">;</span>     <span class="token comment">// 父亲编号</span>
+    <span class="token keyword">int</span> firstchild<span class="token punctuation">;</span> <span class="token comment">// 长子编号</span>
+    <span class="token keyword">int</span> lastchild<span class="token punctuation">;</span>  <span class="token comment">// 幼子编号</span>
+    <span class="token keyword">int</span> pred<span class="token punctuation">;</span>       <span class="token comment">// 左兄弟编号</span>
+    <span class="token keyword">int</span> succ<span class="token punctuation">;</span>       <span class="token comment">// 右兄弟编号</span>
+    <span class="token keyword">int</span> size<span class="token punctuation">;</span>       <span class="token comment">// 子树大小</span>
+    <span class="token keyword">int</span> height<span class="token punctuation">;</span>     <span class="token comment">// 子树高度</span>
+    <span class="token keyword">int</span> suffix<span class="token punctuation">;</span>     <span class="token comment">// 自身及后缀兄弟结点最大高度</span>
+    <span class="token function">node</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token function">parent</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">firstchild</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">lastchild</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">pred</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">succ</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">size</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">suffix</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">height</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span> <span class="token operator">*</span>tree<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>根节点编号为 <code>1</code>, 所有节点信息默认初始化为 <code>0</code>,
+表示相应信息不存在. 其中 <code>suffix</code> 维护了节点本身及其靠后兄弟
+<code>height</code> 的最大值, 在每次进行子树移动时, 只需要向前向上维护
+<code>size</code>, <code>suffix</code> 并且更新 <code>height</code>
+即可, 如此操作可将时间消耗控制在 <code>cost</code> 内.</p>
+<h4 id="void-init">void Init()</h4>
+<p>首先调用 <code>Init(n)</code> 对多叉树的 <code>parent</code>,
+<code>firstchild</code>, <code>lastchild</code>, <code>pred</code>,
+<code>succ</code> 进行初始化.</p>
+<h4 id="void-inittree">void InitTree()</h4>
+<p>随后 <code>Init(n)</code> 调用 <code>InitTree(1)</code>, 借助辅助栈
+<code>stack</code> 使用后序遍历的迭代情形对多叉树的 <code>size</code>,
+<code>height</code>, <code>suffix</code> 进行初始化.
+类似二叉树的后续遍历, 对于一个节点, 我们首先初始化其
+<code>lastchild</code> 直到 <code>firstchild</code>,
+最后初始化其本身.</p>
+<h4 id="void-initnode">void InitNode()</h4>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">// Line 36</span>
+<span class="token keyword">void</span> <span class="token function">InitNode</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>x <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>tree<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>firstchild <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 叶节点.</span>
+        tree<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>size <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        tree<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>height <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        tree<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>suffix <span class="token operator">=</span> tree<span class="token punctuation">[</span>tree<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>succ<span class="token punctuation">]</span><span class="token punctuation">.</span>suffix<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>对于一组长整数输入<span class="math inline">\(m\)</span>、<span class="math inline">\(n\)</span>, 算法的时间复杂度为 <span class="math inline">\(O(logm\cdot logn)\)</span>;</p>
-<p>也即若一组长整数输入的十进制位数分别为<span class="math inline">\(m\)</span>、<span class="math inline">\(n\)</span>, 那么算法的时间复杂度为 <span class="math inline">\(O(mn)\)</span>.</p>
-<p>算法空间复杂度主要来自读取并存储运算数的过程:</p>
+    <span class="token keyword">else</span> <span class="token punctuation">{</span> <span class="token comment">// 子树根节点.</span>
+        <span class="token keyword">int</span> child <span class="token operator">=</span> tree<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>lastchild<span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>child<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            tree<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>size <span class="token operator">+=</span> tree<span class="token punctuation">[</span>child<span class="token punctuation">]</span><span class="token punctuation">.</span>size<span class="token punctuation">;</span>
+            child <span class="token operator">=</span> tree<span class="token punctuation">[</span>child<span class="token punctuation">]</span><span class="token punctuation">.</span>pred<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        tree<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>size <span class="token operator">+=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        tree<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>height <span class="token operator">=</span> tree<span class="token punctuation">[</span>tree<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>firstchild<span class="token punctuation">]</span><span class="token punctuation">.</span>suffix <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        tree<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>suffix <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>tree<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>height<span class="token punctuation">,</span> tree<span class="token punctuation">[</span>tree<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>succ<span class="token punctuation">]</span><span class="token punctuation">.</span>suffix<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>对于叶子节点, 将其 <code>size</code> 设置为 <code>1</code>,
+<code>height</code> 设置为 <code>0</code>, <code>suffix</code>
+设置为其右兄的 <code>suffix</code> (若右兄不存在, 即编号为
+<code>0</code>, 那么会返回 tree[0].suffix, 即 <code>0</code>).</p>
+<p>对于一个子树根节点, 将其 <code>size</code> 设置为其子节点的
+<code>size</code> 和加 <code>1</code>, <code>height</code>
+设置为长子节点的 <code>suffix</code> 加 <code>1</code>,
+<code>suffix</code> 设置为其自身高度与右兄 <code>suffix</code> 的最大值
+(若右兄不存在, 即编号为 <code>0</code>, 那么会返回 tree[0].suffix, 即
+<code>0</code>).</p>
+<h4 id="int-readnode">int Readnode()</h4>
+<p><code>Readnode()</code> 读入一条路径,
+并返回这条路径上的最后一个合法节点编号, <code>real_node</code>
+表示当前已读入路径对应的合法节点, <code>tmp_node</code>
+表示读入下一个座位后节点的状态, 若为 <code>0</code>,
+说明已经进入了无效路径, 直接将之后路径截断即可 (即只读入数据而不对
+<code>real_node</code> 进行更新).</p>
+<h4 id="void-update">void Update()</h4>
+<p>对于每次删除和插入子树, 要在操作位置进行 <code>size</code>,
+<code>height</code>, <code>suffix</code> 的更新. 其中
+<code>height</code>, <code>suffix</code> 的更新比较一致, 将其写作接口
+<code>Update()</code>.</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">// Line 102</span>
+<span class="token keyword">void</span> <span class="token function">Update</span><span class="token punctuation">(</span><span class="token keyword">int</span> tmp<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>tmp<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 更新 suffix.</span>
+        tree<span class="token punctuation">[</span>tmp<span class="token punctuation">]</span><span class="token punctuation">.</span>suffix <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>tree<span class="token punctuation">[</span>tmp<span class="token punctuation">]</span><span class="token punctuation">.</span>height<span class="token punctuation">,</span> tree<span class="token punctuation">[</span>tree<span class="token punctuation">[</span>tmp<span class="token punctuation">]</span><span class="token punctuation">.</span>succ<span class="token punctuation">]</span><span class="token punctuation">.</span>suffix<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>tree<span class="token punctuation">[</span>tmp<span class="token punctuation">]</span><span class="token punctuation">.</span>pred<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            tmp <span class="token operator">=</span> tree<span class="token punctuation">[</span>tmp<span class="token punctuation">]</span><span class="token punctuation">.</span>pred<span class="token punctuation">;</span>
+            tree<span class="token punctuation">[</span>tmp<span class="token punctuation">]</span><span class="token punctuation">.</span>suffix <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>tree<span class="token punctuation">[</span>tmp<span class="token punctuation">]</span><span class="token punctuation">.</span>height<span class="token punctuation">,</span> tree<span class="token punctuation">[</span>tree<span class="token punctuation">[</span>tmp<span class="token punctuation">]</span><span class="token punctuation">.</span>succ<span class="token punctuation">]</span><span class="token punctuation">.</span>suffix<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment">// 更新 height.</span>
+        tmp <span class="token operator">=</span> tree<span class="token punctuation">[</span>tmp<span class="token punctuation">]</span><span class="token punctuation">.</span>parent<span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>tmp <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
+        tree<span class="token punctuation">[</span>tmp<span class="token punctuation">]</span><span class="token punctuation">.</span>height <span class="token operator">=</span> tree<span class="token punctuation">[</span>tree<span class="token punctuation">[</span>tmp<span class="token punctuation">]</span><span class="token punctuation">.</span>firstchild<span class="token punctuation">]</span><span class="token punctuation">.</span>suffix <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>由于 <code>suffix</code> 存储的是节点本身及其后缀兄弟节点的最大
+<code>height</code>, 因此对于修改过的节点, 只需要顺次更新其前缀兄弟的
+<code>suffix</code>, 当自身已是长子节点时, 更新其父亲的
+<code>height</code> 与 <code>suffix</code>,
+并以其父亲节点为基准继续更新前缀节点.</p>
+<h4 id="void-remove">void Remove()</h4>
+<p>对于要删去的节点 <code>remove_node</code>,
+首先特判其左右兄弟的存在性, 若都存在则将其左兄弟的右兄设置为其右兄弟,
+其右兄弟的左兄设置为其左兄弟. 否则 <code>remove_node</code>
+必然是其父节点的长子节点或幼子节点, 只需相应进行更新. 最后将
+<code>remove_node</code> 的左右兄弟及父亲置为 <code>0</code> 即可.</p>
+<p>随后对全树进行更新. 更新 <code>size</code> 只需沿着
+<code>remove_node</code> 的父节点向上, 逐次减去
+<code>tree[remove_node].size</code> 即可. 接着更新 <code>height</code>
+与 <code>suffix</code>, 若 <code>remove_node</code> 的左兄存在,
+直接对其进行 <code>Update()</code> 即可; 否则转到
+<code>tree[remove_node].parent</code>, 更新其 <code>height</code>,
+并进行 <code>Update()</code>.</p>
+<h4 id="void-insert">void Insert()</h4>
+<p>对于插入的父节点 <code>attach_node</code>, 源子树节点
+<code>insert_node</code>, 插入位置 <code>rank</code>, 首先设置
+<code>insert_node</code> 父亲为 <code>attach_node</code>.
+若父节点无子节点, 则设置 <code>firstchild</code>, <code>lastchild</code>
+均为 <code>insert_node</code>. 否则特判插入位置是否为
+<code>firstchild</code> 或 <code>lastchild</code> 节点, 并相应进行更新,
+原理同 <code>Remove()</code>.</p>
+<p>随后对全树进行更新. 更新 <code>size</code> 只需沿着
+<code>insert_node</code> 的父节点向上, 逐次加上
+<code>tree[insert_node].size</code> 即可. 接着更新 <code>height</code>
+与 <code>suffix</code>, 直接从 <code>insert_node</code> 开始进行
+<code>Update()</code>.</p>
+<h4 id="void-input">void Input()</h4>
+<p>直接读取操作序列并进行操作即可.</p>
+<h3 id="问题解决">问题解决</h3>
+<ul>
+<li>由于数据规模 <code>N</code> 为 <code>1, 1e6</code>,
+在初始化时若采用后序遍历的递归版本, 会导致爆栈 (事实上,
+我自行构造了一条单链的特殊情况, 在这种情况下, 程序不会正常返回),
+因此采用了后序遍历的迭代版本.</li>
+<li>初始化叶节点时, 原本进行了 <code>tree[x].suffix = 0</code>,
+事实上需要修改为
+<code>tree[x].suffix = tree[tree[x].succ].suffix</code>,
+因为叶节点右边的兄弟的高度未必为 <code>0</code>.</li>
+<li>在 <code>Remove()</code> 中更新父节点的高度时,
+需要特判父节点是否无子节点.</li>
+</ul>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token comment">// Line 22</span>
-<span class="token keyword">char</span><span class="token operator">*</span> num1 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">char</span><span class="token operator">*</span><span class="token punctuation">)</span>a<span class="token punctuation">.</span><span class="token function">c_str</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">char</span><span class="token operator">*</span> num2 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">char</span><span class="token operator">*</span><span class="token punctuation">)</span>b<span class="token punctuation">.</span><span class="token function">c_str</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Line 143</span>
+tmp <span class="token operator">=</span> parent<span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>tree<span class="token punctuation">[</span>tmp<span class="token punctuation">]</span><span class="token punctuation">.</span>firstchild <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> tree<span class="token punctuation">[</span>tmp<span class="token punctuation">]</span><span class="token punctuation">.</span>height <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">else</span> tree<span class="token punctuation">[</span>tmp<span class="token punctuation">]</span><span class="token punctuation">.</span>height <span class="token operator">=</span> tree<span class="token punctuation">[</span>tree<span class="token punctuation">[</span>tmp<span class="token punctuation">]</span><span class="token punctuation">.</span>firstchild<span class="token punctuation">]</span><span class="token punctuation">.</span>suffix <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>在进行子树移动操作时, 需要在读入 <code>remove_node</code> 后立刻进行
+<code>Remove()</code> 操作, 随后进行读入 <code>attach_node</code> 并进行
+<code>Insert()</code> 操作. 否则若读入 <code>remove_node</code>
+后紧接读入 <code>attach_node</code>,
+会导致没有更新删除节点而产生读入错误, 导致进入死循环, 产生
+<code>TLE</code> 错误.</li>
+</ul>
+<h3 id="复杂度估计">复杂度估计</h3>
+<h4 id="时间复杂度">时间复杂度</h4>
+<p><code>InitTree()</code> 过程仅仅与全树节点数目有关系,
+每一个节点入栈、出栈、初始化各一次, 时间复杂度为 <span class="math inline">\(O(n)\)</span>;</p>
+<p><code>Remove()</code> 与 <code>Insert()</code> 过程中,
+在寻找相应节点的时间复杂度为 <span class="math inline">\(O(cost)\)</span>, 更新 <code>size</code>
+只与树深有关, 更新 <code>height</code> 和 <code>suffix</code>
+d等价于反向的查找过程, 时间复杂度为 <span class="math inline">\(O(cost)\)</span>;</p>
+<p>子树查询仅消耗访问内存常数时间, 时间复杂度为 <span class="math inline">\(O(m)\)</span>.</p>
+<p>综上, 算法总时间复杂度为 <span class="math inline">\(O(n + cost +
+m)\)</span>.</p>
+<h4 id="空间复杂度">空间复杂度</h4>
+<p>算法空间复杂度主要来自读取并存储数据的过程:</p>
+<p>每个 <code>node</code> 类对象都存储了常数个成员, 消耗常数空间,
+总体空间消耗为 <span class="math inline">\(O(n)\)</span>.</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token comment">// Line 23</span>
+class node <span class="token punctuation">{</span>
+public<span class="token operator">:</span>
+    <span class="token keyword">int</span> parent<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> firstchild<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> lastchild<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> pred<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> succ<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> size<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> height<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> suffix<span class="token punctuation">;</span>
+    <span class="token function">node</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token function">parent</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">firstchild</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">lastchild</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">pred</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">succ</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">size</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">suffix</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">height</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span> <span class="token operator">*</span>tree<span class="token punctuation">;</span>
 <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token comment">// Line 27</span>
-<span class="token keyword">long</span> <span class="token keyword">long</span> mul1<span class="token punctuation">[</span>real_len1<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token keyword">long</span> <span class="token keyword">long</span> mul2<span class="token punctuation">[</span>real_len2<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token keyword">long</span> <span class="token keyword">long</span> answer<span class="token punctuation">[</span>MAXLEN<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>正比于输入数据的长度, 对于一组长整数输入<span class="math inline">\(m\)</span>、<span class="math inline">\(n\)</span>, 算法的空间复杂度为 <span class="math inline">\(O(logm + logn) = O(log(mn))\)</span>;</p>
-<p>也即若一组输入的十进制位数分别为<span class="math inline">\(m\)</span>、<span class="math inline">\(n\)</span>, 那么算法的空间复杂度为 <span class="math inline">\(O(m + n)\)</span>.</p>
+<span class="token comment">// Line 192</span>
+tree <span class="token operator">=</span> new node<span class="token punctuation">[</span>n <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -502,7 +613,7 @@ n', 1\le j\le m')\)</span> 均为 <span class="math inline">\(8\)</span> 位整�
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://chengsx21.github.io/10/">http://chengsx21.github.io/10/</a>
+                    <a href="http://chengsx21.github.io/29/">http://chengsx21.github.io/29/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -619,7 +730,7 @@ n', 1\le j\le m')\)</span> 均为 <span class="math inline">\(8\)</span> 位整�
         repo: 'chengsx21.github.io',
         owner: 'chengsx21',
         admin: "chengsx21",
-        id: '2022-09-27T09-45-16',
+        id: '2022-11-21T18-11-03',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -651,23 +762,23 @@ n', 1\le j\le m')\)</span> 均为 <span class="math inline">\(8\)</span> 位整�
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/11/">
+                <a href="/30/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Graphics">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Nearest Neighbour">
                         
-                        <span class="card-title">Graphics</span>
+                        <span class="card-title">Nearest Neighbour</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            DSA CST 1-2 解题报告
+                            DSA CST 3-6 解题报告
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-09-30
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-11-23
                         </span>
                         <span class="publish-author">
                             
@@ -703,23 +814,23 @@ n', 1\le j\le m')\)</span> 均为 <span class="math inline">\(8\)</span> 位整�
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/9/">
+                <a href="/28/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Git入门学习">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Kidd">
                         
-                        <span class="card-title">Git入门学习</span>
+                        <span class="card-title">Kidd</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            A brief introduction to Git learning
+                            DSA CST 3-4-2 解题报告
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-23
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-18
                             </span>
                         <span class="publish-author">
                             
@@ -729,8 +840,8 @@ n', 1\le j\le m')\)</span> 均为 <span class="math inline">\(8\)</span> 位整�
                                     CS
                                 </a>
                             
-                            <a href="/categories/CS/Git/" class="post-category">
-                                    Git
+                            <a href="/categories/CS/DSA/" class="post-category">
+                                    DSA
                                 </a>
                             
                             
@@ -740,8 +851,8 @@ n', 1\le j\le m')\)</span> 均为 <span class="math inline">\(8\)</span> 位整�
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Git/">
-                        <span class="chip bg-color">Git</span>
+                    <a href="/tags/DSA/">
+                        <span class="chip bg-color">DSA</span>
                     </a>
                     
                 </div>
