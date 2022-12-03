@@ -6,7 +6,7 @@
   <link href="http://chengsx21.github.io/atom.xml" rel="self"/>
   
   <link href="http://chengsx21.github.io/"/>
-  <updated>2022-12-02T10:16:47.815Z</updated>
+  <updated>2022-12-03T12:59:00.724Z</updated>
   <id>http://chengsx21.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>计算机系统概论 Lab2</title>
+    <link href="http://chengsx21.github.io/31/"/>
+    <id>http://chengsx21.github.io/31/</id>
+    <published>2022-11-25T12:53:32.000Z</published>
+    <updated>2022-12-03T12:59:00.724Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;lab-2-attacklab-实验报告&quot;&gt;Lab 2 AttackLab 实验报告&lt;/h1&gt;
+&lt;h2 id=&quot;实验目的&quot;&gt;实验目的&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;学习 &lt;code&gt;GDB&lt;/code&gt;与 &lt;code&gt;OBJDUMP&lt;/code&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="CS" scheme="http://chengsx21.github.io/categories/CS/"/>
+    
+    <category term="CSAPP" scheme="http://chengsx21.github.io/categories/CS/CSAPP/"/>
+    
+    
+    <category term="CSAPP" scheme="http://chengsx21.github.io/tags/CSAPP/"/>
+    
+  </entry>
   
   <entry>
     <title>Nearest Neighbour</title>
@@ -222,34 +252,6 @@
     
     
     <category term="FL&amp;A" scheme="http://chengsx21.github.io/tags/FL-A/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>计算机系统概论 Lab 1</title>
-    <link href="http://chengsx21.github.io/23/"/>
-    <id>http://chengsx21.github.io/23/</id>
-    <published>2022-11-03T18:19:39.000Z</published>
-    <updated>2022-11-20T12:39:38.394Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;task-1-协程库的编写&quot;&gt;Task 1: 协程库的编写&lt;/h2&gt;
-&lt;pre class=&quot;line-numbers language-assembly&quot; data-language=&quot;assembly&quot;&gt;&lt;code</summary>
-        
-      
-    
-    
-    
-    <category term="CS" scheme="http://chengsx21.github.io/categories/CS/"/>
-    
-    <category term="CSAPP" scheme="http://chengsx21.github.io/categories/CS/CSAPP/"/>
-    
-    
-    <category term="CSAPP" scheme="http://chengsx21.github.io/tags/CSAPP/"/>
     
   </entry>
   
