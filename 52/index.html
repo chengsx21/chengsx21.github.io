@@ -1,0 +1,1686 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="概率论与数理统计 笔记7, Endeavor">
+    <meta name="description" content="概率论与数理统计 笔记7">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>概率论与数理统计 笔记7 | Endeavor</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+    <style>
+        body{
+            background-image: url(https://s2.loli.net/2023/08/15/K54zSXytBfVcnZm.png);
+            background-repeat:no-repeat;
+            background-size: 100% 100%;
+            background-attachment:fixed;
+        }
+    </style>
+
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Endeavor</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/GifExplorer-docs" class="waves-effect waves-light">
+      
+      <i class="fas fa-film" style="zoom: 0.6;"></i>
+      
+      <span>GifDocs</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/sast-summer-training-2023" class="waves-effect waves-light">
+      
+      <i class="fas fa-book" style="zoom: 0.6;"></i>
+      
+      <span>SkillDocs</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Endeavor</div>
+        <div class="logo-desc">
+            
+            Blog of Chengsx
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/GifExplorer-docs" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-film"></i>
+			
+			GifDocs
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/sast-summer-training-2023" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-book"></i>
+			
+			SkillDocs
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/chengsx21/" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/chengsx21/" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">概率论与数理统计 笔记7</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Probability-Theory/">
+                                <span class="chip bg-color">Probability Theory</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Math/" class="post-category">
+                                Math
+                            </a>
+                        
+                            <a href="/categories/Math/Probability-Theory/" class="post-category">
+                                Probability Theory
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-04-14
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2023-08-15
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    4.6k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    21 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Chap-7-假设检验"><a href="#Chap-7-假设检验" class="headerlink" title="Chap 7 假设检验"></a>Chap 7 假设检验</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ul>
+<li><p><strong>例(女士品茶)</strong>  某女士声称可区分奶茶是先加牛奶还是先加茶. <strong>R.Fisher</strong> 设计实验: 各有 4 杯奶茶随机排成一排, 将这一信息告知女士. 考虑假设 $H$: 该女士没有区分能力. 当 $H$ 正确的情况下, 4 杯全对的概率为<br>  $$<br>  \dfrac{C_4^4\cdot C_4^0}{C_8^4}=\dfrac{1}{70}.<br>  $$<br>  下述两种情况之一必发生:</p>
+<ul>
+<li>$H$ 不正确 (**i.e.**该女士有区分能力);</li>
+<li>$H$ 正确 (发生了一件概率为 $\dfrac{1}{70}$ 的事情).</li>
+</ul>
+<p>  通常选择阈值 $\alpha=0.05,0.01,0.1$ (预先给定的显著性水平). 若女士选对了三杯, 则在 $H$ 正确的前提下, 挑对三杯及以上的概率为<br>  $$<br>  \dfrac{C_4^4\cdot C_4^0}{C_8^4}+\dfrac{C_4^3\cdot C_4^1}{C_8^4}=\dfrac{17}{70}\approx 0.243.<br>  $$</p>
+</li>
+<li><p><strong>注</strong></p>
+<ul>
+<li><p><strong>Fisher</strong> 显著性检验;</p>
+</li>
+<li><p>若认可某组观测(样本), 则用它来证实或证伪某个理论(断言)具有天然的不对等;</p>
+</li>
+<li><p>$H$ 可以模型化:<br>  $$<br>  P(X=k)\dfrac{C_4^k\cdot C_4^{4-k}}{C_8^4}.<br>  $$</p>
+</li>
+<li><p>历史注记:</p>
+<ul>
+<li><strong>Fisher</strong> 显著性检验;</li>
+<li><strong>Neyman-Pearson</strong> 检验;</li>
+<li>零假设显著性检验 (<strong>MHST</strong>).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>定义(统计假设)</strong>  对一个或多个总体的某种断言或猜测.</p>
+<ul>
+<li>原假设: 被检验的假设 $H_0$;</li>
+<li>备择假设: 拒绝 $H_0$ 后可供选择的假设 $H_1$.</li>
+<li>若假设可表为参数形式, 那么 $H_0: \theta\in\Theta_0$, $H_1: \theta\in\Theta_1$, 且 $\Theta_0\cap\Theta_1=\varnothing$, $\Theta_0\cup\Theta_1=\theta$ 的所有可能取值之集.</li>
+</ul>
+</li>
+<li><p><strong>例</strong>  假设 $X\sim N(\mu,\sigma^2)$, 其中 $\sigma^2$ 已知.</p>
+<ul>
+<li>$H_0:\mu=\mu_0,\quad H_1:\mu\ne\mu_0$. (双侧假设)</li>
+<li>$H_0:\mu=\mu_0,\quad H_1:\mu&gt;\mu_0$. (单侧假设)</li>
+<li>$H_0:\mu\le\mu_0,\quad H_1:\mu&gt;\mu_0$. (单侧假设)</li>
+<li>$H_0:\mu_1=\mu_2,\quad H_1:\mu_1\ne\mu_2$. (双侧假设)</li>
+</ul>
+</li>
+<li><p><strong>注</strong></p>
+<ul>
+<li>简单假设: 只对应一个总体;</li>
+<li>复合假设: 对应多个总体;</li>
+<li>若 $\sigma^2$ 未知, 则 $H_0: \mu=\mu_0\Leftrightarrow H_0: \mu=\mu_0,\sigma^2$ 任意, 是一个复合假设.</li>
+</ul>
+</li>
+<li><p><strong>定义(假设检验)</strong>  依据样本(观测)的决策(拒绝或不拒绝 $H_0$)过程.</p>
+</li>
+<li><p><strong>定义(检验准则)</strong>  做出决策的一个具体法则.</p>
+</li>
+<li><p><strong>定义(拒绝)</strong>  在原假设 $H_0$ 为真的前提下, 所观测的样本出现的概率如果是很小的, 意味着样本提供的概率拒绝 $H_0$.</p>
+</li>
+<li><p><strong>定义(拒绝域/临界域)</strong>  形式上可抽象为<br>  $$<br>  R={(X_1,\cdots,X_n)\mid T(X_1,\cdots,X_n)\ge c}.<br>  $$<br>  其中 $c$ 被定义为临界值. 此时检验准则为, 若样本 $(X_1,\cdots,X_n)\in R$, 则拒绝假设 $H_0$.</p>
+</li>
+<li><p><strong>定义(显著性检验)</strong>  对事先给定的 $\alpha\in(0,1)$, 若 $P_{\theta}(T(X_1,\cdots,X_n)\ge c)\le\alpha$, $\forall,\theta\in\Theta_0$, 则称这是一个水平为 $\alpha$ 的显著性检验.</p>
+</li>
+<li><p><strong>例</strong>  假设 $X\sim N(\mu,\sigma^2)$, 其中 $\sigma^2$ 已知, 给定检验水平 $\alpha\in(0,1)$ 和已观测样本 $X_i(1\le i\le n)$. $H_0:\mu=\mu_0$, $H_1:\mu\ne\mu_0$. 对原假设进行检验.</p>
+</li>
+<li><p><strong>解答</strong>  拒绝域为双侧拒绝, 当 $H_0$ 为真时, 控制 $P(\vert\overline{X}-\mu_0\vert\ge c)\le\alpha$. </p>
+<p>  根据 <strong>CLT</strong>, 注意到<br>  $$<br>  \overline{X}-\mu_0\sim N(0,\dfrac{\sigma^2}{n})\Leftrightarrow\dfrac{\overline{X}-\mu_0}{\tfrac{\sigma}{\sqrt{n}}}\sim N(0,1).<br>  $$<br>  取 $\dfrac{c}{\tfrac{\sigma}{\sqrt{n}}}=Z_{\tfrac{\alpha}{2}}\Rightarrow c=\dfrac{\sigma}{\sqrt{n}}\cdot Z_{\tfrac{\alpha}{2}}$. </p>
+<p>  给出在 $\alpha$ 的检验水平下拒绝 $H_0$ 的条件: 若 $\vert\overline{X}-\mu_0\vert\ge\dfrac{\sigma}{\sqrt{n}}\cdot Z_{\tfrac{\alpha}{2}}$, 则拒绝 $H_0$.</p>
+</li>
+<li><p><strong>例</strong>  假设 $X\sim N(\mu,\sigma^2)$, 其中 $\sigma^2$ 已知, 给定检验水平 $\alpha\in(0,1)$ 和已观测样本 $X_i(1\le i\le n)$. $H_0:\mu\ge\mu_0$, $H_1:\mu&lt;\mu_0$. 对原假设进行检验.</p>
+</li>
+<li><p><strong>解答</strong>  拒绝域为单侧拒绝, 当 $H_0$ 为真时, 控制 $P(\overline{X}\le c)\le\alpha$.</p>
+<p>  根据 <strong>CLT</strong>, 注意到<br>  $$<br>  \overline{X}-\mu\sim N(0,\dfrac{\sigma^2}{n})\Leftrightarrow\dfrac{\overline{X}-\mu}{\tfrac{\sigma}{\sqrt{n}}}\sim N(0,1).<br>  $$<br>  因此<br>  $$<br>  \begin{aligned}<br>  P(\overline{X}\le c)&amp;=P(\dfrac{\overline{X}-\mu}{\tfrac{\sigma}{\sqrt{n}}}\le \dfrac{c-\mu}{\tfrac{\sigma}{\sqrt{n}}})\<br>  &amp;=P(Z\le\dfrac{c-\mu}{\tfrac{\sigma}{\sqrt{n}}})\<br>  &amp;=\varPhi(\dfrac{c-\mu}{\tfrac{\sigma}{\sqrt{n}}}),\forall,\mu\ge\mu_0.<br>  \end{aligned}<br>  $$</p>
+<p>  取 $\dfrac{c-\mu_0}{\tfrac{\sigma}{\sqrt{n}}}=-Z_{\alpha}\Rightarrow c=\mu_0-\dfrac{\sigma}{\sqrt{n}}\cdot Z_{\alpha}$. </p>
+<p>  给出在 $\alpha$ 的检验水平下拒绝 $H_0$ 的条件: 若 $\overline{X}\le\mu_0-\dfrac{\sigma}{\sqrt{n}}\cdot Z_{\alpha}$, 则拒绝 $H_0$.</p>
+</li>
+<li><p><strong>注</strong></p>
+<ul>
+<li><p>这种方法称为 $Z$-检验.</p>
+</li>
+<li><p>若 $\sigma^2$ 未知, 考虑<br>  $$<br>  \dfrac{\overline{X}-\mu}{\tfrac{S}{\sqrt{n}}}\sim t(n-1).<br>  $$<br>  这种方法称为 $t$-检验.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Neyman-Pearson-假设检验"><a href="#Neyman-Pearson-假设检验" class="headerlink" title="Neyman-Pearson 假设检验"></a>Neyman-Pearson 假设检验</h2><ul>
+<li><p><strong>定义(错误)</strong>  Ⅰ类错误: 在 $H_0$ 为真时拒绝 $H_0$; Ⅱ类错误: 在 $H_0$ 为假时不拒绝 $H_0$. 对应的概率分别为:<br>  $$<br>  \begin{aligned}<br>  \alpha(R)&amp;:=P_{\theta}(Ⅰ)=P_{\theta}((X_1,\cdots,X_n)\in R),\theta\in\Theta_0;\<br>  \beta(R)&amp;:=P_{\theta}(Ⅱ)=P_{\theta}((X_1,\cdots,X_n)\in R^c),\theta\in\Theta_1.<br>  \end{aligned}<br>  $$<br>  对于已划分的 $R$ 来说, 是定义域不同的 $\theta$ 的函数.</p>
+</li>
+<li><p><strong>注</strong></p>
+<ul>
+<li>依据样本做决策, 错误不能根本避免;</li>
+<li>一次决策不能同时犯两种错误;</li>
+<li>$n$ 固定, 两种错误发生的概率此消彼长.</li>
+</ul>
+</li>
+<li><p><strong>例(直觉)</strong></p>
+<ul>
+<li>都不拒绝 $H_0$, 那么 $P_{\theta}(Ⅰ)=0$, $P_{\theta}(Ⅱ)=1$.</li>
+<li>考虑事件 $H_0:$ 合格, 事件 $H_1:$ 不合格, 当 $P_{\theta}(Ⅰ)$ 变小时, 不容易拒绝事件, 不合格不容易被检出, 从而 $P_{\theta}(Ⅱ)$ 变大.</li>
+</ul>
+</li>
+<li><p><strong>定义(功效函数)</strong>    给定 $\theta$ 与临界域 $R$, 拒绝原假设 $H_0$ 的概率为:<br>  $$<br>  P_{\theta}((X_1,\cdots,X_n)\in R)=1-\beta(R),,\theta\in\Theta_1.<br>  $$</p>
+</li>
+<li><p><strong>定义(Neyman-Pearson 范式)</strong>  $n$ 固定, 控制 $P_{\theta}(Ⅰ)\le\alpha$, 其中 $\alpha$ 为预先给定的检验水平, 再在这个限制下使 $P_{\theta}(Ⅱ)(\theta\in\Theta_1)$ 尽可能小.</p>
+</li>
+<li><p><strong>注</strong></p>
+<ul>
+<li>$\alpha$ 固定时, 使 $P_{\theta}(Ⅱ)(\theta\in\Theta_1)$ 最小的检验称为水平 $\alpha$ 下的一致最优检验;</li>
+<li>原假设 $H_0$ 和备择假设 $H_1$ 一般是地位不对等的:<ul>
+<li>原假设通常是受到保护的, 证据不充分不能拒绝;</li>
+<li>备择假设通常是真正感兴趣的.</li>
+</ul>
+</li>
+<li>一致最优检验不一定存在, 一般也不易求解;</li>
+<li>$\mu_0\in$ 置信区间 $\Leftrightarrow$ 假设检验 $(H_0: \mu=\mu_0, H_1: \mu\ne\mu_0)$ 不拒绝 $H_0$.</li>
+</ul>
+</li>
+</ul>
+<h2 id="假设检验与置信区间"><a href="#假设检验与置信区间" class="headerlink" title="假设检验与置信区间"></a>假设检验与置信区间</h2><ul>
+<li><p><strong>例</strong>  $X\sim N(\mu,\sigma^2)$, $\sigma^2$ 已知, $\alpha&gt;0$ 给定, $X_1,\cdots,X_n$ 为随机样本.</p>
+</li>
+<li><p>**解答 ** 其双侧置信区间为<br>  $$<br>  P=(\overline{X}-Z_{\tfrac{\alpha}{2}}\dfrac{\sigma}{\sqrt{n}},\overline{X}+Z_{\tfrac{\alpha}{2}}\dfrac{\sigma}{\sqrt{n}}).<br>  $$<br>  考虑假设检验 $H_0:\mu=\mu_0$, $H_1:\mu\ne\mu_0$. 需要控制<br>  $$<br>  P_{H_0}(\vert\overline{X}-\mu_0\vert\ge c)\le\alpha.<br>  $$<br>  检验准则为 $\vert\overline{X}-\mu_0\vert\ge Z_{\tfrac{\alpha}{2}}\dfrac{\sigma}{\sqrt{n}}$ 时拒绝 $H_0$. 我们给出接受域<br>  $$<br>  R^c={(X_1,\cdots,X_n)\mid \vert\overline{X}-\mu_0\vert&lt;Z_{\tfrac{\alpha}{2}}\dfrac{\sigma}{\sqrt{n}}}\<br>  ={(X_1,\cdots,X_n)\mid \mu_0\in P}.<br>  $$<br>  由此可见, $\mu_0\in P\Leftrightarrow$ 用 $\overline{X}$ 为检验统计量, 假设检验不拒绝 $H_0$.(<strong>对偶关系</strong>)</p>
+</li>
+</ul>
+<h2 id="检验的-P-值"><a href="#检验的-P-值" class="headerlink" title="检验的 P 值"></a>检验的 P 值</h2><ul>
+<li><p><strong>定义</strong>  当原假设 $H_0$ 为真时, 检验统计量的观测值以及更极端观测出现的概率. </p>
+</li>
+<li><p><strong>例(选举问题)</strong>  $n=1200$, 调查到的支持比例为 $\tfrac{684}{1200}\approx 0.57$ (观测值).</p>
+</li>
+<li><p><strong>解答</strong>  (1) $H_0:p=p_0$ v.s. $H_1:p&gt;p_0$ ($p_0$ 预先给定).</p>
+<p>  考虑检验统计量 $P_n$, 则由 <strong>CLT</strong>:<br>  $$<br>  \dfrac{P_n-p}{\sqrt{\tfrac{p(1-p)}{n}}}\stackrel{近似}{\sim}N(0,1).<br>  $$<br>  当 $H_0$ 为真时, $p=p_0$, 此时 $se(P_n)=\sqrt{\dfrac{p_0(1-p_0)}{n}}$. 因此 <strong>P</strong> 值<br>  $$<br>  P_{H_0}(P_n\ge p_n)=P(\dfrac{P_n-p_0}{se(P_n)}\ge\dfrac{p_n-p_0}{se(P_n)})\approx P(Z\ge z_0).<br>  $$<br>  其中<br>  $$<br>  Z\stackrel{近似}{\sim}N(0,1),z_0=\dfrac{p_n-p_0}{se(P_n)}=\dfrac{p_n-p_0}{\sqrt{\tfrac{p_0(1-p_0)}{n}}}.<br>  $$<br>  因此<br>  $$<br>  P_{H_0}(P_n\ge p_n)=1-\varPhi(\dfrac{p_n-p_0}{\sqrt{\tfrac{p_0(1-p_0)}{n}}}).<br>  $$<br>  若 $p_0=0.55$, 则 <strong>P</strong> 值 $\approx 0.081$; 若 $p_0=0.5$, 则 <strong>P</strong> 值 $\ll 0.001$.</p>
+<p>  在水平 $\alpha$ 下拒绝 $H_0\Leftrightarrow$ <strong>P</strong> 值 $\le\alpha$.</p>
+</li>
+<li><p><strong>注</strong></p>
+<ul>
+<li><strong>P</strong> 值作为数据 (观测) 拒绝 $H_0$ 的证据.</li>
+<li>强弱的度量: <strong>P</strong> 值越小, 拒绝 $H_0$ 的证据越强 (非正式的).</li>
+<li><strong>P</strong> 值 $\ne$ $P(H_0\mid $ 观测$)$.</li>
+<li>若 <strong>P</strong> 值不小, 则不拒绝 $H_0$, 原因可能为 $H_0$ 真 / $H_0$ 不真, 但检验功效不大.</li>
+</ul>
+</li>
+<li><p><strong>定义</strong>  若拒绝 $H_0:\theta\in\Theta_0\Leftrightarrow T(X_1,\cdots,X_n)\ge C$, 则检验的 <strong>P</strong> 值 $:=$<br>  $$<br>  \sup_{\theta\in\Theta_0}P_{\theta}(T(X_1,\cdots,X_n)\ge T(x_1,\cdots,x_n)).<br>  $$<br>  其中 $T(x_1,\cdots,x_n)$ 为检验统计量的观测值.</p>
+</li>
+<li><p><strong>解答</strong>  (2) $H_0:p\le p_0$ v.s. $H_1:p&gt;p_0$ ($p_0$ 预先给定).</p>
+<p>  考虑检验统计量 $P_n$, 则由 <strong>CLT</strong>:<br>  $$<br>  \dfrac{P_n-p}{\sqrt{\tfrac{p(1-p)}{n}}}\stackrel{近似}{\sim}N(0,1).<br>  $$<br>  当 $H_0$ 为真时, 此时 $se(P_n)\approx \hat{se}(P_n)=\sqrt{\dfrac{p_n(1-p_n)}{n}}$. 因此 <strong>P</strong> 值<br>  $$<br>  P_{H_0}(P_n\ge p_n)=P(\dfrac{P_n-p}{\hat{se}(P_n)}\ge\dfrac{p_n-p}{\hat{se}(P_n)})\approx P(Z\ge z_0).<br>  $$<br>  其中<br>  $$<br>  Z\stackrel{近似}{\sim}N(0,1),z_0=\dfrac{p_n-p}{\hat{se}(P_n)}=\dfrac{p_n-p}{\sqrt{\tfrac{p_n(1-p_n)}{n}}}.<br>  $$<br>  因此<br>  $$<br>  P_{H_0}(P_n\ge p_n)=1-\varPhi(\dfrac{p_n-p}{\sqrt{\tfrac{p_n(1-p_n)}{n}}}),\forall,p\le p_0.<br>  $$<br>  因此 <strong>P</strong> 值<br>  $$<br>  \sup_{p\le p_0}\Big(1-\varPhi(\dfrac{p_n-p}{\sqrt{\tfrac{p_n(1-p_n)}{n}}})\Big)=1-\varPhi(\dfrac{p_n-p_0}{\sqrt{\tfrac{p_n(1-p_n)}{n}}}).<br>  $$<br>  若 $p_0=0.55$, 则 <strong>P</strong> 值 $\approx 0.081$; 若 $p_0=0.5$, 则 <strong>P</strong> 值 $\ll 0.001$.</p>
+</li>
+</ul>
+<h2 id="拟合优度检验"><a href="#拟合优度检验" class="headerlink" title="拟合优度检验"></a>拟合优度检验</h2><ul>
+<li><p><strong>定义(Pearson 卡方统计量)</strong><br>  $$<br>  \chi^2:=\sum_{i=1}^{k}\dfrac{(O_i-E_i)^2}{E_i}\stackrel{近似}{\sim}\chi^2(k-1).<br>  $$<br>  其中 $O_i$ 为观测频数, $E_i$ 为期望频数 ($H_0$ 真的条件下).</p>
+</li>
+<li><p><strong>定理</strong>  $H_0: P(X\in$ 第 $i$ 单元$)=p_i(1\le i\le k)$. 若 $H_0$ 为真, 当 $n\rightarrow\infty$ 时, 有<br>  $$<br>  \chi^2\rightarrow\chi^2(k-1).<br>  $$</p>
+</li>
+<li><p><strong>例</strong>  投掷一枚骰子 60 次.</p>
+<table>
+<thead>
+<tr>
+<th>点数</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>总计</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>观测频数</td>
+<td>4</td>
+<td>6</td>
+<td>17</td>
+<td>16</td>
+<td>8</td>
+<td>9</td>
+<td>60</td>
+</tr>
+<tr>
+<td>期望频数</td>
+<td>10</td>
+<td>10</td>
+<td>10</td>
+<td>10</td>
+<td>10</td>
+<td>10</td>
+<td>60</td>
+</tr>
+</tbody></table>
+<p>  $H_0:$ 分布均匀, $H_1:$ 分布不均匀.</p>
+</li>
+<li><p><strong>解答</strong>  检验统计量的观测值:<br>  $$<br>  \dfrac{(4-10)^2}{10}+\dfrac{(6-10)^2}{10}+\cdots+\dfrac{(9-10)^2}{10}=14.2.<br>  $$<br>  自由度为 $6-1=5$. <strong>P</strong> 值 $=P_{H_0}(\chi^2\ge 14.2)\approx 0.014$.</p>
+</li>
+<li><p><strong>注</strong>  在实际应用中, 需要满足 $E_i=nP_i\ge 5$, 才能较好使用 <strong>Pearson</strong> 定理.</p>
+</li>
+<li><p><strong>例(列联表独立性检验)</strong>  对某项议题态度与年龄段是否独立.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>青年</th>
+<th>中年</th>
+<th>老年</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>支持</td>
+<td>20</td>
+<td>40</td>
+<td>20</td>
+<td>80</td>
+</tr>
+<tr>
+<td>反对</td>
+<td>30</td>
+<td>30</td>
+<td>10</td>
+<td>70</td>
+</tr>
+<tr>
+<td></td>
+<td>50</td>
+<td>70</td>
+<td>30</td>
+<td>150</td>
+</tr>
+</tbody></table>
+<p>  $H_0:$ 独立, $H_1:$ 不独立.</p>
+</li>
+<li><p><strong>解答</strong>  $P_{ij}=P_{i+}P_{+j}$, 其中 $P_{i+}$, $P_{+j}$ 称为边际概率.</p>
+<p>  在 $H_0$ 为真前提下估计 $P_{ij}$. <strong>MLE</strong>:<br>  $$<br>  P_{ij}^*=(P_{i+}P_{+j})^*=P_{i+}^<em>P_{+j}^</em>=\dfrac{sum(row_i)}{n}\times\dfrac{sum(column_j)}{n}.<br>  $$<br>  得到<br>  $$<br>  E_{ij}=nP_{ij}\approx nP_{ij}^*=\dfrac{1}{n}sum(row_i)\times sum(column_j).<br>  $$<br>  计算得检验统计量观测值为 6.12, 自由度为 $(a-1)(b-1)=2$.</p>
+<p>  得到 <strong>P</strong> 值 $=P_{H_0}(\chi^2\ge 6.12)\approx 0.0469$.</p>
+</li>
+<li><p><strong>注</strong>  对于 $a$ 行 $b$ 列, 当 $H_0$ 成立时, 其未知参数个数为 $s=(a-1)+(b-1)$.</p>
+<p>  因此卡方自由度为:<br>  $$<br>  ab-1-s=ab-1-(a-1)-(b-1)=(a-1)(b-1).<br>  $$</p>
+</li>
+</ul>
+<h2 id="似然比检验"><a href="#似然比检验" class="headerlink" title="似然比检验"></a>似然比检验</h2><ul>
+<li><p><strong>例</strong>  两种硬币 ($p=0.5$, $p=0.7$) 投掷 $n=10$ 次, 正面向上 $X=x$ 次. 提出假设 $H_0:p=0.5$ v.s. $p=0.7$. 考虑<br>  $$<br>  \dfrac{P_{H_0}(X=x)}{P_{H_1}(X=x)}\le c\leftrightarrow x 的范围<br>  $$<br>  我们需要控制<br>  $$<br>  P_{H_0}\Big(似然比\le c\Big)\le\alpha.<br>  $$</p>
+</li>
+<li><p><strong>注</strong></p>
+<ul>
+<li>当 $H_0$, $H_1$ 均为简单假设时 (<strong>N-P</strong>), 证明: 似然比检验最优 (功效最大).</li>
+<li>当 $H_0$, $H_1$ 不全为简单假设时, 似然比检验一般不最优, 但通常表现不错.</li>
+</ul>
+</li>
+<li><p><strong>定义(广义似然比)</strong>  $H_0:\theta\in\Theta_0$ v.s. $H_1:\theta\in\Theta_1$, $X_1,\cdots,X_n$ 为随机样本.</p>
+<p>  考虑广义似然比<br>  $$<br>  \Lambda^*:=\dfrac{\sup_{\theta\in\Theta_0}L(\theta)}{\sup_{\theta\in\Theta_1}L(\theta)}<br>  $$<br>  基于技术原因, 检验统计量选为<br>  $$<br>  \Lambda:=\dfrac{\sup_{\theta\in\Theta_0}L(\theta)}{\sup_{\theta\in\Theta_0\cup\Theta_1}L(\theta)}=\min{\Lambda^*,1}=\Lambda(X_1,\cdots,X_n).<br>  $$<br>  $\Lambda$ 越小则越反对 $H_0$ (拒绝域的形状). 选择 $\lambda_0$ 使<br>  $$<br>  P_{H_0}(\Lambda\le\lambda_0)\le\alpha.<br>  $$<br>  至此得到了检验准则.</p>
+</li>
+<li><p><strong>定理</strong>  在一定(光滑性)条件下, 当 $n\rightarrow\infty$ 时, 在 $H_0$ 为真前提下:<br>  $$<br>  -2\log\Lambda\rightarrow\chi^2(d).<br>  $$<br>  其中自由度 $d=\dim(\Theta_0\cup\Theta_1)-\dim(\Theta_0)$. 这里的 $\dim$ 指自由参数的个数.</p>
+</li>
+<li><p><strong>例(多项分布检验)</strong>  $H_0:p_1=p_1^*$, $\cdots$, $p_k=p_k^*$, 观测频数分别为 $n_1,\cdots,n_k$.</p>
+</li>
+<li><p><strong>解答</strong>  得到<br>  $$<br>  L(p_1,\cdots,p_k)=C_n^{n_1,\cdots,c_k}p_1^{n_1}\cdots p_k^{n_k}.<br>  $$<br>  因此<br>  $$<br>  \Lambda=\dfrac{\sup_{\theta\in\Theta_0}L(\theta)}{\sup_{\theta\in\Theta_0\cup\Theta_1}L(\theta)}=\dfrac{L(p_1^0,\cdots,p_k^0)}{L(p_1^*,\cdots,p_k^*)}.<br>  $$<br>  已知<br>  $$<br>  n_i=np_i^*,E_i=np_i^0,O_i=n_i.<br>  $$<br>  且<br>  $$<br>  x\log\dfrac{x}{x_0}\stackrel{Taylor}{=}0+(x-x_0)+\dfrac{1}{2}\dfrac{(x-x_0)^2}{x_0}+\cdots<br>  $$<br>  计算得<br>  $$<br>  \begin{aligned}<br>  -2\log\Lambda&amp;=-2\sum_{i=1}^{k}\log\big(\dfrac{p_i^0}{p_i^*}\big)^{n_i}\<br>  &amp;=-2\sum_{i=1}^{k}n_i\log\dfrac{p_i^0}{p_i^*}\<br>  &amp;=2\sum_{i=1}^{k}O_i\log\dfrac{O_i}{E_i}\<br>  &amp;=\sum_{i=1}^{k}\dfrac{(O_i-E_i)^2}{E_i}+\cdots.<br>  \end{aligned}<br>  $$<br>  考虑到 $\dim(\Theta_0)=0$, $\dim(\Theta_0\cup\Theta_1)=k-1$, 因此给出<br>  $$<br>  \sum_{i=1}^{k}\dfrac{(O_i-E_i)^2}{E_i}\stackrel{近似}{\sim}\chi^2(k-1).<br>  $$</p>
+</li>
+</ul>
+<h2 id="两独立总体比较"><a href="#两独立总体比较" class="headerlink" title="两独立总体比较"></a>两独立总体比较</h2><ul>
+<li><p>两独立总体:</p>
+<table>
+<thead>
+<tr>
+<th>总体</th>
+<th>均值</th>
+<th>方差</th>
+<th>样本 (iid)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$X$</td>
+<td>$\mu_1$</td>
+<td>$\sigma_1^2$</td>
+<td>$X_1,\cdots,X_n$</td>
+</tr>
+<tr>
+<td>$Y$</td>
+<td>$\mu_2$</td>
+<td>$\sigma_2^2$</td>
+<td>$Y_1,\cdots,Y_m$</td>
+</tr>
+</tbody></table>
+</li>
+<li><p><strong>定义(比较均值)</strong>:</p>
+<p>  给出 $E(\overline{X}-\overline{Y})=\mu_1-\mu_2$, $Var(\overline{X}-\overline{Y})=\dfrac{\sigma_1^2}{n}+\dfrac{\sigma_2^2}{m}=se^2$. 参考置信区间部分.</p>
+</li>
+<li><p><strong>定理</strong>  给出 $W_1\sim\chi^2(k_1)$, $W_2\sim\chi^2(k_2)$, 且 $W_1,W_2$ 独立, 我们有<br>  $$<br>  \dfrac{W_1/k_1}{W_2/k_2}\sim F(k_1,k_2).<br>  $$</p>
+</li>
+<li><p><strong>定义(比较方差)</strong>: 假设 $X$, $Y$ 均为正态. 提出假设 $H_0:\sigma_1^2=\sigma_2^2$ v.s. $H_1:\sigma_1^2\ne\sigma_2^2$.<br>  $$<br>  \dfrac{(n-1)S_1^2}{\sigma_1^2}\sim\chi^2(n-1), \dfrac{(m-1)S_2^2}{\sigma_2^2}\sim\chi^2(m-1).<br>  $$<br>  考虑检验统计量(依赖于<strong>样本</strong>或<strong>已知参数</strong>)<br>  $$<br>  \dfrac{S_1^2}{S_2^2}.<br>  $$<br>  当 $H_0$ 为真时, 有<br>  $$<br>  \dfrac{S_1^2}{S_2^2}\sim F(n-1,m-1).<br>  $$<br>  检验准则为当<br>  $$<br>  \dfrac{S_1^2}{S_2^2}\ge F_{\tfrac{\alpha}{2}}(n-1,m-1),或,\dfrac{S_1^2}{S_2^2}\le F_{1-\tfrac{\alpha}{2}}(n-1,m-1)<br>  $$<br>  时拒绝原假设.</p>
+</li>
+<li><p><strong>注</strong>  由定义 $F_{1-\tfrac{\alpha}{2}}(n-1,m-1)=\dfrac{1}{F_{\tfrac{\alpha}{2}}(m-1,n-1)}$.</p>
+</li>
+<li><p><strong>例(比较成功率/失败率)</strong>  阿司匹林对降低心脏病发病率的有效性.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>心脏病发作</th>
+<th>心脏病未发作</th>
+<th>合计</th>
+<th>发作率</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>阿司匹林</td>
+<td>139</td>
+<td>10898</td>
+<td>11037</td>
+<td>0.0126</td>
+</tr>
+<tr>
+<td>安慰剂</td>
+<td>239</td>
+<td>10795</td>
+<td>11034</td>
+<td>0.0217</td>
+</tr>
+</tbody></table>
+<p>  提出假设 $H_0:p_1=p_2$ (无效) v.s. $H_1:p_1&lt;p_2$ (有效), 检验统计量为 $P_1-P_2$.</p>
+<p>  容易得到 $E(P_1-P_2)=p_1-p_2$, $Var(P_1-P_2)=\dfrac{p_1(1-p_1)}{n_1}+\dfrac{p_2(1-p_2)}{n_2}$.</p>
+<p>  那么<br>  $$<br>  \dfrac{(P_1-P_2)-(p_1-p_2)}{se}\stackrel{近似}{\sim}N(0,1).<br>  $$<br>  在 $H_0$ 为真前提下, 有<br>  $$<br>  se^2=p(1-p)(\dfrac{1}{n_1}+\dfrac{1}{n_2})\approx p^*(1-p^*)(\dfrac{1}{n_1}+\dfrac{1}{n_2}).<br>  $$<br>  其中 $p^*=\dfrac{k_1+k_2}{n_1+n_2}$, 得 $se^2\approx\hat{se}^2=0.00175^2$. 结合 $\dfrac{P_1-P_2}{\hat{se}}\stackrel{近似}{\sim}N(0,1)$, 得 <strong>P</strong> 值<br>  $$<br>  P\Big(\dfrac{P_1-P_2}{\hat{se}}\le\dfrac{0.0126-0.0217}{0.00175}\Big)\approx P(Z\le -5.20)\approx 10^{-7}.<br>  $$<br>  因此有理由拒绝 $H_0$.</p>
+</li>
+<li><p><strong>注</strong></p>
+<ul>
+<li>随机分组.</li>
+<li>双盲实验.</li>
+<li>$n$ 充分大.</li>
+</ul>
+</li>
+<li><p><strong>例(行驶里程)</strong>  比较两种油 <strong>A</strong> 与 <strong>B</strong> 的行驶里程.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>样本容量</th>
+<th>平均里程</th>
+<th>样本标准差</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>油 <strong>A</strong></td>
+<td>50</td>
+<td>25</td>
+<td>5.00</td>
+</tr>
+<tr>
+<td>油 <strong>B</strong></td>
+<td>50</td>
+<td>26</td>
+<td>4.00</td>
+</tr>
+</tbody></table>
+<p>  提出假设 $H_0:\mu_A=\mu_B$ v.s. $H_1:\mu_A\ne\mu_B$, 检验统计量为 $\overline{X}_A-\overline{X}_B$.</p>
+<p>  在 $H_0$ 为真前提下, 有<br>  $$<br>  \dfrac{\overline{X}_A-\overline{X}_B}{\sqrt{\tfrac{S_1^2}{n_1}+\tfrac{S_2^2}{n_2}}}\sim N(0,1).<br>  $$<br>  其中 $\hat{se}\approx 0.905$. 得 <strong>P</strong> 值<br>  $$<br>  P\Big(\vert\dfrac{\overline{X}_A-\overline{X}_B}{\hat{se}}\vert\ge\vert\dfrac{25-26}{0.905}\vert\Big)\approx P(\vert Z\vert\ge 1.1)\approx 0.2714.<br>  $$<br>  认为哪种油行驶里程更长的理由均不充分.</p>
+</li>
+</ul>
+<h2 id="两相关总体比较"><a href="#两相关总体比较" class="headerlink" title="两相关总体比较"></a>两相关总体比较</h2><ul>
+<li><p><strong>例(行驶里程-改进)</strong>  同一辆车不同日子加不同油, 记录行驶里程.</p>
+<table>
+<thead>
+<tr>
+<th>车号</th>
+<th>油 A</th>
+<th>油 B</th>
+<th>差异 ($d_i$)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>27.01</td>
+<td>26.95</td>
+<td>0.06</td>
+</tr>
+<tr>
+<td>2</td>
+<td>20.00</td>
+<td>20.44</td>
+<td>-0.44</td>
+</tr>
+<tr>
+<td>$\cdots$</td>
+<td>$\cdots$</td>
+<td>$\cdots$</td>
+<td>$\cdots$</td>
+</tr>
+<tr>
+<td>10</td>
+<td>25.22</td>
+<td>26.01</td>
+<td>-0.79</td>
+</tr>
+<tr>
+<td>均值</td>
+<td>25.20</td>
+<td>25.80</td>
+<td>-0.60</td>
+</tr>
+<tr>
+<td>标准差</td>
+<td>4.27</td>
+<td>4.10</td>
+<td>0.61</td>
+</tr>
+</tbody></table>
+<p>  提出假设 $H_0:\mu_d=0$ v.s. $H_1:\mu_d\ne 0$, 检验统计量为 $\overline{d}$.</p>
+<p>  假设 $d_i$ 服从正态分布. 在 $H_0$ 为真前提下, 有<br>  $$<br>  \dfrac{\overline{d}}{\tfrac{S_d}{\sqrt{n}}}\sim t(n-1).<br>  $$<br>  得 <strong>P</strong> 值<br>  $$<br>  P\Big(\vert t(9)\vert\ge\vert\dfrac{-0.60}{\tfrac{0.61}{\sqrt{10}}}\vert\Big)\approx 0.012.<br>  $$<br>  有理由拒绝 $H_0$, 两种油的行驶里程有差距.</p>
+</li>
+<li><p><strong>注</strong>  假设检验不能检验试验设计, 仅对数据负责; 功能有限, 作为决策辅助.</p>
+</li>
+</ul>
+<h2 id="Bayes-假设检验"><a href="#Bayes-假设检验" class="headerlink" title="Bayes 假设检验"></a>Bayes 假设检验</h2><ul>
+<li><p><strong>例</strong>  两种硬币 ($p=0.5$, $p=0.7$) 投掷 $n=10$ 次, 正面向上 $X=x$ 次. 提出假设 $H_0:p=0.5$ v.s. $p=0.7$​. 考虑<br>  $$<br>  \dfrac{P(H_0\mid x)}{P(H_1\mid x)}=\dfrac{P(H_0)P(x\mid H_0)}{P(H_1)P(x\mid H_1)}&lt;1<br>  $$<br>  则拒绝 $H_0$.</p>
+</li>
+<li><p><strong>注</strong>  给出一个特别的例子, $H_0:\theta=\theta_0$, $\Theta$ 连续. 则 $P(H_0\mid x)=0$, 此时似乎总是会拒绝 $H_0$? (陈书 <strong>Chap 5.28</strong>)</p>
+</li>
+</ul>
+<h2 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h2><h3 id="决策"><a href="#决策" class="headerlink" title="决策"></a>决策</h3><ul>
+<li>拒绝 $H_0$ 或不拒绝 $H_0$.</li>
+<li>检验=决策准则 $\Leftrightarrow$ 拒绝域 $R$ 的划分.</li>
+<li>关键:<ul>
+<li>选择合适的检验统计量.</li>
+<li>确定拒绝域的形状 (由 $H_1$ 决定).</li>
+</ul>
+</li>
+<li>拒绝 $H_0$ 有时也称观测值是显著的.</li>
+</ul>
+<h3 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h3><ul>
+<li><p>统计学中没有绝对的证实或证伪.<br>  $$<br>  \alpha(R):=P_{\theta}((X_1,\cdots,X_n)\in R\mid H_0).\<br>  \beta(R):=P_{\theta}((X_1,\cdots,X_n)\in R^c\mid H_1).<br>  $$</p>
+</li>
+<li><p>检验程序的属性, 不是样本的属性. 样本做决策要么正确要么错误.<br>  $$<br>  \alpha(R)\le\alpha.\<br>  \beta(R)\le\beta.<br>  $$<br>  预先指定的可接受的长期错误率.</p>
+</li>
+</ul>
+<h3 id="显著性检验-v-s-Neyman-Pearson-检验"><a href="#显著性检验-v-s-Neyman-Pearson-检验" class="headerlink" title="显著性检验 v.s. Neyman-Pearson 检验"></a>显著性检验 v.s. Neyman-Pearson 检验</h3><ul>
+<li><p>显著性检验: 只控制 $\alpha(R)\le\alpha$.</p>
+</li>
+<li><p><strong>Neyman-Pearson</strong> 假设检验: 强调两类错误、功效, $H_0,H_1$ 地位不均等.</p>
+</li>
+<li><p>不拒绝 $H_0$ $\ne$ 接受 $H_0$.</p>
+</li>
+<li><p>$\beta(R)$ 越小 (功效越大), 当 $H_0$ 不真时, 越有可能拒绝 $H_0$; 当观测支持 $H_0$, 则可以接受 $H_0$.</p>
+</li>
+<li><p>若忽略了对 $\beta(R)$ 的系统控制 (常见情形), 将导致对结果及下一步工作方向的误判.</p>
+</li>
+<li><p><strong>例</strong>  $H_0:\mu\ge 5$, $H_1:\mu&lt;5$. $n=10$, $\sigma=0.01$, $\alpha=0.01$.</p>
+</li>
+<li><p><strong>解答</strong>  临界值<br>  $$<br>  c=\mu_0-Z_{\alpha}\dfrac{\sigma}{\sqrt{n}}\approx 4.993.<br>  $$</p>
+</li>
+</ul>
+<h3 id="P-值"><a href="#P-值" class="headerlink" title="P 值"></a>P 值</h3><ul>
+<li>一次具体的观测值没有概率可言, <strong>P</strong> 不能衡量决策错误的概率. (<strong>ASA</strong> 文章)</li>
+</ul>
+<h3 id="卡方检验-——-多项分布的检验"><a href="#卡方检验-——-多项分布的检验" class="headerlink" title="卡方检验 —— 多项分布的检验"></a>卡方检验 —— 多项分布的检验</h3><ul>
+<li><strong>例</strong>  $H_0: p_1=p$, $p_2=1-p$. 此时<br>  $$<br>  \begin{aligned}<br>  \chi^2&amp;=\dfrac{(O_1-np_1)^2}{np_1}+\dfrac{(O_2-np_2)^2}{np_2}\<br>  &amp;=\dfrac{(O_1-np)^2}{np}+\dfrac{(O_1-np)^2}{n(1-p)}\<br>  &amp;=\dfrac{(O_1-np)^2}{np(1-p)}\<br>  &amp;\stackrel{近似}{\sim} N^2(0,1)=\chi^2(1).<br>  \end{aligned}<br>  $$</li>
+</ul>
+<h3 id="统计显著-ne-实际显著"><a href="#统计显著-ne-实际显著" class="headerlink" title="统计显著 $\ne$ 实际显著"></a>统计显著 $\ne$ 实际显著</h3><ul>
+<li><p><strong>例</strong>  投掷骰子 $n=6\times 10^{10}$ 次​.</p>
+<table>
+<thead>
+<tr>
+<th>点数</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>总计</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>观测频数 $10^{10}$</td>
+<td>$-10^{6}$</td>
+<td>$1.5\times 10^{6}$</td>
+<td>$-2\times 10^{6}$</td>
+<td>$4\times 10^{6}$</td>
+<td>$-3\times 10^{6}$</td>
+<td>$0.5\times 10^{6}$</td>
+<td>$6\times 10^{10}$</td>
+</tr>
+</tbody></table>
+<p>  $H_0:$ 分布均匀, $H_1:$ 分布不均匀. </p>
+</li>
+<li><p>计算得到 $\chi^2=3250$, 此时 <strong>P</strong> 值 $\ll 0.0001$. 因此拒绝 $H_0$, 统计显著. </p>
+</li>
+<li><p>实际上 $\vert\hat p_i-\dfrac{1}{6}\vert\sim 10^{-4}$, 实际角度视为无差异, 实际不显著.</p>
+</li>
+<li><p>$n$ 过大, 明察秋毫; $\chi^2$ 统计量关于 $n$ 是非齐次的.</p>
+</li>
+</ul>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Chengsx</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://chengsx21.github.io/52/">http://chengsx21.github.io/52/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Chengsx</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Probability-Theory/">
+                                    <span class="chip bg-color">Probability Theory</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/53/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="概率论与数理统计 笔记8">
+                        
+                        <span class="card-title">概率论与数理统计 笔记8</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            概率论与数理统计 笔记8
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-04-26
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Math/" class="post-category">
+                                    Math
+                                </a>
+                            
+                            <a href="/categories/Math/Probability-Theory/" class="post-category">
+                                    Probability Theory
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Probability-Theory/">
+                        <span class="chip bg-color">Probability Theory</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/51/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="概率论与数理统计 笔记6">
+                        
+                        <span class="card-title">概率论与数理统计 笔记6</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            概率论与数理统计 笔记6
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-04-05
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Math/" class="post-category">
+                                    Math
+                                </a>
+                            
+                            <a href="/categories/Math/Probability-Theory/" class="post-category">
+                                    Probability Theory
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Probability-Theory/">
+                        <span class="chip bg-color">Probability Theory</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+    });
+</script>
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022-2023</span>
+            
+            <a href="/about" target="_blank">Chengsx</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+                <span id="translate">|&nbsp;繁/简：</span><a id="translateLink" href="javascript:translatePage();">繁</a>
+            
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">85k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2022";
+                        var startMonth = "8";
+                        var startDate = "26";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/chengsx21" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:954738480@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=954738480" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 954738480" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+        <script type="text/javascript" src="/js/tw_cn.js"></script>
+        <script type="text/javascript">
+          var defaultEncoding = 2; //网站编写字体是否繁体，1-繁体，2-简体
+          var translateDelay = 0; //延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
+          var cookieDomain = "http://chengsx21.github.io"; //Cookie地址, 一定要设定, 通常为你的网址
+          var msgToTraditionalChinese = "繁"; //此处可以更改为你想要显示的文字
+          var msgToSimplifiedChinese = "简"; //同上，但两处均不建议更改
+          var translateButtonId = "translateLink"; //默认互换id
+          translateInitilization();
+        </script>
+    
+    
+    
+        
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
+            }
+        </script>
+    
+
+    <!--单击显示文字-->
+    <script type="text/javascript" src="/js/click-show-text.js"></script>
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
