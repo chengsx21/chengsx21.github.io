@@ -439,14 +439,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.9k
+                    1.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    24 分
+                    6 分
                 </div>
                 
 
@@ -521,10 +521,12 @@
 <ul>
 <li><p>$T(X_1,\cdots,X_n)$ - 完全由样本决定, 是一种数据简化方式.</p>
 </li>
-<li><p>样本均值<br>  $$<br>  \overline{X}=\dfrac{1}{n}\sum_{i=1}^{n}X_i.<br>  $$</p>
-</li>
-<li><p>样本方差<br>  $$<br>  S^2=\dfrac{1}{n-1}\sum_{i=1}^{n}(X_i-\overline{X})^2.<br>  $$</p>
-</li>
+<li><p>样本均值</p>
+<script type="math/tex; mode=display">
+  \overline{X}=\dfrac{1}{n}\sum_{i=1}^{n}X_i.</script></li>
+<li><p>样本方差 </p>
+<script type="math/tex; mode=display">
+  S^2=\dfrac{1}{n-1}\sum_{i=1}^{n}(X_i-\overline{X})^2.</script></li>
 </ul>
 </li>
 <li><p><strong>统计推断</strong></p>
@@ -546,44 +548,74 @@
 </li>
 </ul>
 <h2 id="矩估计"><a href="#矩估计" class="headerlink" title="矩估计"></a>矩估计</h2><ul>
-<li><p><strong>定义(样本矩)</strong>  $X_1,\cdots,X_n$ 独立同分布, 定义其 $k$ 阶<strong>原点矩</strong>:<br>  $$<br>  a_k=\dfrac{1}{n}\sum_{i=1}^{n}X_i^k\stackrel{\textbf{LLN}}{\longrightarrow}E(X^k).<br>  $$<br>  其 $k$ 阶<strong>中心矩</strong>:<br>  $$<br>  m_k=\dfrac{1}{n}\sum_{i=1}^{n}(X_i-\overline{X})^k\stackrel{\textbf{LLN}}{\longrightarrow}E\Big[(X-\mu)^k\Big].<br>  $$</p>
-</li>
+<li><p><strong>定义(样本矩)</strong>  $X_1,\cdots,X_n$ 独立同分布, 定义其 $k$ 阶<strong>原点矩</strong>:</p>
+<script type="math/tex; mode=display">
+  a_k=\dfrac{1}{n}\sum_{i=1}^{n}X_i^k\stackrel{\textbf{LLN}}{\longrightarrow}E(X^k).</script><p>  其 $k$ 阶<strong>中心矩</strong>:</p>
+<script type="math/tex; mode=display">
+  m_k=\dfrac{1}{n}\sum_{i=1}^{n}(X_i-\overline{X})^k\stackrel{\textbf{LLN}}{\longrightarrow}E\Big[(X-\mu)^k\Big].</script></li>
 <li><p><strong>例</strong>  $X\sim N(\mu,\sigma^2)$. 考虑其均值、方差对应的样本矩.</p>
 </li>
-<li><p><strong>解答</strong><br>  $$<br>  \mu=E(X)\approx\overline{X}=a_1;\<br>  \sigma^2=E\Big[(X-\mu)^2\Big]\approx\dfrac{1}{n}\sum_{i=1}^{n}(X_i-\overline{X})^2=m_2.<br>  $$</p>
-</li>
+<li><p><strong>解答</strong></p>
+<script type="math/tex; mode=display">
+  \mu=E(X)\approx\overline{X}=a_1;\\
+  \sigma^2=E\Big[(X-\mu)^2\Big]\approx\dfrac{1}{n}\sum_{i=1}^{n}(X_i-\overline{X})^2=m_2.</script></li>
 <li><p><strong>例</strong>  $X\sim Exp(\lambda)$. 考虑其均值、方差对应的样本矩, 并给出 $\lambda$ 的矩估计.</p>
 </li>
-<li><p><strong>解答</strong><br>  $$<br>  \dfrac{1}{\lambda}=E(X)\approx\overline{X}=a_1\Rightarrow\lambda=\dfrac{1}{a_1};\<br>  \dfrac{1}{\lambda^2}=E\Big[(X-E(X))^2\Big]\approx\dfrac{1}{n}\sum_{i=1}^{n}(X_i-\overline{X})^2=m_2\Rightarrow\lambda=\Big(\dfrac{1}{m_2}\Big)^{\tfrac{1}{2}}.<br>  $$<br>  我们通常使用<strong>低阶矩</strong>进行估计.</p>
+<li><p><strong>解答</strong></p>
+<script type="math/tex; mode=display">
+  \dfrac{1}{\lambda}=E(X)\approx\overline{X}=a_1\Rightarrow\lambda=\dfrac{1}{a_1};\\
+  \dfrac{1}{\lambda^2}=E\Big[(X-E(X))^2\Big]\approx\dfrac{1}{n}\sum_{i=1}^{n}(X_i-\overline{X})^2=m_2\Rightarrow\lambda=\Big(\dfrac{1}{m_2}\Big)^{\tfrac{1}{2}}.</script><p>  我们通常使用<strong>低阶矩</strong>进行估计.</p>
 </li>
 </ul>
 <h2 id="极大似然估计-MLE"><a href="#极大似然估计-MLE" class="headerlink" title="极大似然估计 (MLE)"></a>极大似然估计 (MLE)</h2><ul>
-<li><p><strong>定义(似然函数)</strong>  假设 $X_1,\cdots,X_n$ 的联合分布 $f(x_1,\cdots,x_n;\theta)$ (<strong>PMF\PDF</strong>), 其中 $\theta$ 为参数. 对于观测 $(X_1,\cdots,X_n)$ 的似然函数为<br>  $$<br>  L(\theta):=f(X_1,\cdots,X_n;\theta).<br>  $$</p>
-</li>
+<li><p><strong>定义(似然函数)</strong>  假设 $X_1,\cdots,X_n$ 的联合分布 $f(x_1,\cdots,x_n;\theta)$ (<strong>PMF\\PDF</strong>), 其中 $\theta$ 为参数. 对于观测 $(X_1,\cdots,X_n)$ 的似然函数为</p>
+<script type="math/tex; mode=display">
+  L(\theta):=f(X_1,\cdots,X_n;\theta).</script></li>
 <li><p><strong>注</strong></p>
 <ul>
 <li><p>具体观测数据通常记为 $(x_1,\cdots,x_n)$, 视为 $(X_1,\cdots,X_n)$ 的具体的实现值;</p>
 </li>
 <li><p>离散情形下, $L(\theta)$ 为出现 $(X_1,\cdots,X_n)$ 的概率;</p>
 </li>
-<li><p>若 $X_1,\cdots,X_n$ 独立同分布, 总体分布为 $f_1(x;\theta)$ (<strong>PMF\PDF</strong>), 那么<br>  $$<br>  L(\theta)=f_1(X_1;\theta)f_1(X_2;\theta)\cdots f_1(X_n;\theta).<br>  $$</p>
-</li>
+<li><p>若 $X_1,\cdots,X_n$ 独立同分布, 总体分布为 $f_1(x;\theta)$ (<strong>PMF\\PDF</strong>), 那么</p>
+<script type="math/tex; mode=display">
+  L(\theta)=f_1(X_1;\theta)f_1(X_2;\theta)\cdots f_1(X_n;\theta).</script></li>
 </ul>
 </li>
 <li><p><strong>例</strong>  $X_i\sim N(\mu,\sigma^2)$ 独立同分布, 其中 $\mu$,$\sigma^2$ 未知. 考虑观测的似然函数.</p>
 </li>
-<li><p><strong>解答</strong><br>  $$<br>  L(\mu,\sigma^2)=\prod_{i=1}^{n}\Big(\dfrac{1}{\sqrt{2\pi}\sigma}e^{-\tfrac{(X_i-\mu)^2}{2\sigma^2}}\Big).<br>  $$</p>
+<li><p><strong>解答</strong></p>
+<script type="math/tex; mode=display">
+  L(\mu,\sigma^2)=\prod_{i=1}^{n}\Big(\dfrac{1}{\sqrt{2\pi}\sigma}e^{-\tfrac{(X_i-\mu)^2}{2\sigma^2}}\Big).</script></li>
+<li><p><strong>定义(MLE)</strong>  定义 $\theta$ 的 <strong>MLE</strong> 为</p>
+<script type="math/tex; mode=display">
+  \theta^{*}=\arg\max_{\theta}L(\theta).</script><p>  其中 $\theta^{<em>}=\theta^{</em>}(X_1,\cdots,X_n)$.</p>
 </li>
-<li><p><strong>定义(MLE)</strong>  定义 $\theta$ 的 <strong>MLE</strong> 为<br>  $$<br>  \theta^{<em>}=\arg\max_{\theta}L(\theta).<br>  $$<br>  其中 $\theta^{</em>}=\theta^{*}(X_1,\cdots,X_n)$.</p>
-</li>
-<li><p><strong>解答续</strong>  考虑方程组<br>  $$<br>  \begin{cases}<br>  \dfrac{\partial\log L(\mu,\sigma^2)}{\partial\mu}=0;\<br>  \dfrac{\partial\log L(\mu,\sigma^2)}{\partial\sigma^2}=0.<br>  \end{cases}<br>  $$<br>  解得<br>  $$<br>  \begin{cases}<br>  \mu^{<em>}=\overline{X},\<br>  (\sigma^2)^{</em>}=\sum\limits_{i=1}^{n}(X_i-\overline{X})^2.<br>  \end{cases}<br>  $$<br>  经验证 $(\mu^{<em>},(\sigma^2)^{</em>})$ 为 $(\mu,\sigma^2)$ 的 <strong>MLE</strong>.</p>
+<li><p><strong>解答续</strong>  考虑方程组</p>
+<script type="math/tex; mode=display">
+  \begin{cases}
+  \dfrac{\partial\log L(\mu,\sigma^2)}{\partial\mu}=0;\\
+  \dfrac{\partial\log L(\mu,\sigma^2)}{\partial\sigma^2}=0.
+  \end{cases}</script><p>  解得</p>
+<script type="math/tex; mode=display">
+  \begin{cases}
+  \mu^{*}=\overline{X},\\
+  (\sigma^2)^{*}=\sum\limits_{i=1}^{n}(X_i-\overline{X})^2.
+  \end{cases}</script><p>  经验证 $(\mu^{<em>},(\sigma^2)^{</em>})$ 为 $(\mu,\sigma^2)$ 的 <strong>MLE</strong>.</p>
 </li>
 <li><p><strong>注</strong>  $(\sigma^2)^{<em>}=(\sigma^{</em>})^2$ (<strong>MLE</strong> 的不变性).</p>
 </li>
 <li><p><strong>例</strong>  随机变量 $X_i\sim U(0,\theta)$ 独立同分布, $\theta$ 未知. 求 $\theta$ 的 <strong>MLE</strong>.</p>
 </li>
-<li><p><strong>解答</strong><br>  $$<br>  L(\theta)=<br>  \begin{cases}<br>  \cfrac{1}{\theta^n}, &amp;X_i\in(0,\theta), \theta\ge\max{X_1,\cdots,X_n}\<br>  0, &amp;其他.<br>  \end{cases}<br>  $$<br>  我们得到<br>  $$<br>  \theta^{*}=\max{X_1,\cdots,X_n}.<br>  $$</p>
-</li>
+<li><p><strong>解答</strong></p>
+<script type="math/tex; mode=display">
+  L(\theta)=
+  \begin{cases}
+  \cfrac{1}{\theta^n}, &X_i\in(0,\theta), \theta\ge\max\{X_1,\cdots,X_n\}\\
+  0, &其他.
+  \end{cases}</script><p>  我们得到</p>
+<script type="math/tex; mode=display">
+  \theta^{*}=\max\{X_1,\cdots,X_n\}.</script></li>
 <li><p><strong>例</strong>  总体 <strong>PDF</strong> 为 $f(x;\theta)=\dfrac{1}{\pi(1+(x-\theta)^2)}$, $x\in\mathbb{R}$ (<strong>Cauchy</strong> 分布).</p>
 </li>
 <li><p><strong>解答</strong></p>
@@ -595,11 +627,13 @@
 </li>
 </ul>
 <h2 id="优良性准则"><a href="#优良性准则" class="headerlink" title="优良性准则"></a>优良性准则</h2><ul>
-<li><p><strong>定义(无偏性)</strong>  定义 $\hat{\theta}=\hat{\theta}(X_1,\cdots,X_n)$ 为 $\theta$ 的估计量 (随机变量). 我们称一个估计 $\hat\theta$ 的偏差 (<strong>Bias</strong>):<br>$$<br>E_{\theta}(\hat\theta-\theta)=E_{\theta}(\hat\theta)-\theta.<br>$$<br>若 $E_{\theta}(\hat\theta-\theta)=0$, $\forall,\theta$, 则称 $\hat\theta$ 为 $\theta$ 的一个无偏估计量.</p>
+<li><p><strong>定义(无偏性)</strong>  定义 $\hat{\theta}=\hat{\theta}(X_1,\cdots,X_n)$ 为 $\theta$ 的估计量 (随机变量). 我们称一个估计 $\hat\theta$ 的偏差 (<strong>Bias</strong>):</p>
+<script type="math/tex; mode=display">
+E_{\theta}(\hat\theta-\theta)=E_{\theta}(\hat\theta)-\theta.</script><p>若 $E_{\theta}(\hat\theta-\theta)=0$, $\forall\,\theta$, 则称 $\hat\theta$ 为 $\theta$ 的一个无偏估计量.</p>
 </li>
 <li><p><strong>注</strong></p>
 <ul>
-<li>一般地, $E_{\theta}(\hat g(X_1,\cdots,X_n)-g(\theta))=0$, $\forall,\theta,\Leftrightarrow$ $\hat{g}$ 为 $g(\theta)$ 的无偏估计;</li>
+<li>一般地, $E_{\theta}(\hat g(X_1,\cdots,X_n)-g(\theta))=0$, $\forall\,\theta\,\Leftrightarrow$ $\hat{g}$ 为 $g(\theta)$ 的无偏估计;</li>
 <li>无偏 $\Leftrightarrow$ 无系统偏差;</li>
 <li>$\dfrac{1}{N}\sum\limits_{m=1}^{N}\hat{\theta}(X_1^{(m)},\cdots,X_n^{(m)})\stackrel{a.s.}{\longrightarrow}E(\hat\theta)\stackrel{无偏}{=}\theta$;</li>
 <li>无偏性的重要性视情形而定.</li>
@@ -619,28 +653,41 @@
 <li><p><strong>解答</strong></p>
 <ul>
 <li>矩估计 $\hat\theta=2\overline{X}$;</li>
-<li><strong>MLE</strong> $\theta^{*}=\max{X_1,\cdots, X_n}$;</li>
-<li>计算可得 $E(\hat\theta)=\theta,,E(\theta^{*})=\dfrac{n}{n+1}\theta$.</li>
+<li><strong>MLE</strong> $\theta^{*}=\max\{X_1,\cdots, X_n\}$;</li>
+<li>计算可得 $E(\hat\theta)=\theta,\,E(\theta^{*})=\dfrac{n}{n+1}\theta$.</li>
 </ul>
 </li>
 <li><p><strong>注</strong>  <strong>MLE</strong> 可也能是有偏的 (本例中即为系统偏小).</p>
 </li>
-<li><p><strong>定义(均方误差准则)</strong>  定义一个估计 $\hat\theta$ 的均方误差 (<strong>MSE</strong>):<br>  $$<br>  E_{\theta}\Big[(\hat\theta-\theta)^2\Big]=Var(\hat\theta)+E_{\theta}^2(\hat\theta-\theta).<br>  $$<br>  其中 $Var(\hat\theta)$ 代表着精确度, $E_{\theta}^2(\hat\theta-\theta)$ 代表着准确度.</p>
+<li><p><strong>定义(均方误差准则)</strong>  定义一个估计 $\hat\theta$ 的均方误差 (<strong>MSE</strong>):</p>
+<script type="math/tex; mode=display">
+  E_{\theta}\Big[(\hat\theta-\theta)^2\Big]=Var(\hat\theta)+E_{\theta}^2(\hat\theta-\theta).</script><p>  其中 $Var(\hat\theta)$ 代表着精确度, $E_{\theta}^2(\hat\theta-\theta)$ 代表着准确度.</p>
 </li>
-<li><p><strong>定义</strong>  假定 $\hat\theta_1$, $\hat\theta_2$ 均为 $\theta$ 的无偏估计, 若<br>  $$<br>  \forall,\theta,,Var(\hat\theta_1)\le Var(\hat\theta_2)<br>  $$<br>  且<br>  $$<br>  \exists,\theta_0,,Var_{\theta_0}(\hat\theta_2)&lt;Var_{\theta_0}(\hat\theta_1).<br>  $$<br>  则称在均方误差意义下 $\hat\theta_1$ 优于 $\hat\theta_2$.</p>
+<li><p><strong>定义</strong>  假定 $\hat\theta_1$, $\hat\theta_2$ 均为 $\theta$ 的无偏估计, 若</p>
+<script type="math/tex; mode=display">
+  \forall\,\theta,\,Var(\hat\theta_1)\le Var(\hat\theta_2)</script><p>  且</p>
+<script type="math/tex; mode=display">
+  \exists\,\theta_0,\,Var_{\theta_0}(\hat\theta_2)<Var_{\theta_0}(\hat\theta_1).</script><p>  则称在均方误差意义下 $\hat\theta_1$ 优于 $\hat\theta_2$.</p>
 </li>
 <li><p><strong>例</strong>  $E(X)=\mu$.</p>
 </li>
-<li><p><strong>解答</strong><br>  $$<br>  E(\overline{X})=E(X_1)=E\Big(\dfrac{1}{2}X_1+\dfrac{1}{2}X_2\Big)=\mu.<br>  $$</p>
-<p>  $$<br>  Var(\overline{X})=\dfrac{1}{n}\sigma^2,,Var(X_1)=\sigma^2,,Var\Big(\dfrac{1}{2}X_1+\dfrac{1}{2}X_2\Big)=\dfrac{1}{2}\sigma^2.<br>  $$</p>
-</li>
+<li><p><strong>解答</strong>  </p>
+<script type="math/tex; mode=display">
+  E(\overline{X})=E(X_1)=E\Big(\dfrac{1}{2}X_1+\dfrac{1}{2}X_2\Big)=\mu.</script><script type="math/tex; mode=display">
+  Var(\overline{X})=\dfrac{1}{n}\sigma^2,\,Var(X_1)=\sigma^2,\,Var\Big(\dfrac{1}{2}X_1+\dfrac{1}{2}X_2\Big)=\dfrac{1}{2}\sigma^2.</script></li>
 <li><p><strong>注</strong>  有时也可称为“有效性准则”.</p>
 </li>
-<li><p><strong>定义</strong>  假定 $\hat\theta_0$ 为 $\theta$ 的无偏估计, 若对任意 $\theta$ 与 $\theta$ 的无偏估计 $\hat\theta$<br>  $$<br>  Var(\hat\theta_0)\le Var(\hat\theta)<br>  $$<br>  则称 $\hat\theta_0$ 为最小方差无偏估计 (<strong>MVUE</strong>).</p>
+<li><p><strong>定义</strong>  假定 $\hat\theta_0$ 为 $\theta$ 的无偏估计, 若对任意 $\theta$ 与 $\theta$ 的无偏估计 $\hat\theta$</p>
+<script type="math/tex; mode=display">
+  Var(\hat\theta_0)\le Var(\hat\theta)</script><p>  则称 $\hat\theta_0$ 为最小方差无偏估计 (<strong>MVUE</strong>).</p>
 </li>
 <li><p><strong>例</strong>  $X\sim N(\mu,\sigma^2)$.</p>
 </li>
-<li><p><strong>解答</strong>  由于<br>$$<br>E(m_2)=\dfrac{n-1}{n}\sigma^2,,E(S^2)=\sigma^2.<br>$$<br>因此计算可得<br>$$<br>E\Big[(m_2-\sigma^2)^2\Big]=\cdots&lt;E\Big[(S^2-\sigma^2)^2\Big]=\cdots<br>$$<br>这是用低偏差换了方差.</p>
+<li><p><strong>解答</strong>  由于</p>
+<script type="math/tex; mode=display">
+E(m_2)=\dfrac{n-1}{n}\sigma^2,\,E(S^2)=\sigma^2.</script><p>因此计算可得</p>
+<script type="math/tex; mode=display">
+E\Big[(m_2-\sigma^2)^2\Big]=\cdots<E\Big[(S^2-\sigma^2)^2\Big]=\cdots</script><p>这是用低偏差换了方差.</p>
 </li>
 <li><p><strong>定义</strong></p>
 <ul>
@@ -652,14 +699,23 @@
 </li>
 <li><p><strong>定义(渐进无偏性)</strong>  有 $\lim\limits_{n\rightarrow\infty} E(\hat\theta-\theta)=0$;</p>
 </li>
-<li><p><strong>定义(相合性)</strong>  若 $\forall,\varepsilon&gt;0$, 有 $\lim\limits_{n\rightarrow\infty}P(\left|\hat\theta-\theta\right|\ge\varepsilon)=0$, 则称 $\hat\theta$ 为 $\theta$ 的一个相合估计, 即 $\hat\theta\stackrel{P}{\longrightarrow}\theta$.</p>
+<li><p><strong>定义(相合性)</strong>  若 $\forall\,\varepsilon&gt;0$, 有 $\lim\limits_{n\rightarrow\infty}P(\left|\hat\theta-\theta\right|\ge\varepsilon)=0$, 则称 $\hat\theta$ 为 $\theta$ 的一个相合估计, 即 $\hat\theta\stackrel{P}{\longrightarrow}\theta$.</p>
 <ul>
 <li><strong>WLLN</strong> $\Rightarrow$ $\overline{X}$ 是 $\mu$ 的一个相合估计;</li>
 <li>相合性是良好点估计的自然要求.</li>
 </ul>
 </li>
-<li><p><strong>例</strong>  我们得到<br>  $$<br>  \begin{aligned}<br>  m_2&amp;=\dfrac{1}{n}\sum\limits_{i=1}^{n}(X_i-\overline{X})^2\<br>  &amp;=\dfrac{1}{n}\sum\limits_{i=1}^{n}(X_i-\mu-\overline{X}+\mu)^2\<br>  &amp;=\dfrac{1}{n}\sum\limits_{i=1}^{n}(X_i-\mu)^2-(\overline{X}-\mu)^2\<br>  &amp;\stackrel{P}{\rightarrow}E\Big[(X-\mu)^2\Big]\<br>  &amp;=\sigma^2.<br>  \end{aligned}<br>  $$<br>  进而有<br>  $$<br>  S^2=\dfrac{n}{n-1}m_2\stackrel{P}{\rightarrow}\sigma^2.<br>  $$</p>
-</li>
+<li><p><strong>例</strong>  我们得到</p>
+<script type="math/tex; mode=display">
+  \begin{aligned}
+  m_2&=\dfrac{1}{n}\sum\limits_{i=1}^{n}(X_i-\overline{X})^2\\
+  &=\dfrac{1}{n}\sum\limits_{i=1}^{n}(X_i-\mu-\overline{X}+\mu)^2\\
+  &=\dfrac{1}{n}\sum\limits_{i=1}^{n}(X_i-\mu)^2-(\overline{X}-\mu)^2\\
+  &\stackrel{P}{\rightarrow}E\Big[(X-\mu)^2\Big]\\
+  &=\sigma^2.
+  \end{aligned}</script><p>  进而有</p>
+<script type="math/tex; mode=display">
+  S^2=\dfrac{n}{n-1}m_2\stackrel{P}{\rightarrow}\sigma^2.</script></li>
 <li><p><strong>定义(渐进正态性)</strong>  $\dfrac{\hat\theta-\theta}{se(\hat\theta)}\stackrel{d}{\rightarrow}Z\sim(0,1)$ (渐进正态估计).</p>
 <ul>
 <li><p>$\hat\theta\stackrel{近似}{\sim}N(0,se^2(\hat\theta))$;</p>
@@ -670,7 +726,9 @@
 </li>
 </ul>
 <h2 id="置信区间-Condifence-Interval"><a href="#置信区间-Condifence-Interval" class="headerlink" title="置信区间 (Condifence Interval)"></a>置信区间 (Condifence Interval)</h2><ul>
-<li><p><strong>定义(置信区间)</strong>  $\forall,\alpha\in(0,1)$, $\forall,\theta$, 有 $\hat\theta_i=\hat\theta_i(X_1,\cdots,X_n)$, 其中 $i=1,2$, 使得<br>  $$<br>  P(\hat\theta_1&lt;\theta&lt;\hat\theta_2)\ge 1-\alpha.<br>  $$<br>  则称 $(\hat\theta_1,\hat\theta_2)$ 为 $\theta$ 的 $(1-\alpha)$ 置信的区间估计 (双侧).</p>
+<li><p><strong>定义(置信区间)</strong>  $\forall\,\alpha\in(0,1)$, $\forall\,\theta$, 有 $\hat\theta_i=\hat\theta_i(X_1,\cdots,X_n)$, 其中 $i=1,2$, 使得</p>
+<script type="math/tex; mode=display">
+  P(\hat\theta_1<\theta<\hat\theta_2)\ge 1-\alpha.</script><p>  则称 $(\hat\theta_1,\hat\theta_2)$ 为 $\theta$ 的 $(1-\alpha)$ 置信的区间估计 (双侧).</p>
 </li>
 <li><p><strong>注</strong></p>
 <ul>
@@ -681,8 +739,15 @@
 </li>
 <li><p><strong>例</strong>  $X\sim N(\mu,\sigma^2)$, <strong>已知</strong> $\sigma^2$, 给出 $\mu$ 的 $(1-\alpha)$ 置信区间估计.</p>
 </li>
-<li><p><strong>解答</strong>  注意到<br>  $$<br>  \begin{aligned}<br>  &amp;\overline{X}-\mu\sim N(0,\dfrac{\sigma^2}{n})\<br>  \Longleftrightarrow&amp;\dfrac{\overline{X}-\mu}{\frac{\sigma}{\sqrt{n}}}\sim N(0,1)\<br>  \Longrightarrow&amp;P\Big(\left|\dfrac{\overline{X}-\mu}{\frac{\sigma}{\sqrt{n}}}\right|&lt;Z_{\tfrac{\alpha}{2}}\Big)=1-\alpha.<br>  \end{aligned}<br>  $$<br>  其中 $Z_{\tfrac{\alpha}{2}}$ 为 $N(0,1)$ 的上侧 $\dfrac{\alpha}{2}$ 分位数. 因此所求 $(1-\alpha)$ 置信的区间估计为<br>  $$<br>  (\overline{X}-\frac{\sigma}{\sqrt{n}}Z_{\tfrac{\alpha}{2}},\overline{X}+\frac{\sigma}{\sqrt{n}}Z_{\tfrac{\alpha}{2}}).<br>  $$</p>
-</li>
+<li><p><strong>解答</strong>  注意到</p>
+<script type="math/tex; mode=display">
+  \begin{aligned}
+  &\overline{X}-\mu\sim N(0,\dfrac{\sigma^2}{n})\\
+  \Longleftrightarrow&\dfrac{\overline{X}-\mu}{\frac{\sigma}{\sqrt{n}}}\sim N(0,1)\\
+  \Longrightarrow&P\Big(\left|\dfrac{\overline{X}-\mu}{\frac{\sigma}{\sqrt{n}}}\right|<Z_{\tfrac{\alpha}{2}}\Big)=1-\alpha.
+  \end{aligned}</script><p>  其中 $Z_{\tfrac{\alpha}{2}}$ 为 $N(0,1)$ 的上侧 $\dfrac{\alpha}{2}$ 分位数. 因此所求 $(1-\alpha)$ 置信的区间估计为</p>
+<script type="math/tex; mode=display">
+  (\overline{X}-\frac{\sigma}{\sqrt{n}}Z_{\tfrac{\alpha}{2}},\overline{X}+\frac{\sigma}{\sqrt{n}}Z_{\tfrac{\alpha}{2}}).</script></li>
 <li><p><strong>注</strong></p>
 <ul>
 <li>若 $\alpha=0.05$, 则 $Z_{\tfrac{\alpha}{2}}=Z_{0.025}\approx 1.96\approx 2$;</li>
@@ -692,43 +757,128 @@
 </li>
 <li><p><strong>例</strong>  $X\sim N(\mu,\sigma^2)$, <strong>未知</strong> $\sigma^2$, 给出 $\mu$ 的 $(1-\alpha)$ 置信区间估计.</p>
 </li>
-<li><p><strong>解答</strong>  注意到<br>  $$<br>  \dfrac{\overline{X}-\mu}{\frac{\sigma}{\sqrt{n}}}\sim N(0,1),\<br>  \dfrac{(n-1)S^2}{\sigma^2}\sim\chi^2(n-1).<br>  $$<br>  注意到 $\overline{X}$, $S^2$ 相互独立, 由**陈书 $P_{93-94}$**可得<br>  $$<br>  \dfrac{\overline{X}-\mu}{\frac{\sigma}{\sqrt{n}}}/\dfrac{S}{\sigma}\sim t(n-1).<br>  $$<br>  即<br>  $$<br>  \dfrac{\overline{X}-\mu}{\frac{S}{\sqrt{n}}}\sim t(n-1).<br>  $$<br>  因此<br>  $$<br>  P\Big(\left|\dfrac{\overline{X}-\mu}{\frac{S}{\sqrt{n}}}\right|&lt;t_{\tfrac{\alpha}{2}}(n-1)\Big)=1-\alpha.<br>  $$<br>  其中 $t_{\tfrac{\alpha}{2}}(n-1)$ 为 $t(n-1)$ 分布上侧 $\dfrac{\alpha}{2}$ 分位数, 所求 $(1-\alpha)$ 置信区间估计为<br>  $$<br>  (\overline{X}-\frac{S}{\sqrt{n}}t_{\tfrac{\alpha}{2}}(n-1),\overline{X}+\frac{S}{\sqrt{n}}t_{\tfrac{\alpha}{2}}(n-1)).<br>  $$</p>
-</li>
+<li><p><strong>解答</strong>  注意到</p>
+<script type="math/tex; mode=display">
+  \dfrac{\overline{X}-\mu}{\frac{\sigma}{\sqrt{n}}}\sim N(0,1),\\
+  \dfrac{(n-1)S^2}{\sigma^2}\sim\chi^2(n-1).</script><p>  注意到 $\overline{X}$, $S^2$ 相互独立, 由<strong>陈书 $P_{93-94}$</strong>可得</p>
+<script type="math/tex; mode=display">
+  \dfrac{\overline{X}-\mu}{\frac{\sigma}{\sqrt{n}}}/\dfrac{S}{\sigma}\sim t(n-1).</script><p>  即</p>
+<script type="math/tex; mode=display">
+  \dfrac{\overline{X}-\mu}{\frac{S}{\sqrt{n}}}\sim t(n-1).</script><p>  因此</p>
+<script type="math/tex; mode=display">
+  P\Big(\left|\dfrac{\overline{X}-\mu}{\frac{S}{\sqrt{n}}}\right|<t_{\tfrac{\alpha}{2}}(n-1)\Big)=1-\alpha.</script><p>  其中 $t_{\tfrac{\alpha}{2}}(n-1)$ 为 $t(n-1)$ 分布上侧 $\dfrac{\alpha}{2}$ 分位数, 所求 $(1-\alpha)$ 置信区间估计为</p>
+<script type="math/tex; mode=display">
+  (\overline{X}-\frac{S}{\sqrt{n}}t_{\tfrac{\alpha}{2}}(n-1),\overline{X}+\frac{S}{\sqrt{n}}t_{\tfrac{\alpha}{2}}(n-1)).</script></li>
 <li><p><strong>注</strong>  $\dfrac{\overline{X}-\mu}{\frac{\sigma}{\sqrt{n}}}$, $\dfrac{\overline{X}-\mu}{\frac{S}{\sqrt{n}}}$ 成为枢轴变量.</p>
 </li>
 <li><p><strong>例</strong>  $X\sim N(\mu,\sigma^2)$, <strong>未知</strong> $\mu$, 给出 $\sigma^2$ 的 $(1-\alpha)$ 置信区间估计.</p>
 </li>
-<li><p><strong>解答</strong>  注意到<br>  $$<br>  \dfrac{(n-1)S^2}{\sigma^2}\sim\chi^2(n-1).<br>  $$<br>  因此所求 $(1-\alpha)$ 置信区间估计为<br>  $$<br>  \Big(\frac{(n-1)S^2}{\chi^2_{\tfrac{\alpha}{2}}(n-1)},\frac{(n-1)S^2}{\chi^2_{1-\tfrac{\alpha}{2}}(n-1)}\Big).<br>  $$</p>
-</li>
-<li><p><strong>注</strong>  我们有<br>  $$<br>  \begin{aligned}<br>  \dfrac{(n-1)S^2}{\sigma^2}&amp;=\dfrac{\sum_{i=1}^{n}(X_i-\overline{X})^2}{\sigma^2}\<br>  &amp;=\sum\limits_{i=1}^{n}\Big(\dfrac{X_i-\mu}{\sigma}\Big)^2-\Big(\dfrac{\overline{X}-\mu}{\tfrac{\sigma}{\sqrt{n}}}\Big)^2\<br>  &amp;\sim\chi^2(n-1).<br>  \end{aligned}<br>  $$</p>
-</li>
+<li><p><strong>解答</strong>  注意到</p>
+<script type="math/tex; mode=display">
+  \dfrac{(n-1)S^2}{\sigma^2}\sim\chi^2(n-1).</script><p>  因此所求 $(1-\alpha)$ 置信区间估计为</p>
+<script type="math/tex; mode=display">
+  \Big(\frac{(n-1)S^2}{\chi^2_{\tfrac{\alpha}{2}}(n-1)},\frac{(n-1)S^2}{\chi^2_{1-\tfrac{\alpha}{2}}(n-1)}\Big).</script></li>
+<li><p><strong>注</strong>  我们有</p>
+<script type="math/tex; mode=display">
+  \begin{aligned}
+  \dfrac{(n-1)S^2}{\sigma^2}&=\dfrac{\sum_{i=1}^{n}(X_i-\overline{X})^2}{\sigma^2}\\
+  &=\sum\limits_{i=1}^{n}\Big(\dfrac{X_i-\mu}{\sigma}\Big)^2-\Big(\dfrac{\overline{X}-\mu}{\tfrac{\sigma}{\sqrt{n}}}\Big)^2\\
+  &\sim\chi^2(n-1).
+  \end{aligned}</script></li>
 <li><p><strong>例</strong>  $X\sim N(\mu_1,\sigma^2)$, $Y\sim N(\mu_2,\sigma^2)$ 相互独立, <strong>未知</strong> $\mu_1$, $\mu_2$, $\sigma^2$, 给出 $\mu_1-\mu_2$ 的 $(1-\alpha)$ 置信区间估计.</p>
 </li>
-<li><p><strong>解答</strong>  设 $X_1,\cdots,X_n$, $Y_1,\cdots,Y_m$ 为随机样本, $S_1^2$ 为 $X$ 的样本方差, $S_2^2$ 为 $Y$ 的样本方差, 则<br>  $$<br>  (\overline{X}-\overline{Y})-(\mu_1-\mu_2)\sim N(0,\dfrac{\sigma^2}{n}+\dfrac{\sigma^2}{m}).<br>  $$<br>  因为<br>  $$<br>  \dfrac{(n-1)S_1^2}{\sigma^2}+\dfrac{(m-1)S_2^2}{\sigma^2}\sim\chi^2(n+m-2).<br>  $$<br>  记<br>  $$<br>  S^2=\dfrac{n-1}{n+m-2}S_1^2+\dfrac{m-1}{n+m-2}S_2^2.<br>  $$<br>  从而得到<br>  $$<br>  \dfrac{(\overline{X}-\overline{Y})-(\mu_1-\mu_2)}{\sqrt{\dfrac{\sigma^2}{n}+\dfrac{\sigma^2}{m}}}/\dfrac{S}{\sigma}\sim t(n+m-2).<br>  $$<br>  也即<br>  $$<br>  \dfrac{(\overline{X}-\overline{Y})-(\mu_1-\mu_2)}{S\sqrt{\dfrac{1}{n}+\dfrac{1}{m}}}\sim t(n+m-2).<br>  $$<br>  这是我们用到的枢轴变量, 所求 $(1-\alpha)$ 置信区间估计为<br>  $$<br>  \Big(\overline{X}-\overline{Y}-t_{\tfrac{\alpha}{2}}(l)S\sqrt{\dfrac{m+n}{mn}},\overline{X}-\overline{Y}+t_{\tfrac{\alpha}{2}}(l)S\sqrt{\dfrac{m+n}{mn}}\Big).<br>  $$<br>  其中 $l=n+m-2$.</p>
+<li><p><strong>解答</strong>  设 $X_1,\cdots,X_n$, $Y_1,\cdots,Y_m$ 为随机样本, $S_1^2$ 为 $X$ 的样本方差, $S_2^2$ 为 $Y$ 的样本方差, 则</p>
+<script type="math/tex; mode=display">
+  (\overline{X}-\overline{Y})-(\mu_1-\mu_2)\sim N(0,\dfrac{\sigma^2}{n}+\dfrac{\sigma^2}{m}).</script><p>  因为</p>
+<script type="math/tex; mode=display">
+  \dfrac{(n-1)S_1^2}{\sigma^2}+\dfrac{(m-1)S_2^2}{\sigma^2}\sim\chi^2(n+m-2).</script><p>  记</p>
+<script type="math/tex; mode=display">
+  S^2=\dfrac{n-1}{n+m-2}S_1^2+\dfrac{m-1}{n+m-2}S_2^2.</script><p>  从而得到</p>
+<script type="math/tex; mode=display">
+  \dfrac{(\overline{X}-\overline{Y})-(\mu_1-\mu_2)}{\sqrt{\dfrac{\sigma^2}{n}+\dfrac{\sigma^2}{m}}}/\dfrac{S}{\sigma}\sim t(n+m-2).</script><p>  也即</p>
+<script type="math/tex; mode=display">
+  \dfrac{(\overline{X}-\overline{Y})-(\mu_1-\mu_2)}{S\sqrt{\dfrac{1}{n}+\dfrac{1}{m}}}\sim t(n+m-2).</script><p>  这是我们用到的枢轴变量, 所求 $(1-\alpha)$ 置信区间估计为</p>
+<script type="math/tex; mode=display">
+  \Big(\overline{X}-\overline{Y}-t_{\tfrac{\alpha}{2}}(l)S\sqrt{\dfrac{m+n}{mn}},\overline{X}-\overline{Y}+t_{\tfrac{\alpha}{2}}(l)S\sqrt{\dfrac{m+n}{mn}}\Big).</script><p>  其中 $l=n+m-2$.</p>
 </li>
 <li><p><strong>定义(渐进置信区间)</strong>  通过大样本方法进行区间估计.</p>
 </li>
-<li><p><strong>例(选举问题)</strong>  真实支持率 $p$ 未知, $n=1200$, 观测比例 $\dfrac{684}{1200}\approx 0.57$. 给出 $p$ 的一个 $95%$ 置信的区间估计.</p>
+<li><p><strong>例(选举问题)</strong>  真实支持率 $p$ 未知, $n=1200$, 观测比例 $\dfrac{684}{1200}\approx 0.57$. 给出 $p$ 的一个 $95\%$ 置信的区间估计.</p>
 </li>
-<li><p><strong>解答</strong>  $X_i\sim B(p),(1\le i\le n)$ <strong>iid</strong> (近似有放回, $n&lt;&lt;N$). 我们有<br>  $$<br>  P_n=P_n(X_1,\cdots,X_n)=\dfrac{1}{n}\sum\limits_{i=1}^{n}X_i=\overline{X}.<br>  $$<br>  因此<br>  $$<br>  E(P_n)=p,,Var(P_n)=\dfrac{p(1-p)}{n}.<br>  $$<br>  由 <strong>CLT</strong>, 得到<br>  $$<br>  \dfrac{P_n-p}{\sqrt{\tfrac{p(1-p)}{n}}}\sim N(0,1)\Rightarrow P\Big(|\dfrac{P_n-p}{\sqrt{\tfrac{p(1-p)}{n}}}|&lt;Z_{\tfrac{\alpha}{2}}\Big)\approx 1-\alpha.<br>  $$<br>  $[1]$ 用 $S^2=\dfrac{1}{n-1}\sum\limits_{i=1}^{n}(X_i-\overline{X})^2$ 来估计 $\sigma^2=p(1-p)$. 由 <strong>CLT</strong>, 得到<br>  $$<br>  \dfrac{P_n-p}{\sqrt{\tfrac{S^2}{n}}}\stackrel{近似} {\sim} N(0,1)\Rightarrow P\Big(|\dfrac{P_n-p}{\sqrt{\tfrac{S^2}{n}}}|&lt;Z_{\tfrac{\alpha}{2}}\Big)\approx 1-\alpha.<br>  $$<br>  其中 $S^2\approx 0.2475$, 区间估计为 $(0.542,0.598)$.</p>
+<li><p><strong>解答</strong>  $X_i\sim B(p)\,(1\le i\le n)$ <strong>iid</strong> (近似有放回, $n&lt;&lt;N$). 我们有</p>
+<script type="math/tex; mode=display">
+  P_n=P_n(X_1,\cdots,X_n)=\dfrac{1}{n}\sum\limits_{i=1}^{n}X_i=\overline{X}.</script><p>  因此</p>
+<script type="math/tex; mode=display">
+  E(P_n)=p,\,Var(P_n)=\dfrac{p(1-p)}{n}.</script><p>  由 <strong>CLT</strong>, 得到</p>
+<script type="math/tex; mode=display">
+  \dfrac{P_n-p}{\sqrt{\tfrac{p(1-p)}{n}}}\sim N(0,1)\Rightarrow P\Big(|\dfrac{P_n-p}{\sqrt{\tfrac{p(1-p)}{n}}}|<Z_{\tfrac{\alpha}{2}}\Big)\approx 1-\alpha.</script><p>  $[1]$ 用 $S^2=\dfrac{1}{n-1}\sum\limits_{i=1}^{n}(X_i-\overline{X})^2$ 来估计 $\sigma^2=p(1-p)$. 由 <strong>CLT</strong>, 得到</p>
+<script type="math/tex; mode=display">
+  \dfrac{P_n-p}{\sqrt{\tfrac{S^2}{n}}}\stackrel{近似} {\sim} N(0,1)\Rightarrow P\Big(|\dfrac{P_n-p}{\sqrt{\tfrac{S^2}{n}}}|<Z_{\tfrac{\alpha}{2}}\Big)\approx 1-\alpha.</script><p>  其中 $S^2\approx 0.2475$, 区间估计为 $(0.542,0.598)$.</p>
 <p>  $[2]$ 用 $m_2=\dfrac{1}{n}\sum\limits_{i=1}^{n}(X_i-\overline{X})^2$ 来估计 $\sigma^2=p(1-p)$. </p>
-<p>  实际上, 我们有<br>  $$<br>  m_2=\dfrac{1}{n}[(1-P_n)^2nP_n+(0-P_n)^2(n-nP_n)]=P_n(1-P_n).<br>  $$<br>  由 <strong>CLT</strong>, 得到<br>  $$<br>  \dfrac{P_n-p}{\sqrt{\tfrac{P_n(1-P_n)}{n}}}\stackrel{近似} {\sim} N(0,1)\Rightarrow p\in(0.542,0.598).<br>  $$<br>  $[3]$ 用 $p(1-p)$ 的最大值来估计 $\sigma^2=p(1-p)$. 由 <strong>CLT</strong>, 得到<br>  $$<br>  \dfrac{P_n-p}{\sqrt{\tfrac{1}{4n}}}\stackrel{近似} {\sim} N(0,1)\Rightarrow p\in(0.542,0.599).<br>  $$</p>
-</li>
+<p>  实际上, 我们有</p>
+<script type="math/tex; mode=display">
+  m_2=\dfrac{1}{n}[(1-P_n)^2nP_n+(0-P_n)^2(n-nP_n)]=P_n(1-P_n).</script><p>  由 <strong>CLT</strong>, 得到</p>
+<script type="math/tex; mode=display">
+  \dfrac{P_n-p}{\sqrt{\tfrac{P_n(1-P_n)}{n}}}\stackrel{近似} {\sim} N(0,1)\Rightarrow p\in(0.542,0.598).</script><p>  $[3]$ 用 $p(1-p)$ 的最大值来估计 $\sigma^2=p(1-p)$. 由 <strong>CLT</strong>, 得到</p>
+<script type="math/tex; mode=display">
+  \dfrac{P_n-p}{\sqrt{\tfrac{1}{4n}}}\stackrel{近似} {\sim} N(0,1)\Rightarrow p\in(0.542,0.599).</script></li>
 <li><p><strong>注</strong>  近似分布情况下, 置信度 $\approx 1-\alpha$, 近似程度取决于 $n$ 及总体分布.</p>
 </li>
 <li><p><strong>定义(利用 MLE 构建置信区间)</strong></p>
 <p>  总体分布 $f$ 满足一定的光滑性条件, 存在 $\sigma_n&gt;0$, 使 $\dfrac{\theta^{*}-\theta}{\sigma_n}\rightarrow N(0,1)$.</p>
 </li>
-<li><p><strong>定义(Fisher 信息量)</strong>  $X_1,\cdots,X_n$ <strong>iid</strong>, 其 <strong>PDF</strong> 为 $f(x;\theta)$. 定义对数似然函数<br>  $$<br>  l(\theta)=\log L(\theta)=\sum_{i=1}^{n}\log f(x_i;\theta).<br>  $$<br>  定义<br>  $$<br>  I_n(\theta)=E\Big[\big(\dfrac{\partial l(\theta)}{\partial\theta}\big)^2\Big]=E\Big[\big(\sum_{i=1}^{n}\dfrac{\partial\log f(X_i;\theta)}{\partial\theta}\big)^2\Big].<br>  $$<br>  注意到<br>  $$<br>  \begin{aligned}<br>  E\Big(\dfrac{\partial\log f(X_i;\theta)}{\partial\theta}\Big)&amp;=E\Big(\dfrac{f_{\theta}(X_i;\theta)}{f(X_i;\theta)}\Big)\<br>  &amp;=\int\dfrac{f_{\theta}(X_i;\theta)}{f(X_i;\theta)}f(X_i;\theta)dx\<br>  &amp;=\int f_{\theta}(X_i;\theta)dx\<br>  &amp;=\dfrac{d}{d\theta}\int f(X_i;\theta)dx=0.<br>  \end{aligned}<br>  $$<br>  因此<br>  $$<br>  \begin{aligned}<br>  \end{aligned}\begin{aligned}<br>  I_n(\theta)&amp;=E\Big[\big(\sum_{i=1}^{n}\dfrac{\partial\log f(X_i;\theta)}{\partial\theta}\big)^2\Big]\<br>  &amp;=\sum_{i=1}^{n}E\Big[\big(\dfrac{\partial\log f(X_i;\theta)}{\partial\theta}\big)^2\Big]\<br>  &amp;:=nI(\theta).<br>  \end{aligned}<br>  $$<br>  由极大似然估计的定义, 我们有<br>  $$<br>  0=l’(\theta^*)\approx l’(\theta)+(\theta^*-\theta)l’’(\theta)\Rightarrow\theta^*-\theta\approx \dfrac{l’(\theta)}{-l’’(\theta)}\<br>  \Rightarrow\sqrt{n}(\theta^*-\theta)\approx \dfrac{\tfrac{1}{\sqrt{n}}l’(\theta)}{-\tfrac{1}{n}l’’(\theta)}.<br>  $$<br>  研究上式<strong>分子</strong>: 设随机变量 $Y_i=\dfrac{\partial\log f(X_i;\theta)}{\partial\theta}=\dfrac{f_{\theta}(X_i;\theta)}{f(X_i;\theta)}$, 那么<br>  $$<br>  E(Y_i)=0,,Var(Y_i)=E(Y_i^2)-E^2(Y_i)=I(\theta).<br>  $$<br>  从而<br>  $$<br>  \dfrac{1}{\sqrt{n}}l’(\theta)=\dfrac{1}{\sqrt{n}}\sum_{i=1}^{n}Y_i=\dfrac{\overline{Y}}{\tfrac{1}{\sqrt{n}}}\stackrel{CLT}{\longrightarrow}N(0,I(\theta)).<br>  $$<br>  研究上式<strong>分母</strong>:<br>  $$<br>  -\dfrac{1}{n}l’’(\theta)=-\dfrac{1}{n}\sum_{i=1}^{n}\Big[\dfrac{f_{\theta\theta}(X_i;\theta)}{f(X_i;\theta)}-\big(\dfrac{f_{\theta}(X_i;\theta)}{f(X_i;\theta)}\big)^2\Big].<br>  $$<br>  注意到<br>  $$<br>  E\Big(\dfrac{f_{\theta\theta}(X_i;\theta)}{f(X_i;\theta)}\Big)=0.<br>  $$<br>  因此<br>  $$<br>  -\dfrac{1}{n}l’’(\theta)\stackrel{WLLN}{\longrightarrow}E\Big[\dfrac{1}{n}\sum_{i=1}^{n}\big(\dfrac{f_{\theta}(X_i;\theta)}{f(X_i;\theta)}\big)^2\Big]=\dfrac{1}{n}\sum_{i=1}^{n}E(Y_i^2)=I(\theta).<br>  $$<br>  结合上述讨论可得<br>  $$<br>  \sqrt{n}(\theta^*-\theta)\rightarrow N(0,\dfrac{1}{I(\theta)})\<br>  \Leftrightarrow\dfrac{\theta^*-\theta}{\tfrac{1}{\sqrt{nI(\theta)}}}\stackrel{近似}{\sim}N(0,1)\<br>  \Rightarrow\dfrac{\theta^*-\theta}{\tfrac{1}{\sqrt{nI(\theta^*)}}}\stackrel{近似}{\sim}N(0,1).<br>  $$<br>  这说明可以取 $\sigma_n=\dfrac{1}{\sqrt{nI(\theta)}}$ 或 $\dfrac{1}{\sqrt{nI(\theta^*)}}$.</p>
+<li><p><strong>定义(Fisher 信息量)</strong>  $X_1,\cdots,X_n$ <strong>iid</strong>, 其 <strong>PDF</strong> 为 $f(x;\theta)$. 定义对数似然函数</p>
+<script type="math/tex; mode=display">
+  l(\theta)=\log L(\theta)=\sum_{i=1}^{n}\log f(x_i;\theta).</script><p>  定义</p>
+<script type="math/tex; mode=display">
+  I_n(\theta)=E\Big[\big(\dfrac{\partial l(\theta)}{\partial\theta}\big)^2\Big]=E\Big[\big(\sum_{i=1}^{n}\dfrac{\partial\log f(X_i;\theta)}{\partial\theta}\big)^2\Big].</script><p>  注意到</p>
+<script type="math/tex; mode=display">
+  \begin{aligned}
+  E\Big(\dfrac{\partial\log f(X_i;\theta)}{\partial\theta}\Big)&=E\Big(\dfrac{f_{\theta}(X_i;\theta)}{f(X_i;\theta)}\Big)\\
+  &=\int\dfrac{f_{\theta}(X_i;\theta)}{f(X_i;\theta)}f(X_i;\theta)dx\\
+  &=\int f_{\theta}(X_i;\theta)dx\\
+  &=\dfrac{d}{d\theta}\int f(X_i;\theta)dx=0.
+  \end{aligned}</script><p>  因此</p>
+<script type="math/tex; mode=display">
+  \begin{aligned}
+  \end{aligned}\begin{aligned}
+  I_n(\theta)&=E\Big[\big(\sum_{i=1}^{n}\dfrac{\partial\log f(X_i;\theta)}{\partial\theta}\big)^2\Big]\\
+  &=\sum_{i=1}^{n}E\Big[\big(\dfrac{\partial\log f(X_i;\theta)}{\partial\theta}\big)^2\Big]\\
+  &:=nI(\theta).
+  \end{aligned}</script><p>  由极大似然估计的定义, 我们有</p>
+<script type="math/tex; mode=display">
+  0=l'(\theta^*)\approx l'(\theta)+(\theta^*-\theta)l''(\theta)\Rightarrow\theta^*-\theta\approx \dfrac{l'(\theta)}{-l''(\theta)}\\
+  \Rightarrow\sqrt{n}(\theta^*-\theta)\approx \dfrac{\tfrac{1}{\sqrt{n}}l'(\theta)}{-\tfrac{1}{n}l''(\theta)}.</script><p>  研究上式<strong>分子</strong>: 设随机变量 $Y_i=\dfrac{\partial\log f(X_i;\theta)}{\partial\theta}=\dfrac{f_{\theta}(X_i;\theta)}{f(X_i;\theta)}$, 那么</p>
+<script type="math/tex; mode=display">
+  E(Y_i)=0,\,Var(Y_i)=E(Y_i^2)-E^2(Y_i)=I(\theta).</script><p>  从而</p>
+<script type="math/tex; mode=display">
+  \dfrac{1}{\sqrt{n}}l'(\theta)=\dfrac{1}{\sqrt{n}}\sum_{i=1}^{n}Y_i=\dfrac{\overline{Y}}{\tfrac{1}{\sqrt{n}}}\stackrel{CLT}{\longrightarrow}N(0,I(\theta)).</script><p>  研究上式<strong>分母</strong>: </p>
+<script type="math/tex; mode=display">
+  -\dfrac{1}{n}l''(\theta)=-\dfrac{1}{n}\sum_{i=1}^{n}\Big[\dfrac{f_{\theta\theta}(X_i;\theta)}{f(X_i;\theta)}-\big(\dfrac{f_{\theta}(X_i;\theta)}{f(X_i;\theta)}\big)^2\Big].</script><p>  注意到</p>
+<script type="math/tex; mode=display">
+  E\Big(\dfrac{f_{\theta\theta}(X_i;\theta)}{f(X_i;\theta)}\Big)=0.</script><p>  因此</p>
+<script type="math/tex; mode=display">
+  -\dfrac{1}{n}l''(\theta)\stackrel{WLLN}{\longrightarrow}E\Big[\dfrac{1}{n}\sum_{i=1}^{n}\big(\dfrac{f_{\theta}(X_i;\theta)}{f(X_i;\theta)}\big)^2\Big]=\dfrac{1}{n}\sum_{i=1}^{n}E(Y_i^2)=I(\theta).</script><p>  结合上述讨论可得</p>
+<script type="math/tex; mode=display">
+  \sqrt{n}(\theta^*-\theta)\rightarrow N(0,\dfrac{1}{I(\theta)})\\
+  \Leftrightarrow\dfrac{\theta^*-\theta}{\tfrac{1}{\sqrt{nI(\theta)}}}\stackrel{近似}{\sim}N(0,1)\\
+  \Rightarrow\dfrac{\theta^*-\theta}{\tfrac{1}{\sqrt{nI(\theta^*)}}}\stackrel{近似}{\sim}N(0,1).</script><p>  这说明可以取 $\sigma_n=\dfrac{1}{\sqrt{nI(\theta)}}$ 或 $\dfrac{1}{\sqrt{nI(\theta^*)}}$.</p>
 </li>
-<li><p><strong>例(选举问题)</strong>  真实支持率 $p$ 未知, $n=1200$, 观测比例 $\dfrac{684}{1200}\approx 0.57$. 给出 $p$ 的一个 $95%$ 置信的区间估计.</p>
+<li><p><strong>例(选举问题)</strong>  真实支持率 $p$ 未知, $n=1200$, 观测比例 $\dfrac{684}{1200}\approx 0.57$. 给出 $p$ 的一个 $95\%$ 置信的区间估计.</p>
 </li>
-<li><p><strong>解答续</strong>  注意到 $X_i\stackrel{iid}{\sim}B(p)$, $p$ 的 <strong>MLE</strong> 为 $p^{<em>}=P_n$. 有似然函数<br>  $$<br>  f(X;p)=p^{X}(1-p)^{1-X}\Rightarrow \dfrac{\partial\log f}{\partial p}=\dfrac{X-p}{p(1-p)}.<br>  $$<br>  <strong>Fisher</strong> 信息量为:<br>  $$<br>  I(p)=E\Big[\big(\dfrac{X-p}{p(1-p)}\big)^2\Big]=\dfrac{1}{p(1-p)}.<br>  $$<br>  得到 $\sigma_n=\dfrac{1}{\sqrt{p(1-p)}}$ 或 $\dfrac{1}{\sqrt{p^{</em>}(1-p^{*})}}$. 这与前例 $[2]$ 完全一致.</p>
+<li><p><strong>解答续</strong>  注意到 $X_i\stackrel{iid}{\sim}B(p)$, $p$ 的 <strong>MLE</strong> 为 $p^{*}=P_n$. 有似然函数</p>
+<script type="math/tex; mode=display">
+  f(X;p)=p^{X}(1-p)^{1-X}\Rightarrow \dfrac{\partial\log f}{\partial p}=\dfrac{X-p}{p(1-p)}.</script><p>  <strong>Fisher</strong> 信息量为:</p>
+<script type="math/tex; mode=display">
+  I(p)=E\Big[\big(\dfrac{X-p}{p(1-p)}\big)^2\Big]=\dfrac{1}{p(1-p)}.</script><p>  得到 $\sigma_n=\dfrac{1}{\sqrt{p(1-p)}}$ 或 $\dfrac{1}{\sqrt{p^{<em>}(1-p^{</em>})}}$. 这与前例 $[2]$ 完全一致.</p>
 </li>
 <li><p><strong>例(两总体)</strong>  $X\sim N(\mu_1,\sigma_1^2)$, $Y\sim N(\mu_2,\sigma_2^2)$ 独立, 参数未知. 估计 $\mu_1-\mu_2$.</p>
 </li>
-<li><p><strong>解答</strong>  得到<br>  $$<br>  \dfrac{(\overline{X}-\overline{Y})-(\mu_1-\mu_2)}{\sqrt{\dfrac{\sigma_1^2}{n}+\dfrac{\sigma_2^2}{m}}}\sim N(0,1).<br>  $$<br>  因此<br>  $$<br>  \dfrac{(\overline{X}-\overline{Y})-(\mu_1-\mu_2)}{\sqrt{\dfrac{S_1^2}{n}+\dfrac{S_2^2}{m}}}\stackrel{近似}{\sim} N(0,1).<br>  $$</p>
-</li>
+<li><p><strong>解答</strong>  得到</p>
+<script type="math/tex; mode=display">
+  \dfrac{(\overline{X}-\overline{Y})-(\mu_1-\mu_2)}{\sqrt{\dfrac{\sigma_1^2}{n}+\dfrac{\sigma_2^2}{m}}}\sim N(0,1).</script><p>  因此</p>
+<script type="math/tex; mode=display">
+  \dfrac{(\overline{X}-\overline{Y})-(\mu_1-\mu_2)}{\sqrt{\dfrac{S_1^2}{n}+\dfrac{S_2^2}{m}}}\stackrel{近似}{\sim} N(0,1).</script></li>
 </ul>
 <h2 id="Bayes-估计"><a href="#Bayes-估计" class="headerlink" title="Bayes 估计"></a>Bayes 估计</h2><ul>
 <li><p><strong>定义(Bayes 估计)</strong></p>
@@ -741,16 +891,32 @@
 </li>
 <li><p>$f_{\Theta}(\theta)$ — 先验分布, $f_{X\mid\Theta}(x\mid\theta)=f_X(x,\theta)$ — 搜集的样本分布.</p>
 </li>
-<li><p>更新先验分布为后验分布:<br>  $$<br>  f_{\Theta\mid X}(\theta\mid x)=\dfrac{f(x,\theta)}{f_X(x)}=\dfrac{f_{X\mid\Theta}(x\mid\theta)f_{\Theta}(\theta)}{f_X(x)}.<br>  $$<br>  其中<br>  $$<br>  f_X(x)=\int_{\mathbb{R}}f(x,\theta)d\theta.<br>  $$<br>  可通过后验期望或后验众数得到 <strong>Bayes</strong> 估计值.</p>
+<li><p>更新先验分布为后验分布:</p>
+<script type="math/tex; mode=display">
+  f_{\Theta\mid X}(\theta\mid x)=\dfrac{f(x,\theta)}{f_X(x)}=\dfrac{f_{X\mid\Theta}(x\mid\theta)f_{\Theta}(\theta)}{f_X(x)}.</script><p>  其中</p>
+<script type="math/tex; mode=display">
+  f_X(x)=\int_{\mathbb{R}}f(x,\theta)d\theta.</script><p>  可通过后验期望或后验众数得到 <strong>Bayes</strong> 估计值.</p>
 </li>
 </ul>
 </li>
 <li><p><strong>例</strong>  投掷硬币, 正面向上的概率为 $\theta$ (未知). 抛 $n$ 次观测到 $x$ 次正面向上.</p>
 </li>
 <li><p><strong>解答</strong>  对 $\theta$ 的先验认知: $\theta\sim U(0,1)$ (<strong>Bayes</strong> 法则). 此时有 $f_{\Theta}(\theta)=1$, $\theta\in(0,1)$.</p>
-<p>  令 $X=n$ 次试验正面向上的次数, 给定 $\theta$ 时, $X\sim B(n,\theta)$. 即<br>  $$<br>  f_{X\mid\Theta}(x\mid\theta)=P(X=x\mid \Theta=\theta)=C_n^x\theta^x(1-\theta)^{n-x},x=0,1,\cdots, n.<br>  $$<br>  故 $(X,\Theta)$ 的联合分布为<br>  $$<br>  f(x,\theta)=C_n^x\theta^x(1-\theta)^{n-x},\theta\in(0,1),x=0,1,\cdots, n.<br>  $$<br>  得到<br>  $$<br>  f_X(x)=\int_0^1f(x,\theta)d\theta=C_n^x\int_0^1\theta^x(1-\theta)^{n-x}d\theta\<br>  =\dfrac{n!}{x!(n-x)!}\cdot\dfrac{\Gamma(x+1)\Gamma(n-x+1)}{\Gamma(n+2)}=\dfrac{1}{n+1}<br>  $$<br>  进而<br>  $$<br>  f_{\Theta\mid X}(\theta\mid x)=\dfrac{f(x,\theta)}{f_X(x)}=\dfrac{\Gamma(n+2)}{\Gamma(x+1)\Gamma(n-x+1)}\cdot\theta^x(1-\theta)^{n-x}.<br>  $$<br>  注意到这恰好为 $\beta(x+1,n-x+1)$ 的 <strong>PDF</strong>.</p>
-<p>  <strong>后验均值</strong>估计值为<br>  $$<br>  \hat\theta=E(\Theta\mid X)=\int_0^1\theta f_{\Theta\mid X}(\theta\mid x)d\theta=\dfrac{x+1}{n+2}.<br>  $$<br>  <strong>后验众数</strong>估计值为 $f_{\Theta\mid X}(\theta\mid x)$ 的最大值点<br>  $$<br>  \theta^{*}=\dfrac{x}{n}.<br>  $$</p>
-</li>
+<p>  令 $X=n$ 次试验正面向上的次数, 给定 $\theta$ 时, $X\sim B(n,\theta)$. 即</p>
+<script type="math/tex; mode=display">
+  f_{X\mid\Theta}(x\mid\theta)=P(X=x\mid \Theta=\theta)=C_n^x\theta^x(1-\theta)^{n-x},x=0,1,\cdots, n.</script><p>  故 $(X,\Theta)$ 的联合分布为 </p>
+<script type="math/tex; mode=display">
+  f(x,\theta)=C_n^x\theta^x(1-\theta)^{n-x},\theta\in(0,1),x=0,1,\cdots, n.</script><p>  得到</p>
+<script type="math/tex; mode=display">
+  f_X(x)=\int_0^1f(x,\theta)d\theta=C_n^x\int_0^1\theta^x(1-\theta)^{n-x}d\theta\\
+  =\dfrac{n!}{x!(n-x)!}\cdot\dfrac{\Gamma(x+1)\Gamma(n-x+1)}{\Gamma(n+2)}=\dfrac{1}{n+1}</script><p>  进而</p>
+<script type="math/tex; mode=display">
+  f_{\Theta\mid X}(\theta\mid x)=\dfrac{f(x,\theta)}{f_X(x)}=\dfrac{\Gamma(n+2)}{\Gamma(x+1)\Gamma(n-x+1)}\cdot\theta^x(1-\theta)^{n-x}.</script><p>  注意到这恰好为 $\beta(x+1,n-x+1)$ 的 <strong>PDF</strong>.</p>
+<p>  <strong>后验均值</strong>估计值为</p>
+<script type="math/tex; mode=display">
+  \hat\theta=E(\Theta\mid X)=\int_0^1\theta f_{\Theta\mid X}(\theta\mid x)d\theta=\dfrac{x+1}{n+2}.</script><p>  <strong>后验众数</strong>估计值为 $f_{\Theta\mid X}(\theta\mid x)$ 的最大值点</p>
+<script type="math/tex; mode=display">
+  \theta^{*}=\dfrac{x}{n}.</script></li>
 <li><p><strong>注</strong>  </p>
 <ul>
 <li>若 $n=20$, $x=13$, 后验分布服从 $\beta(14,8)$.</li>
@@ -769,7 +935,9 @@
 <li>一般地, 先验分布服从 $\beta(a,b)$, 后验分布服从 $\beta(a+x,b+n-x)$.</li>
 </ul>
 </li>
-<li><p><strong>定义(Bayes 区间估计)</strong>  得到参数 $\theta$ 的后验分布 $f_{\Theta}(\theta\mid x)$, 给定观测值 $x$ 和实数 $\alpha\in(0,1)$, 若对参数 $\theta$ 的任意可能取值, 都成立<br>  $$<br>  P(a&lt;\Theta&lt;b\mid x)\ge 1-\alpha.<br>  $$<br>  则称 $(a,b)$ 为 $\theta$ 的 $(1−\alpha)$ 置信的 <strong>Bayes</strong> 区间估计.</p>
+<li><p><strong>定义(Bayes 区间估计)</strong>  得到参数 $\theta$ 的后验分布 $f_{\Theta}(\theta\mid x)$, 给定观测值 $x$ 和实数 $\alpha\in(0,1)$, 若对参数 $\theta$ 的任意可能取值, 都成立</p>
+<script type="math/tex; mode=display">
+  P(a<\Theta<b\mid x)\ge 1-\alpha.</script><p>  则称 $(a,b)$ 为 $\theta$ 的 $(1−\alpha)$ 置信的 <strong>Bayes</strong> 区间估计.</p>
 </li>
 <li><p><strong>注</strong></p>
 <ul>
@@ -780,13 +948,16 @@
 <li><p><strong>例</strong>  $X\sim N(\mu,\sigma^2)$, $\sigma^2$ 已知, 给出 $\mu$ 的 $(1-\alpha)$ 置信的 <strong>Bayes</strong> 区间估计.</p>
 </li>
 <li><p><strong>解答</strong>  取 $\mu$ 的先验分布 $f(\mu)\propto 1$, 有后验分布为 $N(\overline{X},\dfrac{\sigma^2}{n})$.</p>
-<p>  进一步可得<br>  $$<br>  \dfrac{\mu-\overline{X}}{\tfrac{\sigma}{\sqrt{n}}}\sim N(0,1).<br>  $$<br>  得到所求 <strong>Bayes</strong> 估计区间为<br>  $$<br>  (\overline{X}-\frac{\sigma}{\sqrt{n}}Z_{\tfrac{\alpha}{2}},\overline{X}+\frac{\sigma}{\sqrt{n}}Z_{\tfrac{\alpha}{2}}).<br>  $$</p>
-</li>
+<p>  进一步可得</p>
+<script type="math/tex; mode=display">
+  \dfrac{\mu-\overline{X}}{\tfrac{\sigma}{\sqrt{n}}}\sim N(0,1).</script><p>  得到所求 <strong>Bayes</strong> 估计区间为</p>
+<script type="math/tex; mode=display">
+  (\overline{X}-\frac{\sigma}{\sqrt{n}}Z_{\tfrac{\alpha}{2}},\overline{X}+\frac{\sigma}{\sqrt{n}}Z_{\tfrac{\alpha}{2}}).</script></li>
 </ul>
 <h2 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h2><h3 id="样本"><a href="#样本" class="headerlink" title="样本"></a>样本</h3><ul>
 <li>$X_1,\cdots,X_n$ 为样本, 通常为 <strong>iid</strong>.</li>
 <li>$\hat\theta=\hat\theta(X_1,\cdots,X_n)$ 为统计量.</li>
-<li>样本分布: $f(x_1,\cdots,x_n;\theta)$ (<strong>PDF</strong>\<strong>PMF</strong>).</li>
+<li>样本分布: $f(x_1,\cdots,x_n;\theta)$ (<strong>PDF</strong>\*<em>PMF*</em>).</li>
 <li>抽样分布: $\hat\theta$ 的分布.</li>
 <li>标准误差: $se=se(\hat\theta)=\sqrt{Var(\hat\theta)}$.</li>
 </ul>
@@ -795,23 +966,25 @@
 <li>$n\rightarrow\infty$: 渐近无偏 &amp; 相合性 (<strong>WLLN</strong> 一致性) &amp; 渐近正态性 (<strong>CLT</strong>)</li>
 </ul>
 <h3 id="置信区间"><a href="#置信区间" class="headerlink" title="置信区间"></a>置信区间</h3><ul>
-<li>$\hat\theta_i=\hat\theta_i(X_1,\cdots,X_n),(i=1,2)$.</li>
+<li>$\hat\theta_i=\hat\theta_i(X_1,\cdots,X_n)\,(i=1,2)$.</li>
 <li>$P(\hat\theta_1&lt;\theta&lt;\hat\theta_2)\ge 1-\alpha$.</li>
 <li>置信 (水平、系数、度) 是针对方法.</li>
 <li>枢轴变量: $H(\hat\theta,\theta)$ 表示分布可用.</li>
 </ul>
 <h3 id="置信区间-v-s-Bayes-区间"><a href="#置信区间-v-s-Bayes-区间" class="headerlink" title="置信区间 v.s. Bayes 区间"></a>置信区间 v.s. Bayes 区间</h3><ul>
-<li><p>(置信区间) 对具体的样本观测值 $(x_1,\cdots,x_n)$, 代入 $\hat\theta_1, \hat\theta_2$ 得到具体区间.<br>  $$<br>  P(\hat\theta_1&lt;\theta&lt;\hat\theta_2)\ge 1-\alpha.<br>  $$</p>
-</li>
-<li><p>(<strong>Bayes</strong> 区间) 对具体的样本观测值 $(x_1,\cdots,x_n)$, 代入 $a, b$ 得到具体区间.<br>  $$<br>  P(a&lt;\Theta&lt;b\mid x_1,\cdots,x_n)\ge 1-\alpha.<br>  $$</p>
-</li>
+<li><p>(置信区间) 对具体的样本观测值 $(x_1,\cdots,x_n)$, 代入 $\hat\theta_1, \hat\theta_2$ 得到具体区间.</p>
+<script type="math/tex; mode=display">
+  P(\hat\theta_1<\theta<\hat\theta_2)\ge 1-\alpha.</script></li>
+<li><p>(<strong>Bayes</strong> 区间) 对具体的样本观测值 $(x_1,\cdots,x_n)$, 代入 $a, b$ 得到具体区间.</p>
+<script type="math/tex; mode=display">
+  P(a<\Theta<b\mid x_1,\cdots,x_n)\ge 1-\alpha.</script></li>
 </ul>
 <h3 id="小样本方法-v-s-大样本方法"><a href="#小样本方法-v-s-大样本方法" class="headerlink" title="小样本方法 v.s. 大样本方法"></a>小样本方法 v.s. 大样本方法</h3><ul>
 <li>精确分布 <strong>v.s.</strong> 近似分布</li>
 </ul>
-<h3 id="Fisher-信息量"><a href="#Fisher-信息量" class="headerlink" title="Fisher 信息量"></a>Fisher 信息量</h3><p>$$<br>\dfrac{\theta^*-\theta}{\sigma_n}\stackrel{近似}{\sim}N(0,1).<br>$$</p>
-<p>$$<br>\sigma_n=\sqrt{\dfrac{1}{nI(\theta)}}或\sqrt{\dfrac{1}{nI(\theta^*)}}.<br>$$</p>
-
+<h3 id="Fisher-信息量"><a href="#Fisher-信息量" class="headerlink" title="Fisher 信息量"></a>Fisher 信息量</h3><script type="math/tex; mode=display">
+\dfrac{\theta^*-\theta}{\sigma_n}\stackrel{近似}{\sim}N(0,1).</script><script type="math/tex; mode=display">
+\sigma_n=\sqrt{\dfrac{1}{nI(\theta)}}或\sqrt{\dfrac{1}{nI(\theta^*)}}.</script>
                 
             </div>
             <hr/>
@@ -1202,7 +1375,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">85k</span>
+                        class="white-color">73k</span>
             
             
             

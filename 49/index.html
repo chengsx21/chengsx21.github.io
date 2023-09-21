@@ -439,14 +439,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.2k
+                    1.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    11 分
+                    5 分
                 </div>
                 
 
@@ -470,8 +470,13 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="Chap-4-随机变量的数字特征"><a href="#Chap-4-随机变量的数字特征" class="headerlink" title="Chap 4 随机变量的数字特征"></a>Chap 4 随机变量的数字特征</h1><h2 id="期望"><a href="#期望" class="headerlink" title="期望"></a>期望</h2><ul>
-<li><p><strong>定义(期望)</strong><br>  $$<br>  E(X)=<br>  \begin{cases}<br>  \sum\limits_{i}x_if(x_i)\<br>  \int\limits_{-\infty}^{\infty}xf(x)dx\<br>  \end{cases}<br>  $$</p>
-</li>
+<li><p><strong>定义(期望)</strong> </p>
+<script type="math/tex; mode=display">
+  E(X)=
+  \begin{cases}
+  \sum\limits_{i}x_if(x_i)\\
+  \int\limits_{-\infty}^{\infty}xf(x)dx\\
+  \end{cases}</script></li>
 <li><p><strong>注</strong></p>
 <ul>
 <li>存在 $\Leftrightarrow$ 绝对收敛;</li>
@@ -482,8 +487,12 @@
 </li>
 <li><p><strong>性质</strong></p>
 <ul>
-<li><p>$$<br>E(g(X_1,\cdots,X_n))=<br>\begin{cases}<br>\sum\limits_{(x_1,\cdots,x_n)\in\mathbb{R}^n} g(x_1,\cdots,x_n)f(x_1,\cdots,x_n)\<br>\int\limits_{\mathbb{R}^n} g(x_1,\cdots,x_n)f(x_1,\cdots,x_n)dx_1\cdots dx_n<br>\end{cases}<br>$$</p>
-</li>
+<li><script type="math/tex; mode=display">
+E(g(X_1,\cdots,X_n))=
+\begin{cases}
+\sum\limits_{(x_1,\cdots,x_n)\in\mathbb{R}^n} g(x_1,\cdots,x_n)f(x_1,\cdots,x_n)\\
+\int\limits_{\mathbb{R}^n} g(x_1,\cdots,x_n)f(x_1,\cdots,x_n)dx_1\cdots dx_n
+\end{cases}</script></li>
 <li><p><strong>(线性性质)</strong>  $E(aX+bY)=aE(X)+bE(Y)$;</p>
 </li>
 <li><p>若 $X_1,\cdots,X_n$ 独立, 则 $E(X_1\cdots X_n)=E(X_1)\cdots E(X_n)$.</p>
@@ -497,19 +506,19 @@
 <li><p><strong>注</strong></p>
 <ul>
 <li>$F(m)=\dfrac{1}{2}$;</li>
-<li>$P(X&lt;m)=\dfrac{1}{2}=P(X&gt;m)$;</li>
+<li>$P(X<m)=\dfrac{1}{2}=p(x>m)$;</m)=\dfrac{1}{2}=p(x></li>
 <li>中位数不一定唯一.</li>
 </ul>
 </li>
-<li><p><strong>定义(中位数)</strong>  若 $P(X&lt;m)\le\dfrac{1}{2}$ 且 $P(X&gt;m)\le\dfrac{1}{2}$, 则称 $m$ 为 $X$ 的中位数.</p>
+<li><p><strong>定义(中位数)</strong>  若 $P(X<m)\le\dfrac{1}{2}$ 且="" $p(x="">m)\le\dfrac{1}{2}$, 则称 $m$ 为 $X$ 的中位数.</m)\le\dfrac{1}{2}$></p>
 </li>
 <li><p><strong>定义(下侧 $\alpha-$分位数)</strong></p>
-<p>  $\forall\alpha\in(0,1)$, 若 $P(X&lt;a)\le\alpha$ 且 $P(X&gt;a)\le 1-\alpha$, 称 $a$ 为 $X$ 的下侧 $\alpha-$分位数.</p>
+<p>  $\forall\alpha\in(0,1)$, 若 $P(X<a)\le\alpha$ 且="" $p(x="">a)\le 1-\alpha$, 称 $a$ 为 $X$ 的下侧 $\alpha-$分位数.</a)\le\alpha$></p>
 </li>
 <li><p><strong>注</strong></p>
 <ul>
 <li>若 $X$ 连续, 则 $P(X&lt;a)=\alpha$;</li>
-<li>$F^{-1}(\alpha)=\inf{x\mid F(x)\ge\alpha}$ 为一个 $\alpha$ 分位数.</li>
+<li>$F^{-1}(\alpha)=\inf\{x\mid F(x)\ge\alpha\}$ 为一个 $\alpha$ 分位数.</li>
 </ul>
 </li>
 <li><p><strong>注</strong></p>
@@ -520,24 +529,26 @@
 </li>
 </ul>
 <h2 id="方差"><a href="#方差" class="headerlink" title="方差"></a>方差</h2><ul>
-<li><p><strong>定义(方差与标准差)</strong>  给出定义:<br>$$<br>Var(X):=E((X-E(X))^2)=E(X^2)-E^2(X);\<br>SD(X):=\sqrt{Var(X)}.<br>$$</p>
-</li>
-<li><p><strong>注</strong>  刻画了数据的集中程度.</p>
-</li>
-<li><p><strong>性质</strong></p>
+<li><strong>定义(方差与标准差)</strong>  给出定义:<script type="math/tex; mode=display">
+Var(X):=E((X-E(X))^2)=E(X^2)-E^2(X);\\
+SD(X):=\sqrt{Var(X)}.</script></li>
+</ul>
 <ul>
+<li><strong>注</strong>  刻画了数据的集中程度.</li>
+<li><strong>性质</strong><ul>
 <li>$Var(c)\equiv 0$;</li>
 <li>$Var(X+c)\equiv Var(x)$;</li>
 <li>$Var(cX)\equiv c^2Var(X)$;</li>
 <li>$Var(X+Y)=Var(X)+Var(Y)+2E((X-E(X))(Y-E(Y)))$.</li>
 </ul>
 </li>
-<li><p><strong>注</strong>  定义变异系数 $\dfrac{\sigma}{\mu}$.</p>
-</li>
+<li><strong>注</strong>  定义变异系数 $\dfrac{\sigma}{\mu}$.</li>
 </ul>
 <h2 id="协方差与相关系数"><a href="#协方差与相关系数" class="headerlink" title="协方差与相关系数"></a>协方差与相关系数</h2><ul>
-<li><p><strong>定义(协方差)</strong><br>$$<br>Cov(X,Y):=E((X-\mu_1)(Y-\mu_2)).<br>$$</p>
-</li>
+<li><strong>定义(协方差)</strong> <script type="math/tex; mode=display">
+Cov(X,Y):=E((X-\mu_1)(Y-\mu_2)).</script></li>
+</ul>
+<ul>
 <li><p><strong>注</strong></p>
 <ul>
 <li><p>$Cov(X,X)=Var(X)$;</p>
@@ -550,37 +561,50 @@
 </li>
 </ul>
 </li>
-<li><p><strong>定义(协方差矩阵)</strong>  对 $\overline{X}=(X_1,\cdots,X_n), \overline{Y}=(Y_1,\cdots,Y_n).$ 我们有协方差矩阵<br>  $$<br>  \begin{aligned}<br>  Cov(\overline{X},\overline{Y})&amp;=(Cov(\overline{X}_i,\overline{Y}<em>j))</em>{n\times n}\<br>  &amp;=E((\overline{X}-E(\overline{X}))^{T}(\overline{Y}-E(\overline{Y}))).<br>  \end{aligned}<br>  $$</p>
-</li>
-<li><p><strong>注</strong>  方差矩阵:<br>$$<br>\begin{aligned}<br>Var(\overline{X})&amp;=Cov(\overline{X},\overline{Y})\<br>&amp;=(Cov(\overline{X}<em>i,\overline{X}<em>j))</em>{n\times n}\<br>&amp;=(\sigma</em>{ij})_{n\times n}.<br>\end{aligned}<br>$$</p>
-</li>
-<li><p><strong>定义(相关系数)</strong><br>  $$<br>  Corr(X,Y)=\dfrac{Cov(X,Y)}{\sigma_1\sigma_2}=E(\dfrac{X-\mu_1}{\sigma_1}\cdot\dfrac{Y-\mu_2}{\sigma_2}).<br>  $$</p>
-</li>
+<li><p><strong>定义(协方差矩阵)</strong>  对 $\overline{X}=(X_1,\cdots,X_n), \overline{Y}=(Y_1,\cdots,Y_n).$ 我们有协方差矩阵</p>
+<script type="math/tex; mode=display">
+  \begin{aligned}
+  Cov(\overline{X},\overline{Y})&=(Cov(\overline{X}_i,\overline{Y}_j))_{n\times n}\\
+  &=E((\overline{X}-E(\overline{X}))^{T}(\overline{Y}-E(\overline{Y}))).
+  \end{aligned}</script></li>
+<li><p><strong>注</strong>  方差矩阵: </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+Var(\overline{X})&=Cov(\overline{X},\overline{Y})\\
+&=(Cov(\overline{X}_i,\overline{X}_j))_{n\times n}\\
+&=(\sigma_{ij})_{n\times n}.
+\end{aligned}</script></li>
+<li><p><strong>定义(相关系数)</strong></p>
+<script type="math/tex; mode=display">
+  Corr(X,Y)=\dfrac{Cov(X,Y)}{\sigma_1\sigma_2}=E(\dfrac{X-\mu_1}{\sigma_1}\cdot\dfrac{Y-\mu_2}{\sigma_2}).</script></li>
 <li><p><strong>定理</strong></p>
 <ul>
 <li>若 $X,Y$ 独立, 则 $Corr(X,Y)=0$, 称为 $X,Y$ 不相关.</li>
 <li>联合正态的特殊情况, 不相关可推出独立.</li>
-<li>$\vert Corr(X,Y)\vert\le 1$, 等号成立当且仅当 $\exist,a,b$ 使得 $P(Y=aX+b)=1$.</li>
+<li>$\vert Corr(X,Y)\vert\le 1$, 等号成立当且仅当 $\exist\,a,b$ 使得 $P(Y=aX+b)=1$.</li>
 </ul>
 </li>
-<li><p><strong>证明</strong>  给出引理 <strong>Schwartz 不等式</strong>:<br>$$<br>E^2(UV)\le E(U^2)E(V^2).<br>$$<br>取等当且仅当 $\exist,c\in\mathbb{R}$ 使得 $U=cV$. 取 $U=\dfrac{X-\mu_1}{\sigma_1},V=\dfrac{Y-\mu_2}{\sigma_2}$.</p>
+<li><p><strong>证明</strong>  给出引理 <strong>Schwartz 不等式</strong>: </p>
+<script type="math/tex; mode=display">
+E^2(UV)\le E(U^2)E(V^2).</script><p>取等当且仅当 $\exist\,c\in\mathbb{R}$ 使得 $U=cV$. 取 $U=\dfrac{X-\mu_1}{\sigma_1},V=\dfrac{Y-\mu_2}{\sigma_2}$.</p>
 </li>
 <li><p><strong>注</strong></p>
 <ul>
-<li><p>$\rho:=Corr(X,Y)=\pm 1$, 则 $a=\pm\dfrac{\sigma_2}{\sigma_1}$;</p>
-</li>
+<li>$\rho:=Corr(X,Y)=\pm 1$, 则 $a=\pm\dfrac{\sigma_2}{\sigma_1}$;</li>
 <li><p>$\rho:=Corr(X,Y)=0$ (不相关) $\not\Rightarrow$ 独立;</p>
 <p>如 $X\sim N(0,1)$, $Y=X^2$ 不相关但是不独立.</p>
 </li>
-<li><p>相关系数为线性相关系数.</p>
-</li>
+<li>相关系数为线性相关系数.</li>
 </ul>
 </li>
-<li><p><strong>例</strong>  $(X_1,X_2)\sim N(\mu_1,\mu_2,\sigma_1^2,\sigma_2^2,\rho)$, 则<br>$$<br>\rho=Corr(X_1,X_2).<br>$$</p>
-</li>
+<li><p><strong>例</strong>  $(X_1,X_2)\sim N(\mu_1,\mu_2,\sigma_1^2,\sigma_2^2,\rho)$, 则</p>
+<script type="math/tex; mode=display">
+\rho=Corr(X_1,X_2).</script></li>
 </ul>
 <h2 id="矩"><a href="#矩" class="headerlink" title="矩"></a>矩</h2><ul>
-<li><p><strong>定义(矩)</strong>  称<br>  $$<br>  E((X-c)^k)(k=1,2,\cdots)<br>  $$<br>  为 $X$ 关于 $c$ 点的 $k$ 阶矩. 特别地, $c=0$ 对应原点矩, $c=\mu$ 对应中心矩.</p>
+<li><p><strong>定义(矩)</strong>  称</p>
+<script type="math/tex; mode=display">
+  E((X-c)^k)(k=1,2,\cdots)</script><p>  为 $X$ 关于 $c$ 点的 $k$ 阶矩. 特别地, $c=0$ 对应原点矩, $c=\mu$ 对应中心矩.</p>
 </li>
 <li><p><strong>注</strong></p>
 <ul>
@@ -588,7 +612,9 @@
 <li>$Var(X)=$ 2 阶中心矩;</li>
 </ul>
 </li>
-<li><p><strong>定义(偏度系数)</strong><br>  $$<br>  Skew(X)=\dfrac{E((X-\mu)^3)}{\sigma^3}=E\left(\left(\dfrac{X-\mu}{\sigma}\right)^3\right).<br>  $$<br>  称为 3 阶标准矩.</p>
+<li><p><strong>定义(偏度系数)</strong></p>
+<script type="math/tex; mode=display">
+  Skew(X)=\dfrac{E((X-\mu)^3)}{\sigma^3}=E\left(\left(\dfrac{X-\mu}{\sigma}\right)^3\right).</script><p>  称为 3 阶标准矩.</p>
 </li>
 <li><p><strong>注</strong></p>
 <ul>
@@ -598,7 +624,9 @@
 <li>不是唯一的刻画偏度的特征数.</li>
 </ul>
 </li>
-<li><p><strong>定义(峰度系数)</strong><br>  $$<br>  Kurt(X)=\dfrac{E((X-\mu)^4)}{\sigma^4}=E\left(\left(\dfrac{X-\mu}{\sigma}\right)^4\right).<br>  $$<br>  称为 4 阶标准矩.</p>
+<li><p><strong>定义(峰度系数)</strong></p>
+<script type="math/tex; mode=display">
+  Kurt(X)=\dfrac{E((X-\mu)^4)}{\sigma^4}=E\left(\left(\dfrac{X-\mu}{\sigma}\right)^4\right).</script><p>  称为 4 阶标准矩.</p>
 </li>
 <li><p><strong>注</strong></p>
 <ul>
@@ -614,12 +642,22 @@
 </li>
 <li><p><strong>例</strong>  $X\sim Exp(\lambda)$.</p>
 </li>
-<li><p><strong>解答</strong><br>$$<br>\begin{aligned}<br>M_X(t)&amp;=E(e^{tX})\<br>&amp;=\int_{0}^{\infty}e^{tx}\lambda e^{-\lambda x}dx\<br>&amp;=\dfrac{\lambda}{\lambda - t},,t&lt;\lambda.<br>\end{aligned}<br>$$</p>
-</li>
+<li><p><strong>解答</strong></p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+M_X(t)&=E(e^{tX})\\
+&=\int_{0}^{\infty}e^{tx}\lambda e^{-\lambda x}dx\\
+&=\dfrac{\lambda}{\lambda - t},\,t<\lambda.
+\end{aligned}</script></li>
 <li><p><strong>例</strong>  $X\sim N(0,1)$.</p>
 </li>
-<li><p><strong>解答</strong><br>$$<br>\begin{aligned}<br>M_X(t)&amp;=E(e^{tX})\<br>&amp;=\dfrac{1}{\sqrt{2\pi}}\int_{0}^{\infty}e^{tx}e^{-\tfrac{1}{2}x^2}dx\<br>&amp;=e^{\tfrac{t^2}{2}},,t\in\mathbb{R}.<br>\end{aligned}<br>$$</p>
-</li>
+<li><p><strong>解答</strong></p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+M_X(t)&=E(e^{tX})\\
+&=\dfrac{1}{\sqrt{2\pi}}\int_{0}^{\infty}e^{tx}e^{-\tfrac{1}{2}x^2}dx\\
+&=e^{\tfrac{t^2}{2}},\,t\in\mathbb{R}.
+\end{aligned}</script></li>
 <li><p><strong>性质</strong></p>
 <ul>
 <li>$M_X(0)\equiv 1$;</li>
@@ -628,36 +666,82 @@
 </li>
 <li><p><strong>例</strong>  $Y\sim N(\mu,\sigma^2)$.</p>
 </li>
-<li><p><strong>解答</strong><br>$$<br>\begin{aligned}<br>M_Y(t)&amp;=e^{t\mu}M_X(\sigma t)\<br>&amp;=e^{\tfrac{\sigma^2t^2}{2}+\mu t},,t\in\mathbb{R}.<br>\end{aligned}<br>$$</p>
-</li>
-<li><p><strong>性质(矩母函数确定矩)</strong><br>$$<br>E(X^n)=M_X^{(n)}(0).<br>$$</p>
-</li>
-<li><p><strong>证明</strong><br>  $$<br>  \begin{aligned}<br>  M_X^{(n)}(t)&amp;=\sum_{n=0}^{\infty}\dfrac{M_X^{(n)}(0)}{n!}t^n.<br>  \end{aligned}<br>  $$<br>  又因为<br>  $$<br>  \begin{aligned}<br>  M_X(t)&amp;=E(e^{tX})\<br>  &amp;=E\left(\sum_{n=0}^{\infty}\dfrac{X^n}{n!}t^n\right)\<br>  &amp;=\sum_{n=0}^{\infty}\dfrac{E(X^n)}{n!}t^n.\<br>  \end{aligned}<br>  $$<br>  比较系数即得.</p>
+<li><p><strong>解答</strong></p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+M_Y(t)&=e^{t\mu}M_X(\sigma t)\\
+&=e^{\tfrac{\sigma^2t^2}{2}+\mu t},\,t\in\mathbb{R}.
+\end{aligned}</script></li>
+<li><p><strong>性质(矩母函数确定矩)</strong></p>
+<script type="math/tex; mode=display">
+E(X^n)=M_X^{(n)}(0).</script></li>
+<li><p><strong>证明</strong></p>
+<script type="math/tex; mode=display">
+  \begin{aligned}
+  M_X^{(n)}(t)&=\sum_{n=0}^{\infty}\dfrac{M_X^{(n)}(0)}{n!}t^n.
+  \end{aligned}</script><p>  又因为</p>
+<script type="math/tex; mode=display">
+  \begin{aligned}
+  M_X(t)&=E(e^{tX})\\
+  &=E\left(\sum_{n=0}^{\infty}\dfrac{X^n}{n!}t^n\right)\\
+  &=\sum_{n=0}^{\infty}\dfrac{E(X^n)}{n!}t^n.\\
+  \end{aligned}</script><p>  比较系数即得.</p>
 </li>
 <li><p><strong>例</strong>  $X\sim N(0,1)$.</p>
 </li>
-<li><p><strong>解答</strong><br>$$<br>\begin{aligned}<br>M_X(t)&amp;=E(e^{tX})\<br>&amp;=e^{\tfrac{t^2}{2}},,t\in\mathbb{R}\<br>&amp;=\sum_{n=0}^{\infty}\dfrac{(\tfrac{t^2}{2})^n}{n!}\<br>&amp;=\sum_{n=0}^{\infty}\dfrac{(2n)!}{2^nn!}\cdot\dfrac{t^{2n}}{(2n)!}<br>\end{aligned}<br>$$<br>可得<br>$$<br>\begin{cases}<br>E(X^{2n+1})\equiv 0,\<br>E(X^{2n})=\dfrac{(2n)!}{2^nn!}.<br>\end{cases}<br>$$</p>
-</li>
+<li><p><strong>解答</strong></p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+M_X(t)&=E(e^{tX})\\
+&=e^{\tfrac{t^2}{2}},\,t\in\mathbb{R}\\
+&=\sum_{n=0}^{\infty}\dfrac{(\tfrac{t^2}{2})^n}{n!}\\
+&=\sum_{n=0}^{\infty}\dfrac{(2n)!}{2^nn!}\cdot\dfrac{t^{2n}}{(2n)!}
+\end{aligned}</script><p>可得</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+E(X^{2n+1})\equiv 0,\\
+E(X^{2n})=\dfrac{(2n)!}{2^nn!}.
+\end{cases}</script></li>
 <li><p><strong>性质(矩母函数确定分布)</strong></p>
-<p>若 $\exists$ $a&gt;0$, 使得 $M_X(t)=M_Y(t)$, $\forall,t\in(-a,a)$, 则 $X$, $Y$ 同分布.</p>
+<p>若 $\exists$ $a&gt;0$, 使得 $M_X(t)=M_Y(t)$, $\forall\,t\in(-a,a)$, 则 $X$, $Y$ 同分布.</p>
 </li>
 <li><p><strong>例</strong>  $M_X(t)=\dfrac{1}{4}e^{-t}+\dfrac{1}{2}+\dfrac{1}{8}e^{4t}+\dfrac{1}{8}e^{5t}$.</p>
 </li>
-<li><p><strong>解答</strong>  $X$ 离散, 设 $P(X=k)=p_k$, 我们有<br>$$<br>M_X(t)=E(e^{tX})=\sum_ke^{tk}p_k.<br>$$<br>可得分布<br>$$<br>P(X=-1)=\dfrac{1}{4};\<br>P(X=0)=\dfrac{1}{2};\<br>P(X=4)=\dfrac{1}{8};\<br>P(X=5)=\dfrac{1}{8}.<br>$$</p>
-</li>
+<li><p><strong>解答</strong>  $X$ 离散, 设 $P(X=k)=p_k$, 我们有</p>
+<script type="math/tex; mode=display">
+M_X(t)=E(e^{tX})=\sum_ke^{tk}p_k.</script><p>可得分布</p>
+<script type="math/tex; mode=display">
+P(X=-1)=\dfrac{1}{4};\\
+P(X=0)=\dfrac{1}{2};\\
+P(X=4)=\dfrac{1}{8};\\
+P(X=5)=\dfrac{1}{8}.</script></li>
 <li><p><strong>例</strong>  $f_1(x)=\dfrac{1}{\sqrt{2\pi}x}e^{-\tfrac{(\ln x)^2}{2}}, x&gt;0$, $f_2(x)=f_1(x)+f_1(x)\sin(2\pi\ln x)$.</p>
 </li>
-<li><p><strong>解答</strong>  注意到<br>$$<br>\begin{aligned}<br>E(X_2^n)&amp;=E(X_1^n)+\int_{0}^{\infty}x^nf_1(x)\sin(2\pi\ln x)dx\<br>&amp;=0,(令 ,y=\ln x-n)\<br>\end{aligned}<br>$$<br>这是一个同矩不同分布的例子.</p>
+<li><p><strong>解答</strong>  注意到</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+E(X_2^n)&=E(X_1^n)+\int_{0}^{\infty}x^nf_1(x)\sin(2\pi\ln x)dx\\
+&=0\,(令 \,y=\ln x-n)\\
+\end{aligned}</script><p>这是一个同矩不同分布的例子.</p>
 </li>
 <li><p><strong>性质(独立随机变量和的分布)</strong></p>
 <p>若 $X$, $Y$ 独立, 则 $M_{X+Y}(t)=M_X(t)M_Y(t)$.</p>
 </li>
-<li><p><strong>证明</strong>  注意到<br>  $$<br>  \begin{aligned}<br>  M_{X+Y}(t)&amp;=E(e^{t(X+Y)})\<br>  &amp;=E(e^{tX}e^{tY})\<br>  &amp;=E(e^{tX})E(e^{tY})\<br>  &amp;=M_X(t)M_Y(t).<br>  \end{aligned}<br>  $$</p>
-</li>
+<li><p><strong>证明</strong>  注意到</p>
+<script type="math/tex; mode=display">
+  \begin{aligned}
+  M_{X+Y}(t)&=E(e^{t(X+Y)})\\
+  &=E(e^{tX}e^{tY})\\
+  &=E(e^{tX})E(e^{tY})\\
+  &=M_X(t)M_Y(t).
+  \end{aligned}</script></li>
 <li><p><strong>例</strong>  $X_1,X_2,\cdots,X_n$ 独立正态, 则 $X_1+X_2+\cdots+X_n$ 正态.</p>
 </li>
-<li><p><strong>解答</strong>  考察 $X_i\sim N(\mu_i,\sigma_i^2)$, 其中 $i=1,2$. 那么<br>$$<br>M_{X+Y}(t)=M_X(t)M_Y(t)=e^{\tfrac{1}{2}(\sigma_1^2+\sigma_2^2)+(\mu_1+\mu_2)t}.<br>$$<br>进而得到<br>$$<br>X_1+X_2\sim N(\mu_1+\mu_2,\sigma_1^2+\sigma_2^2).<br>$$</p>
-</li>
+<li><p><strong>解答</strong>  考察 $X_i\sim N(\mu_i,\sigma_i^2)$, 其中 $i=1,2$. 那么</p>
+<script type="math/tex; mode=display">
+M_{X+Y}(t)=M_X(t)M_Y(t)=e^{\tfrac{1}{2}(\sigma_1^2+\sigma_2^2)+(\mu_1+\mu_2)t}.</script><p>进而得到</p>
+<script type="math/tex; mode=display">
+X_1+X_2\sim N(\mu_1+\mu_2,\sigma_1^2+\sigma_2^2).</script></li>
 <li><p><strong>注</strong></p>
 <ul>
 <li>若 $N$ 为有限数;</li>
@@ -666,41 +750,78 @@
 </li>
 <li><p><strong>注</strong></p>
 <ul>
-<li><p>$(X_1,X_2,\cdots,X_n)$ 的 <strong>MGF</strong> 为:<br>$$<br>M_{(X_1,X_2,\cdots,X_n)}(t_1,t_2,\cdots,t_n)=E(e^{t_1X_1+t_2X_2+\cdots+t_nX_n}).<br>$$</p>
-</li>
-<li><p>特征函数<br>$$<br>E(e^{itX}), i^2=-1.<br>$$</p>
-</li>
+<li><p>$(X_1,X_2,\cdots,X_n)$ 的 <strong>MGF</strong> 为:</p>
+<script type="math/tex; mode=display">
+M_{(X_1,X_2,\cdots,X_n)}(t_1,t_2,\cdots,t_n)=E(e^{t_1X_1+t_2X_2+\cdots+t_nX_n}).</script></li>
+<li><p>特征函数 </p>
+<script type="math/tex; mode=display">
+E(e^{itX}), i^2=-1.</script></li>
 </ul>
 </li>
 </ul>
 <h2 id="条件期望"><a href="#条件期望" class="headerlink" title="条件期望"></a>条件期望</h2><ul>
-<li><p><strong>定义(条件期望)</strong><br>$$<br>E(Y\mid X\in A)=<br>\begin{cases}<br>\sum\limits_iy_iP(Y=y_i\mid X\in A)\<br>\int\limits_{-\infty}^{\infty}yf(y\mid X\in A)dy\<br>\end{cases}<br>$$</p>
-<p>$$<br>E(Y\mid x)=<br>\begin{cases}<br>\sum\limits_iy_iP(Y=y_i\mid X=x)\<br>\int\limits_{-\infty}^{\infty}yf_{Y\mid X}(y\mid x)dy\<br>\end{cases}<br>$$</p>
-<p>我们称 $E(Y\mid X)$ 为新的随机变量 $h(X)$, 是 $Y$ 对 $X$ 的回归函数.</p>
+<li><p><strong>定义(条件期望)</strong></p>
+<script type="math/tex; mode=display">
+E(Y\mid X\in A)=
+\begin{cases}
+\sum\limits_iy_iP(Y=y_i\mid X\in A)\\
+\int\limits_{-\infty}^{\infty}yf(y\mid X\in A)dy\\
+\end{cases}</script><script type="math/tex; mode=display">
+E(Y\mid x)=
+\begin{cases}
+\sum\limits_iy_iP(Y=y_i\mid X=x)\\
+\int\limits_{-\infty}^{\infty}yf_{Y\mid X}(y\mid x)dy\\
+\end{cases}</script><p>我们称 $E(Y\mid X)$ 为新的随机变量 $h(X)$, 是 $Y$ 对 $X$ 的回归函数.</p>
 </li>
 <li><p><strong>例</strong>  $(X,Y)\sim N(\mu_1,\mu_2,\sigma_1^2,\sigma_2^2,\rho)$, 则 $E(Y\mid X)=\mu_2+\rho\dfrac{\sigma_2}{\sigma_1}(X-\mu_1)$.</p>
 </li>
 <li><p><strong>例</strong>  甲乙两种同类产品, 评价使用寿命为 10 年, 15 年, 市场占有率为 60%, 40%. 随机购买一件产品, 求期望寿命?</p>
 </li>
-<li><p><strong>解答</strong>  为 $10\times 60%+15\times 40%=12$ 年.</p>
-<p>若记 $X$ 为产品类型, $Y$ 为产品寿命, 则上式可写成<br>$$<br>\begin{aligned}<br>E(Y)&amp;=12\<br>&amp;=10\times 60%+15\times 40%\<br>&amp;=E(Y\mid X=1)P(X=1)+E(Y\mid X=2)P(X=2)\<br>&amp;=E[E(Y\mid X)].<br>\end{aligned}<br>$$<br>不同取值分层平均并加权.</p>
+<li><p><strong>解答</strong>  为 $10\times 60\%+15\times 40\%=12$ 年.</p>
+<p>若记 $X$ 为产品类型, $Y$ 为产品寿命, 则上式可写成</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+E(Y)&=12\\
+&=10\times 60\%+15\times 40\%\\
+&=E(Y\mid X=1)P(X=1)+E(Y\mid X=2)P(X=2)\\
+&=E[E(Y\mid X)].
+\end{aligned}</script><p>不同取值分层平均并加权.</p>
 </li>
-<li><p><strong>定义(全期望公式)</strong><br>  $$<br>  E(Y)=E[E(Y\mid X)].<br>  $$</p>
-</li>
-<li><p><strong>证明</strong>  以连续型为例:<br>  $$<br>  \begin{aligned}<br>  E(Y\mid x)&amp;=\int_{-\infty}^{\infty}yf_{Y\mid X}(y\mid x)dy\<br>  &amp;=\int_{-\infty}^{\infty}y\dfrac{f(x,y)}{f_X(x)}dy<br>  \end{aligned}<br>  $$<br>  从而有<br>  $$<br>  \begin{aligned}<br>  E[E(Y\mid X)]&amp;=\int_{-\infty}^{\infty}E(Y\mid x)f_X(x)dx\<br>  &amp;=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}yf(x,y)dydx\<br>  &amp;=E(Y).<br>  \end{aligned}<br>  $$</p>
-</li>
+<li><p><strong>定义(全期望公式)</strong></p>
+<script type="math/tex; mode=display">
+  E(Y)=E[E(Y\mid X)].</script></li>
+<li><p><strong>证明</strong>  以连续型为例:</p>
+<script type="math/tex; mode=display">
+  \begin{aligned}
+  E(Y\mid x)&=\int_{-\infty}^{\infty}yf_{Y\mid X}(y\mid x)dy\\
+  &=\int_{-\infty}^{\infty}y\dfrac{f(x,y)}{f_X(x)}dy
+  \end{aligned}</script><p>  从而有</p>
+<script type="math/tex; mode=display">
+  \begin{aligned}
+  E[E(Y\mid X)]&=\int_{-\infty}^{\infty}E(Y\mid x)f_X(x)dx\\
+  &=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}yf(x,y)dydx\\
+  &=E(Y).
+  \end{aligned}</script></li>
 <li><p><strong>注</strong>  一般地, $E[g(X,Y)]=E[E(g(X,Y)\mid X)]$.</p>
 </li>
-<li><p><strong>定理(均方最优预测)</strong><br>$$<br>E[(Y-g(X))^2]\ge E[(Y-h(X))^2]=E[(Y-E(Y\mid X))^2]<br>$$<br>称为均方误差 <strong>MSE</strong> 下的最优预测.</p>
+<li><p><strong>定理(均方最优预测)</strong></p>
+<script type="math/tex; mode=display">
+E[(Y-g(X))^2]\ge E[(Y-h(X))^2]=E[(Y-E(Y\mid X))^2]</script><p>称为均方误差 <strong>MSE</strong> 下的最优预测.</p>
 </li>
-<li><p><strong>证明</strong><br>  $$<br>  E[(Y-c)^2]\ge E[(Y-E(Y))^2].<br>  $$<br>  因此<br>  $$<br>  E[(Y-g(X))^2\mid X]\ge E[(Y-E(Y\mid X))^2\mid X].<br>  $$<br>   两边对 $X$ 取均值, 可得<br>  $$<br>  E[(Y-g(X))^2]\ge E[(Y-E(Y\mid X))^2].<br>  $$</p>
-</li>
+<li><p><strong>证明</strong></p>
+<script type="math/tex; mode=display">
+  E[(Y-c)^2]\ge E[(Y-E(Y))^2].</script><p>  因此</p>
+<script type="math/tex; mode=display">
+  E[(Y-g(X))^2\mid X]\ge E[(Y-E(Y\mid X))^2\mid X].</script><p>   两边对 $X$ 取均值, 可得</p>
+<script type="math/tex; mode=display">
+  E[(Y-g(X))^2]\ge E[(Y-E(Y\mid X))^2].</script></li>
 <li><p><strong>注</strong></p>
 <ul>
 <li><p>$E(Y\mid X)$ 依赖 $(X,Y)$ 的联合分布 (不易获取);</p>
 </li>
-<li><p>转而求最优线性预测:<br>$$<br>\min_{a,b}E[(Y-(aX+b))^2],(最小二乘法)<br>$$</p>
-</li>
+<li><p>转而求最优线性预测:</p>
+<script type="math/tex; mode=display">
+\min_{a,b}E[(Y-(aX+b))^2]\,(最小二乘法)</script></li>
 </ul>
 </li>
 </ul>
@@ -1095,7 +1216,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">85k</span>
+                        class="white-color">73k</span>
             
             
             

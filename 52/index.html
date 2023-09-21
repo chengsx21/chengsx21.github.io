@@ -439,14 +439,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.6k
+                    1.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    21 分
+                    7 分
                 </div>
                 
 
@@ -470,12 +470,16 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="Chap-7-假设检验"><a href="#Chap-7-假设检验" class="headerlink" title="Chap 7 假设检验"></a>Chap 7 假设检验</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ul>
-<li><p><strong>例(女士品茶)</strong>  某女士声称可区分奶茶是先加牛奶还是先加茶. <strong>R.Fisher</strong> 设计实验: 各有 4 杯奶茶随机排成一排, 将这一信息告知女士. 考虑假设 $H$: 该女士没有区分能力. 当 $H$ 正确的情况下, 4 杯全对的概率为<br>  $$<br>  \dfrac{C_4^4\cdot C_4^0}{C_8^4}=\dfrac{1}{70}.<br>  $$<br>  下述两种情况之一必发生:</p>
+<li><p><strong>例(女士品茶)</strong>  某女士声称可区分奶茶是先加牛奶还是先加茶. <strong>R.Fisher</strong> 设计实验: 各有 4 杯奶茶随机排成一排, 将这一信息告知女士. 考虑假设 $H$: 该女士没有区分能力. 当 $H$ 正确的情况下, 4 杯全对的概率为</p>
+<script type="math/tex; mode=display">
+  \dfrac{C_4^4\cdot C_4^0}{C_8^4}=\dfrac{1}{70}.</script><p>  下述两种情况之一必发生:</p>
 <ul>
-<li>$H$ 不正确 (**i.e.**该女士有区分能力);</li>
-<li>$H$ 正确 (发生了一件概率为 $\dfrac{1}{70}$ 的事情).</li>
+<li>$H$ 不正确 (<strong>i.e.</strong>该女士有区分能力);</li>
+<li><p>$H$ 正确 (发生了一件概率为 $\dfrac{1}{70}$ 的事情).</p>
+<p>通常选择阈值 $\alpha=0.05,0.01,0.1$ (预先给定的显著性水平). 若女士选对了三杯, 则在 $H$ 正确的前提下, 挑对三杯及以上的概率为</p>
+<script type="math/tex; mode=display">
+\dfrac{C_4^4\cdot C_4^0}{C_8^4}+\dfrac{C_4^3\cdot C_4^1}{C_8^4}=\dfrac{17}{70}\approx 0.243.</script></li>
 </ul>
-<p>  通常选择阈值 $\alpha=0.05,0.01,0.1$ (预先给定的显著性水平). 若女士选对了三杯, 则在 $H$ 正确的前提下, 挑对三杯及以上的概率为<br>  $$<br>  \dfrac{C_4^4\cdot C_4^0}{C_8^4}+\dfrac{C_4^3\cdot C_4^1}{C_8^4}=\dfrac{17}{70}\approx 0.243.<br>  $$</p>
 </li>
 <li><p><strong>注</strong></p>
 <ul>
@@ -483,8 +487,9 @@
 </li>
 <li><p>若认可某组观测(样本), 则用它来证实或证伪某个理论(断言)具有天然的不对等;</p>
 </li>
-<li><p>$H$ 可以模型化:<br>  $$<br>  P(X=k)\dfrac{C_4^k\cdot C_4^{4-k}}{C_8^4}.<br>  $$</p>
-</li>
+<li><p>$H$ 可以模型化:</p>
+<script type="math/tex; mode=display">
+  P(X=k)\dfrac{C_4^k\cdot C_4^{4-k}}{C_8^4}.</script></li>
 <li><p>历史注记:</p>
 <ul>
 <li><strong>Fisher</strong> 显著性检验;</li>
@@ -522,34 +527,55 @@
 </li>
 <li><p><strong>定义(拒绝)</strong>  在原假设 $H_0$ 为真的前提下, 所观测的样本出现的概率如果是很小的, 意味着样本提供的概率拒绝 $H_0$.</p>
 </li>
-<li><p><strong>定义(拒绝域/临界域)</strong>  形式上可抽象为<br>  $$<br>  R={(X_1,\cdots,X_n)\mid T(X_1,\cdots,X_n)\ge c}.<br>  $$<br>  其中 $c$ 被定义为临界值. 此时检验准则为, 若样本 $(X_1,\cdots,X_n)\in R$, 则拒绝假设 $H_0$.</p>
+<li><p><strong>定义(拒绝域/临界域)</strong>  形式上可抽象为</p>
+<script type="math/tex; mode=display">
+  R=\{(X_1,\cdots,X_n)\mid T(X_1,\cdots,X_n)\ge c\}.</script><p>  其中 $c$ 被定义为临界值. 此时检验准则为, 若样本 $(X_1,\cdots,X_n)\in R$, 则拒绝假设 $H_0$.</p>
 </li>
-<li><p><strong>定义(显著性检验)</strong>  对事先给定的 $\alpha\in(0,1)$, 若 $P_{\theta}(T(X_1,\cdots,X_n)\ge c)\le\alpha$, $\forall,\theta\in\Theta_0$, 则称这是一个水平为 $\alpha$ 的显著性检验.</p>
+<li><p><strong>定义(显著性检验)</strong>  对事先给定的 $\alpha\in(0,1)$, 若 $P_{\theta}(T(X_1,\cdots,X_n)\ge c)\le\alpha$, $\forall\,\theta\in\Theta_0$, 则称这是一个水平为 $\alpha$ 的显著性检验.</p>
 </li>
 <li><p><strong>例</strong>  假设 $X\sim N(\mu,\sigma^2)$, 其中 $\sigma^2$ 已知, 给定检验水平 $\alpha\in(0,1)$ 和已观测样本 $X_i(1\le i\le n)$. $H_0:\mu=\mu_0$, $H_1:\mu\ne\mu_0$. 对原假设进行检验.</p>
 </li>
 <li><p><strong>解答</strong>  拒绝域为双侧拒绝, 当 $H_0$ 为真时, 控制 $P(\vert\overline{X}-\mu_0\vert\ge c)\le\alpha$. </p>
-<p>  根据 <strong>CLT</strong>, 注意到<br>  $$<br>  \overline{X}-\mu_0\sim N(0,\dfrac{\sigma^2}{n})\Leftrightarrow\dfrac{\overline{X}-\mu_0}{\tfrac{\sigma}{\sqrt{n}}}\sim N(0,1).<br>  $$<br>  取 $\dfrac{c}{\tfrac{\sigma}{\sqrt{n}}}=Z_{\tfrac{\alpha}{2}}\Rightarrow c=\dfrac{\sigma}{\sqrt{n}}\cdot Z_{\tfrac{\alpha}{2}}$. </p>
+<p>  根据 <strong>CLT</strong>, 注意到</p>
+<script type="math/tex; mode=display">
+  \overline{X}-\mu_0\sim N(0,\dfrac{\sigma^2}{n})\Leftrightarrow\dfrac{\overline{X}-\mu_0}{\tfrac{\sigma}{\sqrt{n}}}\sim N(0,1).</script><p>  取 $\dfrac{c}{\tfrac{\sigma}{\sqrt{n}}}=Z_{\tfrac{\alpha}{2}}\Rightarrow c=\dfrac{\sigma}{\sqrt{n}}\cdot Z_{\tfrac{\alpha}{2}}$. </p>
 <p>  给出在 $\alpha$ 的检验水平下拒绝 $H_0$ 的条件: 若 $\vert\overline{X}-\mu_0\vert\ge\dfrac{\sigma}{\sqrt{n}}\cdot Z_{\tfrac{\alpha}{2}}$, 则拒绝 $H_0$.</p>
 </li>
 <li><p><strong>例</strong>  假设 $X\sim N(\mu,\sigma^2)$, 其中 $\sigma^2$ 已知, 给定检验水平 $\alpha\in(0,1)$ 和已观测样本 $X_i(1\le i\le n)$. $H_0:\mu\ge\mu_0$, $H_1:\mu&lt;\mu_0$. 对原假设进行检验.</p>
 </li>
 <li><p><strong>解答</strong>  拒绝域为单侧拒绝, 当 $H_0$ 为真时, 控制 $P(\overline{X}\le c)\le\alpha$.</p>
-<p>  根据 <strong>CLT</strong>, 注意到<br>  $$<br>  \overline{X}-\mu\sim N(0,\dfrac{\sigma^2}{n})\Leftrightarrow\dfrac{\overline{X}-\mu}{\tfrac{\sigma}{\sqrt{n}}}\sim N(0,1).<br>  $$<br>  因此<br>  $$<br>  \begin{aligned}<br>  P(\overline{X}\le c)&amp;=P(\dfrac{\overline{X}-\mu}{\tfrac{\sigma}{\sqrt{n}}}\le \dfrac{c-\mu}{\tfrac{\sigma}{\sqrt{n}}})\<br>  &amp;=P(Z\le\dfrac{c-\mu}{\tfrac{\sigma}{\sqrt{n}}})\<br>  &amp;=\varPhi(\dfrac{c-\mu}{\tfrac{\sigma}{\sqrt{n}}}),\forall,\mu\ge\mu_0.<br>  \end{aligned}<br>  $$</p>
-<p>  取 $\dfrac{c-\mu_0}{\tfrac{\sigma}{\sqrt{n}}}=-Z_{\alpha}\Rightarrow c=\mu_0-\dfrac{\sigma}{\sqrt{n}}\cdot Z_{\alpha}$. </p>
-<p>  给出在 $\alpha$ 的检验水平下拒绝 $H_0$ 的条件: 若 $\overline{X}\le\mu_0-\dfrac{\sigma}{\sqrt{n}}\cdot Z_{\alpha}$, 则拒绝 $H_0$.</p>
-</li>
+<p>  根据 <strong>CLT</strong>, 注意到</p>
+<script type="math/tex; mode=display">
+  \overline{X}-\mu\sim N(0,\dfrac{\sigma^2}{n})\Leftrightarrow\dfrac{\overline{X}-\mu}{\tfrac{\sigma}{\sqrt{n}}}\sim N(0,1).</script><p>  因此</p>
+<script type="math/tex; mode=display">
+  \begin{aligned}
+  P(\overline{X}\le c)&=P(\dfrac{\overline{X}-\mu}{\tfrac{\sigma}{\sqrt{n}}}\le \dfrac{c-\mu}{\tfrac{\sigma}{\sqrt{n}}})\\
+  &=P(Z\le\dfrac{c-\mu}{\tfrac{\sigma}{\sqrt{n}}})\\
+  &=\varPhi(\dfrac{c-\mu}{\tfrac{\sigma}{\sqrt{n}}}),\forall\,\mu\ge\mu_0.
+  \end{aligned}</script></li>
+</ul>
+<pre><code>取 $\dfrac{c-\mu_0}{\tfrac{\sigma}{\sqrt{n}}}=-Z_{\alpha}\Rightarrow c=\mu_0-\dfrac{\sigma}{\sqrt{n}}\cdot Z_{\alpha}$. 
+
+给出在 $\alpha$ 的检验水平下拒绝 $H_0$ 的条件: 若 $\overline{X}\le\mu_0-\dfrac{\sigma}{\sqrt{n}}\cdot Z_{\alpha}$, 则拒绝 $H_0$.
+</code></pre><ul>
 <li><p><strong>注</strong></p>
 <ul>
 <li><p>这种方法称为 $Z$-检验.</p>
 </li>
-<li><p>若 $\sigma^2$ 未知, 考虑<br>  $$<br>  \dfrac{\overline{X}-\mu}{\tfrac{S}{\sqrt{n}}}\sim t(n-1).<br>  $$<br>  这种方法称为 $t$-检验.</p>
+<li><p>若 $\sigma^2$ 未知, 考虑</p>
+<script type="math/tex; mode=display">
+  \dfrac{\overline{X}-\mu}{\tfrac{S}{\sqrt{n}}}\sim t(n-1).</script><p>  这种方法称为 $t$-检验.</p>
 </li>
 </ul>
 </li>
 </ul>
 <h2 id="Neyman-Pearson-假设检验"><a href="#Neyman-Pearson-假设检验" class="headerlink" title="Neyman-Pearson 假设检验"></a>Neyman-Pearson 假设检验</h2><ul>
-<li><p><strong>定义(错误)</strong>  Ⅰ类错误: 在 $H_0$ 为真时拒绝 $H_0$; Ⅱ类错误: 在 $H_0$ 为假时不拒绝 $H_0$. 对应的概率分别为:<br>  $$<br>  \begin{aligned}<br>  \alpha(R)&amp;:=P_{\theta}(Ⅰ)=P_{\theta}((X_1,\cdots,X_n)\in R),\theta\in\Theta_0;\<br>  \beta(R)&amp;:=P_{\theta}(Ⅱ)=P_{\theta}((X_1,\cdots,X_n)\in R^c),\theta\in\Theta_1.<br>  \end{aligned}<br>  $$<br>  对于已划分的 $R$ 来说, 是定义域不同的 $\theta$ 的函数.</p>
+<li><p><strong>定义(错误)</strong>  Ⅰ类错误: 在 $H_0$ 为真时拒绝 $H_0$; Ⅱ类错误: 在 $H_0$ 为假时不拒绝 $H_0$. 对应的概率分别为:</p>
+<script type="math/tex; mode=display">
+  \begin{aligned}
+  \alpha(R)&:=P_{\theta}(Ⅰ)=P_{\theta}((X_1,\cdots,X_n)\in R),\theta\in\Theta_0;\\
+  \beta(R)&:=P_{\theta}(Ⅱ)=P_{\theta}((X_1,\cdots,X_n)\in R^c),\theta\in\Theta_1.
+  \end{aligned}</script><p>  对于已划分的 $R$ 来说, 是定义域不同的 $\theta$ 的函数.</p>
 </li>
 <li><p><strong>注</strong></p>
 <ul>
@@ -564,8 +590,9 @@
 <li>考虑事件 $H_0:$ 合格, 事件 $H_1:$ 不合格, 当 $P_{\theta}(Ⅰ)$ 变小时, 不容易拒绝事件, 不合格不容易被检出, 从而 $P_{\theta}(Ⅱ)$ 变大.</li>
 </ul>
 </li>
-<li><p><strong>定义(功效函数)</strong>    给定 $\theta$ 与临界域 $R$, 拒绝原假设 $H_0$ 的概率为:<br>  $$<br>  P_{\theta}((X_1,\cdots,X_n)\in R)=1-\beta(R),,\theta\in\Theta_1.<br>  $$</p>
-</li>
+<li><p><strong>定义(功效函数)</strong>    给定 $\theta$ 与临界域 $R$, 拒绝原假设 $H_0$ 的概率为:</p>
+<script type="math/tex; mode=display">
+  P_{\theta}((X_1,\cdots,X_n)\in R)=1-\beta(R),\,\theta\in\Theta_1.</script></li>
 <li><p><strong>定义(Neyman-Pearson 范式)</strong>  $n$ 固定, 控制 $P_{\theta}(Ⅰ)\le\alpha$, 其中 $\alpha$ 为预先给定的检验水平, 再在这个限制下使 $P_{\theta}(Ⅱ)(\theta\in\Theta_1)$ 尽可能小.</p>
 </li>
 <li><p><strong>注</strong></p>
@@ -584,7 +611,14 @@
 <h2 id="假设检验与置信区间"><a href="#假设检验与置信区间" class="headerlink" title="假设检验与置信区间"></a>假设检验与置信区间</h2><ul>
 <li><p><strong>例</strong>  $X\sim N(\mu,\sigma^2)$, $\sigma^2$ 已知, $\alpha&gt;0$ 给定, $X_1,\cdots,X_n$ 为随机样本.</p>
 </li>
-<li><p>**解答 ** 其双侧置信区间为<br>  $$<br>  P=(\overline{X}-Z_{\tfrac{\alpha}{2}}\dfrac{\sigma}{\sqrt{n}},\overline{X}+Z_{\tfrac{\alpha}{2}}\dfrac{\sigma}{\sqrt{n}}).<br>  $$<br>  考虑假设检验 $H_0:\mu=\mu_0$, $H_1:\mu\ne\mu_0$. 需要控制<br>  $$<br>  P_{H_0}(\vert\overline{X}-\mu_0\vert\ge c)\le\alpha.<br>  $$<br>  检验准则为 $\vert\overline{X}-\mu_0\vert\ge Z_{\tfrac{\alpha}{2}}\dfrac{\sigma}{\sqrt{n}}$ 时拒绝 $H_0$. 我们给出接受域<br>  $$<br>  R^c={(X_1,\cdots,X_n)\mid \vert\overline{X}-\mu_0\vert&lt;Z_{\tfrac{\alpha}{2}}\dfrac{\sigma}{\sqrt{n}}}\<br>  ={(X_1,\cdots,X_n)\mid \mu_0\in P}.<br>  $$<br>  由此可见, $\mu_0\in P\Leftrightarrow$ 用 $\overline{X}$ 为检验统计量, 假设检验不拒绝 $H_0$.(<strong>对偶关系</strong>)</p>
+<li><p><strong>解答 </strong> 其双侧置信区间为</p>
+<script type="math/tex; mode=display">
+  P=(\overline{X}-Z_{\tfrac{\alpha}{2}}\dfrac{\sigma}{\sqrt{n}},\overline{X}+Z_{\tfrac{\alpha}{2}}\dfrac{\sigma}{\sqrt{n}}).</script><p>  考虑假设检验 $H_0:\mu=\mu_0$, $H_1:\mu\ne\mu_0$. 需要控制</p>
+<script type="math/tex; mode=display">
+  P_{H_0}(\vert\overline{X}-\mu_0\vert\ge c)\le\alpha.</script><p>  检验准则为 $\vert\overline{X}-\mu_0\vert\ge Z_{\tfrac{\alpha}{2}}\dfrac{\sigma}{\sqrt{n}}$ 时拒绝 $H_0$. 我们给出接受域</p>
+<script type="math/tex; mode=display">
+  R^c=\{(X_1,\cdots,X_n)\mid \vert\overline{X}-\mu_0\vert<Z_{\tfrac{\alpha}{2}}\dfrac{\sigma}{\sqrt{n}}\}\\
+  =\{(X_1,\cdots,X_n)\mid \mu_0\in P\}.</script><p>  由此可见, $\mu_0\in P\Leftrightarrow$ 用 $\overline{X}$ 为检验统计量, 假设检验不拒绝 $H_0$.(<strong>对偶关系</strong>)</p>
 </li>
 </ul>
 <h2 id="检验的-P-值"><a href="#检验的-P-值" class="headerlink" title="检验的 P 值"></a>检验的 P 值</h2><ul>
@@ -593,7 +627,15 @@
 <li><p><strong>例(选举问题)</strong>  $n=1200$, 调查到的支持比例为 $\tfrac{684}{1200}\approx 0.57$ (观测值).</p>
 </li>
 <li><p><strong>解答</strong>  (1) $H_0:p=p_0$ v.s. $H_1:p&gt;p_0$ ($p_0$ 预先给定).</p>
-<p>  考虑检验统计量 $P_n$, 则由 <strong>CLT</strong>:<br>  $$<br>  \dfrac{P_n-p}{\sqrt{\tfrac{p(1-p)}{n}}}\stackrel{近似}{\sim}N(0,1).<br>  $$<br>  当 $H_0$ 为真时, $p=p_0$, 此时 $se(P_n)=\sqrt{\dfrac{p_0(1-p_0)}{n}}$. 因此 <strong>P</strong> 值<br>  $$<br>  P_{H_0}(P_n\ge p_n)=P(\dfrac{P_n-p_0}{se(P_n)}\ge\dfrac{p_n-p_0}{se(P_n)})\approx P(Z\ge z_0).<br>  $$<br>  其中<br>  $$<br>  Z\stackrel{近似}{\sim}N(0,1),z_0=\dfrac{p_n-p_0}{se(P_n)}=\dfrac{p_n-p_0}{\sqrt{\tfrac{p_0(1-p_0)}{n}}}.<br>  $$<br>  因此<br>  $$<br>  P_{H_0}(P_n\ge p_n)=1-\varPhi(\dfrac{p_n-p_0}{\sqrt{\tfrac{p_0(1-p_0)}{n}}}).<br>  $$<br>  若 $p_0=0.55$, 则 <strong>P</strong> 值 $\approx 0.081$; 若 $p_0=0.5$, 则 <strong>P</strong> 值 $\ll 0.001$.</p>
+<p>  考虑检验统计量 $P_n$, 则由 <strong>CLT</strong>:</p>
+<script type="math/tex; mode=display">
+  \dfrac{P_n-p}{\sqrt{\tfrac{p(1-p)}{n}}}\stackrel{近似}{\sim}N(0,1).</script><p>  当 $H_0$ 为真时, $p=p_0$, 此时 $se(P_n)=\sqrt{\dfrac{p_0(1-p_0)}{n}}$. 因此 <strong>P</strong> 值</p>
+<script type="math/tex; mode=display">
+  P_{H_0}(P_n\ge p_n)=P(\dfrac{P_n-p_0}{se(P_n)}\ge\dfrac{p_n-p_0}{se(P_n)})\approx P(Z\ge z_0).</script><p>  其中</p>
+<script type="math/tex; mode=display">
+  Z\stackrel{近似}{\sim}N(0,1),z_0=\dfrac{p_n-p_0}{se(P_n)}=\dfrac{p_n-p_0}{\sqrt{\tfrac{p_0(1-p_0)}{n}}}.</script><p>  因此</p>
+<script type="math/tex; mode=display">
+  P_{H_0}(P_n\ge p_n)=1-\varPhi(\dfrac{p_n-p_0}{\sqrt{\tfrac{p_0(1-p_0)}{n}}}).</script><p>  若 $p_0=0.55$, 则 <strong>P</strong> 值 $\approx 0.081$; 若 $p_0=0.5$, 则 <strong>P</strong> 值 $\ll 0.001$.</p>
 <p>  在水平 $\alpha$ 下拒绝 $H_0\Leftrightarrow$ <strong>P</strong> 值 $\le\alpha$.</p>
 </li>
 <li><p><strong>注</strong></p>
@@ -604,104 +646,65 @@
 <li>若 <strong>P</strong> 值不小, 则不拒绝 $H_0$, 原因可能为 $H_0$ 真 / $H_0$ 不真, 但检验功效不大.</li>
 </ul>
 </li>
-<li><p><strong>定义</strong>  若拒绝 $H_0:\theta\in\Theta_0\Leftrightarrow T(X_1,\cdots,X_n)\ge C$, 则检验的 <strong>P</strong> 值 $:=$<br>  $$<br>  \sup_{\theta\in\Theta_0}P_{\theta}(T(X_1,\cdots,X_n)\ge T(x_1,\cdots,x_n)).<br>  $$<br>  其中 $T(x_1,\cdots,x_n)$ 为检验统计量的观测值.</p>
+<li><p><strong>定义</strong>  若拒绝 $H_0:\theta\in\Theta_0\Leftrightarrow T(X_1,\cdots,X_n)\ge C$, 则检验的 <strong>P</strong> 值 $:=$</p>
+<script type="math/tex; mode=display">
+  \sup_{\theta\in\Theta_0}P_{\theta}(T(X_1,\cdots,X_n)\ge T(x_1,\cdots,x_n)).</script><p>  其中 $T(x_1,\cdots,x_n)$ 为检验统计量的观测值.</p>
 </li>
 <li><p><strong>解答</strong>  (2) $H_0:p\le p_0$ v.s. $H_1:p&gt;p_0$ ($p_0$ 预先给定).</p>
-<p>  考虑检验统计量 $P_n$, 则由 <strong>CLT</strong>:<br>  $$<br>  \dfrac{P_n-p}{\sqrt{\tfrac{p(1-p)}{n}}}\stackrel{近似}{\sim}N(0,1).<br>  $$<br>  当 $H_0$ 为真时, 此时 $se(P_n)\approx \hat{se}(P_n)=\sqrt{\dfrac{p_n(1-p_n)}{n}}$. 因此 <strong>P</strong> 值<br>  $$<br>  P_{H_0}(P_n\ge p_n)=P(\dfrac{P_n-p}{\hat{se}(P_n)}\ge\dfrac{p_n-p}{\hat{se}(P_n)})\approx P(Z\ge z_0).<br>  $$<br>  其中<br>  $$<br>  Z\stackrel{近似}{\sim}N(0,1),z_0=\dfrac{p_n-p}{\hat{se}(P_n)}=\dfrac{p_n-p}{\sqrt{\tfrac{p_n(1-p_n)}{n}}}.<br>  $$<br>  因此<br>  $$<br>  P_{H_0}(P_n\ge p_n)=1-\varPhi(\dfrac{p_n-p}{\sqrt{\tfrac{p_n(1-p_n)}{n}}}),\forall,p\le p_0.<br>  $$<br>  因此 <strong>P</strong> 值<br>  $$<br>  \sup_{p\le p_0}\Big(1-\varPhi(\dfrac{p_n-p}{\sqrt{\tfrac{p_n(1-p_n)}{n}}})\Big)=1-\varPhi(\dfrac{p_n-p_0}{\sqrt{\tfrac{p_n(1-p_n)}{n}}}).<br>  $$<br>  若 $p_0=0.55$, 则 <strong>P</strong> 值 $\approx 0.081$; 若 $p_0=0.5$, 则 <strong>P</strong> 值 $\ll 0.001$.</p>
+<p>  考虑检验统计量 $P_n$, 则由 <strong>CLT</strong>:</p>
+<script type="math/tex; mode=display">
+  \dfrac{P_n-p}{\sqrt{\tfrac{p(1-p)}{n}}}\stackrel{近似}{\sim}N(0,1).</script><p>  当 $H_0$ 为真时, 此时 $se(P_n)\approx \hat{se}(P_n)=\sqrt{\dfrac{p_n(1-p_n)}{n}}$. 因此 <strong>P</strong> 值</p>
+<script type="math/tex; mode=display">
+  P_{H_0}(P_n\ge p_n)=P(\dfrac{P_n-p}{\hat{se}(P_n)}\ge\dfrac{p_n-p}{\hat{se}(P_n)})\approx P(Z\ge z_0).</script><p>  其中</p>
+<script type="math/tex; mode=display">
+  Z\stackrel{近似}{\sim}N(0,1),z_0=\dfrac{p_n-p}{\hat{se}(P_n)}=\dfrac{p_n-p}{\sqrt{\tfrac{p_n(1-p_n)}{n}}}.</script><p>  因此</p>
+<script type="math/tex; mode=display">
+  P_{H_0}(P_n\ge p_n)=1-\varPhi(\dfrac{p_n-p}{\sqrt{\tfrac{p_n(1-p_n)}{n}}}),\forall\,p\le p_0.</script><p>  因此 <strong>P</strong> 值</p>
+<script type="math/tex; mode=display">
+  \sup_{p\le p_0}\Big(1-\varPhi(\dfrac{p_n-p}{\sqrt{\tfrac{p_n(1-p_n)}{n}}})\Big)=1-\varPhi(\dfrac{p_n-p_0}{\sqrt{\tfrac{p_n(1-p_n)}{n}}}).</script><p>  若 $p_0=0.55$, 则 <strong>P</strong> 值 $\approx 0.081$; 若 $p_0=0.5$, 则 <strong>P</strong> 值 $\ll 0.001$.</p>
 </li>
 </ul>
 <h2 id="拟合优度检验"><a href="#拟合优度检验" class="headerlink" title="拟合优度检验"></a>拟合优度检验</h2><ul>
-<li><p><strong>定义(Pearson 卡方统计量)</strong><br>  $$<br>  \chi^2:=\sum_{i=1}^{k}\dfrac{(O_i-E_i)^2}{E_i}\stackrel{近似}{\sim}\chi^2(k-1).<br>  $$<br>  其中 $O_i$ 为观测频数, $E_i$ 为期望频数 ($H_0$ 真的条件下).</p>
+<li><p><strong>定义(Pearson 卡方统计量)</strong></p>
+<script type="math/tex; mode=display">
+  \chi^2:=\sum_{i=1}^{k}\dfrac{(O_i-E_i)^2}{E_i}\stackrel{近似}{\sim}\chi^2(k-1).</script><p>  其中 $O_i$ 为观测频数, $E_i$ 为期望频数 ($H_0$ 真的条件下).</p>
 </li>
-<li><p><strong>定理</strong>  $H_0: P(X\in$ 第 $i$ 单元$)=p_i(1\le i\le k)$. 若 $H_0$ 为真, 当 $n\rightarrow\infty$ 时, 有<br>  $$<br>  \chi^2\rightarrow\chi^2(k-1).<br>  $$</p>
-</li>
+<li><p><strong>定理</strong>  $H_0: P(X\in$ 第 $i$ 单元$)=p_i(1\le i\le k)$. 若 $H_0$ 为真, 当 $n\rightarrow\infty$ 时, 有</p>
+<script type="math/tex; mode=display">
+  \chi^2\rightarrow\chi^2(k-1).</script></li>
 <li><p><strong>例</strong>  投掷一枚骰子 60 次.</p>
-<table>
-<thead>
-<tr>
-<th>点数</th>
-<th>1</th>
-<th>2</th>
-<th>3</th>
-<th>4</th>
-<th>5</th>
-<th>6</th>
-<th>总计</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>观测频数</td>
-<td>4</td>
-<td>6</td>
-<td>17</td>
-<td>16</td>
-<td>8</td>
-<td>9</td>
-<td>60</td>
-</tr>
-<tr>
-<td>期望频数</td>
-<td>10</td>
-<td>10</td>
-<td>10</td>
-<td>10</td>
-<td>10</td>
-<td>10</td>
-<td>60</td>
-</tr>
-</tbody></table>
+<p>  | 点数     | 1    | 2    | 3    | 4    | 5    | 6    | 总计 |<br>  | ———— | —— | —— | —— | —— | —— | —— | —— |<br>  | 观测频数 | 4    | 6    | 17   | 16   | 8    | 9    | 60   |<br>  | 期望频数 | 10   | 10   | 10   | 10   | 10   | 10   | 60   |</p>
 <p>  $H_0:$ 分布均匀, $H_1:$ 分布不均匀.</p>
 </li>
-<li><p><strong>解答</strong>  检验统计量的观测值:<br>  $$<br>  \dfrac{(4-10)^2}{10}+\dfrac{(6-10)^2}{10}+\cdots+\dfrac{(9-10)^2}{10}=14.2.<br>  $$<br>  自由度为 $6-1=5$. <strong>P</strong> 值 $=P_{H_0}(\chi^2\ge 14.2)\approx 0.014$.</p>
+<li><p><strong>解答</strong>  检验统计量的观测值:</p>
+<script type="math/tex; mode=display">
+  \dfrac{(4-10)^2}{10}+\dfrac{(6-10)^2}{10}+\cdots+\dfrac{(9-10)^2}{10}=14.2.</script><p>  自由度为 $6-1=5$. <strong>P</strong> 值 $=P_{H_0}(\chi^2\ge 14.2)\approx 0.014$.</p>
 </li>
 <li><p><strong>注</strong>  在实际应用中, 需要满足 $E_i=nP_i\ge 5$, 才能较好使用 <strong>Pearson</strong> 定理.</p>
 </li>
 <li><p><strong>例(列联表独立性检验)</strong>  对某项议题态度与年龄段是否独立.</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>青年</th>
-<th>中年</th>
-<th>老年</th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>支持</td>
-<td>20</td>
-<td>40</td>
-<td>20</td>
-<td>80</td>
-</tr>
-<tr>
-<td>反对</td>
-<td>30</td>
-<td>30</td>
-<td>10</td>
-<td>70</td>
-</tr>
-<tr>
-<td></td>
-<td>50</td>
-<td>70</td>
-<td>30</td>
-<td>150</td>
-</tr>
-</tbody></table>
+<p>  |      | 青年 | 中年 | 老年 |      |<br>  | —— | —— | —— | —— | —— |<br>  | 支持 | 20   | 40   | 20   | 80   |<br>  | 反对 | 30   | 30   | 10   | 70   |<br>  |      | 50   | 70   | 30   | 150  |</p>
 <p>  $H_0:$ 独立, $H_1:$ 不独立.</p>
 </li>
 <li><p><strong>解答</strong>  $P_{ij}=P_{i+}P_{+j}$, 其中 $P_{i+}$, $P_{+j}$ 称为边际概率.</p>
-<p>  在 $H_0$ 为真前提下估计 $P_{ij}$. <strong>MLE</strong>:<br>  $$<br>  P_{ij}^*=(P_{i+}P_{+j})^*=P_{i+}^<em>P_{+j}^</em>=\dfrac{sum(row_i)}{n}\times\dfrac{sum(column_j)}{n}.<br>  $$<br>  得到<br>  $$<br>  E_{ij}=nP_{ij}\approx nP_{ij}^*=\dfrac{1}{n}sum(row_i)\times sum(column_j).<br>  $$<br>  计算得检验统计量观测值为 6.12, 自由度为 $(a-1)(b-1)=2$.</p>
+<p>  在 $H_0$ 为真前提下估计 $P_{ij}$. <strong>MLE</strong>:</p>
+<script type="math/tex; mode=display">
+  P_{ij}^*=(P_{i+}P_{+j})^*=P_{i+}^*P_{+j}^*=\dfrac{sum(row_i)}{n}\times\dfrac{sum(column_j)}{n}.</script><p>  得到</p>
+<script type="math/tex; mode=display">
+  E_{ij}=nP_{ij}\approx nP_{ij}^*=\dfrac{1}{n}sum(row_i)\times sum(column_j).</script><p>  计算得检验统计量观测值为 6.12, 自由度为 $(a-1)(b-1)=2$.</p>
 <p>  得到 <strong>P</strong> 值 $=P_{H_0}(\chi^2\ge 6.12)\approx 0.0469$.</p>
 </li>
 <li><p><strong>注</strong>  对于 $a$ 行 $b$ 列, 当 $H_0$ 成立时, 其未知参数个数为 $s=(a-1)+(b-1)$.</p>
-<p>  因此卡方自由度为:<br>  $$<br>  ab-1-s=ab-1-(a-1)-(b-1)=(a-1)(b-1).<br>  $$</p>
-</li>
+<p>  因此卡方自由度为:</p>
+<script type="math/tex; mode=display">
+  ab-1-s=ab-1-(a-1)-(b-1)=(a-1)(b-1).</script></li>
 </ul>
 <h2 id="似然比检验"><a href="#似然比检验" class="headerlink" title="似然比检验"></a>似然比检验</h2><ul>
-<li><p><strong>例</strong>  两种硬币 ($p=0.5$, $p=0.7$) 投掷 $n=10$ 次, 正面向上 $X=x$ 次. 提出假设 $H_0:p=0.5$ v.s. $p=0.7$. 考虑<br>  $$<br>  \dfrac{P_{H_0}(X=x)}{P_{H_1}(X=x)}\le c\leftrightarrow x 的范围<br>  $$<br>  我们需要控制<br>  $$<br>  P_{H_0}\Big(似然比\le c\Big)\le\alpha.<br>  $$</p>
-</li>
+<li><p><strong>例</strong>  两种硬币 ($p=0.5$, $p=0.7$) 投掷 $n=10$ 次, 正面向上 $X=x$ 次. 提出假设 $H_0:p=0.5$ v.s. $p=0.7$. 考虑</p>
+<script type="math/tex; mode=display">
+  \dfrac{P_{H_0}(X=x)}{P_{H_1}(X=x)}\le c\leftrightarrow x 的范围</script><p>  我们需要控制</p>
+<script type="math/tex; mode=display">
+  P_{H_0}\Big(似然比\le c\Big)\le\alpha.</script></li>
 <li><p><strong>注</strong></p>
 <ul>
 <li>当 $H_0$, $H_1$ 均为简单假设时 (<strong>N-P</strong>), 证明: 似然比检验最优 (功效最大).</li>
@@ -709,78 +712,72 @@
 </ul>
 </li>
 <li><p><strong>定义(广义似然比)</strong>  $H_0:\theta\in\Theta_0$ v.s. $H_1:\theta\in\Theta_1$, $X_1,\cdots,X_n$ 为随机样本.</p>
-<p>  考虑广义似然比<br>  $$<br>  \Lambda^*:=\dfrac{\sup_{\theta\in\Theta_0}L(\theta)}{\sup_{\theta\in\Theta_1}L(\theta)}<br>  $$<br>  基于技术原因, 检验统计量选为<br>  $$<br>  \Lambda:=\dfrac{\sup_{\theta\in\Theta_0}L(\theta)}{\sup_{\theta\in\Theta_0\cup\Theta_1}L(\theta)}=\min{\Lambda^*,1}=\Lambda(X_1,\cdots,X_n).<br>  $$<br>  $\Lambda$ 越小则越反对 $H_0$ (拒绝域的形状). 选择 $\lambda_0$ 使<br>  $$<br>  P_{H_0}(\Lambda\le\lambda_0)\le\alpha.<br>  $$<br>  至此得到了检验准则.</p>
+<p>  考虑广义似然比</p>
+<script type="math/tex; mode=display">
+  \Lambda^*:=\dfrac{\sup_{\theta\in\Theta_0}L(\theta)}{\sup_{\theta\in\Theta_1}L(\theta)}</script><p>  基于技术原因, 检验统计量选为</p>
+<script type="math/tex; mode=display">
+  \Lambda:=\dfrac{\sup_{\theta\in\Theta_0}L(\theta)}{\sup_{\theta\in\Theta_0\cup\Theta_1}L(\theta)}=\min\{\Lambda^*,1\}=\Lambda(X_1,\cdots,X_n).</script><p>  $\Lambda$ 越小则越反对 $H_0$ (拒绝域的形状). 选择 $\lambda_0$ 使</p>
+<script type="math/tex; mode=display">
+  P_{H_0}(\Lambda\le\lambda_0)\le\alpha.</script><p>  至此得到了检验准则.</p>
 </li>
-<li><p><strong>定理</strong>  在一定(光滑性)条件下, 当 $n\rightarrow\infty$ 时, 在 $H_0$ 为真前提下:<br>  $$<br>  -2\log\Lambda\rightarrow\chi^2(d).<br>  $$<br>  其中自由度 $d=\dim(\Theta_0\cup\Theta_1)-\dim(\Theta_0)$. 这里的 $\dim$ 指自由参数的个数.</p>
+<li><p><strong>定理</strong>  在一定(光滑性)条件下, 当 $n\rightarrow\infty$ 时, 在 $H_0$ 为真前提下:</p>
+<script type="math/tex; mode=display">
+  -2\log\Lambda\rightarrow\chi^2(d).</script><p>  其中自由度 $d=\dim(\Theta_0\cup\Theta_1)-\dim(\Theta_0)$. 这里的 $\dim$ 指自由参数的个数.</p>
 </li>
-<li><p><strong>例(多项分布检验)</strong>  $H_0:p_1=p_1^*$, $\cdots$, $p_k=p_k^*$, 观测频数分别为 $n_1,\cdots,n_k$.</p>
+<li><p><strong>例(多项分布检验)</strong>  $H_0:p_1=p_1^<em>$, $\cdots$, $p_k=p_k^</em>$, 观测频数分别为 $n_1,\cdots,n_k$.</p>
 </li>
-<li><p><strong>解答</strong>  得到<br>  $$<br>  L(p_1,\cdots,p_k)=C_n^{n_1,\cdots,c_k}p_1^{n_1}\cdots p_k^{n_k}.<br>  $$<br>  因此<br>  $$<br>  \Lambda=\dfrac{\sup_{\theta\in\Theta_0}L(\theta)}{\sup_{\theta\in\Theta_0\cup\Theta_1}L(\theta)}=\dfrac{L(p_1^0,\cdots,p_k^0)}{L(p_1^*,\cdots,p_k^*)}.<br>  $$<br>  已知<br>  $$<br>  n_i=np_i^*,E_i=np_i^0,O_i=n_i.<br>  $$<br>  且<br>  $$<br>  x\log\dfrac{x}{x_0}\stackrel{Taylor}{=}0+(x-x_0)+\dfrac{1}{2}\dfrac{(x-x_0)^2}{x_0}+\cdots<br>  $$<br>  计算得<br>  $$<br>  \begin{aligned}<br>  -2\log\Lambda&amp;=-2\sum_{i=1}^{k}\log\big(\dfrac{p_i^0}{p_i^*}\big)^{n_i}\<br>  &amp;=-2\sum_{i=1}^{k}n_i\log\dfrac{p_i^0}{p_i^*}\<br>  &amp;=2\sum_{i=1}^{k}O_i\log\dfrac{O_i}{E_i}\<br>  &amp;=\sum_{i=1}^{k}\dfrac{(O_i-E_i)^2}{E_i}+\cdots.<br>  \end{aligned}<br>  $$<br>  考虑到 $\dim(\Theta_0)=0$, $\dim(\Theta_0\cup\Theta_1)=k-1$, 因此给出<br>  $$<br>  \sum_{i=1}^{k}\dfrac{(O_i-E_i)^2}{E_i}\stackrel{近似}{\sim}\chi^2(k-1).<br>  $$</p>
-</li>
+<li><p><strong>解答</strong>  得到</p>
+<script type="math/tex; mode=display">
+  L(p_1,\cdots,p_k)=C_n^{n_1,\cdots,c_k}p_1^{n_1}\cdots p_k^{n_k}.</script><p>  因此</p>
+<script type="math/tex; mode=display">
+  \Lambda=\dfrac{\sup_{\theta\in\Theta_0}L(\theta)}{\sup_{\theta\in\Theta_0\cup\Theta_1}L(\theta)}=\dfrac{L(p_1^0,\cdots,p_k^0)}{L(p_1^*,\cdots,p_k^*)}.</script><p>  已知</p>
+<script type="math/tex; mode=display">
+  n_i=np_i^*,E_i=np_i^0,O_i=n_i.</script><p>  且</p>
+<script type="math/tex; mode=display">
+  x\log\dfrac{x}{x_0}\stackrel{Taylor}{=}0+(x-x_0)+\dfrac{1}{2}\dfrac{(x-x_0)^2}{x_0}+\cdots</script><p>  计算得</p>
+<script type="math/tex; mode=display">
+  \begin{aligned}
+  -2\log\Lambda&=-2\sum_{i=1}^{k}\log\big(\dfrac{p_i^0}{p_i^*}\big)^{n_i}\\
+  &=-2\sum_{i=1}^{k}n_i\log\dfrac{p_i^0}{p_i^*}\\
+  &=2\sum_{i=1}^{k}O_i\log\dfrac{O_i}{E_i}\\
+  &=\sum_{i=1}^{k}\dfrac{(O_i-E_i)^2}{E_i}+\cdots.
+  \end{aligned}</script><p>  考虑到 $\dim(\Theta_0)=0$, $\dim(\Theta_0\cup\Theta_1)=k-1$, 因此给出</p>
+<script type="math/tex; mode=display">
+  \sum_{i=1}^{k}\dfrac{(O_i-E_i)^2}{E_i}\stackrel{近似}{\sim}\chi^2(k-1).</script></li>
 </ul>
 <h2 id="两独立总体比较"><a href="#两独立总体比较" class="headerlink" title="两独立总体比较"></a>两独立总体比较</h2><ul>
 <li><p>两独立总体:</p>
-<table>
-<thead>
-<tr>
-<th>总体</th>
-<th>均值</th>
-<th>方差</th>
-<th>样本 (iid)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>$X$</td>
-<td>$\mu_1$</td>
-<td>$\sigma_1^2$</td>
-<td>$X_1,\cdots,X_n$</td>
-</tr>
-<tr>
-<td>$Y$</td>
-<td>$\mu_2$</td>
-<td>$\sigma_2^2$</td>
-<td>$Y_1,\cdots,Y_m$</td>
-</tr>
-</tbody></table>
+<p>  | 总体 | 均值    | 方差         | 样本 (iid)       |<br>  | —— | ———- | —————— | ———————— |<br>  | $X$  | $\mu_1$ | $\sigma_1^2$ | $X_1,\cdots,X_n$ |<br>  | $Y$  | $\mu_2$ | $\sigma_2^2$ | $Y_1,\cdots,Y_m$ |</p>
 </li>
 <li><p><strong>定义(比较均值)</strong>:</p>
 <p>  给出 $E(\overline{X}-\overline{Y})=\mu_1-\mu_2$, $Var(\overline{X}-\overline{Y})=\dfrac{\sigma_1^2}{n}+\dfrac{\sigma_2^2}{m}=se^2$. 参考置信区间部分.</p>
 </li>
-<li><p><strong>定理</strong>  给出 $W_1\sim\chi^2(k_1)$, $W_2\sim\chi^2(k_2)$, 且 $W_1,W_2$ 独立, 我们有<br>  $$<br>  \dfrac{W_1/k_1}{W_2/k_2}\sim F(k_1,k_2).<br>  $$</p>
-</li>
-<li><p><strong>定义(比较方差)</strong>: 假设 $X$, $Y$ 均为正态. 提出假设 $H_0:\sigma_1^2=\sigma_2^2$ v.s. $H_1:\sigma_1^2\ne\sigma_2^2$.<br>  $$<br>  \dfrac{(n-1)S_1^2}{\sigma_1^2}\sim\chi^2(n-1), \dfrac{(m-1)S_2^2}{\sigma_2^2}\sim\chi^2(m-1).<br>  $$<br>  考虑检验统计量(依赖于<strong>样本</strong>或<strong>已知参数</strong>)<br>  $$<br>  \dfrac{S_1^2}{S_2^2}.<br>  $$<br>  当 $H_0$ 为真时, 有<br>  $$<br>  \dfrac{S_1^2}{S_2^2}\sim F(n-1,m-1).<br>  $$<br>  检验准则为当<br>  $$<br>  \dfrac{S_1^2}{S_2^2}\ge F_{\tfrac{\alpha}{2}}(n-1,m-1),或,\dfrac{S_1^2}{S_2^2}\le F_{1-\tfrac{\alpha}{2}}(n-1,m-1)<br>  $$<br>  时拒绝原假设.</p>
+<li><p><strong>定理</strong>  给出 $W_1\sim\chi^2(k_1)$, $W_2\sim\chi^2(k_2)$, 且 $W_1,W_2$ 独立, 我们有</p>
+<script type="math/tex; mode=display">
+  \dfrac{W_1/k_1}{W_2/k_2}\sim F(k_1,k_2).</script></li>
+<li><p><strong>定义(比较方差)</strong>: 假设 $X$, $Y$ 均为正态. 提出假设 $H_0:\sigma_1^2=\sigma_2^2$ v.s. $H_1:\sigma_1^2\ne\sigma_2^2$.</p>
+<script type="math/tex; mode=display">
+  \dfrac{(n-1)S_1^2}{\sigma_1^2}\sim\chi^2(n-1), \dfrac{(m-1)S_2^2}{\sigma_2^2}\sim\chi^2(m-1).</script><p>  考虑检验统计量(依赖于<strong>样本</strong>或<strong>已知参数</strong>)</p>
+<script type="math/tex; mode=display">
+  \dfrac{S_1^2}{S_2^2}.</script><p>  当 $H_0$ 为真时, 有</p>
+<script type="math/tex; mode=display">
+  \dfrac{S_1^2}{S_2^2}\sim F(n-1,m-1).</script><p>  检验准则为当</p>
+<script type="math/tex; mode=display">
+  \dfrac{S_1^2}{S_2^2}\ge F_{\tfrac{\alpha}{2}}(n-1,m-1)\,或\,\dfrac{S_1^2}{S_2^2}\le F_{1-\tfrac{\alpha}{2}}(n-1,m-1)</script><p>  时拒绝原假设.</p>
 </li>
 <li><p><strong>注</strong>  由定义 $F_{1-\tfrac{\alpha}{2}}(n-1,m-1)=\dfrac{1}{F_{\tfrac{\alpha}{2}}(m-1,n-1)}$.</p>
 </li>
 <li><p><strong>例(比较成功率/失败率)</strong>  阿司匹林对降低心脏病发病率的有效性.</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>心脏病发作</th>
-<th>心脏病未发作</th>
-<th>合计</th>
-<th>发作率</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>阿司匹林</td>
-<td>139</td>
-<td>10898</td>
-<td>11037</td>
-<td>0.0126</td>
-</tr>
-<tr>
-<td>安慰剂</td>
-<td>239</td>
-<td>10795</td>
-<td>11034</td>
-<td>0.0217</td>
-</tr>
-</tbody></table>
+<p>  |          | 心脏病发作 | 心脏病未发作 | 合计  | 发作率 |<br>  | ———— | ————— | —————— | ——- | ——— |<br>  | 阿司匹林 | 139        | 10898        | 11037 | 0.0126 |<br>  | 安慰剂   | 239        | 10795        | 11034 | 0.0217 |</p>
 <p>  提出假设 $H_0:p_1=p_2$ (无效) v.s. $H_1:p_1&lt;p_2$ (有效), 检验统计量为 $P_1-P_2$.</p>
 <p>  容易得到 $E(P_1-P_2)=p_1-p_2$, $Var(P_1-P_2)=\dfrac{p_1(1-p_1)}{n_1}+\dfrac{p_2(1-p_2)}{n_2}$.</p>
-<p>  那么<br>  $$<br>  \dfrac{(P_1-P_2)-(p_1-p_2)}{se}\stackrel{近似}{\sim}N(0,1).<br>  $$<br>  在 $H_0$ 为真前提下, 有<br>  $$<br>  se^2=p(1-p)(\dfrac{1}{n_1}+\dfrac{1}{n_2})\approx p^*(1-p^*)(\dfrac{1}{n_1}+\dfrac{1}{n_2}).<br>  $$<br>  其中 $p^*=\dfrac{k_1+k_2}{n_1+n_2}$, 得 $se^2\approx\hat{se}^2=0.00175^2$. 结合 $\dfrac{P_1-P_2}{\hat{se}}\stackrel{近似}{\sim}N(0,1)$, 得 <strong>P</strong> 值<br>  $$<br>  P\Big(\dfrac{P_1-P_2}{\hat{se}}\le\dfrac{0.0126-0.0217}{0.00175}\Big)\approx P(Z\le -5.20)\approx 10^{-7}.<br>  $$<br>  因此有理由拒绝 $H_0$.</p>
+<p>  那么</p>
+<script type="math/tex; mode=display">
+  \dfrac{(P_1-P_2)-(p_1-p_2)}{se}\stackrel{近似}{\sim}N(0,1).</script><p>  在 $H_0$ 为真前提下, 有</p>
+<script type="math/tex; mode=display">
+  se^2=p(1-p)(\dfrac{1}{n_1}+\dfrac{1}{n_2})\approx p^*(1-p^*)(\dfrac{1}{n_1}+\dfrac{1}{n_2}).</script><p>  其中 $p^<em>=\dfrac{k_1+k_2}{n_1+n_2}$, 得 $se^2\approx\hat{se}^2=0.00175^2$. 结合 $\dfrac{P_1-P_2}{\hat{se}}\stackrel{近似}{\sim}N(0,1)$, 得 <em>*P</em></em> 值</p>
+<script type="math/tex; mode=display">
+  P\Big(\dfrac{P_1-P_2}{\hat{se}}\le\dfrac{0.0126-0.0217}{0.00175}\Big)\approx P(Z\le -5.20)\approx 10^{-7}.</script><p>  因此有理由拒绝 $H_0$.</p>
 </li>
 <li><p><strong>注</strong></p>
 <ul>
@@ -790,88 +787,32 @@
 </ul>
 </li>
 <li><p><strong>例(行驶里程)</strong>  比较两种油 <strong>A</strong> 与 <strong>B</strong> 的行驶里程.</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>样本容量</th>
-<th>平均里程</th>
-<th>样本标准差</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>油 <strong>A</strong></td>
-<td>50</td>
-<td>25</td>
-<td>5.00</td>
-</tr>
-<tr>
-<td>油 <strong>B</strong></td>
-<td>50</td>
-<td>26</td>
-<td>4.00</td>
-</tr>
-</tbody></table>
+<p>  |          | 样本容量 | 平均里程 | 样本标准差 |<br>  | ———— | ———— | ———— | ————— |<br>  | 油 <strong>A</strong> | 50       | 25       | 5.00       |<br>  | 油 <strong>B</strong> | 50       | 26       | 4.00       |</p>
 <p>  提出假设 $H_0:\mu_A=\mu_B$ v.s. $H_1:\mu_A\ne\mu_B$, 检验统计量为 $\overline{X}_A-\overline{X}_B$.</p>
-<p>  在 $H_0$ 为真前提下, 有<br>  $$<br>  \dfrac{\overline{X}_A-\overline{X}_B}{\sqrt{\tfrac{S_1^2}{n_1}+\tfrac{S_2^2}{n_2}}}\sim N(0,1).<br>  $$<br>  其中 $\hat{se}\approx 0.905$. 得 <strong>P</strong> 值<br>  $$<br>  P\Big(\vert\dfrac{\overline{X}_A-\overline{X}_B}{\hat{se}}\vert\ge\vert\dfrac{25-26}{0.905}\vert\Big)\approx P(\vert Z\vert\ge 1.1)\approx 0.2714.<br>  $$<br>  认为哪种油行驶里程更长的理由均不充分.</p>
+<p>  在 $H_0$ 为真前提下, 有</p>
+<script type="math/tex; mode=display">
+  \dfrac{\overline{X}_A-\overline{X}_B}{\sqrt{\tfrac{S_1^2}{n_1}+\tfrac{S_2^2}{n_2}}}\sim N(0,1).</script><p>  其中 $\hat{se}\approx 0.905$. 得 <strong>P</strong> 值</p>
+<script type="math/tex; mode=display">
+  P\Big(\vert\dfrac{\overline{X}_A-\overline{X}_B}{\hat{se}}\vert\ge\vert\dfrac{25-26}{0.905}\vert\Big)\approx P(\vert Z\vert\ge 1.1)\approx 0.2714.</script><p>  认为哪种油行驶里程更长的理由均不充分.</p>
 </li>
 </ul>
 <h2 id="两相关总体比较"><a href="#两相关总体比较" class="headerlink" title="两相关总体比较"></a>两相关总体比较</h2><ul>
 <li><p><strong>例(行驶里程-改进)</strong>  同一辆车不同日子加不同油, 记录行驶里程.</p>
-<table>
-<thead>
-<tr>
-<th>车号</th>
-<th>油 A</th>
-<th>油 B</th>
-<th>差异 ($d_i$)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>27.01</td>
-<td>26.95</td>
-<td>0.06</td>
-</tr>
-<tr>
-<td>2</td>
-<td>20.00</td>
-<td>20.44</td>
-<td>-0.44</td>
-</tr>
-<tr>
-<td>$\cdots$</td>
-<td>$\cdots$</td>
-<td>$\cdots$</td>
-<td>$\cdots$</td>
-</tr>
-<tr>
-<td>10</td>
-<td>25.22</td>
-<td>26.01</td>
-<td>-0.79</td>
-</tr>
-<tr>
-<td>均值</td>
-<td>25.20</td>
-<td>25.80</td>
-<td>-0.60</td>
-</tr>
-<tr>
-<td>标准差</td>
-<td>4.27</td>
-<td>4.10</td>
-<td>0.61</td>
-</tr>
-</tbody></table>
+<p>  | 车号     | 油 A     | 油 B     | 差异 ($d_i$) |<br>  | ———— | ———— | ———— | —————— |<br>  | 1        | 27.01    | 26.95    | 0.06         |<br>  | 2        | 20.00    | 20.44    | -0.44        |<br>  | $\cdots$ | $\cdots$ | $\cdots$ | $\cdots$     |<br>  | 10       | 25.22    | 26.01    | -0.79        |<br>  | 均值     | 25.20    | 25.80    | -0.60        |<br>  | 标准差   | 4.27     | 4.10     | 0.61         |</p>
 <p>  提出假设 $H_0:\mu_d=0$ v.s. $H_1:\mu_d\ne 0$, 检验统计量为 $\overline{d}$.</p>
-<p>  假设 $d_i$ 服从正态分布. 在 $H_0$ 为真前提下, 有<br>  $$<br>  \dfrac{\overline{d}}{\tfrac{S_d}{\sqrt{n}}}\sim t(n-1).<br>  $$<br>  得 <strong>P</strong> 值<br>  $$<br>  P\Big(\vert t(9)\vert\ge\vert\dfrac{-0.60}{\tfrac{0.61}{\sqrt{10}}}\vert\Big)\approx 0.012.<br>  $$<br>  有理由拒绝 $H_0$, 两种油的行驶里程有差距.</p>
+<p>  假设 $d_i$ 服从正态分布. 在 $H_0$ 为真前提下, 有</p>
+<script type="math/tex; mode=display">
+  \dfrac{\overline{d}}{\tfrac{S_d}{\sqrt{n}}}\sim t(n-1).</script><p>  得 <strong>P</strong> 值</p>
+<script type="math/tex; mode=display">
+  P\Big(\vert t(9)\vert\ge\vert\dfrac{-0.60}{\tfrac{0.61}{\sqrt{10}}}\vert\Big)\approx 0.012.</script><p>  有理由拒绝 $H_0$, 两种油的行驶里程有差距.</p>
 </li>
 <li><p><strong>注</strong>  假设检验不能检验试验设计, 仅对数据负责; 功能有限, 作为决策辅助.</p>
 </li>
 </ul>
 <h2 id="Bayes-假设检验"><a href="#Bayes-假设检验" class="headerlink" title="Bayes 假设检验"></a>Bayes 假设检验</h2><ul>
-<li><p><strong>例</strong>  两种硬币 ($p=0.5$, $p=0.7$) 投掷 $n=10$ 次, 正面向上 $X=x$ 次. 提出假设 $H_0:p=0.5$ v.s. $p=0.7$​. 考虑<br>  $$<br>  \dfrac{P(H_0\mid x)}{P(H_1\mid x)}=\dfrac{P(H_0)P(x\mid H_0)}{P(H_1)P(x\mid H_1)}&lt;1<br>  $$<br>  则拒绝 $H_0$.</p>
+<li><p><strong>例</strong>  两种硬币 ($p=0.5$, $p=0.7$) 投掷 $n=10$ 次, 正面向上 $X=x$ 次. 提出假设 $H_0:p=0.5$ v.s. $p=0.7$​. 考虑</p>
+<script type="math/tex; mode=display">
+  \dfrac{P(H_0\mid x)}{P(H_1\mid x)}=\dfrac{P(H_0)P(x\mid H_0)}{P(H_1)P(x\mid H_1)}<1</script><p>  则拒绝 $H_0$.</p>
 </li>
 <li><p><strong>注</strong>  给出一个特别的例子, $H_0:\theta=\theta_0$, $\Theta$ 连续. 则 $P(H_0\mid x)=0$, 此时似乎总是会拒绝 $H_0$? (陈书 <strong>Chap 5.28</strong>)</p>
 </li>
@@ -887,9 +828,14 @@
 <li>拒绝 $H_0$ 有时也称观测值是显著的.</li>
 </ul>
 <h3 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h3><ul>
-<li><p>统计学中没有绝对的证实或证伪.<br>  $$<br>  \alpha(R):=P_{\theta}((X_1,\cdots,X_n)\in R\mid H_0).\<br>  \beta(R):=P_{\theta}((X_1,\cdots,X_n)\in R^c\mid H_1).<br>  $$</p>
-</li>
-<li><p>检验程序的属性, 不是样本的属性. 样本做决策要么正确要么错误.<br>  $$<br>  \alpha(R)\le\alpha.\<br>  \beta(R)\le\beta.<br>  $$<br>  预先指定的可接受的长期错误率.</p>
+<li><p>统计学中没有绝对的证实或证伪.</p>
+<script type="math/tex; mode=display">
+  \alpha(R):=P_{\theta}((X_1,\cdots,X_n)\in R\mid H_0).\\
+  \beta(R):=P_{\theta}((X_1,\cdots,X_n)\in R^c\mid H_1).</script></li>
+<li><p>检验程序的属性, 不是样本的属性. 样本做决策要么正确要么错误.</p>
+<script type="math/tex; mode=display">
+  \alpha(R)\le\alpha.\\
+  \beta(R)\le\beta.</script><p>  预先指定的可接受的长期错误率.</p>
 </li>
 </ul>
 <h3 id="显著性检验-v-s-Neyman-Pearson-检验"><a href="#显著性检验-v-s-Neyman-Pearson-检验" class="headerlink" title="显著性检验 v.s. Neyman-Pearson 检验"></a>显著性检验 v.s. Neyman-Pearson 检验</h3><ul>
@@ -905,41 +851,25 @@
 </li>
 <li><p><strong>例</strong>  $H_0:\mu\ge 5$, $H_1:\mu&lt;5$. $n=10$, $\sigma=0.01$, $\alpha=0.01$.</p>
 </li>
-<li><p><strong>解答</strong>  临界值<br>  $$<br>  c=\mu_0-Z_{\alpha}\dfrac{\sigma}{\sqrt{n}}\approx 4.993.<br>  $$</p>
-</li>
+<li><p><strong>解答</strong>  临界值</p>
+<script type="math/tex; mode=display">
+  c=\mu_0-Z_{\alpha}\dfrac{\sigma}{\sqrt{n}}\approx 4.993.</script></li>
 </ul>
 <h3 id="P-值"><a href="#P-值" class="headerlink" title="P 值"></a>P 值</h3><ul>
 <li>一次具体的观测值没有概率可言, <strong>P</strong> 不能衡量决策错误的概率. (<strong>ASA</strong> 文章)</li>
 </ul>
 <h3 id="卡方检验-——-多项分布的检验"><a href="#卡方检验-——-多项分布的检验" class="headerlink" title="卡方检验 —— 多项分布的检验"></a>卡方检验 —— 多项分布的检验</h3><ul>
-<li><strong>例</strong>  $H_0: p_1=p$, $p_2=1-p$. 此时<br>  $$<br>  \begin{aligned}<br>  \chi^2&amp;=\dfrac{(O_1-np_1)^2}{np_1}+\dfrac{(O_2-np_2)^2}{np_2}\<br>  &amp;=\dfrac{(O_1-np)^2}{np}+\dfrac{(O_1-np)^2}{n(1-p)}\<br>  &amp;=\dfrac{(O_1-np)^2}{np(1-p)}\<br>  &amp;\stackrel{近似}{\sim} N^2(0,1)=\chi^2(1).<br>  \end{aligned}<br>  $$</li>
+<li><strong>例</strong>  $H_0: p_1=p$, $p_2=1-p$. 此时<script type="math/tex; mode=display">
+  \begin{aligned}
+  \chi^2&=\dfrac{(O_1-np_1)^2}{np_1}+\dfrac{(O_2-np_2)^2}{np_2}\\
+  &=\dfrac{(O_1-np)^2}{np}+\dfrac{(O_1-np)^2}{n(1-p)}\\
+  &=\dfrac{(O_1-np)^2}{np(1-p)}\\
+  &\stackrel{近似}{\sim} N^2(0,1)=\chi^2(1).
+  \end{aligned}</script></li>
 </ul>
 <h3 id="统计显著-ne-实际显著"><a href="#统计显著-ne-实际显著" class="headerlink" title="统计显著 $\ne$ 实际显著"></a>统计显著 $\ne$ 实际显著</h3><ul>
 <li><p><strong>例</strong>  投掷骰子 $n=6\times 10^{10}$ 次​.</p>
-<table>
-<thead>
-<tr>
-<th>点数</th>
-<th>1</th>
-<th>2</th>
-<th>3</th>
-<th>4</th>
-<th>5</th>
-<th>6</th>
-<th>总计</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>观测频数 $10^{10}$</td>
-<td>$-10^{6}$</td>
-<td>$1.5\times 10^{6}$</td>
-<td>$-2\times 10^{6}$</td>
-<td>$4\times 10^{6}$</td>
-<td>$-3\times 10^{6}$</td>
-<td>$0.5\times 10^{6}$</td>
-<td>$6\times 10^{10}$</td>
-</tr>
-</tbody></table>
+<p>  | 点数               | 1         | 2                  | 3                 | 4                | 5                 | 6                  | 总计              |<br>  | ————————— | ————- | ————————— | ————————- | ———————— | ————————- | ————————— | ————————- |<br>  | 观测频数 $10^{10}$ | $-10^{6}$ | $1.5\times 10^{6}$ | $-2\times 10^{6}$ | $4\times 10^{6}$ | $-3\times 10^{6}$ | $0.5\times 10^{6}$ | $6\times 10^{10}$ |</p>
 <p>  $H_0:$ 分布均匀, $H_1:$ 分布不均匀. </p>
 </li>
 <li><p>计算得到 $\chi^2=3250$, 此时 <strong>P</strong> 值 $\ll 0.0001$. 因此拒绝 $H_0$, 统计显著. </p>
@@ -1340,7 +1270,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">85k</span>
+                        class="white-color">73k</span>
             
             
             

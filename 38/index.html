@@ -469,9 +469,9 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="CST-PA4"><a href="#CST-PA4" class="headerlink" title="CST PA4"></a>CST PA4</h1><h2 id="4-3-Kth"><a href="#4-3-Kth" class="headerlink" title="4-3 Kth"></a>4-3 Kth</h2><h3 id="算法构思"><a href="#算法构思" class="headerlink" title="算法构思"></a>算法构思</h3><p>因为不能直接访问数组 <code>a</code>, <code>b</code>, <code>c</code> 中的元素, 我们定义数组 <code>u</code>, <code>v</code>, <code>w</code>, 将其初始化为 ${1, 2, …, n}$, 用于记录数组 <code>a</code>, <code>b</code>, <code>c</code> 中元素的 <code>index</code>.</p>
+                <h1 id="CST-PA4"><a href="#CST-PA4" class="headerlink" title="CST PA4"></a>CST PA4</h1><h2 id="4-3-Kth"><a href="#4-3-Kth" class="headerlink" title="4-3 Kth"></a>4-3 Kth</h2><h3 id="算法构思"><a href="#算法构思" class="headerlink" title="算法构思"></a>算法构思</h3><p>因为不能直接访问数组 <code>a</code>, <code>b</code>, <code>c</code> 中的元素, 我们定义数组 <code>u</code>, <code>v</code>, <code>w</code>, 将其初始化为 $\{1, 2, …, n\}$, 用于记录数组 <code>a</code>, <code>b</code>, <code>c</code> 中元素的 <code>index</code>.</p>
 <p>将三元组视为三维空间中的点集, 我们需要返回点集之中坐标和第 <code>k</code> 小的三元组. 在 <code>compare</code> 接口中固定两维度 <code>index</code> 为 <code>1</code>, 我们可以比较单一维度的元素大小. 借此对三个数组分别进行快排, 排序结果反应在数组 <code>u</code>, <code>v</code>, <code>w</code> 中.</p>
-<p>一般地, 若排序前数组 <code>u</code> 为 ${1, 2, …, n}$, 排序后为 ${u[1], u[2], …, u[n]}$, 即意味着数组 <code>a</code> 元素按大小升序排列为 ${a[u[1]], a[u[2]], …, a[u[n]]}$.</p>
+<p>一般地, 若排序前数组 <code>u</code> 为 $\{1, 2, …, n\}$, 排序后为 $\{u[1], u[2], …, u[n]\}$, 即意味着数组 <code>a</code> 元素按大小升序排列为 $\{a[u[1]], a[u[2]], …, a[u[n]]\}$.</p>
 <p>此时点集中坐标和最小的三元组即为 $a[u[1]], b[v[1]], c[w[1]]$. 我们维护一个最小堆 <code>MinHeap</code>, 将 $(1, 1, 1)$ 插入. 随后依次删除堆顶最小元组, 并插入坐标和恰好不小于删去堆顶坐标和的三元组.</p>
 <p>第 <code>k</code> 次 <code>Delete</code> 得到的三元组 $(x, y, z)$ 对应的即是坐标和第 <code>k</code> 小的三元组 $a[u[x]], b[v[y]], c[w[z]]$.</p>
 <p>对这个三维点集, 坐标和恰不小于 $(x, y, z)$ 的三元组必是 $(x, y, z + 1)$, $(x, y + 1, z)$, $(x + 1, y, z)$ 之一, 将其插入 <code>MinHeap</code> 即可. 考虑到同一个点可能会被压入多次, 调用 <code>k</code> 次 <code>Delete()</code> 后得到不是坐标和第 <code>k</code> 小的三元组, 特约定:</p>
@@ -491,7 +491,6 @@ private<span class="token operator">:</span>
     <span class="token keyword">int</span> elem<span class="token punctuation">[</span><span class="token number">4000100</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
     <span class="token keyword">int</span> size <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>空间消耗最坏情况约为: $3\times 5\times 10^5 \times 4B + 1.2\times 10^7 \times 4B = 52MB &lt; 256MB$, 符合题目要求范围.</p>
 
                 
@@ -884,7 +883,7 @@ private<span class="token operator">:</span>
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">85k</span>
+                        class="white-color">73k</span>
             
             
             

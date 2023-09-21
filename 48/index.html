@@ -439,14 +439,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.9k
+                    576
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    10 分
+                    3 分
                 </div>
                 
 
@@ -470,38 +470,75 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="Chap-3-联合分布"><a href="#Chap-3-联合分布" class="headerlink" title="Chap 3 联合分布"></a>Chap 3 联合分布</h1><h2 id="随机向量"><a href="#随机向量" class="headerlink" title="随机向量"></a>随机向量</h2><ul>
-<li><p><strong>定义(随机向量)</strong>  我们称<br>$$<br>(X_1,\cdots,X_n):\Omega\rightarrow\mathbb{R}^n<br>$$<br>为随机向量, 当 $X_i(1\le i\le n)$ 均为随机变量.</p>
+<li><p><strong>定义(随机向量)</strong>  我们称</p>
+<script type="math/tex; mode=display">
+(X_1,\cdots,X_n):\Omega\rightarrow\mathbb{R}^n</script><p>为随机向量, 当 $X_i(1\le i\le n)$ 均为随机变量.</p>
 </li>
-<li><p><strong>定义(联合 CDF)</strong><br>  $$<br>  F(x_1,\cdots,x_n):=F(X_1\le x_1,\cdots,X_n\le x_n),\forall,(x_1,\cdots,x_n)\in\mathbb{R}^n.<br>  $$</p>
-</li>
+<li><p><strong>定义(联合 CDF)</strong></p>
+<script type="math/tex; mode=display">
+  F(x_1,\cdots,x_n):=F(X_1\le x_1,\cdots,X_n\le x_n),\forall\,(x_1,\cdots,x_n)\in\mathbb{R}^n.</script></li>
 <li><p><strong>注</strong>  若 $X_i:\Omega_i\rightarrow\mathbb{R}$, 需扩充 $\Omega=\Omega_1\times\cdots\Omega_n$.</p>
 </li>
 </ul>
 <h2 id="离散分布"><a href="#离散分布" class="headerlink" title="离散分布"></a>离散分布</h2><ul>
-<li><p><strong>定义(离散型随机向量)</strong><br>$$<br>(X_1,X_2,\cdots,X_n)为离散型\Leftrightarrow X_i(1\le i\le n)为离散型.<br>$$</p>
-</li>
-<li><p><strong>定义(概率质量函数)(PMF)</strong><br>  $$<br>  \begin{aligned}<br>  f(x_1,x_2,\cdots,x_n):&amp;=P((X_1,X_2,\cdots,X_n)=(x_1,x_2,\cdots,x_n))\<br>  &amp;= P(X_1= x_1,X_2=x_2,\cdots,X_n=x_n).<br>  \end{aligned}<br>  $$</p>
-</li>
+<li><p><strong>定义(离散型随机向量)</strong> </p>
+<script type="math/tex; mode=display">
+(X_1,X_2,\cdots,X_n)为离散型\Leftrightarrow X_i(1\le i\le n)为离散型.</script></li>
+<li><p><strong>定义(概率质量函数)(PMF)</strong></p>
+<script type="math/tex; mode=display">
+  \begin{aligned}
+  f(x_1,x_2,\cdots,x_n):&=P((X_1,X_2,\cdots,X_n)=(x_1,x_2,\cdots,x_n))\\
+  &= P(X_1= x_1,X_2=x_2,\cdots,X_n=x_n).
+  \end{aligned}</script></li>
+</ul>
+<ul>
 <li><p><strong>注</strong>  $\sum\limits_{(x_1,\cdots,x_n)\in\mathbb{R}}f(x_1,\cdots,x_n)\equiv 1$.</p>
 </li>
-<li><p><strong>定义(多项分布)</strong>  若 $B_1, B_2\cdots,B_n$ 为互斥事件, 且 $\sum\limits_{i=1}^{n}B_i=\Omega$. 其发生的概率为 $p_1,\cdots,p_n$, 且 $\sum\limits_{i=1}^{n}p_i\equiv 1$. 满足<br>$$<br>P(X_1=k_1,\cdots,X_n=k_n)=\dfrac{N!}{k_1!\cdots k_n!}p_1^{k_1}\cdots p_n^{k_n},,k_i\ge 0,,\sum_{i=1}^{n}k_i=N.<br>$$<br>其中 $\dfrac{N!}{k_1!\cdots k_n!}$ 为多项式系数.</p>
+<li><p><strong>定义(多项分布)</strong>  若 $B_1, B_2\cdots,B_n$ 为互斥事件, 且 $\sum\limits_{i=1}^{n}B_i=\Omega$. 其发生的概率为 $p_1,\cdots,p_n$, 且 $\sum\limits_{i=1}^{n}p_i\equiv 1$. 满足</p>
+<script type="math/tex; mode=display">
+P(X_1=k_1,\cdots,X_n=k_n)=\dfrac{N!}{k_1!\cdots k_n!}p_1^{k_1}\cdots p_n^{k_n},\,k_i\ge 0,\,\sum_{i=1}^{n}k_i=N.</script><p>其中 $\dfrac{N!}{k_1!\cdots k_n!}$ 为多项式系数.</p>
 </li>
 </ul>
 <h2 id="连续分布"><a href="#连续分布" class="headerlink" title="连续分布"></a>连续分布</h2><ul>
-<li><p><strong>定义(联合 PDF)</strong>  若存在 $f(x_1,\cdots,x_n)\ge 0$, 使得 $\forall,Q\subset\mathbb{R}^n$ 可测, 都有<br>$$<br>P((X_1,\cdots,X_n)\in Q)=\int_Qf(x_1,\cdots,x_n)dx_1\cdots dx_n<br>$$<br>则称 $(X_1,\cdots,X_n)$ 为连续型, $f$ 为 $(X_1,\cdots,X_n)$ 的概率密度函数 <strong>(PDF)</strong>.</p>
+<li><p><strong>定义(联合 PDF)</strong>  若存在 $f(x_1,\cdots,x_n)\ge 0$, 使得 $\forall\,Q\subset\mathbb{R}^n$ 可测, 都有</p>
+<script type="math/tex; mode=display">
+P((X_1,\cdots,X_n)\in Q)=\int_Qf(x_1,\cdots,x_n)dx_1\cdots dx_n</script><p>则称 $(X_1,\cdots,X_n)$ 为连续型, $f$ 为 $(X_1,\cdots,X_n)$ 的概率密度函数 <strong>(PDF)</strong>.</p>
 </li>
 <li><p><strong>注</strong></p>
 <ul>
 <li>$\int_{\mathbb{R}}f\equiv 1$;</li>
 <li>以 $n=2$ 为例, $F(a,b)=\int_{-\infty}^{a}(\int_{-\infty}^{b}f(s,t)dt)ds$;</li>
-<li>$f(a,b)=\dfrac{\partial^2 F}{\partial y\partial x}(a,b),,a.e$.</li>
+<li>$f(a,b)=\dfrac{\partial^2 F}{\partial y\partial x}(a,b),\,a.e$.</li>
 </ul>
 </li>
-<li><p><strong>定义(连续分布)(矩形域)</strong><br>  $$<br>  f(x,y)=<br>  \begin{cases}<br>  \dfrac{1}{(b-a)(d-c)}, &amp;(x,y)\in(a,b)\times(c,d) \<br>  0, &amp;otherwise \<br>  \end{cases}<br>  $$</p>
-</li>
-<li><p><strong>定义(二元正态分布)</strong><br>  $$<br>  f(x,y)=\dfrac{1}{2\pi\sigma_1\sigma_2}\cdot\dfrac{1}{\sqrt{1-\rho^2}}e^{-\frac{1}{2(1-\rho^2)}[(\frac{x-\mu_1}{\sigma_1})^2+(\frac{y-\mu_2}{\sigma_2})^2-2\rho\frac{x-\mu_1}{\sigma_1}\frac{y-\mu_2}{\sigma_2}]},\<br>  $$<br>  其中 $(x,y)\in\mathbb{R}^2, \vert\rho\vert&lt;1$. </p>
-<p>  上式中 $\exp$ 的指数可视为 $-\dfrac{1}{2}\overline{X}^TW\overline{X}=-\dfrac{1}{2}\overline{AX}^T\overline{AX}$, 其 <strong>Cholesky</strong> 分解为<br>  $$<br>  \overline{X}=\left(<br>  \begin{matrix}<br>  \dfrac{x-\mu_1}{\sigma_1}\<br>  \dfrac{y-\mu_2}{\sigma_2}<br>  \end{matrix}\right),<br>  W=\dfrac{1}{1-\rho^2}\left(<br>  \begin{matrix}<br>  1 &amp;-\rho\<br>  -\rho &amp;1<br>  \end{matrix}\right)\<br>  \Rightarrow<br>  A=\dfrac{1}{\sqrt{1-\rho^2}}\left(<br>  \begin{matrix}<br>  \pm 1 &amp;\mp\rho\<br>  0 &amp;\pm\sqrt{1-\rho^2}<br>  \end{matrix}\right).<br>  $$</p>
-</li>
+<li><p><strong>定义(连续分布)(矩形域)</strong></p>
+<script type="math/tex; mode=display">
+  f(x,y)=
+  \begin{cases}
+  \dfrac{1}{(b-a)(d-c)}, &(x,y)\in(a,b)\times(c,d) \\
+  0, &otherwise \\
+  \end{cases}</script></li>
+<li><p><strong>定义(二元正态分布)</strong></p>
+<script type="math/tex; mode=display">
+  f(x,y)=\dfrac{1}{2\pi\sigma_1\sigma_2}\cdot\dfrac{1}{\sqrt{1-\rho^2}}e^{-\frac{1}{2(1-\rho^2)}[(\frac{x-\mu_1}{\sigma_1})^2+(\frac{y-\mu_2}{\sigma_2})^2-2\rho\frac{x-\mu_1}{\sigma_1}\frac{y-\mu_2}{\sigma_2}]},\\</script><p>  其中 $(x,y)\in\mathbb{R}^2, \vert\rho\vert&lt;1$. </p>
+<p>  上式中 $\exp$ 的指数可视为 $-\dfrac{1}{2}\overline{X}^TW\overline{X}=-\dfrac{1}{2}\overline{AX}^T\overline{AX}$, 其 <strong>Cholesky</strong> 分解为</p>
+<script type="math/tex; mode=display">
+  \overline{X}=\left(
+  \begin{matrix}
+  \dfrac{x-\mu_1}{\sigma_1}\\
+  \dfrac{y-\mu_2}{\sigma_2}
+  \end{matrix}\right),
+  W=\dfrac{1}{1-\rho^2}\left(
+  \begin{matrix}
+  1 &-\rho\\
+  -\rho &1
+  \end{matrix}\right)\\
+  \Rightarrow
+  A=\dfrac{1}{\sqrt{1-\rho^2}}\left(
+  \begin{matrix}
+  \pm 1 &\mp\rho\\
+  0 &\pm\sqrt{1-\rho^2}
+  \end{matrix}\right).</script></li>
 <li><p><strong>注</strong></p>
 <ul>
 <li>$f(x,y)$ 的等值线图像为椭圆;</li>
@@ -510,37 +547,56 @@
 </li>
 </ul>
 <h2 id="边际分布"><a href="#边际分布" class="headerlink" title="边际分布"></a>边际分布</h2><ul>
-<li><p><strong>定义(边际 CDF)</strong><br>  $$<br>  F_i(x) := P(X_i\le x) = P(X_i\le x,-\infty&lt;X_j&lt;\infty,(j\ne i)).<br>  $$</p>
-</li>
+<li><p><strong>定义(边际 CDF)</strong></p>
+<script type="math/tex; mode=display">
+  F_i(x) := P(X_i\le x) = P(X_i\le x,-\infty<X_j<\infty\,(j\ne i)).</script></li>
 <li><p><strong>连续型</strong></p>
 <p>  $n=2$ 时</p>
-<p>  $$<br>  F_X(x)=P(X\le x)=P(X\le x,-\infty&lt;Y&lt;\infty)=\lim_{y\rightarrow\infty}F(x,y).<br>  $$<br>  $n=3$ 时</p>
-<p>  $$<br>  F_X(x)=P(X\le x,-\infty&lt;Y, Z&lt;\infty)=\lim_{y\rightarrow\infty,z\rightarrow\infty}F(x,y,z).<br>  $$</p>
-<p>  $$<br>  F_{X,Y}(x,y)=P(X\le x,Y\le y,-\infty&lt;Z&lt;\infty)=\lim_{z\rightarrow\infty}F(x,y,z).<br>  $$</p>
-</li>
+<script type="math/tex; mode=display">
+  F_X(x)=P(X\le x)=P(X\le x,-\infty<Y<\infty)=\lim_{y\rightarrow\infty}F(x,y).</script><p>  $n=3$ 时</p>
+<script type="math/tex; mode=display">
+  F_X(x)=P(X\le x,-\infty<Y, Z<\infty)=\lim_{y\rightarrow\infty,z\rightarrow\infty}F(x,y,z).</script><script type="math/tex; mode=display">
+  F_{X,Y}(x,y)=P(X\le x,Y\le y,-\infty<Z<\infty)=\lim_{z\rightarrow\infty}F(x,y,z).</script></li>
 <li><p><strong>离散型</strong></p>
 <p>$n=2$ 时</p>
-<p>$$<br>F_X(x)=P(X\le x)=\sum\limits_{a\le x}P(X=a)=\sum\limits_{y}\sum\limits_{a\le x}P(X=a,Y=y).<br>$$</p>
-</li>
-<li><p><strong>例(容斥原理)</strong><br>  $$<br>  P(X&gt;a,Y&gt;b)=1-F_X(a)-F_Y(b)+F_{X,Y}(a,b).<br>  $$</p>
-</li>
-<li><p><strong>定义(边际 PDF)</strong><br>  $$<br>  F_X(x) := P(X\le x) = \lim_{y\rightarrow\infty}F(x,y) = \int_{-\infty}^{x}(\int_{-\infty}^{\infty}f(s,t)dt)ds\<br>  $$<br>  $\Rightarrow X$ 的边际 <strong>PDF</strong> 为<br>  $$<br>  f_X(x)=\int_{-\infty}^{\infty}f(x,y)dy.<br>  $$</p>
-</li>
+<script type="math/tex; mode=display">
+F_X(x)=P(X\le x)=\sum\limits_{a\le x}P(X=a)=\sum\limits_{y}\sum\limits_{a\le x}P(X=a,Y=y).</script></li>
+<li><p><strong>例(容斥原理)</strong></p>
+<script type="math/tex; mode=display">
+  P(X>a,Y>b)=1-F_X(a)-F_Y(b)+F_{X,Y}(a,b).</script></li>
+<li><p><strong>定义(边际 PDF)</strong></p>
+<script type="math/tex; mode=display">
+  F_X(x) := P(X\le x) = \lim_{y\rightarrow\infty}F(x,y) = \int_{-\infty}^{x}(\int_{-\infty}^{\infty}f(s,t)dt)ds\\</script><p>  $\Rightarrow X$ 的边际 <strong>PDF</strong> 为</p>
+<script type="math/tex; mode=display">
+  f_X(x)=\int_{-\infty}^{\infty}f(x,y)dy.</script></li>
 <li><p><strong>例</strong>  二元正态分布 $N(\mu_1,\mu_2,\sigma_1^2,\sigma_2^2,\rho)$.</p>
 </li>
-<li><p><strong>解答</strong><br>$$<br>\begin{aligned}<br>f_X(x)=\int_{-\infty}^{+\infty}f(x,y)dy=\dfrac{1}{\sqrt{2\pi}\sigma_1}e^{-\frac{(x-\mu_1)^2}{2\sigma_1^2}},,x\in\mathbb{R}.<br>\end{aligned}<br>$$<br>因此 $X\sim N(\mu_1,\sigma_1^2)$. 同理 $Y\sim N(\mu_2,\sigma_2^2)$.</p>
+<li><p><strong>解答</strong></p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+f_X(x)=\int_{-\infty}^{+\infty}f(x,y)dy=\dfrac{1}{\sqrt{2\pi}\sigma_1}e^{-\frac{(x-\mu_1)^2}{2\sigma_1^2}},\,x\in\mathbb{R}.
+\end{aligned}</script><p>因此 $X\sim N(\mu_1,\sigma_1^2)$. 同理 $Y\sim N(\mu_2,\sigma_2^2)$.</p>
 </li>
 <li><p><strong>注</strong>  联合分布可确定边际分布, 边际分布不可确定联合分布.</p>
 </li>
 </ul>
 <h2 id="条件分布-以-n-2-为例"><a href="#条件分布-以-n-2-为例" class="headerlink" title="条件分布 (以 $n=2$ 为例)"></a>条件分布 (以 $n=2$ 为例)</h2><ul>
-<li><p><strong>定义(离散型条件分布)</strong>  $P(X=a_i,Y=b_j)=p_{ij}\ge 0$, $\sum\limits_{i,j}p_{ij}\equiv 1$.<br>$$<br>P(X=a_i\mid Y=b_j)=\dfrac{P(X=a_i,Y=b_j)}{P(Y=b_j)}=\dfrac{p_{ij}}{\sum\limits_{k}p_{kj}}.<br>$$</p>
-</li>
+<li><p><strong>定义(离散型条件分布)</strong>  $P(X=a_i,Y=b_j)=p_{ij}\ge 0$, $\sum\limits_{i,j}p_{ij}\equiv 1$.</p>
+<script type="math/tex; mode=display">
+P(X=a_i\mid Y=b_j)=\dfrac{P(X=a_i,Y=b_j)}{P(Y=b_j)}=\dfrac{p_{ij}}{\sum\limits_{k}p_{kj}}.</script></li>
 <li><p><strong>注</strong>  $\sum\limits_{i}P(X=a_i\mid Y=b_j)\equiv 1$.</p>
 </li>
-<li><p><strong>定义(连续型条件分布)</strong>  $(X,Y)$ 的 <strong>PDF</strong> 为 $f(x,y)$.<br>$$<br>\begin{aligned}<br>P(X\le x\mid y\le Y\le y+dy)&amp;=\dfrac{P(X\le x, y\le Y\le y+dy)}{P(y\le Y\le y+dy)}\<br>&amp;=\dfrac{\int_{-\infty}^{x}(\int_{y}^{y+dy}f(s,t)dt)ds}{\int_{y}^{y+dy}f_Y(t)dt}.<br>\end{aligned}<br>$$</p>
-</li>
-<li><p><strong>定义(条件密度函数)</strong><br>  $$<br>  f_{X\mid Y}(x\mid y\le Y\le y+dy)=\dfrac{\int_{y}^{y+dy}f(x,t)dt}{\int_{y}^{y+dy}f_Y(t)dt}.<br>  $$<br>  令 $dy\rightarrow 0$, 定义条件密度函数:<br>  $$<br>  f_{X\mid Y}(x\mid y)=\dfrac{f(x,y)}{f_Y(y)}.<br>  $$<br>   条件密度函数 $f_{X\mid Y}(x\mid y)$ 为 <strong>PDF</strong>.</p>
+<li><p><strong>定义(连续型条件分布)</strong>  $(X,Y)$ 的 <strong>PDF</strong> 为 $f(x,y)$.</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+P(X\le x\mid y\le Y\le y+dy)&=\dfrac{P(X\le x, y\le Y\le y+dy)}{P(y\le Y\le y+dy)}\\
+&=\dfrac{\int_{-\infty}^{x}(\int_{y}^{y+dy}f(s,t)dt)ds}{\int_{y}^{y+dy}f_Y(t)dt}.
+\end{aligned}</script></li>
+<li><p><strong>定义(条件密度函数)</strong></p>
+<script type="math/tex; mode=display">
+  f_{X\mid Y}(x\mid y\le Y\le y+dy)=\dfrac{\int_{y}^{y+dy}f(x,t)dt}{\int_{y}^{y+dy}f_Y(t)dt}.</script><p>  令 $dy\rightarrow 0$, 定义条件密度函数:</p>
+<script type="math/tex; mode=display">
+  f_{X\mid Y}(x\mid y)=\dfrac{f(x,y)}{f_Y(y)}.</script><p>   条件密度函数 $f_{X\mid Y}(x\mid y)$ 为 <strong>PDF</strong>.</p>
 </li>
 <li><p><strong>注</strong></p>
 <ul>
@@ -552,21 +608,28 @@
 </li>
 <li><p><strong>例</strong>  二元正态分布.</p>
 </li>
-<li><p><strong>解答</strong>  注意到<br>$$<br>\begin{aligned}<br>f_{Y\mid X}(y\mid x)&amp;=\dfrac{f(x,y)}{f_X(x)}\<br>&amp;=\dfrac{1}{\sqrt{2\pi}\sigma_2}\cdot\dfrac{1}{\sqrt{1-\rho^2}}\cdot\exp{-\dfrac{[y-(\mu_2+\rho\dfrac{\sigma_2}{\sigma_1}(x-\mu_1))]^2}{2(1-\rho^2)\sigma_2^2}}.<br>\end{aligned}<br>$$<br>即当 $X=x$ 时, $Y\sim N(\mu_2+\rho\dfrac{\sigma_2}{\sigma_1}(x-\mu_1),(1-\rho^2)\sigma_2^2)$.</p>
+<li><p><strong>解答</strong>  注意到</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+f_{Y\mid X}(y\mid x)&=\dfrac{f(x,y)}{f_X(x)}\\
+&=\dfrac{1}{\sqrt{2\pi}\sigma_2}\cdot\dfrac{1}{\sqrt{1-\rho^2}}\cdot\exp\{-\dfrac{[y-(\mu_2+\rho\dfrac{\sigma_2}{\sigma_1}(x-\mu_1))]^2}{2(1-\rho^2)\sigma_2^2}\}.
+\end{aligned}</script><p>即当 $X=x$ 时, $Y\sim N(\mu_2+\rho\dfrac{\sigma_2}{\sigma_1}(x-\mu_1),(1-\rho^2)\sigma_2^2)$.</p>
 </li>
 </ul>
 <h2 id="独立性"><a href="#独立性" class="headerlink" title="独立性"></a>独立性</h2><ul>
-<li><p><strong>定义(独立性)</strong>  $(X,Y)$ 的 <strong>CDF</strong> 为 $F(x,y)$, 边际 <strong>CDF</strong> $F_X(x)$, $F_Y(y)$. 若<br>$$<br>F(x,y)=F_X(x)F_Y(y),,\forall,x,y\in\mathbb{R}.<br>$$<br>则称 $X,Y$ 相互独立.</p>
+<li><p><strong>定义(独立性)</strong>  $(X,Y)$ 的 <strong>CDF</strong> 为 $F(x,y)$, 边际 <strong>CDF</strong> $F_X(x)$, $F_Y(y)$. 若</p>
+<script type="math/tex; mode=display">
+F(x,y)=F_X(x)F_Y(y),\,\forall\,x,y\in\mathbb{R}.</script><p>则称 $X,Y$ 相互独立.</p>
 </li>
-<li><p><strong>注</strong>  $X$, $Y$ 独立 $\Leftrightarrow f(x,y)=f_X(x)f_Y(y),,\forall,x,y\in\mathbb{R}$, 其中 $f$ 为 <strong>PDF/PMF</strong>.</p>
+<li><p><strong>注</strong>  $X$, $Y$ 独立 $\Leftrightarrow f(x,y)=f_X(x)f_Y(y),\,\forall\,x,y\in\mathbb{R}$, 其中 $f$ 为 <strong>PDF/PMF</strong>.</p>
 </li>
-<li><p><strong>定义</strong>  $X_1,\cdots,X_n$ 相互独立 $\Leftrightarrow F(x_1,\cdots,x_n)=F_1(x_1)\cdots F_n(x_n),,\forall,x_1,\cdots,x_n\in\mathbb{R}.$</p>
+<li><p><strong>定义</strong>  $X_1,\cdots,X_n$ 相互独立 $\Leftrightarrow F(x_1,\cdots,x_n)=F_1(x_1)\cdots F_n(x_n),\,\forall\,x_1,\cdots,x_n\in\mathbb{R}.$</p>
 </li>
-<li><p><strong>注</strong>  $X_1,\cdots,X_n$ 独立 $\Leftrightarrow f(x_1,\cdots,x_n)=f_1(x_1)\cdots f_n(x_n),,\forall,x_1,\cdots,x_n\in\mathbb{R}$, 其中 $f$ 为 <strong>PDF/PMF</strong>.</p>
+<li><p><strong>注</strong>  $X_1,\cdots,X_n$ 独立 $\Leftrightarrow f(x_1,\cdots,x_n)=f_1(x_1)\cdots f_n(x_n),\,\forall\,x_1,\cdots,x_n\in\mathbb{R}$, 其中 $f$ 为 <strong>PDF/PMF</strong>.</p>
 </li>
 <li><p><strong>定理</strong></p>
 <ul>
-<li>$f(x_1,\cdots,x_n)=g_1(x_1)\cdots g_n(x_n),,\forall,x_1,\cdots,x_n\in\mathbb{R}$, 则 $X_1,\cdots,X_n$ 独立.</li>
+<li>$f(x_1,\cdots,x_n)=g_1(x_1)\cdots g_n(x_n),\,\forall\,x_1,\cdots,x_n\in\mathbb{R}$, 则 $X_1,\cdots,X_n$ 独立.</li>
 <li>$X_1,\cdots,X_n$ 独立, $Y_1=g_1(X_1,\cdots,X_n), Y_2=g_2(X_1,\cdots,X_n)$, 则 $Y_1$, $Y_2$ 独立.</li>
 </ul>
 </li>
@@ -576,27 +639,72 @@
 </li>
 <li><p><strong>例</strong>  $X_i\sim B(n_i, p),i=1,2$ 独立, $Y=X_1+X_2$.</p>
 </li>
-<li><p><strong>解答</strong><br>$$<br>\begin{aligned}<br>P(Y=k)&amp;=P(X_1+X_2=k)=\sum_{j=0}^{k}P(X=j,X_2=k-j)\<br>&amp;=\sum_{j=0}^{k}P(X=j)P(X_2=k-j)\<br>&amp;=\sum_{j=0}^{k}C_{n_1}^{j}C_{n_2}^{k-j}p^k(1-p)^{n_1+n_2-k}\<br>&amp;=C_{n_1+n_2}^{k}p^k(1-p)^{n_1+n_2-k}.<br>\end{aligned}<br>$$<br>那么有 $Y\sim B(n_1+n_2,p).$</p>
+<li><p><strong>解答</strong></p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+P(Y=k)&=P(X_1+X_2=k)=\sum_{j=0}^{k}P(X=j,X_2=k-j)\\
+&=\sum_{j=0}^{k}P(X=j)P(X_2=k-j)\\
+&=\sum_{j=0}^{k}C_{n_1}^{j}C_{n_2}^{k-j}p^k(1-p)^{n_1+n_2-k}\\
+&=C_{n_1+n_2}^{k}p^k(1-p)^{n_1+n_2-k}.
+\end{aligned}</script><p>那么有 $Y\sim B(n_1+n_2,p).$</p>
 </li>
 <li><p><strong>例</strong>  $X_1,X_2$ 连续, $X_1&gt;0$, 其联合 <strong>PDF</strong> 为 $f(x_1,x_2)$, 且 $Y=\dfrac{X_2}{X_1}$.</p>
 </li>
-<li><p><strong>解答</strong>  注意到 $\forall,y&gt;0$,<br>$$<br>\begin{aligned}<br>P(Y\le y)&amp;=P(\dfrac{X_2}{X_1}\le y)\<br>&amp;=P(X_2\le yX_1)\<br>&amp;=\int_{D}f(x_1,x_2)dx_1dx_2\<br>&amp;=\int_{0}^{\infty}(\int_{-\infty}^{yx_1}f(x_1,x_2)dx_2)dx_1\<br>&amp;=\int_{0}^{\infty}(\int_{-\infty}^{y}f(x_1,x_1t)x_1dt)dx_1.<br>\end{aligned}<br>$$<br>故 $Y$ 的 <strong>PDF</strong> 为<br>$$<br>l(y)=\int_{0}^{\infty}x_1f(x_1,x_1y)dx_1.<br>$$</p>
-</li>
-<li><p><strong>定义(密度函数变换法)</strong>  $X_1,X_2$ 的联合 <strong>PDF</strong> 为 $f(x_1,x_2)$, $g_1,g_2$ 可微可逆, 满足<br>  $$<br>  \begin{cases}<br>  Y_1=g_1(X_1,X_2)\<br>  Y_2=g_2(X_1,X_2)<br>  \end{cases}\Rightarrow<br>  \begin{cases}<br>  X_1=h_1(Y_1,Y_2)\<br>  X_2=h_2(Y_1,Y_2)<br>  \end{cases}<br>  $$<br>  那么<br>  $$<br>  \begin{aligned}<br>  P((Y_1,Y_2)\in A)&amp;=P((X_1,X_2)\in B)\<br>  &amp;=\int_{B}f(x_1,x_2)dx_1dx_2\<br>  &amp;=\int_{A}f(h_1(y_1,y_2),h_2(y_1,y_2))\vert J\vert dy_1dy_2.<br>  \end{aligned}<br>  $$<br>  其中<br>  $$<br>  J=det\begin{pmatrix}<br>  \dfrac{\partial h_1}{\partial y_1},\dfrac{\partial h_1}{\partial y_2}\<br>  \dfrac{\partial h_2}{\partial y_1},\dfrac{\partial h_2}{\partial y_2}<br>  \end{pmatrix}<br>  $$<br>  故 $Y_1,Y_2$ 的 <strong>PDF</strong> 为<br>  $$<br>  l(y_1,y_2)=f(h_1(y_1,y_2),h_2(y_1,y_2))\vert J\vert.<br>  $$</p>
-</li>
+<li><p><strong>解答</strong>  注意到 $\forall\,y&gt;0$,</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+P(Y\le y)&=P(\dfrac{X_2}{X_1}\le y)\\
+&=P(X_2\le yX_1)\\
+&=\int_{D}f(x_1,x_2)dx_1dx_2\\
+&=\int_{0}^{\infty}(\int_{-\infty}^{yx_1}f(x_1,x_2)dx_2)dx_1\\
+&=\int_{0}^{\infty}(\int_{-\infty}^{y}f(x_1,x_1t)x_1dt)dx_1.
+\end{aligned}</script><p>故 $Y$ 的 <strong>PDF</strong> 为</p>
+<script type="math/tex; mode=display">
+l(y)=\int_{0}^{\infty}x_1f(x_1,x_1y)dx_1.</script></li>
+<li><p><strong>定义(密度函数变换法)</strong>  $X_1,X_2$ 的联合 <strong>PDF</strong> 为 $f(x_1,x_2)$, $g_1,g_2$ 可微可逆, 满足</p>
+<script type="math/tex; mode=display">
+  \begin{cases}
+  Y_1=g_1(X_1,X_2)\\
+  Y_2=g_2(X_1,X_2)
+  \end{cases}\Rightarrow
+  \begin{cases}
+  X_1=h_1(Y_1,Y_2)\\
+  X_2=h_2(Y_1,Y_2)
+  \end{cases}</script><p>  那么</p>
+<script type="math/tex; mode=display">
+  \begin{aligned}
+  P((Y_1,Y_2)\in A)&=P((X_1,X_2)\in B)\\
+  &=\int_{B}f(x_1,x_2)dx_1dx_2\\
+  &=\int_{A}f(h_1(y_1,y_2),h_2(y_1,y_2))\vert J\vert dy_1dy_2.
+  \end{aligned}</script><p>  其中</p>
+<script type="math/tex; mode=display">
+  J=det\begin{pmatrix}
+  \dfrac{\partial h_1}{\partial y_1},\dfrac{\partial h_1}{\partial y_2}\\
+  \dfrac{\partial h_2}{\partial y_1},\dfrac{\partial h_2}{\partial y_2}
+  \end{pmatrix}</script><p>  故 $Y_1,Y_2$ 的 <strong>PDF</strong> 为</p>
+<script type="math/tex; mode=display">
+  l(y_1,y_2)=f(h_1(y_1,y_2),h_2(y_1,y_2))\vert J\vert.</script></li>
 <li><p><strong>例</strong>  $X_1,X_2$ 连续, $X_1&gt;0$, 其联合 <strong>PDF</strong> 为 $f(x_1,x_2)$, 且 $Y=X_1+X_2$.</p>
 </li>
 <li><p><strong>解答</strong></p>
-<p>令 $Z=X_1$, 则 $X_1=Z, X_2=Y-Z$. 故 $Y,Z$ 的 <strong>PDF</strong> 为<br>$$<br>l(y,z)=f(z,y-z)\vert J\vert=f(z,y-z).<br>$$<br>其中<br>$$<br>J=det\begin{pmatrix}<br>0,&amp;1\<br>1,&amp;-1<br>\end{pmatrix}<br>$$<br>那么 $Y$ 的 <strong>PDF</strong> 为<br>$$<br>l_Y(y)=\int_{-\infty}^{\infty}f(z,y-z)dz<br>$$</p>
-</li>
+<p>令 $Z=X_1$, 则 $X_1=Z, X_2=Y-Z$. 故 $Y,Z$ 的 <strong>PDF</strong> 为</p>
+<script type="math/tex; mode=display">
+l(y,z)=f(z,y-z)\vert J\vert=f(z,y-z).</script><p>其中</p>
+<script type="math/tex; mode=display">
+J=det\begin{pmatrix}
+0,&1\\
+1,&-1
+\end{pmatrix}</script><p>那么 $Y$ 的 <strong>PDF</strong> 为</p>
+<script type="math/tex; mode=display">
+l_Y(y)=\int_{-\infty}^{\infty}f(z,y-z)dz</script></li>
 <li><p><strong>注</strong></p>
 <ul>
 <li><p>若 $X_1,X_2$ 独立, 则</p>
-<p>$$<br>l_Y(y)=\int_{-\infty}^{\infty}f_1(z)f_2(y-z)dz=f_1*f_2(y).<br>$$</p>
-</li>
+<script type="math/tex; mode=display">
+l_Y(y)=\int_{-\infty}^{\infty}f_1(z)f_2(y-z)dz=f_1*f_2(y).</script></li>
 <li><p>若 $(X_1,X_2)\sim N(\mu_1,\mu_2,\sigma_1^2,\sigma_2^2,\rho)$, 则 </p>
-<p>$$<br>Y=X_1+X_2\sim N(\mu_1+\mu_2,\sigma_1^2+\sigma_2^2+2\rho\sigma_1\sigma_2).<br>$$</p>
-</li>
+<script type="math/tex; mode=display">
+Y=X_1+X_2\sim N(\mu_1+\mu_2,\sigma_1^2+\sigma_2^2+2\rho\sigma_1\sigma_2).</script></li>
 </ul>
 </li>
 <li><p><strong>注</strong>  三大分布: <strong>Chi-Square</strong> 分布 $\chi^2(n)$, $t_n$, $F$.</p>
@@ -993,7 +1101,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">85k</span>
+                        class="white-color">73k</span>
             
             
             

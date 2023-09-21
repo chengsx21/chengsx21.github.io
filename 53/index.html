@@ -470,13 +470,17 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="Chap-8-线性回归"><a href="#Chap-8-线性回归" class="headerlink" title="Chap 8 线性回归"></a>Chap 8 线性回归</h1><h2 id="回归问题"><a href="#回归问题" class="headerlink" title="回归问题"></a>回归问题</h2><ul>
-<li><p><strong>定义</strong><br>  $$<br>  Y=f(X_1,\cdots,X_n)+\varepsilon.<br>  $$</p>
-<ul>
+<li><p><strong>定义</strong>  </p>
+<script type="math/tex; mode=display">
+  Y=f(X_1,\cdots,X_n)+\varepsilon.</script><ul>
 <li>$Y$ — 因变量(响应变量).</li>
 <li>$X_1,\cdots,X_n$ — 自变量(回归变量).</li>
-<li>$\varepsilon$ — 随机误差(无法测量或不重要的因素).</li>
+<li><p>$\varepsilon$ — 随机误差(无法测量或不重要的因素).</p>
+<p>假定 $E(\varepsilon\mid X_1,\cdots,X_n)=0$,</p>
+<script type="math/tex; mode=display">
+\Rightarrow E(Y\mid X_1,\cdots,X_n)=f(X_1,\cdots,X_n).</script><p>称为 $Y$ 对 $X_1,\cdots,X_n$ 的回归函数. 由样本数据 $X_1,\cdots,X_n,Y$ 获取 $f$ 的过程称为回归(有监督学习).</p>
+</li>
 </ul>
-<p>  假定 $E(\varepsilon\mid X_1,\cdots,X_n)=0$,<br>  $$<br>  \Rightarrow E(Y\mid X_1,\cdots,X_n)=f(X_1,\cdots,X_n).<br>  $$<br>  称为 $Y$ 对 $X_1,\cdots,X_n$ 的回归函数. 由样本数据 $X_1,\cdots,X_n,Y$ 获取 $f$ 的过程称为回归(有监督学习).</p>
 </li>
 <li><p><strong>注</strong>  </p>
 <ul>
@@ -491,14 +495,24 @@
 </li>
 </ul>
 <h2 id="简单线性回归"><a href="#简单线性回归" class="headerlink" title="简单线性回归"></a>简单线性回归</h2><ul>
-<li><p><strong>定义</strong><br>  $$<br>  Y=\beta_0+\beta_1 X+\varepsilon.<br>  $$<br>  这是<strong>理论模型</strong>, 提供背景作用. 其中回归参数(未知待定):</p>
+<li><p><strong>定义</strong></p>
+<script type="math/tex; mode=display">
+  Y=\beta_0+\beta_1 X+\varepsilon.</script><p>  这是<strong>理论模型</strong>, 提供背景作用. 其中回归参数(未知待定):</p>
 <ul>
 <li>$\beta_0$ — 截距.</li>
-<li>$\beta_1$ — 斜率(回归系数).</li>
-</ul>
-<p>  对 $(X,Y)$ 进行 $n$ 次独立观测, 得到样本观测值 $(x_1,y_1),\cdots,(x_n,y_n)$. 则<br>  $$<br>  y_i=\beta_0+\beta_1 x_i+\varepsilon_i,(1\le i\le n).<br>  $$<br>  其中 $\varepsilon_i$ 作为第 $i$ 次观测的随机误差, 无法直接观测得到. 不妨认为<br>  $$<br>  \begin{cases}<br>  E(\varepsilon_i)=0,\<br>  \<br>  Var(\varepsilon_i)=\sigma^2.<br>  \end{cases}<br>  $$<br>  这是<strong>简单线性回归模型</strong>. 其中:</p>
-<ul>
-<li>$E(y_i)=\beta_0+\beta_1 x_i$.</li>
+<li><p>$\beta_1$ — 斜率(回归系数).</p>
+<p>对 $(X,Y)$ 进行 $n$ 次独立观测, 得到样本观测值 $(x_1,y_1),\cdots,(x_n,y_n)$. 则</p>
+<script type="math/tex; mode=display">
+y_i=\beta_0+\beta_1 x_i+\varepsilon_i\,(1\le i\le n).</script><p>其中 $\varepsilon_i$ 作为第 $i$ 次观测的随机误差, 无法直接观测得到. 不妨认为</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+E(\varepsilon_i)=0,\\
+\\
+Var(\varepsilon_i)=\sigma^2.
+\end{cases}</script><p>这是<strong>简单线性回归模型</strong>. 其中:</p>
+</li>
+<li><p>$E(y_i)=\beta_0+\beta_1 x_i$.</p>
+</li>
 <li>$Var(y_i)=\sigma^2$.</li>
 </ul>
 </li>
@@ -510,7 +524,9 @@
 </li>
 </ul>
 <h2 id="最小二乘法-LS-估计参数"><a href="#最小二乘法-LS-估计参数" class="headerlink" title="最小二乘法 (LS) 估计参数"></a>最小二乘法 (LS) 估计参数</h2><ul>
-<li><p><strong>定义</strong><br>  $$<br>  S(\beta_0,\beta_1)=\sum_{i=1}^{n}(y_i-(\beta_0+\beta_1 x_i))^2.<br>  $$<br>  最小化 $S(\beta_0,\beta_1)$, 得</p>
+<li><p><strong>定义</strong></p>
+<script type="math/tex; mode=display">
+  S(\beta_0,\beta_1)=\sum_{i=1}^{n}(y_i-(\beta_0+\beta_1 x_i))^2.</script><p>  最小化 $S(\beta_0,\beta_1)$, 得</p>
 <ul>
 <li>$\hat\beta_1=\dfrac{\sum\limits_{i=1}^{n}(x_i-\overline{x})(y_i-\overline{y})}{\sum\limits_{i=1}^{n}(x_i-\overline{x})^2}=\dfrac{\sum\limits_{i=1}^{n}(x_i-\overline{x})y_i}{S_{xx}}$ ($y_i$ 的线性组合).</li>
 <li>$\hat\beta_0=\overline{y}-\hat\beta_1\overline{x}=\sum\limits_{i=1}^{n}(\dfrac{1}{n}-\dfrac{(x_i-\overline{x})\overline{x}}{S_{xx}})y_i$ ($y_i$ 的线性组合).</li>
@@ -525,16 +541,40 @@
 </li>
 <li><p><strong>命题</strong>  $\hat\beta_0$, $\hat\beta_1$ 分别为 $\beta_0$, $\beta_1$ 的无偏估计.</p>
 </li>
-<li><p><strong>证明</strong><br>  $$<br>  \begin{aligned}<br>  E(\hat\beta_1)&amp;=\dfrac{\sum_{i=1}^{n}(x_i-\overline{x})E(y_i)}{S_{xx}}\<br>  &amp;=\dfrac{\sum_{i=1}^{n}(x_i-\overline{x})(\beta_0+\beta_1 x_i)}{S_{xx}}\<br>  &amp;=\beta_1\dfrac{\sum_{i=1}^{n}(x_i-\overline{x})x_i}{S_{xx}}\<br>  &amp;=\beta_1\dfrac{\sum_{i=1}^{n}(x_i-\overline{x})^2}{S_{xx}}\<br>  &amp;=\beta_1.<br>  \end{aligned}<br>  $$</p>
-<p>  $$<br>  \begin{aligned}<br>  E(\hat\beta_0)&amp;=E(\overline{y}-\hat\beta_1\overline{x})\<br>  &amp;=\dfrac{1}{n}\sum_{i=1}^{n}E(y_i)-E(\hat\beta_1)\overline{x}\<br>  &amp;=\dfrac{1}{n}\sum_{i=1}^{n}(\beta_0+\beta_1 x_i)-\beta_1\overline{x}\<br>  &amp;=\beta_0.<br>  \end{aligned}<br>  $$</p>
-<p>  $$<br>  \begin{aligned}<br>  Var(\hat\beta_1)&amp;=Var\Big(\dfrac{\sum_{i=1}^{n}(x_i-\overline{x})y_i}{S_{xx}}\Big)\<br>  &amp;=\dfrac{\sum_{i=1}^{n}(x_i-\overline{x})^2}{S_{xx}^2}Var(y_i)\<br>  &amp;=\dfrac{\sigma^2}{S_{xx}}.<br>  \end{aligned}<br>  $$</p>
-<p>  $$<br>  \begin{aligned}<br>  Var(\hat\beta_0)&amp;=Var\Big(\sum\limits_{i=1}^{n}(\dfrac{1}{n}-\dfrac{(x_i-\overline{x})\overline{x}}{S_{xx}})y_i\Big)\<br>  &amp;=\sum\limits_{i=1}^{n}(\dfrac{1}{n}-\dfrac{(x_i-\overline{x})\overline{x}}{S_{xx}})^2 Var(y_i)\<br>  &amp;=(\dfrac{1}{n}+\dfrac{\overline{x}^2}{S_{xx}})\sigma^2\<br>  &amp;=\dfrac{\sigma^2}{S_{xx}}\cdot\dfrac{\sum_{i=1}^{n}x_i^2}{n}.<br>  \end{aligned}<br>  $$</p>
-</li>
-<li><p><strong>注</strong>  中心化处理:<br>  $$<br>  y_i=\beta_0+\beta_1\overline{x}+\beta_1(x_i-\overline{x})+\varepsilon_i.<br>  $$<br>  此时常数项 $\beta_0+\beta_1\overline{x}$ 的估计 $=\hat\beta_0+\hat\beta_1\overline{x}=\overline{y}$.</p>
+<li><p><strong>证明</strong>  </p>
+<script type="math/tex; mode=display">
+  \begin{aligned}
+  E(\hat\beta_1)&=\dfrac{\sum_{i=1}^{n}(x_i-\overline{x})E(y_i)}{S_{xx}}\\
+  &=\dfrac{\sum_{i=1}^{n}(x_i-\overline{x})(\beta_0+\beta_1 x_i)}{S_{xx}}\\
+  &=\beta_1\dfrac{\sum_{i=1}^{n}(x_i-\overline{x})x_i}{S_{xx}}\\
+  &=\beta_1\dfrac{\sum_{i=1}^{n}(x_i-\overline{x})^2}{S_{xx}}\\
+  &=\beta_1.
+  \end{aligned}</script><script type="math/tex; mode=display">
+  \begin{aligned}
+  E(\hat\beta_0)&=E(\overline{y}-\hat\beta_1\overline{x})\\
+  &=\dfrac{1}{n}\sum_{i=1}^{n}E(y_i)-E(\hat\beta_1)\overline{x}\\
+  &=\dfrac{1}{n}\sum_{i=1}^{n}(\beta_0+\beta_1 x_i)-\beta_1\overline{x}\\
+  &=\beta_0.
+  \end{aligned}</script><script type="math/tex; mode=display">
+  \begin{aligned}
+  Var(\hat\beta_1)&=Var\Big(\dfrac{\sum_{i=1}^{n}(x_i-\overline{x})y_i}{S_{xx}}\Big)\\
+  &=\dfrac{\sum_{i=1}^{n}(x_i-\overline{x})^2}{S_{xx}^2}Var(y_i)\\
+  &=\dfrac{\sigma^2}{S_{xx}}.
+  \end{aligned}</script><script type="math/tex; mode=display">
+  \begin{aligned}
+  Var(\hat\beta_0)&=Var\Big(\sum\limits_{i=1}^{n}(\dfrac{1}{n}-\dfrac{(x_i-\overline{x})\overline{x}}{S_{xx}})y_i\Big)\\
+  &=\sum\limits_{i=1}^{n}(\dfrac{1}{n}-\dfrac{(x_i-\overline{x})\overline{x}}{S_{xx}})^2 Var(y_i)\\
+  &=(\dfrac{1}{n}+\dfrac{\overline{x}^2}{S_{xx}})\sigma^2\\
+  &=\dfrac{\sigma^2}{S_{xx}}\cdot\dfrac{\sum_{i=1}^{n}x_i^2}{n}.
+  \end{aligned}</script></li>
+<li><p><strong>注</strong>  中心化处理:</p>
+<script type="math/tex; mode=display">
+  y_i=\beta_0+\beta_1\overline{x}+\beta_1(x_i-\overline{x})+\varepsilon_i.</script><p>  此时常数项 $\beta_0+\beta_1\overline{x}$ 的估计 $=\hat\beta_0+\hat\beta_1\overline{x}=\overline{y}$.</p>
 </li>
 <li><p><strong>定义(残差)</strong>  当 $X=x_i$ 时, 拟合直线上相应点为 $(x_i,\hat\beta_0+\hat\beta_1 x_i)$.</p>
-<p>  记 $\hat{y}<em>i=\hat\beta_0+\hat\beta_1 x_i$, 称为 $x_i$ 处的拟合值. 定义残差 $y_i-\hat{y}<em>i$. 考虑残差平方和<br>  $$<br>  SSE:=\sum</em>{i=1}^{n}(y_i-\hat y_i)^2=\sum</em>{i=1}^{n}(y_i-(\hat\beta_0+\hat\beta_1 x_i))^2.<br>  $$</p>
-</li>
+<p>  记 $\hat{y}_i=\hat\beta_0+\hat\beta_1 x_i$, 称为 $x_i$ 处的拟合值. 定义残差 $y_i-\hat{y}_i$. 考虑残差平方和</p>
+<script type="math/tex; mode=display">
+  SSE:=\sum_{i=1}^{n}(y_i-\hat y_i)^2=\sum_{i=1}^{n}(y_i-(\hat\beta_0+\hat\beta_1 x_i))^2.</script></li>
 <li><p><strong>命题</strong>  $\hat\sigma^2:=\dfrac{SSE}{n-2}$ 为 $\sigma^2$ 的无偏估计. 此时</p>
 <ul>
 <li>$\hat{se}(\hat\beta_1)=\dfrac{\hat\sigma}{\sqrt{S_{xx}}}$.</li>
@@ -549,13 +589,21 @@
 <ul>
 <li><p>$y_i\sim N(\beta_0+\beta_1 x_i,\sigma^2)$ 独立, $1\le i\le n$.</p>
 </li>
-<li><p><strong>MLE</strong>$(\beta_0^*,\beta_1^*)=(\hat\beta_0,\hat\beta_1)$ (<strong>习题课 5</strong>).</p>
+<li><p><strong>MLE</strong>$(\beta_0^<em>,\beta_1^</em>)=(\hat\beta_0,\hat\beta_1)$ (<strong>习题课 5</strong>).</p>
 <p>  $L(\beta_0,\beta_1,\sigma^2)=\prod\limits_{i=1}^{n}\dfrac{1}{\sqrt{2\pi}\sigma}e^{-\tfrac{(y_i-(\beta_0+\beta_1 x_i))^2}{2\sigma^2}}$.</p>
 <p>  $(\sigma^2)^*=\dfrac{SSE}{n}$.</p>
 </li>
 </ul>
 </li>
-<li><p><strong>定义(假设检验)</strong>  $H_0:\beta_1=0$ <strong>v.s.</strong> $H_1:\beta_1\ne 0$. 因为 $\hat\beta_1$ 为 $y_i$ 的线性组合. 得到<br>  $$<br>  \dfrac{\hat\beta_1-\beta_1}{\tfrac{\sigma}{\sqrt{S_{xx}}}}\sim N(0,1)<br>  $$<br>  可证明<br>  $$<br>  \dfrac{SSE}{\sigma^2}=\dfrac{(n-2)\hat\sigma^2}{\sigma^2}\sim\chi^2(n-2).<br>  $$<br>  从而<br>  $$<br>  \dfrac{\hat\beta_1-\beta_1}{\hat{se}(\hat\beta_1)}=\dfrac{\hat\beta_1-\beta_1}{\tfrac{\hat\sigma}{\sqrt{S_{xx}}}}=\dfrac{\hat\beta_1-\beta_1}{\tfrac{\sigma}{\sqrt{S_{xx}}}}/\sqrt{\dfrac{(n-2)\hat\sigma^2}{(n-2)\sigma^2}}\sim t(n-2).<br>  $$<br>  检验统计量:<br>  $$<br>  T=\dfrac{\hat\beta_1}{\hat{se}(\hat\beta_1)}.<br>  $$<br>  当 $H_0$ 为真时, $T\sim t(n-2)$. 检验准则为: 当 $\vert T\vert\ge t_{\tfrac{\alpha}{2}}(n-2)$ 时拒绝 $H_0$.</p>
+<li><p><strong>定义(假设检验)</strong>  $H_0:\beta_1=0$ <strong>v.s.</strong> $H_1:\beta_1\ne 0$. 因为 $\hat\beta_1$ 为 $y_i$ 的线性组合. 得到</p>
+<script type="math/tex; mode=display">
+  \dfrac{\hat\beta_1-\beta_1}{\tfrac{\sigma}{\sqrt{S_{xx}}}}\sim N(0,1)</script><p>  可证明</p>
+<script type="math/tex; mode=display">
+  \dfrac{SSE}{\sigma^2}=\dfrac{(n-2)\hat\sigma^2}{\sigma^2}\sim\chi^2(n-2).</script><p>  从而</p>
+<script type="math/tex; mode=display">
+  \dfrac{\hat\beta_1-\beta_1}{\hat{se}(\hat\beta_1)}=\dfrac{\hat\beta_1-\beta_1}{\tfrac{\hat\sigma}{\sqrt{S_{xx}}}}=\dfrac{\hat\beta_1-\beta_1}{\tfrac{\sigma}{\sqrt{S_{xx}}}}/\sqrt{\dfrac{(n-2)\hat\sigma^2}{(n-2)\sigma^2}}\sim t(n-2).</script><p>  检验统计量:</p>
+<script type="math/tex; mode=display">
+  T=\dfrac{\hat\beta_1}{\hat{se}(\hat\beta_1)}.</script><p>  当 $H_0$ 为真时, $T\sim t(n-2)$. 检验准则为: 当 $\vert T\vert\ge t_{\tfrac{\alpha}{2}}(n-2)$ 时拒绝 $H_0$.</p>
 </li>
 <li><p><strong>注</strong></p>
 <ul>
@@ -566,14 +614,24 @@
 </li>
 </ul>
 <h2 id="预测"><a href="#预测" class="headerlink" title="预测"></a>预测</h2><ul>
-<li><p><strong>例</strong>  当 $X=x_0$ 时, $y_0=\beta_0+\beta_1 x_0+\varepsilon_0$, 其中 $\varepsilon\sim N(0,\sigma^2)$. 令<br>  $$<br>  \mu_0=E(y_0)=\beta_0+\beta_1 x_0,<br>  $$<br>  给出对 $\mu_0$ 的预测.</p>
+<li><p><strong>例</strong>  当 $X=x_0$ 时, $y_0=\beta_0+\beta_1 x_0+\varepsilon_0$, 其中 $\varepsilon\sim N(0,\sigma^2)$. 令</p>
+<script type="math/tex; mode=display">
+  \mu_0=E(y_0)=\beta_0+\beta_1 x_0,</script><p>  给出对 $\mu_0$ 的预测.</p>
 </li>
-<li><p><strong>解答</strong>  用拟合直线上 $x_0$ 处的取值 $\hat y_0$ 给出 $\mu_0$ 的点估计:<br>  $$<br>  \hat y_0=\hat\beta_0+\hat\beta_1x_0=\overline{y}-\hat\beta_1(x_0-\overline{x})=\sum_{i=1}^{n}(\dfrac{1}{n}+\dfrac{(x_i-\overline{x})(x_0-\overline{x})}{S_{xx}})y_i<br>  $$<br>  分别给出</p>
+<li><p><strong>解答</strong>  用拟合直线上 $x_0$ 处的取值 $\hat y_0$ 给出 $\mu_0$ 的点估计:</p>
+<script type="math/tex; mode=display">
+  \hat y_0=\hat\beta_0+\hat\beta_1x_0=\overline{y}-\hat\beta_1(x_0-\overline{x})=\sum_{i=1}^{n}(\dfrac{1}{n}+\dfrac{(x_i-\overline{x})(x_0-\overline{x})}{S_{xx}})y_i</script><p>  分别给出</p>
 <ul>
 <li>$E(\hat y_0)=E(\hat\beta_0+\hat\beta_1x_0)=\beta_0+\beta_1x_0=\mu_0$.</li>
-<li>$Var(\hat y_0)=\sum_{i=1}^{n}\Big(\dfrac{1}{n}+\dfrac{(x_i-\overline{x})(x_0-\overline{x})}{S_{xx}}\Big)^2\sigma^2=\Big(\dfrac{1}{n}+\dfrac{(x_0-\overline{x})^2}{S_{xx}}\Big)\sigma^2$.</li>
+<li><p>$Var(\hat y_0)=\sum_{i=1}^{n}\Big(\dfrac{1}{n}+\dfrac{(x_i-\overline{x})(x_0-\overline{x})}{S_{xx}}\Big)^2\sigma^2=\Big(\dfrac{1}{n}+\dfrac{(x_0-\overline{x})^2}{S_{xx}}\Big)\sigma^2$.</p>
+<p>从而</p>
+<script type="math/tex; mode=display">
+\dfrac{\hat y_0-\mu_0}{se(\hat y_0)}\sim N(0,1).</script><p>使用 $\hat{se}(\hat y_0)=\hat\sigma\sqrt{\dfrac{1}{n}+\dfrac{(x_0-\overline{x})^2}{S_{xx}}}$ 估计 $se(\hat y_0)$, 我们有</p>
+<script type="math/tex; mode=display">
+\dfrac{\hat y_0-\mu_0}{\hat{se}(\hat y_0)}\sim t(n-2).</script><p>从而 $\mu_0$ 的 $(1-\alpha)-$ 置信的双侧区间估计为</p>
+<script type="math/tex; mode=display">
+\Big(\hat y_0-t_{\tfrac{\alpha}{2}}\hat\sigma\sqrt{\dfrac{1}{n}+\dfrac{(x_0-\overline{x})^2}{S_{xx}}},\hat y_0+t_{\tfrac{\alpha}{2}}\hat\sigma\sqrt{\dfrac{1}{n}+\dfrac{(x_0-\overline{x})^2}{S_{xx}}}\Big).</script></li>
 </ul>
-<p>  从而<br>  $$<br>  \dfrac{\hat y_0-\mu_0}{se(\hat y_0)}\sim N(0,1).<br>  $$<br>  使用 $\hat{se}(\hat y_0)=\hat\sigma\sqrt{\dfrac{1}{n}+\dfrac{(x_0-\overline{x})^2}{S_{xx}}}$ 估计 $se(\hat y_0)$, 我们有<br>  $$<br>  \dfrac{\hat y_0-\mu_0}{\hat{se}(\hat y_0)}\sim t(n-2).<br>  $$<br>  从而 $\mu_0$ 的 $(1-\alpha)-$ 置信的双侧区间估计为<br>  $$<br>  \Big(\hat y_0-t_{\tfrac{\alpha}{2}}\hat\sigma\sqrt{\dfrac{1}{n}+\dfrac{(x_0-\overline{x})^2}{S_{xx}}},\hat y_0+t_{\tfrac{\alpha}{2}}\hat\sigma\sqrt{\dfrac{1}{n}+\dfrac{(x_0-\overline{x})^2}{S_{xx}}}\Big).<br>  $$</p>
 </li>
 <li><p><strong>例</strong>  当 $X=x_0$ 时, $y_0=\beta_0+\beta_1 x_0+\varepsilon_0$, 其中 $\varepsilon\sim N(0,\sigma^2)$. 给出对 $y_0$ 的预测.</p>
 </li>
@@ -583,12 +641,20 @@
 <p>  分别给出</p>
 <ul>
 <li>$E(\hat y_0-y_0)=E(\hat y_0)-E(y_0)=\mu_0-\mu_0=0$.</li>
-<li>$Var(\hat y_0-y_0)=Var(\hat y_0)+Var(y_0)=\sigma^2(1+\dfrac{1}{n}+\dfrac{(x_0-\overline{x})^2}{S_{xx}})$.</li>
+<li><p>$Var(\hat y_0-y_0)=Var(\hat y_0)+Var(y_0)=\sigma^2(1+\dfrac{1}{n}+\dfrac{(x_0-\overline{x})^2}{S_{xx}})$.</p>
+<p>从而</p>
+<script type="math/tex; mode=display">
+\dfrac{\hat y_0-y_0}{\sigma\sqrt{1+\dfrac{1}{n}+\dfrac{(x_0-\overline{x})^2}{S_{xx}}}}\sim N(0,1).</script><p>进而</p>
+<script type="math/tex; mode=display">
+\dfrac{\hat y_0-y_0}{\hat\sigma\sqrt{1+\dfrac{1}{n}+\dfrac{(x_0-\overline{x})^2}{S_{xx}}}}\sim t(n-2).</script></li>
 </ul>
-<p>  从而<br>  $$<br>  \dfrac{\hat y_0-y_0}{\sigma\sqrt{1+\dfrac{1}{n}+\dfrac{(x_0-\overline{x})^2}{S_{xx}}}}\sim N(0,1).<br>  $$<br>  进而<br>  $$<br>  \dfrac{\hat y_0-y_0}{\hat\sigma\sqrt{1+\dfrac{1}{n}+\dfrac{(x_0-\overline{x})^2}{S_{xx}}}}\sim t(n-2).<br>  $$</p>
-<p>  从而 $y_0$ 的 $(1-\alpha)-$ 置信的双侧区间估计为<br>  $$<br>  \Big(\hat y_0-t_{\tfrac{\alpha}{2}}\hat\sigma\sqrt{1+\dfrac{1}{n}+\dfrac{(x_0-\overline{x})^2}{S_{xx}}},\hat y_0+t_{\tfrac{\alpha}{2}}\hat\sigma\sqrt{1+\dfrac{1}{n}+\dfrac{(x_0-\overline{x})^2}{S_{xx}}}\Big).<br>  $$
-  </p>
 </li>
+</ul>
+<pre><code>从而 $y_0$ 的 $(1-\alpha)-$ 置信的双侧区间估计为
+$$
+\Big(\hat y_0-t_{\tfrac{\alpha}{2}}\hat\sigma\sqrt{1+\dfrac{1}{n}+\dfrac{(x_0-\overline{x})^2}{S_{xx}}},\hat y_0+t_{\tfrac{\alpha}{2}}\hat\sigma\sqrt{1+\dfrac{1}{n}+\dfrac{(x_0-\overline{x})^2}{S_{xx}}}\Big).
+$$
+</code></pre><ul>
 <li><p><strong>注</strong>  当 $x_0$ 与 $\overline{x}$ 距离增加时, 估计误差增大.</p>
 </li>
 <li><p><strong>注</strong></p>
@@ -999,7 +1065,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">85k</span>
+                        class="white-color">73k</span>
             
             
             

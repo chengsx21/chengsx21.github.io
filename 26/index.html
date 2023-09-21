@@ -439,7 +439,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    874
+                    875
                 </div>
                 
 
@@ -478,9 +478,8 @@
     <span class="token punctuation">}</span>
     <span class="token keyword">return</span> hash<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>此处参考了 <code>BKDR hash</code> 函数, 使用 <code>seed = 131</code> 作为种子, 可实现较为均匀的 <code>hash</code> 映射.</p>
-<h4 id="poor-hashing"><a href="#poor-hashing" class="headerlink" title="poor_hashing"></a><code>poor_hashing</code></h4><p><code>poor_hashing</code> 函数定义为: $$poor_hashing(str)=89{\sum_{i = 0}^{len(str)-1} str[i]}%N.$$</p>
+<h4 id="poor-hashing"><a href="#poor-hashing" class="headerlink" title="poor_hashing"></a><code>poor_hashing</code></h4><p><code>poor_hashing</code> 函数定义为: <script type="math/tex">poor\_hashing(str)=89\{\sum_{i = 0}^{len(str)-1} str[i]\}\%N.</script></p>
 <p>由于 <code>ascii</code> 的大小为 <code>0~127</code>, 且字符串长度受限制, 生成的 <code>hash</code> 值最多不会超过 <code>200000</code>, 这导致了不均匀的到 <code>TABLE_SIZE</code> 的映射; 同时对字符串直接求和的操作很容易导致 <code>collision</code>.</p>
 <h4 id="quadratic-probe"><a href="#quadratic-probe" class="headerlink" title="quadratic_probe"></a><code>quadratic_probe</code></h4><p>定义 <code>int dist</code> 为当前双向试探的试探长度, <code>bool direction</code> 为当前双向试探的试探方向. 每次执行 <code>init()</code> 时, 初始化 <code>dist = 0; direction = false;</code>.</p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> quadratic_probe<span class="token operator">::</span><span class="token function">operator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">(</span>hash_entry<span class="token operator">*</span> Table<span class="token punctuation">,</span> <span class="token keyword">int</span> table_size<span class="token punctuation">,</span> <span class="token keyword">int</span> last_choice<span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -495,23 +494,19 @@
     <span class="token punctuation">}</span>
 	<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>每次冲突时, 依据 <code>direction</code> 的值决定偏移方向, 依据 <code>dist</code> 的大小决定偏移量.</p>
 <h4 id="overflow-probe"><a href="#overflow-probe" class="headerlink" title="overflow_probe"></a><code>overflow_probe</code></h4><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">if</span> <span class="token punctuation">(</span>dynamic_cast<span class="token operator">&lt;</span>overflow_probe<span class="token operator">*</span><span class="token operator">&gt;</span><span class="token punctuation">(</span>my_collision<span class="token punctuation">)</span><span class="token punctuation">)</span>
     table_size <span class="token operator">=</span> <span class="token number">400031</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <p>此处修改了测试框架, 若 <code>my_collision</code> 可成功动态转换为 <code>overflow_probe*</code> 指针, 此时使用公共溢出区策略, 将 <code>table_size</code> 修改为 <code>400031</code>.</p>
 <p>定义 <code>int overflow_head</code> 为当前缓冲区的起始 <code>index</code>. 每次执行 <code>init()</code> 时, 初始化 <code>overflow_head = 400031</code>.</p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> overflow_probe<span class="token operator">::</span><span class="token function">operator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">(</span>hash_entry<span class="token operator">*</span> Table<span class="token punctuation">,</span> <span class="token keyword">int</span> table_size<span class="token punctuation">,</span> <span class="token keyword">int</span> last_choice<span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token keyword">return</span> overflow_head<span class="token operator">++</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <p>每次冲突时, 顺次遍历缓冲区直到返回一个可供插入词条的空位置.</p>
 <h3 id="测试数据-222字"><a href="#测试数据-222字" class="headerlink" title="测试数据 (222字)"></a>测试数据 (222字)</h3><p><code>generator.cpp</code> 作为数据生成器.</p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">/* generator.cpp */</span>
 <span class="token function">srand</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 num <span class="token operator">=</span> <span class="token function">rand</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">500000</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <p>使用当前时间作为随机数种子, 产生 <code>1~500000</code> 内的随机数作为行号, 将 <code>poj.txt</code> 的该行信息作为输入数据;</p>
 <p>使用 <code>ReadLine(filename, line)</code> 读入 <code>poj.txt</code> 的指定行信息;</p>
 <p>使用 <code>GenerateInsert(srt)</code> 与 <code>GenerateQuery(srt)</code> , 通过 <code>string</code> 的 <code>substr()</code> 与 <code>find()</code> 方法从该行字符串中构造符合格式的输入数据;</p>
@@ -918,7 +913,7 @@ num <span class="token operator">=</span> <span class="token function">rand</spa
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">85k</span>
+                        class="white-color">73k</span>
             
             
             

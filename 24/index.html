@@ -439,7 +439,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    969
+                    950
                 </div>
                 
 
@@ -469,72 +469,72 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="必做题"><a href="#必做题" class="headerlink" title="必做题"></a>必做题</h2><h3 id="Ex-4-1-1-e"><a href="#Ex-4-1-1-e" class="headerlink" title="Ex 4.1.1 (e)"></a>Ex 4.1.1 (e)</h3><p>​    对于任意的 $n \ge 1$, 存在 $w = 0^n1^n\in\left{0^n1^m\mid n\le m\right}$.</p>
+                <h2 id="必做题"><a href="#必做题" class="headerlink" title="必做题"></a>必做题</h2><h3 id="Ex-4-1-1-e"><a href="#Ex-4-1-1-e" class="headerlink" title="Ex 4.1.1 (e)"></a>Ex 4.1.1 (e)</h3><p>​    对于任意的 $n \ge 1$, 存在 $w = 0^n1^n\in\left\{0^n1^m\mid n\le m\right\}$.</p>
 <p>​    考虑任意 $x, y, z$ 满足 $w = xyz$, $\vert xy\vert &lt; n$, 且 $y\ne\varepsilon$.</p>
 <p>​    那么易知存在 $i\in N$, 使得 $y = 0^i$.</p>
 <p>​    此时取 $k = 2$, 注意到</p>
-<p>​    $$xy^2z = 0^{n + i}1^n\notin\left{0^n1^m\mid n\le m\right}.$$</p>
+<p>​    <script type="math/tex">xy^2z = 0^{n + i}1^n\notin\left\{0^n1^m\mid n\le m\right\}.</script></p>
 <p>​    因此 $w$ 不满足 $Pumping$ 引理, 该语言不是正规语言.</p>
-<h3 id="Ex-4-1-2-e"><a href="#Ex-4-1-2-e" class="headerlink" title="Ex 4.1.2 (e)"></a>Ex 4.1.2 (e)</h3><p>​    对于任意的 $n \ge 1$, 存在 $\omega = 0^n10^n1\in\left{ww\mid w\in{0, 1}^{*}\right}$.</p>
+<h3 id="Ex-4-1-2-e"><a href="#Ex-4-1-2-e" class="headerlink" title="Ex 4.1.2 (e)"></a>Ex 4.1.2 (e)</h3><p>​    对于任意的 $n \ge 1$, 存在 $\omega = 0^n10^n1\in\left\{ww\mid w\in{0, 1}^{*}\right\}$.</p>
 <p>​    考虑任意 $x, y, z$ 满足 $\omega = xyz$, $\vert xy\vert &lt; n$, 且 $y\ne\varepsilon$.</p>
 <p>​    那么易知存在 $i\in N$, 使得 $y = 0^i$.</p>
 <p>​    此时取 $k = 2$, 注意到</p>
-<p>​    $$xy^2z = 0^{n + i}10^n1\notin\left{ww\mid w\in{0, 1}^{*}\right}.$$</p>
+<p>​    <script type="math/tex">xy^2z = 0^{n + i}10^n1\notin\left\{ww\mid w\in{0, 1}^{*}\right\}.</script></p>
 <p>​    因此 $\omega$ 不满足 $Pumping$ 引理, 该语言不是正规语言.</p>
-<h3 id="Ex-4-1-2-f"><a href="#Ex-4-1-2-f" class="headerlink" title="Ex 4.1.2 (f)"></a>Ex 4.1.2 (f)</h3><p>​    对于任意的 $n \ge 1$, 存在 $\omega = 0^n110^n\in\left{ww^R\mid w\in{0, 1}^{*}\right}$.</p>
+<h3 id="Ex-4-1-2-f"><a href="#Ex-4-1-2-f" class="headerlink" title="Ex 4.1.2 (f)"></a>Ex 4.1.2 (f)</h3><p>​    对于任意的 $n \ge 1$, 存在 $\omega = 0^n110^n\in\left\{ww^R\mid w\in{0, 1}^{*}\right\}$.</p>
 <p>​    考虑任意 $x, y, z$ 满足 $\omega = xyz$, $\vert xy\vert &lt; n$, 且 $y\ne\varepsilon$.</p>
 <p>​    那么易知存在 $i\in N$, 使得 $y = 0^i$.</p>
 <p>​    此时取 $k = 2$, 注意到</p>
-<p>​    $$xy^2z = 0^{n + i}110^n\notin\left{ww\mid w\in{0, 1}^{*}\right}.$$</p>
+<p>​    <script type="math/tex">xy^2z = 0^{n + i}110^n\notin\left\{ww\mid w\in{0, 1}^{*}\right\}.</script></p>
 <p>​    因此 $\omega$ 不满足 $Pumping$ 引理, 该语言不是正规语言.</p>
 <h3 id="Ex-4-2-1-d"><a href="#Ex-4-2-1-d" class="headerlink" title="Ex 4.2.1 (d)"></a>Ex 4.2.1 (d)</h3><p>​    注意到 $L = {0, 12}$,</p>
 <p>​    那么 $h(L) = {h(0), h(12)} = {a, abba}$.</p>
 <h3 id="Ex-4-2-2"><a href="#Ex-4-2-2" class="headerlink" title="Ex 4.2.2"></a>Ex 4.2.2</h3><p>​    考虑一个与正则语言 $L$ 等价的 $DFA$:</p>
-<p>​    $$A = \left{Q, \Sigma, \delta, q, F_A\right}.$$</p>
+<p>​    <script type="math/tex">A = \left\{Q, \Sigma, \delta, q, F_A\right\}.</script></p>
 <p>​    我们构造</p>
-<p>​    $$B = \left{Q, \Sigma, \delta, q, F_B\right}.$$</p>
+<p>​    <script type="math/tex">B = \left\{Q, \Sigma, \delta, q, F_B\right\}.</script></p>
 <p>​    其中</p>
-<p>​    $$q_0\in F_B\Longleftrightarrow\delta(q_0, a)\in F_A.$$</p>
+<p>​    <script type="math/tex">q_0\in F_B\Longleftrightarrow\delta(q_0, a)\in F_A.</script></p>
 <p>​    那么容易得到 $B$ 接受字符串 $w$ 当且仅当 $A$ 接受字符串 $wa$.</p>
 <p>​    也即 $DFA$ 与语言 $L/a$ 等价, $L/a$ 为正则语言.</p>
 <h3 id="Ex-4-2-3"><a href="#Ex-4-2-3" class="headerlink" title="Ex 4.2.3"></a>Ex 4.2.3</h3><p>​    注意到</p>
-<p>​    $$a/L=(L^R/a)^R,$$</p>
+<p>​    <script type="math/tex">a/L=(L^R/a)^R,</script></p>
 <p>​    又因为正规语言的商运算和反向运算都是封闭的, </p>
 <p>​    因此若 $L$ 是正则语言, 那么 $L/a$ 是正则语言, 进而 $a/L$ 是正则语言.</p>
 <h3 id="Ex-4-2-8"><a href="#Ex-4-2-8" class="headerlink" title="Ex 4.2.8"></a>Ex 4.2.8</h3><p>​    考虑一个与正则语言 $L$ 等价的 $DFA$:</p>
-<p>​    $$A = \left{Q, \Sigma, \delta, q_0, F\right}.$$</p>
+<p>​    <script type="math/tex">A = \left\{Q, \Sigma, \delta, q_0, F\right\}.</script></p>
 <p>​    我们构造一个 $DFA$</p>
-<p>​    $$B = \left{Q’, \Sigma, \delta’, q_0’, F’\right}.$$</p>
+<p>​    <script type="math/tex">B = \left\{Q', \Sigma, \delta', q_0', F'\right\}.</script></p>
 <p>​    其中</p>
-<p>​    $$Q’ = {[q, S]\mid q\in Q, S\subseteq Q, \mbox{若 $q_0$ 到 $q$ 的路径长 $l$},$$<br>​    $$\mbox{则}\thinspace p\in S\Longleftrightarrow \mbox{存在长 $l$ 的从 $p$ 到某个终态的路径}.}$$<br>​    $$q_0’ = [q_0, F].$$<br>​    $$F’ = \left{[q, S]\mid q\in S\right}$$</p>
+<p>​    <script type="math/tex">Q' = \{[q, S]\mid q\in Q, S\subseteq Q, \mbox{若 $q_0$ 到 $q$ 的路径长 $l$},</script><br>​    <script type="math/tex">\mbox{则}\thinspace p\in S\Longleftrightarrow \mbox{存在长 $l$ 的从 $p$ 到某个终态的路径}.\}</script><br>​    <script type="math/tex">q_0' = [q_0, F].</script><br>​    <script type="math/tex">F' = \left\{[q, S]\mid q\in S\right\}</script></p>
 <p>​    下面定义转移函数 $\delta’$:</p>
-<p>​    $$\delta’([q, S], a) = [\delta(q, a), T],$$</p>
+<p>​    <script type="math/tex">\delta'([q, S], a) = [\delta(q, a), T],</script></p>
 <p>​    其中</p>
-<p>​    $$t\in T\Longleftrightarrow \exists\thinspace s\in S, \mbox{使}\thinspace t \thinspace\mbox{到}\thinspace s \thinspace\mbox{有一条转移边}.$$</p>
+<p>​    <script type="math/tex">t\in T\Longleftrightarrow \exists\thinspace s\in S, \mbox{使}\thinspace t \thinspace\mbox{到}\thinspace s \thinspace\mbox{有一条转移边}.</script></p>
 <p>​    易得这个 $DFA B$ 与我们定义的 $half(L)$ 等价, </p>
 <p>​    故若 $L$ 为正则语言, 那么 $half(L)$ 亦为正则语言.</p>
 <h3 id="Ex-4-2-13-a"><a href="#Ex-4-2-13-a" class="headerlink" title="Ex 4.2.13 (a)"></a>Ex 4.2.13 (a)</h3><p>​    注意到</p>
-<p>​    $$\left{0^i1^j\mid i\ne j\right} = \left{0, 1\right}^{*} - \left{0^n1^n\mid n\ge 0\right}.$$</p>
-<p>​    若 $\left{0^i1^j\mid i\ne j\right}$ 为正规语言, </p>
+<p>​    <script type="math/tex">\left\{0^i1^j\mid i\ne j\right\} = \left\{0, 1\right\}^{*} - \left\{0^n1^n\mid n\ge 0\right\}.</script></p>
+<p>​    若 $\left\{0^i1^j\mid i\ne j\right\}$ 为正规语言, </p>
 <p>​    由于正规语言的闭包运算、补运算都是封闭的,</p>
-<p>​    可得 $L_{0n1n} = \left{0^n1^n\mid n\ge 0\right}$ 也是正规语言, 这与已知矛盾.</p>
-<p>​    因此 $\left{0^i1^j\mid i\ne j\right}$ 非正规语言.</p>
+<p>​    可得 $L_{0n1n} = \left\{0^n1^n\mid n\ge 0\right\}$ 也是正规语言, 这与已知矛盾.</p>
+<p>​    因此 $\left\{0^i1^j\mid i\ne j\right\}$ 非正规语言.</p>
 <h3 id="Ex-4-2-13-b"><a href="#Ex-4-2-13-b" class="headerlink" title="Ex 4.2.13 (b)"></a>Ex 4.2.13 (b)</h3><p>​    考虑映射</p>
-<p>​    $$h: \left{0, 1, 2\right}^{<em>}\Longrightarrow\left{0, 1\right}^{</em>},$$</p>
+<p>​    <script type="math/tex">h: \left\{0, 1, 2\right\}^{*}\Longrightarrow\left\{0, 1\right\}^{*},</script></p>
 <p>​    其中</p>
-<p>​    $$h(0) = 0, h(1) = h(2) = 1.$$</p>
+<p>​    <script type="math/tex">h(0) = 0, h(1) = h(2) = 1.</script></p>
 <p>​    从而</p>
-<p>​    $$h(\left{0^n1^m2^{n - m}\mid n\ge m\ge 0\right}) = \left{0^n1^n\mid n\ge 0\right} = L_{0n1n}.$$</p>
+<p>​    <script type="math/tex">h(\left\{0^n1^m2^{n - m}\mid n\ge m\ge 0\right\}) = \left\{0^n1^n\mid n\ge 0\right\} = L_{0n1n}.</script></p>
 <p>​    由于正规语言的同态运算具有封闭性, 且 $L_{0n1n}$ 非正规语言,</p>
-<p>​    从而 $\left{0^n1^m2^{n - m}\mid n\ge m\ge 0\right}$ 非正规语言.</p>
+<p>​    从而 $\left\{0^n1^m2^{n - m}\mid n\ge m\ge 0\right\}$ 非正规语言.</p>
 <h3 id="Ex-4-3-4"><a href="#Ex-4-3-4" class="headerlink" title="Ex 4.3.4"></a>Ex 4.3.4</h3><p>​    设 $DFA$</p>
-<p>​    $$A_1 = (Q_1, \Sigma, \delta_1, q_1, F_1),$$</p>
+<p>​    <script type="math/tex">A_1 = (Q_1, \Sigma, \delta_1, q_1, F_1),</script></p>
 <p>​    和 $DFA$</p>
-<p>​    $$A_2 = (Q_2, \Sigma, \delta_2, q_2, F_2).$$</p>
+<p>​    <script type="math/tex">A_2 = (Q_2, \Sigma, \delta_2, q_2, F_2).</script></p>
 <p>​    的语言分别为 $L_1$ 和 $L_2$, 我们构造 $DFA$</p>
-<p>​    $$A = (Q_1 \times Q_2 , \Sigma, \delta, \left&lt;q_1, q_2\right&gt; , F_1 \times F_2),$$</p>
+<p>​    <script type="math/tex">A = (Q_1 \times Q_2 , \Sigma, \delta, \left<q_1, q_2\right> , F_1 \times F_2),</script></p>
 <p>​    其中</p>
-<p>​    $$\delta(\left&lt;p, q\right&gt;, a)= \left&lt;\delta_1(p, a), \delta_2(q, a)\right&gt;.$$ </p>
+<p>​    <script type="math/tex">\delta(\left<p, q\right>, a)= \left<\delta_1(p, a), \delta_2(q, a)\right>.</script> </p>
 <p>​    那么 $L(A)= L_1\cap L_2$, 只需判定该 $A$ 中从初态是否可达某一终态即可. </p>
 
                 
@@ -923,7 +923,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">85k</span>
+                        class="white-color">73k</span>
             
             
             

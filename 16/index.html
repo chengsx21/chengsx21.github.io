@@ -490,7 +490,7 @@
 <h3 id="Ex-3-1-3-a"><a href="#Ex-3-1-3-a" class="headerlink" title="Ex 3.1.3 (a)"></a>Ex 3.1.3 (a)</h3><p>​    一个符合要求的正则表达式是:</p>
 <p>​    \begin{equation*}</p>
 <p>​        \begin{aligned}</p>
-<p>​            \boldsymbol{0^*(1^<em>000^</em>)^<em>1^</em>0^*.}</p>
+<p>​            \boldsymbol{0^<em>(1^</em>000^<em>)^</em>1^<em>0^</em>.}</p>
 <p>​        \end{aligned}</p>
 <p>​    \end{equation*}</p>
 <h3 id="Ex-3-1-3-b"><a href="#Ex-3-1-3-b" class="headerlink" title="Ex 3.1.3 (b)"></a>Ex 3.1.3 (b)</h3><p>​    一个符合要求的正则表达式是:</p>
@@ -500,42 +500,42 @@
 <p>​        \end{aligned}</p>
 <p>​    \end{equation*}</p>
 <h3 id="Ex-3-1-5"><a href="#Ex-3-1-5" class="headerlink" title="Ex 3.1.5"></a>Ex 3.1.5</h3><p>​    闭包有穷的两个语言分别为:</p>
-<p>​    $$\varnothing, \thinspace\left{\varepsilon\right}.$$</p>
+<p>​    <script type="math/tex">\varnothing, \thinspace\left\{\varepsilon\right\}.</script></p>
 <p>​    且</p>
-<p>​    $$\varnothing^* = \left{\varepsilon\right}^* = \left{\varepsilon\right}.$$</p>
+<p>​    <script type="math/tex">\varnothing^* = \left\{\varepsilon\right\}^* = \left\{\varepsilon\right\}.</script></p>
 <h3 id="Ex-3-4-1-c"><a href="#Ex-3-4-1-c" class="headerlink" title="Ex 3.4.1 (c)"></a>Ex 3.4.1 (c)</h3><p>​    将两个表达式具体化: </p>
 <p>​    将 $R$ 替换为 $a$, 将 $S$ 替换为 $b$, 将 $T$ 替换为 $c$.</p>
 <p>​    从而 $(RS)T$ 具体化为 $(ab)c$, $R(ST)$具体化为 $a(bc)$.</p>
 <p>​    而 </p>
-<p>​    $$L((ab)c) = \left{abc\right} = L(a(bc)),$$</p>
+<p>​    <script type="math/tex">L((ab)c) = \left\{abc\right\} = L(a(bc)),</script></p>
 <p>​    故原式成立.</p>
 <h3 id="Ex-3-4-1-g"><a href="#Ex-3-4-1-g" class="headerlink" title="Ex 3.4.1 (g)"></a>Ex 3.4.1 (g)</h3><p>​    将两个表达式具体化: 将 $R$ 替换为 $a$, </p>
-<p>​    从而 $(\varepsilon + R)^*$ 具体化为 $(\varepsilon + a)^*$, $R^*$具体化为 $a^*$.</p>
+<p>​    从而 $(\varepsilon + R)^<em>$ 具体化为 $(\varepsilon + a)^</em>$, $R^<em>$具体化为 $a^</em>$.</p>
 <p>​    注意到</p>
-<p>​    $$\left{\varepsilon, a\right}^* = \left{\varepsilon, a, a^2, a^3, \cdots\right} = \left{a\right}^*,$$</p>
+<p>​    <script type="math/tex">\left\{\varepsilon, a\right\}^* = \left\{\varepsilon, a, a^2, a^3, \cdots\right\} = \left\{a\right\}^*,</script></p>
 <p>​    由此得</p>
-<p>​    $$L((\varepsilon + a)^*) = L(a^*).$$</p>
+<p>​    <script type="math/tex">L((\varepsilon + a)^*) = L(a^*).</script></p>
 <p>​    故原式成立.</p>
 <h3 id="Ex-3-4-2-b"><a href="#Ex-3-4-2-b" class="headerlink" title="Ex 3.4.2 (b)"></a>Ex 3.4.2 (b)</h3><p>​    将两个表达式具体化: </p>
 <p>​    将 $R$ 替换为 $a$, 将 $S$ 替换为 $b$,</p>
 <p>​    从而 $(RS + R)^<em>R$ 具体化为 $(ab + a)^</em>a$, </p>
-<p>​    而$R(SR + R)^*$ 具体化为 $a(ba + a)^*$.</p>
+<p>​    而$R(SR + R)^<em>$ 具体化为 $a(ba + a)^</em>$.</p>
 <p>​    下证</p>
-<p>​    $$L((ab + a)^<em>a) = L(a(ba + a)^</em>).$$</p>
+<p>​    <script type="math/tex">L((ab + a)^*a) = L(a(ba + a)^*).</script></p>
 <p>​    归纳易得 $\forall\thinspace k\in\mathbb{N}$, 有</p>
-<p>​    $$\left{ab, a\right}^k\left{a\right} = \left{a\right}\left{ba, a\right}^k$$</p>
+<p>​    <script type="math/tex">\left\{ab, a\right\}^k\left\{a\right\} = \left\{a\right\}\left\{ba, a\right\}^k</script></p>
 <p>​    进而由连接运算的分配律可知 </p>
-<p>​    $$L((ab+a)^*a) = \mathop{\bigcup}_{k\in\mathbb{N}}\left{ab, a\right}^k\left{a\right},$$</p>
-<p>​    $$L(a(ba+a)^*) = \mathop{\bigcup}_{k\in\mathbb{N}}\left{a\right}\left{ab, a\right}^k.$$</p>
+<p>​    <script type="math/tex">L((ab+a)^*a) = \mathop{\bigcup}_{k\in\mathbb{N}}\left\{ab, a\right\}^k\left\{a\right\},</script></p>
+<p>​    <script type="math/tex">L(a(ba+a)^*) = \mathop{\bigcup}_{k\in\mathbb{N}}\left\{a\right\}\left\{ab, a\right\}^k.</script></p>
 <p>​    由此得</p>
-<p>​    $$L((ab + a)^<em>a) = L(a(ba + a)^</em>).$$</p>
+<p>​    <script type="math/tex">L((ab + a)^*a) = L(a(ba + a)^*).</script></p>
 <p>​    故原式成立.</p>
 <h3 id="Ex-3-4-2-d"><a href="#Ex-3-4-2-d" class="headerlink" title="Ex 3.4.2 (d)"></a>Ex 3.4.2 (d)</h3><p>​    将两个表达式具体化: 将 $R$ 替换为 $a$, 将 $S$ 替换为 $b$,</p>
 <p>​    从而 $(R + S)^<em>S$ 具体化为 $(a + b)^</em>b$, $(R^<em>S)^</em>$化为 $(a^<em>b)^</em>$.</p>
 <p>​    注意到</p>
-<p>​    $$\varepsilon\in L((a^<em>b)^</em>), \thinspace\varepsilon\notin L((a + b)^*b)$$</p>
+<p>​    <script type="math/tex">\varepsilon\in L((a^*b)^*), \thinspace\varepsilon\notin L((a + b)^*b)</script></p>
 <p>​    从而</p>
-<p>​    $$L((a + b)^<em>b) \ne L((a^</em>b)^*).$$</p>
+<p>​    <script type="math/tex">L((a + b)^*b) \ne L((a^*b)^*).</script></p>
 <p>​    故原式不成立.</p>
 
                 
@@ -928,7 +928,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">85k</span>
+                        class="white-color">73k</span>
             
             
             

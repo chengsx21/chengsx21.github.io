@@ -490,7 +490,6 @@
         <span class="token function">play</span><span class="token punctuation">(</span>left <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>由于 <code>play</code> 函数并未显式调用 <code>return</code>, 在这里 <code>left</code> 的范围为 <code>[0, rank]</code>.</p>
 <p>因此, 若 <code>left</code> 在函数体内变为 <code>0</code>, 那么在尾部调用 <code>play(left - 1)</code> 时便会访问到越界的内存 <code>a.at(-1)</code>, 产生 <code>Runtime Error</code>.</p>
 <ul>
@@ -504,7 +503,6 @@
 <span class="token number">1</span>
 <span class="token number">1</span> A
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码 2"></a>代码 2</h3><ul>
 <li><p>错误类型: <code>Runtime Error</code></p>
 </li>
@@ -522,7 +520,6 @@
         <span class="token function">play</span><span class="token punctuation">(</span>next<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>此处 <code>play</code> 函数处理了 <code>left = 0</code> 的情况. 但如果经过消除, 在函数尾部串 <code>a</code> 为空, 此时 <code>left = 0</code>, 发生调用 <code>play(0)</code> 便会越界访问了空串 <code>a</code> 的元素 <code>a.at(0)</code>, 产生 <code>Runtime Error</code>.</p>
 <ul>
 <li>测例构造思路</li>
@@ -535,7 +532,6 @@
 <span class="token number">1</span>
 <span class="token number">1</span> A
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="代码-3"><a href="#代码-3" class="headerlink" title="代码 3"></a>代码 3</h3><ul>
 <li><p>错误类型: <code>Time Limit Exceeded</code></p>
 </li>
@@ -552,7 +548,6 @@
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>这份代码在逻辑上是正确的, 但是由于采用数组实现, 时间复杂度正比于输入数据的规模. 因为数组的插入与删除操作复杂度为 $O(n)$, 那么当输入规模过大时, 会导致 <code>Time Limit Exceeded</code>.</p>
 <ul>
 <li>测例构造思路</li>
@@ -578,7 +573,6 @@
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><code>play</code> 函数的实现事实上并未能访问 <code>a.at(0)</code> 的具体元素, 注意到 <code>left</code> 可被赋值为 <code>0</code>, 此时在 <code>erase</code> 操作中会删去 <code>a.at(0)</code> 位置的元素, 如果在此时进行了消除则会导致 <code>Wrong Answer</code>.</p>
 <ul>
 <li>测例构造思路</li>
@@ -591,7 +585,6 @@
 <span class="token number">1</span>
 <span class="token number">1</span> A
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="代码-5"><a href="#代码-5" class="headerlink" title="代码 5"></a>代码 5</h3><ul>
 <li><p>错误类型: <code>Wrong Answer</code></p>
 </li>
@@ -604,7 +597,6 @@
     cin <span class="token operator">&gt;&gt;</span> m<span class="token punctuation">;</span>
     <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>主函数在读取字符串 <code>a</code> 时使用了 <code>cin</code>, 因为 <code>cin</code> 并不能读取空串, 因此这种方式不具有鲁棒性. 这种情况下, 程序会将本属于 <code>m</code> 的值读入 <code>a</code>, 进而导致错误.</p>
 <ul>
 <li>测例构造思路</li>
@@ -621,7 +613,6 @@
 
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>将输入串 <code>a</code> 置空, 程序会将本属于 <code>m</code> 的值 <code>2</code> 读入 <code>a</code>, 将值 <code>0</code> 读入 <code>m</code>, 此时循环会因 <code>m = 0</code> 被直接跳过执行 <code>cout &lt;&lt; a &lt;&lt; endl</code>, 产生 <code>Wrong Answer</code>.</p>
 <ul>
 <li>构造测例</li>
@@ -631,7 +622,6 @@
 <span class="token number">0</span> A
 <span class="token number">0</span> B
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="代码-6"><a href="#代码-6" class="headerlink" title="代码 6"></a>代码 6</h3><ul>
 <li><p>错误类型: <code>Wrong Answer</code></p>
 </li>
@@ -650,7 +640,6 @@
     plen<span class="token punctuation">[</span>pos<span class="token punctuation">.</span>first<span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span>
     <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><code>play</code> 函数在插入字符的时候并未考虑是否会超出数组大小, 直接执行 <code>memmove</code> 操作. 由于字符串采用二维数组 <code>p[1 &lt;&lt; 12][plen_bound]</code> 形式存储, 占用了一块连续的内存. 若一直进行插入操作而不发生消除, 那么在单个数组到达最大容量后便会覆盖下个数组的内容, 进而导致输出串 <code>a</code> 时产生 <code>Wrong Answer</code>.</p>
 <ul>
 <li>测例构造思路</li>
@@ -678,7 +667,6 @@
         <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><code>play</code> 函数中处理左右两侧 <code>Rank</code> 时, 会对左右侧 <code>Rank</code> 进行移动. 当需要消除的字符不全处于同一数组中时, 会进行判断并将 <code>Rank</code> 移动指向不同的数组.</p>
 <p>但是在移动左侧 <code>Rank l</code> 时使用 <code>if</code> 进行判断, 每移动一个字符的位置, <code>l</code> 最多改变一个数组的指向. 因此若存在类似 <code>CBA| |ABC</code> 的情况 (使用 “|” 分隔不同的数组), 向第三组头部插入字符 <code>A</code>, 经过一个 <code>if</code> 循环后, <code>l</code> 仅能移动到第二组而非第一组.</p>
 <p>此时 <code>l.first = 2</code>, <code>l.second = -1</code>, 由于存储字符串使用二维数组的结构, 操作 <code>get(l)</code> 会访问到 <code>p[1][plen_bound - 1] = p[1][4095]</code>, 而非预期中的 <code>p[1][plen[1] - 1] = p[1][2]</code>, 进而导致错误地认为不能消除, 产生 <code>Wrong Answer</code>.</p>
@@ -718,7 +706,6 @@
     <span class="token punctuation">}</span>
     <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><code>play</code> 函数在寻找相同字符这一部分缺失了其他代码所有的 <code>while(1)</code> 循环, 这导致在进行一次消除后无法进行同组内的连续消除, 进而产生 <code>Wrong Answer</code>.</p>
 <ul>
 <li>测例构造思路</li>
@@ -731,7 +718,6 @@
 <span class="token number">1</span>
 <span class="token number">2</span> B
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="代码-9"><a href="#代码-9" class="headerlink" title="代码 9"></a>代码 9</h3><ul>
 <li><p>错误类型: <code>Runtime Error</code></p>
 </li>
@@ -759,7 +745,6 @@
             plen<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><code>play</code> 函数在执行消除过程中并未考虑特殊处理 <code>l.first = r.first</code> 的情形. 那么 <code>plen[l.first]</code> 被赋值为 <code>l.second + 1</code>, 接下来 <code>len = plen[r.first] - r.second = plen[l.first] - r.second</code> 为负值. 而 <code>plen[r.first]</code> 为 <code>size_t</code> 类型, 即 <code>unsigned long long</code> 类型, 从而在赋值 <code>plen[r.first] = len</code> 时会因下溢出而被赋为很大的正数.</p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">p2a</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">int</span> copied <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
@@ -768,7 +753,6 @@
         copied <span class="token operator">+=</span> plen<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>此时对 <code>a[copied]</code> 进行 <code>memcpy</code> 时则会因为 <code>plen[i]</code> 过大而导致越界访问到 <code>p[i]</code> 长度之外的内存, 产生 <code>Runtime Error</code>.</p>
 <ul>
 <li>测例构造思路</li>
@@ -781,7 +765,6 @@
 <span class="token number">1</span>
 <span class="token number">2</span> B
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="代码-10"><a href="#代码-10" class="headerlink" title="代码 10"></a>代码 10</h3><ul>
 <li><p>错误类型: <code>Wrong Answer</code></p>
 </li>
@@ -797,7 +780,6 @@
         <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><code>play</code> 函数中消除结束后, 如果消除发生在不同的块中, 那么会将 <code>l.first</code> 所在块的长度错误地记为 <code>0</code>, 如果在后续操作中插入珠子的位置在此之后, 那么 <code>find()</code> 函数查找到的位置就会出错, 产生 <code>Wrong Answer</code>.</p>
 <ul>
 <li>测例构造思路</li>
@@ -1194,7 +1176,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">85k</span>
+                        class="white-color">73k</span>
             
             
             

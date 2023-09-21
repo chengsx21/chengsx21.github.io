@@ -472,82 +472,82 @@
                 <h2 id="必做题"><a href="#必做题" class="headerlink" title="必做题"></a>必做题</h2><h3 id="Ex-5-1-1-b"><a href="#Ex-5-1-1-b" class="headerlink" title="Ex 5.1.1 (b)"></a>Ex 5.1.1 (b)</h3><p>​    一个可行的上下文无关文法是:</p>
 <p>​    \begin{equation*}</p>
 <p>​        \begin{aligned}</p>
-<p>​            S &amp;\rightarrow AB \mid CD \</p>
-<p>​            A &amp;\rightarrow aA \mid \varepsilon \</p>
-<p>​            B &amp;\rightarrow bBc \mid bE \mid cD \</p>
-<p>​            C &amp;\rightarrow aCb \mid bE \mid aA \</p>
-<p>​            D &amp;\rightarrow cD \mid \varepsilon \</p>
+<p>​            S &amp;\rightarrow AB \mid CD \\</p>
+<p>​            A &amp;\rightarrow aA \mid \varepsilon \\</p>
+<p>​            B &amp;\rightarrow bBc \mid bE \mid cD \\</p>
+<p>​            C &amp;\rightarrow aCb \mid bE \mid aA \\</p>
+<p>​            D &amp;\rightarrow cD \mid \varepsilon \\</p>
 <p>​            E &amp;\rightarrow bE \mid \varepsilon</p>
 <p>​        \end{aligned}</p>
 <p>​    \end{equation*}</p>
 <h3 id="Ex-5-1-2-c"><a href="#Ex-5-1-2-c" class="headerlink" title="Ex 5.1.2 (c)"></a>Ex 5.1.2 (c)</h3><p>​    一个最左推导:</p>
 <p>​    \begin{equation*}</p>
 <p>​        \begin{aligned}</p>
-<p>​            S &amp;\mathop{\Longrightarrow}<em>{lm} A1B \mathop{\Longrightarrow}</em>{lm} 0A1B \mathop{\Longrightarrow}_{lm} 00A1B \</p>
-<p>​              &amp;\mathop{\Longrightarrow}<em>{lm} 000A1B \mathop{\Longrightarrow}</em>{lm} 0001B \mathop{\Longrightarrow}_{lm} 00011B \</p>
+<p>​            S &amp;\mathop{\Longrightarrow}_{lm} A1B \mathop{\Longrightarrow}_{lm} 0A1B \mathop{\Longrightarrow}_{lm} 00A1B \\</p>
+<p>​              &amp;\mathop{\Longrightarrow}_{lm} 000A1B \mathop{\Longrightarrow}_{lm} 0001B \mathop{\Longrightarrow}_{lm} 00011B \\</p>
 <p>​              &amp;\mathop{\Longrightarrow}_{lm} 00011;</p>
 <p>​        \end{aligned}</p>
 <p>​    \end{equation*}</p>
 <p>​    一个最右推导:</p>
 <p>​    \begin{equation*}</p>
 <p>​        \begin{aligned}</p>
-<p>​            S &amp;\mathop{\Longrightarrow}<em>{rm} A1B \mathop{\Longrightarrow}</em>{rm} A11B \mathop{\Longrightarrow}_{rm} A11 \</p>
-<p>​              &amp;\mathop{\Longrightarrow}<em>{rm} 0A11 \mathop{\Longrightarrow}</em>{rm} 00A11 \mathop{\Longrightarrow}_{rm} 000A11 \</p>
+<p>​            S &amp;\mathop{\Longrightarrow}_{rm} A1B \mathop{\Longrightarrow}_{rm} A11B \mathop{\Longrightarrow}_{rm} A11 \\</p>
+<p>​              &amp;\mathop{\Longrightarrow}_{rm} 0A11 \mathop{\Longrightarrow}_{rm} 00A11 \mathop{\Longrightarrow}_{rm} 000A11 \\</p>
 <p>​              &amp;\mathop{\Longrightarrow}_{rm} 00011.</p>
 <p>​        \end{aligned}</p>
 <p>​    \end{equation*}</p>
 <h3 id="Ex-5-1-6-b"><a href="#Ex-5-1-6-b" class="headerlink" title="Ex 5.1.6 (b)"></a>Ex 5.1.6 (b)</h3><p>​    对推导 $\beta\mathop{\Longrightarrow}^{*}\limits\gamma$ 中的步数进行归纳:</p>
 <p>​    \textbf{<strong>基础:</strong>} 如果该推导是一步完成的, 即$\thinspace\beta\Longrightarrow\gamma$, 那么由</p>
-<p>​    $$\alpha\mathop{\Longrightarrow}^{*}\limits\beta, \thinspace\beta\Longrightarrow\gamma,$$</p>
+<p>​    <script type="math/tex">\alpha\mathop{\Longrightarrow}^{*}\limits\beta, \thinspace\beta\Longrightarrow\gamma,</script></p>
 <p>​    可得</p>
-<p>​    $$\alpha\mathop{\Longrightarrow}^{*}\limits\gamma,$$</p>
+<p>​    <script type="math/tex">\alpha\mathop{\Longrightarrow}^{*}\limits\gamma,</script></p>
 <p>​    因而基础得证.</p>
 <p>​    \textbf{<strong>归纳:</strong>} 现在假定该推导共包含 $n + 1$ 步, 其中 $n\ge 1$, 并且对于任何 $n$ 步完成的推导上述命题都为真; 也就是说, 如果 $\beta\mathop{\Longrightarrow}^{<em>}\limits\gamma$ 可在 $n$ 步内完成, 那么有 $\alpha\mathop{\Longrightarrow}^{</em>}\limits\gamma$ 成立.</p>
 <p>​    考虑一个 $\beta\mathop{\Longrightarrow}^{*}\limits\gamma$ 的$n + 1$步推导, 它一定是如下形式:</p>
-<p>​    $$\beta\mathop{\Longrightarrow}^{*}\limits\omega\Longrightarrow\gamma,$$</p>
+<p>​    <script type="math/tex">\beta\mathop{\Longrightarrow}^{*}\limits\omega\Longrightarrow\gamma,</script></p>
 <p>​    其中 $\beta\mathop{\Longrightarrow}^{*}\limits\omega$ 是一个 $n$ 步推导.</p>
 <p>​    那么根据归纳假设可知, 有 $\alpha\mathop{\Longrightarrow}^{*}\limits\omega$ 成立,</p>
 <p>​    </p>
 <p>​    进而由 $\omega\Longrightarrow\gamma$ 可得</p>
-<p>​    $$\alpha\mathop{\Longrightarrow}^{*}\limits\gamma.$$</p>
+<p>​    <script type="math/tex">\alpha\mathop{\Longrightarrow}^{*}\limits\gamma.</script></p>
 <h3 id="Ex-5-1-8"><a href="#Ex-5-1-8" class="headerlink" title="Ex 5.1.8"></a>Ex 5.1.8</h3><p>​    分为两步来证明.</p>
 <p>​    $\centerdot$ 先证明若串 $\omega$ 中包含相同个数的 $a$ 和 $b$, 则 $\omega\in L(G)$.</p>
 <p>​    易知此时 $\vert\omega\vert$ 为偶数, 对 $\vert\omega\vert$ 进行归纳:</p>
 <p>​    \textbf{<strong>基础:</strong>} 如果 $\vert\omega\vert = 0$ 或者 $\vert\omega\vert = 2$, 即 $\omega$ 是 $\varepsilon, ab, ba$, 那么由产生式</p>
-<p>​    $$S \rightarrow aSbS \mid bSaS \mid \varepsilon,$$</p>
+<p>​    <script type="math/tex">S \rightarrow aSbS \mid bSaS \mid \varepsilon,</script></p>
 <p>​    可得</p>
-<p>​    $$S\mathop{\Longrightarrow}^{*}\limits\varepsilon, ab, ba,$$</p>
+<p>​    <script type="math/tex">S\mathop{\Longrightarrow}^{*}\limits\varepsilon, ab, ba,</script></p>
 <p>​    即</p>
-<p>​    $$S\mathop{\Longrightarrow}^{*}\limits\omega, \thinspace\omega\in L(G).$$</p>
+<p>​    <script type="math/tex">S\mathop{\Longrightarrow}^{*}\limits\omega, \thinspace\omega\in L(G).</script></p>
 <p>​    至此基础得证.</p>
 <p>​    \textbf{<strong>归纳:</strong>} 现在假定 $\vert\omega\vert = 2n$, 其中 $n\ge 2$, 并且对任何 $\vert\omega_0\vert \le 2n - 2$上述命题都为真; 也就是说, 如果 $\vert\omega_0\vert \le 2n - 2$, 那么有 $\omega_0\in L(G)$成立.</p>
 <p>​    由于 $\omega$ 包含的 $a, b$ 的数量相等, 不妨设 $\omega$ 以 $a$ 开头, 并取其中所包含的一个 $b$, 使得</p>
-<p>​    $$\omega = aubv,$$</p>
-<p>​    其中 $u, v\in \left{a, b\right}^{*}$, 当然有 $\vert u\vert, \vert v\vert \le 2n - 2$.</p>
+<p>​    <script type="math/tex">\omega = aubv,</script></p>
+<p>​    其中 $u, v\in \left\{a, b\right\}^{*}$, 当然有 $\vert u\vert, \vert v\vert \le 2n - 2$.</p>
 <p>​    那么由归纳假设, 有</p>
-<p>​    $$u, v\in L(G),$$</p>
+<p>​    <script type="math/tex">u, v\in L(G),</script></p>
 <p>​    即</p>
-<p>​    $$S\mathop{\Longrightarrow}^{*}\limits u, v.$$</p>
+<p>​    <script type="math/tex">S\mathop{\Longrightarrow}^{*}\limits u, v.</script></p>
 <p>​    那么容易得到</p>
-<p>​    $$S\Longrightarrow aSbS \mathop{\Longrightarrow}^{<em>}\limits aubS \mathop{\Longrightarrow}^{</em>}\limits aubv = \omega,$$</p>
+<p>​    <script type="math/tex">S\Longrightarrow aSbS \mathop{\Longrightarrow}^{*}\limits aubS \mathop{\Longrightarrow}^{*}\limits aubv = \omega,</script></p>
 <p>​    进而</p>
-<p>​    $$S\mathop{\Longrightarrow}^{*}\limits \omega, \thinspace\omega\in L(G).$$</p>
+<p>​    <script type="math/tex">S\mathop{\Longrightarrow}^{*}\limits \omega, \thinspace\omega\in L(G).</script></p>
 <p>​    至此归纳得证.</p>
 <p>​    $\centerdot$ 再证明若 $\omega\in L(G)$, 即 $S\mathop{\Longrightarrow}^{*}\limits\omega$, 则$\omega$中包含相同个数的 $a$ 和 $b$.</p>
 <p>​    对推导 $S\mathop{\Longrightarrow}^{*}\limits\omega$ 中的步数进行归纳:</p>
 <p>​    \textbf{<strong>基础:</strong>} 如果该推导是$1$步完成的, 那么由 $S\Longrightarrow\varepsilon$</p>
 <p>​    可得</p>
-<p>​    $$\omega = \varepsilon,$$</p>
+<p>​    <script type="math/tex">\omega = \varepsilon,</script></p>
 <p>​    其包含的 $a, b$ 个数均为 $0$. 至此基础得证.</p>
 <p>​    \textbf{<strong>归纳:</strong>} 现在假定该推导共包含 $n + 1$ 步, 其中 $n\ge 3$, 并且对于任何 $n$ 步以内完成的推导上述命题都为真; 也就是说, 如果 $S\mathop{\Longrightarrow}^{*}\limits\omega$ 可在 $n$ 步内完成, 那么有$\omega$中包含相同个数的 $a$ 和 $b$.</p>
 <p>​    考虑一个 $S\mathop{\Longrightarrow}^{*}\limits\omega$ 的 $n + 1$ 步推导, 它一定是如下形式:</p>
-<p>​    $$S\Longrightarrow aSbS\mathop{\Longrightarrow}^{*}\limits\omega,$$</p>
+<p>​    <script type="math/tex">S\Longrightarrow aSbS\mathop{\Longrightarrow}^{*}\limits\omega,</script></p>
 <p>​    或</p>
-<p>​    $$S\Longrightarrow bSaS\mathop{\Longrightarrow}^{*}\limits\omega,$$</p>
+<p>​    <script type="math/tex">S\Longrightarrow bSaS\mathop{\Longrightarrow}^{*}\limits\omega,</script></p>
 <p>​    其中 $aSbS\mathop{\Longrightarrow}^{<em>}\limits\omega$, $bSaS\mathop{\Longrightarrow}^{</em>}\limits\omega$ 均是一个 $n$ 步推导.</p>
 <p>​    由 $a, b$ 地位的对称性, 只需考虑第一种情况, 由 $aSbS\mathop{\Longrightarrow}^{*}\limits\omega$ 可得</p>
-<p>​    $$\omega = aubv,$$</p>
-<p>​    其中 $u, v\in \left{a, b\right}^{*}$, </p>
+<p>​    <script type="math/tex">\omega = aubv,</script></p>
+<p>​    其中 $u, v\in \left\{a, b\right\}^{*}$, </p>
 <p>​    那么容易知道推导 $S\mathop{\Longrightarrow}^{<em>}\limits u$, $S\mathop{\Longrightarrow}^{</em>}\limits v$ 的步数都在 $n$ 步以内.</p>
 <p>​    根据归纳假设可知, $u, v $中包含相同个数的 $a$ 和 $b$.</p>
 <p>​    进而可得 $\omega = aubv$ 中包含相同个数的 $a$ 和 $b$.</p>
@@ -555,7 +555,7 @@
 <h3 id="Ex-5-2-2"><a href="#Ex-5-2-2" class="headerlink" title="Ex 5.2.2"></a>Ex 5.2.2</h3><p>​    对推导 $S\mathop{\Longrightarrow}^{*}\limits\omega$ 中的步数 $m$ 进行归纳:</p>
 <p>​    \textbf{<strong>基础:</strong>} 如果 $m = 1$, 那么有产生式 $S\rightarrow\omega$, 其中 $\omega\ne\varepsilon$.</p>
 <p>​    从而有以下 $n + 1$ 个节点的分析树:</p>
-<p>​	<img src="/pic/06.png"></p>
+<p>​    <img src="/pic/06.png" alt=""></p>
 <p>​    至此基础得证.</p>
 <p>​    \textbf{<strong>归纳:</strong>} 现在假定 $m\ge 2$, 且对 $m - 1$ 步以内完成的推导上述命题为真.</p>
 <p>​    设第一步使用了产生式 $S\rightarrow X_1X_2\cdots X_k$, </p>
@@ -565,86 +565,86 @@
 <p>​    $(1)$ 若 $\omega_i$ 为终结符, 则 $\omega_i = X_i$, 可以认为$m_i = 0$;</p>
 <p>​    $(2)$ 若 $\omega_i$ 为非终结符, 则 $X_i\mathop{\Longrightarrow}^{*}\limits\omega_i$, 且推导步数 $m_i &lt; m$. 由归纳假设, 存在根节点为 $X_i$ 的子分析树, 其节点数为 $\vert\omega_i\vert + m_i$.</p>
 <p>​    因此我们得到如下关系:</p>
-<p>​    $$m = m_1 + m_2 + \cdots + m_k + 1.$$</p>
+<p>​    <script type="math/tex">m = m_1 + m_2 + \cdots + m_k + 1.</script></p>
 <p>​    从而有一棵结果为 $\omega$ 的分析树:</p>
-<p> <img src="/pic/07.png"></p>
+<p> <img src="/pic/07.png" alt=""></p>
 <p>​    其节点数为:</p>
-<p>​    $$1 + \sum_{i = 1}^{k}\limits\left(\vert\omega_i\vert + m_i\right) = \sum_{i = 1}^{k}\vert\omega_i\vert + \left(\sum_{i = 1}^{k}m_i + 1\right) = n + m.$$</p>
+<p>​    <script type="math/tex">1 + \sum_{i = 1}^{k}\limits\left(\vert\omega_i\vert + m_i\right) = \sum_{i = 1}^{k}\vert\omega_i\vert + \left(\sum_{i = 1}^{k}m_i + 1\right) = n + m.</script></p>
 <p>​    至此归纳得证.</p>
 <h3 id="Ex-5-4-7-a"><a href="#Ex-5-4-7-a" class="headerlink" title="Ex 5.4.7 (a)"></a>Ex 5.4.7 (a)</h3><p>   一个最左推导:</p>
 <p>​    \begin{equation*}</p>
 <p>​        \begin{aligned}</p>
-<p>​            E &amp;\mathop{\Longrightarrow}<em>{lm} {+}EE \mathop{\Longrightarrow}</em>{lm} {+}{<em>}EEE \mathop{\Longrightarrow}_{lm} {+}{</em>}{-}EEEE \</p>
-<p>​              &amp;\mathop{\Longrightarrow}<em>{lm} {+}{*}{-}xEEE \mathop{\Longrightarrow}</em>{lm} {+}{<em>}{-}xyEE \mathop{\Longrightarrow}_{lm} {+}{</em>}{-}xyxE \</p>
+<p>​            E &amp;\mathop{\Longrightarrow}_{lm} {+}EE \mathop{\Longrightarrow}_{lm} {+}{<em>}EEE \mathop{\Longrightarrow}_{lm} {+}{</em>}{-}EEEE \\</p>
+<p>​              &amp;\mathop{\Longrightarrow}_{lm} {+}{<em>}{-}xEEE \mathop{\Longrightarrow}_{lm} {+}{</em>}{-}xyEE \mathop{\Longrightarrow}_{lm} {+}{*}{-}xyxE \\</p>
 <p>​              &amp;\mathop{\Longrightarrow}_{lm} {+}{*}{-}xyxy;</p>
 <p>​        \end{aligned}</p>
 <p>​    \end{equation*}</p>
 <p>​    一个最右推导:</p>
 <p>​    \begin{equation*}</p>
 <p>​        \begin{aligned}</p>
-<p>​            E &amp;\mathop{\Longrightarrow}<em>{rm} {+}EE \mathop{\Longrightarrow}</em>{rm} {+}Ey \mathop{\Longrightarrow}_{rm} {+}{*}EEy \</p>
-<p>​              &amp;\mathop{\Longrightarrow}<em>{rm} {+}{*}Exy \mathop{\Longrightarrow}</em>{rm} {+}{<em>}{-}EExy \mathop{\Longrightarrow}_{rm} {+}{</em>}{-}Eyxy \</p>
+<p>​            E &amp;\mathop{\Longrightarrow}_{rm} {+}EE \mathop{\Longrightarrow}_{rm} {+}Ey \mathop{\Longrightarrow}_{rm} {+}{*}EEy \\</p>
+<p>​              &amp;\mathop{\Longrightarrow}_{rm} {+}{<em>}Exy \mathop{\Longrightarrow}_{rm} {+}{</em>}{-}EExy \mathop{\Longrightarrow}_{rm} {+}{*}{-}Eyxy \\</p>
 <p>​              &amp;\mathop{\Longrightarrow}_{rm} {+}{*}{-}xyxy;</p>
 <p>​        \end{aligned}</p>
 <p>​    \end{equation*}</p>
 <p>​    一棵语法分析树为:</p>
-<p>  <img src="/pic/08.png"></p>
+<p>  <img src="/pic/08.png" alt=""></p>
 <h3 id="Ex-1-1"><a href="#Ex-1-1" class="headerlink" title="*Ex 1 (1)"></a>*Ex 1 (1)</h3><p>​    一个可行的上下文无关文法是:</p>
 <p>​    \begin{equation*}</p>
 <p>​        \begin{aligned}</p>
-<p>​            S &amp;\rightarrow AB \</p>
-<p>​            A &amp;\rightarrow aAbb \mid \varepsilon \</p>
+<p>​            S &amp;\rightarrow AB \\</p>
+<p>​            A &amp;\rightarrow aAbb \mid \varepsilon \\</p>
 <p>​            B &amp;\rightarrow Bc \mid \varepsilon.</p>
 <p>​        \end{aligned}</p>
 <p>​    \end{equation*}</p>
 <h3 id="Ex-1-2"><a href="#Ex-1-2" class="headerlink" title="*Ex 1 (2)"></a>*Ex 1 (2)</h3><p>​    一个可行的上下文无关文法是:</p>
 <p>​    \begin{equation*}</p>
 <p>​        \begin{aligned}</p>
-<p>​            S &amp;\rightarrow AB \</p>
-<p>​            A &amp;\rightarrow aAb \mid \varepsilon \</p>
+<p>​            S &amp;\rightarrow AB \\</p>
+<p>​            A &amp;\rightarrow aAb \mid \varepsilon \\</p>
 <p>​            B &amp;\rightarrow bBc \mid \varepsilon.</p>
 <p>​        \end{aligned}</p>
 <p>​    \end{equation*}</p>
 <h3 id="Ex-1-3"><a href="#Ex-1-3" class="headerlink" title="*Ex 1 (3)"></a>*Ex 1 (3)</h3><p>​    一个可行的上下文无关文法是:</p>
 <p>​    \begin{equation*}</p>
 <p>​        \begin{aligned}</p>
-<p>​            S &amp;\rightarrow aSd \mid A \mid B \</p>
-<p>​            A &amp;\rightarrow aAc \mid C \</p>
-<p>​            B &amp;\rightarrow bBd \mid C \</p>
+<p>​            S &amp;\rightarrow aSd \mid A \mid B \\</p>
+<p>​            A &amp;\rightarrow aAc \mid C \\</p>
+<p>​            B &amp;\rightarrow bBd \mid C \\</p>
 <p>​            C &amp;\rightarrow bCc \mid \varepsilon.</p>
 <p>​        \end{aligned}</p>
 <p>​    \end{equation*}</p>
 <h3 id="Ex-1-4"><a href="#Ex-1-4" class="headerlink" title="*Ex 1 (4)"></a>*Ex 1 (4)</h3><p>​    一个可行的上下文无关文法是:</p>
 <p>​    \begin{equation*}</p>
 <p>​        \begin{aligned}</p>
-<p>​            S &amp;\rightarrow AB \mid CD \</p>
-<p>​            A &amp;\rightarrow aAb \mid \varepsilon \</p>
-<p>​            B &amp;\rightarrow bBd \mid D \</p>
-<p>​            C &amp;\rightarrow aCc \mid A \</p>
+<p>​            S &amp;\rightarrow AB \mid CD \\</p>
+<p>​            A &amp;\rightarrow aAb \mid \varepsilon \\</p>
+<p>​            B &amp;\rightarrow bBd \mid D \\</p>
+<p>​            C &amp;\rightarrow aCc \mid A \\</p>
 <p>​            D &amp;\rightarrow cDd \mid \varepsilon.</p>
 <p>​        \end{aligned}</p>
 <p>​    \end{equation*}</p>
 <h3 id="Ex-1-5"><a href="#Ex-1-5" class="headerlink" title="*Ex 1 (5)"></a>*Ex 1 (5)</h3><p>​    一个可行的上下文无关文法是:</p>
 <p>​    \begin{equation*}</p>
 <p>​        \begin{aligned}</p>
-<p>​            S &amp;\rightarrow Ab \</p>
-<p>​            A &amp;\rightarrow BAC \mid a \</p>
-<p>​            B &amp;\rightarrow a \mid b \</p>
+<p>​            S &amp;\rightarrow Ab \\</p>
+<p>​            A &amp;\rightarrow BAC \mid a \\</p>
+<p>​            B &amp;\rightarrow a \mid b \\</p>
 <p>​            C &amp;\rightarrow a \mid b.</p>
 <p>​        \end{aligned}</p>
 <p>​    \end{equation*}</p>
 <h3 id="Ex-1-6"><a href="#Ex-1-6" class="headerlink" title="*Ex 1 (6)"></a>*Ex 1 (6)</h3><p>​    一个可行的上下文无关文法是:</p>
 <p>​    \begin{equation*}</p>
 <p>​        \begin{aligned}</p>
-<p>​            S &amp;\rightarrow D \mid AC \mid ABC \</p>
-<p>​            A &amp;\rightarrow aA \mid \varepsilon \</p>
-<p>​            B &amp;\rightarrow bB \mid bb \</p>
-<p>​            C &amp;\rightarrow cC \mid \varepsilon \</p>
+<p>​            S &amp;\rightarrow D \mid AC \mid ABC \\</p>
+<p>​            A &amp;\rightarrow aA \mid \varepsilon \\</p>
+<p>​            B &amp;\rightarrow bB \mid bb \\</p>
+<p>​            C &amp;\rightarrow cC \mid \varepsilon \\</p>
 <p>​            D &amp;\rightarrow aDc \mid b.</p>
 <p>​        \end{aligned}</p>
 <p>​    \end{equation*}</p>
 <p>\end{proof}</p>
-<p>\subsection*{*Ex 2}</p>
+<p>\subsection<em>{</em>Ex 2}</p>
 <p>\begin{proof}[Solution:]</p>
 <p>​    一个二义文法是:</p>
 <p>​    \begin{equation*}</p>
@@ -655,12 +655,12 @@
 <p>​    一个非二义文法是:</p>
 <p>​    \begin{equation*}</p>
 <p>​        \begin{aligned}</p>
-<p>​            S &amp;\rightarrow aS \mid T \</p>
+<p>​            S &amp;\rightarrow aS \mid T \\</p>
 <p>​            T &amp;\rightarrow aaTb \mid \varepsilon. </p>
 <p>​        \end{aligned}</p>
 <p>​    \end{equation*}</p>
 <p>\end{proof}</p>
-<p>\subsection*{*Ex 3}</p>
+<p>\subsection<em>{</em>Ex 3}</p>
 <p>\begin{proof}[Solution:]</p>
 <p>​    题中文法所定义语言的一个无二义文法是:</p>
 <p>​    \begin{equation*}</p>
@@ -670,45 +670,45 @@
 <p>​    \end{equation*}</p>
 <h3 id="Ex-4"><a href="#Ex-4" class="headerlink" title="*Ex 4"></a>*Ex 4</h3><p>​    我们证明更强的结论:</p>
 <p>​    若 $S\mathop{\Longrightarrow}^{*}\limits\omega$, 推导步数为 $l + 1$, 其中 $l\ge 0$, 那么</p>
-<p>​    $$\omega = (01)^k \in L = \left{(01)^k\mid k\ge 0\right}.$$</p>
+<p>​    <script type="math/tex">\omega = (01)^k \in L = \left\{(01)^k\mid k\ge 0\right\}.</script></p>
 <p>​    若 $T\mathop{\Longrightarrow}^{*}\limits\phi$, 推导步数为 $l + 1$, 其中 $l\ge 0$, 那么</p>
-<p>​    $$\phi = (10)^k \in M = \left{(10)^k\mid k\ge 0\right}.$$</p>
+<p>​    <script type="math/tex">\phi = (10)^k \in M = \left\{(10)^k\mid k\ge 0\right\}.</script></p>
 <p>​    对推导步数进行归纳:</p>
 <p>​    \textbf{<strong>基础:</strong>} 如果 $l = 0$, 那么有推导 $S\Longrightarrow\varepsilon = \omega = (01)^0$, </p>
 <p>​    </p>
-<p>​    因此 omega = (01)^0\in L = \left{(01)^k\mid k\ge 0\right}$.</p>
+<p>​    因此 omega = (01)^0\in L = \left\{(01)^k\mid k\ge 0\right\}$.</p>
 <p>​    同理有推导 $T\Longrightarrow\varepsilon = \phi = (10)^0$, </p>
 <p>​    </p>
-<p>​    因此 $\phi = (10)^0\in M = \left{(10)^k\mid k\ge 0\right}$.</p>
+<p>​    因此 $\phi = (10)^0\in M = \left\{(10)^k\mid k\ge 0\right\}$.</p>
 <p>​    至此基础得证.</p>
 <p>​    \textbf{<strong>归纳:</strong>} 现在假定推导步数为 $l + 1$, 且对 $l$ 步完成的推导上述命题为真.</p>
 <p>​    考虑推导</p>
-<p>​    $$S\Longrightarrow 0T1\mathop{\Longrightarrow}^{*}\limits\omega = 0\phi_01,$$</p>
+<p>​    <script type="math/tex">S\Longrightarrow 0T1\mathop{\Longrightarrow}^{*}\limits\omega = 0\phi_01,</script></p>
 <p>​    其中 $T\mathop{\Longrightarrow}^{*}\limits\phi_0$ 是一个 $l$ 步的推导.</p>
 <p>​    那么由归纳假设, 得</p>
-<p>​    $$\phi_0 = (10)^{l - 1},$$</p>
+<p>​    <script type="math/tex">\phi_0 = (10)^{l - 1},</script></p>
 <p>​    此时</p>
-<p>​    $$\omega = 0\phi_01 = 0(10)^{l - 1}1 = (01)^l.$$</p>
+<p>​    <script type="math/tex">\omega = 0\phi_01 = 0(10)^{l - 1}1 = (01)^l.</script></p>
 <p>​    </p>
 <p>​    再考虑推导</p>
-<p>​    $$T\Longrightarrow 1S0\mathop{\Longrightarrow}^{*}\limits\phi = 1\omega_00,$$</p>
+<p>​    <script type="math/tex">T\Longrightarrow 1S0\mathop{\Longrightarrow}^{*}\limits\phi = 1\omega_00,</script></p>
 <p>​    其中 $S\mathop{\Longrightarrow}^{*}\limits\omega_0$ 是一个$l$步的推导.</p>
 <p>​    那么由归纳假设, 得</p>
-<p>​    $$\omega_0 = (01)^{l - 1},$$</p>
+<p>​    <script type="math/tex">\omega_0 = (01)^{l - 1},</script></p>
 <p>​    进而</p>
-<p>​    $$\phi = 1\omega_00 = 1(01)^{l - 1}0 = (10)^l.$$</p>
+<p>​    <script type="math/tex">\phi = 1\omega_00 = 1(01)^{l - 1}0 = (10)^l.</script></p>
 <p>​    </p>
 <p>​    至此归纳得证.</p>
 <p>​    综上所述, 我们证明了若 $S\mathop{\Longrightarrow}^{*}\limits\omega$, 则有</p>
-<p>​    $$\omega\in L = \left{(01)^k\mid k\ge 0\right}.$$</p>
+<p>​    <script type="math/tex">\omega\in L = \left\{(01)^k\mid k\ge 0\right\}.</script></p>
 <h2 id="思考题"><a href="#思考题" class="headerlink" title="思考题"></a>思考题</h2><h3 id="Ex-5-1-1-c"><a href="#Ex-5-1-1-c" class="headerlink" title="Ex 5.1.1 (c)"></a>Ex 5.1.1 (c)</h3><p>​    一个可行的上下文无关文法是:</p>
 <p>​    \begin{equation*}</p>
 <p>​        \begin{aligned}</p>
-<p>​            S &amp;\rightarrow O \mid E \</p>
-<p>​            O &amp;\rightarrow COC \mid a \mid b \</p>
-<p>​            E &amp;\rightarrow AB \mid BA \</p>
-<p>​            A &amp;\rightarrow CAC \mid a \</p>
-<p>​            B &amp;\rightarrow CBC \mid b \</p>
+<p>​            S &amp;\rightarrow O \mid E \\</p>
+<p>​            O &amp;\rightarrow COC \mid a \mid b \\</p>
+<p>​            E &amp;\rightarrow AB \mid BA \\</p>
+<p>​            A &amp;\rightarrow CAC \mid a \\</p>
+<p>​            B &amp;\rightarrow CBC \mid b \\</p>
 <p>​            C &amp;\rightarrow a \mid b.</p>
 <p>​        \end{aligned}</p>
 <p>​    \end{equation*}</p>
@@ -721,11 +721,11 @@
 <p>​    也就是说, 如果 $\vert\omega_0\vert \le n - 1$, 那么 $\omega_0$ 不含子串 $ba$.</p>
 <p>​    考虑推导 $S\mathop{\Longrightarrow}^{*}\limits\omega$ 的第一步.</p>
 <p>​    若该推导形如</p>
-<p>​    $$S\Longrightarrow aS \mathop{\Longrightarrow}^{*}\limits \omega = a\omega_1,$$</p>
+<p>​    <script type="math/tex">S\Longrightarrow aS \mathop{\Longrightarrow}^{*}\limits \omega = a\omega_1,</script></p>
 <p>​    可知 $\vert\omega_1\vert = n - 1$. 由归纳假设得 $\omega_1$ 中不含子串 $ba$.</p>
 <p>​    又因为 $\omega = a\omega_1$ 以 $a$ 开头, 所以 $\omega$ 中不含子串 $ba$.</p>
 <p>​    若该推导形如</p>
-<p>​    $$S\Longrightarrow Sb \mathop{\Longrightarrow}^{*}\limits \omega = \omega_2b,$$</p>
+<p>​    <script type="math/tex">S\Longrightarrow Sb \mathop{\Longrightarrow}^{*}\limits \omega = \omega_2b,</script></p>
 <p>​    可知 $\vert\omega_2\vert = n - 1$. 由归纳假设得 $\omega_2$ 中不含子串 $ba$.</p>
 <p>​    又因为 $\omega = \omega_2b$ 以 $b$ 结尾, 所以 $\omega$ 中不含子串 $ba$.</p>
 <p>​    至此归纳得证.</p>
@@ -746,10 +746,10 @@
 <p>​    记 $l = k - i - j$, 我们给出一个推导 $S\mathop{\Longrightarrow}^{*}\limits\omega$ 的构造.</p>
 <p>​    \begin{equation*}</p>
 <p>​        \begin{aligned}</p>
-<p>​            S &amp;\Longrightarrow aSc \mathop{\Longrightarrow}^{*}\limits a^iSc^i \</p>
-<p>​              &amp;\Longrightarrow a^iAc^i \Longrightarrow a^ibAc^{i + 1} \</p>
-<p>​              &amp;\mathop{\Longrightarrow}^{*}\limits a^ib^jAc^{i + j} \Longrightarrow a^ib^jBc^{i + j} \</p>
-<p>​              &amp;\Longrightarrow a^ib^jBc^{i + j + 1} \mathop{\Longrightarrow}^{*}\limits a^ib^jBc^{i + j + l} \ </p>
+<p>​            S &amp;\Longrightarrow aSc \mathop{\Longrightarrow}^{*}\limits a^iSc^i \\</p>
+<p>​              &amp;\Longrightarrow a^iAc^i \Longrightarrow a^ibAc^{i + 1} \\</p>
+<p>​              &amp;\mathop{\Longrightarrow}^{*}\limits a^ib^jAc^{i + j} \Longrightarrow a^ib^jBc^{i + j} \\</p>
+<p>​              &amp;\Longrightarrow a^ib^jBc^{i + j + 1} \mathop{\Longrightarrow}^{*}\limits a^ib^jBc^{i + j + l} \\ </p>
 <p>​              &amp;\Longrightarrow a^ib^jc^{i + j + l} = a^ib^jc^k = \omega.</p>
 <p>​        \end{aligned}</p>
 <p>​    \end{equation*}</p>
@@ -758,42 +758,42 @@
 <p>​    容易得到这个推导的步数至少为 $3$. 对推导 $S\mathop{\Longrightarrow}^{*}\limits\omega$ 中的步数进行归纳:</p>
 <p>​    \textbf{<strong>基础:</strong>} 如果该推导是 $3$ 步完成的, 那么由 $S\Longrightarrow A\Longrightarrow B\Longrightarrow\varepsilon$,</p>
 <p>​    可得</p>
-<p>​    $$\omega = \varepsilon = a^0b^0c^0,$$</p>
+<p>​    <script type="math/tex">\omega = \varepsilon = a^0b^0c^0,</script></p>
 <p>​    满足 $i + j = 0 + 0 \le 0 = k $成立. 至此基础得证.</p>
 <p>​    \textbf{<strong>归纳:</strong>} 现在假定该推导共包含 $n + 1$ 步, 其中 $n\ge 3$, 并且对于任何 $n$ 步以内完成的推导上述命题都为真.</p>
 <p>​    容易知道第 $n + 1$ 步推导一定使用了产生式:</p>
-<p>​    $$B\longrightarrow\varepsilon,$$</p>
+<p>​    <script type="math/tex">B\longrightarrow\varepsilon,</script></p>
 <p>​    若第 $n$ 步推导使用了产生式:</p>
-<p>​    $$B\longrightarrow Bc,$$</p>
+<p>​    <script type="math/tex">B\longrightarrow Bc,</script></p>
 <p>​    那么全部推导过程形如</p>
-<p>​    $$S\mathop{\Longrightarrow}^{*}\limits uBv \Longrightarrow uBcv \Longrightarrow ucv = \omega.$$</p>
+<p>​    <script type="math/tex">S\mathop{\Longrightarrow}^{*}\limits uBv \Longrightarrow uBcv \Longrightarrow ucv = \omega.</script></p>
 <p>​    不妨考虑一个 $n$ 步的推导</p>
-<p>​    $$S\mathop{\Longrightarrow}^{*}\limits uBv \Longrightarrow uv.$$</p>
+<p>​    <script type="math/tex">S\mathop{\Longrightarrow}^{*}\limits uBv \Longrightarrow uv.</script></p>
 <p>​    由归纳假设, 串 $uv$ 形如 $a^{i’}b^{j’}c^{k’}, \mbox{其中}\thinspace i’ + j’ \le k’$.</p>
 <p>​    那么串 $\omega = ucv$ 形如 $a^ib^jc^k = a^{i’}b^{j’}c^{k’ + 1}$, </p>
 <p>​    </p>
 <p>​    其中 $ i + j =  i’ + j’ \le k’ &lt; k’ + 1 = k.$ 从而 $\omega\in L(G)$.</p>
 <p>​    若第 $n$ 步推导使用了产生式:</p>
-<p>​    $$A\longrightarrow B,$$</p>
+<p>​    <script type="math/tex">A\longrightarrow B,</script></p>
 <p>​    考虑第 $n - 1$ 步. 若第 $n - 1$ 步推导使用了产生式:</p>
-<p>​    $$A\longrightarrow bAc,$$</p>
+<p>​    <script type="math/tex">A\longrightarrow bAc,</script></p>
 <p>​    那么全部推导过程形如</p>
-<p>​    $$S\mathop{\Longrightarrow}^{*}\limits pAq \Longrightarrow pbAcq \Longrightarrow pbBcq \Longrightarrow pbcq = \omega.$$</p>
+<p>​    <script type="math/tex">S\mathop{\Longrightarrow}^{*}\limits pAq \Longrightarrow pbAcq \Longrightarrow pbBcq \Longrightarrow pbcq = \omega.</script></p>
 <p>​    不妨考虑一个 $n$ 步的推导</p>
-<p>​    $$S\mathop{\Longrightarrow}^{*}\limits pAq \Longrightarrow pBq \Longrightarrow pq.$$</p>
+<p>​    <script type="math/tex">S\mathop{\Longrightarrow}^{*}\limits pAq \Longrightarrow pBq \Longrightarrow pq.</script></p>
 <p>​    由归纳假设, 串 $pq$ 形如 $a^{i’}b^{j’}c^{k’}, \mbox{其中}\thinspace i’ + j’ \le k’$.</p>
 <p>​    那么串 $\omega = pbcq$ 形如 $a^ib^jc^k = a^{i’}b^{j’ + 1}c^{k’ + 1}$,</p>
 <p>​    </p>
 <p>​    其中 $i + j =  i’ + j’ + 1 \le k’ + 1 = k.$ 从而 $\omega\in L(G)$.</p>
 <p>​    若第 $n - 1$ 步推导使用了产生式:</p>
-<p>​    $$S\longrightarrow A,$$</p>
+<p>​    <script type="math/tex">S\longrightarrow A,</script></p>
 <p>​    那么考虑第 $n - 2$ 步. 易知第 $n - 2$ 步推导只能使用了产生式:</p>
-<p>​    $$S\longrightarrow aSc,$$</p>
+<p>​    <script type="math/tex">S\longrightarrow aSc,</script></p>
 <p>​    </p>
 <p>​    那么全部推导过程形如</p>
-<p>​    $$S\mathop{\Longrightarrow}^{*}\limits xSy \Longrightarrow xaScy \Longrightarrow xaAcy \Longrightarrow xaBcy = \Longrightarrow xacy \omega.$$</p>
+<p>​    <script type="math/tex">S\mathop{\Longrightarrow}^{*}\limits xSy \Longrightarrow xaScy \Longrightarrow xaAcy \Longrightarrow xaBcy = \Longrightarrow xacy \omega.</script></p>
 <p>​    不妨考虑一个 $n$ 步的推导</p>
-<p>​    $$S\mathop{\Longrightarrow}^{*}\limits xSy \Longrightarrow xAy \Longrightarrow xBy \Longrightarrow xy.$$</p>
+<p>​    <script type="math/tex">S\mathop{\Longrightarrow}^{*}\limits xSy \Longrightarrow xAy \Longrightarrow xBy \Longrightarrow xy.</script></p>
 <p>​    由归纳假设, 串 $xy$ 形如 $a^{i’}b^{j’}c^{k’}, \mbox{其中}\thinspace i’ + j’ \le k’$.</p>
 <p>​    那么串 $\omega = xacy$ 形如 $a^ib^jc^k = a^{i’ + 1}b^{j’}c^{k’ + 1}$,</p>
 <p>​    </p>
@@ -802,8 +802,8 @@
 <h3 id="Ex-3"><a href="#Ex-3" class="headerlink" title="*Ex 3"></a>*Ex 3</h3><p>​    一个可行的上下文无关文法是:</p>
 <p>​    \begin{equation*}</p>
 <p>​        \begin{aligned}</p>
-<p>​            S &amp;\rightarrow BA \</p>
-<p>​            A &amp;\rightarrow aAa \mid bAb \mid acBca \mid bcBcb \</p>
+<p>​            S &amp;\rightarrow BA \\</p>
+<p>​            A &amp;\rightarrow aAa \mid bAb \mid acBca \mid bcBcb \\</p>
 <p>​            B &amp;\rightarrow aB \mid bB \mid acB \mid bcB \mid \varepsilon.</p>
 <p>​        \end{aligned}</p>
 <p>​    \end{equation*}</p>
@@ -1194,7 +1194,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">85k</span>
+                        class="white-color">73k</span>
             
             
             

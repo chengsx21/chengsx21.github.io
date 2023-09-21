@@ -439,7 +439,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    408
+                    394
                 </div>
                 
 
@@ -469,15 +469,34 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="必做题"><a href="#必做题" class="headerlink" title="必做题"></a>必做题</h2><h3 id="Ex-8-2-2-c"><a href="#Ex-8-2-2-c" class="headerlink" title="Ex.8.2.2(c)"></a>Ex.8.2.2(c)</h3><p>​    一个满足条件的 $TM$ 为:<br><img src="/pic/45.png"></p>
-<h3 id="Ex-8-2-3"><a href="#Ex-8-2-3" class="headerlink" title="Ex.8.2.3"></a>Ex.8.2.3</h3><p>​    $(a)$ 构造图灵机<br>​    $$M = \left({q_0, q_1, q_2, q_3, q_4, q_f}, {0, 1, {$}}, {0, 1, {$}, B}, \delta, q_0, B, {q_f}\right).$$<br>​    转移函数 $\delta$ 为:<br>$$<br>\begin{aligned}<br>\delta(q_0, $) &amp;= (q_1, $, R) \<br>\delta(q_1, 0) &amp;= (q_1, 0, R) \<br>\delta(q_1, 1) &amp;= (q_1, 1, R) \<br>\delta(q_1, B) &amp;= (q_2, B, L) \<br>\delta(q_2, 0) &amp;= (q_3, 1, L) \<br>\delta(q_2, 1) &amp;= (q_4, 0, L) \<br>\delta(q_3, 0) &amp;= (q_3, 0 , L) \<br>\delta(q_3, 1) &amp;= (q_3, 1 , L) \<br>\delta(q_3, $) &amp;= (q_f, $ , R) \<br>\delta(q_4, 0) &amp;= (q_3, 1 , L) \<br>\delta(q_4, 1) &amp;= (q_4, 0 , L) \<br>\delta(q_4, $) &amp;= (q_f, 1 , L)<br>\end{aligned}<br>$$<br>​    各状态的含义:</p>
+                <h2 id="必做题"><a href="#必做题" class="headerlink" title="必做题"></a>必做题</h2><h3 id="Ex-8-2-2-c"><a href="#Ex-8-2-2-c" class="headerlink" title="Ex.8.2.2(c)"></a>Ex.8.2.2(c)</h3><p>​    一个满足条件的 $TM$ 为:<br><img src="/pic/45.png" alt=""></p>
+<h3 id="Ex-8-2-3"><a href="#Ex-8-2-3" class="headerlink" title="Ex.8.2.3"></a>Ex.8.2.3</h3><p>​    $(a)$ 构造图灵机<br>​    <script type="math/tex">M = \left(\{q_0, q_1, q_2, q_3, q_4, q_f\}, \{0, 1, {\$}\}, \{0, 1, {\$}, B\}, \delta, q_0, B, \{q_f\}\right).</script><br>​    转移函数 $\delta$ 为:</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\delta(q_0, \$) &= (q_1, \$, R) \\
+\delta(q_1, 0) &= (q_1, 0, R) \\
+\delta(q_1, 1) &= (q_1, 1, R) \\
+\delta(q_1, B) &= (q_2, B, L) \\
+\delta(q_2, 0) &= (q_3, 1, L) \\
+\delta(q_2, 1) &= (q_4, 0, L) \\
+\delta(q_3, 0) &= (q_3, 0 , L) \\
+\delta(q_3, 1) &= (q_3, 1 , L) \\
+\delta(q_3, \$) &= (q_f, \$ , R) \\
+\delta(q_4, 0) &= (q_3, 1 , L) \\
+\delta(q_4, 1) &= (q_4, 0 , L) \\
+\delta(q_4, \$) &= (q_f, 1 , L)
+\end{aligned}</script><p>​    各状态的含义:</p>
 <p>​    $q0$: 初态, 带头所扫描的符号必为 $$$;</p>
 <p>​    $q1$: 右移状态, 当前带头所扫描的符号若为 $0$ 和 $1$ 则一直右移, 直至遇到空白带符为止；</p>
 <p>​    $q2$: 处于二进制数的末位态, 带头所扫描的符号必为 $0$ 和 $1$, 否则无动作;</p>
 <p>​    $q3$: 非进位左移状态, 当前带头所扫描的符号若为 $0$ 和 $1$ 则一直左移, 直至遇到 $$$为止;</p>
 <p>​    $q4$: 进位左移状态, 带头扫描符号若为 $0$ 则将其变为 $1$, 并转 $q3$; 带头扫描符号若为 $1$ 则将其变为 $0$, 产生新的进位; 带头扫描符号若为 $$$, 产生一个新的进位.</p>
-<p>​    $(b)$ 该 $TM$ 的 $ID$ 序列为:<br>$$<br>\begin{aligned}<br>q_0$111 &amp;\vdash $q_1111\vdash $1q_111\vdash $11q_11\vdash $111q_1B\vdash $11q_21 \<br>&amp;\vdash $1q_410\vdash $q_4100\vdash q_4$000\vdash q_fB1000\vdash q_f1000<br>\end{aligned}<br>$$</p>
-<h3 id="Ex-8-2-5-b"><a href="#Ex-8-2-5-b" class="headerlink" title="Ex.8.2.5(b)"></a>Ex.8.2.5(b)</h3><p>​    这个图灵机接受的语言:<br>​    $$L(M) = L(0^<em>11^</em>).$$<br>​    即语言 $L(M)$ 中的串至少包含一个 $1$, 第一个 $1$ 之前只可能出现 $0$, 每个 $1$ 之后只可能跟随 $1$.</p>
+<p>​    $(b)$ 该 $TM$ 的 $ID$ 序列为:</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+q_0\$111 &\vdash \$q_1111\vdash \$1q_111\vdash \$11q_11\vdash \$111q_1B\vdash \$11q_21 \\
+&\vdash \$1q_410\vdash \$q_4100\vdash q_4\$000\vdash q_fB1000\vdash q_f1000
+\end{aligned}</script><h3 id="Ex-8-2-5-b"><a href="#Ex-8-2-5-b" class="headerlink" title="Ex.8.2.5(b)"></a>Ex.8.2.5(b)</h3><p>​    这个图灵机接受的语言:<br>​    <script type="math/tex">L(M) = L(0^*11^*).</script><br>​    即语言 $L(M)$ 中的串至少包含一个 $1$, 第一个 $1$ 之前只可能出现 $0$, 每个 $1$ 之后只可能跟随 $1$.</p>
 
                 
             </div>
@@ -869,7 +888,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">85k</span>
+                        class="white-color">73k</span>
             
             
             

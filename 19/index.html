@@ -505,7 +505,6 @@ public<span class="token operator">:</span>
     <span class="token keyword">void</span> <span class="token function">push</span><span class="token punctuation">(</span><span class="token keyword">const</span> T<span class="token operator">&amp;</span> x<span class="token punctuation">)</span><span class="token punctuation">;</span>
     T <span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>其中每次基本操作时间复杂度均为 $O(1)$.</p>
 <p>实现多项式类:</p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c">class Poly <span class="token punctuation">{</span>
@@ -521,7 +520,6 @@ public<span class="token operator">:</span>
     Poly operator<span class="token operator">^</span><span class="token punctuation">(</span><span class="token keyword">const</span> Poly <span class="token operator">&amp;</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">void</span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>初始化常数多项式, 使用构造函数 <code>Poly(long long a)</code>; 初始化一次多项式, 使用构造函数 <code>Poly()</code>.</p>
 <p>在每次二元运算操作后, 将运算结果更新至第一个操作对象中, 同时更新其记录的最高次数.</p>
 <h3 id="问题发现与优化"><a href="#问题发现与优化" class="headerlink" title="问题发现与优化"></a>问题发现与优化</h3><p>开始的提交中测例 <code>15</code> 会出现 <code>Time Limit Exceeded</code> 的问题. 通过对代码具体实现进行了若干优化解决了该问题.</p>
@@ -545,7 +543,6 @@ Poly operator<span class="token operator">*</span><span class="token punctuation
     <span class="token keyword">return</span> <span class="token operator">*</span>this<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>推测是因为多项式乘法的时间常数过大, 导致实际运算超时. 在多项式乘法中添加了判断两个多项式次数是否为 <code>0</code> 的过程, 使得计算常多项式乘积耗时降低, 解决了测例 <code>15</code> 的 <code>Time Limit Exceeded</code> 问题.</p>
 <h3 id="复杂度估计"><a href="#复杂度估计" class="headerlink" title="复杂度估计"></a>复杂度估计</h3><p>算法时间复杂度主要来自遍历输入表达式与多项式计算两部分:</p>
 <p>在遍历输入表达式时, 每个元素最多入栈和出栈一次, 每次操作均为常数时间, 从而时间复杂度与输入表达式长度成正比, 为 $O(n)$;</p>
@@ -557,7 +554,6 @@ Poly operator<span class="token operator">*</span><span class="token punctuation
 Stack<span class="token operator">&lt;</span>Poly<span class="token operator">&gt;</span> opnd <span class="token operator">=</span> Stack<span class="token operator">&lt;</span>Poly<span class="token operator">&gt;</span><span class="token punctuation">(</span>Max<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 多项式栈.</span>
 Stack<span class="token operator">&lt;</span><span class="token keyword">char</span><span class="token operator">&gt;</span> optr <span class="token operator">=</span> Stack<span class="token operator">&lt;</span><span class="token keyword">char</span><span class="token operator">&gt;</span><span class="token punctuation">(</span>Max<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 运算符栈.</span>
 <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>主要内存被分配给多项式栈与运算符栈, 程序占用的极限内存约为: $4B\times 66\times 9 \times 10^5 + 1B \times 9 \times 10^5 = 238500KB = 233.9MB &lt; 256MB$.</p>
 <p>恰好满足题意.</p>
 
@@ -944,7 +940,7 @@ Stack<span class="token operator">&lt;</span><span class="token keyword">char</s
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">85k</span>
+                        class="white-color">73k</span>
             
             
             

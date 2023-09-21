@@ -439,14 +439,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.6k
+                    1.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    7 分
                 </div>
                 
 
@@ -470,38 +470,68 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="Chap-5-不等式与极限定理"><a href="#Chap-5-不等式与极限定理" class="headerlink" title="Chap 5 不等式与极限定理"></a>Chap 5 不等式与极限定理</h1><h2 id="概率不等式"><a href="#概率不等式" class="headerlink" title="概率不等式"></a>概率不等式</h2><ul>
-<li><p><strong>定义(Markov 不等式)</strong>  $Y\ge 0$, $\forall,a&gt;0$, 有<br>$$<br>P(Y\ge a)\le \dfrac{E(Y)}{a}.<br>$$</p>
-</li>
-<li><p><strong>证明</strong>  令示性变量<br>$$<br>I=<br>\begin{cases}<br>1,Y\ge a;\<br>0,Y&lt;a.<br>\end{cases}<br>$$<br>从而有 $I\le \dfrac{Y}{a}$, 两边取期望, 即得<br>$$<br>P(Y\ge a)\le \dfrac{E(Y)}{a}.<br>$$</p>
-</li>
-<li><p><strong>定义(Chebyshev 不等式)</strong>  $Var(Y)$ 存在, $\forall,a&gt;0$, 有<br>$$<br>P(\vert Y-E(Y)\vert\ge a)\le \dfrac{Var(Y)}{a^2}.<br>$$</p>
-</li>
-<li><p><strong>证明</strong>  注意到<br>  $$<br>  \begin{aligned}<br>  P(\vert Y-E(Y)\vert\ge a)&amp;=P((Y-E(Y))^2\ge a^2)\<br>  &amp;\le\dfrac{E[(Y-E(Y))^2]}{a^2}\<br>  &amp;=\dfrac{Var(Y)}{a^2}.<br>  \end{aligned}<br>  $$</p>
-</li>
+<li><p><strong>定义(Markov 不等式)</strong>  $Y\ge 0$, $\forall\,a&gt;0$, 有</p>
+<script type="math/tex; mode=display">
+P(Y\ge a)\le \dfrac{E(Y)}{a}.</script></li>
+<li><p><strong>证明</strong>  令示性变量</p>
+<script type="math/tex; mode=display">
+I=
+\begin{cases}
+1,Y\ge a;\\
+0,Y<a.
+\end{cases}</script><p>从而有 $I\le \dfrac{Y}{a}$, 两边取期望, 即得</p>
+<script type="math/tex; mode=display">
+P(Y\ge a)\le \dfrac{E(Y)}{a}.</script></li>
+<li><p><strong>定义(Chebyshev 不等式)</strong>  $Var(Y)$ 存在, $\forall\,a&gt;0$, 有</p>
+<script type="math/tex; mode=display">
+P(\vert Y-E(Y)\vert\ge a)\le \dfrac{Var(Y)}{a^2}.</script></li>
+<li><p><strong>证明</strong>  注意到</p>
+<script type="math/tex; mode=display">
+  \begin{aligned}
+  P(\vert Y-E(Y)\vert\ge a)&=P((Y-E(Y))^2\ge a^2)\\
+  &\le\dfrac{E[(Y-E(Y))^2]}{a^2}\\
+  &=\dfrac{Var(Y)}{a^2}.
+  \end{aligned}</script></li>
 <li><p><strong>注</strong>  若 $Var(Y)=0$, 则 $P(Y=E(Y))=1$. ($Y=E(Y)$ $a.s.$)</p>
 </li>
-<li><p><strong>定义(Chernoff 不等式)</strong>  $\forall,a&gt;0$, $t&gt;0$, 有<br>$$<br>P(Y\ge a)\le \dfrac{E(e^{tY})}{e^{ta}}.<br>$$</p>
-</li>
-<li><p><strong>证明</strong>  注意到<br>  $$<br>  \begin{aligned}<br>  P(Y\ge a)&amp;=P(e^{tY}\ge e^{ta}),(保证,e^{tY}&gt;0)\<br>  &amp;\le\dfrac{E(e^{tY})}{e^{ta}}.<br>  \end{aligned}<br>  $$</p>
-</li>
+<li><p><strong>定义(Chernoff 不等式)</strong>  $\forall\,a&gt;0$, $t&gt;0$, 有</p>
+<script type="math/tex; mode=display">
+P(Y\ge a)\le \dfrac{E(e^{tY})}{e^{ta}}.</script></li>
+<li><p><strong>证明</strong>  注意到</p>
+<script type="math/tex; mode=display">
+  \begin{aligned}
+  P(Y\ge a)&=P(e^{tY}\ge e^{ta})\,(保证\,e^{tY}>0)\\
+  &\le\dfrac{E(e^{tY})}{e^{ta}}.
+  \end{aligned}</script></li>
 <li><p><strong>例</strong>  $X\sim N(0,1)$, 估计 $P(\vert X\vert\ge 3)$.</p>
 </li>
-<li><p><strong>解答</strong>  我们有<br>  $$<br>  P(\vert X\vert\ge 3)\le<br>  \begin{cases}<br>  \dfrac{E(\vert X\vert)}{3}=\dfrac{1}{3}\sqrt{\dfrac{2}{\pi}}\approx 0.27;\quad(Markov)\<br>  \dfrac{Var(X)}{3^2}=\dfrac{1}{9}\approx 0.11;\quad(Chebyshev)\<br>  \dfrac{2E(e^{tX})}{e^{3t}}=2e^{\tfrac{t^2}{2}-3t}\le 2e^{-\tfrac{9}{2}}\approx 0.02.\quad(Chernoff)<br>  \end{cases}<br>  $$</p>
-</li>
+<li><p><strong>解答</strong>  我们有</p>
+<script type="math/tex; mode=display">
+  P(\vert X\vert\ge 3)\le 
+  \begin{cases}
+  \dfrac{E(\vert X\vert)}{3}=\dfrac{1}{3}\sqrt{\dfrac{2}{\pi}}\approx 0.27;\quad(Markov)\\
+  \dfrac{Var(X)}{3^2}=\dfrac{1}{9}\approx 0.11;\quad(Chebyshev)\\
+  \dfrac{2E(e^{tX})}{e^{3t}}=2e^{\tfrac{t^2}{2}-3t}\le 2e^{-\tfrac{9}{2}}\approx 0.02.\quad(Chernoff)
+  \end{cases}</script></li>
 </ul>
 <h2 id="大数定律-LLN"><a href="#大数定律-LLN" class="headerlink" title="大数定律 (LLN)"></a>大数定律 (LLN)</h2><ul>
-<li><p><strong>定义</strong>  $X_1,X_2,\cdots$ <strong>iid</strong> (独立同分布), $E(X_i)=\mu$, $Var(X_i)=\sigma^2&gt;0$. 定义:<br>$$<br>\overline{X}=\dfrac{1}{n}\sum_{i=1}^{n}X_i,, E(\overline{X})=\mu,,Var(\overline{X})=\dfrac{\sigma^2}{n}\rightarrow 0.<br>$$</p>
-</li>
+<li><p><strong>定义</strong>  $X_1,X_2,\cdots$ <strong>iid</strong> (独立同分布), $E(X_i)=\mu$, $Var(X_i)=\sigma^2&gt;0$. 定义:</p>
+<script type="math/tex; mode=display">
+\overline{X}=\dfrac{1}{n}\sum_{i=1}^{n}X_i,\, E(\overline{X})=\mu,\,Var(\overline{X})=\dfrac{\sigma^2}{n}\rightarrow 0.</script></li>
 <li><p><strong>定义(Khinchin 弱大数定律)(WLLN)</strong> </p>
-<p>  若 $X_1,X_2,\cdots$ <strong>iid</strong>, $E(X_i)=\mu$, $Var(X_i)=\sigma^2&gt;0$. 则 $\forall\varepsilon&gt;0$, 有<br>  $$<br>  \lim_{n\rightarrow\infty}P(\vert \overline{X}-\mu\vert\ge \varepsilon)=0.<br>  $$</p>
-</li>
-<li><p><strong>证明</strong>  我们有<br>  $$<br>  P(\vert \overline{X}-\mu\vert\ge \varepsilon)\le\dfrac{Var(\overline{X})}{\varepsilon^2}=\dfrac{\sigma^2}{n\varepsilon^2}\rightarrow 0, 当,n\rightarrow 0.<br>  $$</p>
-</li>
+<p>  若 $X_1,X_2,\cdots$ <strong>iid</strong>, $E(X_i)=\mu$, $Var(X_i)=\sigma^2&gt;0$. 则 $\forall\varepsilon&gt;0$, 有</p>
+<script type="math/tex; mode=display">
+  \lim_{n\rightarrow\infty}P(\vert \overline{X}-\mu\vert\ge \varepsilon)=0.</script></li>
+<li><p><strong>证明</strong>  我们有</p>
+<script type="math/tex; mode=display">
+  P(\vert \overline{X}-\mu\vert\ge \varepsilon)\le\dfrac{Var(\overline{X})}{\varepsilon^2}=\dfrac{\sigma^2}{n\varepsilon^2}\rightarrow 0, 当\,n\rightarrow 0.</script></li>
 <li><p><strong>注</strong></p>
 <ul>
 <li><p>$\mu\approx\overline{X}$ (在很大概率意义下可以用作样本均值估计);</p>
 </li>
-<li><p>$\forall,\varepsilon&gt;0$, $\forall,\alpha&gt;0$, $\exists N&gt;0$ 使得当 $n\ge N$ 时<br>$$<br>P(\vert \overline{X}-\mu\vert\ge \varepsilon)\le\alpha.<br>$$<br>其中 $\varepsilon$ 体现了精度，$\alpha$ 体现了置信度.</p>
+<li><p>$\forall\,\varepsilon&gt;0$, $\forall\,\alpha&gt;0$, $\exists N&gt;0$ 使得当 $n\ge N$ 时</p>
+<script type="math/tex; mode=display">
+P(\vert \overline{X}-\mu\vert\ge \varepsilon)\le\alpha.</script><p>其中 $\varepsilon$ 体现了精度，$\alpha$ 体现了置信度.</p>
 </li>
 <li><p><strong>Bernoulli LLN</strong>: $X_i\sim B(p)$, 则特殊地得到 <strong>Bernoulli</strong> 大数定律。</p>
 </li>
@@ -515,36 +545,69 @@
 </li>
 </ul>
 </li>
-<li><p><strong>定义(依概率收敛)</strong><br>$$<br>Y_n\stackrel{P}{\longrightarrow}Y\Longleftrightarrow\forall\varepsilon&gt;0, \lim_{n\rightarrow\infty}P(\vert Y_n-Y\vert\ge\varepsilon)=0.<br>$$</p>
-</li>
+<li><p><strong>定义(依概率收敛)</strong></p>
+<script type="math/tex; mode=display">
+Y_n\stackrel{P}{\longrightarrow}Y\Longleftrightarrow\forall\varepsilon>0, \lim_{n\rightarrow\infty}P(\vert Y_n-Y\vert\ge\varepsilon)=0.</script></li>
 <li><p><strong>注</strong>  <strong>WLLN</strong> $\Rightarrow\overline{X}\stackrel{P} {\longrightarrow}\mu$ (考虑偏差).</p>
 </li>
 <li><p><strong>定义(Kolmogov 强大数定律)(SLLN)</strong></p>
-<p>  若 $X_1,X_2,\cdots$ <strong>iid</strong>, $E(X_i)=\mu$. 则有<br>  $$<br>  P(\omega\in\Omega\mid \lim_{n\rightarrow\infty}\overline{X_n}(\omega)=\mu)=P(\lim_{n\rightarrow\infty}\overline{X}=\mu)=1.<br>  $$</p>
-</li>
+<p>  若 $X_1,X_2,\cdots$ <strong>iid</strong>, $E(X_i)=\mu$. 则有</p>
+<script type="math/tex; mode=display">
+  P(\omega\in\Omega\mid \lim_{n\rightarrow\infty}\overline{X_n}(\omega)=\mu)=P(\lim_{n\rightarrow\infty}\overline{X}=\mu)=1.</script></li>
 <li><p><strong>注</strong>  若 $X_i\sim B(p)$ 则 $\overline{X}$ 为频率,从而概率的频率解释是合理的.</p>
 </li>
-<li><p><strong>定义(以概率 1 收敛)</strong><br>$$<br>Y_n\stackrel{a.s.}{\longrightarrow}Y\Longleftrightarrow P(\lim_{n\rightarrow\infty}Y_n=Y)=1.<br>$$</p>
-</li>
+<li><p><strong>定义(以概率 1 收敛)</strong></p>
+<script type="math/tex; mode=display">
+Y_n\stackrel{a.s.}{\longrightarrow}Y\Longleftrightarrow P(\lim_{n\rightarrow\infty}Y_n=Y)=1.</script></li>
 <li><p><strong>注</strong>  <strong>SLLN</strong> $\Rightarrow\overline{X}\stackrel{a.s.} {\longrightarrow}\mu$ (逐点考虑).</p>
 </li>
 <li><p><strong>例</strong>  (<strong>Monte Carlo</strong> 积分)</p>
 </li>
-<li><p><strong>解答</strong>  在 $[a,b]\times [0,c]$ 上取点 $(X_i,Y_i)$ <strong>iid</strong> 在矩形内均匀分布. 定义<br>  $$<br>  I_i=<br>  \begin{cases}<br>  1,(X_i,Y_i)\in D;\<br>  0,(X_i,Y_i)\notin D.<br>  \end{cases}<br>  $$<br>  则 $I_i\stackrel{iid} {\longrightarrow}B(p)$. 我们有<br>  $$<br>  P=\dfrac{1}{(b-a)c}\int_a^bg(x)dx\approx\dfrac{1}{n}\sum_{i=1}^{n}I_i.<br>  $$</p>
-</li>
+<li><p><strong>解答</strong>  在 $[a,b]\times [0,c]$ 上取点 $(X_i,Y_i)$ <strong>iid</strong> 在矩形内均匀分布. 定义</p>
+<script type="math/tex; mode=display">
+  I_i=
+  \begin{cases}
+  1,(X_i,Y_i)\in D;\\
+  0,(X_i,Y_i)\notin D.
+  \end{cases}</script><p>  则 $I_i\stackrel{iid} {\longrightarrow}B(p)$. 我们有</p>
+<script type="math/tex; mode=display">
+  P=\dfrac{1}{(b-a)c}\int_a^bg(x)dx\approx\dfrac{1}{n}\sum_{i=1}^{n}I_i.</script></li>
 <li><p><strong>例</strong>  两种收敛有什么差别?</p>
 </li>
-<li><p><strong>解答</strong>  考虑 $\Omega=[0,1]$ 均匀分布 (从而有 ($\Omega,\mathscr{F},P$)). 我们构造<br>$$<br>Y_1(\omega)=\omega+I_{[0,1]}(\omega)\<br>Y_2(\omega)=\omega+I_{[0,\frac{1}{2}]}(\omega)\<br>Y_3(\omega)=\omega+I_{[\frac{1}{2},1]}(\omega)\<br>Y_4(\omega)=\omega+I_{[0,\frac{1}{3}]}(\omega)\<br>Y_5(\omega)=\omega+I_{[\frac{1}{3},\frac{2}{3}]}(\omega)\<br>Y_6(\omega)=\omega+I_{[\frac{2}{3},1]}(\omega)\<br>\cdots\<br>Y(\omega)=\omega.<br>$$<br>因此有 $Y_n\stackrel{P} {\longrightarrow}Y$, 但是 $Y_n\stackrel{a.s.} {\longrightarrow}Y$ 不成立.</p>
-<p>这是因为 $\forall,\omega_0\in(0,1)$, $Y_n(\omega_0)$ 是振荡的, 它的极限不存在.</p>
+<li><p><strong>解答</strong>  考虑 $\Omega=[0,1]$ 均匀分布 (从而有 ($\Omega,\mathscr{F},P$)). 我们构造</p>
+<script type="math/tex; mode=display">
+Y_1(\omega)=\omega+I_{[0,1]}(\omega)\\
+Y_2(\omega)=\omega+I_{[0,\frac{1}{2}]}(\omega)\\
+Y_3(\omega)=\omega+I_{[\frac{1}{2},1]}(\omega)\\
+Y_4(\omega)=\omega+I_{[0,\frac{1}{3}]}(\omega)\\
+Y_5(\omega)=\omega+I_{[\frac{1}{3},\frac{2}{3}]}(\omega)\\
+Y_6(\omega)=\omega+I_{[\frac{2}{3},1]}(\omega)\\
+\cdots\\
+Y(\omega)=\omega.</script><p>因此有 $Y_n\stackrel{P} {\longrightarrow}Y$, 但是 $Y_n\stackrel{a.s.} {\longrightarrow}Y$ 不成立.</p>
+<p>这是因为 $\forall\,\omega_0\in(0,1)$, $Y_n(\omega_0)$ 是振荡的, 它的极限不存在.</p>
 </li>
 </ul>
 <h2 id="中心极限定理-CLT"><a href="#中心极限定理-CLT" class="headerlink" title="中心极限定理 (CLT)"></a>中心极限定理 (CLT)</h2><ul>
 <li><p><strong>定义(中心极限定理)(CLT)</strong></p>
-<p>若 $X_1,X_2,\cdots$ <strong>iid</strong>, $E(X_i)=\mu$, $Var(X_i)=\sigma^2&gt;0$. 我们有<br>$$<br>\lim_{n\rightarrow\infty}P\left(\dfrac{X_1+\cdots+X_n-n\mu}{\sqrt{n}\sigma}\le x\right)=\Phi(x),,\forall,x\in\mathbb{R}.<br>$$<br>其中 $\Phi(x)$ 为 $N(0,1)$ 的 <strong>CDF</strong>. 也即<br>$$<br>\lim_{n\rightarrow\infty}P\left(\dfrac{\overline{X}-\mu}{\tfrac{\sigma}{\sqrt{n}}}\le x\right)=\Phi(x),,\forall,x\in\mathbb{R}.<br>$$</p>
-</li>
+<p>若 $X_1,X_2,\cdots$ <strong>iid</strong>, $E(X_i)=\mu$, $Var(X_i)=\sigma^2&gt;0$. 我们有</p>
+<script type="math/tex; mode=display">
+\lim_{n\rightarrow\infty}P\left(\dfrac{X_1+\cdots+X_n-n\mu}{\sqrt{n}\sigma}\le x\right)=\Phi(x),\,\forall\,x\in\mathbb{R}.</script><p>其中 $\Phi(x)$ 为 $N(0,1)$ 的 <strong>CDF</strong>. 也即</p>
+<script type="math/tex; mode=display">
+\lim_{n\rightarrow\infty}P\left(\dfrac{\overline{X}-\mu}{\tfrac{\sigma}{\sqrt{n}}}\le x\right)=\Phi(x),\,\forall\,x\in\mathbb{R}.</script></li>
 <li><p><strong>证明</strong>  只在 $X_i$ 的 <strong>MGF</strong> 存在情形下证明, 记 $M(t)=M_{X_i}(t)$.</p>
-<p>  不失一般性地, 令 $\mu=0$, $\sigma^2=1$. 因此<br>  $$<br>  M(0)=E(1)=1,\<br>  M’(0)=E(X_i)=\mu=0,\<br>  M’’(0)=E(X_i^2)=\sigma^2=1.<br>  $$<br>  我们得到<br>  $$<br>  \begin{aligned}<br>  E(e^{t\frac{X_1+\cdots+X_n}{\sqrt{n}}})&amp;=M^n(\tfrac{t}{\sqrt{n}})\<br>  &amp;=\left(1+\tfrac{t^2}{2n}+o(\tfrac{t^2}{n})\right)^n\<br>  &amp;\rightarrow e^{\tfrac{t^2}{2}}.<br>  \end{aligned}<br>  $$</p>
-</li>
+<p>  不失一般性地, 令 $\mu=0$, $\sigma^2=1$. 因此</p>
+<script type="math/tex; mode=display">
+  M(0)=E(1)=1,\\
+  M'(0)=E(X_i)=\mu=0,\\
+  M''(0)=E(X_i^2)=\sigma^2=1.</script><p>  我们得到</p>
+<script type="math/tex; mode=display">
+  \begin{aligned}
+  E(e^{t\frac{X_1+\cdots+X_n}{\sqrt{n}}})&=M^n(\tfrac{t}{\sqrt{n}})\\
+  &=\left(1+\tfrac{t^2}{2n}+o(\tfrac{t^2}{n})\right)^n\\
+  &\rightarrow e^{\tfrac{t^2}{2}}.
+  \end{aligned}</script></li>
+</ul>
+<ul>
 <li><p><strong>注</strong></p>
 <ul>
 <li><p>上述 <strong>CLT</strong> 通常称为 <strong>Lindeberg-Levy CLT</strong>;</p>
@@ -557,23 +620,46 @@
 </ul>
 </li>
 <li><p><strong>定义(二项分布下 CLT 的连续性修正)</strong></p>
-<p>我们有 $P(t_1\le\sum\limits_{i=1}^{n}X_i\le t_2)\approx\Phi(y_2)-\Phi(y_1)$. 其中<br>$$<br>\begin{cases}<br>y_1=\dfrac{t_1-np-\tfrac{1}{2}}{\sqrt{np(1-p)}},\<br>y_2=\dfrac{t_2-np+\tfrac{1}{2}}{\sqrt{np(1-p)}}.<br>\end{cases}<br>$$<br>修正形式可计算单点 $P(S_n=k)$ 的概率, 对其他离散变量也同样适用.</p>
+<p>我们有 $P(t_1\le\sum\limits_{i=1}^{n}X_i\le t_2)\approx\Phi(y_2)-\Phi(y_1)$. 其中</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+y_1=\dfrac{t_1-np-\tfrac{1}{2}}{\sqrt{np(1-p)}},\\
+y_2=\dfrac{t_2-np+\tfrac{1}{2}}{\sqrt{np(1-p)}}.
+\end{cases}</script><p>修正形式可计算单点 $P(S_n=k)$ 的概率, 对其他离散变量也同样适用.</p>
 </li>
-<li><p><strong>定义(依分布收敛)</strong><br>$$<br>Y_n\stackrel{d}{\longrightarrow}Y\Longleftrightarrow \lim_{n\rightarrow\infty}F_n(x)=F(x).<br>$$</p>
-</li>
+<li><p><strong>定义(依分布收敛)</strong></p>
+<script type="math/tex; mode=display">
+Y_n\stackrel{d}{\longrightarrow}Y\Longleftrightarrow \lim_{n\rightarrow\infty}F_n(x)=F(x).</script></li>
+</ul>
+<ul>
 <li><p><strong>注</strong>  <strong>CLT</strong> $\Rightarrow Z_n=\dfrac{X_1+\cdots+X_n-n\mu}{\sqrt{n}\sigma}=\dfrac{\overline{X}-\mu}{\tfrac{\sigma}{\sqrt{n}}}$ (标准化).</p>
 </li>
 <li><p><strong>例(选举问题)</strong>  设 $p$ 为选民支持率(未知), 随机调查 $n$ 个人, 支持比例为 $p_n=\dfrac{1}{n}\sum\limits_{i=1}^{n}X_i$, 其中 $X_i\sim B(p)$. 若 $\varepsilon=0.03$, $1-\alpha=0.95$, 求 $n$ 的取值.</p>
 </li>
-<li><p><strong>解答</strong>  有<br>  $$<br>  P(\left|p_n-p\right|\ge\varepsilon)\le \alpha.<br>  $$<br>  由 <strong>CLT</strong> 可得<br>  $$<br>  \begin{aligned}<br>  P(\left|p_n-p\right|\ge\varepsilon)&amp;=1-P\Big(-\dfrac{\sqrt{n}\varepsilon}{\sigma}\le\dfrac{p_n-p}{\tfrac{\sigma}{\sqrt{n}}}\le\dfrac{\sqrt{n}\varepsilon}{\sigma}\Big)\<br>  &amp;=1-\Phi\Big(\dfrac{\sqrt{n}\varepsilon}{\sqrt{p(1-p)}}\Big)+\Phi\Big(-\dfrac{\sqrt{n}\varepsilon}{\sqrt{p(1-p)}}\Big)\<br>  &amp;=2-2\Phi\Big(\dfrac{\sqrt{n}\varepsilon}{\sqrt{p(1-p)}}\Big)\le\alpha.<br>  \end{aligned}<br>  $$<br>  即得<br>  $$<br>  \Phi\Big(\dfrac{\sqrt{n}\varepsilon}{\sqrt{p(1-p)}}\Big)\ge 1-\dfrac{\alpha}{2}.<br>  $$<br>  为使得对任意 $p$ 成立, 取 $p=\dfrac{1}{2}$, 即有<br>  $$<br>  \Phi\Big(2\sqrt{n}\varepsilon\Big)\ge 1-\dfrac{\alpha}{2}.<br>  $$<br>  注意到 $\Phi(1.96)\approx 0.975=1-\dfrac{\alpha}{2}$, 因此取 $n\ge 1068$ 即可 (与 $N$ 无关).</p>
+<li><p><strong>解答</strong>  有</p>
+<script type="math/tex; mode=display">
+  P(\left|p_n-p\right|\ge\varepsilon)\le \alpha.</script><p>  由 <strong>CLT</strong> 可得</p>
+<script type="math/tex; mode=display">
+  \begin{aligned}
+  P(\left|p_n-p\right|\ge\varepsilon)&=1-P\Big(-\dfrac{\sqrt{n}\varepsilon}{\sigma}\le\dfrac{p_n-p}{\tfrac{\sigma}{\sqrt{n}}}\le\dfrac{\sqrt{n}\varepsilon}{\sigma}\Big)\\
+  &=1-\Phi\Big(\dfrac{\sqrt{n}\varepsilon}{\sqrt{p(1-p)}}\Big)+\Phi\Big(-\dfrac{\sqrt{n}\varepsilon}{\sqrt{p(1-p)}}\Big)\\
+  &=2-2\Phi\Big(\dfrac{\sqrt{n}\varepsilon}{\sqrt{p(1-p)}}\Big)\le\alpha.
+  \end{aligned}</script><p>  即得</p>
+<script type="math/tex; mode=display">
+  \Phi\Big(\dfrac{\sqrt{n}\varepsilon}{\sqrt{p(1-p)}}\Big)\ge 1-\dfrac{\alpha}{2}.</script><p>  为使得对任意 $p$ 成立, 取 $p=\dfrac{1}{2}$, 即有</p>
+<script type="math/tex; mode=display">
+  \Phi\Big(2\sqrt{n}\varepsilon\Big)\ge 1-\dfrac{\alpha}{2}.</script><p>  注意到 $\Phi(1.96)\approx 0.975=1-\dfrac{\alpha}{2}$, 因此取 $n\ge 1068$ 即可 (与 $N$ 无关).</p>
 </li>
 </ul>
 <h2 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h2><h3 id="尾部概率控制"><a href="#尾部概率控制" class="headerlink" title="尾部概率控制"></a>尾部概率控制</h3><h3 id="极限定理"><a href="#极限定理" class="headerlink" title="极限定理"></a>极限定理</h3><ul>
 <li><strong>LLN</strong>: 弱 or 强</li>
 <li><strong>CLT</strong></li>
 </ul>
-<h3 id="三种收敛"><a href="#三种收敛" class="headerlink" title="三种收敛"></a>三种收敛</h3><h3 id="CLT-应用"><a href="#CLT-应用" class="headerlink" title="CLT 应用"></a><strong>CLT</strong> 应用</h3><p>$$<br>\begin{cases}<br>X_1+\cdots+X_n\sim N(n\mu,n\sigma^2);\<br>\overline{X}\sim N(\mu,\dfrac{\sigma^2}{n}).<br>\end{cases}<br>$$</p>
-
+<h3 id="三种收敛"><a href="#三种收敛" class="headerlink" title="三种收敛"></a>三种收敛</h3><h3 id="CLT-应用"><a href="#CLT-应用" class="headerlink" title="CLT 应用"></a><strong>CLT</strong> 应用</h3><script type="math/tex; mode=display">
+\begin{cases}
+X_1+\cdots+X_n\sim N(n\mu,n\sigma^2);\\
+\overline{X}\sim N(\mu,\dfrac{\sigma^2}{n}).
+\end{cases}</script>
                 
             </div>
             <hr/>
@@ -964,7 +1050,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">85k</span>
+                        class="white-color">73k</span>
             
             
             

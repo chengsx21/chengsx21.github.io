@@ -439,14 +439,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    9.1k
+                    8.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    51 分
+                    49 分
                 </div>
                 
 
@@ -469,340 +469,650 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="1-解析函数"><a href="#1-解析函数" class="headerlink" title="1. 解析函数"></a>1. 解析函数</h3><p>$\textbf{Example:}$<br>对于 $x, y\in\mathbb{R}$, 求 $\cos(x + iy)$ 的实, 虚部, 并说明方程<br>$$\cos(x + iy) = A + iB\thinspace(A, B\in\mathbb{R})$$</p>
-<p>有无穷多组解.&nbsp;◻</p>
-<p>$\textbf{Solution:}$<br>由于 $$\cos z = \frac{1}{2}\left(e^{iz} + e^{-iz}\right),$$</p>
-<p>得到 $$\begin{aligned}<br>            \cos(x + iy) &amp;= \frac{1}{2}\left(e^{-y + ix} + e^{y - ix}\right) \<br>            &amp;= \frac{1}{2}\left[e^{-y}\left(\cos x + i\sin x\right) + e^y\left(\cos x - i\sin x\right)\right] \<br>            &amp;= \frac{1}{2}\cos x\left(e^y + e^{-y}\right) + \frac{1}{2}\sin x\left(e^{-y} - e^y\right)i.<br>        \end{aligned}$$</p>
-<p>于是 $$\Re\cos(x + iy) = \frac{1}{2}\cos x\left(e^y + e^{-y}\right),$$<br>$$\Im\cos(x + iy) = \frac{1}{2}\sin x\left(e^{-y} - e^y\right).$$</p>
-<p>考虑方程组 $$\begin{cases}<br>            \frac{1}{2}\cos x\left(e^y + e^{-y}\right) = A, \<br>            \frac{1}{2}\sin x\left(e^{-y} - e^y\right) = B.<br>        \end{cases}$$</p>
+                <h3 id="1-解析函数"><a href="#1-解析函数" class="headerlink" title="1. 解析函数"></a>1. 解析函数</h3><p>$\textbf{Example:}$<br>对于 $x, y\in\mathbb{R}$, 求 $\cos(x + iy)$ 的实, 虚部, 并说明方程</p>
+<script type="math/tex; mode=display">\cos(x + iy) = A + iB\thinspace(A, B\in\mathbb{R})</script><p>有无穷多组解. ◻</p>
+<p>$\textbf{Solution:}$<br>由于 <script type="math/tex">\cos z = \frac{1}{2}\left(e^{iz} + e^{-iz}\right),</script></p>
+<p>得到 <script type="math/tex">\begin{aligned}
+            \cos(x + iy) &= \frac{1}{2}\left(e^{-y + ix} + e^{y - ix}\right) \\
+            &= \frac{1}{2}\left[e^{-y}\left(\cos x + i\sin x\right) + e^y\left(\cos x - i\sin x\right)\right] \\
+            &= \frac{1}{2}\cos x\left(e^y + e^{-y}\right) + \frac{1}{2}\sin x\left(e^{-y} - e^y\right)i.
+        \end{aligned}</script></p>
+<p>于是 <script type="math/tex">\Re\cos(x + iy) = \frac{1}{2}\cos x\left(e^y + e^{-y}\right),</script></p>
+<script type="math/tex; mode=display">\Im\cos(x + iy) = \frac{1}{2}\sin x\left(e^{-y} - e^y\right).</script><p>考虑方程组 <script type="math/tex">\begin{cases}
+            \frac{1}{2}\cos x\left(e^y + e^{-y}\right) = A, \\
+            \frac{1}{2}\sin x\left(e^{-y} - e^y\right) = B.
+        \end{cases}</script></p>
 <p>$(1)$ 若$B = 0$:</p>
 <p>$(a)$ $A &gt; 1$ 时,</p>
-<p>取 $x = 2k\pi, \thinspace k\in\mathbb{Z}$, 考虑<br>$$f(y) = e^y + e^{-y} - 2A.$$</p>
-<p>因为 $$f(0) = 2 - 2A &lt; 0, \thinspace f(+\infty) = +\infty,$$</p>
-<p>由介值定理得 $$\exists\thinspace y_1 &gt; 0, \thinspace f(y_1) = 0.$$</p>
-<p>那么 $$\begin{cases}<br>            x = 2k\pi, \<br>            y = y_1,<br>        \end{cases}$$</p>
+<p>取 $x = 2k\pi, \thinspace k\in\mathbb{Z}$, 考虑</p>
+<script type="math/tex; mode=display">f(y) = e^y + e^{-y} - 2A.</script><p>因为 <script type="math/tex">f(0) = 2 - 2A < 0, \thinspace f(+\infty) = +\infty,</script></p>
+<p>由介值定理得 <script type="math/tex">\exists\thinspace y_1 > 0, \thinspace f(y_1) = 0.</script></p>
+<p>那么 <script type="math/tex">\begin{cases}
+            x = 2k\pi, \\
+            y = y_1,
+        \end{cases}</script></p>
 <p>为原方程的解, $\forall k\in\mathbb{Z}$.</p>
 <p>$(b)$ $A &lt; -1$ 时,</p>
-<p>取 $x = 2k\pi + \pi, \thinspace k\in\mathbb{Z}$, 考虑<br>$$g(y) = e^y + e^{-y} + 2A.$$</p>
-<p>因为 $$g(0) = 2 + 2A &lt; 0, \thinspace g(+\infty) = +\infty,$$</p>
-<p>由介值定理得 $$\exists\thinspace y_2 &gt; 0, \thinspace g(y_2) = 0.$$</p>
-<p>那么 $$\begin{cases}<br>            x = 2k\pi + \pi, \<br>            y = y_2,<br>        \end{cases}$$</p>
+<p>取 $x = 2k\pi + \pi, \thinspace k\in\mathbb{Z}$, 考虑</p>
+<script type="math/tex; mode=display">g(y) = e^y + e^{-y} + 2A.</script><p>因为 <script type="math/tex">g(0) = 2 + 2A < 0, \thinspace g(+\infty) = +\infty,</script></p>
+<p>由介值定理得 <script type="math/tex">\exists\thinspace y_2 > 0, \thinspace g(y_2) = 0.</script></p>
+<p>那么 <script type="math/tex">\begin{cases}
+            x = 2k\pi + \pi, \\
+            y = y_2,
+        \end{cases}</script></p>
 <p>为原方程的解, $\forall k\in\mathbb{Z}$.</p>
 <p>$(c)$ $-1\le A\le 1$ 时,</p>
-<p>取 $y = 0$, 考虑 $$\cos x = A.$$</p>
-<p>那么 $$\begin{cases}<br>            x = \arccos A + 2k\pi, \<br>            y = 0,<br>        \end{cases}$$</p>
+<p>取 $y = 0$, 考虑 <script type="math/tex">\cos x = A.</script></p>
+<p>那么 <script type="math/tex">\begin{cases}
+            x = \arccos A + 2k\pi, \\
+            y = 0,
+        \end{cases}</script></p>
 <p>为原方程的解, $\forall k\in\mathbb{Z}$.</p>
 <p>$(2)$ 若$B \ne 0$:</p>
-<p>可得<br>$$\left(\frac{2A}{e^y + e^{-y}}\right)^2 + \left(\frac{2B}{e^{-y} - e^y}\right)^2 = 1.$$</p>
-<p>令<br>$$h(y) = \left(\frac{2A}{e^y + e^{-y}}\right)^2 + \left(\frac{2B}{e^{-y} - e^y}\right)^2 - 1,$$</p>
-<p>因为 $$h(0^{+}) = +\infty, \thinspace h(+\infty) = -1 &lt; 0,$$</p>
-<p>由介值定理得 $$\exists\thinspace y_{AB} &gt; 0, \thinspace h(y_{AB}) = 0.$$</p>
-<p>那么 $$\begin{cases}<br>            x = \arccos\cfrac{2A}{e^{y_{AB}} + e^{-y_{AB}}} + 2k\pi, \<br>            y = y_{AB},<br>        \end{cases}$$</p>
-<p>为原方程的解, $\forall k\in\mathbb{Z}$.&nbsp;◻</p>
-<h3 id="2-Cauchy高阶导数公式"><a href="#2-Cauchy高阶导数公式" class="headerlink" title="2. Cauchy高阶导数公式"></a>2. Cauchy高阶导数公式</h3><p>$\textbf{Example:}$<br>$f(z)$ 在 $D$ 内解析, 则对 $z_0\in D$, 有<br>$$f^{(n)}(z_0) = \frac{n!}{2\pi i}\oint_{\left|{z - z_0}\right| = r}\limits\frac{f(z)dz}{(z - z_0)^{n + 1}}.$$&nbsp;◻</p>
-<p>$\textbf{Solution:}$<br>由于 $f(z)$ 在 $z_0$ 处解析, 可以认为<br>$$f(z) = \sum_{k = 0}^{\infty}\limits\frac{1}{k!}f^{(k)}(z_0)(z - z_0)^k$$</p>
-<p>在 $\left|{z - z_0}\right|\le r$ 内处处成立.</p>
-<p>两边同时除以 $(z - z_0)^{n + 1}$, 再对 $\left|{z - z_0}\right| = r$<br>积分可得<br>$$\oint_{\left|{z - z_0}\right| = r}\limits\frac{f(z)dz}{(z - z_0)^{n + 1}} = \frac{2\pi i}{n!}f^{(n)}(z_0).$$&nbsp;◻</p>
-<p>$\textbf{Example:}$<br>求积分<br>$$\oint_{\left|{z}\right| = 1}\limits\cfrac{1 - \cos 4z^5}{z^n}dz.$$&nbsp;◻</p>
-<p>$\textbf{Solution:}$<br>当 $n = 0$ 时,</p>
-<p>由于 $f(z) = 1 - \cos 4z^5$ 在复平面上处处解析,</p>
-<p>得 $$\oint_{\left|{z}\right| = 1}\limits (1 - \cos 4z^5)dz = 0.$$</p>
-<p>当 $n\ge 1$ 时,<br>$$\cfrac{1 - \cos 4z^5}{z^n} = \sum_{k = 1}^{\infty}\limits\cfrac{1}{z^n}\cdot(-1)^k\cfrac{(4z^5)^{2k}}{(2k)!} = \sum_{k = 1}^{\infty}\limits\cfrac{(-1)^{k + 1}4^{2k}z^{10k - n}}{(2k)!}.$$</p>
-<p>进而<br>$$\oint_{\left|{z}\right| = 1}\limits\cfrac{1 - \cos 4z^5}{z^n}dz = \begin{cases}<br>            2\pi i\cdot\cfrac{(-1)^{k + 1}16^k}{(2k)!}, n = 10k + 1 \<br>            0, n\ne 10k + 1 \<br>        \end{cases}<br>        (\mbox{其中}k\in\mathbb{N})$$&nbsp;◻</p>
-<h3 id="3-最大模原理"><a href="#3-最大模原理" class="headerlink" title="3. 最大模原理"></a>3. 最大模原理</h3><p>$\textbf{Example:}$<br>$f(z)$ 非常函数, 在有界域 $D$ 内可导, 在边界 $\partial D$ 上连续, 则<br>$$\max_{z\in D\cup\partial D}\limits\left|{f(z)}\right| = \max_{z\in \partial D}\limits\left|{f(z)}\right|,$$</p>
-<p>并且满足 $f’(z_0)\ne 0$.&nbsp;◻</p>
+<p>可得</p>
+<script type="math/tex; mode=display">\left(\frac{2A}{e^y + e^{-y}}\right)^2 + \left(\frac{2B}{e^{-y} - e^y}\right)^2 = 1.</script><p>令</p>
+<script type="math/tex; mode=display">h(y) = \left(\frac{2A}{e^y + e^{-y}}\right)^2 + \left(\frac{2B}{e^{-y} - e^y}\right)^2 - 1,</script><p>因为 <script type="math/tex">h(0^{+}) = +\infty, \thinspace h(+\infty) = -1 < 0,</script></p>
+<p>由介值定理得 <script type="math/tex">\exists\thinspace y_{AB} > 0, \thinspace h(y_{AB}) = 0.</script></p>
+<p>那么 <script type="math/tex">\begin{cases}
+            x = \arccos\cfrac{2A}{e^{y_{AB}} + e^{-y_{AB}}} + 2k\pi, \\
+            y = y_{AB},
+        \end{cases}</script></p>
+<p>为原方程的解, $\forall k\in\mathbb{Z}$. ◻</p>
+<h3 id="2-Cauchy高阶导数公式"><a href="#2-Cauchy高阶导数公式" class="headerlink" title="2. Cauchy高阶导数公式"></a>2. Cauchy高阶导数公式</h3><p>$\textbf{Example:}$<br>$f(z)$ 在 $D$ 内解析, 则对 $z_0\in D$, 有</p>
+<script type="math/tex; mode=display">f^{(n)}(z_0) = \frac{n!}{2\pi i}\oint_{\left|{z - z_0}\right| = r}\limits\frac{f(z)dz}{(z - z_0)^{n + 1}}.$$ ◻
+
+$\textbf{Solution:}$
+由于 $f(z)$ 在 $z_0$ 处解析, 可以认为
+$$f(z) = \sum_{k = 0}^{\infty}\limits\frac{1}{k!}f^{(k)}(z_0)(z - z_0)^k</script><p>在 $\left|{z - z_0}\right|\le r$ 内处处成立.</p>
+<p>两边同时除以 $(z - z_0)^{n + 1}$, 再对 $\left|{z - z_0}\right| = r$<br>积分可得</p>
+<script type="math/tex; mode=display">\oint_{\left|{z - z_0}\right| = r}\limits\frac{f(z)dz}{(z - z_0)^{n + 1}} = \frac{2\pi i}{n!}f^{(n)}(z_0).$$ ◻
+
+$\textbf{Example:}$
+求积分
+$$\oint_{\left|{z}\right| = 1}\limits\cfrac{1 - \cos 4z^5}{z^n}dz.$$ ◻
+
+$\textbf{Solution:}$
+当 $n = 0$ 时,
+
+由于 $f(z) = 1 - \cos 4z^5$ 在复平面上处处解析,
+
+得 $$\oint_{\left|{z}\right| = 1}\limits (1 - \cos 4z^5)dz = 0.</script><p>当 $n\ge 1$ 时,</p>
+<script type="math/tex; mode=display">\cfrac{1 - \cos 4z^5}{z^n} = \sum_{k = 1}^{\infty}\limits\cfrac{1}{z^n}\cdot(-1)^k\cfrac{(4z^5)^{2k}}{(2k)!} = \sum_{k = 1}^{\infty}\limits\cfrac{(-1)^{k + 1}4^{2k}z^{10k - n}}{(2k)!}.</script><p>进而</p>
+<script type="math/tex; mode=display">\oint_{\left|{z}\right| = 1}\limits\cfrac{1 - \cos 4z^5}{z^n}dz = \begin{cases}
+            2\pi i\cdot\cfrac{(-1)^{k + 1}16^k}{(2k)!}, n = 10k + 1 \\
+            0, n\ne 10k + 1 \\
+        \end{cases}
+        (\mbox{其中}k\in\mathbb{N})$$ ◻
+
+### 3. 最大模原理
+
+$\textbf{Example:}$
+$f(z)$ 非常函数, 在有界域 $D$ 内可导, 在边界 $\partial D$ 上连续, 则
+$$\max_{z\in D\cup\partial D}\limits\left|{f(z)}\right| = \max_{z\in \partial D}\limits\left|{f(z)}\right|,</script><p>并且满足 $f’(z_0)\ne 0$. ◻</p>
 <p>$\textbf{Solution:}$<br>设 $z_0\in D\cup\partial D$ 使得<br>$f(z_0) = \max_{z\in D\cup\partial D}\limits\left|{f(z)}\right|$.</p>
 <p>若 $z_0\in D$, 由平均值公式, $\exists\thinspace r_0 &gt; 0$,</p>
-<p>当 $0 &lt; r\le r_0$ 时, $\left|{z - z_0}\right|$ 位于 $D$ 内. 那么<br>$$\begin{aligned}<br>            \left|{f(z_0)}\right| &amp;= \frac{1}{2\pi}\left|{\int_0^{2\pi}\limits f(z_0 + re^{i\theta})d\theta}\right| \<br>            &amp;\le \frac{1}{2\pi}\int_0^{2\pi}\limits \left|{f(z_0 + re^{i\theta})}\right|d\theta \<br>            &amp;\le \frac{1}{2\pi}\int_0^{2\pi}\limits \left|{f(z_0)}\right|d\theta \<br>            &amp;= \left|{f(z_0)}\right|,<br>        \end{aligned}$$</p>
-<p>即<br>$\left|{f(z)}\right|\equiv \left|{f(z_0)}\right|, \thinspace\forall \left|{z - z_0}\right| &lt; r$.</p>
+<p>当 $0 &lt; r\le r_0$ 时, $\left|{z - z_0}\right|$ 位于 $D$ 内. 那么</p>
+<script type="math/tex; mode=display">\begin{aligned}
+            \left|{f(z_0)}\right| &= \frac{1}{2\pi}\left|{\int_0^{2\pi}\limits f(z_0 + re^{i\theta})d\theta}\right| \\
+            &\le \frac{1}{2\pi}\int_0^{2\pi}\limits \left|{f(z_0 + re^{i\theta})}\right|d\theta \\
+            &\le \frac{1}{2\pi}\int_0^{2\pi}\limits \left|{f(z_0)}\right|d\theta \\
+            &= \left|{f(z_0)}\right|,
+        \end{aligned}</script><p>即<br>$\left|{f(z)}\right|\equiv \left|{f(z_0)}\right|, \thinspace\forall \left|{z - z_0}\right| &lt; r$.</p>
 <p>进而<br>$\left|{f(z)}\right|\equiv \left|{f(z_0)}\right|, \thinspace\forall z\in D$,<br>这与 $f(z)$ 为连续非常函数矛盾.</p>
-<p>故若<br>$\left|{f(z_0)}\right| = \max_{z\in D\cup\partial D}\limits\left|{f(z)}\right|$,<br>则有 $z_0\in\partial D$.&nbsp;◻</p>
-<h3 id="4-最小模原理"><a href="#4-最小模原理" class="headerlink" title="4. 最小模原理"></a>4. 最小模原理</h3><p>$\textbf{Example:}$<br>$f(z)$ 非常函数, 在有界域 $D$ 内可导且非零, 在边界 $\partial D$<br>上连续, 则<br>$$\min_{z\in D\cup\partial D}\limits\left|{f(z)}\right| = \min_{z\in \partial D}\limits\left|{f(z)}\right|,$$</p>
-<p>并且满足 $f’(z_0)\ne 0$.&nbsp;◻</p>
-<p>$\textbf{Solution:}$<br>注意到 $\frac{1}{f(z)}$ 是解析的, 再使用最大模原理即可.&nbsp;◻</p>
-<h3 id="5-调和函数最大值原理"><a href="#5-调和函数最大值原理" class="headerlink" title="5. 调和函数最大值原理"></a>5. 调和函数最大值原理</h3><p>$\textbf{Example:}$<br>$u(x, y)\in C^2(D)$ 为调和函数, 在边界 $\partial D$ 上连续, 则<br>$$\max_{(x, y)\in D\cup\partial D}\limits\left|{u(x, y)}\right| = \max_{(x, y)\in \partial D}\limits\left|{u(x, y)}\right|.$$&nbsp;◻</p>
-<p>$\textbf{Solution:}$<br>由于 $u$ 为调和函数, 故存在调和函数 $v$,</p>
-<p>其中 $u, v$ 满足 $Cauchy-Riemann$ 条件, 使得 $f(z) = u + iv$ 为解析函数.</p>
-<p>令 $g(z) = e^{f(z)}\thinspace(z\in D\cup\partial D)$, 那么<br>$g’(z) = f’(z)e^{f(z)}$ 处处存在.</p>
-<p>由最大模原理,<br>$$\max_{z\in D\cup\partial D}\limits\left|{g(z)}\right| = \max_{z\in \partial D}\limits\left|{g(z)}\right|.$$</p>
-<p>又因为<br>$$\left|{g(z)}\right| = \left|{e^{f(z)}}\right| = \left|{e^{u + iv}}\right| = \left|{e^u}\right|\cdot \left|{e^{iv}}\right| = e^u,$$</p>
-<p>故<br>$$\max_{z\in D\cup\partial D}\limits e^{u(x, y)} = \max_{z\in \partial D}\limits e^{u(x, y)}.$$</p>
-<p>即得<br>$$\max_{z\in D\cup\partial D}\limits u(x, y) = \max_{z\in \partial D}\limits u(x, y).$$&nbsp;◻</p>
-<h3 id="6-调和函数最小值原理"><a href="#6-调和函数最小值原理" class="headerlink" title="6. 调和函数最小值原理"></a>6. 调和函数最小值原理</h3><p>$\textbf{Example:}$<br>$u(x, y)\in C^2(D)$ 为调和函数, 在边界 $\partial D$ 上连续, 则<br>$$\min_{(x, y)\in D\cup\partial D}\limits\left|{u(x, y)}\right| = \min_{(x, y)\in \partial D}\limits\left|{u(x, y)}\right|.$$&nbsp;◻</p>
-<p>$\textbf{Solution:}$<br>注意到 $u_0(x, y) = -u(x, y)$ 也为 $D$ 上的调和函数,</p>
-<p>对其使用调和函数最大值原理即可.&nbsp;◻</p>
-<h3 id="7-M-r-的应用"><a href="#7-M-r-的应用" class="headerlink" title="7. $M(r)$的应用"></a>7. $M(r)$的应用</h3><p>$\textbf{Example:}$<br>定义<br>$$M(r) = \max_{\left|{z}\right| = r}\limits\left|{f(z)}\right|.$$&nbsp;◻</p>
-<p>$\textbf{Example:}$<br>$f(z)$ 为整函数, 则<br>$$\left|{f^{(n)}(0)}\right|\le \frac{n!M(r)}{r^n}.$$&nbsp;◻</p>
-<p>$\textbf{Solution:}$<br>注意到<br>$$f^{(n)}(0) = \frac{n!}{2\pi i}\oint_{\left|{z}\right| = r}\limits\frac{f(z)dz}{z^{n + 1}},$$</p>
-<p>那么 $$\begin{aligned}<br>            \left|{f^{(n)}(0)}\right| &amp;= \frac{n!}{2\pi}\left|{\thinspace\oint_{\left|{z}\right| = r}\limits\frac{f(z)dz}{z^{n + 1}}}\right| \<br>            &amp;\le \frac{n!}{2\pi}\oint_{\left|{z}\right| = r}\limits\left|{\frac{f(z)}{z^{n + 1}}}\right|\left|{dz}\right| \<br>            &amp;= \frac{n!}{2\pi}\oint_{\left|{z}\right| = r}\limits\frac{\left|{f(z)}\right|}{r^{n + 1}}\left|{d(re^{i\theta})}\right| \<br>            &amp;\le \frac{n!}{2\pi}\int_{0}^{2\pi}\frac{M(r)}{r^n}d\theta \<br>            &amp;= \frac{n!M(r)}{r^n}.<br>        \end{aligned}$$&nbsp;◻</p>
-<p>$\textbf{Example:}$<br>有界的整函数为常数**(Liouville定理)**.&nbsp;◻</p>
-<p>$\textbf{Solution:}$<br>易得 $f(z)$ 在原点处的 $Taylor$ 展开:<br>$$f(z) = \sum_{n = 0}^{\infty}\limits\frac{1}{n!}f^{(n)}(0)z^n.$$</p>
-<p>只需要证明 $$f^{(n)}(0)\equiv 0, \thinspace\forall\thinspace n\ge 1.$$</p>
-<p>由 $f(z)$ 有界, 故 $\exists\thinspace M_0\in\mathbb{R}$, 使<br>$$\left|{f(z)}\right|\le M_0, \thinspace\forall z\in\mathbb{C}.$$</p>
-<p>由<br>$$f^{(n)}(0) = \frac{n!}{2\pi i}\oint_{\left|{z}\right| = r}\limits\frac{f(z)dz}{z^{n + 1}},$$</p>
-<p>可得<br>$$\left|{f^{(n)}(0)}\right|\le \frac{n!M(r)}{r^n}\le \frac{n!M_0}{r^n}.$$</p>
-<p>注意到当 $r\rightarrow\infty$, 有 $$\left|{f^{(n)}(0)}\right| = 0,$$</p>
-<p>即 $$f^{(n)}(0) = 0\thinspace, \thinspace\forall\thinspace n\ge 1.$$</p>
-<p>从而 $f(z)\equiv f(0)$ 为常数.&nbsp;◻</p>
-<p>$\textbf{Example:}$<br>$f(z)$ 为整函数, 且存在 $M_0 &gt; 0$, 使<br>$$\left|{f(z)}\right|\le M\sum_{k = 0}^{n}\limits\left|{z}\right|^k.$$</p>
-<p>则 $f(z)$ 是一个次数不高于 $n$ 的多项式.&nbsp;◻</p>
-<p>$\textbf{Solution:}$<br>易得 $f(z)$ 在原点处的 $Taylor$ 展开:<br>$$f(z) = \sum_{n = 0}^{\infty}\limits\frac{1}{n!}f^{(n)}(0)z^n.$$</p>
-<p>只需要证明<br>$$f^{(n + i)}(0)\equiv 0, \thinspace\forall\thinspace i\ge 1.$$</p>
-<p>可得<br>$$\left|{f^{(n + i)}(0)}\right|\le \frac{(n + i)!M(r)}{r^{n + i}}\le \frac{(n + i)!M_0}{r^{n + i}}\sum_{k = 0}^{n}\limits r^k.$$</p>
-<p>注意到当 $r\rightarrow\infty$ 时, 有<br>$$\left|{f^{(n + i)}(0)}\right| = 0,$$</p>
-<p>即 $$f^{(n + i)}(0) = 0, \thinspace\forall\thinspace i\ge 1.$$</p>
-<p>从而 $$f(z)\equiv \sum_{k = 0}^{n}\limits\frac{1}{k!}f^{(k)}(0)z^k$$</p>
-<p>为一个次数不高于 $n$ 的多项式.&nbsp;◻</p>
-<h3 id="8-代数学基本定理"><a href="#8-代数学基本定理" class="headerlink" title="8. 代数学基本定理"></a>8. 代数学基本定理</h3><p>$\textbf{Example:}$<br>设<br>$P_n(z) = \sum_{k = 0}^{n}\limits C_kz^k\thinspace(C_n\ne 0, n\ge 1)$,<br>则 $$P_n(z) = C_n\prod_{k = 0}^{n}(z - z_k),$$</p>
-<p>即 $$\exists z_1\in \mathbb{C}, P_n(z_1) = 0.$$&nbsp;◻</p>
+<p>故若<br>$\left|{f(z_0)}\right| = \max_{z\in D\cup\partial D}\limits\left|{f(z)}\right|$,<br>则有 $z_0\in\partial D$. ◻</p>
+<h3 id="4-最小模原理"><a href="#4-最小模原理" class="headerlink" title="4. 最小模原理"></a>4. 最小模原理</h3><p>$\textbf{Example:}$<br>$f(z)$ 非常函数, 在有界域 $D$ 内可导且非零, 在边界 $\partial D$<br>上连续, 则</p>
+<script type="math/tex; mode=display">\min_{z\in D\cup\partial D}\limits\left|{f(z)}\right| = \min_{z\in \partial D}\limits\left|{f(z)}\right|,</script><p>并且满足 $f’(z_0)\ne 0$. ◻</p>
+<p>$\textbf{Solution:}$<br>注意到 $\frac{1}{f(z)}$ 是解析的, 再使用最大模原理即可. ◻</p>
+<h3 id="5-调和函数最大值原理"><a href="#5-调和函数最大值原理" class="headerlink" title="5. 调和函数最大值原理"></a>5. 调和函数最大值原理</h3><p>$\textbf{Example:}$<br>$u(x, y)\in C^2(D)$ 为调和函数, 在边界 $\partial D$ 上连续, 则</p>
+<script type="math/tex; mode=display">\max_{(x, y)\in D\cup\partial D}\limits\left|{u(x, y)}\right| = \max_{(x, y)\in \partial D}\limits\left|{u(x, y)}\right|.$$ ◻
+
+$\textbf{Solution:}$
+由于 $u$ 为调和函数, 故存在调和函数 $v$,
+
+其中 $u, v$ 满足 $Cauchy-Riemann$ 条件, 使得 $f(z) = u + iv$ 为解析函数.
+
+令 $g(z) = e^{f(z)}\thinspace(z\in D\cup\partial D)$, 那么
+$g'(z) = f'(z)e^{f(z)}$ 处处存在.
+
+由最大模原理,
+$$\max_{z\in D\cup\partial D}\limits\left|{g(z)}\right| = \max_{z\in \partial D}\limits\left|{g(z)}\right|.</script><p>又因为</p>
+<script type="math/tex; mode=display">\left|{g(z)}\right| = \left|{e^{f(z)}}\right| = \left|{e^{u + iv}}\right| = \left|{e^u}\right|\cdot \left|{e^{iv}}\right| = e^u,</script><p>故</p>
+<script type="math/tex; mode=display">\max_{z\in D\cup\partial D}\limits e^{u(x, y)} = \max_{z\in \partial D}\limits e^{u(x, y)}.</script><p>即得</p>
+<script type="math/tex; mode=display">\max_{z\in D\cup\partial D}\limits u(x, y) = \max_{z\in \partial D}\limits u(x, y).$$ ◻
+
+### 6. 调和函数最小值原理
+
+$\textbf{Example:}$
+$u(x, y)\in C^2(D)$ 为调和函数, 在边界 $\partial D$ 上连续, 则
+$$\min_{(x, y)\in D\cup\partial D}\limits\left|{u(x, y)}\right| = \min_{(x, y)\in \partial D}\limits\left|{u(x, y)}\right|.$$ ◻
+
+$\textbf{Solution:}$
+注意到 $u_0(x, y) = -u(x, y)$ 也为 $D$ 上的调和函数,
+
+对其使用调和函数最大值原理即可. ◻
+
+### 7. $M(r)$的应用
+
+$\textbf{Example:}$
+定义
+$$M(r) = \max_{\left|{z}\right| = r}\limits\left|{f(z)}\right|.$$ ◻
+
+$\textbf{Example:}$
+$f(z)$ 为整函数, 则
+$$\left|{f^{(n)}(0)}\right|\le \frac{n!M(r)}{r^n}.$$ ◻
+
+$\textbf{Solution:}$
+注意到
+$$f^{(n)}(0) = \frac{n!}{2\pi i}\oint_{\left|{z}\right| = r}\limits\frac{f(z)dz}{z^{n + 1}},</script><p>那么 <script type="math/tex">\begin{aligned}
+            \left|{f^{(n)}(0)}\right| &= \frac{n!}{2\pi}\left|{\thinspace\oint_{\left|{z}\right| = r}\limits\frac{f(z)dz}{z^{n + 1}}}\right| \\
+            &\le \frac{n!}{2\pi}\oint_{\left|{z}\right| = r}\limits\left|{\frac{f(z)}{z^{n + 1}}}\right|\left|{dz}\right| \\
+            &= \frac{n!}{2\pi}\oint_{\left|{z}\right| = r}\limits\frac{\left|{f(z)}\right|}{r^{n + 1}}\left|{d(re^{i\theta})}\right| \\
+            &\le \frac{n!}{2\pi}\int_{0}^{2\pi}\frac{M(r)}{r^n}d\theta \\
+            &= \frac{n!M(r)}{r^n}.
+        \end{aligned}</script> ◻</p>
+<p>$\textbf{Example:}$<br>有界的整函数为常数<strong>(Liouville定理)</strong>. ◻</p>
+<p>$\textbf{Solution:}$<br>易得 $f(z)$ 在原点处的 $Taylor$ 展开:</p>
+<script type="math/tex; mode=display">f(z) = \sum_{n = 0}^{\infty}\limits\frac{1}{n!}f^{(n)}(0)z^n.</script><p>只需要证明 <script type="math/tex">f^{(n)}(0)\equiv 0, \thinspace\forall\thinspace n\ge 1.</script></p>
+<p>由 $f(z)$ 有界, 故 $\exists\thinspace M_0\in\mathbb{R}$, 使</p>
+<script type="math/tex; mode=display">\left|{f(z)}\right|\le M_0, \thinspace\forall z\in\mathbb{C}.</script><p>由</p>
+<script type="math/tex; mode=display">f^{(n)}(0) = \frac{n!}{2\pi i}\oint_{\left|{z}\right| = r}\limits\frac{f(z)dz}{z^{n + 1}},</script><p>可得</p>
+<script type="math/tex; mode=display">\left|{f^{(n)}(0)}\right|\le \frac{n!M(r)}{r^n}\le \frac{n!M_0}{r^n}.</script><p>注意到当 $r\rightarrow\infty$, 有 <script type="math/tex">\left|{f^{(n)}(0)}\right| = 0,</script></p>
+<p>即 <script type="math/tex">f^{(n)}(0) = 0\thinspace, \thinspace\forall\thinspace n\ge 1.</script></p>
+<p>从而 $f(z)\equiv f(0)$ 为常数. ◻</p>
+<p>$\textbf{Example:}$<br>$f(z)$ 为整函数, 且存在 $M_0 &gt; 0$, 使</p>
+<script type="math/tex; mode=display">\left|{f(z)}\right|\le M\sum_{k = 0}^{n}\limits\left|{z}\right|^k.</script><p>则 $f(z)$ 是一个次数不高于 $n$ 的多项式. ◻</p>
+<p>$\textbf{Solution:}$<br>易得 $f(z)$ 在原点处的 $Taylor$ 展开:</p>
+<script type="math/tex; mode=display">f(z) = \sum_{n = 0}^{\infty}\limits\frac{1}{n!}f^{(n)}(0)z^n.</script><p>只需要证明</p>
+<script type="math/tex; mode=display">f^{(n + i)}(0)\equiv 0, \thinspace\forall\thinspace i\ge 1.</script><p>可得</p>
+<script type="math/tex; mode=display">\left|{f^{(n + i)}(0)}\right|\le \frac{(n + i)!M(r)}{r^{n + i}}\le \frac{(n + i)!M_0}{r^{n + i}}\sum_{k = 0}^{n}\limits r^k.</script><p>注意到当 $r\rightarrow\infty$ 时, 有</p>
+<script type="math/tex; mode=display">\left|{f^{(n + i)}(0)}\right| = 0,</script><p>即 <script type="math/tex">f^{(n + i)}(0) = 0, \thinspace\forall\thinspace i\ge 1.</script></p>
+<p>从而 <script type="math/tex">f(z)\equiv \sum_{k = 0}^{n}\limits\frac{1}{k!}f^{(k)}(0)z^k</script></p>
+<p>为一个次数不高于 $n$ 的多项式. ◻</p>
+<h3 id="8-代数学基本定理"><a href="#8-代数学基本定理" class="headerlink" title="8. 代数学基本定理"></a>8. 代数学基本定理</h3><p>$\textbf{Example:}$<br>设<br>$P_n(z) = \sum_{k = 0}^{n}\limits C_kz^k\thinspace(C_n\ne 0, n\ge 1)$,<br>则 <script type="math/tex">P_n(z) = C_n\prod_{k = 0}^{n}(z - z_k),</script></p>
+<p>即 <script type="math/tex">\exists z_1\in \mathbb{C}, P_n(z_1) = 0.</script> ◻</p>
 <p>$\textbf{Solution:}$<br>设 $\forall z\in\mathbb{C}$, 有 $P_n(z)\ne 0$.</p>
-<p>令 $f(z) = \cfrac{1}{P_n(z)}$, 则 $$f’(z) = -\cfrac{P’_n(z)}{P_n^2(z)}$$</p>
-<p>处处存在, 那么 $f(z)$ 满足最大模原理, 有<br>$$\max_{\left|{z}\right|\le r}\limits\left|{f(z)}\right| = \max_{\left|{z}\right| = r}\limits\left|{f(z)}\right|\rightarrow 0, \mbox{当}r\rightarrow\infty.$$</p>
-<p>但结合 $f(0) = \cfrac{1}{C_0}\ne 0$, 显然矛盾.</p>
-<p>故 $\exists\thinspace z_1\in \mathbb{C}$, 使得<br>$$P_n(z_1) = 0\thinspace\Longleftrightarrow P_n(z) = (z - z_1)P_{n - 1}(z).$$</p>
-<p>重复可得 $$P_n(z) = C_n\prod_{k = 0}^{n}(z - z_k).$$&nbsp;◻</p>
+<p>令 $f(z) = \cfrac{1}{P_n(z)}$, 则 <script type="math/tex">f'(z) = -\cfrac{P'_n(z)}{P_n^2(z)}</script></p>
+<p>处处存在, 那么 $f(z)$ 满足最大模原理, 有</p>
+<script type="math/tex; mode=display">\max_{\left|{z}\right|\le r}\limits\left|{f(z)}\right| = \max_{\left|{z}\right| = r}\limits\left|{f(z)}\right|\rightarrow 0, \mbox{当}r\rightarrow\infty.</script><p>但结合 $f(0) = \cfrac{1}{C_0}\ne 0$, 显然矛盾.</p>
+<p>故 $\exists\thinspace z_1\in \mathbb{C}$, 使得</p>
+<script type="math/tex; mode=display">P_n(z_1) = 0\thinspace\Longleftrightarrow P_n(z) = (z - z_1)P_{n - 1}(z).</script><p>重复可得 <script type="math/tex">P_n(z) = C_n\prod_{k = 0}^{n}(z - z_k).</script> ◻</p>
 <p>$\textbf{Solution:}$<br>设 $\forall z\in\mathbb{C}$, 有 $P_n(z)\ne 0$.</p>
-<p>令 $g(z) = \cfrac{1}{P_n(z)}$, 则 $$g’(z) = -\cfrac{P’_n(z)}{P_n^2(z)}$$</p>
-<p>处处存在, 那么 $g(z)$ 在 $\mathbb{C}$ 内解析. 由于<br>$$P_n(z)\rightarrow\infty, \mbox{当}r\rightarrow\infty,$$</p>
-<p>故 $$g(z)\rightarrow 0, \mbox{当}r\rightarrow\infty,$$</p>
+<p>令 $g(z) = \cfrac{1}{P_n(z)}$, 则 <script type="math/tex">g'(z) = -\cfrac{P'_n(z)}{P_n^2(z)}</script></p>
+<p>处处存在, 那么 $g(z)$ 在 $\mathbb{C}$ 内解析. 由于</p>
+<script type="math/tex; mode=display">P_n(z)\rightarrow\infty, \mbox{当}r\rightarrow\infty,</script><p>故 <script type="math/tex">g(z)\rightarrow 0, \mbox{当}r\rightarrow\infty,</script></p>
 <p>即 $g(z)$ 有界.</p>
 <p>由 $Liouville$ 定理, 得 $g(z)$ 为常数, 进而 $P_n(z)$ 为常数.</p>
-<p>这与 $C_n\ne 0$ 矛盾. 以下同 $\textit{Proof 1}$.&nbsp;◻</p>
+<p>这与 $C_n\ne 0$ 矛盾. 以下同 $\textit{Proof 1}$. ◻</p>
 <h3 id="9-幂级数的收敛半径"><a href="#9-幂级数的收敛半径" class="headerlink" title="9. 幂级数的收敛半径"></a>9. 幂级数的收敛半径</h3><p>$\textbf{Example:}$<br>对幂级数 $f(z) = \sum_{k = 0}^{\infty}\limits c_kz^k$, 若存在<br>$R &gt; 0$, 使得</p>
 <p>当 $\left|{z}\right| &gt; R$ 时 $f(z)$ 发散, 当 $\left|{z}\right| &lt; R$ 时<br>$f(z)$ 绝对收敛,</p>
-<p>那么称 $R$ 为 $f(z)$ 的收敛半径.&nbsp;◻</p>
+<p>那么称 $R$ 为 $f(z)$ 的收敛半径. ◻</p>
 <p>$\textbf{Example:}$<br>$\textbf{(Abel定理)}$ 对幂级数<br>$f(z) = \sum_{k = 0}^{\infty}\limits c_kz^k$, 若</p>
 <p>$f(z)$ 在 $z = z_1\ne 0$ 处收敛, 则在<br>$\left|{z}\right| &lt; \left|{z_1}\right|$ 绝对收敛;</p>
-<p>$f(z)$ 在 $z = z_2\ne 0$ 处发散, 则在<br>$\left|{z}\right| &gt; \left|{z_2}\right|$ 发散.&nbsp;◻</p>
-<p>$\textbf{Example:}$<br>若幂级数 $f(z) = \sum_{k = 0}^{\infty}\limits c_kz^k$ 在 $z_0$<br>处条件收敛, 则收敛半径 $R = \left|{z_0}\right|$.&nbsp;◻</p>
+<p>$f(z)$ 在 $z = z_2\ne 0$ 处发散, 则在<br>$\left|{z}\right| &gt; \left|{z_2}\right|$ 发散. ◻</p>
+<p>$\textbf{Example:}$<br>若幂级数 $f(z) = \sum_{k = 0}^{\infty}\limits c_kz^k$ 在 $z_0$<br>处条件收敛, 则收敛半径 $R = \left|{z_0}\right|$. ◻</p>
 <p>$\textbf{Solution:}$<br>由收敛半径的定义:</p>
 <p>若 $\left|{z_o}\right| &gt; R$ $\Longrightarrow$ $f(z_0)$ 发散, 与题设矛盾,<br>故 $f(z_0)$ 收敛, $\left|{z_0}\right|\le R$.</p>
 <p>若 $\left|{z_0}\right| &lt; R$ $\Longrightarrow$ $f(z_0)$ 绝对收敛,<br>与题设矛盾, 故 $\left|{z_0}\right|\ge R$.</p>
-<p>综上, 得 $\left|{z_0}\right| = R$.&nbsp;◻</p>
-<p>$\textbf{Example:}$<br>对幂级数<br>$$f(z) = \sum_{k = 0}^{\infty}\limits c_kz^k, g(z) = \sum_{k = 0}^{\infty}\limits d_kz^k$$</p>
-<p>当 $n$ 充分大时, 有 $\left|{d_n}\right| \le \left|{c_n}\right|$,<br>则收敛半径 $R_1\le R_2$.&nbsp;◻</p>
-<p>$\textbf{Example:}$<br>若 $c_n = a_n + ib_n, a_n, b_n\in\mathbb{R}$, 对幂级数<br>$$f(z) = \sum_{n = 0}^{\infty}\limits c_nz^n = \sum_{n = 0}^{\infty}\limits a_nz^n + i\sum_{n = 0}^{\infty}\limits b_nz^n$$</p>
-<p>其中<br>$\sum_{n = 0}^{\infty}\limits a_nz^n, \sum_{n = 0}^{\infty}\limits b_nz^n$<br>的收敛半径分别为 $R_1, R_2$, 那么 $\sum_{n = 0}^{\infty}\limits c_nz^n$<br>的收敛半径 $R = \min\left{R_1, R_2\right}$.&nbsp;◻</p>
-<p>$\textbf{Solution:}$<br>不妨设 $R_1\le R_2$, 此时 $\min\left{R_1, R_2\right} = R_1$.</p>
+<p>综上, 得 $\left|{z_0}\right| = R$. ◻</p>
+<p>$\textbf{Example:}$<br>对幂级数</p>
+<script type="math/tex; mode=display">f(z) = \sum_{k = 0}^{\infty}\limits c_kz^k, g(z) = \sum_{k = 0}^{\infty}\limits d_kz^k</script><p>当 $n$ 充分大时, 有 $\left|{d_n}\right| \le \left|{c_n}\right|$,<br>则收敛半径 $R_1\le R_2$. ◻</p>
+<p>$\textbf{Example:}$<br>若 $c_n = a_n + ib_n, a_n, b_n\in\mathbb{R}$, 对幂级数</p>
+<script type="math/tex; mode=display">f(z) = \sum_{n = 0}^{\infty}\limits c_nz^n = \sum_{n = 0}^{\infty}\limits a_nz^n + i\sum_{n = 0}^{\infty}\limits b_nz^n</script><p>其中<br>$\sum_{n = 0}^{\infty}\limits a_nz^n, \sum_{n = 0}^{\infty}\limits b_nz^n$<br>的收敛半径分别为 $R_1, R_2$, 那么 $\sum_{n = 0}^{\infty}\limits c_nz^n$<br>的收敛半径 $R = \min\left\{R_1, R_2\right\}$. ◻</p>
+<p>$\textbf{Solution:}$<br>不妨设 $R_1\le R_2$, 此时 $\min\left\{R_1, R_2\right\} = R_1$.</p>
 <p>下证 $R = R_1$. 先证 $R_1\ge R$.</p>
-<p>由 $c_n = a_n + ib_n$, 有 $\left|{c_n}\right| \ge \left|{a_n}\right|$,<br>进而<br>$$\sum_{n = 0}^{\infty}\limits \left|{c_nz^n}\right| \ge \sum_{n = 0}^{\infty}\limits \left|{a_nz^n}\right|.$$</p>
-<p>那么当 $\left|{z}\right| &lt; R$ 时, 由收敛半径定义,<br>$$\sum_{n = 0}^{\infty}\limits \left|{c_nz^n}\right| \ge \sum_{n = 0}^{\infty}\limits \left|{a_nz^n}\right| &lt; \infty.$$</p>
-<p>此时 $\sum_{n = 0}^{\infty}\limits a_nz^n$ 绝对收敛, 那么 $R_1 \ge R$.</p>
+<p>由 $c_n = a_n + ib_n$, 有 $\left|{c_n}\right| \ge \left|{a_n}\right|$,<br>进而</p>
+<script type="math/tex; mode=display">\sum_{n = 0}^{\infty}\limits \left|{c_nz^n}\right| \ge \sum_{n = 0}^{\infty}\limits \left|{a_nz^n}\right|.</script><p>那么当 $\left|{z}\right| &lt; R$ 时, 由收敛半径定义,</p>
+<script type="math/tex; mode=display">\sum_{n = 0}^{\infty}\limits \left|{c_nz^n}\right| \ge \sum_{n = 0}^{\infty}\limits \left|{a_nz^n}\right| < \infty.</script><p>此时 $\sum_{n = 0}^{\infty}\limits a_nz^n$ 绝对收敛, 那么 $R_1 \ge R$.</p>
 <p>再证 $R_1\le R$.</p>
-<p>若 $R_1 &gt; R$, 取<br>$z = \cfrac{1}{2}\left(R + R_1\right)\in\left(R, R_1\right)$ 由<br>$$\sum_{n = 0}^{\infty}\limits c_nz^n = \sum_{n = 0}^{\infty}\limits a_nz^n + i\sum_{n = 0}^{\infty}\limits b_nz^n$$</p>
-<p>那么此时 $\sum_{n = 0}^{\infty}\limits a_nz^n$,<br>$\sum_{n = 0}^{\infty}\limits b_nz^n$ 均收敛,</p>
+<p>若 $R_1 &gt; R$, 取<br>$z = \cfrac{1}{2}\left(R + R_1\right)\in\left(R, R_1\right)$ 由</p>
+<script type="math/tex; mode=display">\sum_{n = 0}^{\infty}\limits c_nz^n = \sum_{n = 0}^{\infty}\limits a_nz^n + i\sum_{n = 0}^{\infty}\limits b_nz^n</script><p>那么此时 $\sum_{n = 0}^{\infty}\limits a_nz^n$,<br>$\sum_{n = 0}^{\infty}\limits b_nz^n$ 均收敛,</p>
 <p>进而 $\sum_{n = 0}^{\infty}\limits c_nz^n$ 收敛, 且 $z &gt; R$,<br>与收敛半径定义矛盾. 故 $R_1\le R$.</p>
-<p>综上, 有 $R = \min\left{R_1, R_2\right}$ 成立.&nbsp;◻</p>
+<p>综上, 有 $R = \min\left\{R_1, R_2\right\}$ 成立. ◻</p>
 <p>$\textbf{Example:}$<br>若 $f(z)$ 在 $R$ 上无奇点, 则收敛半径 $R = +\infty$;</p>
-<p>若 $f(z)$ 在 $R$ 上有奇点 $z_1, z_2, \cdots, z_n$, 则收敛半径<br>$R = \min_{1\le k\le n}\limits \left|{z_k}\right|$.&nbsp;◻</p>
-<h3 id="10-幂级数的敛散性"><a href="#10-幂级数的敛散性" class="headerlink" title="10. 幂级数的敛散性"></a>10. 幂级数的敛散性</h3><p>$\textbf{Example:}$<br>$$f_1(z) = \sum_{n = 1}^{\infty}\limits z^n$$</p>
-<p>在收敛圆周上处处发散.&nbsp;◻</p>
+<p>若 $f(z)$ 在 $R$ 上有奇点 $z_1, z_2, \cdots, z_n$, 则收敛半径<br>$R = \min_{1\le k\le n}\limits \left|{z_k}\right|$. ◻</p>
+<h3 id="10-幂级数的敛散性"><a href="#10-幂级数的敛散性" class="headerlink" title="10. 幂级数的敛散性"></a>10. 幂级数的敛散性</h3><p>$\textbf{Example:}$</p>
+<script type="math/tex; mode=display">f_1(z) = \sum_{n = 1}^{\infty}\limits z^n</script><p>在收敛圆周上处处发散. ◻</p>
 <p>$\textbf{Solution:}$<br>收敛半径 $R = 1$. 当 $\left|{z}\right| = 1$ 时,<br>$z = e^{i\theta}\thinspace(\theta\in\left[0, 2\pi\right))$,</p>
-<p>那么<br>$$\left|{z^n}\right| = \left|{e^{in\theta}}\right| = 1\nrightarrow 0, \mbox{当}\thinspace n\rightarrow \infty.$$</p>
-<p>由 $Cauchy$ 收敛准则, $$f_1(z) = \sum_{n = 1}^{\infty}\limits z^n$$</p>
-<p>在收敛圆周上处处发散.&nbsp;◻</p>
-<p>$\textbf{Example:}$<br>$$f_2(z) = \sum_{n = 1}^{\infty}\limits \frac{z^n}{n}$$</p>
-<p>在收敛圆周上部分发散, 部分收敛.&nbsp;◻</p>
-<p>$\textbf{Solution:}$<br>注意到<br>$$f_2(z) = \sum_{n = 1}^{\infty}\limits\int_{0}^{z} t^{n - 1}dt = \int_{0}^{z}\sum_{n = 1}^{\infty}\limits t^{n - 1}dt = -\ln(1 - z), \left|{z}\right| &lt; 1 = R.$$</p>
-<p>且 $f_2(1) = \sum_{n = 1}^{\infty}\limits\cfrac{1}{n}$ 发散,<br>$f_2(-1) = \sum_{n = 1}^{\infty}\limits\cfrac{(-1)^n}{n} = -\ln2$ 收敛.</p>
-<p>那么 $$f_2(z) = \sum_{n = 1}^{\infty}\limits\frac{z^n}{n}$$</p>
-<p>在收敛圆周上部分发散, 部分收敛.&nbsp;◻</p>
-<p>$\textbf{Example:}$<br>给出<br>$$\sum_{n = 1}^{\infty}\limits\frac{\cos{n\theta}}{n}, \sum_{n = 1}^{\infty}\limits\frac{\sin{n\theta}}{n}$$</p>
-<p>的和函数, 其中 $\theta\in\left(0, 2\pi\right)$.&nbsp;◻</p>
-<p>$\textbf{Solution:}$<br>注意到对于<br>$z = x + iy\in\mathbb{C}, \mbox{其中}\thinspace x, y\in\mathbb{R}$, 有<br>$$\ln(x + iy) = \ln\left|{x + iy}\right| + i\theta = \frac{1}{2}\ln(x^2 + y^2) + i\arctan\frac{y}{x}.$$</p>
-<p>对于 $z = re^{i\theta}, 0\le r &lt; 1, 0\le\theta &lt; 2\pi$, 有<br>$$\sum_{n = 1}^{\infty}\limits\frac{r^ne^{in\theta}}{n} = -\ln(1-re^{i\theta}) = -\ln(1-r\cos\theta - i\sin\theta),$$</p>
-<p>展开得<br>$$\sum_{n = 1}^{\infty}\limits\frac{r^n\cos{n\theta}}{n} + i\sum_{n = 1}^{\infty}\limits\frac{r^n\sin{n\theta}}{n} = -\frac{1}{2}\ln(1 - 2r\cos\theta + r^2) + i\arctan\frac{r\sin\theta}{1 - r\cos\theta}.$$</p>
-<p>当 $\theta\in\left(0, 2\pi\right)$ 时, 令 $r\rightarrow 1^{-}$, 即得<br>$$\sum_{n = 1}^{\infty}\limits\frac{\cos{n\theta}}{n} = -\frac{1}{2}\ln(2 - 2\cos\theta) = -\ln\left(2\sin\frac{\theta}{2}\right),$$<br>$$\sum_{n = 1}^{\infty}\limits\frac{\sin{n\theta}}{n} = \arctan\frac{\sin\theta}{1 - \cos\theta} = \arctan\left(\cot\frac{\theta}{2}\right) = \frac{\pi - \theta}{2}.$$&nbsp;◻</p>
-<p>$\textbf{Example:}$<br>给出<br>$$\sum_{n = 1}^{\infty}\limits\frac{\cos{n\theta}}{n^2}, \sum_{n = 1}^{\infty}\limits\frac{\sin{n\theta}}{n^2}$$</p>
-<p>的和函数, 其中 $\theta\in\left[0, 2\pi\right)$.&nbsp;◻</p>
-<p>$\textbf{Solution:}$<br>注意到<br>$$\sum_{n = 1}^{\infty}\limits\frac{\cos{n\theta}}{n^2} = \sum_{n = 1}^{\infty}\frac{1}{n^2} - \sum_{n = 1}^{\infty}\limits\int_{0}^{\theta}\frac{\sin{nt}}{n}dt = \frac{\pi^2}{6} - \frac{\theta\left(2\pi - \theta\right)}{4}.$$<br>$$\sum_{n = 1}^{\infty}\limits\frac{\sin{n\theta}}{n^2} = \sum_{n = 1}^{\infty}\limits\int_{0}^{\theta}\frac{\cos{nt}}{n}dt = \int_{0}^{\theta}\sum_{n = 1}^{\infty}\limits\frac{\cos{nt}}{n}dt = -\int_{0}^{\theta}\ln\left(2\sin\frac{t}{2}\right)dt.$$&nbsp;◻</p>
-<p>$\textbf{Example:}$<br>$$f_3(z) = \sum_{n = 1}^{\infty}\limits \frac{z^n}{n^2}$$</p>
-<p>在收敛圆周上处处收敛.&nbsp;◻</p>
-<p>$\textbf{Solution:}$<br>注意到当 $\left|{z}\right| = 1$ 时,<br>$$\sum_{n = 1}^{\infty}\left|{\frac{z^n}{n^2}}\right| = \sum_{n = 1}^{\infty}\frac{1}{n^2} = \frac{\pi^2}{6},$$</p>
-<p>那么 $$f_3(z) = \sum_{n = 1}^{\infty}\limits \frac{z^n}{n^2}$$</p>
-<p>在收敛圆周上处处收敛.&nbsp;◻</p>
-<p>$\textbf{Example:}$<br>幂级数收敛圆周上的点都是其奇点.&nbsp;◻</p>
-<h3 id="11-Laurent-级数"><a href="#11-Laurent-级数" class="headerlink" title="11. Laurent 级数"></a>11. Laurent 级数</h3><p>$\textbf{Example:}$<br>$\mathbb{C}^2$ 上的分片函数: $$f(z) = \cfrac{1}{1 + z^2} =<br>        \begin{cases}<br>            \sum_{n = 0}^{\infty}\limits(-1)^nz^{2n}, \left|{z}\right| &lt; 1 \<br>            \cfrac{1}{1 + z^2}, \left|{z}\right| = 1, z\ne\pm i \<br>            \sum_{n = 0}^{\infty}\limits\cfrac{(-1)^n}{z^{2(n + 1)}}, \left|{z}\right| &gt; 1<br>        \end{cases}$$&nbsp;◻</p>
-<h3 id="12-留数-A"><a href="#12-留数-A" class="headerlink" title="12. 留数 A"></a>12. 留数 A</h3><p>$\textbf{Example:}$<br>求复积分<br>$$I = \oint_{\left|{z}\right| = \varepsilon &gt; 1}e^{\frac{1}{z}}dz.$$&nbsp;◻</p>
-<p>$\textbf{Solution:}$<br>令 $t = \cfrac{1}{z}$, $dz = -\cfrac{dt}{t^2}$. 记<br>$z = \varepsilon e^{i\theta}$, 那么<br>$t = \cfrac{1}{\varepsilon}e^{-i\theta}$,<br>$\theta\in\left[0, 2\pi\right)$.</p>
-<p>那么<br>$$I = -\oint_{\left|{t}\right| = \frac{1}{\varepsilon}}{e^t\left(-\frac{dt}{t^2}\right)} = \oint_{\left|{t}\right| = \frac{1}{\varepsilon}}\frac{e^t}{t^2}dt = 2\pi i\left(e^t\right)’|_{t = 0} = 2\pi i.$$&nbsp;◻</p>
-<p>$\textbf{Solution:}$<br>注意到<br>$$I = \oint_{\left|{z}\right| = \varepsilon}\limits e^{\frac{1}{z}}dz = \sum_{n = 0}^{+\infty}\cfrac{1}{n!}\oint_{\left|{z}\right| = \varepsilon}\cfrac{dz}{z^n} = \sum_{n = 0}^{+\infty}\limits\cfrac{1}{n!}I_n = I_1 = 2\pi i.$$&nbsp;◻</p>
-<p>$\textbf{Example:}$<br>求复积分<br>$$J_n = \oint_{\left|{z}\right| = r &gt; 1}\cfrac{dz}{1 + z^n}, n\in\mathbb{N}.$$&nbsp;◻</p>
-<p>$\textbf{Solution:}$<br>令 $t = \cfrac{1}{z}$, $dz = -\cfrac{dt}{t^2}$. 那么<br>$$\begin{aligned}<br>            J_n &amp;= -\oint_{\left|{t}\right| = \frac{1}{r}}\cfrac{1}{1 + \frac{1}{t^n}}\left(-\frac{dt}{t^2}\right) \<br>            &amp;= \oint_{\left|{t}\right| = \frac{1}{r}}\cfrac{t^{n - 2}}{1 + t^n}dt \<br>            &amp;= \begin{cases}<br>                2\pi i, n = 1; \<br>                0, n\ge 2.<br>            \end{cases}<br>        \end{aligned}$$&nbsp;◻</p>
-<p>$\textbf{Solution:}$<br>$$\begin{aligned}<br>            J_n &amp;= 2\pi i\sum_{k = 1}^{n}\limits Res\left[\frac{1}{1 + z^n}, z_k\right] \<br>            &amp;= 2\pi i\sum_{k = 1}^{n}\limits\cfrac{1}{nz_k^{n - 1}} \<br>            &amp;= \cfrac{2\pi i}{n}\sum_{k = 1}^{n}(-z_k) \<br>            &amp;= -\cfrac{2\pi i}{n}\sum_{k = 1}^{n}z_k \<br>            &amp;= \begin{cases}<br>                2\pi i, n = 1; \<br>                0, n\ge 2.<br>            \end{cases}<br>        \end{aligned}$$&nbsp;◻</p>
-<p>$\textbf{Example:}$<br>给出<br>$$K_n = \oint_{\left|{z}\right| = r &gt; 1}\cfrac{z^{2n}dz}{1 + z^n} = \oint_{\left|{z}\right| = r}\cfrac{dz}{1 + z^n} + \oint_{\left|{z}\right| = r}(z^n - 1) = J_n, n\in\mathbb{N}.$$&nbsp;◻</p>
-<p>$\textbf{Example:}$<br>求复积分<br>$$J = \oint_{\left|{z}\right| = r &gt; 1}\frac{z^3e^{\frac{1}{z}}}{1 + z}dz.$$&nbsp;◻</p>
-<p>$\textbf{Solution:}$<br>令 $t = \cfrac{1}{z}$, $dz = -\cfrac{dt}{t^2}$. 从而<br>$$J = \oint_{\left|{t}\right| = \frac{1}{r}}\frac{e^t}{t^4(1 + t)}dt = \cfrac{2\pi i}{3!}\left(\frac{e^t}{1 + t}\right)^{(3)}|_{t = 0} = -\frac{2}{3}\pi i.$$&nbsp;◻</p>
-<p>$\textbf{Solution:}$<br>令 $t = \cfrac{1}{z}$, $dz = -\cfrac{dt}{t^2}$. 从而<br>$$\begin{aligned}<br>            J &amp;= \oint_{\left|{t}\right| = \frac{1}{r}}\frac{e^t}{t^4(1 + t)}dt \<br>            &amp;= \oint_{\left|{t}\right| = \frac{1}{r}}\frac{e^t(1 - t^4 + t^4)}{t^4(1 + t)}dt \<br>            &amp;= \oint_{\left|{t}\right| = \frac{1}{r}}\frac{e^t(1 - t^4)}{t^4(1 + t)}dt + \oint_{\left|{t}\right| = \frac{1}{r}}\frac{e^tt^4}{1 + t}dt \<br>            &amp;= \oint\frac{e^t}{t^4}dt - \oint\frac{e^t}{t^3}dt + \oint\frac{e^t}{t^2}dt - \oint\frac{e^t}{t}dt \<br>            &amp;= 2\pi i\left(\frac{1}{3!} - \frac{1}{2!} + \frac{1}{1!} - \frac{1}{0!}\right) \<br>            &amp;= -\frac{2}{3}\pi i.<br>        \end{aligned}$$&nbsp;◻</p>
-<p>$\textbf{Solution:}$<br>令 $t = \cfrac{1}{z}$, $dz = -\cfrac{dt}{t^2}$. 从而<br>$$J = \oint_{\left|{t}\right| = \frac{1}{r}}\frac{e^t}{t^4(1 + t)}dt,$$</p>
-<p>注意到 $$\begin{aligned}<br>            \frac{e^t}{t^4(1 + t)} &amp;= \frac{1}{t^4}\left(1 + t + \frac{t^2}{2!} + \frac{t^3}{3!} + \cdots\right)\left(1 - t + t^2 - t^3 + \cdots\right) \<br>            &amp;= \frac{1}{t^4}\left(1 + \frac{1}{2}t^2 - \frac{1}{3}t^3 + O(t^3)\right),<br>        \end{aligned}$$</p>
-<p>故 $$\begin{aligned}<br>            J &amp;= \oint_{\left|{t}\right| = \frac{1}{r}}\frac{1}{t^4}\left(1 + \frac{1}{2}t^2 - \frac{1}{3}t^3 + O(t^3)\right) \<br>            &amp;= I_4 + \frac{1}{2}I_2 - \frac{1}{3}I_1 \<br>            &amp;= -\frac{1}{3}I_1 \<br>            &amp;= -\frac{2}{3}\pi i.<br>        \end{aligned}$$&nbsp;◻</p>
-<p>$\textbf{Solution:}$<br>$$\begin{aligned}<br>            J &amp;= \oint_{\left|{z}\right| = r &gt; 1}\frac{z^3e^{\frac{1}{z}}}{1 + z}dz \<br>            &amp;= 2\pi i\left{Res\left[f, 0\right] + Res\left[f, -1\right]\right}.<br>        \end{aligned}$$</p>
-<p>注意到 $$\begin{aligned}<br>            Res\left[f, -1\right] = \frac{(-1)^3e^{-1}}{1} = -e^{-1},<br>        \end{aligned}$$</p>
-<p>而 $Res\left[f, 0\right]$ 为 $f$ 在 $z_0 = 0$ 处 $Larent$ 级数中的系数<br>$C_{-1}$.</p>
-<p>注意到 $$\begin{aligned}<br>            \frac{z^3e^{\frac{1}{z}}}{1 + z} = z^3\left(1 + \frac{1}{z} + \frac{1}{2!z^2} + \frac{1}{3!z^3} + \cdots\right)\left(1 - z + z^2 - z^3 + \cdots\right),<br>        \end{aligned}$$</p>
-<p>那么<br>$$C_{-1} = \frac{1}{4!} - \frac{1}{5!} + \frac{1}{6!} - \frac{1}{7!} + \cdots = e^{-1} - \frac{1}{3}.$$</p>
-<p>进而 $$\begin{aligned}<br>            J &amp;= \oint_{\left|{z}\right| = r &gt; 1}\frac{z^3e^{\frac{1}{z}}}{1 + z}dz \<br>            &amp;= 2\pi i\left{Res\left[f, 0\right] + Res\left[f, -1\right]\right} \<br>            &amp;= 2\pi i\left(-e^{-1} + e^{-1} - \frac{1}{3}\right) \<br>            &amp;= -\frac{2}{3}\pi i.<br>        \end{aligned}$$&nbsp;◻</p>
-<p>$\textbf{Example:}$<br>求复积分<br>$$I_{a, b} = \int_{0}^{2\pi}\cfrac{d\theta}{a + b\cos\theta},$$</p>
-<p>其中 $a &gt; \left|{b}\right|$, $a, b\in\mathbb{R}$.&nbsp;◻</p>
-<p>$\textbf{Solution:}$<br>令<br>$$z = e^{i\theta}\Longrightarrow \cos\theta = \cfrac{z + z^{-1}}{2}.$$</p>
-<p>那么<br>$$dz = ie^{i\theta}d\theta = izd\theta\Longrightarrow d\theta = \cfrac{dz}{iz}.$$</p>
-<p>进而<br>$$I_{a, b} = \int_{0}^{2\pi}\cfrac{d\theta}{a + b\frac{z + z^{-1}}{2}} = \cfrac{2}{i}\oint_{\left|{z}\right| = 1}\cfrac{dz}{bz^2 + 2az + b}.$$</p>
-<p>$\circ$ 若 $b = 0$, 得 $$I_{a, b} = \frac{2\pi}{a}.$$</p>
-<p>$\circ$ 若 $b &gt; 0$, 考虑方程 $z^2 + 2\cfrac{a}{b}z + 1 = 0$. 解得<br>$$\begin{aligned}<br>            \begin{cases}<br>                z_1 = -\cfrac{a}{b} + \cfrac{\sqrt{a^2 - b^2}}{b},\<br>                z_2 = -\cfrac{a}{b} - \cfrac{\sqrt{a^2 - b^2}}{b} &lt; -\cfrac{a}{b} &lt; -1.<br>            \end{cases}<br>        \end{aligned}$$</p>
-<p>故<br>$$I_{a, b} = \cfrac{2}{i}\cdot 2\pi i\cdot Res\left[f(z), z_1\right] = \cfrac{2}{i}\cdot 2\pi i\cdot\cfrac{1}{2bz_1 + 2a} = \cfrac{2\pi}{\sqrt{a^2 - b^2}}.$$</p>
-<p>$\circ$ 若 $b &lt; 0$, 同理有<br>$$I_{a, b} = \cfrac{2\pi}{\sqrt{a^2 - b^2}}.$$</p>
-<p>综上, 有<br>$$I_{a, b} = \int_{0}^{2\pi}\cfrac{d\theta}{a + b\cos\theta} = \cfrac{2\pi}{\sqrt{a^2 - b^2}}.$$&nbsp;◻</p>
-<p>$\textbf{Example:}$<br>求复积分<br>$$I_p = \int_{0}^{2\pi}\cfrac{d\theta}{1 + p^2 - 2p\cos\theta},$$</p>
-<p>其中 $p\in(-1, 1).$&nbsp;◻</p>
-<p>$\textbf{Solution:}$<br>在 $I_{a, b}$ 中取 $a = 1 + p^2$, $b = -2p$, 得<br>$$I_p = \cfrac{2\pi}{\sqrt{(1 + p^2)^2 - (-2p)^2}} = \cfrac{2\pi}{1 - p^2}.$$&nbsp;◻</p>
-<p>$\textbf{Example:}$<br>求复积分<br>$$J_{a, b} = \int_{0}^{2\pi}\cfrac{d\theta}{a^2\cos^2\theta + b^2\sin^2\theta},$$</p>
-<p>其中 $a &gt; 0$, $b &gt; 0$.&nbsp;◻</p>
+<p>那么</p>
+<script type="math/tex; mode=display">\left|{z^n}\right| = \left|{e^{in\theta}}\right| = 1\nrightarrow 0, \mbox{当}\thinspace n\rightarrow \infty.</script><p>由 $Cauchy$ 收敛准则, <script type="math/tex">f_1(z) = \sum_{n = 1}^{\infty}\limits z^n</script></p>
+<p>在收敛圆周上处处发散. ◻</p>
+<p>$\textbf{Example:}$</p>
+<script type="math/tex; mode=display">f_2(z) = \sum_{n = 1}^{\infty}\limits \frac{z^n}{n}</script><p>在收敛圆周上部分发散, 部分收敛. ◻</p>
+<p>$\textbf{Solution:}$<br>注意到</p>
+<script type="math/tex; mode=display">f_2(z) = \sum_{n = 1}^{\infty}\limits\int_{0}^{z} t^{n - 1}dt = \int_{0}^{z}\sum_{n = 1}^{\infty}\limits t^{n - 1}dt = -\ln(1 - z), \left|{z}\right| < 1 = R.</script><p>且 $f_2(1) = \sum_{n = 1}^{\infty}\limits\cfrac{1}{n}$ 发散,<br>$f_2(-1) = \sum_{n = 1}^{\infty}\limits\cfrac{(-1)^n}{n} = -\ln2$ 收敛.</p>
+<p>那么 <script type="math/tex">f_2(z) = \sum_{n = 1}^{\infty}\limits\frac{z^n}{n}</script></p>
+<p>在收敛圆周上部分发散, 部分收敛. ◻</p>
+<p>$\textbf{Example:}$<br>给出</p>
+<script type="math/tex; mode=display">\sum_{n = 1}^{\infty}\limits\frac{\cos{n\theta}}{n}, \sum_{n = 1}^{\infty}\limits\frac{\sin{n\theta}}{n}</script><p>的和函数, 其中 $\theta\in\left(0, 2\pi\right)$. ◻</p>
+<p>$\textbf{Solution:}$<br>注意到对于<br>$z = x + iy\in\mathbb{C}, \mbox{其中}\thinspace x, y\in\mathbb{R}$, 有</p>
+<script type="math/tex; mode=display">\ln(x + iy) = \ln\left|{x + iy}\right| + i\theta = \frac{1}{2}\ln(x^2 + y^2) + i\arctan\frac{y}{x}.</script><p>对于 $z = re^{i\theta}, 0\le r &lt; 1, 0\le\theta &lt; 2\pi$, 有</p>
+<script type="math/tex; mode=display">\sum_{n = 1}^{\infty}\limits\frac{r^ne^{in\theta}}{n} = -\ln(1-re^{i\theta}) = -\ln(1-r\cos\theta - i\sin\theta),</script><p>展开得</p>
+<script type="math/tex; mode=display">\sum_{n = 1}^{\infty}\limits\frac{r^n\cos{n\theta}}{n} + i\sum_{n = 1}^{\infty}\limits\frac{r^n\sin{n\theta}}{n} = -\frac{1}{2}\ln(1 - 2r\cos\theta + r^2) + i\arctan\frac{r\sin\theta}{1 - r\cos\theta}.</script><p>当 $\theta\in\left(0, 2\pi\right)$ 时, 令 $r\rightarrow 1^{-}$, 即得</p>
+<script type="math/tex; mode=display">\sum_{n = 1}^{\infty}\limits\frac{\cos{n\theta}}{n} = -\frac{1}{2}\ln(2 - 2\cos\theta) = -\ln\left(2\sin\frac{\theta}{2}\right),</script><script type="math/tex; mode=display">\sum_{n = 1}^{\infty}\limits\frac{\sin{n\theta}}{n} = \arctan\frac{\sin\theta}{1 - \cos\theta} = \arctan\left(\cot\frac{\theta}{2}\right) = \frac{\pi - \theta}{2}.$$ ◻
+
+$\textbf{Example:}$
+给出
+$$\sum_{n = 1}^{\infty}\limits\frac{\cos{n\theta}}{n^2}, \sum_{n = 1}^{\infty}\limits\frac{\sin{n\theta}}{n^2}</script><p>的和函数, 其中 $\theta\in\left[0, 2\pi\right)$. ◻</p>
+<p>$\textbf{Solution:}$<br>注意到</p>
+<script type="math/tex; mode=display">\sum_{n = 1}^{\infty}\limits\frac{\cos{n\theta}}{n^2} = \sum_{n = 1}^{\infty}\frac{1}{n^2} - \sum_{n = 1}^{\infty}\limits\int_{0}^{\theta}\frac{\sin{nt}}{n}dt = \frac{\pi^2}{6} - \frac{\theta\left(2\pi - \theta\right)}{4}.</script><script type="math/tex; mode=display">\sum_{n = 1}^{\infty}\limits\frac{\sin{n\theta}}{n^2} = \sum_{n = 1}^{\infty}\limits\int_{0}^{\theta}\frac{\cos{nt}}{n}dt = \int_{0}^{\theta}\sum_{n = 1}^{\infty}\limits\frac{\cos{nt}}{n}dt = -\int_{0}^{\theta}\ln\left(2\sin\frac{t}{2}\right)dt.$$ ◻
+
+$\textbf{Example:}$
+$$f_3(z) = \sum_{n = 1}^{\infty}\limits \frac{z^n}{n^2}</script><p>在收敛圆周上处处收敛. ◻</p>
+<p>$\textbf{Solution:}$<br>注意到当 $\left|{z}\right| = 1$ 时,</p>
+<script type="math/tex; mode=display">\sum_{n = 1}^{\infty}\left|{\frac{z^n}{n^2}}\right| = \sum_{n = 1}^{\infty}\frac{1}{n^2} = \frac{\pi^2}{6},</script><p>那么 <script type="math/tex">f_3(z) = \sum_{n = 1}^{\infty}\limits \frac{z^n}{n^2}</script></p>
+<p>在收敛圆周上处处收敛. ◻</p>
+<p>$\textbf{Example:}$<br>幂级数收敛圆周上的点都是其奇点. ◻</p>
+<h3 id="11-Laurent-级数"><a href="#11-Laurent-级数" class="headerlink" title="11. Laurent 级数"></a>11. Laurent 级数</h3><p>$\textbf{Example:}$<br>$\mathbb{C}^2$ 上的分片函数: <script type="math/tex">f(z) = \cfrac{1}{1 + z^2} = 
+        \begin{cases}
+            \sum_{n = 0}^{\infty}\limits(-1)^nz^{2n}, \left|{z}\right| < 1 \\
+            \cfrac{1}{1 + z^2}, \left|{z}\right| = 1, z\ne\pm i \\
+            \sum_{n = 0}^{\infty}\limits\cfrac{(-1)^n}{z^{2(n + 1)}}, \left|{z}\right| > 1 
+        \end{cases}</script> ◻</p>
+<h3 id="12-留数-A"><a href="#12-留数-A" class="headerlink" title="12. 留数 A"></a>12. 留数 A</h3><p>$\textbf{Example:}$<br>求复积分</p>
+<script type="math/tex; mode=display">I = \oint_{\left|{z}\right| = \varepsilon > 1}e^{\frac{1}{z}}dz.$$ ◻
+
+$\textbf{Solution:}$
+令 $t = \cfrac{1}{z}$, $dz = -\cfrac{dt}{t^2}$. 记
+$z = \varepsilon e^{i\theta}$, 那么
+$t = \cfrac{1}{\varepsilon}e^{-i\theta}$,
+$\theta\in\left[0, 2\pi\right)$.
+
+那么
+$$I = -\oint_{\left|{t}\right| = \frac{1}{\varepsilon}}{e^t\left(-\frac{dt}{t^2}\right)} = \oint_{\left|{t}\right| = \frac{1}{\varepsilon}}\frac{e^t}{t^2}dt = 2\pi i\left(e^t\right)'|_{t = 0} = 2\pi i.$$ ◻
+
+$\textbf{Solution:}$
+注意到
+$$I = \oint_{\left|{z}\right| = \varepsilon}\limits e^{\frac{1}{z}}dz = \sum_{n = 0}^{+\infty}\cfrac{1}{n!}\oint_{\left|{z}\right| = \varepsilon}\cfrac{dz}{z^n} = \sum_{n = 0}^{+\infty}\limits\cfrac{1}{n!}I_n = I_1 = 2\pi i.$$ ◻
+
+$\textbf{Example:}$
+求复积分
+$$J_n = \oint_{\left|{z}\right| = r > 1}\cfrac{dz}{1 + z^n}, n\in\mathbb{N}.$$ ◻
+
+$\textbf{Solution:}$
+令 $t = \cfrac{1}{z}$, $dz = -\cfrac{dt}{t^2}$. 那么
+$$\begin{aligned}
+            J_n &= -\oint_{\left|{t}\right| = \frac{1}{r}}\cfrac{1}{1 + \frac{1}{t^n}}\left(-\frac{dt}{t^2}\right) \\
+            &= \oint_{\left|{t}\right| = \frac{1}{r}}\cfrac{t^{n - 2}}{1 + t^n}dt \\
+            &= \begin{cases}
+                2\pi i, n = 1; \\
+                0, n\ge 2.
+            \end{cases}
+        \end{aligned}$$ ◻
+
+$\textbf{Solution:}$
+$$\begin{aligned}
+            J_n &= 2\pi i\sum_{k = 1}^{n}\limits Res\left[\frac{1}{1 + z^n}, z_k\right] \\
+            &= 2\pi i\sum_{k = 1}^{n}\limits\cfrac{1}{nz_k^{n - 1}} \\
+            &= \cfrac{2\pi i}{n}\sum_{k = 1}^{n}(-z_k) \\
+            &= -\cfrac{2\pi i}{n}\sum_{k = 1}^{n}z_k \\
+            &= \begin{cases}
+                2\pi i, n = 1; \\
+                0, n\ge 2.
+            \end{cases}
+        \end{aligned}$$ ◻
+
+$\textbf{Example:}$
+给出
+$$K_n = \oint_{\left|{z}\right| = r > 1}\cfrac{z^{2n}dz}{1 + z^n} = \oint_{\left|{z}\right| = r}\cfrac{dz}{1 + z^n} + \oint_{\left|{z}\right| = r}(z^n - 1) = J_n, n\in\mathbb{N}.$$ ◻
+
+$\textbf{Example:}$
+求复积分
+$$J = \oint_{\left|{z}\right| = r > 1}\frac{z^3e^{\frac{1}{z}}}{1 + z}dz.$$ ◻
+
+$\textbf{Solution:}$
+令 $t = \cfrac{1}{z}$, $dz = -\cfrac{dt}{t^2}$. 从而
+$$J = \oint_{\left|{t}\right| = \frac{1}{r}}\frac{e^t}{t^4(1 + t)}dt = \cfrac{2\pi i}{3!}\left(\frac{e^t}{1 + t}\right)^{(3)}|_{t = 0} = -\frac{2}{3}\pi i.$$ ◻
+
+$\textbf{Solution:}$
+令 $t = \cfrac{1}{z}$, $dz = -\cfrac{dt}{t^2}$. 从而
+$$\begin{aligned}
+            J &= \oint_{\left|{t}\right| = \frac{1}{r}}\frac{e^t}{t^4(1 + t)}dt \\
+            &= \oint_{\left|{t}\right| = \frac{1}{r}}\frac{e^t(1 - t^4 + t^4)}{t^4(1 + t)}dt \\
+            &= \oint_{\left|{t}\right| = \frac{1}{r}}\frac{e^t(1 - t^4)}{t^4(1 + t)}dt + \oint_{\left|{t}\right| = \frac{1}{r}}\frac{e^tt^4}{1 + t}dt \\
+            &= \oint\frac{e^t}{t^4}dt - \oint\frac{e^t}{t^3}dt + \oint\frac{e^t}{t^2}dt - \oint\frac{e^t}{t}dt \\
+            &= 2\pi i\left(\frac{1}{3!} - \frac{1}{2!} + \frac{1}{1!} - \frac{1}{0!}\right) \\
+            &= -\frac{2}{3}\pi i.
+        \end{aligned}$$ ◻
+
+$\textbf{Solution:}$
+令 $t = \cfrac{1}{z}$, $dz = -\cfrac{dt}{t^2}$. 从而
+$$J = \oint_{\left|{t}\right| = \frac{1}{r}}\frac{e^t}{t^4(1 + t)}dt,</script><p>注意到 <script type="math/tex">\begin{aligned}
+            \frac{e^t}{t^4(1 + t)} &= \frac{1}{t^4}\left(1 + t + \frac{t^2}{2!} + \frac{t^3}{3!} + \cdots\right)\left(1 - t + t^2 - t^3 + \cdots\right) \\
+            &= \frac{1}{t^4}\left(1 + \frac{1}{2}t^2 - \frac{1}{3}t^3 + O(t^3)\right),
+        \end{aligned}</script></p>
+<p>故 <script type="math/tex">\begin{aligned}
+            J &= \oint_{\left|{t}\right| = \frac{1}{r}}\frac{1}{t^4}\left(1 + \frac{1}{2}t^2 - \frac{1}{3}t^3 + O(t^3)\right) \\
+            &= I_4 + \frac{1}{2}I_2 - \frac{1}{3}I_1 \\
+            &= -\frac{1}{3}I_1 \\
+            &= -\frac{2}{3}\pi i.
+        \end{aligned}</script> ◻</p>
 <p>$\textbf{Solution:}$</p>
-<p>$$J_{a, b} = \int_{0}^{2\pi}\cfrac{2d\theta}{(a^2 + b^2) + (a^2 - b^2)\cos 2\theta} = \int_{0}^{4\pi}\cfrac{dt}{(a^2 + b^2) + (a^2 - b^2)\cos t},$$</p>
-<p>在 $I_{A, B}$ 中取 $A = a^2 + b^2$, $B = a^2 - b^2$, 得<br>$$J_{a, b} = 2\cfrac{2\pi}{\sqrt{(a^2 + b^2)^2 - (a^2 - b^2)^2}} = \cfrac{2\pi}{ab}.$$&nbsp;◻</p>
-<h3 id="13-留数-B"><a href="#13-留数-B" class="headerlink" title="13. 留数 B"></a>13. 留数 B</h3><p>$\textbf{Example:}$<br>$C_R: Re^{i\theta}$, $0\le\theta\le\pi$, 多项式 $P$, $Q$ 满足<br>$\deg Q\ge\deg P + 2$, 则<br>$$\lim_{R\rightarrow +\infty}\limits\int_{C_R}\frac{P(z)}{Q(z)}dz = 0.$$&nbsp;◻</p>
-<p>$\textbf{Example:}$<br>求积分<br>$$I_{a, b} = \int_{0}^{+\infty}\cfrac{dx}{(x^2 + a^2)(x^2 + b^2)},$$</p>
-<p>其中 $a &gt; 0$, $b &gt; 0$ 为常数.&nbsp;◻</p>
-<p>$\textbf{Solution:}$<br>注意到<br>$$I_{a, b} = \frac{1}{2}\lim_{R\rightarrow +\infty}\int_{-R}^{R}\cfrac{dx}{(x^2 + a^2)(x^2 + b^2)}.$$</p>
-<p>作 $\Gamma_R: \left[-R, R\right]\cup C_R$,</p>
-<p>那么根据复合闭路定理, 得<br>$$\oint_{\Gamma_R}f(z)dz = \int_{-R}^{R}f(x)dx + \int_{C_R}f(z)dz.$$</p>
-<p>令 $R\rightarrow +\infty$, 由于<br>$$\lim_{R\rightarrow +\infty}\int_{C_R}f(z)dz = 0,$$</p>
-<p>那么 $$\begin{aligned}<br>            I_{a, b} &amp;= \frac{1}{2}\lim_{R\rightarrow +\infty}\oint_{\Gamma_R}f(z)dz \<br>            &amp;= \pi i\left(Res\left[f(z), ai\right], Res\left[f(z), bi\right]\right) \<br>            &amp;= \pi i\left(\frac{1}{2ai(a^2 + b^2 +2(ai)^2)} + \frac{1}{2bi(a^2 + b^2 +2(bi)^2)}\right) \<br>            &amp;= \frac{\pi}{2ab(a + b)}.<br>        \end{aligned}$$&nbsp;◻</p>
-<p>$\textbf{Example:}$<br>求复积分 $$I_n = \int_{0}^{+\infty}\cfrac{dx}{1 + x^{2n}}.$$&nbsp;◻</p>
-<p>$\textbf{Solution:}$<br>注意到<br>$$I_n = \frac{1}{2}\lim_{R\rightarrow +\infty}\int_{-R}^{R}\cfrac{dx}{1 + x^{2n}}.$$</p>
-<p>作 $\Gamma_R: \left[-R, R\right]\cup C_R$,</p>
-<p>那么根据复合闭路定理, 得<br>$$\oint_{\Gamma_R}f(z)dz = \int_{-R}^{R}f(x)dx + \int_{C_R}f(z)dz.$$</p>
-<p>令 $R\rightarrow +\infty$, 由于<br>$$\lim_{R\rightarrow +\infty}\int_{C_R}f(z)dz = 0,$$</p>
-<p>那么 $$\begin{aligned}<br>            I_n &amp;= \frac{1}{2}\lim_{R\rightarrow +\infty}\oint_{\Gamma_R}f(z)dz \<br>            &amp;= \pi i\sum_{k = 1}^{n}Res\left[\frac{1}{1 + z^{2n}}, z_k\right] = \pi i\sum_{k = 1}^{n}\frac{1}{2nz_k^{2n - 1}} \<br>            &amp;= \frac{\pi i}{2n}\sum_{k = 1}^{n}z_k^{2n - 1} = -\frac{\pi i}{2n}\sum_{k = 1}^{n}z_k \<br>            &amp;= -\frac{\pi i}{2n}\sum_{k = 1}^{n}e^{\frac{(2k - 1)\pi i}{2n}} = -\frac{\pi i}{2n}e^{-\frac{\pi i}{2n}}\sum_{k = 1}^{n}e^{\frac{k\pi i}{n}} \<br>            &amp;= -\frac{\pi i}{2n}e^{-\frac{\pi i}{2n}}\frac{2}{1 - e^{\frac{\pi i}{n}}} = \frac{\pi i}{n}\frac{1}{e^{\frac{\pi i}{2n}} - e^{-\frac{\pi i}{2n}}} \<br>            &amp;= \frac{\pi i}{n}\frac{1}{2i\sin\frac{\pi}{2n}} = \frac{\frac{\pi}{2n}}{\sin\frac{\pi}{2n}}.<br>        \end{aligned}$$&nbsp;◻</p>
-<p>$\textbf{Example:}$<br>求复积分<br>$$I_{r, n} = \int_{0}^{+\infty}\cfrac{dx}{r^{2n} + x^{2n}}.$$</p>
-<p>其中 $r &gt; 0$.&nbsp;◻</p>
-<p>$\textbf{Solution:}$<br>$$\begin{aligned}<br>            I_{r, n} &amp;= \cfrac{1}{r^{2n - 1}}\int_{0}^{+\infty}\cfrac{d\left(\frac{x}{r}\right)}{1 + \left(\frac{x}{r}\right)^{2n}} \<br>            &amp;= \cfrac{1}{r^{2n - 1}}I_n \<br>            &amp;= \frac{\frac{\pi}{2n}}{r^{2n - 1}\sin\frac{\pi}{2n}}.<br>        \end{aligned}$$&nbsp;◻</p>
-<p>$\textbf{Example:}$<br>求积分 $$J_n = \int_{0}^{+\infty}\cfrac{dx}{1 + x^n},$$</p>
-<p>其中 $n \ge 2$.&nbsp;◻</p>
-<p>$\textbf{Solution:}$<br>注意到<br>$$J_n = \lim_{R\rightarrow +\infty}\int_{0}^{R}\cfrac{dx}{1 + x^n}.$$</p>
-<p>作<br>$\Gamma_R: \left[0, R\right]\cup C_R\cup \left[Re^{i\theta}, 0\right]$,</p>
-<p>那么根据复合闭路定理, 得<br>$$\oint_{\Gamma_R}f(z)dz = \int_{0}^{R}f(x)dx + \int_{C_R}f(z)dz + \int_{R}^{0}f(xe^{i\theta})d(xe^{i\theta}).$$</p>
-<p>令 $R\rightarrow +\infty$, 由于<br>$$\lim_{R\rightarrow +\infty}\int_{C_R}f(z)dz = 0,$$</p>
-<p>取 $\theta = \cfrac{2\pi}{n}, \varphi = \cfrac{\pi}{n}$, 那么<br>$$\begin{aligned}<br>            \lim_{R\rightarrow +\infty}\oint_{\Gamma_R}f(z)dz &amp;= \lim_{R\rightarrow +\infty}\int_{0}^{R}f(x)dx + \lim_{R\rightarrow +\infty}\int_{R}^{0}f(xe^{i\theta})d(xe^{i\theta}) \<br>            &amp;= \lim_{R\rightarrow +\infty}\left(\int_{0}^{R}\cfrac{dx}{1 + x^n}dx - \int_{0}^{R}\cfrac{e^{i\theta}dx}{1 + e^{ni\theta}x^n}\right) \<br>            &amp;= \lim_{R\rightarrow +\infty}\left(\int_{0}^{R}\cfrac{dx}{1 + x^n}dx - e^{\frac{2\pi i}{n}}\int_{0}^{R}\cfrac{dx}{1 + x^n}\right) \<br>            &amp;= \left(1 - e^{\frac{2\pi i}{n}}\right)\lim_{R\rightarrow +\infty}\int_{0}^{R}\cfrac{dx}{1 + x^n}dx \<br>            &amp;= \left(1 - e^{\frac{2\pi i}{n}}\right)J_n.<br>        \end{aligned}$$</p>
-<p>又注意到 $$\begin{aligned}<br>            \lim_{R\rightarrow +\infty}\oint_{\Gamma_R}f(z)dz = 2\pi i\frac{1}{ne^{(n - 1)\frac{\pi i}{n}}},<br>        \end{aligned}$$</p>
-<p>故 $$\begin{aligned}<br>            J_n &amp;= \frac{2\pi i}{ne^{(n - 1)\frac{\pi i}{n}}\left(1 - e^{\frac{2\pi i}{n}}\right)} \<br>            &amp;= \frac{2\pi i}{ne^{(\pi - \varphi)i}\left(1 - e^{2\varphi i}\right)} \<br>            &amp;= \frac{\pi i}{n(-\cos\varphi + i\sin\varphi)\sin\varphi(\sin\varphi - i\cos\varphi)} \<br>            &amp;= \frac{\pi}{n\sin\varphi} = \frac{\frac{\pi}{n}}{\sin\frac{\pi}{n}}.<br>        \end{aligned}$$&nbsp;◻</p>
-<p>$\textbf{Example:}$<br>$$\frac{1}{(1 + z)^n} = \sum_{k = 0}^{+\infty}(-1)^k C_{n + k - 1}^{n - 1}z^k,$$</p>
-<p>其中 $\left|{z}\right| &lt; 1$. 特别地, 其中 $z^{n - 1}$ 项的系数为<br>$$(-1)^{n - 1}C_{2n - 2}^{n - 1} = (-1)^{n - 1}\cfrac{(2n - 2)!}{(n - 1)!(n - 1)!}.$$&nbsp;◻</p>
-<p>$\textbf{Example:}$<br>求积分 $$J_n = \int_{0}^{+\infty}\cfrac{dx}{(1 + x^2)^n}.$$&nbsp;◻</p>
-<p>$\textbf{Solution:}$<br>注意到<br>$$J_n = \frac{1}{2}\lim_{R\rightarrow +\infty}\int_{-R}^{R}\cfrac{dx}{(1 + x^2)^n}.$$</p>
-<p>作 $\Gamma_R: \left[-R, R\right]\cup C_R$,</p>
-<p>那么根据复合闭路定理, 得<br>$$\oint_{\Gamma_R}f(z)dz = \int_{-R}^{R}f(x)dx + \int_{C_R}f(z)dz.$$</p>
-<p>令 $R\rightarrow +\infty$, 由于<br>$$\lim_{R\rightarrow +\infty}\int_{C_R}f(z)dz = 0,$$</p>
-<p>因为 $$\begin{aligned}<br>            \cfrac{1}{(1 + z^2)^n} &amp;= \cfrac{1}{(z + i)^n(z - i)^n} \<br>            &amp;= \cfrac{1}{(2i)^n(1 + \frac{z - i}{2i})^n(z - i)^n} \<br>            &amp;= \cfrac{1}{(2i)^n(z - i)^n}\sum_{k = 0}^{+\infty}(-1)^k C_{n + k - 1}^{n - 1}(\frac{z - i}{2i})^k.<br>        \end{aligned}$$</p>
+<script type="math/tex; mode=display">\begin{aligned}
+            J &= \oint_{\left|{z}\right| = r > 1}\frac{z^3e^{\frac{1}{z}}}{1 + z}dz \\
+            &= 2\pi i\left\{Res\left[f, 0\right] + Res\left[f, -1\right]\right\}.
+        \end{aligned}</script><p>注意到 <script type="math/tex">\begin{aligned}
+            Res\left[f, -1\right] = \frac{(-1)^3e^{-1}}{1} = -e^{-1},
+        \end{aligned}</script></p>
+<p>而 $Res\left[f, 0\right]$ 为 $f$ 在 $z_0 = 0$ 处 $Larent$ 级数中的系数<br>$C_{-1}$.</p>
+<p>注意到 <script type="math/tex">\begin{aligned}
+            \frac{z^3e^{\frac{1}{z}}}{1 + z} = z^3\left(1 + \frac{1}{z} + \frac{1}{2!z^2} + \frac{1}{3!z^3} + \cdots\right)\left(1 - z + z^2 - z^3 + \cdots\right),
+        \end{aligned}</script></p>
+<p>那么</p>
+<script type="math/tex; mode=display">C_{-1} = \frac{1}{4!} - \frac{1}{5!} + \frac{1}{6!} - \frac{1}{7!} + \cdots = e^{-1} - \frac{1}{3}.</script><p>进而 <script type="math/tex">\begin{aligned}
+            J &= \oint_{\left|{z}\right| = r > 1}\frac{z^3e^{\frac{1}{z}}}{1 + z}dz \\
+            &= 2\pi i\left\{Res\left[f, 0\right] + Res\left[f, -1\right]\right\} \\
+            &= 2\pi i\left(-e^{-1} + e^{-1} - \frac{1}{3}\right) \\
+            &= -\frac{2}{3}\pi i.
+        \end{aligned}</script> ◻</p>
+<p>$\textbf{Example:}$<br>求复积分</p>
+<script type="math/tex; mode=display">I_{a, b} = \int_{0}^{2\pi}\cfrac{d\theta}{a + b\cos\theta},</script><p>其中 $a &gt; \left|{b}\right|$, $a, b\in\mathbb{R}$. ◻</p>
+<p>$\textbf{Solution:}$<br>令</p>
+<script type="math/tex; mode=display">z = e^{i\theta}\Longrightarrow \cos\theta = \cfrac{z + z^{-1}}{2}.</script><p>那么</p>
+<script type="math/tex; mode=display">dz = ie^{i\theta}d\theta = izd\theta\Longrightarrow d\theta = \cfrac{dz}{iz}.</script><p>进而</p>
+<script type="math/tex; mode=display">I_{a, b} = \int_{0}^{2\pi}\cfrac{d\theta}{a + b\frac{z + z^{-1}}{2}} = \cfrac{2}{i}\oint_{\left|{z}\right| = 1}\cfrac{dz}{bz^2 + 2az + b}.</script><p>$\circ$ 若 $b = 0$, 得 <script type="math/tex">I_{a, b} = \frac{2\pi}{a}.</script></p>
+<p>$\circ$ 若 $b &gt; 0$, 考虑方程 $z^2 + 2\cfrac{a}{b}z + 1 = 0$. 解得</p>
+<script type="math/tex; mode=display">\begin{aligned}
+            \begin{cases}
+                z_1 = -\cfrac{a}{b} + \cfrac{\sqrt{a^2 - b^2}}{b},\\
+                z_2 = -\cfrac{a}{b} - \cfrac{\sqrt{a^2 - b^2}}{b} < -\cfrac{a}{b} < -1.        
+            \end{cases}
+        \end{aligned}</script><p>故</p>
+<script type="math/tex; mode=display">I_{a, b} = \cfrac{2}{i}\cdot 2\pi i\cdot Res\left[f(z), z_1\right] = \cfrac{2}{i}\cdot 2\pi i\cdot\cfrac{1}{2bz_1 + 2a} = \cfrac{2\pi}{\sqrt{a^2 - b^2}}.</script><p>$\circ$ 若 $b &lt; 0$, 同理有</p>
+<script type="math/tex; mode=display">I_{a, b} = \cfrac{2\pi}{\sqrt{a^2 - b^2}}.</script><p>综上, 有</p>
+<script type="math/tex; mode=display">I_{a, b} = \int_{0}^{2\pi}\cfrac{d\theta}{a + b\cos\theta} = \cfrac{2\pi}{\sqrt{a^2 - b^2}}.$$ ◻
+
+$\textbf{Example:}$
+求复积分
+$$I_p = \int_{0}^{2\pi}\cfrac{d\theta}{1 + p^2 - 2p\cos\theta},</script><p>其中 $p\in(-1, 1).$ ◻</p>
+<p>$\textbf{Solution:}$<br>在 $I_{a, b}$ 中取 $a = 1 + p^2$, $b = -2p$, 得</p>
+<script type="math/tex; mode=display">I_p = \cfrac{2\pi}{\sqrt{(1 + p^2)^2 - (-2p)^2}} = \cfrac{2\pi}{1 - p^2}.$$ ◻
+
+$\textbf{Example:}$
+求复积分
+$$J_{a, b} = \int_{0}^{2\pi}\cfrac{d\theta}{a^2\cos^2\theta + b^2\sin^2\theta},</script><p>其中 $a &gt; 0$, $b &gt; 0$. ◻</p>
+<p>$\textbf{Solution:}$</p>
+<script type="math/tex; mode=display">J_{a, b} = \int_{0}^{2\pi}\cfrac{2d\theta}{(a^2 + b^2) + (a^2 - b^2)\cos 2\theta} = \int_{0}^{4\pi}\cfrac{dt}{(a^2 + b^2) + (a^2 - b^2)\cos t},</script><p>在 $I_{A, B}$ 中取 $A = a^2 + b^2$, $B = a^2 - b^2$, 得</p>
+<script type="math/tex; mode=display">J_{a, b} = 2\cfrac{2\pi}{\sqrt{(a^2 + b^2)^2 - (a^2 - b^2)^2}} = \cfrac{2\pi}{ab}.$$ ◻
+
+### 13. 留数 B
+
+$\textbf{Example:}$
+$C_R: Re^{i\theta}$, $0\le\theta\le\pi$, 多项式 $P$, $Q$ 满足
+$\deg Q\ge\deg P + 2$, 则
+$$\lim_{R\rightarrow +\infty}\limits\int_{C_R}\frac{P(z)}{Q(z)}dz = 0.$$ ◻
+
+$\textbf{Example:}$
+求积分
+$$I_{a, b} = \int_{0}^{+\infty}\cfrac{dx}{(x^2 + a^2)(x^2 + b^2)},</script><p>其中 $a &gt; 0$, $b &gt; 0$ 为常数. ◻</p>
+<p>$\textbf{Solution:}$<br>注意到</p>
+<script type="math/tex; mode=display">I_{a, b} = \frac{1}{2}\lim_{R\rightarrow +\infty}\int_{-R}^{R}\cfrac{dx}{(x^2 + a^2)(x^2 + b^2)}.</script><p>作 $\Gamma_R: \left[-R, R\right]\cup C_R$,</p>
+<p>那么根据复合闭路定理, 得</p>
+<script type="math/tex; mode=display">\oint_{\Gamma_R}f(z)dz = \int_{-R}^{R}f(x)dx + \int_{C_R}f(z)dz.</script><p>令 $R\rightarrow +\infty$, 由于</p>
+<script type="math/tex; mode=display">\lim_{R\rightarrow +\infty}\int_{C_R}f(z)dz = 0,</script><p>那么 <script type="math/tex">\begin{aligned}
+            I_{a, b} &= \frac{1}{2}\lim_{R\rightarrow +\infty}\oint_{\Gamma_R}f(z)dz \\
+            &= \pi i\left(Res\left[f(z), ai\right], Res\left[f(z), bi\right]\right) \\
+            &= \pi i\left(\frac{1}{2ai(a^2 + b^2 +2(ai)^2)} + \frac{1}{2bi(a^2 + b^2 +2(bi)^2)}\right) \\
+            &= \frac{\pi}{2ab(a + b)}.
+        \end{aligned}</script> ◻</p>
+<p>$\textbf{Example:}$<br>求复积分 <script type="math/tex">I_n = \int_{0}^{+\infty}\cfrac{dx}{1 + x^{2n}}.</script> ◻</p>
+<p>$\textbf{Solution:}$<br>注意到</p>
+<script type="math/tex; mode=display">I_n = \frac{1}{2}\lim_{R\rightarrow +\infty}\int_{-R}^{R}\cfrac{dx}{1 + x^{2n}}.</script><p>作 $\Gamma_R: \left[-R, R\right]\cup C_R$,</p>
+<p>那么根据复合闭路定理, 得</p>
+<script type="math/tex; mode=display">\oint_{\Gamma_R}f(z)dz = \int_{-R}^{R}f(x)dx + \int_{C_R}f(z)dz.</script><p>令 $R\rightarrow +\infty$, 由于</p>
+<script type="math/tex; mode=display">\lim_{R\rightarrow +\infty}\int_{C_R}f(z)dz = 0,</script><p>那么 <script type="math/tex">\begin{aligned}
+            I_n &= \frac{1}{2}\lim_{R\rightarrow +\infty}\oint_{\Gamma_R}f(z)dz \\
+            &= \pi i\sum_{k = 1}^{n}Res\left[\frac{1}{1 + z^{2n}}, z_k\right] = \pi i\sum_{k = 1}^{n}\frac{1}{2nz_k^{2n - 1}} \\
+            &= \frac{\pi i}{2n}\sum_{k = 1}^{n}z_k^{2n - 1} = -\frac{\pi i}{2n}\sum_{k = 1}^{n}z_k \\
+            &= -\frac{\pi i}{2n}\sum_{k = 1}^{n}e^{\frac{(2k - 1)\pi i}{2n}} = -\frac{\pi i}{2n}e^{-\frac{\pi i}{2n}}\sum_{k = 1}^{n}e^{\frac{k\pi i}{n}} \\
+            &= -\frac{\pi i}{2n}e^{-\frac{\pi i}{2n}}\frac{2}{1 - e^{\frac{\pi i}{n}}} = \frac{\pi i}{n}\frac{1}{e^{\frac{\pi i}{2n}} - e^{-\frac{\pi i}{2n}}} \\
+            &= \frac{\pi i}{n}\frac{1}{2i\sin\frac{\pi}{2n}} = \frac{\frac{\pi}{2n}}{\sin\frac{\pi}{2n}}.
+        \end{aligned}</script> ◻</p>
+<p>$\textbf{Example:}$<br>求复积分</p>
+<script type="math/tex; mode=display">I_{r, n} = \int_{0}^{+\infty}\cfrac{dx}{r^{2n} + x^{2n}}.</script><p>其中 $r &gt; 0$. ◻</p>
+<p>$\textbf{Solution:}$</p>
+<script type="math/tex; mode=display">\begin{aligned}
+            I_{r, n} &= \cfrac{1}{r^{2n - 1}}\int_{0}^{+\infty}\cfrac{d\left(\frac{x}{r}\right)}{1 + \left(\frac{x}{r}\right)^{2n}} \\
+            &= \cfrac{1}{r^{2n - 1}}I_n \\
+            &= \frac{\frac{\pi}{2n}}{r^{2n - 1}\sin\frac{\pi}{2n}}.
+        \end{aligned}$$ ◻
+
+$\textbf{Example:}$
+求积分 $$J_n = \int_{0}^{+\infty}\cfrac{dx}{1 + x^n},</script><p>其中 $n \ge 2$. ◻</p>
+<p>$\textbf{Solution:}$<br>注意到</p>
+<script type="math/tex; mode=display">J_n = \lim_{R\rightarrow +\infty}\int_{0}^{R}\cfrac{dx}{1 + x^n}.</script><p>作<br>$\Gamma_R: \left[0, R\right]\cup C_R\cup \left[Re^{i\theta}, 0\right]$,</p>
+<p>那么根据复合闭路定理, 得</p>
+<script type="math/tex; mode=display">\oint_{\Gamma_R}f(z)dz = \int_{0}^{R}f(x)dx + \int_{C_R}f(z)dz + \int_{R}^{0}f(xe^{i\theta})d(xe^{i\theta}).</script><p>令 $R\rightarrow +\infty$, 由于</p>
+<script type="math/tex; mode=display">\lim_{R\rightarrow +\infty}\int_{C_R}f(z)dz = 0,</script><p>取 $\theta = \cfrac{2\pi}{n}, \varphi = \cfrac{\pi}{n}$, 那么</p>
+<script type="math/tex; mode=display">\begin{aligned}
+            \lim_{R\rightarrow +\infty}\oint_{\Gamma_R}f(z)dz &= \lim_{R\rightarrow +\infty}\int_{0}^{R}f(x)dx + \lim_{R\rightarrow +\infty}\int_{R}^{0}f(xe^{i\theta})d(xe^{i\theta}) \\
+            &= \lim_{R\rightarrow +\infty}\left(\int_{0}^{R}\cfrac{dx}{1 + x^n}dx - \int_{0}^{R}\cfrac{e^{i\theta}dx}{1 + e^{ni\theta}x^n}\right) \\
+            &= \lim_{R\rightarrow +\infty}\left(\int_{0}^{R}\cfrac{dx}{1 + x^n}dx - e^{\frac{2\pi i}{n}}\int_{0}^{R}\cfrac{dx}{1 + x^n}\right) \\
+            &= \left(1 - e^{\frac{2\pi i}{n}}\right)\lim_{R\rightarrow +\infty}\int_{0}^{R}\cfrac{dx}{1 + x^n}dx \\
+            &= \left(1 - e^{\frac{2\pi i}{n}}\right)J_n.
+        \end{aligned}</script><p>又注意到 <script type="math/tex">\begin{aligned}
+            \lim_{R\rightarrow +\infty}\oint_{\Gamma_R}f(z)dz = 2\pi i\frac{1}{ne^{(n - 1)\frac{\pi i}{n}}},
+        \end{aligned}</script></p>
+<p>故 <script type="math/tex">\begin{aligned}
+            J_n &= \frac{2\pi i}{ne^{(n - 1)\frac{\pi i}{n}}\left(1 - e^{\frac{2\pi i}{n}}\right)} \\
+            &= \frac{2\pi i}{ne^{(\pi - \varphi)i}\left(1 - e^{2\varphi i}\right)} \\
+            &= \frac{\pi i}{n(-\cos\varphi + i\sin\varphi)\sin\varphi(\sin\varphi - i\cos\varphi)} \\
+            &= \frac{\pi}{n\sin\varphi} = \frac{\frac{\pi}{n}}{\sin\frac{\pi}{n}}.
+        \end{aligned}</script> ◻</p>
+<p>$\textbf{Example:}$</p>
+<script type="math/tex; mode=display">\frac{1}{(1 + z)^n} = \sum_{k = 0}^{+\infty}(-1)^k C_{n + k - 1}^{n - 1}z^k,</script><p>其中 $\left|{z}\right| &lt; 1$. 特别地, 其中 $z^{n - 1}$ 项的系数为</p>
+<script type="math/tex; mode=display">(-1)^{n - 1}C_{2n - 2}^{n - 1} = (-1)^{n - 1}\cfrac{(2n - 2)!}{(n - 1)!(n - 1)!}.$$ ◻
+
+$\textbf{Example:}$
+求积分 $$J_n = \int_{0}^{+\infty}\cfrac{dx}{(1 + x^2)^n}.$$ ◻
+
+$\textbf{Solution:}$
+注意到
+$$J_n = \frac{1}{2}\lim_{R\rightarrow +\infty}\int_{-R}^{R}\cfrac{dx}{(1 + x^2)^n}.</script><p>作 $\Gamma_R: \left[-R, R\right]\cup C_R$,</p>
+<p>那么根据复合闭路定理, 得</p>
+<script type="math/tex; mode=display">\oint_{\Gamma_R}f(z)dz = \int_{-R}^{R}f(x)dx + \int_{C_R}f(z)dz.</script><p>令 $R\rightarrow +\infty$, 由于</p>
+<script type="math/tex; mode=display">\lim_{R\rightarrow +\infty}\int_{C_R}f(z)dz = 0,</script><p>因为 <script type="math/tex">\begin{aligned}
+            \cfrac{1}{(1 + z^2)^n} &= \cfrac{1}{(z + i)^n(z - i)^n} \\
+            &= \cfrac{1}{(2i)^n(1 + \frac{z - i}{2i})^n(z - i)^n} \\
+            &= \cfrac{1}{(2i)^n(z - i)^n}\sum_{k = 0}^{+\infty}(-1)^k C_{n + k - 1}^{n - 1}(\frac{z - i}{2i})^k.
+        \end{aligned}</script></p>
 <p>其中 $\cfrac{1}{z - i}$ 的系数<br>$c_{-1} = \cfrac{(-1)^{n - 1}C_{2n - 2}^{n - 1}}{(2i)^{2n - 1}} = \cfrac{-iC_{2n - 2}^{n - 1}}{2^{2n - 1}}$.</p>
-<p>那么 $$\begin{aligned}<br>            J_n &amp;= \pi i Res[f, i] \<br>            &amp;= \pi ic_{-1} \<br>            &amp;= \cfrac{\pi C_{2n - 2}^{n - 1}}{2^{2n - 1}}.<br>        \end{aligned}$$&nbsp;◻</p>
-<p>$\textbf{Example:}$<br>求复积分 $$J_{r, n} = \int_{0}^{+\infty}\cfrac{dx}{(r^2 + x^2)^n}.$$</p>
-<p>其中 $r &gt; 0$.&nbsp;◻</p>
-<p>$\textbf{Solution:}$<br>$$\begin{aligned}<br>            J_{r, n} &amp;= \cfrac{1}{r^{2n - 1}}\int_{0}^{+\infty}\cfrac{d\left(\frac{x}{r}\right)}{\left(1 + \left(\frac{x}{r}\right)^{2}\right)^n} \<br>            &amp;= \cfrac{1}{r^{2n - 1}}J_n \<br>            &amp;= \cfrac{\pi C_{2n - 2}^{n - 1}}{(2r)^{2n - 1}}.<br>        \end{aligned}$$&nbsp;◻</p>
-<h3 id="14-留数-C"><a href="#14-留数-C" class="headerlink" title="14. 留数 C"></a>14. 留数 C</h3><p>$\textbf{Example:}$<br>$C_R: Re^{i\theta}$, $0\le\theta\le\pi$, 多项式 $P$, $Q$ 满足<br>$\deg Q\ge\deg P + 1$, 则<br>$$\lim_{R\rightarrow +\infty}\limits\int_{C_R}\frac{P(z)e^{ikz}}{Q(z)}dz = 0.$$&nbsp;◻</p>
-<p>$\textbf{Example:}$<br>求积分 $$I = \int_{0}^{+\infty}\cfrac{x\sin kx}{x^2 + a^2}dx,$$</p>
-<p>其中 $a &gt; 0$, $k &gt; 0$ 为常数.&nbsp;◻</p>
+<p>那么 <script type="math/tex">\begin{aligned}
+            J_n &= \pi i Res[f, i] \\
+            &= \pi ic_{-1} \\
+            &= \cfrac{\pi C_{2n - 2}^{n - 1}}{2^{2n - 1}}.
+        \end{aligned}</script> ◻</p>
+<p>$\textbf{Example:}$<br>求复积分 <script type="math/tex">J_{r, n} = \int_{0}^{+\infty}\cfrac{dx}{(r^2 + x^2)^n}.</script></p>
+<p>其中 $r &gt; 0$. ◻</p>
+<p>$\textbf{Solution:}$</p>
+<script type="math/tex; mode=display">\begin{aligned}
+            J_{r, n} &= \cfrac{1}{r^{2n - 1}}\int_{0}^{+\infty}\cfrac{d\left(\frac{x}{r}\right)}{\left(1 + \left(\frac{x}{r}\right)^{2}\right)^n} \\
+            &= \cfrac{1}{r^{2n - 1}}J_n \\
+            &= \cfrac{\pi C_{2n - 2}^{n - 1}}{(2r)^{2n - 1}}.
+        \end{aligned}$$ ◻
+
+### 14. 留数 C
+
+$\textbf{Example:}$
+$C_R: Re^{i\theta}$, $0\le\theta\le\pi$, 多项式 $P$, $Q$ 满足
+$\deg Q\ge\deg P + 1$, 则
+$$\lim_{R\rightarrow +\infty}\limits\int_{C_R}\frac{P(z)e^{ikz}}{Q(z)}dz = 0.$$ ◻
+
+$\textbf{Example:}$
+求积分 $$I = \int_{0}^{+\infty}\cfrac{x\sin kx}{x^2 + a^2}dx,</script><p>其中 $a &gt; 0$, $k &gt; 0$ 为常数. ◻</p>
 <p>$\textbf{Solution:}$<br>记 $f(z) = \cfrac{z\sin kz}{z^2 + a^2}$,<br>$h(z) = \cfrac{ze^{ikx}}{z^2 + a^2}$.</p>
-<p>那么<br>$$\int_{-\infty}^{+\infty}\limits h(z)dz = \int_{-\infty}^{+\infty}\limits\cfrac{z\cos kz}{z^2 + a^2}dz + i\int_{-\infty}^{+\infty}\limits f(z)dz = 2iI.$$</p>
-<p>作 $\Gamma_R: \left[-R, R\right]\cup C_R$, 那么根据复合闭路定理, 得<br>$$\oint_{\Gamma_R}h(z)dz = \int_{-R}^{R}h(x)dx + \int_{C_R}h(z)dz.$$</p>
-<p>令 $R\rightarrow +\infty$, 由于<br>$$\lim_{R\rightarrow +\infty}\int_{C_R}h(z)dz = 0,$$</p>
-<p>那么 $$\begin{aligned}<br>            \int_{-\infty}^{+\infty}\cfrac{ze^{ikz}}{z^2 + a^2}dz &amp;= \lim_{R\rightarrow +\infty}\oint_{\Gamma_R}h(z)dz \<br>            &amp;= 2\pi i Res\left[f(z), ai\right] \<br>            &amp;= 2\pi i\cdot\cfrac{e^{-ka}}{2} \<br>            &amp;= \cfrac{\pi i}{e^{ka}}.<br>        \end{aligned}$$</p>
-<p>两边取虚部, 得 $$\begin{aligned}<br>            I = \cfrac{\pi}{2e^{ka}}.<br>        \end{aligned}$$&nbsp;◻</p>
-<p>$\textbf{Example:}$<br>求积分<br>$$I_n = \int_{0}^{+\infty}\cfrac{x\sin kx}{(x^2 + a^2)^n}dx,$$</p>
-<p>其中 $a &gt; 0$, $k &gt; 0$ 为常数.&nbsp;◻</p>
-<p>$\textbf{Solution:}$<br>注意到<br>$$\frac{\partial I_n}{\partial a} = -2na\int_{0}^{+\infty}\cfrac{x\sin kx}{(x^2 + a^2)^{n + 1}}dx = -2naI_{n + 1}.$$</p>
-<p>即 $$I_{n + 1} = -\cfrac{1}{2na}\frac{\partial I_n}{\partial a}.$$</p>
-<p>依次递归求解即可.&nbsp;◻</p>
-<p>$\textbf{Example:}$<br>求积分<br>$$I_{a, b, k} = \int_{0}^{+\infty}\cfrac{x^3\sin kx}{(x^2 + a^2)(x^2 + b^2)}dx,$$</p>
-<p>其中 $a&gt;0$, $b &gt; 0$, $k &gt; 0$ 为常数.&nbsp;◻</p>
+<p>那么</p>
+<script type="math/tex; mode=display">\int_{-\infty}^{+\infty}\limits h(z)dz = \int_{-\infty}^{+\infty}\limits\cfrac{z\cos kz}{z^2 + a^2}dz + i\int_{-\infty}^{+\infty}\limits f(z)dz = 2iI.</script><p>作 $\Gamma_R: \left[-R, R\right]\cup C_R$, 那么根据复合闭路定理, 得</p>
+<script type="math/tex; mode=display">\oint_{\Gamma_R}h(z)dz = \int_{-R}^{R}h(x)dx + \int_{C_R}h(z)dz.</script><p>令 $R\rightarrow +\infty$, 由于</p>
+<script type="math/tex; mode=display">\lim_{R\rightarrow +\infty}\int_{C_R}h(z)dz = 0,</script><p>那么 <script type="math/tex">\begin{aligned}
+            \int_{-\infty}^{+\infty}\cfrac{ze^{ikz}}{z^2 + a^2}dz &= \lim_{R\rightarrow +\infty}\oint_{\Gamma_R}h(z)dz \\
+            &= 2\pi i Res\left[f(z), ai\right] \\
+            &= 2\pi i\cdot\cfrac{e^{-ka}}{2} \\
+            &= \cfrac{\pi i}{e^{ka}}.
+        \end{aligned}</script></p>
+<p>两边取虚部, 得 <script type="math/tex">\begin{aligned}
+            I = \cfrac{\pi}{2e^{ka}}.
+        \end{aligned}</script> ◻</p>
+<p>$\textbf{Example:}$<br>求积分</p>
+<script type="math/tex; mode=display">I_n = \int_{0}^{+\infty}\cfrac{x\sin kx}{(x^2 + a^2)^n}dx,</script><p>其中 $a &gt; 0$, $k &gt; 0$ 为常数. ◻</p>
+<p>$\textbf{Solution:}$<br>注意到</p>
+<script type="math/tex; mode=display">\frac{\partial I_n}{\partial a} = -2na\int_{0}^{+\infty}\cfrac{x\sin kx}{(x^2 + a^2)^{n + 1}}dx = -2naI_{n + 1}.</script><p>即 <script type="math/tex">I_{n + 1} = -\cfrac{1}{2na}\frac{\partial I_n}{\partial a}.</script></p>
+<p>依次递归求解即可. ◻</p>
+<p>$\textbf{Example:}$<br>求积分</p>
+<script type="math/tex; mode=display">I_{a, b, k} = \int_{0}^{+\infty}\cfrac{x^3\sin kx}{(x^2 + a^2)(x^2 + b^2)}dx,</script><p>其中 $a&gt;0$, $b &gt; 0$, $k &gt; 0$ 为常数. ◻</p>
 <p>$\textbf{Solution:}$<br>记 $f(z) = \cfrac{z^3\sin kz}{(z^2 + a^2)(z^2 + b^2)}$,<br>$h(z) = \cfrac{z^3e^{ikx}}{(z^2 + a^2)(z^2 + b^2)}$.</p>
-<p>那么<br>$$\int_{-\infty}^{+\infty}\limits h(z)dz = \int_{-\infty}^{+\infty}\limits\cfrac{z^3\cos kz}{(z^2 + a^2)(z^2 + b^2)}dz + i\int_{-\infty}^{+\infty}\limits f(z)dz = 2iI_{a, b, k}.$$</p>
-<p>作 $\Gamma_R: \left[-R, R\right]\cup C_R$, 那么根据复合闭路定理, 得<br>$$\oint_{\Gamma_R}h(z)dz = \int_{-R}^{R}h(x)dx + \int_{C_R}h(z)dz.$$</p>
-<p>令 $R\rightarrow +\infty$, 由于<br>$$\lim_{R\rightarrow +\infty}\int_{C_R}h(z)dz = 0,$$</p>
-<p>那么 $$\begin{aligned}<br>            \int_{-\infty}^{+\infty}\cfrac{z^3e^{ikz}}{(z^2 + a^2)(z^2 + b^2)}dz &amp;= \lim_{R\rightarrow +\infty}\oint_{\Gamma_R}h(z)dz \<br>            &amp;= 2\pi i\left(Res\left[f(z), ai\right] + Res\left[f(z), bi\right]\right) \<br>            &amp;= \pi i\cdot\cfrac{b^2e^{-kb} - a^2e^{-ka}}{b^2 - a^2}.<br>        \end{aligned}$$</p>
-<p>两边取虚部, 得 $$\begin{aligned}<br>            \int_{0}^{+\infty}\cfrac{x^3\sin kx}{(x^2 + a^2)(x^2 + b^2)}dx = \cfrac{\pi}{2}\cdot\cfrac{b^2e^{-kb} - a^2e^{-ka}}{b^2 - a^2}.<br>        \end{aligned}$$&nbsp;◻</p>
-<p>$\textbf{Example:}$<br>求积分<br>$$I_{a, k} = \int_{0}^{+\infty}\cfrac{x^3\sin kx}{(x^2 + a^2)^2}dx,$$</p>
-<p>其中 $a &gt; 0$, $k &gt; 0$ 为常数.&nbsp;◻</p>
-<p>$\textbf{Solution:}$<br>在 $$\begin{aligned}<br>            \int_{0}^{+\infty}\cfrac{x^3\sin kx}{(x^2 + a^2)(x^2 + b^2)}dx = \cfrac{\pi}{2}\cdot\cfrac{b^2e^{-kb} - a^2e^{-ka}}{b^2 - a^2}.<br>        \end{aligned}$$</p>
-<p>中, 令 $b\rightarrow a$, 得 $$\begin{aligned}<br>            \int_{0}^{+\infty}\cfrac{x^3\sin kx}{(x^2 + a^2)^2}dx = \cfrac{\pi}{2}\cdot\cfrac{(2 - ka)e^{-ka}}{2}.<br>        \end{aligned}$$&nbsp;◻</p>
-<p>$\textbf{Example:}$<br>求复积分 $$I_k = \int_{0}^{+\infty}\cfrac{\sin kx}{x}dx.$$</p>
-<p>其中 $k &gt; 0$.&nbsp;◻</p>
-<p>$\textbf{Solution:}$<br>在 $$\begin{aligned}<br>            \int_{0}^{+\infty}\cfrac{x^3\sin kx}{(x^2 + a^2)^2}dx = \cfrac{\pi}{2}\cdot\cfrac{(2 - ka)e^{-ka}}{2}.<br>        \end{aligned}$$</p>
-<p>中, 令 $a\rightarrow 0^{+}$, 得 $$\begin{aligned}<br>            \int_{0}^{+\infty}\cfrac{\sin kx}{x}dx = \cfrac{\pi}{2}.<br>        \end{aligned}$$&nbsp;◻</p>
-<h3 id="15-解析映射"><a href="#15-解析映射" class="headerlink" title="15. 解析映射"></a>15. 解析映射</h3><p>$\textbf{Example:}$<br>求分式线性映射 $w(z)$ 将 $z_k = -1, 0, 1$ 映射到 $w_k = -1, 1, i$.&nbsp;◻</p>
-<p>$\textbf{Solution:}$<br>利用不变式<br>$$\cfrac{w - w_1}{w - w_2}\bigg/\cfrac{w_3 - w_1}{w_3 - w_2} = \cfrac{z - z_1}{z - z_2}\bigg/\cfrac{z_3 - z_1}{z_3 - z_2}.$$</p>
-<p>那么<br>$$\cfrac{w + 1}{w - 1}\bigg/\cfrac{i + 1}{i - 1} = \cfrac{z + 1}{z}\bigg/\cfrac{2}{1}.$$</p>
-<p>从中解得 $$w = \cfrac{(1 + 2i)z + 1}{(1 - 2i)z + 1}.$$&nbsp;◻</p>
-<p>$\textbf{Example:}$<br>求分式线性映射 $w(z)$ 将单位圆周映射到直线.&nbsp;◻</p>
+<p>那么</p>
+<script type="math/tex; mode=display">\int_{-\infty}^{+\infty}\limits h(z)dz = \int_{-\infty}^{+\infty}\limits\cfrac{z^3\cos kz}{(z^2 + a^2)(z^2 + b^2)}dz + i\int_{-\infty}^{+\infty}\limits f(z)dz = 2iI_{a, b, k}.</script><p>作 $\Gamma_R: \left[-R, R\right]\cup C_R$, 那么根据复合闭路定理, 得</p>
+<script type="math/tex; mode=display">\oint_{\Gamma_R}h(z)dz = \int_{-R}^{R}h(x)dx + \int_{C_R}h(z)dz.</script><p>令 $R\rightarrow +\infty$, 由于</p>
+<script type="math/tex; mode=display">\lim_{R\rightarrow +\infty}\int_{C_R}h(z)dz = 0,</script><p>那么 <script type="math/tex">\begin{aligned}
+            \int_{-\infty}^{+\infty}\cfrac{z^3e^{ikz}}{(z^2 + a^2)(z^2 + b^2)}dz &= \lim_{R\rightarrow +\infty}\oint_{\Gamma_R}h(z)dz \\
+            &= 2\pi i\left(Res\left[f(z), ai\right] + Res\left[f(z), bi\right]\right) \\
+            &= \pi i\cdot\cfrac{b^2e^{-kb} - a^2e^{-ka}}{b^2 - a^2}.
+        \end{aligned}</script></p>
+<p>两边取虚部, 得 <script type="math/tex">\begin{aligned}
+            \int_{0}^{+\infty}\cfrac{x^3\sin kx}{(x^2 + a^2)(x^2 + b^2)}dx = \cfrac{\pi}{2}\cdot\cfrac{b^2e^{-kb} - a^2e^{-ka}}{b^2 - a^2}.
+        \end{aligned}</script> ◻</p>
+<p>$\textbf{Example:}$<br>求积分</p>
+<script type="math/tex; mode=display">I_{a, k} = \int_{0}^{+\infty}\cfrac{x^3\sin kx}{(x^2 + a^2)^2}dx,</script><p>其中 $a &gt; 0$, $k &gt; 0$ 为常数. ◻</p>
+<p>$\textbf{Solution:}$<br>在 <script type="math/tex">\begin{aligned}
+            \int_{0}^{+\infty}\cfrac{x^3\sin kx}{(x^2 + a^2)(x^2 + b^2)}dx = \cfrac{\pi}{2}\cdot\cfrac{b^2e^{-kb} - a^2e^{-ka}}{b^2 - a^2}.
+        \end{aligned}</script></p>
+<p>中, 令 $b\rightarrow a$, 得 <script type="math/tex">\begin{aligned}
+            \int_{0}^{+\infty}\cfrac{x^3\sin kx}{(x^2 + a^2)^2}dx = \cfrac{\pi}{2}\cdot\cfrac{(2 - ka)e^{-ka}}{2}.
+        \end{aligned}</script> ◻</p>
+<p>$\textbf{Example:}$<br>求复积分 <script type="math/tex">I_k = \int_{0}^{+\infty}\cfrac{\sin kx}{x}dx.</script></p>
+<p>其中 $k &gt; 0$. ◻</p>
+<p>$\textbf{Solution:}$<br>在 <script type="math/tex">\begin{aligned}
+            \int_{0}^{+\infty}\cfrac{x^3\sin kx}{(x^2 + a^2)^2}dx = \cfrac{\pi}{2}\cdot\cfrac{(2 - ka)e^{-ka}}{2}.
+        \end{aligned}</script></p>
+<p>中, 令 $a\rightarrow 0^{+}$, 得 <script type="math/tex">\begin{aligned}
+            \int_{0}^{+\infty}\cfrac{\sin kx}{x}dx = \cfrac{\pi}{2}.
+        \end{aligned}</script> ◻</p>
+<h3 id="15-解析映射"><a href="#15-解析映射" class="headerlink" title="15. 解析映射"></a>15. 解析映射</h3><p>$\textbf{Example:}$<br>求分式线性映射 $w(z)$ 将 $z_k = -1, 0, 1$ 映射到 $w_k = -1, 1, i$. ◻</p>
+<p>$\textbf{Solution:}$<br>利用不变式</p>
+<script type="math/tex; mode=display">\cfrac{w - w_1}{w - w_2}\bigg/\cfrac{w_3 - w_1}{w_3 - w_2} = \cfrac{z - z_1}{z - z_2}\bigg/\cfrac{z_3 - z_1}{z_3 - z_2}.</script><p>那么</p>
+<script type="math/tex; mode=display">\cfrac{w + 1}{w - 1}\bigg/\cfrac{i + 1}{i - 1} = \cfrac{z + 1}{z}\bigg/\cfrac{2}{1}.</script><p>从中解得 <script type="math/tex">w = \cfrac{(1 + 2i)z + 1}{(1 - 2i)z + 1}.</script> ◻</p>
+<p>$\textbf{Example:}$<br>求分式线性映射 $w(z)$ 将单位圆周映射到直线. ◻</p>
 <p>$\textbf{Solution:}$<br>一方面, 容易知道存在 $\left|{z_0}\right| = 1$, 使得<br>$cz_0 + d = 0$.</p>
-<p>注意到 $$\begin{aligned}<br>            &amp;\hspace{1.8em} cz_0 + d = 0 \<br>            &amp;\Rightarrow \left|{cz_0}\right| = \left|{d}\right| \<br>            &amp;\Leftrightarrow \left|{c}\right| = \left|{d}\right| \<br>            &amp;\Leftrightarrow c = de^{i\theta}.<br>        \end{aligned}$$</p>
-<p>另一方面, 当 $c = de^{i\theta}$ 时, 该分式线性映射满足条件.&nbsp;◻</p>
+<p>注意到 <script type="math/tex">\begin{aligned}
+            &\hspace{1.8em} cz_0 + d = 0 \\
+            &\Rightarrow \left|{cz_0}\right| = \left|{d}\right| \\
+            &\Leftrightarrow \left|{c}\right| = \left|{d}\right| \\
+            &\Leftrightarrow c = de^{i\theta}.
+        \end{aligned}</script></p>
+<p>另一方面, 当 $c = de^{i\theta}$ 时, 该分式线性映射满足条件. ◻</p>
 <p>$\textbf{Example:}$<br>求分式线性映射 $w(z)$ 满足:</p>
 <ul>
 <li>将单位圆盘 $\left|{z}\right| &lt; 1$ 映射到单位圆盘<br>$\left|{w}\right| &lt; 1$;</li>
-<li>将点 $z = z_1\thinspace(\left|{z_1}\right| &lt; 1)$ 映射到点 $w = 0$.&nbsp;◻</li>
+<li>将点 $z = z_1\thinspace(\left|{z_1}\right| &lt; 1)$ 映射到点 $w = 0$. ◻</li>
 </ul>
 <p>$\textbf{Solution:}$<br>由于分式线性映射保对称点的性质,</p>
-<p>映射前 $z_1$ 的对称点为 $\cfrac{1}{\overline{z_1}}$, 映射后为 $0$<br>的对称点 $+\infty$. 故<br>$$w = \alpha\cfrac{z - z_1}{z - \frac{1}{\overline{z_1}}} = (-\alpha z_1)\cfrac{z - z_1}{1 - z\overline{z_1}} = \beta\cfrac{z - z_1}{1 - z\overline{z_1}}.$$</p>
-<p>由最大模原理:<br>$$\left|{z}\right| = 1\Leftrightarrow\left|{w}\right| = 1.$$</p>
-<p>注意到 $\left|{z_1}\right| &lt; 1$, 从而有 $$\begin{aligned}<br>            1 &amp;= \left|{\beta}\right|\left|{\cfrac{z - z_1}{1 - z\overline{z_1}}}\right|<em>{\left|{z}\right| = 1} \<br>            &amp;= \left|{\beta}\right|\left|{\cfrac{z - z_1}{z\overline{z} - z\overline{z_1}}}\right|</em>{\left|{z}\right| = 1} \<br>            &amp;= \cfrac{\left|{\beta}\right|}{\left|{z}\right|}\left|{\cfrac{z - z_1}{\overline{z  - z_1}}}\right|_{\left|{z}\right| = 1} \<br>            &amp;= \left|{\beta}\right|.<br>        \end{aligned}$$</p>
-<p>即 $$\beta = e^{i\theta}, \theta\in[0, 2\pi).$$</p>
-<p>那么有<br>$$w = e^{i\theta}\cfrac{z - z_1}{1 - z\overline{z_1}}, \thinspace\left|{z_1}\right| &lt; 1, \thinspace\theta\in[0, 2\pi).$$&nbsp;◻</p>
-<p>$\textbf{Example:}$<br>求分式线性映射 $w(z)$ 满足:</p>
-<ul>
-<li>将单位圆盘 $\left|{z - z_0}\right| &lt; r$ 映射到单位圆盘<br>$\left|{w - w_0}\right| &lt; R$;</li>
-<li>将点 $z = z_1\thinspace(\left|{z_1 - z_0}\right| &lt; r)$ 映射到点<br>$w = w_0$.&nbsp;◻</li>
-</ul>
-<p>$\textbf{Solution:}$<br>考虑 $$z’ = \cfrac{z - z_0}{r}, w’ = \cfrac{w - w_0}{R}.$$</p>
-<p>则 $z’(z)$, $w’(w)$ 均将原区域映射为单位圆盘. 那么有<br>$$w’ = e^{i\theta}\cfrac{z’ - z_1’}{1 - z’\overline{z_1’}}, \thinspace\left|{z_1’}\right| &lt; 1, \thinspace\theta\in[0, 2\pi).$$</p>
-<p>代入 $w’$, $z’$ 可得<br>$$w = w_0 + rRe^{i\theta}\cfrac{z - z_1}{r^2 - (z - z_0)(\overline{z_1} - \overline{z_0})}, \thinspace\left|{z_1 - z_0}\right| &lt; r, \thinspace\theta\in[0, 2\pi).$$&nbsp;◻</p>
-<p>$\textbf{Example:}$<br>对于 中的映射, 证明不变式:<br>$$\cfrac{\left|{dw}\right|}{1 - \left|{w}\right|^2} = \cfrac{\left|{dz}\right|}{1 - \left|{z}\right|^2}.$$&nbsp;◻</p>
-<p>$\textbf{Solution:}$<br>即证:<br>$$\left|{\cfrac{dw}{dz}}\right| = \cfrac{1 - \left|{w}\right|^2}{1 - \left|{z}\right|^2}.$$</p>
-<p>注意到 $$w = e^{i\theta}\cfrac{z - z_1}{1 - z\overline{z_1}},$$</p>
-<p>其中 $$\left|{z_1}\right| &lt; 1, \thinspace\theta\in[0, 2\pi)$$</p>
-<p>那么 $$\begin{aligned}<br>            LHS = \left|{e^{i\theta}\cfrac{1 - z_1\overline{z_1}}{(1 - z\overline{z_1})^2}}\right| = \cfrac{1 - z_1\overline{z_1}}{\left|{1 - z\overline{z_1}}\right|^2}.<br>        \end{aligned}$$</p>
-<p>$$\begin{aligned}<br>            RHS &amp;= \cfrac{1 - w\overline{w}}{1 - z\overline{z}} \<br>            &amp;= \cfrac{\left|{1 - z\overline{z_1}}\right|^2 - \left|{z - z_1}\right|^2}{(1 - z\overline{z})\left|{1 - z\overline{z_1}}\right|^2} \<br>            &amp;= \cfrac{(1 - z\overline{z_1})(1 - z_1\overline{z}) - (z - z_1)(\overline{z} - \overline{z_1})}{(1 - z\overline{z})\left|{1 - z\overline{z_1}}\right|^2} \<br>            &amp;= \cfrac{1 - z\overline{z} - z_1\overline{z_1} + z\overline{z}z_1\overline{z_1}}{(1 - z\overline{z})\left|{1 - z\overline{z_1}}\right|^2} \<br>            &amp;= \cfrac{(1 - z\overline{z})(1 - z_1\overline{z_1})}{(1 - z\overline{z})\left|{1 - z\overline{z_1}}\right|^2} \<br>            &amp;= \cfrac{1 - z_1\overline{z_1}}{\left|{1 - z\overline{z_1}}\right|^2} = LHS.<br>        \end{aligned}$$</p>
-<p>至此证毕.&nbsp;&nbsp;◻</p>
-<p>$\textbf{Example:}$<br>对于 中的映射, 证明不变式:<br>$$\cfrac{R\left|{dw}\right|}{R^2 - \left|{w - w_0}\right|^2} = \cfrac{r\left|{dz}\right|}{r^2 - \left|{z - z^0}\right|^2}.$$&nbsp;◻</p>
-<p>$\textbf{Solution:}$<br>考虑 $$z’ = \cfrac{z - z_0}{r}, w’ = \cfrac{w - w_0}{R}.$$</p>
-<p>则 $z’(z)$, $w’(w)$ 均将原区域映射为单位圆盘. 那么有<br>$$\cfrac{\left|{dw’}\right|}{1 - \left|{w’}\right|^2} = \cfrac{\left|{dz’}\right|}{1 - \left|{z’}\right|^2}.$$</p>
-<p>代入 $w’$, $z’$ 可得<br>$$\cfrac{R\left|{dw}\right|}{R^2 - \left|{w - w_0}\right|^2} = \cfrac{r\left|{dz}\right|}{r^2 - \left|{z - z^0}\right|^2}.$$&nbsp;◻</p>
-<p>$\textbf{Example:}$<br>求分式线性映射 $w(z)$ 满足:</p>
-<ul>
-<li>将上半复平面 $Im{z} &gt; 0$ 映射到单位圆盘 $\left|{w}\right| &lt; 1$;</li>
-<li>将点 $z = z_1\thinspace(Im{z_1} &gt; 0)$ 映射到点 $w = 0$.&nbsp;◻</li>
-</ul>
-<p>&nbsp;$\textbf{Solution:}$<br>将上半平面看作半径无穷的圆, $z_1$ 关于圆周的对称点为<br>$\overline{z_1}$.</p>
-<p>由于分式线性映射保对称点的性质,</p>
-<p>映射前 $z_1$ 的对称点为 $\overline{z_1}$, 映射后为 $0$ 的对称点<br>$+\infty$. 故 $$w = \alpha\cfrac{z - z_1}{z - \overline{z_1}}.$$</p>
-<p>由最大模原理: $$z = x\in\mathbb{R}\Leftrightarrow\left|{w}\right| = 1.$$</p>
-<p>注意到 $Im{z_1} &gt; 0$, 从而有 $$\begin{aligned}<br>            1 &amp;= \left|{\alpha}\right|\left|{\cfrac{x - z_1}{x - \overline{z_1}}}\right| \<br>            &amp;= \left|{\alpha}\right|\left|{\cfrac{x - z_1}{\overline{x} - \overline{z_1}}}\right| \<br>            &amp;= \left|{\alpha}\right|.<br>        \end{aligned}$$</p>
-<p>即 $$\alpha = e^{i\theta}, \theta\in[0, 2\pi).$$</p>
-<p>那么有<br>$$w = e^{i\theta}\cfrac{z - z_1}{z - \overline{z_1}}, \thinspace Im{z_1} &gt; 0, \thinspace\theta\in[0, 2\pi).$$</p>
-<p>特别地, 取 $\theta = 0, z_1 = i$, 可得 $$w = \cfrac{z - i}{z + i}.$$&nbsp;◻</p>
+<p>映射前 $z_1$ 的对称点为 $\cfrac{1}{\overline{z_1}}$, 映射后为 $0$<br>的对称点 $+\infty$. 故</p>
+<script type="math/tex; mode=display">w = \alpha\cfrac{z - z_1}{z - \frac{1}{\overline{z_1}}} = (-\alpha z_1)\cfrac{z - z_1}{1 - z\overline{z_1}} = \beta\cfrac{z - z_1}{1 - z\overline{z_1}}.</script><p>由最大模原理:</p>
+<script type="math/tex; mode=display">\left|{z}\right| = 1\Leftrightarrow\left|{w}\right| = 1.</script><p>注意到 $\left|{z_1}\right| &lt; 1$, 从而有 <script type="math/tex">\begin{aligned}
+            1 &= \left|{\beta}\right|\left|{\cfrac{z - z_1}{1 - z\overline{z_1}}}\right|_{\left|{z}\right| = 1} \\
+            &= \left|{\beta}\right|\left|{\cfrac{z - z_1}{z\overline{z} - z\overline{z_1}}}\right|_{\left|{z}\right| = 1} \\
+            &= \cfrac{\left|{\beta}\right|}{\left|{z}\right|}\left|{\cfrac{z - z_1}{\overline{z  - z_1}}}\right|_{\left|{z}\right| = 1} \\
+            &= \left|{\beta}\right|.
+        \end{aligned}</script></p>
+<p>即 <script type="math/tex">\beta = e^{i\theta}, \theta\in[0, 2\pi).</script></p>
+<p>那么有</p>
+<script type="math/tex; mode=display">w = e^{i\theta}\cfrac{z - z_1}{1 - z\overline{z_1}}, \thinspace\left|{z_1}\right| < 1, \thinspace\theta\in[0, 2\pi).$$ ◻
+
+$\textbf{Example:}$
+求分式线性映射 $w(z)$ 满足:
+
+- 将单位圆盘 $\left|{z - z_0}\right| < r$ 映射到单位圆盘
+  $\left|{w - w_0}\right| < R$;
+- 将点 $z = z_1\thinspace(\left|{z_1 - z_0}\right| < r)$ 映射到点
+  $w = w_0$. ◻
+
+$\textbf{Solution:}$
+考虑 $$z' = \cfrac{z - z_0}{r}, w' = \cfrac{w - w_0}{R}.</script><p>则 $z’(z)$, $w’(w)$ 均将原区域映射为单位圆盘. 那么有</p>
+<script type="math/tex; mode=display">w' = e^{i\theta}\cfrac{z' - z_1'}{1 - z'\overline{z_1'}}, \thinspace\left|{z_1'}\right| < 1, \thinspace\theta\in[0, 2\pi).</script><p>代入 $w’$, $z’$ 可得</p>
+<script type="math/tex; mode=display">w = w_0 + rRe^{i\theta}\cfrac{z - z_1}{r^2 - (z - z_0)(\overline{z_1} - \overline{z_0})}, \thinspace\left|{z_1 - z_0}\right| < r, \thinspace\theta\in[0, 2\pi).$$ ◻
+
+$\textbf{Example:}$
+对于 中的映射, 证明不变式:
+$$\cfrac{\left|{dw}\right|}{1 - \left|{w}\right|^2} = \cfrac{\left|{dz}\right|}{1 - \left|{z}\right|^2}.$$ ◻
+
+$\textbf{Solution:}$
+即证:
+$$\left|{\cfrac{dw}{dz}}\right| = \cfrac{1 - \left|{w}\right|^2}{1 - \left|{z}\right|^2}.</script><p>注意到 <script type="math/tex">w = e^{i\theta}\cfrac{z - z_1}{1 - z\overline{z_1}},</script></p>
+<p>其中 <script type="math/tex">\left|{z_1}\right| < 1, \thinspace\theta\in[0, 2\pi)</script></p>
+<p>那么 <script type="math/tex">\begin{aligned}
+            LHS = \left|{e^{i\theta}\cfrac{1 - z_1\overline{z_1}}{(1 - z\overline{z_1})^2}}\right| = \cfrac{1 - z_1\overline{z_1}}{\left|{1 - z\overline{z_1}}\right|^2}.
+        \end{aligned}</script></p>
+<script type="math/tex; mode=display">\begin{aligned}
+            RHS &= \cfrac{1 - w\overline{w}}{1 - z\overline{z}} \\
+            &= \cfrac{\left|{1 - z\overline{z_1}}\right|^2 - \left|{z - z_1}\right|^2}{(1 - z\overline{z})\left|{1 - z\overline{z_1}}\right|^2} \\
+            &= \cfrac{(1 - z\overline{z_1})(1 - z_1\overline{z}) - (z - z_1)(\overline{z} - \overline{z_1})}{(1 - z\overline{z})\left|{1 - z\overline{z_1}}\right|^2} \\
+            &= \cfrac{1 - z\overline{z} - z_1\overline{z_1} + z\overline{z}z_1\overline{z_1}}{(1 - z\overline{z})\left|{1 - z\overline{z_1}}\right|^2} \\
+            &= \cfrac{(1 - z\overline{z})(1 - z_1\overline{z_1})}{(1 - z\overline{z})\left|{1 - z\overline{z_1}}\right|^2} \\
+            &= \cfrac{1 - z_1\overline{z_1}}{\left|{1 - z\overline{z_1}}\right|^2} = LHS.
+        \end{aligned}</script><p>至此证毕.  ◻</p>
+<p>$\textbf{Example:}$<br>对于 中的映射, 证明不变式:</p>
+<script type="math/tex; mode=display">\cfrac{R\left|{dw}\right|}{R^2 - \left|{w - w_0}\right|^2} = \cfrac{r\left|{dz}\right|}{r^2 - \left|{z - z^0}\right|^2}.$$ ◻
+
+$\textbf{Solution:}$
+考虑 $$z' = \cfrac{z - z_0}{r}, w' = \cfrac{w - w_0}{R}.</script><p>则 $z’(z)$, $w’(w)$ 均将原区域映射为单位圆盘. 那么有</p>
+<script type="math/tex; mode=display">\cfrac{\left|{dw’}\right|}{1 - \left|{w'}\right|^2} = \cfrac{\left|{dz'}\right|}{1 - \left|{z'}\right|^2}.</script><p>代入 $w’$, $z’$ 可得</p>
+<script type="math/tex; mode=display">\cfrac{R\left|{dw}\right|}{R^2 - \left|{w - w_0}\right|^2} = \cfrac{r\left|{dz}\right|}{r^2 - \left|{z - z^0}\right|^2}.$$ ◻
+
+$\textbf{Example:}$
+求分式线性映射 $w(z)$ 满足:
+
+- 将上半复平面 $Im{z} > 0$ 映射到单位圆盘 $\left|{w}\right| < 1$;
+- 将点 $z = z_1\thinspace(Im{z_1} > 0)$ 映射到点 $w = 0$. ◻
+
+ $\textbf{Solution:}$
+将上半平面看作半径无穷的圆, $z_1$ 关于圆周的对称点为
+$\overline{z_1}$.
+
+由于分式线性映射保对称点的性质,
+
+映射前 $z_1$ 的对称点为 $\overline{z_1}$, 映射后为 $0$ 的对称点
+$+\infty$. 故 $$w = \alpha\cfrac{z - z_1}{z - \overline{z_1}}.</script><p>由最大模原理: <script type="math/tex">z = x\in\mathbb{R}\Leftrightarrow\left|{w}\right| = 1.</script></p>
+<p>注意到 $Im{z_1} &gt; 0$, 从而有 <script type="math/tex">\begin{aligned}
+            1 &= \left|{\alpha}\right|\left|{\cfrac{x - z_1}{x - \overline{z_1}}}\right| \\
+            &= \left|{\alpha}\right|\left|{\cfrac{x - z_1}{\overline{x} - \overline{z_1}}}\right| \\
+            &= \left|{\alpha}\right|.
+        \end{aligned}</script></p>
+<p>即 <script type="math/tex">\alpha = e^{i\theta}, \theta\in[0, 2\pi).</script></p>
+<p>那么有</p>
+<script type="math/tex; mode=display">w = e^{i\theta}\cfrac{z - z_1}{z - \overline{z_1}}, \thinspace Im{z_1} > 0, \thinspace\theta\in[0, 2\pi).</script><p>特别地, 取 $\theta = 0, z_1 = i$, 可得 <script type="math/tex">w = \cfrac{z - i}{z + i}.</script> ◻</p>
 <p>$\textbf{Example:}$<br>求分式线性映射 $w(z)$ 满足:</p>
 <ul>
 <li>将过点 $x_0\in\mathbb{R}$, 旋转角为 $\theta_0$<br>的半平面映射到单位圆盘 $\left|{w - w_0}\right| &lt; R$;</li>
-<li>将点 $z = z_1\thinspace(Im{[(z_1 - x_0)e^{-i\theta_0}]} &gt; 0)$<br>映射到点 $w = w_0$.&nbsp;◻</li>
+<li>将点 $z = z_1\thinspace(Im{[(z_1 - x_0)e^{-i\theta_0}]} &gt; 0)$<br>映射到点 $w = w_0$. ◻</li>
 </ul>
-<p>$\textbf{Solution:}$<br>考虑<br>$$z’ = (z - x_0)e^{-i\theta_0}, w’ = \cfrac{w - w_0}{R}.$$</p>
-<p>则 $z’(z)$, $w’(w)$ 均将原区域映射为上半复平面与单位圆盘. 那么有<br>$$w’ = e^{i\theta}\cfrac{z’ - z_1’}{z’ - \overline{z_1’}}, \thinspace Im{z_1’} &gt; 0, \thinspace\theta\in[0, 2\pi).$$</p>
-<p>代入 $w’$, $z’$ 可得<br>$$w = w_0 + Re^{i\theta}\cfrac{z - z_1}{z - x_0 - (\overline{z_1} - x_0)e^{2i\theta_0}},$$</p>
-<p>其中<br>$$Im{[(z_1 - x_0)e^{-i\theta_0}]} &gt; 0, \thinspace\theta\in[0, 2\pi).$$&nbsp;◻</p>
-<p>$\textbf{Example:}$<br>映射 $w = \cfrac{az + b}{cz + d}$, 若 $a, b, c, d\in\mathbb{R}$, 则<br>$$Im{z} &gt; 0\leftrightarrow Im{w} &gt; 0 \Longleftrightarrow ad - bc &gt; 0.$$&nbsp;◻</p>
-<p>$\textbf{Solution:}$<br>将 $z = x + iy$ 待入 $$w = \cfrac{az + b}{cz + d},$$</p>
-<p>得 $$w = u + iv = \cfrac{(ax + b) + iay}{(cx + d) + icy},$$</p>
-<p>那么 $$v = \cfrac{(ad - bc)y}{(cx + d)^2 + (cy)^2}.$$</p>
-<p>从而 $$\begin{aligned}<br>            &amp;\hspace{2em} Im{z} &gt; 0\leftrightarrow Im{w} &gt; 0 \<br>            &amp;\Longleftrightarrow y &gt; 0\leftrightarrow v &gt; 0 \<br>            &amp;\Longleftrightarrow yv &gt; 0 \<br>            &amp;\Longleftrightarrow \cfrac{(ad - bc)y^2}{(cx + d)^2 + (cy)^2} &gt; 0 \<br>            &amp;\Longleftrightarrow ad - bc &gt; 0.<br>        \end{aligned}$$</p>
+<p>$\textbf{Solution:}$<br>考虑</p>
+<script type="math/tex; mode=display">z' = (z - x_0)e^{-i\theta_0}, w' = \cfrac{w - w_0}{R}.</script><p>则 $z’(z)$, $w’(w)$ 均将原区域映射为上半复平面与单位圆盘. 那么有</p>
+<script type="math/tex; mode=display">w' = e^{i\theta}\cfrac{z' - z_1'}{z' - \overline{z_1'}}, \thinspace Im{z_1'} > 0, \thinspace\theta\in[0, 2\pi).</script><p>代入 $w’$, $z’$ 可得</p>
+<script type="math/tex; mode=display">w = w_0 + Re^{i\theta}\cfrac{z - z_1}{z - x_0 - (\overline{z_1} - x_0)e^{2i\theta_0}},</script><p>其中</p>
+<script type="math/tex; mode=display">Im{[(z_1 - x_0)e^{-i\theta_0}]} > 0, \thinspace\theta\in[0, 2\pi).$$ ◻
+
+$\textbf{Example:}$
+映射 $w = \cfrac{az + b}{cz + d}$, 若 $a, b, c, d\in\mathbb{R}$, 则
+$$Im{z} > 0\leftrightarrow Im{w} > 0 \Longleftrightarrow ad - bc > 0.$$ ◻
+
+$\textbf{Solution:}$
+将 $z = x + iy$ 待入 $$w = \cfrac{az + b}{cz + d},</script><p>得 <script type="math/tex">w = u + iv = \cfrac{(ax + b) + iay}{(cx + d) + icy},</script></p>
+<p>那么 <script type="math/tex">v = \cfrac{(ad - bc)y}{(cx + d)^2 + (cy)^2}.</script></p>
+<p>从而 <script type="math/tex">\begin{aligned}
+            &\hspace{2em} Im{z} > 0\leftrightarrow Im{w} > 0 \\
+            &\Longleftrightarrow y > 0\leftrightarrow v > 0 \\
+            &\Longleftrightarrow yv > 0 \\
+            &\Longleftrightarrow \cfrac{(ad - bc)y^2}{(cx + d)^2 + (cy)^2} > 0 \\
+            &\Longleftrightarrow ad - bc > 0.
+        \end{aligned}</script></p>
 <p>根据最大模原理可知,</p>
 <p>该映射将上半复平面映到上半复平面, 实轴映到实轴.</p>
-<p>又当 $z\in\mathbb{R}$ 时,<br>$$\cfrac{dw}{dz} = \cfrac{ad - bc}{(cz + d)^2} &gt; 0.$$</p>
-<p>即 $$\arg\left(\frac{dw}{dz}\right) = 0.$$</p>
-<p>故该映射将上半复平面映到上半复平面, 实轴正向映到实轴正向.&nbsp;◻</p>
+<p>又当 $z\in\mathbb{R}$ 时,</p>
+<script type="math/tex; mode=display">\cfrac{dw}{dz} = \cfrac{ad - bc}{(cz + d)^2} > 0.</script><p>即 <script type="math/tex">\arg\left(\frac{dw}{dz}\right) = 0.</script></p>
+<p>故该映射将上半复平面映到上半复平面, 实轴正向映到实轴正向. ◻</p>
 <p>$\textbf{Example:}$<br>求分式线性映射 $w(z)$ 满足:</p>
 <ul>
-<li>将过点 $a, b\in\mathbb{R}$, 旋转角为 $\alpha\in(0, \pi)$<br>的长条映射到单位圆盘 $\left|{w}\right| &lt; 1$.&nbsp;◻</li>
+<li>将过点 $a, b\in\mathbb{R}$, 旋转角为 $\alpha\in(0, \pi)$<br>的长条映射到单位圆盘 $\left|{w}\right| &lt; 1$. ◻</li>
 </ul>
 <p>$\textbf{Solution:}$<br>分为四步</p>
 <ol>
@@ -811,24 +1121,32 @@
 <li>$z_3 = e^{z_2}$</li>
 <li>$w = \cfrac{z_3 - i}{z_3 + i}$</li>
 </ol>
-<p>整理得<br>$$w = \cfrac{e^{\frac{e^{-i\alpha}(z - b)\pi}{(b - a)\sin\alpha}} - i}{e^{\frac{e^{-i\alpha}(z - b)\pi}{(b - a)\sin\alpha}} + i}.$$</p>
-<p>特别地, 当 $\alpha = \cfrac{\pi}{2}$ 时,<br>$$w = \cfrac{e^{\frac{b - z}{b - a}\pi i} - i}{e^{\frac{b - z}{b - a}\pi i} + i}.$$&nbsp;◻</p>
-<p>$\textbf{Example:}$<br>求分式线性映射 $w(z)$ 满足:/</p>
-<ul>
-<li>将区域<br>$0 &lt; r &lt; R, \thinspace 0 &lt; \theta &lt; \alpha \thinspace(\alpha\in[0, 2\pi))$<br>映射到单位圆盘 $\left|{w}\right| &lt; 1$.&nbsp;◻</li>
-</ul>
-<p>&nbsp;$\textbf{Solution:}$<br>分为四步</p>
-<ol>
-<li>$z_1 = z^{\frac{\pi}{\alpha}}$</li>
-<li>$z_2 = \cfrac{R^{\frac{\pi}{\alpha}} + z_1}{R^{\frac{\pi}{\alpha}} - z_1}$<br>(上半圆 $\longrightarrow$ 第一象限)</li>
-<li>$z_3 = z_2^2$</li>
-<li>$w = \cfrac{z_3 - i}{z_3 + i}$</li>
-</ol>
-<p>整理得<br>$$w = \cfrac{\left(\frac{R^{\frac{\pi}{\alpha}} + z^{\frac{\pi}{\alpha}}}{R^{\frac{\pi}{\alpha}} - z^{\frac{\pi}{\alpha}}}\right)^2 - i}{\left(\frac{R^{\frac{\pi}{\alpha}} + z^{\frac{\pi}{\alpha}}}{R^{\frac{\pi}{\alpha}} - z^{\frac{\pi}{\alpha}}}\right)^2 + i}.$$</p>
-<p>特别地, 当 $\alpha = \cfrac{\pi}{8}$ 时,<br>$$w = \cfrac{\left(\frac{R^8 + z^8}{R^8 - z^8}\right)^2 - i}{\left(\frac{R^8 + z^8}{R^8 - z^8}\right)^2 + i}.$$&nbsp;◻</p>
+<p>整理得</p>
+<script type="math/tex; mode=display">w = \cfrac{e^{\frac{e^{-i\alpha}(z - b)\pi}{(b - a)\sin\alpha}} - i}{e^{\frac{e^{-i\alpha}(z - b)\pi}{(b - a)\sin\alpha}} + i}.</script><p>特别地, 当 $\alpha = \cfrac{\pi}{2}$ 时,</p>
+<script type="math/tex; mode=display">w = \cfrac{e^{\frac{b - z}{b - a}\pi i} - i}{e^{\frac{b - z}{b - a}\pi i} + i}.$$ ◻
+
+$\textbf{Example:}$
+求分式线性映射 $w(z)$ 满足:/
+
+- 将区域
+  $0 < r < R, \thinspace 0 < \theta < \alpha \thinspace(\alpha\in[0, 2\pi))$
+  映射到单位圆盘 $\left|{w}\right| < 1$. ◻
+
+ $\textbf{Solution:}$
+分为四步
+
+1. $z_1 = z^{\frac{\pi}{\alpha}}$
+2. $z_2 = \cfrac{R^{\frac{\pi}{\alpha}} + z_1}{R^{\frac{\pi}{\alpha}} - z_1}$
+   (上半圆 $\longrightarrow$ 第一象限)
+3. $z_3 = z_2^2$
+4. $w = \cfrac{z_3 - i}{z_3 + i}$
+
+整理得
+$$w = \cfrac{\left(\frac{R^{\frac{\pi}{\alpha}} + z^{\frac{\pi}{\alpha}}}{R^{\frac{\pi}{\alpha}} - z^{\frac{\pi}{\alpha}}}\right)^2 - i}{\left(\frac{R^{\frac{\pi}{\alpha}} + z^{\frac{\pi}{\alpha}}}{R^{\frac{\pi}{\alpha}} - z^{\frac{\pi}{\alpha}}}\right)^2 + i}.</script><p>特别地, 当 $\alpha = \cfrac{\pi}{8}$ 时,</p>
+<p><script type="math/tex">w = \cfrac{\left(\frac{R^8 + z^8}{R^8 - z^8}\right)^2 - i}{\left(\frac{R^8 + z^8}{R^8 - z^8}\right)^2 + i}.</script> ◻</p>
 <p>$\textbf{Example:}$<br>求分式线性映射 $w(z)$ 满足:</p>
 <ul>
-<li>将<br>$\left|{z - a}\right| &gt; a, \left|{z - b}\right| &lt; b\thinspace(0 &lt; a &lt; b)$<br>所围区域映到单位圆盘 $\left|{w}\right| &lt; 1$.&nbsp;◻</li>
+<li>将<br>$\left|{z - a}\right| &gt; a, \left|{z - b}\right| &lt; b\thinspace(0 &lt; a &lt; b)$<br>所围区域映到单位圆盘 $\left|{w}\right| &lt; 1$. ◻</li>
 </ul>
 <p>$\textbf{Solution:}$<br>分为五步</p>
 <ol>
@@ -838,18 +1156,21 @@
 <li>$z_4 = e^{z_3}$</li>
 <li>$w = \cfrac{z_4 - i}{z_4 + i}$</li>
 </ol>
-<p>整理得<br>$$w = \cfrac{e^{\frac{ib(z - 2a)\pi}{(b - a)z}} - i}{e^{\frac{ib(z - 2a)\pi}{(b - a)z}} + i}.$$&nbsp;◻</p>
+<p>整理得</p>
+<p><script type="math/tex">w = \cfrac{e^{\frac{ib(z - 2a)\pi}{(b - a)z}} - i}{e^{\frac{ib(z - 2a)\pi}{(b - a)z}} + i}.</script> ◻</p>
 <p>$\textbf{Example:}$<br>求分式线性映射 $w(z)$ 满足:</p>
 <ul>
-<li>将以 $A, B$ 为端点, $\theta_0\in(0, 2\pi)$<br>为弦切角的弓形映到单位圆盘 $\left|{w}\right| &lt; 1$.&nbsp;◻</li>
+<li><p>将以 $A, B$ 为端点, $\theta_0\in(0, 2\pi)$<br>为弦切角的弓形映到单位圆盘 $\left|{w}\right| &lt; 1$. ◻</p>
+<p>$\textbf{Solution:}$<br>分为三步</p>
+</li>
 </ul>
-<p>&nbsp;$\textbf{Solution:}$<br>分为三步</p>
 <ol>
 <li>$z_1 = \cfrac{z - A}{B - z}$ (弓形 $\longrightarrow$ 第一象限角域)</li>
 <li>$z_2 = z_1^{\frac{\pi}{\theta_0}}$</li>
 <li>$w = \cfrac{z_2 - i}{z_2 + i}$</li>
 </ol>
-<p>整理得<br>$$w = \cfrac{\left(\frac{z - A}{B - z}\right)^{\frac{\pi}{\theta_0}} - i}{\left(\frac{z - A}{B - z}\right)^{\frac{\pi}{\theta_0}} + i}.$$&nbsp;◻</p>
+<p>整理得</p>
+<p><script type="math/tex">w = \cfrac{\left(\frac{z - A}{B - z}\right)^{\frac{\pi}{\theta_0}} - i}{\left(\frac{z - A}{B - z}\right)^{\frac{\pi}{\theta_0}} + i}.</script> ◻</p>
 
                 
             </div>
@@ -1237,7 +1558,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">85k</span>
+                        class="white-color">73k</span>
             
             
             

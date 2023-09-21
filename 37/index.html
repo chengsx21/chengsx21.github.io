@@ -439,7 +439,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    730
+                    738
                 </div>
                 
 
@@ -487,18 +487,11 @@
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"counter = %d\n"</span><span class="token punctuation">,</span> counter<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<ol>
-<li>程序会输出多少行? (空行不计算在内)</li>
-</ol>
+<p>1) 程序会输出多少行? (空行不计算在内)</p>
 <p><strong>答:</strong> 会输出 10 行.</p>
-<ol start="2">
-<li>程序第一行和最后一行分别会输出什么?</li>
-</ol>
+<p>2) 程序第一行和最后一行分别会输出什么?</p>
 <p><strong>答:</strong> 第一行输出 <code>counter = 1</code>; 最后一行输出 <code>counter = 2</code>.</p>
-<ol start="3">
-<li>根据系统对进程的调度情况, 程序一共有多少种可能的输出结果? (如果同一时间有若干进程在同时运行, 他们运行的先后顺序的不同可能导致输出结果不同)</li>
-</ol>
+<p>3) 根据系统对进程的调度情况, 程序一共有多少种可能的输出结果? (如果同一时间有若干进程在同时运行, 他们运行的先后顺序的不同可能导致输出结果不同) </p>
 <p><strong>答:</strong> 程序一共有 5 种可能的输出结果.</p>
 <p>分别对应第一次 <code>fork</code> 的子线程在父线程 <code>4</code> 次 <code>counter = 2</code> 的输出之间.</p>
 </li>
@@ -540,13 +533,11 @@
     <span class="token punctuation">}</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>在执行过程中, 如果用户按下 <code>Ctrl+C</code>, 请问程序在一串 <code>Waiting…!</code> 之后会输出什么内容, 为什么? </p>
 <p><strong>答:</strong> 会输出:</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Child process receiving Kill
 Killing Child process
 child's <span class="token builtin class-name">exit</span> <span class="token assign-left variable">status</span><span class="token operator">=</span><span class="token number">255</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <p><code>fork</code> 后在父进程内调用 <code>waitpid</code>, 父进程自身被挂起.</p>
 <p>按下 <code>Ctrl+C</code> 后, 系统内核发送 <code>SIGINT</code> 信号至父进程与子进程, 子进程接收 <code>SIGINT</code> 信号, 其信号处理函数输出 <code>Child process receiving Kill</code>, 子进程退出. </p>
 <p>随后父进程恢复, 接受 <code>SIGINT</code> 信号, 其信号处理函数输出 <code>Killing Child process</code>, 最后通过 <code>WEXITSTATUS</code> 获取子进程退出状态, 输出 <code>child's exit status=255</code>.</p>
@@ -561,23 +552,15 @@ child's <span class="token builtin class-name">exit</span> <span class="token as
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"fd2=%d\n"</span><span class="token punctuation">,</span> fd2<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><strong>答:</strong> 会输出 <code>fd2=4</code>.</p>
 <p>进程创建时, <code>标准输入</code>, <code>标准输出</code>, <code>标准错误</code>已分别占用了描述符 <code>0</code>, <code>1</code>, <code>2</code>; 以只读方式打开文件 <code>foo.txt</code> 和 <code>bar.txt</code>, 可用描述符池分配 <code>fd1 = 3</code>, <code>fd2 = 4</code>; 关闭 <code>bar.txt</code> 后, 描述符 <code>4</code> 恢复到描述符池; 打开 <code>bar.txt</code> 后, 仍有 <code>fd2 = 4</code>.</p>
 </li>
 <li><p>在以下情形中, 分别需要使用什么 IO 方式来进行处理:</p>
-<ol>
-<li><p>编译器读取源文件  <strong>Standard IO.</strong></p>
-</li>
-<li><p>编译器生成可执行文件  <strong>Standard IO.</strong></p>
-</li>
-<li><p>处理图像文件  <strong>Standard  IO.</strong></p>
-</li>
-<li><p>程序需要读写超大规模的文件，运行过程中可能需要处理外部信号  <strong>Unix IO.</strong></p>
-</li>
-<li><p>访问网络内容  <strong>RIO.</strong></p>
-</li>
-</ol>
+<p>1) 编译器读取源文件  <strong>Standard IO.</strong></p>
+<p>2) 编译器生成可执行文件  <strong>Standard IO.</strong></p>
+<p>3) 处理图像文件  <strong>Standard  IO.</strong></p>
+<p>4) 程序需要读写超大规模的文件，运行过程中可能需要处理外部信号  <strong>Unix IO.</strong></p>
+<p>5) 访问网络内容  <strong>RIO.</strong></p>
 </li>
 </ol>
 
@@ -971,7 +954,7 @@ child's <span class="token builtin class-name">exit</span> <span class="token as
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">85k</span>
+                        class="white-color">73k</span>
             
             
             

@@ -482,7 +482,6 @@ public<span class="token operator">:</span>
     <span class="token keyword">long</span> <span class="token keyword">long</span> pos<span class="token punctuation">[</span>MAXLEN <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 记录队中病例数在原数组中对应的天数.</span>
     <span class="token keyword">int</span> val<span class="token punctuation">[</span>MAXLEN <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 记录队中病例数的大小.</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>考虑到窗口的左端实际上是单调不减的, 因此在队尾元素出队后, 它不可能再次入队. 只需要查询队首元素, 如果它对应的位置不位于滑动窗口中, 则删去该元素, 最后剩下的满足条件的队首元素即是窗口中对应的最大确诊病例数. 我们使用 <code>cases[i]</code> 数组存储第 <code>i</code> 天回溯对应的最大确诊病例数. 然后遍历 <code>cases[i]</code>, 将为病例数大小 <code>k</code> 出现的天数记录在数组 <code>sum[k]</code> 中. 随后对 <code>sum</code> 数组从第二项开始求出前缀和, <code>sum[k - 1]</code> 即对应了 <code>cases</code> 数组中病例数位于 $[0, k)$ 范围内的天数. 如此操作, 我们在查询时只需访问数组 <code>sum[i]</code>, 这实现了 $O(1)$ 的复杂度.</p>
 <h3 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h3><p>注意到 <code>p</code>, <code>q</code>, <code>m[i]</code> 的范围均为 $[1, 2^{32} - 1]$, 超过了 <code>int</code> 的范围, 因此使用 <code>long long</code> 数组存储.</p>
 <p>若 <code>p = 0</code>, 则需直接返回低风险天数为 <code>0</code>; 若输入的 <code>p</code>、<code>q</code> 过大, 由于 <code>x[i]</code> 的范围为 $[1, 2\times 10^6]$, 在查询时应直接返回全部的风险天数. 这在代码中体现为使用 <code>flag</code> 记录最大单日确诊病例数的上界, 当超过此上界时, 直接返回 <code>sum[flag]</code>.</p>
@@ -496,7 +495,6 @@ ans1 <span class="token operator">=</span> <span class="token punctuation">(</sp
 ans2 <span class="token operator">=</span> <span class="token punctuation">(</span>q <span class="token operator">&gt;</span> flag <span class="token operator">?</span> sum<span class="token punctuation">[</span>flag<span class="token punctuation">]</span> <span class="token operator">:</span> sum<span class="token punctuation">[</span>q <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
 cout <span class="token operator">&lt;&lt;</span> ans1 <span class="token operator">&lt;&lt;</span> <span class="token char">' '</span> <span class="token operator">&lt;&lt;</span> ans2 <span class="token operator">-</span> ans1 <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
 <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="复杂度估计"><a href="#复杂度估计" class="headerlink" title="复杂度估计"></a>复杂度估计</h3><p>算法时间复杂度主要来自计算最大单日确诊病例、计算前缀和与查询风险天数等部分:</p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> 
 <span class="token comment">// Line 30</span>
@@ -511,7 +509,6 @@ cout <span class="token operator">&lt;&lt;</span> ans1 <span class="token operat
     cases<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> que<span class="token punctuation">.</span>val<span class="token punctuation">[</span>que<span class="token punctuation">.</span>header<span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>在计算最大单日确诊病例时, 每个元素最多入队且出队一次, 从而时间复杂度与输入元素数成正比, 为 $O(n)$;</p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> 
 <span class="token comment">// Line 42</span>
@@ -524,7 +521,6 @@ cout <span class="token operator">&lt;&lt;</span> ans1 <span class="token operat
     sum<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+=</span> sum<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>在进行前缀和计算时, 由于 <code>flag = max(x[i])</code>, 从而时间复杂度为 $O(n + max(x[i]))$;</p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> 
 <span class="token comment">// Line 52</span>
@@ -537,7 +533,6 @@ cout <span class="token operator">&lt;&lt;</span> ans1 <span class="token operat
     cout <span class="token operator">&lt;&lt;</span> ans1 <span class="token operator">&lt;&lt;</span> <span class="token char">' '</span> <span class="token operator">&lt;&lt;</span> ans2 <span class="token operator">-</span> ans1 <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>在查询风险天数时, 每次查询用时常数时间, 从而时间复杂度与查询次数成正比, 为 $O(T)$;</p>
 <p>综上, 算法总时间复杂度为 $O(n + max(x[i]) + T)$.</p>
 <p>算法空间复杂度主要来自读取并存储数据的过程:</p>
@@ -561,7 +556,6 @@ public<span class="token operator">:</span>
 <span class="token keyword">int</span> sum<span class="token punctuation">[</span><span class="token number">2</span> <span class="token operator">*</span> MAXLEN <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 PriorityQueue que<span class="token punctuation">;</span>
 <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>代码开辟了定长的数组用于存储相关数据, 算法的空间复杂度约为: $8B\times 2\times 10^6 + 4B \times 5\times 10^6 = 36000KB$.</p>
 
                 
@@ -954,7 +948,7 @@ PriorityQueue que<span class="token punctuation">;</span>
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">85k</span>
+                        class="white-color">73k</span>
             
             
             

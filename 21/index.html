@@ -473,7 +473,7 @@
 <p>​    对 $\vert y\vert$ 进行归纳:</p>
 <p>​    \textbf{<strong>基础:</strong>} 如果 $\vert y\vert = 0$, 即 $y = \varepsilon$, </p>
 <p>​    那么由 $\hat\delta$ 的定义知 </p>
-<p>​    $$\hat\delta(\hat\delta(q, x), y) = \hat\delta(\hat\delta(q, x), \varepsilon) = \hat\delta(q, x) = \hat\delta(q, xy),$$</p>
+<p>​    <script type="math/tex">\hat\delta(\hat\delta(q, x), y) = \hat\delta(\hat\delta(q, x), \varepsilon) = \hat\delta(q, x) = \hat\delta(q, xy),</script></p>
 <p>​    至此基础得证.</p>
 <p>​    \textbf{<strong>归纳:</strong>} 现假定 $\vert y\vert = n\thinspace(n\ge 1)$, 且对任何串 $y_0\thinspace(\vert y_0\vert &lt; n)$, 上述命题为真.</p>
 <p>​    也就是说, 如果 $\vert y_0\vert \le n - 1$, 那么$\hat\delta(q, xy_0) = \hat\delta(\hat\delta(q, x), y_0)$.</p>
@@ -481,25 +481,25 @@
 <p>​    那么结合 $\hat\delta$ 的定义得:</p>
 <p>​    \begin{equation*}</p>
 <p>​        \begin{aligned}</p>
-<p>​            \hat\delta(\hat\delta(q, x), y) &amp;= \hat\delta(\hat\delta(q, x), y_0a) \</p>
-<p>​            &amp;= \delta(\hat\delta(\hat\delta(q, x), y_0), a) \</p>
-<p>​            &amp;= \delta(\hat\delta(q, xy_0), a) \</p>
-<p>​            &amp;= \hat\delta(q, xy_0a) \</p>
+<p>​            \hat\delta(\hat\delta(q, x), y) &amp;= \hat\delta(\hat\delta(q, x), y_0a) \\</p>
+<p>​            &amp;= \delta(\hat\delta(\hat\delta(q, x), y_0), a) \\</p>
+<p>​            &amp;= \delta(\hat\delta(q, xy_0), a) \\</p>
+<p>​            &amp;= \hat\delta(q, xy_0a) \\</p>
 <p>​            &amp;= \hat\delta(q, xy).</p>
 <p>​        \end{aligned}</p>
 <p>​    \end{equation*}</p>
 <p>​    至此归纳得证.</p>
 <h3 id="Ex-2-2-4-b"><a href="#Ex-2-2-4-b" class="headerlink" title="Ex 2.2.4 (b)"></a>Ex 2.2.4 (b)</h3><p>​    一个接受该语言的 $DFA$ 的转移表为:</p>
-<p>​        <img src="/pic/14.png"></p>
+<p>​        <img src="/pic/14.png" alt=""></p>
 <h3 id="Ex-2-2-4-c"><a href="#Ex-2-2-4-c" class="headerlink" title="Ex 2.2.4 (c)"></a>Ex 2.2.4 (c)</h3><p>​    一个接受该语言的 $DFA$ 的转移表为:</p>
-<p>​		<img src="/pic/15.png"></p>
+<p>​        <img src="/pic/15.png" alt=""></p>
 <h3 id="Ex-2-2-5-d"><a href="#Ex-2-2-5-d" class="headerlink" title="Ex 2.2.5 (d)"></a>Ex 2.2.5 (d)</h3><p>​    一个接受该语言的 $DFA$ 的转移表为:</p>
-<p>​    	<img src="/pic/16.png"></p>
+<p>​        <img src="/pic/16.png" alt=""></p>
 <h3 id="Ex-2-2-7"><a href="#Ex-2-2-7" class="headerlink" title="Ex 2.2.7"></a>Ex 2.2.7</h3><p>​    对任意输入串 $w$, 我们证明 $\hat\delta(q, w) = q$.</p>
 <p>​    对 $\vert w\vert$ 进行归纳:</p>
 <p>​    \textbf{<strong>基础:</strong>} 如果 $\vert w\vert = 0$, 即 $w = \varepsilon$, </p>
 <p>​    那么由 $\hat\delta$ 的定义知 </p>
-<p>​    $$\hat\delta(q, w) = \hat\delta(q, \varepsilon) = q,$$</p>
+<p>​    <script type="math/tex">\hat\delta(q, w) = \hat\delta(q, \varepsilon) = q,</script></p>
 <p>​    至此基础得证.</p>
 <p>​    \textbf{<strong>归纳:</strong>} 现设 $\vert w\vert = n\thinspace(n\ge 1)$, 且对任何串 $w_0\thinspace(\vert w_0\vert &lt; n)$ 上述命题为真.</p>
 <p>​    也就是说, 如果$\vert w_0\vert \le n - 1$, 那么$\hat\delta(q, w_0) = q$.</p>
@@ -507,9 +507,9 @@
 <p>​    那么结合 $\hat\delta$ 的定义得:</p>
 <p>​    \begin{equation*}</p>
 <p>​        \begin{aligned}</p>
-<p>​            \hat\delta(q, w) &amp;= \hat\delta(q, w_0a) \</p>
-<p>​            &amp;= \delta(\hat\delta(q, w_0), a) \</p>
-<p>​            &amp;= \delta(q, a) \</p>
+<p>​            \hat\delta(q, w) &amp;= \hat\delta(q, w_0a) \\</p>
+<p>​            &amp;= \delta(\hat\delta(q, w_0), a) \\</p>
+<p>​            &amp;= \delta(q, a) \\</p>
 <p>​            &amp;= q.</p>
 <p>​        \end{aligned}</p>
 <p>​    \end{equation*}</p>
@@ -519,7 +519,7 @@
 <p>​    对 $\vert w\vert$ 进行归纳:</p>
 <p>​    \textbf{<strong>基础:</strong>} 如果 $\vert w\vert = 1$,</p>
 <p>​    那么由 $w\in\Sigma$, 结合已知得</p>
-<p>​    $$\hat\delta(q_0, w) = \hat\delta(q_f, w),$$</p>
+<p>​    <script type="math/tex">\hat\delta(q_0, w) = \hat\delta(q_f, w),</script></p>
 <p>​    至此基础得证.</p>
 <p>​    \textbf{<strong>归纳:</strong>} 现设 $\vert w\vert = n\thinspace(n\ge 2)$, 且对任何串 $w_0\thinspace(\vert w_0\vert &lt; n)$ 上述命题为真.</p>
 <p>​    也就是说, 如果$\vert w_0\vert \le n - 1$, 那么$\hat\delta(q_0, w_0) = \hat\delta(q_f, w_0)$.</p>
@@ -527,9 +527,9 @@
 <p>​    那么结合 $\hat\delta$ 的定义得:</p>
 <p>​    \begin{equation*}</p>
 <p>​        \begin{aligned}</p>
-<p>​            \hat\delta(q_0, w) &amp;= \hat\delta(q_0, w_0a) \</p>
-<p>​            &amp;= \delta(\hat\delta(q_0, w_0), a) \</p>
-<p>​            &amp;= \delta(\hat\delta(q_f, w_0), a) \</p>
+<p>​            \hat\delta(q_0, w) &amp;= \hat\delta(q_0, w_0a) \\</p>
+<p>​            &amp;= \delta(\hat\delta(q_0, w_0), a) \\</p>
+<p>​            &amp;= \delta(\hat\delta(q_f, w_0), a) \\</p>
 <p>​            &amp;= \hat\delta(q_f, w_0a).</p>
 <p>​        \end{aligned}</p>
 <p>​    \end{equation*}</p>
@@ -538,49 +538,49 @@
 <p>​    已知 $\hat\delta(q_0, x) = q_f$. 对任意 $k &gt; 0$, 我们证明 $\hat\delta(q_0, x^k) = q_f$.</p>
 <p>​    对 $k$ 进行归纳:</p>
 <p>​    \textbf{<strong>基础:</strong>} 如果 $k = 1$, 那么由已知得</p>
-<p>​    $$\hat\delta(q_0, x^k) = \hat\delta(q_0, x) = q_f,$$</p>
+<p>​    <script type="math/tex">\hat\delta(q_0, x^k) = \hat\delta(q_0, x) = q_f,</script></p>
 <p>​    至此基础得证.</p>
 <p>​    \textbf{<strong>归纳:</strong>} 考虑 $k\ge 2$, 现设对任何 $k_0 &lt; k$ 上述命题为真,</p>
 <p>​    也就是说, 如果$k_0\le k - 1$, 那么$\hat\delta(q_0, x^{k_0}) = q_f$.</p>
 <p>​    由 $Ex 2.2.2$ 已证结论得:</p>
 <p>​    \begin{equation*}</p>
 <p>​        \begin{aligned}</p>
-<p>​            \hat\delta(q_0, x^k) &amp;= \hat\delta(q_0, x^{k - 1}x) \</p>
-<p>​            &amp;= \hat\delta(\hat\delta(q_0, x^{k - 1}), x) \</p>
-<p>​            &amp;= \hat\delta(q_f, x) \</p>
-<p>​            &amp;= \hat\delta(q_0, x) \</p>
+<p>​            \hat\delta(q_0, x^k) &amp;= \hat\delta(q_0, x^{k - 1}x) \\</p>
+<p>​            &amp;= \hat\delta(\hat\delta(q_0, x^{k - 1}), x) \\</p>
+<p>​            &amp;= \hat\delta(q_f, x) \\</p>
+<p>​            &amp;= \hat\delta(q_0, x) \\</p>
 <p>​            &amp;= q_f.</p>
 <p>​        \end{aligned}</p>
 <p>​    \end{equation*}</p>
 <p>​    至此归纳得证.</p>
 <h3 id="Ex-2-3-2"><a href="#Ex-2-3-2" class="headerlink" title="Ex 2.3.2"></a>Ex 2.3.2</h3><p>​    一个接受该 $NFA$ 的 $DFA$ 的转移表为:</p>
-<p>   <img src="/pic/17.png"></p>
-<h3 id="Ex-2-3-4-b"><a href="#Ex-2-3-4-b" class="headerlink" title="Ex 2.3.4 (b)"></a>Ex 2.3.4 (b)</h3><p>​    一个接受该语言的 $NFA$ 为:<br>​    $$A = (Q, \Sigma, \delta, q, F).$$</p>
-<p>​    其中<br>​    $$Q = \left{q_s, q_0, q_1, \cdots, q_9, q_f\right},$$<br>​    $$\Sigma = \left{0, 1,\cdots ,9\right},$$<br>​    $$q = q_s,$$<br>​    $$F = \left{q_f\right}$$</p>
-<p>​    并且<br>​    $$\delta(q_s,a) = \left{q_k\mid k\ne a\right}\cup\left{q_f\right},$$<br>​    $$\delta(q_k,a) = \left{q_k\right}, \mbox{当} k\ne a ;$$<br>​    $$\delta(q_k,a) = \left{q_f\right}, \mbox{当}k = a.$$</p>
+<p>   <img src="/pic/17.png" alt=""></p>
+<h3 id="Ex-2-3-4-b"><a href="#Ex-2-3-4-b" class="headerlink" title="Ex 2.3.4 (b)"></a>Ex 2.3.4 (b)</h3><p>​    一个接受该语言的 $NFA$ 为:<br>​    <script type="math/tex">A = (Q, \Sigma, \delta, q, F).</script></p>
+<p>​    其中<br>​    <script type="math/tex">Q = \left\{q_s, q_0, q_1, \cdots, q_9, q_f\right\},</script><br>​    <script type="math/tex">\Sigma = \left\{0, 1,\cdots ,9\right\},</script><br>​    <script type="math/tex">q = q_s,</script><br>​    <script type="math/tex">F = \left\{q_f\right\}</script></p>
+<p>​    并且<br>​    <script type="math/tex">\delta(q_s,a) = \left\{q_k\mid k\ne a\right\}\cup\left\{q_f\right\},</script><br>​    <script type="math/tex">\delta(q_k,a) = \left\{q_k\right\}, \mbox{当} k\ne a ;</script><br>​    <script type="math/tex">\delta(q_k,a) = \left\{q_f\right\}, \mbox{当}k = a.</script></p>
 <p>​    其中 $k = 0, 1, \cdots, 9.$    </p>
 <h3 id="Ex-2-3-4-c"><a href="#Ex-2-3-4-c" class="headerlink" title="Ex 2.3.4 (c)"></a>Ex 2.3.4 (c)</h3><p>​    一个接受该语言的 $NFA$ 的转移表为:</p>
-<p>   <img src="/pic/18.png"></p>
+<p>   <img src="/pic/18.png" alt=""></p>
 <h3 id="Ex-2-4-2-c"><a href="#Ex-2-4-2-c" class="headerlink" title="Ex 2.4.2 (c)"></a>Ex 2.4.2 (c)</h3><p>​    一个满足题意的 $NFA$ 为:</p>
-<p>   <img src="/pic/19.png"></p>
+<p>   <img src="/pic/19.png" alt=""></p>
 <p>​    将其转化为满足题意的 $DFA$:</p>
-<p>   <img src="/pic/20.png"> </p>
+<p>   <img src="/pic/20.png" alt=""> </p>
 <p>​    此即转化后的结果.</p>
 <h3 id="Ex-2-5-2"><a href="#Ex-2-5-2" class="headerlink" title="Ex 2.5.2"></a>Ex 2.5.2</h3><p>​    $(1)$ 计算可得</p>
-<p>​    $ECLOSE(p) = \left{p, q, r\right}$, $ECLOSE(q) = \left{q\right}$, $ECLOSE(r) = \left{r\right}$.</p>
-<p>​    $(2)$ 这个自动机接受的长度小于等于 $3$ 的串有:<br>​    $$\varepsilon, a, b, c, aa, ab, ac, ba, bb, bc, ca, cb, cc, aaa, aab, aac,$$<br>​    $$aba, abb, abc, aca, acb, acc, baa, bab, bac, bca, bcb, bcc,$$<br>​    $$caa, cab, cac, cba, cbb, cbc, cca, ccb, ccc.$$</p>
+<p>​    $ECLOSE(p) = \left\{p, q, r\right\}$, $ECLOSE(q) = \left\{q\right\}$, $ECLOSE(r) = \left\{r\right\}$.</p>
+<p>​    $(2)$ 这个自动机接受的长度小于等于 $3$ 的串有:<br>​    <script type="math/tex">\varepsilon, a, b, c, aa, ab, ac, ba, bb, bc, ca, cb, cc, aaa, aab, aac,</script><br>​    <script type="math/tex">aba, abb, abc, aca, acb, acc, baa, bab, bac, bca, bcb, bcc,</script><br>​    <script type="math/tex">caa, cab, cac, cba, cbb, cbc, cca, ccb, ccc.</script></p>
 <p>​    $(3)$ 一个接受该 $\varepsilon-NFA$ 的 $DFA$ 的转移表为:</p>
-<p>​     		<img src="/pic/21.png"> </p>
+<p>​             <img src="/pic/21.png" alt=""> </p>
 <h3 id="Ex-2-5-3-a"><a href="#Ex-2-5-3-a" class="headerlink" title="Ex 2.5.3 (a)"></a>Ex 2.5.3 (a)</h3><p>​    一个接受该 $NFA$ 的转移表为:</p>
-<p>​         	<img src="/pic/22.png"> </p>
+<p>​             <img src="/pic/22.png" alt=""> </p>
 <h3 id="Ex-2-5-3-b"><a href="#Ex-2-5-3-b" class="headerlink" title="Ex 2.5.3 (b)"></a>Ex 2.5.3 (b)</h3><p>​    一个接受该 $NFA$ 的转移表为:</p>
-<p>​         	<img src="/pic/23.png"> </p>
+<p>​             <img src="/pic/23.png" alt=""> </p>
 <h3 id="Ex-2-5-3-c"><a href="#Ex-2-5-3-c" class="headerlink" title="Ex 2.5.3 (c)"></a>Ex 2.5.3 (c)</h3><p>​    一个接受该 $NFA$ 的转移表为:</p>
-<p>​        	<img src="/pic/24.png"> </p>
+<p>​            <img src="/pic/24.png" alt=""> </p>
 <h3 id="Ex-4-4-2-c"><a href="#Ex-4-4-2-c" class="headerlink" title="Ex 4.4.2 (c)"></a>Ex 4.4.2 (c)</h3><p>​    这个自动机的可区分性表为:</p>
-<p>​        	<img src="/pic/25.png"> </p>
+<p>​            <img src="/pic/25.png" alt=""> </p>
 <p>​    其最小状态的等价 $DFA$ 的转移表为:</p>
-<p>​     	   <img src="/pic/26.png"> </p>
+<p>​            <img src="/pic/26.png" alt=""> </p>
 
                 
             </div>
@@ -972,7 +972,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">85k</span>
+                        class="white-color">73k</span>
             
             
             

@@ -478,8 +478,7 @@
 </li>
 <li><p><strong>定义(样本空间)</strong>  一个试验所有可能结果之集 $(\Omega)$.</p>
 </li>
-<li><p><strong>定义(随机事件)</strong>  $a$ $well$ $defined$ $subset$ $A\in\Omega$.</p>
-<ul>
+<li><strong>定义(随机事件)</strong>  $a$ $well$ $defined$ $subset$ $A\in\Omega$.<ul>
 <li>全事件 $\Omega$ (必然事件);</li>
 <li>空事件 $\varPhi$ (不可能事件);</li>
 <li>单一试验结果 (基本事件).</li>
@@ -510,15 +509,18 @@
 <li><p>事件集类 $\mathscr{F}\subset\Omega\Rightarrow\sigma{-}$代数: 事件运算的封闭性.</p>
 </li>
 <li><p>特别地, </p>
-<p>$$<br>\sum_{i = 1}^{\infty}A_i\in\mathscr{F}, \forall A_i\in\mathscr{F}.<br>$$</p>
-</li>
-<li><p><strong>定义(Kolmogorov)</strong><br>  $$<br>  P: \mathscr{F}\rightarrow\mathbb{R} \<br>  $$<br>  满足以下三条公理:</p>
+<script type="math/tex; mode=display">
+\sum_{i = 1}^{\infty}A_i\in\mathscr{F}, \forall A_i\in\mathscr{F}.</script></li>
+<li><p><strong>定义(Kolmogorov)</strong></p>
+<script type="math/tex; mode=display">
+  P: \mathscr{F}\rightarrow\mathbb{R} \\</script><p>  满足以下三条公理:</p>
 <ul>
 <li>$P(A)\ge 0, \forall A\in\mathscr{F}$</li>
 <li>$P(\Omega) = 1$</li>
-<li>$P(\sum_{i = 1}^{\infty}A_i) = \sum_{i = 1}^{\infty}P(A_i), A_iA_j = \varnothing, \forall i\ne j$</li>
+<li><p>$P(\sum_{i = 1}^{\infty}A_i) = \sum_{i = 1}^{\infty}P(A_i), A_iA_j = \varnothing, \forall i\ne j$</p>
+<p>则称 $P$ 为概率函数, $(\Omega, \mathscr{F}, P)$ 为概率空间.</p>
+</li>
 </ul>
-<p>  则称 $P$ 为概率函数, $(\Omega, \mathscr{F}, P)$ 为概率空间.</p>
 </li>
 <li><p><strong>命题</strong></p>
 <ul>
@@ -535,11 +537,31 @@
 </li>
 <li><p><strong>例</strong>  $n$ 个人, 每人一顶帽子, 随机挑选一顶帽子. 无人拿到自己帽子的概率为? 恰有 $k$ 人拿到自己帽子的概率为?</p>
 </li>
-<li><p><strong>解答</strong>  令 $A_i = $ 第 $i$ 个人拿到自己帽子. 注意到<br>$$<br>P(A_i) = \cfrac{1}{n}.<br>$$<br>运用排列组合知识可得<br>$$<br>P(A_{i_1}\cdots A_{i_r}) = \cfrac{(n - r)!}{n!},\<br>\sum_\limits{i_1 &lt; \cdots &lt; i_r}P(A_{i_1}\cdots A_{i_r}) = \cfrac{(n - r)!}{n!}C_n^r = \cfrac{1}{r!}.<br>$$<br>故至少有一个人拿到自己帽子的概率为<br>$$<br>\begin{equation*}<br>\begin{aligned}<br>P(\sum_\limits{i = 1}^{n}A_i) &amp;= \sum_\limits{r = 1}^{n}(-1)^{r - 1}\sum_\limits{i_1 &lt; \cdots &lt; i_r}P(A_{i_1}\cdots A_{i_r}) \<br>&amp;= \sum_\limits{r = 1}^{n}(-1)^{r - 1}\cfrac{1}{r!}.<br>\end{aligned}<br>\end{equation*}<br>$$<br>无人拿到自己帽子的概率为<br>$$<br>\begin{equation*}<br>\begin{aligned}<br>P_n &amp;= 1 - P(\sum_\limits{i = 1}^{n}A_i) \<br>&amp;= 1 - \sum_\limits{r = 1}^{n}(-1)^{r - 1}\sum_\limits{i_1 &lt; \cdots &lt; i_r}P(A_{i_1}\cdots A_{i_r}) \<br>&amp;= \sum_\limits{r = 0}^{n}(-1)^{r}\cfrac{1}{r!} \<br>&amp;= \cfrac{1}{e}.<br>\end{aligned}<br>\end{equation*}<br>$$</p>
-</li>
+<li><p><strong>解答</strong>  令 $A_i = $ 第 $i$ 个人拿到自己帽子. 注意到</p>
+<script type="math/tex; mode=display">
+P(A_i) = \cfrac{1}{n}.</script><p>运用排列组合知识可得</p>
+<script type="math/tex; mode=display">
+P(A_{i_1}\cdots A_{i_r}) = \cfrac{(n - r)!}{n!},\\
+\sum_\limits{i_1 < \cdots < i_r}P(A_{i_1}\cdots A_{i_r}) = \cfrac{(n - r)!}{n!}C_n^r = \cfrac{1}{r!}.</script><p>故至少有一个人拿到自己帽子的概率为</p>
+<script type="math/tex; mode=display">
+\begin{equation*}
+    \begin{aligned}
+    P(\sum_\limits{i = 1}^{n}A_i) &= \sum_\limits{r = 1}^{n}(-1)^{r - 1}\sum_\limits{i_1 < \cdots < i_r}P(A_{i_1}\cdots A_{i_r}) \\
+    &= \sum_\limits{r = 1}^{n}(-1)^{r - 1}\cfrac{1}{r!}.
+    \end{aligned}
+\end{equation*}</script><p>无人拿到自己帽子的概率为</p>
+<script type="math/tex; mode=display">
+\begin{equation*}
+    \begin{aligned}
+    P_n &= 1 - P(\sum_\limits{i = 1}^{n}A_i) \\
+    &= 1 - \sum_\limits{r = 1}^{n}(-1)^{r - 1}\sum_\limits{i_1 < \cdots < i_r}P(A_{i_1}\cdots A_{i_r}) \\
+    &= \sum_\limits{r = 0}^{n}(-1)^{r}\cfrac{1}{r!} \\
+    &= \cfrac{1}{e}.
+    \end{aligned}
+\end{equation*}</script></li>
 </ul>
 <h2 id="条件概率"><a href="#条件概率" class="headerlink" title="条件概率"></a>条件概率</h2><ul>
-<li><p><strong>定义(条件概率)</strong>  $P(A\mid B) := \cfrac{P(AB)}{P(B)},( 需,P(B) &gt; 0)$.</p>
+<li><p><strong>定义(条件概率)</strong>  $P(A\mid B) := \cfrac{P(AB)}{P(B)}\,( 需\,P(B) &gt; 0)$.</p>
 </li>
 <li><p>$A\mid B$ 不是事件.</p>
 </li>
@@ -549,24 +571,35 @@
 </li>
 <li><p><strong>例</strong>  $8$ 个红球, $4$ 个白球, 等可能无放回地取出 $2$ 红球的概率为?</p>
 </li>
-<li><p><strong>解答</strong>  无放回地取出 $2$ 红球的概率为<br>$$<br>P(R_1R_2) = P(R_1)P(R_2\mid R_1) = \cfrac{8}{12}\times\cfrac{7}{11} = \cfrac{14}{33}.<br>$$</p>
-</li>
+<li><p><strong>解答</strong>  无放回地取出 $2$ 红球的概率为</p>
+<script type="math/tex; mode=display">
+P(R_1R_2) = P(R_1)P(R_2\mid R_1) = \cfrac{8}{12}\times\cfrac{7}{11} = \cfrac{14}{33}.</script></li>
 <li><p><strong>推广</strong></p>
 <p>$P(A_1A_2\cdots A_n) = P(A_1)P(A_2\mid A_1)P(A_3\mid A_1A_2)\cdots P(A_n\mid A_1A_2\cdots A_{n - 1}).$</p>
 </li>
-<li><p><strong>解答续</strong>  在配对问题中, 注意到<br>  $$<br>  \begin{equation*}<br>  \begin{aligned}<br>P(A_{i_1}\cdots A_{i_r}) &amp;= P(A_{i_1})P(A_{i_2}\mid A_{i_1})\cdots P(A_{i_r}\mid A_{i_1}A_{i_2}\cdots A_{i_{r - 1}}) \<br>&amp;= \cfrac{1}{n}\cdot\cfrac{1}{n - 1}\cdot\cfrac{1}{n - 2}\cdots\cfrac{1}{n - (r - 1)} \<br>&amp;= \cfrac{(n - r)!}{n!}.<br>  \end{aligned}<br>  \end{equation*}<br>  $$</p>
-</li>
-<li><p><strong>定义</strong><br>  $$<br>  P(\cdot\mid B): \mathscr{F}\rightarrow\mathbb{R}<br>  $$<br>  令 $\widetilde{P} = P(\cdot\mid B)$, 则 $\widetilde{P}$ 满足以下三条公理:</p>
+<li><p><strong>解答续</strong>  在配对问题中, 注意到</p>
+<script type="math/tex; mode=display">
+  \begin{equation*}
+      \begin{aligned}
+    P(A_{i_1}\cdots A_{i_r}) &= P(A_{i_1})P(A_{i_2}\mid A_{i_1})\cdots P(A_{i_r}\mid A_{i_1}A_{i_2}\cdots A_{i_{r - 1}}) \\
+    &= \cfrac{1}{n}\cdot\cfrac{1}{n - 1}\cdot\cfrac{1}{n - 2}\cdots\cfrac{1}{n - (r - 1)} \\
+    &= \cfrac{(n - r)!}{n!}.
+      \end{aligned}
+  \end{equation*}</script></li>
+<li><p><strong>定义</strong></p>
+<script type="math/tex; mode=display">
+  P(\cdot\mid B): \mathscr{F}\rightarrow\mathbb{R}</script><p>  令 $\widetilde{P} = P(\cdot\mid B)$, 则 $\widetilde{P}$ 满足以下三条公理:</p>
 <ul>
 <li>$\widetilde{P}(A)\ge 0, \forall A\in\mathscr{R}$</li>
 <li>$\widetilde{P}(\Omega) = 1$</li>
-<li>$\widetilde{P}(\sum_{i = 1}^{\infty}A_i) = \sum_{i = 1}^{\infty}\widetilde{P}(A_i), A_iA_j = \varnothing, \forall i\ne j$</li>
+<li><p>$\widetilde{P}(\sum_{i = 1}^{\infty}A_i) = \sum_{i = 1}^{\infty}\widetilde{P}(A_i), A_iA_j = \varnothing, \forall i\ne j$</p>
+<p>故 $\widetilde{P}$ 为概率函数, $(\Omega, \mathscr{F}, \widetilde{P})$ 为新概率空间.</p>
+</li>
 </ul>
-<p>  故 $\widetilde{P}$ 为概率函数, $(\Omega, \mathscr{F}, \widetilde{P})$ 为新概率空间.</p>
 </li>
 <li><p><strong>注</strong></p>
 <ul>
-<li>$P(A),\textbf{v.s.},\widetilde{P}(A) = P(A\mid B)$;</li>
+<li>$P(A)\,\textbf{v.s.}\,\widetilde{P}(A) = P(A\mid B)$;</li>
 <li>“已观测到 $A$ 发生, 则 $P(A) = 1$” 这句话是错误的, 因为 $P(A\mid A) = 1$.</li>
 </ul>
 </li>
@@ -586,21 +619,21 @@
 <li><p><strong>解答</strong></p>
 <p>每次购彩事件都是独立的.</p>
 <p>设事件 $A_i = $ 第 $i$ 周未中奖, 那么 $P(A_i) = 1 - 10^{-5}$.</p>
-<p>故 $P = P(A_1A_2\cdots A_{520}) = (1 - 10^{-5})^520 = 99.48%$. </p>
+<p>故 $P = P(A_1A_2\cdots A_{520}) = (1 - 10^{-5})^520 = 99.48\%$. </p>
 </li>
 <li><p>事件 $A, B$ 相互独立, 则事件 $A^c, B$ 相互独立.</p>
 </li>
 <li><p><strong>推广</strong></p>
 <ul>
-<li><p>$A, B, C,相互独立\Leftrightarrow P(ABC) = P(A)P(B)P(C),且,A, B, C,两两独立$;</p>
+<li><p>$A, B, C\,相互独立\Leftrightarrow P(ABC) = P(A)P(B)P(C)\,且\,A, B, C\,两两独立$;</p>
 </li>
-<li><p>$A, B, C,两两独立\nRightarrow A, B, C,相互独立$</p>
+<li><p>$A, B, C\,两两独立\nRightarrow A, B, C\,相互独立$</p>
 <p>  (反例) 甲乙两人抛掷 $2$ 枚硬币. $A =$ 甲正, $B =$ 乙正, $C =$ 甲乙同.</p>
 </li>
 </ul>
 </li>
 <li><p><strong>定义(相互独立)</strong></p>
-<p>  $A_1, A_2, \cdots, A_n,相互独立\Leftrightarrow 任,m,个事件,A_{i_1},\cdots, A_{i_m}, 有 P(A_{i_1}\cdots A_{i_m}) = P(A_{i_1})\cdots P(A_{i_m}).$</p>
+<p>  $A_1, A_2, \cdots, A_n\,相互独立\Leftrightarrow 任\,m\,个事件\,A_{i_1},\cdots, A_{i_m}, 有 P(A_{i_1}\cdots A_{i_m}) = P(A_{i_1})\cdots P(A_{i_m}).$</p>
 </li>
 <li><p><strong>定义(条件独立)</strong></p>
 <p>  $A, B$ 关于事件 $E$ 条件独立 $\Leftrightarrow P(AB\mid E) = P(A\mid E)P(B\mid E)$.</p>
@@ -612,18 +645,39 @@
 <li><p><strong>定义(全概率公式)</strong>  给出 $\Omega$ 的一个分割</p>
 <ul>
 <li>$\sum_iB_i = \Omega$;</li>
-<li>$B_iB_j = \varnothing, \forall,i\ne j$;</li>
-<li>$P(B_i) &gt; 0, \forall,i$.</li>
+<li>$B_iB_j = \varnothing, \forall\,i\ne j$;</li>
+<li>$P(B_i) &gt; 0, \forall\,i$.</li>
 </ul>
-<p>则有<br>$$<br>P(A) = P(\sum_i(AB_i)) = \sum_iP(AB_i) = \sum_iP(A\mid B_i)P(B_i).<br>$$</p>
+<p>则有</p>
+<script type="math/tex; mode=display">
+P(A) = P(\sum_i(AB_i)) = \sum_iP(AB_i) = \sum_iP(A\mid B_i)P(B_i).</script></li>
+<li><p><strong>定义(Bayes 公式)</strong></p>
+<script type="math/tex; mode=display">
+  P(B_i\mid A) = \dfrac{P(A\mid B_i)P(B_i)}{\sum_jP(A\mid B_j)P(B_j)}</script><p>  其中 $P(B_i)$ 为先验概率, $P(B_i\mid A)$ 为后验概率.</p>
 </li>
-<li><p><strong>定义(Bayes 公式)</strong><br>  $$<br>  P(B_i\mid A) = \dfrac{P(A\mid B_i)P(B_i)}{\sum_jP(A\mid B_j)P(B_j)}<br>  $$<br>  其中 $P(B_i)$ 为先验概率, $P(B_i\mid A)$ 为后验概率.</p>
-</li>
+</ul>
+<ul>
 <li><p><strong>例</strong>  $A =$ 阳性, $B =$ 患病, $P(B) = 10^{-4}$, $P(A\mid B) = 0.99$, $P(A\mid B^c) = 10^{-3}$. 求 $P(B\mid A)$, $P(B\mid A_1A_2)$.</p>
 </li>
-<li><p><strong>解答</strong>  由 <strong>Bayes</strong> 公式, 容易得到<br>  $$<br>  \begin{equation*}<br>  \begin{aligned}<br>      P(B\mid A)&amp;= \dfrac{P(AB)}{P(A)} \<br>      &amp;= \dfrac{P(A\mid B)P(B)}{P(A)} \<br>      &amp;= \dfrac{P(A\mid B)P(B)}{P(A\mid B)P(B) + P(A\mid B^c)P(B^c)} \<br>      &amp;= 9.01%.<br>  \end{aligned}<br>  \end{equation*}<br>  $$</p>
-<p>  $$<br>  \begin{equation*}<br>  \begin{aligned}<br>      P(B\mid A_1A_2)&amp;= \dfrac{P(A_1A_2B)}{P(A_1A_2)} \<br>      &amp;= \dfrac{P(A_1A_2\mid B)P(B)}{P(A_1A_2)} \<br>      &amp;= \dfrac{P(A_1A_2\mid B)P(B)}{P(A_1A_2\mid B)P(B) + P(A_1A_2\mid B^c)P(B^c)} \<br>      &amp;= \dfrac{P(A\mid B)^2P(B)}{P(A\mid B)^2P(B) + P(A\mid B^c)^2P(B^c)} \<br>      &amp;= 98.99%.<br>  \end{aligned}<br>  \end{equation*}<br>  $$</p>
-</li>
+<li><p><strong>解答</strong>  由 <strong>Bayes</strong> 公式, 容易得到</p>
+<script type="math/tex; mode=display">
+  \begin{equation*}
+      \begin{aligned}
+          P(B\mid A)&= \dfrac{P(AB)}{P(A)} \\
+          &= \dfrac{P(A\mid B)P(B)}{P(A)} \\
+          &= \dfrac{P(A\mid B)P(B)}{P(A\mid B)P(B) + P(A\mid B^c)P(B^c)} \\
+          &= 9.01\%.
+      \end{aligned}
+  \end{equation*}</script><script type="math/tex; mode=display">
+  \begin{equation*}
+      \begin{aligned}
+          P(B\mid A_1A_2)&= \dfrac{P(A_1A_2B)}{P(A_1A_2)} \\
+          &= \dfrac{P(A_1A_2\mid B)P(B)}{P(A_1A_2)} \\
+          &= \dfrac{P(A_1A_2\mid B)P(B)}{P(A_1A_2\mid B)P(B) + P(A_1A_2\mid B^c)P(B^c)} \\
+          &= \dfrac{P(A\mid B)^2P(B)}{P(A\mid B)^2P(B) + P(A\mid B^c)^2P(B^c)} \\
+          &= 98.99\%.
+      \end{aligned}
+  \end{equation*}</script></li>
 </ul>
 <h2 id="一些讨论"><a href="#一些讨论" class="headerlink" title="一些讨论"></a>一些讨论</h2><ul>
 <li>什么是概率?<ul>
@@ -1041,7 +1095,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">85k</span>
+                        class="white-color">73k</span>
             
             
             

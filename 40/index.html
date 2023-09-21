@@ -469,23 +469,23 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="必做题"><a href="#必做题" class="headerlink" title="必做题"></a>必做题</h2><h3 id="Ex-7-2-1-b"><a href="#Ex-7-2-1-b" class="headerlink" title="Ex.7.2.1(b)"></a>Ex.7.2.1(b)</h3><p>​    对于任意的 $n \ge 1$, 存在 $z = a^nb^nc^n\in\left{a^nb^nc^i\mid i\le n\right}$.</p>
+                <h2 id="必做题"><a href="#必做题" class="headerlink" title="必做题"></a>必做题</h2><h3 id="Ex-7-2-1-b"><a href="#Ex-7-2-1-b" class="headerlink" title="Ex.7.2.1(b)"></a>Ex.7.2.1(b)</h3><p>​    对于任意的 $n \ge 1$, 存在 $z = a^nb^nc^n\in\left\{a^nb^nc^i\mid i\le n\right\}$.</p>
 <p>​    考虑任意 $u, v, w, x, y$ 满足 $z = uvwxy$, $\vert vwx\vert &lt; n$, 且 $vx\ne\varepsilon$.</p>
 <p>​    $(a)$ 若 $vwx$ 不包含 $c$, 取 $k = 0$, </p>
 <p>​    此时易知 $\vert uv^kwx^ky\vert = \vert uwy\vert &lt; 3n$, 且其中 $c$ 的数目为 $n$,</p>
-<p>​    那么 $c$ 的数目至少多于 $a, b$ 中的一个, 即<br>​    $$uv^kwx^ky = uwy\notin\left{a^nb^nc^i\mid i\le n\right}.$$<br>​    $(b)$ 若 $vwx$ 包含 $c$, 那么必有 $x$ 包含 $c$. 取 $k = 2$, </p>
+<p>​    那么 $c$ 的数目至少多于 $a, b$ 中的一个, 即<br>​    <script type="math/tex">uv^kwx^ky = uwy\notin\left\{a^nb^nc^i\mid i\le n\right\}.</script><br>​    $(b)$ 若 $vwx$ 包含 $c$, 那么必有 $x$ 包含 $c$. 取 $k = 2$, </p>
 <p>​    由于 $\vert vwx\vert &lt; n$, 易知 $vwx$ 不包含 $a$,</p>
 <p>​    此时 $uv^kwx^ky = uv^2wx^2y$, 且其中 $a$ 的数目为 $n$, $c$ 的数目 $&gt; n$,</p>
-<p>​    那么 $c$ 的数目多于 $a$, 即<br>​    $$uv^kwx^ky = uv^2wx^2y\notin\left{a^nb^nc^i\mid i\le n\right}.$$</p>
+<p>​    那么 $c$ 的数目多于 $a$, 即<br>​    <script type="math/tex">uv^kwx^ky = uv^2wx^2y\notin\left\{a^nb^nc^i\mid i\le n\right\}.</script></p>
 <p>​    综上所述, $z$ 不满足 $CFL$ 的 $Pumping$ 引理, 不是上下文无关语言.</p>
-<h3 id="Ex-7-2-1-d"><a href="#Ex-7-2-1-d" class="headerlink" title="Ex.7.2.1(d)"></a>Ex.7.2.1(d)</h3><p>​    对于任意的 $n \ge 1$, 存在 $z = 0^n1^{n^2}\in\left{0^i1^j\mid j = i^2\right}$.</p>
+<h3 id="Ex-7-2-1-d"><a href="#Ex-7-2-1-d" class="headerlink" title="Ex.7.2.1(d)"></a>Ex.7.2.1(d)</h3><p>​    对于任意的 $n \ge 1$, 存在 $z = 0^n1^{n^2}\in\left\{0^i1^j\mid j = i^2\right\}$.</p>
 <p>​    考虑任意 $u, v, w, x, y$ 满足 $z = uvwxy$, $\vert vwx\vert &lt; n$, 且 $vx\ne\varepsilon$.</p>
 <p>​    $(A)$ 若 $vwx$ 仅包含 $0$, 取 $k = 0$, </p>
-<p>​    此时 $uv^kwx^ky = uwy$, 其中 $0$ 的数目 $&lt; n$, $1$ 的数目为 $n^2$, 即<br>​    $$uv^kwx^ky = uwy\notin\left{0^i1^j\mid j = i^2\right}.$$<br>​    $(B)$ 若 $vwx$ 仅包含 $1$, 取 $k = 0$, </p>
-<p>​    此时 $uv^kwx^ky = uwy$, 其中 $1$ 的数目 $&lt; n^2$, $0$ 的数目为 $n$, 即<br>​    $$uv^kwx^ky = uwy\notin\left{0^i1^j\mid j = i^2\right}.$$<br>​    $(C)$ 若 $vwx$ 同时包含 $0$ 和 $1$:</p>
+<p>​    此时 $uv^kwx^ky = uwy$, 其中 $0$ 的数目 $&lt; n$, $1$ 的数目为 $n^2$, 即<br>​    <script type="math/tex">uv^kwx^ky = uwy\notin\left\{0^i1^j\mid j = i^2\right\}.</script><br>​    $(B)$ 若 $vwx$ 仅包含 $1$, 取 $k = 0$, </p>
+<p>​    此时 $uv^kwx^ky = uwy$, 其中 $1$ 的数目 $&lt; n^2$, $0$ 的数目为 $n$, 即<br>​    <script type="math/tex">uv^kwx^ky = uwy\notin\left\{0^i1^j\mid j = i^2\right\}.</script><br>​    $(C)$ 若 $vwx$ 同时包含 $0$ 和 $1$:</p>
 <p>​    $(c.1)$ 若 $v$ 同时包含 $0$ 和 $1$, 取 $k = 2$, </p>
-<p>​    不妨设<br>​    $$v = 0^p1^q, x = 1^r,$$<br>​    其中<br>​    $$p\ge 1, q\ge 1, p + q + r &lt; n.$$<br>​    此时<br>​    $$uv^kwx^ky = uv^2wx^2y = 0^{n + p}1^{n^2 + q + r},$$<br>​    其中<br>​    $$(n + p)^2 &gt; n^2 + 2np &gt; n^2 + n &gt; n^2 + q + r,$$<br>​    故有<br>​    $$uv^kwx^ky = uv^2wx^2y\notin\left{0^i1^j\mid j = i^2\right}.$$<br>​    $(c.2)$ 若 $v$ 仅包含 $0$, 取 $k = 2$, </p>
-<p>​    不妨设<br>​    $$v = 0^p, x = 0^q1^r,$$<br>​    其中<br>​    $$p\ge 1, p + q + r &lt; n.$$<br>​    此时<br>​    $$uv^kwx^ky = uv^2wx^2y = 0^{n + p + q}1^{n^2 + r},$$<br>​    其中<br>​    $$(n + p + q)^2 &gt; n^2 + 2np &gt; n^2 + n &gt; n^2 + r,$$<br>​    故有<br>​    $$uv^kwx^ky = uv^2wx^2y\notin\left{0^i1^j\mid j = i^2\right}.$$<br>​    综上所述, $z$ 不满足 $CFL$ 的 $Pumping$ 引理, 不是上下文无关语言.    </p>
+<p>​    不妨设<br>​    <script type="math/tex">v = 0^p1^q, x = 1^r,</script><br>​    其中<br>​    <script type="math/tex">p\ge 1, q\ge 1, p + q + r < n.</script><br>​    此时<br>​    <script type="math/tex">uv^kwx^ky = uv^2wx^2y = 0^{n + p}1^{n^2 + q + r},</script><br>​    其中<br>​    <script type="math/tex">(n + p)^2 > n^2 + 2np > n^2 + n > n^2 + q + r,</script><br>​    故有<br>​    <script type="math/tex">uv^kwx^ky = uv^2wx^2y\notin\left\{0^i1^j\mid j = i^2\right\}.</script><br>​    $(c.2)$ 若 $v$ 仅包含 $0$, 取 $k = 2$, </p>
+<p>​    不妨设<br>​    <script type="math/tex">v = 0^p, x = 0^q1^r,</script><br>​    其中<br>​    <script type="math/tex">p\ge 1, p + q + r < n.</script><br>​    此时<br>​    <script type="math/tex">uv^kwx^ky = uv^2wx^2y = 0^{n + p + q}1^{n^2 + r},</script><br>​    其中<br>​    <script type="math/tex">(n + p + q)^2 > n^2 + 2np > n^2 + n > n^2 + r,</script><br>​    故有<br>​    <script type="math/tex">uv^kwx^ky = uv^2wx^2y\notin\left\{0^i1^j\mid j = i^2\right\}.</script><br>​    综上所述, $z$ 不满足 $CFL$ 的 $Pumping$ 引理, 不是上下文无关语言.    </p>
 <h3 id="Ex-7-3-1-b"><a href="#Ex-7-3-1-b" class="headerlink" title="Ex.7.3.1(b)"></a>Ex.7.3.1(b)</h3><p>​    考虑上下文无关语言 $L$ 的一个 $CNF$ 文法 $G = (V, T, P, S)$. </p>
 <p>​    我们构造 $G’ = (V’, T, P’, S)$.</p>
 <p>​    其中 $\forall\thinspace A\in V$, 我们令 $A\in V’, \thinspace A’\in V’$.</p>
@@ -495,30 +495,51 @@
 <p>​    如此得到了一个文法 $G’$, $L/a = L(G’)$ 为上下文无关语言.</p>
 <p>​    也即 $CFL$ 对 $L/a$ 运算封闭.</p>
 <h3 id="Ex-7-3-2"><a href="#Ex-7-3-2" class="headerlink" title="Ex.7.3.2"></a>Ex.7.3.2</h3><p>​    $(a)$</p>
-<p>​    满足 $L_1$ 的一个可行的上下文无关文法 $G_1$ 是:<br>$$<br>\begin{aligned}<br>S &amp;\rightarrow AB \<br>A &amp;\rightarrow aAbb \mid \varepsilon \<br>B &amp;\rightarrow cB \mid \varepsilon<br>\end{aligned}<br>$$<br>​    满足 $L_2$ 的一个可行的上下文无关文法 $G_2$ 是:<br>$$<br>\begin{aligned}<br>S &amp;\rightarrow AB \<br>A &amp;\rightarrow aA \mid \varepsilon \<br>B &amp;\rightarrow bBcc \mid \varepsilon<br>\end{aligned}<br>$$<br>​    易知 $L_1 = L(G_1)$, $L_2 = L(G_2)$.</p>
-<p>​    $(b)$ 记<br>​    $$L = L_1\cap L_2 = \left{a^nb^{2n}c^{4n}\mid n\ge 0\right}.$$<br>​    $L$ 不是 $CFG$, 使用 $Pumping$ 引理证明之.</p>
+<p>​    满足 $L_1$ 的一个可行的上下文无关文法 $G_1$ 是:</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+S &\rightarrow AB \\
+A &\rightarrow aAbb \mid \varepsilon \\
+B &\rightarrow cB \mid \varepsilon
+\end{aligned}</script><p>​    满足 $L_2$ 的一个可行的上下文无关文法 $G_2$ 是:</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+S &\rightarrow AB \\
+A &\rightarrow aA \mid \varepsilon \\
+B &\rightarrow bBcc \mid \varepsilon
+\end{aligned}</script><p>​    易知 $L_1 = L(G_1)$, $L_2 = L(G_2)$.</p>
+<p>​    $(b)$ 记<br>​    <script type="math/tex">L = L_1\cap L_2 = \left\{a^nb^{2n}c^{4n}\mid n\ge 0\right\}.</script><br>​    $L$ 不是 $CFG$, 使用 $Pumping$ 引理证明之.</p>
 <p>​    对于任意的 $n \ge 1$, 存在 $z = a^nb^{2n}c^{4n}\in L$.</p>
 <p>​    考虑任意 $u, v, w, x, y$ 满足 $z = uvwxy$, $\vert vwx\vert &lt; n$, 且 $vx\ne\varepsilon$.</p>
 <p>​    $(a)$ 若 $vwx$ 不包含 $c$, 取 $k = 0$, </p>
 <p>​    此时易知 $\vert uv^kwx^ky\vert = \vert uwy\vert &lt; 7n$, 且其中 $c$ 的数目为 $4n$,</p>
-<p>​    那么 $c$ 的数目要么多于 $a$ 的 $4$ 倍, 要么多于 $b$ 的 $2$ 倍, 即<br>​    $$uv^kwx^ky = uwy\notin L.$$<br>​    $(b)$ 若 $vwx$ 包含 $c$, 那么必有 $x$ 包含 $c$. 取 $k = 2$, </p>
+<p>​    那么 $c$ 的数目要么多于 $a$ 的 $4$ 倍, 要么多于 $b$ 的 $2$ 倍, 即<br>​    <script type="math/tex">uv^kwx^ky = uwy\notin L.</script><br>​    $(b)$ 若 $vwx$ 包含 $c$, 那么必有 $x$ 包含 $c$. 取 $k = 2$, </p>
 <p>​    由于 $\vert vwx\vert &lt; n$, 易知 $vwx$ 不包含 $a$,</p>
-<p>​    此时 $uv^kwx^ky = uv^2wx^2y$, 且其中 $a$ 的数目为 $n$, $c$ 的数目 $&gt; 4n$, 即<br>​    $$uv^kwx^ky = uv^2wx^2y\notin L.$$<br>​    综上所述, $z$ 不满足 $CFL$ 的 $Pumping$ 引理, 不是上下文无关语言.</p>
+<p>​    此时 $uv^kwx^ky = uv^2wx^2y$, 且其中 $a$ 的数目为 $n$, $c$ 的数目 $&gt; 4n$, 即<br>​    <script type="math/tex">uv^kwx^ky = uv^2wx^2y\notin L.</script><br>​    综上所述, $z$ 不满足 $CFL$ 的 $Pumping$ 引理, 不是上下文无关语言.</p>
 <h3 id="Ex-7-3-6"><a href="#Ex-7-3-6" class="headerlink" title="Ex.7.3.6"></a>Ex.7.3.6</h3><p>​    作 $L = L(G)$, $G = (V, T, P, S)$. 构造 $G^R = (V, T, P^R, S)$.</p>
-<p>​    其中 $P^R$ 的产生式是 $P$ 中的产生式的反向, 即<br>​    $$A\rightarrow \alpha^R\in P^R\Leftrightarrow A\rightarrow\alpha\in P.$$</p>
-<p>​    下证:<br>​    $$\forall\thinspace w\in T^*, S\mathop{\Longrightarrow}\limits_G^* w\Longleftrightarrow S\mathop{\Longrightarrow}\limits_{G_R}^* w^R.$$<br>​    假设 $S\mathop{\Longrightarrow}\limits_G^* w$, 归纳于该推导的长度 $n$.</p>
+<p>​    其中 $P^R$ 的产生式是 $P$ 中的产生式的反向, 即<br>​    <script type="math/tex">A\rightarrow \alpha^R\in P^R\Leftrightarrow A\rightarrow\alpha\in P.</script></p>
+<p>​    下证:<br>​    <script type="math/tex">\forall\thinspace w\in T^*, S\mathop{\Longrightarrow}\limits_G^* w\Longleftrightarrow S\mathop{\Longrightarrow}\limits_{G_R}^* w^R.</script><br>​    假设 $S\mathop{\Longrightarrow}\limits_G^* w$, 归纳于该推导的长度 $n$.</p>
 <p>​    $\circ$ $n = 1$ 时, $S\rightarrow w$ 为 $G$ 中的一个产生式, </p>
 <p>​    因而 $S\rightarrow w^R$ 为 $G^R$ 的一个产生式, 所以 $S\mathop{\Longrightarrow}\limits_{G_R}^* w^R$.</p>
 <p>​    $\circ$ $n &gt; 1$ 时, 设第一步推导使用了产生式 $S\rightarrow X_1X_2\cdots X_k$,</p>
 <p>​    其中 $X_i\in V\cup T (1\le i\le k)$. 可以将 $w$ 打断为 $w = w_1w_2\cdots w_k$,</p>
-<p>​    若 $X_i\in V$, 则存在 $w_i\in T^*$, 使得在少于 $n$ 步内 $X_i\mathop{\Longrightarrow}\limits_G^* w_i$,</p>
+<p>​    若 $X_i\in V$, 则存在 $w_i\in T^<em>$, 使得在少于 $n$ 步内 $X_i\mathop{\Longrightarrow}\limits_G^</em> w_i$,</p>
 <p>​    由归纳假设, $X_i\mathop{\Longrightarrow}\limits^*_{G^R} w_i^R$.</p>
 <p>​    若 $X_i\in T$, 则令 $w_i= X_i$, 亦有 $X_i\mathop{\Longrightarrow}\limits^*_{G^R} w_i^R$.</p>
-<p>​    由构造方法, $G^R$ 中包含产生式 $S\rightarrow X_kX_{k - 1}\cdots X_1$. 故<br>$$<br>\begin{aligned}<br>S &amp;{\mathop{\Longrightarrow}\limits_{G^R}} X_kX_{k - 1}\cdots X_1 \<br>&amp;{\mathop{\Longrightarrow}\limits^*_{G^R}} w_k^RX_{k - 1}\cdots X_1 \<br>&amp;{\mathop{\Longrightarrow}\limits^*_{G^R}} w_k^Rw_{k - 1}^R\cdots X_1 \<br>&amp;{\mathop{\Longrightarrow}\limits^*_{G^R}} w_k^Rw_{k - 1}^R\cdots w_1^R \<br>&amp;= (w_1w_2\cdots w_k)^R \<br>&amp;= w^R.<br>\end{aligned}<br>$$<br>​    同理可证, 若 $S\mathop{\Longrightarrow}\limits_{G_R}^* w^R$, 则有 $S\mathop{\Longrightarrow}\limits_G^* w$.</p>
+<p>​    由构造方法, $G^R$ 中包含产生式 $S\rightarrow X_kX_{k - 1}\cdots X_1$. 故</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+S &{\mathop{\Longrightarrow}\limits_{G^R}} X_kX_{k - 1}\cdots X_1 \\
+&{\mathop{\Longrightarrow}\limits^*_{G^R}} w_k^RX_{k - 1}\cdots X_1 \\
+&{\mathop{\Longrightarrow}\limits^*_{G^R}} w_k^Rw_{k - 1}^R\cdots X_1 \\
+&{\mathop{\Longrightarrow}\limits^*_{G^R}} w_k^Rw_{k - 1}^R\cdots w_1^R \\
+&= (w_1w_2\cdots w_k)^R \\
+&= w^R.
+\end{aligned}</script><p>​    同理可证, 若 $S\mathop{\Longrightarrow}\limits_{G_R}^<em> w^R$, 则有 $S\mathop{\Longrightarrow}\limits_G^</em> w$.</p>
 <p>​    由此可知 $L^R = L(G^R)$, $L^R$ 是上下文无关语言.</p>
 <p>​    也即 $CFL$ 在反转运算下是封闭的.</p>
 <h3 id="Ex-7-4-3-c"><a href="#Ex-7-4-3-c" class="headerlink" title="Ex.7.4.3(c)"></a>Ex.7.4.3(c)</h3><p>​    由 $CYK$ 算法构造的针对 $aabab$ 的表如下:</p>
-<p> <img src="/pic/44.png"></p>
+<p> <img src="/pic/44.png" alt=""></p>
 <p>​    由于 $S\in X_{15}$, 所以 $aabab\in L(G)$.</p>
 
                 
@@ -911,7 +932,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">85k</span>
+                        class="white-color">73k</span>
             
             
             

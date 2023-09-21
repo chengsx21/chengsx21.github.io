@@ -439,7 +439,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    444
+                    413
                 </div>
                 
 
@@ -469,11 +469,52 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="必做题"><a href="#必做题" class="headerlink" title="必做题"></a>必做题</h2><h3 id="Ex-6-2-1-b"><a href="#Ex-6-2-1-b" class="headerlink" title="Ex 6.2.1 (b)"></a>Ex 6.2.1 (b)</h3><p>​    构造以终态方式接受的 $PDA$<br>​    $$P = (\left{q_0\right}, \left{0, 1\right}, \left{Z_0, X\right}, \delta, q_0, Z_0, \left{q_0\right}),$$<br>​    其中<br>$$<br>\begin{aligned}<br>\delta(q_0, 0, Z_0) &amp;= \left{(q_0, XZ_0)\right}, \<br>\delta(q_0, 0, X) &amp;= \left{(q_0, XX)\right}, \<br>\delta(q_0, 1, X) &amp;= \left{(q_0, \varepsilon)\right}.<br>\end{aligned}<br>$$<br>​    <img src="/pic/41.png"></p>
-<h3 id="Ex-6-2-1-c"><a href="#Ex-6-2-1-c" class="headerlink" title="Ex 6.2.1 (c)"></a>Ex 6.2.1 (c)</h3><p>​    构造以空栈方式接受的 $PDA$<br>​    $$P = (\left{q_0, q_1\right}, \left{0, 1\right}, \left{Z_0, X\right}, \delta, q_0, Z_0),$$<br>​    其中<br>$$<br>\begin{aligned}<br>\delta(q_0, 0, Z_0) &amp;= \left{(q_0, XZ_0)\right}, \<br>\delta(q_0, 1, Z_0) &amp;= \left{(q_1, XZ_0)\right}, \<br>\delta(q_1, 0, Z_0) &amp;= \left{(q_0, XZ_0)\right}, \<br>\delta(q_1, 1, Z_0) &amp;= \left{(q_1, XZ_0)\right}, \<br>\delta(q_0, 0, X) &amp;= \left{(q_0, XX)\right}, \<br>\delta(q_0, 1, X) &amp;= \left{(q_0, \varepsilon)\right}, \<br>\delta(q_1, 0, X) &amp;= \left{(q_1, \varepsilon)\right}, \<br>\delta(q_1, 1, X) &amp;= \left{(q_1, XX)\right}, \<br>\delta(q_0, \varepsilon, Z_0) &amp;= \left{(q_0, \varepsilon)\right}, \<br>\delta(q_1, \varepsilon, Z_0) &amp;= \left{(q_1, \varepsilon)\right}.<br>\end{aligned}<br>$$<br>​    <img src="/pic/42.png"></p>
-<h3 id="Ex-6-2-6-a"><a href="#Ex-6-2-6-a" class="headerlink" title="Ex 6.2.6 (a)"></a>Ex 6.2.6 (a)</h3><p>​    转换为以空栈方式接受的 $PDA$<br>​    $$P_1 = (\left{q, p\right}, \left{0, 1\right}, \left{Z_0, X\right}, \delta, q, Z_0),$$<br>​    其中<br>$$<br>\begin{aligned}<br>\delta(q, 0, Z_0) &amp;= \left{(q, XZ_0)\right}, \<br>\delta(q, 0, X) &amp;= \left{(q, XX)\right}, \<br>\delta(q, 1, X) &amp;= \left{(q, X)\right}, \<br>\delta(q, \varepsilon, X) &amp;= \left{(p, \varepsilon)\right}, \<br>\delta(p, 1, X) &amp;= \left{(p, XX)\right}, \<br>\delta(p, 1, Z_0) &amp;= \left{(p, \varepsilon)\right}, \<br>\delta(p, \varepsilon, Z_0) &amp;= \left{(p, \varepsilon)\right}, \<br>\delta(p, \varepsilon, X) &amp;= \left{(p, \varepsilon)\right}.<br>\end{aligned}<br>$$</p>
-<h3 id="Ex-6-2-6-b"><a href="#Ex-6-2-6-b" class="headerlink" title="Ex 6.2.6 (b)"></a>Ex 6.2.6 (b)</h3><p>​    转换为以终态方式接受的 $PDA$<br>​    $$P_2 = (\left{p_0, p_f, q, p\right}, \left{0, 1\right}, \left{Z_0, X, X_0\right}, \delta, q, Z_0, \left{p_f\right}),$$<br>​    其中<br>$$<br>\begin{aligned}<br>\delta(p_0, \varepsilon, X_0) &amp;= \left{(q, Z_0X_0)\right}, \<br>\delta(q, 0, Z_0) &amp;= \left{(q, XZ_0)\right}, \<br>\delta(q, 0, X) &amp;= \left{(q, XX)\right}, \<br>\delta(q, 1, X) &amp;= \left{(q, X)\right}, \<br>\delta(q, \varepsilon, X) &amp;= \left{(p, \varepsilon)\right}, \<br>\delta(q, \varepsilon, X_0) &amp;= \left{(p_f, \varepsilon)\right}, \<br>\delta(p, 1, X) &amp;= \left{(p, XX)\right}, \<br>\delta(p, 1, Z_0) &amp;= \left{(p, \varepsilon)\right}, \<br>\delta(p, \varepsilon, X) &amp;= \left{(p, \varepsilon)\right}, \<br>\delta(p, \varepsilon, X_0) &amp;= \left{(p_f, \varepsilon)\right}.<br>\end{aligned}<br>$$</p>
-
+                <h2 id="必做题"><a href="#必做题" class="headerlink" title="必做题"></a>必做题</h2><h3 id="Ex-6-2-1-b"><a href="#Ex-6-2-1-b" class="headerlink" title="Ex 6.2.1 (b)"></a>Ex 6.2.1 (b)</h3><p>​    构造以终态方式接受的 $PDA$<br>​    <script type="math/tex">P = (\left\{q_0\right\}, \left\{0, 1\right\}, \left\{Z_0, X\right\}, \delta, q_0, Z_0, \left\{q_0\right\}),</script><br>​    其中</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\delta(q_0, 0, Z_0) &= \left\{(q_0, XZ_0)\right\}, \\
+\delta(q_0, 0, X) &= \left\{(q_0, XX)\right\}, \\
+\delta(q_0, 1, X) &= \left\{(q_0, \varepsilon)\right\}.
+\end{aligned}</script><p>​    <img src="/pic/41.png" alt=""></p>
+<h3 id="Ex-6-2-1-c"><a href="#Ex-6-2-1-c" class="headerlink" title="Ex 6.2.1 (c)"></a>Ex 6.2.1 (c)</h3><p>​    构造以空栈方式接受的 $PDA$<br>​    <script type="math/tex">P = (\left\{q_0, q_1\right\}, \left\{0, 1\right\}, \left\{Z_0, X\right\}, \delta, q_0, Z_0),</script><br>​    其中</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\delta(q_0, 0, Z_0) &= \left\{(q_0, XZ_0)\right\}, \\ 
+\delta(q_0, 1, Z_0) &= \left\{(q_1, XZ_0)\right\}, \\
+\delta(q_1, 0, Z_0) &= \left\{(q_0, XZ_0)\right\}, \\
+\delta(q_1, 1, Z_0) &= \left\{(q_1, XZ_0)\right\}, \\
+\delta(q_0, 0, X) &= \left\{(q_0, XX)\right\}, \\
+\delta(q_0, 1, X) &= \left\{(q_0, \varepsilon)\right\}, \\
+\delta(q_1, 0, X) &= \left\{(q_1, \varepsilon)\right\}, \\
+\delta(q_1, 1, X) &= \left\{(q_1, XX)\right\}, \\
+\delta(q_0, \varepsilon, Z_0) &= \left\{(q_0, \varepsilon)\right\}, \\
+\delta(q_1, \varepsilon, Z_0) &= \left\{(q_1, \varepsilon)\right\}.
+\end{aligned}</script><p>​    <img src="/pic/42.png" alt=""></p>
+<h3 id="Ex-6-2-6-a"><a href="#Ex-6-2-6-a" class="headerlink" title="Ex 6.2.6 (a)"></a>Ex 6.2.6 (a)</h3><p>​    转换为以空栈方式接受的 $PDA$<br>​    <script type="math/tex">P_1 = (\left\{q, p\right\}, \left\{0, 1\right\}, \left\{Z_0, X\right\}, \delta, q, Z_0),</script><br>​    其中</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\delta(q, 0, Z_0) &= \left\{(q, XZ_0)\right\}, \\
+\delta(q, 0, X) &= \left\{(q, XX)\right\}, \\
+\delta(q, 1, X) &= \left\{(q, X)\right\}, \\
+\delta(q, \varepsilon, X) &= \left\{(p, \varepsilon)\right\}, \\
+\delta(p, 1, X) &= \left\{(p, XX)\right\}, \\
+\delta(p, 1, Z_0) &= \left\{(p, \varepsilon)\right\}, \\
+\delta(p, \varepsilon, Z_0) &= \left\{(p, \varepsilon)\right\}, \\
+\delta(p, \varepsilon, X) &= \left\{(p, \varepsilon)\right\}.
+\end{aligned}</script><h3 id="Ex-6-2-6-b"><a href="#Ex-6-2-6-b" class="headerlink" title="Ex 6.2.6 (b)"></a>Ex 6.2.6 (b)</h3><p>​    转换为以终态方式接受的 $PDA$<br>​    <script type="math/tex">P_2 = (\left\{p_0, p_f, q, p\right\}, \left\{0, 1\right\}, \left\{Z_0, X, X_0\right\}, \delta, q, Z_0, \left\{p_f\right\}),</script><br>​    其中</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\delta(p_0, \varepsilon, X_0) &= \left\{(q, Z_0X_0)\right\}, \\
+\delta(q, 0, Z_0) &= \left\{(q, XZ_0)\right\}, \\
+\delta(q, 0, X) &= \left\{(q, XX)\right\}, \\
+\delta(q, 1, X) &= \left\{(q, X)\right\}, \\
+\delta(q, \varepsilon, X) &= \left\{(p, \varepsilon)\right\}, \\
+\delta(q, \varepsilon, X_0) &= \left\{(p_f, \varepsilon)\right\}, \\
+\delta(p, 1, X) &= \left\{(p, XX)\right\}, \\
+\delta(p, 1, Z_0) &= \left\{(p, \varepsilon)\right\}, \\
+\delta(p, \varepsilon, X) &= \left\{(p, \varepsilon)\right\}, \\
+\delta(p, \varepsilon, X_0) &= \left\{(p_f, \varepsilon)\right\}.
+\end{aligned}</script>
                 
             </div>
             <hr/>
@@ -864,7 +905,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">85k</span>
+                        class="white-color">73k</span>
             
             
             

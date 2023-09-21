@@ -439,14 +439,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    397
+                    374
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
 
@@ -469,12 +469,53 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="必做题"><a href="#必做题" class="headerlink" title="必做题"></a>必做题</h2><h3 id="Ex-6-3-2"><a href="#Ex-6-3-2" class="headerlink" title="Ex 6.3.2"></a>Ex 6.3.2</h3><p>​    构造以空栈方式接受的 $PDA$<br>​    $$P = (\left{q\right}, \left{a, b\right}, \left{S, A, a, b\right}, \delta, q, S),$$<br>​    其中<br>$$<br>\begin{aligned}<br>\delta(q, \varepsilon, S) &amp;= \left{(q, aAA)\right}, \<br>\delta(q, \varepsilon, A) &amp;= \left{(q, aS), (q, bS), (q, a)\right}, \<br>\delta(q, a, a) &amp;= \left{(q, \varepsilon)\right}, \<br>\delta(q, b, b) &amp;= \left{(q, \varepsilon)\right}.<br>\end{aligned}<br>$$</p>
-<h3 id="Ex-6-3-4"><a href="#Ex-6-3-4" class="headerlink" title="Ex 6.3.4"></a>Ex 6.3.4</h3><p>​    构造上下文无关文法<br>​    $$G = (V, \left{0, 1\right}, P, S),$$<br>​    其中<br>​    $$V = {S, [pZ_0p], [pZ_0q], [qZ_0p], [qZ_0q], [pXp], [pXq], [qXp], [qXq]}.$$<br>​    $P$ 中包含以下产生式:</p>
-<p>​    由 $(1)$ 得到的产生式:<br>$$<br>\begin{aligned}<br>{}[qZ_0p] &amp;\rightarrow 0[qXq][qZ_0p] \<br>[qZ_0p] &amp;\rightarrow 0[qXp][pZ_0p] \<br>[qZ_0q] &amp;\rightarrow 0[qXq][qZ_0q] \<br>[qZ_0q] &amp;\rightarrow 0[qXp][pZ_0q]<br>\end{aligned}<br>$$<br>​    由 $(2)$ 得到的产生式:<br>$$<br>\begin{aligned}<br>{}[qXp] &amp;\rightarrow 0[qXq][qXp] \<br>[qXp] &amp;\rightarrow 0[qXp][pXp] \<br>[qXq] &amp;\rightarrow 0[qXq][qXq] \<br>[qXq] &amp;\rightarrow 0[qXp][pXq]<br>\end{aligned}<br>$$<br>​    由 $(3)$ 得到的产生式:<br>$$<br>\begin{aligned}<br>{}[qXq] &amp;\rightarrow 1[qXq] \<br>[qXp] &amp;\rightarrow 1[qXp]<br>\end{aligned}<br>$$<br>​    由 $(4)$ 得到的产生式:<br>​    $$[qXp] \rightarrow \varepsilon$$<br>​    由 $(5)$ 得到的产生式:<br>​    $$[pXp] \rightarrow \varepsilon$$<br>​    由 $(6)$ 得到的产生式:<br>$$<br>\begin{aligned}<br>{}[pXp] &amp;\rightarrow 1[pXq][qXp] \<br>[pXp] &amp;\rightarrow 1[pXp][pXp] \<br>[pXq] &amp;\rightarrow 1[pXq][qXq] \<br>[pXq] &amp;\rightarrow 1[pXp][pXq]<br>\end{aligned}<br>$$<br>​     由 $(7)$ 得到的产生式:<br>​    $$[pZ_0p] \rightarrow 1$$<br>​    由 $(8)$ 得到的产生式:<br>$$<br>\begin{aligned}<br>S &amp;\rightarrow [qZ_0q] \<br>S &amp;\rightarrow [qZ_0p]<br>\end{aligned}<br>$$</p>
-<h3 id="Ex-6-3-5-c"><a href="#Ex-6-3-5-c" class="headerlink" title="Ex 6.3.5 (c)"></a>Ex 6.3.5 (c)</h3><p>​    该语言的一个上下文无关文法为:<br>​    $$S\rightarrow 0S1\mid 0S11\mid\varepsilon.$$<br>​    转换为以空栈方式接受的 $PDA$<br>​    $$P = (\left{q\right}, \left{0, 1\right}, \left{S, 0, 1\right}, \delta, q, S),$$</p>
-<p>​    其中<br>$$<br>\begin{aligned}<br>\delta(q, \varepsilon, S) &amp;= \left{(q, \varepsilon), (q, 0S1), (q, 0S11)\right}, \<br>\delta(q, 0, 0) &amp;= \left{(q, \varepsilon)\right}, \<br>\delta(q, 1, 1) &amp;= \left{(q, \varepsilon)\right}.<br>\end{aligned}<br>$$</p>
-
+                <h2 id="必做题"><a href="#必做题" class="headerlink" title="必做题"></a>必做题</h2><h3 id="Ex-6-3-2"><a href="#Ex-6-3-2" class="headerlink" title="Ex 6.3.2"></a>Ex 6.3.2</h3><p>​    构造以空栈方式接受的 $PDA$<br>​    <script type="math/tex">P = (\left\{q\right\}, \left\{a, b\right\}, \left\{S, A, a, b\right\}, \delta, q, S),</script><br>​    其中</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\delta(q, \varepsilon, S) &= \left\{(q, aAA)\right\}, \\
+\delta(q, \varepsilon, A) &= \left\{(q, aS), (q, bS), (q, a)\right\}, \\
+\delta(q, a, a) &= \left\{(q, \varepsilon)\right\}, \\
+\delta(q, b, b) &= \left\{(q, \varepsilon)\right\}.
+\end{aligned}</script><h3 id="Ex-6-3-4"><a href="#Ex-6-3-4" class="headerlink" title="Ex 6.3.4"></a>Ex 6.3.4</h3><p>​    构造上下文无关文法<br>​    <script type="math/tex">G = (V, \left\{0, 1\right\}, P, S),</script><br>​    其中<br>​    <script type="math/tex">V = \{S, [pZ_0p], [pZ_0q], [qZ_0p], [qZ_0q], [pXp], [pXq], [qXp], [qXq]\}.</script><br>​    $P$ 中包含以下产生式:</p>
+<p>​    由 $(1)$ 得到的产生式:</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+{}[qZ_0p] &\rightarrow 0[qXq][qZ_0p] \\
+[qZ_0p] &\rightarrow 0[qXp][pZ_0p] \\
+[qZ_0q] &\rightarrow 0[qXq][qZ_0q] \\
+[qZ_0q] &\rightarrow 0[qXp][pZ_0q]
+\end{aligned}</script><p>​    由 $(2)$ 得到的产生式:</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+{}[qXp] &\rightarrow 0[qXq][qXp] \\
+[qXp] &\rightarrow 0[qXp][pXp] \\
+[qXq] &\rightarrow 0[qXq][qXq] \\
+[qXq] &\rightarrow 0[qXp][pXq]
+\end{aligned}</script><p>​    由 $(3)$ 得到的产生式:</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+{}[qXq] &\rightarrow 1[qXq] \\
+[qXp] &\rightarrow 1[qXp]
+\end{aligned}</script><p>​    由 $(4)$ 得到的产生式:<br>​    <script type="math/tex">[qXp] \rightarrow \varepsilon</script><br>​    由 $(5)$ 得到的产生式:<br>​    <script type="math/tex">[pXp] \rightarrow \varepsilon</script><br>​    由 $(6)$ 得到的产生式:</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+{}[pXp] &\rightarrow 1[pXq][qXp] \\
+[pXp] &\rightarrow 1[pXp][pXp] \\
+[pXq] &\rightarrow 1[pXq][qXq] \\
+[pXq] &\rightarrow 1[pXp][pXq]
+\end{aligned}</script><p>​     由 $(7)$ 得到的产生式:<br>​    <script type="math/tex">[pZ_0p] \rightarrow 1</script><br>​    由 $(8)$ 得到的产生式:</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+S &\rightarrow [qZ_0q] \\
+S &\rightarrow [qZ_0p]
+\end{aligned}</script><h3 id="Ex-6-3-5-c"><a href="#Ex-6-3-5-c" class="headerlink" title="Ex 6.3.5 (c)"></a>Ex 6.3.5 (c)</h3><p>​    该语言的一个上下文无关文法为:<br>​    <script type="math/tex">S\rightarrow 0S1\mid 0S11\mid\varepsilon.</script><br>​    转换为以空栈方式接受的 $PDA$<br>​    <script type="math/tex">P = (\left\{q\right\}, \left\{0, 1\right\}, \left\{S, 0, 1\right\}, \delta, q, S),</script></p>
+<p>​    其中</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\delta(q, \varepsilon, S) &= \left\{(q, \varepsilon), (q, 0S1), (q, 0S11)\right\}, \\
+\delta(q, 0, 0) &= \left\{(q, \varepsilon)\right\}, \\
+\delta(q, 1, 1) &= \left\{(q, \varepsilon)\right\}.
+\end{aligned}</script>
                 
             </div>
             <hr/>
@@ -865,7 +906,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">85k</span>
+                        class="white-color">73k</span>
             
             
             

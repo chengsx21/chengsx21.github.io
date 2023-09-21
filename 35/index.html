@@ -473,7 +473,6 @@
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">// Line 7</span>
 ull str<span class="token punctuation">[</span><span class="token number">500500</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token keyword">int</span> ans<span class="token punctuation">[</span><span class="token number">500500</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <p>使用 <code>unsigned long long str[]</code> 数组储存 <code>01</code> 串, 不断更改当前的查询串编号, 将超出区间的串从 <code>Trie Tree</code> 中删去, 进入区间的串添加到 <code>Trie Tree</code> 中, 得到的结果存储在 <code>int ans[]</code> 中.</p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">// Line 14</span>
 class node <span class="token punctuation">{</span>
@@ -481,7 +480,6 @@ public<span class="token operator">:</span>
     <span class="token keyword">int</span> son<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
     <span class="token keyword">int</span> cnt <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span> trie<span class="token punctuation">[</span><span class="token number">32001000</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>因此 <code>Trie Tree</code> 中的串至多为 <code>500000</code> 个, <code>Trie Tree</code> 中的节点至多为 <code>500000 * 64 = 32000000</code> 个. 在节点内部维护其左右子节点 <code>son[0]</code>, <code>son[1]</code>, 并记录经过该节点的 <code>01</code> 串数 <code>cnt</code>.</p>
 <h4 id="void-ReadAll"><a href="#void-ReadAll" class="headerlink" title="void ReadAll()"></a>void ReadAll()</h4><p>使用 <code>getchar()</code> 逐字符读入所给串, 计算其二进制值并存储为 <code>unsigned long long</code>.</p>
 <h4 id="void-Insert"><a href="#void-Insert" class="headerlink" title="void Insert()"></a>void Insert()</h4><p>定义全局变量 <code>pointer</code> 记录下一个将被利用的节点编号.</p>
@@ -511,7 +509,6 @@ public<span class="token operator">:</span>
     <span class="token keyword">int</span> cnt <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span> trie<span class="token punctuation">[</span><span class="token number">32001000</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>空间消耗最坏情况约为: $5\times 10^5 \times 8B + 5\times 10^5 \times 4B + 3.2\times 10^7 \times 12B = 372MB &lt; 512MB$, 符合题目要求范围.</p>
 
                 
@@ -904,7 +901,7 @@ public<span class="token operator">:</span>
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">85k</span>
+                        class="white-color">73k</span>
             
             
             

@@ -471,7 +471,7 @@
             <div id="articleContent">
                 <h1 id="CST-PA1"><a href="#CST-PA1" class="headerlink" title="CST PA1"></a>CST PA1</h1><h2 id="1-1-A-B-Problem"><a href="#1-1-A-B-Problem" class="headerlink" title="1-1 A+B Problem"></a>1-1 A+B Problem</h2><h3 id="算法构思"><a href="#算法构思" class="headerlink" title="算法构思"></a>算法构思</h3><p>一开始考虑使用普通的高精度乘法处理本题:</p>
 <blockquote>
-<p>使用 $\text{string}$ 存储读入的长正整数 $a = \overline{a_{n - 1}a_{n - 2}\cdots a_1a_0}$, $b = \overline{b_{m - 1}b_{m - 2}\cdots b_1b_0}$, 并逐位计算乘积 $c = \overline{c_{l - 1}c_{l - 2}\cdots c_1c_0}$, 满足 $c_k = (\Sigma a_ib_{k - i} + d_k) / 10$, 其中 $d_k$ 为计算 $c_{k - 1}$ 过程产生的进位溢出, 满足 $d_k = (\Sigma a_ib_{k - 1 - i} + d_{k - 1}) % 10$.</p>
+<p>使用 $\text{string}$ 存储读入的长正整数 $a = \overline{a_{n - 1}a_{n - 2}\cdots a_1a_0}$, $b = \overline{b_{m - 1}b_{m - 2}\cdots b_1b_0}$, 并逐位计算乘积 $c = \overline{c_{l - 1}c_{l - 2}\cdots c_1c_0}$, 满足 $c_k = (\Sigma a_ib_{k - i} + d_k) / 10$, 其中 $d_k$ 为计算 $c_{k - 1}$ 过程产生的进位溢出, 满足 $d_k = (\Sigma a_ib_{k - 1 - i} + d_{k - 1}) \% 10$.</p>
 </blockquote>
 <p>美中不足的是, 这种处理方法计算次数过多, 消耗时间过长, 因此考虑采用压位高精度乘法, 即在上述算法中乘数的每位数字均存入一个 $8$ 位整数, 而非一个简单的十进制整数. 这样扩大了参与单次计算的数据位数, 进而减少了计算次数, 降低了算法耗时.</p>
 <p>由于 $\text{int}$ 的范围为 $[- 2^{31}, 2^{31} - 1]$, 其中 $2^{31} - 1 &lt; 10^8 * 10^8$, 在进行 $8$ 位数运算时可能会产生溢出, 因此不可选用 $\text{int}$ 存储乘数;</p>
@@ -495,7 +495,6 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>对于一组长整数输入$m$、$n$, 算法的时间复杂度为 $O(logm\cdot logn)$;</p>
 <p>也即若一组长整数输入的十进制位数分别为$m$、$n$, 那么算法的时间复杂度为 $O(mn)$.</p>
 <p>算法空间复杂度主要来自读取并存储运算数的过程:</p>
@@ -509,7 +508,6 @@
 <span class="token keyword">long</span> <span class="token keyword">long</span> mul2<span class="token punctuation">[</span>real_len2<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span class="token keyword">long</span> <span class="token keyword">long</span> answer<span class="token punctuation">[</span>MAXLEN<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>正比于输入数据的长度, 对于一组长整数输入$m$、$n$, 算法的空间复杂度为 $O(logm + logn) = O(log(mn))$;</p>
 <p>也即若一组输入的十进制位数分别为$m$、$n$, 那么算法的空间复杂度为 $O(m + n)$.</p>
 
@@ -903,7 +901,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">85k</span>
+                        class="white-color">73k</span>
             
             
             

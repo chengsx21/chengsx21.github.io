@@ -439,7 +439,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    695
+                    672
                 </div>
                 
 
@@ -469,8 +469,45 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="必做题"><a href="#必做题" class="headerlink" title="必做题"></a>必做题</h2><h3 id="Ex-7-1-3"><a href="#Ex-7-1-3" class="headerlink" title="Ex 7.1.3"></a>Ex 7.1.3</h3><p>​    (a) 符号 $S$, $A$, $B$, $C$ 是可致空的.<br>​    消去 $\varepsilon$-产生式后得到新的产生式:<br>$$<br>\begin{aligned}<br>S &amp;\rightarrow 0A0 \mid 1B1 \mid 00 \mid 11 \mid BB \mid B \<br>A &amp;\rightarrow C \<br>B &amp;\rightarrow S \mid A \<br>C &amp;\rightarrow S<br>\end{aligned}<br>$$<br>​    (b) 单位偶对有 $(A,A)$, $(B,B)$, $(C,C)$, $(S,S)$, $(A,C)$, $(A,S)$, $(A,B)$,<br>​    $(B,A)$, $(B,C)$, $(B,S)$, $(C,A)$, $(C,B)$, $(C,S)$, $(S,A)$, $(S,B)$, $(S,C)$.<br>​    消去单位产生式后得到新的产生式:<br>$$<br>\begin{aligned}<br>S &amp;\rightarrow 0A0 \mid 1B1 \mid BB \mid 00 \mid 11 \<br>A &amp;\rightarrow 0A0 \mid 1B1 \mid BB \mid 00 \mid 11 \<br>B &amp;\rightarrow 0A0 \mid 1B1 \mid BB \mid 00 \mid 11 \<br>C &amp;\rightarrow 0A0 \mid 1B1 \mid BB \mid 00 \mid 11<br>\end{aligned}<br>$$<br>​    (c) $C$ 为无用符号.<br>​    (d) 消去无用符号 $C$ 得到新的产生式:<br>$$<br>\begin{aligned}<br>S &amp;\rightarrow 0A0 \mid 1B1 \mid BB \mid 00 \mid 11 \<br>A &amp;\rightarrow 0A0 \mid 1B1 \mid BB \mid 00 \mid 11 \<br>B &amp;\rightarrow 0A0 \mid 1B1 \mid BB \mid 00 \mid 11<br>\end{aligned}<br>$$<br>​    引入非终结符 $D$, $E$, 增加产生式 $D \rightarrow 0$ 和 $E \rightarrow 1$, 得产生式:<br>$$<br>\begin{aligned}<br>S &amp;\rightarrow DAD \mid EBE \mid BB \mid DD \mid EE \<br>A &amp;\rightarrow DAD \mid EBE \mid BB \mid DD \mid EE \<br>B &amp;\rightarrow DAD \mid EBE \mid BB \mid DD \mid EE \<br>D &amp;\rightarrow 0 \<br>E &amp;\rightarrow 1<br>\end{aligned}<br>$$<br>​    引入非终结符 $F$, $G$, 增加产生式 $F \rightarrow DA$ 和 $G \rightarrow EB$, 得到 $Chomsky$ 范式:<br>$$<br>\begin{aligned}<br>S &amp;\rightarrow FD \mid GE \mid BB \mid DD \mid EE \<br>A &amp;\rightarrow FD \mid GE \mid BB \mid DD \mid EE \<br>B &amp;\rightarrow FD \mid GE \mid BB \mid DD \mid EE \<br>D &amp;\rightarrow 0 \<br>E &amp;\rightarrow 1 \<br>F &amp;\rightarrow DA \<br>G &amp;\rightarrow EB<br>\end{aligned}<br>$$</p>
-<h3 id="Ex-7-1-9-b"><a href="#Ex-7-1-9-b" class="headerlink" title="Ex 7.1.9 (b)"></a>Ex 7.1.9 (b)</h3><p>​    首先证明所得符号是可达符号, 对推导使用结构归纳:</p>
+                <h2 id="必做题"><a href="#必做题" class="headerlink" title="必做题"></a>必做题</h2><h3 id="Ex-7-1-3"><a href="#Ex-7-1-3" class="headerlink" title="Ex 7.1.3"></a>Ex 7.1.3</h3><p>​    (a) 符号 $S$, $A$, $B$, $C$ 是可致空的.<br>​    消去 $\varepsilon$-产生式后得到新的产生式:</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+S &\rightarrow 0A0 \mid 1B1 \mid 00 \mid 11 \mid BB \mid B \\
+A &\rightarrow C \\
+B &\rightarrow S \mid A \\
+C &\rightarrow S                 
+\end{aligned}</script><p>​    (b) 单位偶对有 $(A,A)$, $(B,B)$, $(C,C)$, $(S,S)$, $(A,C)$, $(A,S)$, $(A,B)$,<br>​    $(B,A)$, $(B,C)$, $(B,S)$, $(C,A)$, $(C,B)$, $(C,S)$, $(S,A)$, $(S,B)$, $(S,C)$.<br>​    消去单位产生式后得到新的产生式:</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+S &\rightarrow 0A0 \mid 1B1 \mid BB \mid 00 \mid 11 \\
+A &\rightarrow 0A0 \mid 1B1 \mid BB \mid 00 \mid 11 \\
+B &\rightarrow 0A0 \mid 1B1 \mid BB \mid 00 \mid 11 \\
+C &\rightarrow 0A0 \mid 1B1 \mid BB \mid 00 \mid 11
+\end{aligned}</script><p>​    (c) $C$ 为无用符号.<br>​    (d) 消去无用符号 $C$ 得到新的产生式:</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+S &\rightarrow 0A0 \mid 1B1 \mid BB \mid 00 \mid 11 \\
+A &\rightarrow 0A0 \mid 1B1 \mid BB \mid 00 \mid 11 \\
+B &\rightarrow 0A0 \mid 1B1 \mid BB \mid 00 \mid 11
+\end{aligned}</script><p>​    引入非终结符 $D$, $E$, 增加产生式 $D \rightarrow 0$ 和 $E \rightarrow 1$, 得产生式:</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+S &\rightarrow DAD \mid EBE \mid BB \mid DD \mid EE \\
+A &\rightarrow DAD \mid EBE \mid BB \mid DD \mid EE \\
+B &\rightarrow DAD \mid EBE \mid BB \mid DD \mid EE \\
+D &\rightarrow 0 \\
+E &\rightarrow 1
+\end{aligned}</script><p>​    引入非终结符 $F$, $G$, 增加产生式 $F \rightarrow DA$ 和 $G \rightarrow EB$, 得到 $Chomsky$ 范式:</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+S &\rightarrow FD \mid GE \mid BB \mid DD \mid EE \\
+A &\rightarrow FD \mid GE \mid BB \mid DD \mid EE \\
+B &\rightarrow FD \mid GE \mid BB \mid DD \mid EE \\
+D &\rightarrow 0 \\
+E &\rightarrow 1 \\
+F &\rightarrow DA \\
+G &\rightarrow EB
+\end{aligned}</script><h3 id="Ex-7-1-9-b"><a href="#Ex-7-1-9-b" class="headerlink" title="Ex 7.1.9 (b)"></a>Ex 7.1.9 (b)</h3><p>​    首先证明所得符号是可达符号, 对推导使用结构归纳:</p>
 <p>​    $\circ$ 注意到 $S\in V\cup T$, 且 $S\Rightarrow^{*}S$，所以 $S$ 为可达符号;</p>
 <p>​    $\circ$ 设 $A$ 为可达符号, 且有产生式 $A\rightarrow\alpha$, $X$ 是 $\alpha$ 中的符号.</p>
 <p>​    $\circ$ 则 $X\in V\cup T$. 即存在 $\beta, \gamma\in(V\cup T)^{*}$, 使得 $\alpha = \beta X\gamma$, </p>
@@ -874,7 +911,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">85k</span>
+                        class="white-color">73k</span>
             
             
             

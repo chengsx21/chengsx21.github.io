@@ -439,14 +439,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.2k
+                    219
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    10 分
+                    1 分
                 </div>
                 
 
@@ -470,33 +470,38 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="Chap-2-随机变量"><a href="#Chap-2-随机变量" class="headerlink" title="Chap 2 随机变量"></a>Chap 2 随机变量</h1><h2 id="1-维随机变量"><a href="#1-维随机变量" class="headerlink" title="1 维随机变量"></a>1 维随机变量</h2><ul>
-<li><p><strong>定义(随机变量)</strong>  样本空间上的实值函数.<br>$$<br>X: \Omega\rightarrow\mathbb{R},,\omega\rightarrow X(\omega).<br>$$</p>
-</li>
+<li><p><strong>定义(随机变量)</strong>  样本空间上的实值函数.</p>
+<script type="math/tex; mode=display">
+X: \Omega\rightarrow\mathbb{R},\,\omega\rightarrow X(\omega).</script></li>
 <li><p><strong>例</strong></p>
 </li>
 </ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="center">试验</th>
-<th align="center">样本空间</th>
-<th align="center">随机变量</th>
-<th align="center">像集 (新样本空间)</th>
+<th style="text-align:center">试验</th>
+<th style="text-align:center">样本空间</th>
+<th style="text-align:center">随机变量</th>
+<th style="text-align:center">像集 (新样本空间)</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">随机调查 $50$ 人对某议题支持与否</td>
-<td align="center">${(1, 0, \cdots), \cdots}$</td>
-<td align="center">$X_1= 1$ 的个数</td>
-<td align="center">${0, 1, 2, \cdots, 50}$</td>
+<tbody>
+<tr>
+<td style="text-align:center">随机调查 $50$ 人对某议题支持与否</td>
+<td style="text-align:center">$\{(1, 0, \cdots), \cdots\}$</td>
+<td style="text-align:center">$X_1= 1$ 的个数</td>
+<td style="text-align:center">$\{0, 1, 2, \cdots, 50\}$</td>
 </tr>
 <tr>
-<td align="center">随机抽取一个北京市成年公民</td>
-<td align="center">所有北京市成年公民之集</td>
-<td align="center">$X_2=$ 其 $2022$ 年的收入</td>
-<td align="center">$(-\infty, +\infty)$</td>
+<td style="text-align:center">随机抽取一个北京市成年公民</td>
+<td style="text-align:center">所有北京市成年公民之集</td>
+<td style="text-align:center">$X_2=$ 其 $2022$ 年的收入</td>
+<td style="text-align:center">$(-\infty, +\infty)$</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <ul>
 <li><p><strong>定义(事件)</strong>  $X_1 = 30$, $X_2&gt;100,000$.</p>
 </li>
@@ -513,12 +518,18 @@
 <li>其他.</li>
 </ul>
 </li>
-<li><p><strong>定义</strong>  $\forall I\subset\mathbb{R}$, 令 $X^{-1}(I)$ 表示 $I$ 在 $X$ 下的原像集, $X^{-1}(I)\subset\Omega$, 例如<br>$$<br>X^{-1}((a, b)) = {\omega\in\Omega\mid a&lt;X(\omega)&lt;b}.<br>$$</p>
+<li><p><strong>定义</strong>  $\forall I\subset\mathbb{R}$, 令 $X^{-1}(I)$ 表示 $I$ 在 $X$ 下的原像集, $X^{-1}(I)\subset\Omega$, 例如</p>
+<script type="math/tex; mode=display">
+X^{-1}((a, b)) = \{\omega\in\Omega\mid a<X(\omega)<b\}.</script></li>
+<li><p><strong>定义</strong> </p>
+<script type="math/tex; mode=display">
+  P_{X}(X\in I) = P(X^{-1}(I)), \,\forall I\subset\mathbb{R}\,可测.</script><p>  需要 $X^{-1}(I)\in\mathscr{F}$, 一般记 $P_X$ 为 $P$.</p>
 </li>
-<li><p><strong>定义</strong><br>  $$<br>  P_{X}(X\in I) = P(X^{-1}(I)), ,\forall I\subset\mathbb{R},可测.<br>  $$<br>  需要 $X^{-1}(I)\in\mathscr{F}$, 一般记 $P_X$ 为 $P$.</p>
-</li>
-<li><p><strong>定义(累积分布函数)(CDF)</strong><br>  $$<br>  F(x) := P(X\le x), ,\forall x\in\mathbb{R}.<br>  $$<br>  我们有<br>  $$<br>  P(a&lt;X\le b)=F(b)-F(a).<br>  $$</p>
-</li>
+<li><p><strong>定义(累积分布函数)(CDF)</strong> </p>
+<script type="math/tex; mode=display">
+  F(x) := P(X\le x), \,\forall x\in\mathbb{R}.</script><p>  我们有</p>
+<script type="math/tex; mode=display">
+  P(a<X\le b)=F(b)-F(a).</script></li>
 <li><p><strong>性质</strong></p>
 <ul>
 <li>$0\le F(x)\le 1$, 单调增(未必严格);</li>
@@ -534,7 +545,17 @@
 </li>
 </ul>
 </li>
-<li><p><strong>辨析</strong><br>  $$<br>  X_i=<br>  \begin{cases}<br>  1,,第i次抛硬币正面向上; \<br>  0,,第i次抛硬币正面向下. \<br>  \end{cases}<br>  $$<br>  其中 $i=1, 2$. 那么 $X_1 + X_2$ 的样本空间为<br>  $$<br>  {正正, 正反, 反正, 反反}.<br>  $$<br>  因为随机变量可视作函数, 需要满足定义域相同, 因此 $X_1$, $X_2$ 的定义域同上.</p>
+</ul>
+<ul>
+<li><p><strong>辨析</strong> </p>
+<script type="math/tex; mode=display">
+  X_i=
+  \begin{cases}
+  1,\,第i次抛硬币正面向上; \\
+  0,\,第i次抛硬币正面向下. \\
+  \end{cases}</script><p>  其中 $i=1, 2$. 那么 $X_1 + X_2$ 的样本空间为</p>
+<script type="math/tex; mode=display">
+  \{正正, 正反, 反正, 反反\}.</script><p>  因为随机变量可视作函数, 需要满足定义域相同, 因此 $X_1$, $X_2$ 的定义域同上.</p>
 </li>
 <li><p><strong>注</strong></p>
 <ul>
@@ -542,8 +563,10 @@
 <li>需要有 $X^{-1}(I)\in\mathscr{F}$, 从而 $P(X^{-1}(I))$ 有意义.</li>
 </ul>
 </li>
-<li><p><strong>定义(同分布)</strong>  $X_1, X_2$ 的 <strong>CDF</strong> 分别为 $F_1(x), F_2(x)$, 那么<br>  $$<br>  X_1, X_2 同分布\Leftrightarrow P(X_1^{-1}(I)) = P(X_2^{-1}(I)),\forall,I\subset\mathbb{R},可测\<br>  \Leftrightarrow F_1(x) = F_2(x),,\forall,x\in\mathbb{R}.<br>  $$</p>
-</li>
+<li><p><strong>定义(同分布)</strong>  $X_1, X_2$ 的 <strong>CDF</strong> 分别为 $F_1(x), F_2(x)$, 那么</p>
+<script type="math/tex; mode=display">
+  X_1, X_2 同分布\Leftrightarrow P(X_1^{-1}(I)) = P(X_2^{-1}(I)),\forall\,I\subset\mathbb{R}\,可测\\
+  \Leftrightarrow F_1(x) = F_2(x),\,\forall\,x\in\mathbb{R}.</script></li>
 <li><p><strong>注</strong></p>
 <ul>
 <li>$X_1, X_2$ 同分布 $\nRightarrow X_1 = X_2$.</li>
@@ -553,22 +576,27 @@
 </li>
 </ul>
 <h2 id="离散型随机变量"><a href="#离散型随机变量" class="headerlink" title="离散型随机变量"></a>离散型随机变量</h2><ul>
-<li><p><strong>定义(概率质量函数)(PMF)</strong><br>$$<br>f(x) = P(X = x),,\forall,x\in,\mathbb{R}.<br>$$</p>
-</li>
+<li><p><strong>定义(概率质量函数)(PMF)</strong> </p>
+<script type="math/tex; mode=display">
+f(x) = P(X = x),\,\forall\,x\in\,\mathbb{R}.</script></li>
 <li><p><strong>注</strong></p>
 <ul>
 <li>$f(x_i)=p_i, \sum\limits_{i}P_i = 1$;</li>
 <li><strong>CDF</strong> 为阶梯函数.</li>
 </ul>
 </li>
-<li><p><strong>定义(期望与方差)</strong><br>  $$<br>  E(X) = \sum\limits_{i}x_ip_i = \sum\limits_{i}x_if(x_i) = \mu\<br>  Var(X) = \sum\limits_{i}(x_i-\mu)^2p_i = \sum\limits_{i}(x_i-\mu)^2f(x_i) = \sigma^2<br>  $$<br>  我们有<br>  $$<br>  Var(X) = E((X-E(X))^2) = E(X^2) - E^2(X).<br>  $$</p>
-</li>
+<li><p><strong>定义(期望与方差)</strong> </p>
+<script type="math/tex; mode=display">
+  E(X) = \sum\limits_{i}x_ip_i = \sum\limits_{i}x_if(x_i) = \mu\\
+  Var(X) = \sum\limits_{i}(x_i-\mu)^2p_i = \sum\limits_{i}(x_i-\mu)^2f(x_i) = \sigma^2</script><p>  我们有</p>
+<script type="math/tex; mode=display">
+  Var(X) = E((X-E(X))^2) = E(X^2) - E^2(X).</script></li>
 <li><p><strong>注</strong></p>
 <ul>
 <li>算数均值即期望:</li>
 </ul>
-<p>$$<br>\dfrac{1}{n}\sum_{i = 1}^na_i=\dfrac{1}{n}\sum_{i = 1}^nk_ix_i=\sum_{i = 1}^np_ix_i=\mu;<br>$$</p>
-<ul>
+<script type="math/tex; mode=display">
+\dfrac{1}{n}\sum_{i = 1}^na_i=\dfrac{1}{n}\sum_{i = 1}^nk_ix_i=\sum_{i = 1}^np_ix_i=\mu;</script><ul>
 <li>期望存在 $\Leftrightarrow$ $\sum\limits_{i}\vert x_i\vert p_i&lt;+\infty$;</li>
 <li>$E(g(X)) = \sum\limits_{i}g(x_i)p_i$;</li>
 <li>$E(X), Var(X)$ 为随机变量 $X$ 的分布的特征, 分别刻画了随机变量的集中趋势和分散程度.</li>
@@ -576,14 +604,27 @@
 </li>
 </ul>
 <h2 id="常见离散分布"><a href="#常见离散分布" class="headerlink" title="常见离散分布"></a>常见离散分布</h2><ul>
-<li><p><strong>定义(Bernoulli 分布)</strong><br>$$<br>X=<br>\begin{cases}<br>1,,事件成功,,p \<br>0,,事件不成功,,1-p \<br>\end{cases}<br>$$<br>记为 $X\sim B(p)$. 我们有<br>$$<br>E(X)=p, Var(X)=p(1-p).<br>$$</p>
-</li>
+<li><p><strong>定义(Bernoulli 分布)</strong></p>
+<script type="math/tex; mode=display">
+X=
+\begin{cases}
+1,\,事件成功,\,p \\
+0,\,事件不成功,\,1-p \\
+\end{cases}</script><p>记为 $X\sim B(p)$. 我们有</p>
+<script type="math/tex; mode=display">
+E(X)=p, Var(X)=p(1-p).</script></li>
 <li><p><strong>定义(二项分布)</strong></p>
-<p>  记 $X$ 为 $n$ 次独立 <strong>Bernoulli</strong> 试验的成功次数. 满足<br>  $$<br>  P(X=k)=C_n^kp^k(1-p)^{n-k},,k=0,1,\cdots,n.<br>  $$<br>  记为 $X\sim B(n,p)$. 我们有<br>  $$<br>  E(X)=np, Var(X)=np(1-p).<br>  $$</p>
-</li>
+<p>  记 $X$ 为 $n$ 次独立 <strong>Bernoulli</strong> 试验的成功次数. 满足</p>
+<script type="math/tex; mode=display">
+  P(X=k)=C_n^kp^k(1-p)^{n-k},\,k=0,1,\cdots,n.</script><p>  记为 $X\sim B(n,p)$. 我们有</p>
+<script type="math/tex; mode=display">
+  E(X)=np, Var(X)=np(1-p).</script></li>
 <li><p><strong>定义(Poisson 分布)</strong></p>
-<p>  满足<br>  $$<br>  P(X=k)=\dfrac{\lambda^k}{k!}e^{-\lambda},,k=0,1,2,\cdots.<br>  $$<br>  记为 $X\sim P(\lambda)$. 我们有<br>  $$<br>  E(X)=\lambda, Var(X)=\lambda.<br>  $$</p>
-</li>
+<p>  满足</p>
+<script type="math/tex; mode=display">
+  P(X=k)=\dfrac{\lambda^k}{k!}e^{-\lambda},\,k=0,1,2,\cdots.</script><p>  记为 $X\sim P(\lambda)$. 我们有</p>
+<script type="math/tex; mode=display">
+  E(X)=\lambda, Var(X)=\lambda.</script></li>
 <li><p><strong>例</strong>  观察时间 $[0,1)$ 某路口发生的交通事故数 $X$.</p>
 <ul>
 <li><p>$l_i=[\dfrac{i-1}{n},\dfrac{i}{n}), i=1,2,\cdots,n$.</p>
@@ -597,8 +638,13 @@
 <li>$l_i$ 各段相互独立.</li>
 </ul>
 </li>
-<li><p>此时<br>  $$<br>  \begin{aligned}<br>  P(X=k)&amp;=C_n^kp^k(1-p)^{n-k}\<br>  &amp;=\dfrac{n!}{k!(n-k)!}(\dfrac{\lambda}{n})^k(1-\dfrac{\lambda}{n})^{n-k}\<br>  &amp;\rightarrow\dfrac{\lambda^k}{k!}e^{-\lambda}, 当,n\to\infty.<br>  \end{aligned}<br>  $$</p>
-</li>
+<li><p>此时</p>
+<script type="math/tex; mode=display">
+  \begin{aligned}
+  P(X=k)&=C_n^kp^k(1-p)^{n-k}\\
+  &=\dfrac{n!}{k!(n-k)!}(\dfrac{\lambda}{n})^k(1-\dfrac{\lambda}{n})^{n-k}\\
+  &\rightarrow\dfrac{\lambda^k}{k!}e^{-\lambda}, 当\,n\to\infty.
+  \end{aligned}</script></li>
 </ul>
 </li>
 <li><p><strong>注</strong></p>
@@ -610,23 +656,32 @@
 </li>
 <li><p><strong>例</strong>  某医院平均每小时出生婴儿 $\lambda$ 名, 接下来 $t$ 小时出生婴儿数的分布.</p>
 </li>
-<li><p><strong>解答</strong>  我们有<br>$$<br>P(N(t)=k)=\dfrac{(\lambda t)^k}{k!}e^{-\lambda t},,k=0,1,2,\cdots.<br>$$<br>其中 $\lambda$ 为均值.</p>
+<li><p><strong>解答</strong>  我们有</p>
+<script type="math/tex; mode=display">
+P(N(t)=k)=\dfrac{(\lambda t)^k}{k!}e^{-\lambda t},\,k=0,1,2,\cdots.</script><p>其中 $\lambda$ 为均值.</p>
 </li>
 <li><p><strong>注</strong>  <strong>Bernoulli</strong> 试验不独立, 但弱相依条件下仍为较好近似.</p>
 </li>
 <li><p><strong>例(配对问题)</strong></p>
 </li>
-<li><p><strong>解答</strong>  弱相依条件下:<br>$$<br>P(A_i)=\dfrac{1}{n}\simeq P(A_i\mid A_j)=\dfrac{1}{n-1}<br>$$</p>
-<p>恰有 $k$ 个人拿到自己的帽子的概率:<br>$$<br>P(X=k)=\dfrac{\lambda^k}{k!}e^{-\lambda}=\dfrac{e^{-1}}{k!}<br>$$</p>
-</li>
+<li><p><strong>解答</strong>  弱相依条件下:</p>
+<script type="math/tex; mode=display">
+P(A_i)=\dfrac{1}{n}\simeq P(A_i\mid A_j)=\dfrac{1}{n-1}</script><p>恰有 $k$ 个人拿到自己的帽子的概率:</p>
+<script type="math/tex; mode=display">
+P(X=k)=\dfrac{\lambda^k}{k!}e^{-\lambda}=\dfrac{e^{-1}}{k!}</script></li>
 <li><p><strong>常规解答</strong></p>
 <p>  设 $E=$ 指定的 $k$ 个人拿到了自己的帽子.</p>
 <p>  设 $F=$ 其余的 $n-k$ 个人未拿到自己的帽子.</p>
-<p>  我们有:<br>  $$<br>  P(EF)=P(F\mid E)P(E)=P_{n-k}\dfrac{(n-k)!}{n!}<br>  $$<br>  进而有:<br>  $$<br>  P(X=k)=C_n^kP(EF)=\dfrac{1}{k!}P_{n-k}\rightarrow\dfrac{e^{-1}}{k!}.<br>  $$</p>
-</li>
+<p>  我们有:</p>
+<script type="math/tex; mode=display">
+  P(EF)=P(F\mid E)P(E)=P_{n-k}\dfrac{(n-k)!}{n!}</script><p>  进而有:</p>
+<script type="math/tex; mode=display">
+  P(X=k)=C_n^kP(EF)=\dfrac{1}{k!}P_{n-k}\rightarrow\dfrac{e^{-1}}{k!}.</script></li>
 </ul>
 <h2 id="连续随机变量"><a href="#连续随机变量" class="headerlink" title="连续随机变量"></a>连续随机变量</h2><ul>
-<li><p><strong>定义(概率密度函数)(PDF)</strong>  若存在 $f\ge 0$, 使得 $\forall I\subset\mathbb{R}$ 可测, 都有<br>$$<br>P(X\in I)=\int_If(x)dx<br>$$<br>则称 $X$ 为连续型随机变量, $f$ 为 $X$ 的概率密度函数 <strong>(PDF)</strong>.</p>
+<li><p><strong>定义(概率密度函数)(PDF)</strong>  若存在 $f\ge 0$, 使得 $\forall I\subset\mathbb{R}$ 可测, 都有</p>
+<script type="math/tex; mode=display">
+P(X\in I)=\int_If(x)dx</script><p>则称 $X$ 为连续型随机变量, $f$ 为 $X$ 的概率密度函数 <strong>(PDF)</strong>.</p>
 </li>
 <li><p><strong>性质</strong></p>
 <ul>
@@ -638,8 +693,12 @@
 <li><strong>PDF</strong> 与 <strong>PMF</strong> 实质上可以统一; <strong>PDF</strong> 若存在, 则不唯一.</li>
 </ul>
 </li>
-<li><p><strong>定义(期望与方差)</strong><br>  $$<br>  E(X) = \int_{-\infty}^{\infty}xf(x)dx = \mu\<br>  Var(X) = \int_{-\infty}^{\infty}(x-\mu)^2f(x)dx = \sigma^2<br>  $$<br>  我们有<br>  $$<br>  Var(X) = E((X-E(X))^2) = E(X^2) - E^2(X).<br>  $$</p>
-</li>
+<li><p><strong>定义(期望与方差)</strong></p>
+<script type="math/tex; mode=display">
+  E(X) = \int_{-\infty}^{\infty}xf(x)dx = \mu\\
+  Var(X) = \int_{-\infty}^{\infty}(x-\mu)^2f(x)dx = \sigma^2</script><p>  我们有</p>
+<script type="math/tex; mode=display">
+  Var(X) = E((X-E(X))^2) = E(X^2) - E^2(X).</script></li>
 <li><p><strong>约定</strong>  $E(X)$ 存在 $\Leftrightarrow$ $E(X)&lt;\infty$.</p>
 </li>
 <li><p><strong>注</strong></p>
@@ -650,12 +709,22 @@
 </li>
 </ul>
 <h2 id="常见连续分布"><a href="#常见连续分布" class="headerlink" title="常见连续分布"></a>常见连续分布</h2><ul>
-<li><p><strong>定义(连续分布)</strong><br>$$<br>f(x)=<br>\begin{cases}<br>\dfrac{1}{b-a},,a&lt;x&lt;b \<br>0,,其他情况 \<br>\end{cases}<br>$$<br>记为 $X\sim U(a,b)$. 我们有<br>$$<br>E(X)=\dfrac{a+b}{2}, Var(X)=?.<br>$$</p>
-</li>
+<li><p><strong>定义(连续分布)</strong></p>
+<script type="math/tex; mode=display">
+f(x)=
+\begin{cases}
+\dfrac{1}{b-a},\,a<x<b \\
+0,\,其他情况 \\
+\end{cases}</script><p>记为 $X\sim U(a,b)$. 我们有</p>
+<script type="math/tex; mode=display">
+E(X)=\dfrac{a+b}{2}, Var(X)=?.</script></li>
 <li><p><strong>注</strong>  $X\sim U(0,1)$ 称为随机数.</p>
 </li>
-<li><p><strong>定义(正态分布)</strong><br>  $$<br>  f(x)=\dfrac{1}{\sqrt{2\pi}\sigma}e^{-\dfrac{(x-\mu)^2}{2\sigma^2}},,x\in\mathbb{R}.<br>  $$<br>  记为 $X\sim N(\mu,\sigma^2)$. 我们有<br>  $$<br>  E(X)=\mu, Var(X)=\sigma^2.<br>  $$</p>
-</li>
+<li><p><strong>定义(正态分布)</strong></p>
+<script type="math/tex; mode=display">
+  f(x)=\dfrac{1}{\sqrt{2\pi}\sigma}e^{-\dfrac{(x-\mu)^2}{2\sigma^2}},\,x\in\mathbb{R}.</script><p>  记为 $X\sim N(\mu,\sigma^2)$. 我们有</p>
+<script type="math/tex; mode=display">
+  E(X)=\mu, Var(X)=\sigma^2.</script></li>
 <li><p><strong>注</strong></p>
 <ul>
 <li>$X\sim N(\mu,\sigma^2)\Leftrightarrow Y=\dfrac{X-\mu}{\sigma}\sim N(0,1)$;</li>
@@ -663,8 +732,15 @@
 <li>经验法则.</li>
 </ul>
 </li>
-<li><p><strong>定义(指数分布)</strong><br>  $$<br>  f(x)=<br>  \begin{cases}<br>  \lambda e^{-\lambda x},,x&gt;0 \<br>  0,,x\le 0 \<br>  \end{cases}<br>  $$<br>  记为 $X\sim Exp(\lambda)$. 我们有<br>  $$<br>  E(X)=\dfrac{1}{\lambda}, Var(X)=\dfrac{1}{\lambda^2}.<br>  $$</p>
-</li>
+<li><p><strong>定义(指数分布)</strong></p>
+<script type="math/tex; mode=display">
+  f(x)=
+  \begin{cases}
+  \lambda e^{-\lambda x},\,x>0 \\
+  0,\,x\le 0 \\
+  \end{cases}</script><p>  记为 $X\sim Exp(\lambda)$. 我们有</p>
+<script type="math/tex; mode=display">
+  E(X)=\dfrac{1}{\lambda}, Var(X)=\dfrac{1}{\lambda^2}.</script></li>
 <li><p><strong>注</strong></p>
 <ul>
 <li>有的软件取参数为 $\beta=\dfrac{1}{\lambda}$;</li>
@@ -673,16 +749,29 @@
 </li>
 <li><p><strong>例</strong>  观察到有婴儿出生, 接下来 $t$ 小时有婴儿出生的概率为?</p>
 </li>
-<li><p><strong>解答</strong><br>$$<br>\begin{aligned}<br>P(X\le t)&amp;=1-P(X&gt;t)\<br>&amp;=1-P(N(t)=0)\<br>&amp;=1-\dfrac{(\lambda t)^0}{0!}e^{-\lambda t}\<br>&amp;=1-e^{-\lambda t}.<br>\end{aligned}<br>$$<br>这是一个 <strong>Poisson</strong> 过程, 数量是 <strong>Poisson</strong> 分布, 间隔是指数分布.</p>
+<li><p><strong>解答</strong></p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+P(X\le t)&=1-P(X>t)\\
+&=1-P(N(t)=0)\\
+&=1-\dfrac{(\lambda t)^0}{0!}e^{-\lambda t}\\
+&=1-e^{-\lambda t}.
+\end{aligned}</script><p>这是一个 <strong>Poisson</strong> 过程, 数量是 <strong>Poisson</strong> 分布, 间隔是指数分布.</p>
 </li>
-<li><p><strong>定义</strong>  假设 $X&gt;0$ 连续, 其 <strong>CDF</strong> 为 $F(x)$, 满足 $F(0)=0$. 考虑<br>$$<br>\begin{aligned}<br>&amp;P(x&lt;X&lt;x+dx\mid X&gt;x)\<br>=&amp;\dfrac{P(x&lt;X&lt;x+dx)}{P(X&gt;x)}\<br>=&amp;\dfrac{F(x+dx)-F(x)}{1-F(x)}\<br>\approx&amp;\dfrac{F’(x)}{1-F(x)}dx.<br>\end{aligned}<br>$$</p>
-<p>视为年龄为 $x$ 的元件失效的条件概率密度 (瞬时失效率/危险率).</p>
+<li><p><strong>定义</strong>  假设 $X&gt;0$ 连续, 其 <strong>CDF</strong> 为 $F(x)$, 满足 $F(0)=0$. 考虑</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&P(x<X<x+dx\mid X>x)\\
+=&\dfrac{P(x<X<x+dx)}{P(X>x)}\\
+=&\dfrac{F(x+dx)-F(x)}{1-F(x)}\\
+\approx&\dfrac{F'(x)}{1-F(x)}dx.
+\end{aligned}</script><p>视为年龄为 $x$ 的元件失效的条件概率密度 (瞬时失效率/危险率).</p>
 </li>
 <li><p><strong>注</strong></p>
 <ul>
 <li><p>令 $\dfrac{F’(x)}{1-F(x)}=\lambda(x)\Rightarrow F(x)=1-e^{-\int_0^x\lambda(t)dt},x&gt;0$;</p>
 </li>
-<li><p>若 $\lambda(x)\equiv\lambda,(无老化假设)$, 则 $F(x)=1-e^{-\lambda x}$,</p>
+<li><p>若 $\lambda(x)\equiv\lambda\,(无老化假设)$, 则 $F(x)=1-e^{-\lambda x}$,</p>
 <p>$\Rightarrow P(X&gt;t+s\mid X&gt;s)=\dfrac{P(X&gt;t+s)}{P(X&gt;s)}=\dfrac{1-F(s+t)}{1-F(s)}=e^{-\lambda t}$  $(无记忆性)$;</p>
 </li>
 <li><p>改进 $\lambda(x)=\alpha\dfrac{x^{\alpha-1}}{\beta^\alpha},\alpha,\beta&gt;0$, 则 $F(x)=1-e^{-(\dfrac{x}{\beta})^{\alpha}}\Rightarrow$ <strong>Weibull</strong> 分布.</p>
@@ -695,15 +784,31 @@
 </li>
 <li><p><strong>例</strong>  $X\sim Exp(\lambda)$.</p>
 </li>
-<li><p><strong>解答</strong><br>$$<br>Y=<br>\begin{cases}<br>1,,x&gt;t_0 \<br>0,,x\le t_0 \<br>\end{cases}	<br>\quad t_0&gt;0,给定.<br>$$<br>那么有 $P(Y=0)=1-e^{-\lambda t_0}$, $P(Y=1)=e^{-\lambda t_0}$.</p>
+<li><p><strong>解答</strong></p>
+<script type="math/tex; mode=display">
+Y=
+\begin{cases}
+1,\,x>t_0 \\
+0,\,x\le t_0 \\
+\end{cases}    
+\quad t_0>0\,给定.</script><p>那么有 $P(Y=0)=1-e^{-\lambda t_0}$, $P(Y=1)=e^{-\lambda t_0}$.</p>
 </li>
 <li><p><strong>例</strong>  $X$ 连续, 其 <strong>PDF</strong> 为 $f(x)$, 且 $Y=X^2$.</p>
 </li>
-<li><p><strong>解答</strong>   $\forall y&gt;0$, 我们有<br>$$<br>\begin{aligned}<br>P(Y\le y)&amp;=P(X^2\le y)\<br>&amp;=P(-\sqrt{y}\le X\le\sqrt{y})\<br>&amp;=\int_{-\sqrt{y}}^{\sqrt{y}}f(x)dx\<br>&amp;=\int_0^yl(t)dt.<br>\end{aligned}<br>$$<br>其中 $Y$  的 <strong>PDF</strong> 为 $l(y)=\dfrac{1}{2\sqrt{y}}(f(\sqrt{y})+f(-\sqrt{y}))$.</p>
+<li><p><strong>解答</strong>   $\forall y&gt;0$, 我们有</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+P(Y\le y)&=P(X^2\le y)\\
+&=P(-\sqrt{y}\le X\le\sqrt{y})\\
+&=\int_{-\sqrt{y}}^{\sqrt{y}}f(x)dx\\
+&=\int_0^yl(t)dt.
+\end{aligned}</script><p>其中 $Y$  的 <strong>PDF</strong> 为 $l(y)=\dfrac{1}{2\sqrt{y}}(f(\sqrt{y})+f(-\sqrt{y}))$.</p>
 </li>
 <li><p><strong>例</strong>  $X\sim N(0,1)$, 且 $Y=X^2$.</p>
 </li>
-<li><p><strong>解答</strong>  $Y$  的 <strong>PDF</strong> 为<br>$$<br>l(y)=\dfrac{1}{\sqrt{2\pi}}\dfrac{1}{\sqrt{y}}e^{-\dfrac{y}{2}}<br>$$<br>这是自由度为 $1$ 的 <strong>Chi-Square</strong> 分布 $\chi^2(1)$.</p>
+<li><p><strong>解答</strong>  $Y$  的 <strong>PDF</strong> 为</p>
+<script type="math/tex; mode=display">
+l(y)=\dfrac{1}{\sqrt{2\pi}}\dfrac{1}{\sqrt{y}}e^{-\dfrac{y}{2}}</script><p>这是自由度为 $1$ 的 <strong>Chi-Square</strong> 分布 $\chi^2(1)$.</p>
 </li>
 </ul>
 
@@ -1097,7 +1202,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">85k</span>
+                        class="white-color">73k</span>
             
             
             

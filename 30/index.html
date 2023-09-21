@@ -478,7 +478,6 @@ public<span class="token operator">:</span>
         <span class="token keyword">return</span> x<span class="token punctuation">.</span>d<span class="token punctuation">[</span>comp<span class="token punctuation">]</span> <span class="token operator">&lt;</span> y<span class="token punctuation">.</span>d<span class="token punctuation">[</span>comp<span class="token punctuation">]</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span> node<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">,</span> p<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>使用全局变量 <code>int dimension</code> 记录操作向量的维数, <code>Node</code> 结构体支持存储一个 $k$ 维向量, 其中 $2\le k\le 5$.</p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">// Line 26</span>
 <span class="token keyword">struct</span> <span class="token class-name">Tree</span> <span class="token punctuation">{</span>
@@ -489,7 +488,6 @@ public<span class="token operator">:</span>
     bool rightnode <span class="token operator">=</span> false<span class="token punctuation">;</span>
     bool is_leaf <span class="token operator">=</span> false<span class="token punctuation">;</span>
 <span class="token punctuation">}</span> tree<span class="token punctuation">[</span><span class="token number">4</span> <span class="token operator">*</span> N<span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>每个 <code>Tree</code> 结构体实例对应 <code>KD-Tree</code> 中的一个节点, <code>leftnode</code> 与 <code>rightnode</code> 记录了其是否存在左、右子节点, <code>is_leaf</code> 记录其是否为叶节点.</p>
 <p>每个 <code>Tree</code> 实例内部保存了一个向量 <code>Node p</code>, 而 <code>int v[5][2]</code> 记录了其对应的 <code>KD-Tree</code> 节点集在 $k$ 维空间内覆盖的范围, 其中 <code>v[i][0]</code>, <code>v[i][1]</code> 分别记录了 <code>Tree</code> 节点在空间中第 $i$ 维的范围.</p>
 <h4 id="Euclid-距离"><a href="#Euclid-距离" class="headerlink" title="Euclid 距离"></a>Euclid 距离</h4><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">// Line 36</span>
@@ -499,7 +497,6 @@ ll <span class="token function">Dist</span><span class="token punctuation">(</sp
         dis <span class="token operator">+=</span> <span class="token number">1ll</span> <span class="token operator">*</span> <span class="token punctuation">(</span>x<span class="token punctuation">.</span>d<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> y<span class="token punctuation">.</span>d<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>x<span class="token punctuation">.</span>d<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> y<span class="token punctuation">.</span>d<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> dis<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>首先为两个向量定义其 $Euclid$ 距离.</p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">// Line 44</span>
 ll <span class="token function">Dist</span><span class="token punctuation">(</span>Node x<span class="token punctuation">,</span> Tree y<span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -514,7 +511,6 @@ ll <span class="token function">Dist</span><span class="token punctuation">(</sp
         dis <span class="token operator">+=</span> <span class="token number">1ll</span> <span class="token operator">*</span> dist<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">*</span> dist<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> dis<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>再为一个点与一个区域定义其最短 $Euclid$ 距离. 逐次比较该点第 $i$ 维的坐标与区域在第 $i$ 维的坐标范围, 并取最短距离. 将每个维度的距离综合即得到了该点到此区域的最短 $Euclid$ 距离.</p>
 <h4 id="中位排序"><a href="#中位排序" class="headerlink" title="中位排序"></a>中位排序</h4><p>我们定义一个中位排序操作, 它将序列的中位数放置到正确的位置, 同时满足前半段的元素均小于中位元素, 后半段的元素均大于中位元素.</p>
 <p>该算法具体实现参考自<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/145456043">此教程</a>, 是一种期望为线性时间的选择算法, 时间复杂度在平均情况下为 $O(n)$.</p>
@@ -545,7 +541,6 @@ ll <span class="token function">Dist</span><span class="token punctuation">(</sp
         <span class="token keyword">else</span> l <span class="token operator">=</span> k <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>每次 <code>Partion()</code> 操作的执行都能确定一个元素的正确位置 (若该元素为第 $k$ 大, 那么其一定处于第 $k$ 位), 同时其左的元素均小于该元素, 其右的元素均大于该元素. 如果 <code>Partion</code> 返回的位置恰为序列的中位, 那么中位排序已完成; 否则递归对剩余元素进行中位排序即可.</p>
 <h4 id="建树"><a href="#建树" class="headerlink" title="建树"></a>建树</h4><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">// Line 104</span>
 <span class="token keyword">void</span> <span class="token function">Build</span><span class="token punctuation">(</span><span class="token keyword">int</span> k<span class="token punctuation">,</span> <span class="token keyword">int</span> l<span class="token punctuation">,</span> <span class="token keyword">int</span> r<span class="token punctuation">,</span> <span class="token keyword">int</span> direction<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -570,7 +565,6 @@ ll <span class="token function">Dist</span><span class="token punctuation">(</sp
     <span class="token function">Build</span><span class="token punctuation">(</span><span class="token function">right_son</span><span class="token punctuation">(</span>k<span class="token punctuation">)</span><span class="token punctuation">,</span> mid <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> r<span class="token punctuation">,</span> <span class="token punctuation">(</span>direction <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">%</span> dimension<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token function">PushUp</span><span class="token punctuation">(</span>k<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>其中全局变量 <code>int comp</code> 的取值范围为 $[0, dimension - 1]$, 它记录了当前建树时从哪个维度的坐标对当前向量进行排序.</p>
 <p>一个 <code>tree[k]</code> 节点可能会对应多个 <code>Node</code> 向量, 我们调用 <code>FindMedium(l, r)</code> 对这些向量排序, 将按第 <code>comp</code> 维度的坐标排序后的中位向量放置在 <code>Node node[N]</code> 中位 <code>node[mid]</code> 上, 同时满足在其之前的向量的第 <code>comp</code> 维度坐标均小于 <code>node[mid]</code> , 在其之后的向量的第 <code>comp</code> 维度坐标均大于 <code>node[mid]</code>.</p>
 <p>随后将 <code>node[mid]</code> 记录在 <code>tree[k]</code> 中, 并递归建立其左右子树, 在 <code>tree[k]</code> 内使用 <code>bool leftnode</code> 与 <code>bool rightnode</code> 记录, 最后调用 <code>PushUp(k)</code> 自底向顶更新每个 <code>tree[k]</code> 内的节点集所覆盖的区域的端点.</p>
@@ -587,7 +581,6 @@ ll <span class="token function">Dist</span><span class="token punctuation">(</sp
     <span class="token keyword">return</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>对于含有子节点的父节点 <code>tree[k]</code>, 根据我们建树的方式, 其右子节点 <code>tree[right]</code> 必然存在. 首先在右子节点 <code>tree[right]</code> 的覆盖区域内加入点 <code>tree[k].p</code>; 若左子节点 <code>tree[left]</code> 存在, 再使用其覆盖区域更新 <code>tree[k]</code> 的覆盖区域.</p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">// Line 89</span>
 <span class="token keyword">void</span> <span class="token function">PushUp</span><span class="token punctuation">(</span><span class="token keyword">int</span> k<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -603,7 +596,6 @@ ll <span class="token function">Dist</span><span class="token punctuation">(</sp
             tree<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">.</span>v<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>tree<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">.</span>v<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> tree<span class="token punctuation">[</span>left<span class="token punctuation">]</span><span class="token punctuation">.</span>v<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h4 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h4><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">// Line 134</span>
 <span class="token keyword">void</span> <span class="token function">Query</span><span class="token punctuation">(</span>Node p<span class="token punctuation">,</span> <span class="token keyword">int</span> k<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     ANS <span class="token operator">=</span> <span class="token function">min</span><span class="token punctuation">(</span>ANS<span class="token punctuation">,</span> <span class="token function">Dist</span><span class="token punctuation">(</span>p<span class="token punctuation">,</span> tree<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">.</span>p<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -618,7 +610,6 @@ ll <span class="token function">Dist</span><span class="token punctuation">(</sp
         <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">Dist</span><span class="token punctuation">(</span>p<span class="token punctuation">,</span> tree<span class="token punctuation">[</span><span class="token function">right_son</span><span class="token punctuation">(</span>k<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> ANS<span class="token punctuation">)</span>
             <span class="token function">Query</span><span class="token punctuation">(</span>p<span class="token punctuation">,</span> <span class="token function">right_son</span><span class="token punctuation">(</span>k<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>给出点 <code>Node p</code> 与子树 <code>tree[k]</code>, 我们给出 <code>p</code> 到 <code>tree[k]</code> 中的点的最短距离. 其中 <code>ANS</code> 是一个记录当前查询到的最短距离的全局变量, 在每次总查询前, 我们将其复位为 <code>INF = 1e16</code>.</p>
 <p>首先使用 <code>tree[k]</code> 内记录的点与 <code>p</code> 的距离更新最短距离 <code>ANS</code>; 若左子节点不存在, 特判 <code>p</code> 到 <code>tree[right]</code> 区域的最小值, 当小于 <code>ANS</code> 时执行向下递归查询; 若左子节点存在, 那么同时计算 <code>p</code> 到 <code>tree[left]</code> 区域的最小值, 并首先递归查询距离较短的子树.</p>
 <h4 id="输入与查询"><a href="#输入与查询" class="headerlink" title="输入与查询"></a>输入与查询</h4><p>封装为 <code>Init()</code> 与 <code>Work()</code> 函数.</p>
@@ -1028,7 +1019,7 @@ ll <span class="token function">Dist</span><span class="token punctuation">(</sp
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">85k</span>
+                        class="white-color">73k</span>
             
             
             

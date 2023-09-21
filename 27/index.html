@@ -495,7 +495,6 @@ public<span class="token operator">:</span>
     <span class="token comment">// 清零 Bitmap. </span>
     <span class="token keyword">void</span> <span class="token function">clean</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token function">memset</span><span class="token punctuation">(</span>M<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> N<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h4 id="void-read-input"><a href="#void-read-input" class="headerlink" title="void read_input()"></a>void read_input()</h4><p>在读入初始字符串时, 设置 <code>Bitmap* str</code>, 若初始字符串第 $k$ 位为 $1$, 则使用 <code>str-&gt;set[k]</code> 修改 <code>Bitmap</code> 的内容. 将输入字符串从左到右读入 <code>Bitmap* str</code>, 此时 <code>Bitmap* str</code> 存放了一个 $01$ 字符串.</p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">// Line 32</span>
 <span class="token keyword">void</span> <span class="token function">read_input</span><span class="token punctuation">(</span>Bitmap<span class="token operator">*</span> str<span class="token punctuation">,</span> <span class="token keyword">char</span><span class="token operator">&amp;</span> input<span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">&amp;</span> len<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -506,7 +505,6 @@ public<span class="token operator">:</span>
         len<span class="token operator">++</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h4 id="int-read"><a href="#int-read" class="headerlink" title="int read()"></a>int read()</h4><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">// Line 42</span>
 <span class="token keyword">int</span> <span class="token function">read</span><span class="token punctuation">(</span>Bitmap<span class="token operator">*</span> bitmap<span class="token punctuation">,</span> <span class="token keyword">int</span> pos<span class="token punctuation">,</span> <span class="token keyword">int</span> read_len<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">int</span> tmp <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
@@ -514,7 +512,6 @@ public<span class="token operator">:</span>
         tmp <span class="token operator">=</span> bitmap<span class="token operator">-&gt;</span><span class="token function">test</span><span class="token punctuation">(</span>pos <span class="token operator">+</span> i<span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token punctuation">(</span>tmp <span class="token operator">&lt;&lt;</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">:</span> tmp <span class="token operator">&lt;&lt;</span> <span class="token number">1</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> tmp<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><code>read()</code> 从 <code>Bitmap* str</code> 第 <code>pos</code> 位开始读取为长 <code>read_len</code> 的二进制串, 并将其转换为十进制数. 为了节省遍历子串的时间, 首先考虑 $k = \min(\vert A\vert, 24)$ 的情形.</p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
 <span class="token comment">// Line 113</span>
@@ -522,9 +519,8 @@ public<span class="token operator">:</span>
 Bitmap<span class="token operator">*</span> a <span class="token operator">=</span> new <span class="token function">Bitmap</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">&lt;&lt;</span> search_len<span class="token punctuation">)</span><span class="token punctuation">;</span>
 Bitmap<span class="token operator">*</span> b <span class="token operator">=</span> new <span class="token function">Bitmap</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">&lt;&lt;</span> <span class="token punctuation">(</span>search_len <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><code>Bitmap* a</code> 用于存储所有长 $k$ 位的 $01$ 串在原字符串中的出现情况, 若 <code>a-&gt;test(i) == true</code>, 则输入串中存在十进制值为 $i$ 的 $k$ 位 $01$ 二进制串. <code>Bitmap* b</code> 用于存储所有长 $k - 1$ 位的 $01$ 串在原字符串中的出现情况, 若 <code>b-&gt;test(j) == true</code>, 则输入串中存在十进制值为 $j$ 的 $k - 1$ 位 $01$ 二进制串.</p>
-<p>从 <code>Bitmap* str</code> 的末尾开始向头部遍历, 对于当前处理的二进制串的十进制值 $s = \overline{a_{m + 1}a_{m + 2}\cdots a_{m + k}}<em>2$, 下一个处理串的十进制值 $s’ = \overline{a_ma</em>{m + 1}\cdots a_{m + k - 1}}_2 = a\gg 1 + a_m\ll (k - 1)$.</p>
+<p>从 <code>Bitmap* str</code> 的末尾开始向头部遍历, 对于当前处理的二进制串的十进制值 $s = \overline{a_{m + 1}a_{m + 2}\cdots a_{m + k}}_2$, 下一个处理串的十进制值 $s’ = \overline{a_ma_{m + 1}\cdots a_{m + k - 1}}_2 = a\gg 1 + a_m\ll (k - 1)$.</p>
 <p>从后向前遍历, 节省了将二进制串转换为十进制串的时间.</p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
 <span class="token comment">// Line 118</span>
@@ -540,13 +536,11 @@ b<span class="token operator">-&gt;</span><span class="token function">set</span
 <span class="token punctuation">}</span>
 <span class="token function">set_end</span><span class="token punctuation">(</span>str<span class="token punctuation">,</span> b<span class="token punctuation">,</span> len <span class="token operator">-</span> k<span class="token punctuation">,</span> k<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>为此, 首先读入 <code>str</code> 末端的 $k$ 长子串 <code>get</code>, 调用 <code>a-&gt;set(get)</code> 将其存储在 <code>Bitmap* a</code> 中, 并使用一个 <code>while</code> 循环遍历接下来所有 $k$ 长子串.</p>
 <h4 id="void-set-end"><a href="#void-set-end" class="headerlink" title="void set_end()"></a>void set_end()</h4><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">// Line 68</span>
 <span class="token keyword">void</span> <span class="token function">set_end</span> <span class="token punctuation">(</span>Bitmap<span class="token operator">*</span> str<span class="token punctuation">,</span> Bitmap<span class="token operator">*</span> a<span class="token punctuation">,</span> <span class="token keyword">int</span> pos<span class="token punctuation">,</span> <span class="token keyword">int</span> k<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     a<span class="token operator">-&gt;</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token function">read</span><span class="token punctuation">(</span>str<span class="token punctuation">,</span> pos <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> k <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>调用 <code>set_end()</code> 将 <code>str</code> 末尾的 $k - 1$ 位 $01$ 子串加入 <code>Bitmap* b</code>.</p>
 <p>考虑到长度为 $k - 1$ 的子串. 对于所有 $k$ 长子串的十进制值 $S_1, S_2, \cdots, S_{\vert A\vert - k + 1}$, 长度为 $k - 1$ 的子串恰为所有 $k$ 长子串删去最后一位, 再补上 <code>str</code> 中末端的 $k - 1$ 长子串, 其十进制值 $R_1 = S_1\gg 1, R_2 = S_2\gg 1, \cdots, R_{\vert A\vert - k + 1} = S_{\vert A\vert - k + 1}\gg 1, R_{\vert A\vert - k + 2}$, 其中 $R_{\vert A\vert - k + 2}$ 调用 <code>set_end(str, b, len - k, k)</code> 来设置.</p>
 <p>接下来调用 <code>check_full(b, k)</code> 检查 <code>Bitmap* b</code> 中是否已经存储了所有 $k - 1$ 长子串.</p>
@@ -559,7 +553,6 @@ b<span class="token operator">-&gt;</span><span class="token function">set</span
             <span class="token keyword">break</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>若所有 $k - 1$ 长子串都已经存储在了 <code>Bitmap* b</code> 中, 那么说明 <code>str</code> 中首个未出现的字符串长度为 $k$, 只需调用 <code>get_ans(a, k, output, precision)</code> 在 <code>Bitmap* a</code> 中遍历寻找首个未出现的 $k$ 长子串, 并调用 <code>show_ans(output, precision)</code> 输出在原串中未出现的最短且字典序最小的 $k$ 长子串即可.</p>
 <h4 id="void-trans"><a href="#void-trans" class="headerlink" title="void trans()"></a>void trans()</h4><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">// Line 54</span>
 <span class="token keyword">void</span> <span class="token function">trans</span> <span class="token punctuation">(</span>Bitmap<span class="token operator">*</span> a<span class="token punctuation">,</span> Bitmap<span class="token operator">*</span> b<span class="token punctuation">,</span> <span class="token keyword">int</span> k<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -567,7 +560,6 @@ b<span class="token operator">-&gt;</span><span class="token function">set</span
         <span class="token keyword">if</span> <span class="token punctuation">(</span>a<span class="token operator">-&gt;</span><span class="token function">test</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span>
             b<span class="token operator">-&gt;</span><span class="token function">set</span><span class="token punctuation">(</span>i <span class="token operator">&gt;&gt;</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>否则, 若存在 $k - 1$ 长子串未存储在 <code>Bitmap* b</code> 中, 那么调用 <code>copy(a, b)</code> 将 <code>Bitmap* b</code> 的值赋给 <code>Bitmap* a</code>, <code>k</code> 自减, 并调用 <code>b-&gt;clean()</code> 将 <code>Bitmap* b</code> 置零. 此时 <code>Bitmap* a</code> 存储了所有 $k$ 长子串, 并调用 <code>trans(a, b, k)</code> 利用其中值更新 <code>Bitmap* b</code> 中的 $k - 1$ 长子串, 仍然需要使用 <code>set_end(str, b, len - k, k)</code> 将 <code>str</code> 末端的子串加入 <code>b</code>.</p>
 <p>当遍历到长度为 $k - 1$ 的串全部存在, 而 $k$ 长子串存在缺失时, 将 $k$ 长子串所缺少十进制值对应的首个 $01$ 子串输出.</p>
 <h3 id="复杂度估计"><a href="#复杂度估计" class="headerlink" title="复杂度估计"></a>复杂度估计</h3><h4 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h4><p>第一次读入串 <code>str</code> 的时间复杂度为 $O(\vert A\vert)$;</p>
@@ -966,7 +958,7 @@ b<span class="token operator">-&gt;</span><span class="token function">set</span
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">85k</span>
+                        class="white-color">73k</span>
             
             
             

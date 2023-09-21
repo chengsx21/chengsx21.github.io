@@ -439,7 +439,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    389
+                    387
                 </div>
                 
 
@@ -470,18 +470,23 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="必做题"><a href="#必做题" class="headerlink" title="必做题"></a>必做题</h2><h3 id="Ex-6-4-2-c"><a href="#Ex-6-4-2-c" class="headerlink" title="Ex 6.4.2 (c)"></a>Ex 6.4.2 (c)</h3><p>​    构造以终态方式接受的 $DPDA$ </p>
-<p><img src="/pic/43.png"></p>
+<p><img src="/pic/43.png" alt=""></p>
 <h3 id="Ex-6-4-3-a"><a href="#Ex-6-4-3-a" class="headerlink" title="Ex 6.4.3 (a)"></a>Ex 6.4.3 (a)</h3><p>​    假设以空栈方式接受的 $DPDA$ $P$ 接受串 $w\in L$, 考虑 $x\ne\varepsilon$.</p>
-<p>​    那么我们存在状态 $q$,<br>​    $$(q_0, wx, Z_0)\vdash^{*}(q, x, \varepsilon).$$<br>​    此时栈已空, 即 $DPDA$ 不能继续转移, 从而 $P$ 不能接受 $wx$.</p>
+<p>​    那么我们存在状态 $q$,<br>​    <script type="math/tex">(q_0, wx, Z_0)\vdash^{*}(q, x, \varepsilon).</script><br>​    此时栈已空, 即 $DPDA$ 不能继续转移, 从而 $P$ 不能接受 $wx$.</p>
 <p>​    即 $DPDA$ $P$ 接受的语言 $L$ 具有前缀性质.</p>
 <h3 id="Ex-6-4-3-b"><a href="#Ex-6-4-3-b" class="headerlink" title="Ex 6.4.3 (b)"></a>Ex 6.4.3 (b)</h3><p>​    从 $P$ 构造以终态方式接受的 $DPDA$ $P’$:</p>
-<p>​    (1) 增加初始状态 $q_0’$ 和初始栈符 $Z_0’$, 增加转移<br>​    $$\delta(q_0’, \varepsilon, Z_0’) = {(q_0, Z_0Z_0’)}.$$<br>​    其中 $q_0$, $Z_0$ 为 $P$ 的初始状态和初始栈符.</p>
-<p>​    (2) 增加终止状态 $q_f’$, 对 $P$ 中每一状态 $q$ 增加转移<br>​    $$\delta(q, \varepsilon, Z_0’) = {(q_f’, Z_0’)}.$$<br>​    由于 $P’$ 经过一步推导进入 $P$, $P$ 是确定的, </p>
+<p>​    (1) 增加初始状态 $q_0’$ 和初始栈符 $Z_0’$, 增加转移<br>​    <script type="math/tex">\delta(q_0', \varepsilon, Z_0') = \{(q_0, Z_0Z_0')\}.</script><br>​    其中 $q_0$, $Z_0$ 为 $P$ 的初始状态和初始栈符.</p>
+<p>​    (2) 增加终止状态 $q_f’$, 对 $P$ 中每一状态 $q$ 增加转移<br>​    <script type="math/tex">\delta(q, \varepsilon, Z_0') = \{(q_f', Z_0')\}.</script><br>​    由于 $P’$ 经过一步推导进入 $P$, $P$ 是确定的, </p>
 <p>​    并且 $P’$ 进行推导的第一步和最后一步是确定的,</p>
 <p>​    从而 $P’$ 是一个以终态方式接受的 $DPDA$.</p>
 <h3 id="Ex-6-4-3-c"><a href="#Ex-6-4-3-c" class="headerlink" title="Ex 6.4.3 (c)"></a>Ex 6.4.3 (c)</h3><p>​    从 $P’$ 构造以空栈方式接受的 $DPDA$ $P$:</p>
-<p>​    (1) 增加初始状态 $q_0$ 和初始栈符 $Z_0$, 增加转移<br>​    $$\delta(q_0, \varepsilon, Z_0) = {(q_0’, Z_0’Z_0)}.$$<br>​    其中 $q_0’$, $Z_0’$ 为 $P’$ 的初始状态和初始栈符.</p>
-<p>​    (2) 增加状态 $q$, 对 $P’$ 中所有接受状态 $q’$ 和栈符号 $Z’$, 增加转移<br>$$<br>\begin{aligned}<br>\delta(q’, \varepsilon, Z’) &amp;= {(q, \varepsilon)}, \<br>\delta(q, \varepsilon, Z’) &amp;= {(q, \varepsilon)}.<br>\end{aligned}<br>$$<br>​    从而 $P$ 是一个以空栈方式接受的 $PDA$, $L(P) = L$.</p>
+<p>​    (1) 增加初始状态 $q_0$ 和初始栈符 $Z_0$, 增加转移<br>​    <script type="math/tex">\delta(q_0, \varepsilon, Z_0) = \{(q_0', Z_0'Z_0)\}.</script><br>​    其中 $q_0’$, $Z_0’$ 为 $P’$ 的初始状态和初始栈符.</p>
+<p>​    (2) 增加状态 $q$, 对 $P’$ 中所有接受状态 $q’$ 和栈符号 $Z’$, 增加转移</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\delta(q', \varepsilon, Z') &= \{(q, \varepsilon)\}, \\
+\delta(q, \varepsilon, Z') &= \{(q, \varepsilon)\}.
+\end{aligned}</script><p>​    从而 $P$ 是一个以空栈方式接受的 $PDA$, $L(P) = L$.</p>
 <p>​    由于 $L$ 具有前缀性质, 因此 $P$ 具有确定性.</p>
 <p>​    从而 $P$ 是一个以空栈方式接受的 $DPDA$.</p>
 
@@ -875,7 +880,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">85k</span>
+                        class="white-color">73k</span>
             
             
             

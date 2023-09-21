@@ -439,14 +439,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.3k
+                    3.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    21 分
+                    19 分
                 </div>
                 
 
@@ -477,7 +477,7 @@
 <li>$\mathcal{Hom}_{\mathbb{R}}(\mathbb{R}^n, \mathbb{R}^m)$ 表示全体 $m\times n$ 矩阵.</li>
 </ul>
 <h3 id="Property-1"><a href="#Property-1" class="headerlink" title="Property 1"></a>Property 1</h3><ul>
-<li>对 $f\in\mathcal{Hom}<em>{\mathbb{F}}\mathcal{(U, V)}, g\in\mathcal{Hom}</em>{\mathbb{F}}\mathcal{(V, W)}$, 有 $g\circ f\in\mathcal{Hom}_{\mathbb{F}}\mathcal{(U, W)}$.</li>
+<li>对 $f\in\mathcal{Hom}_{\mathbb{F}}\mathcal{(U, V)}, g\in\mathcal{Hom}_{\mathbb{F}}\mathcal{(V, W)}$, 有 $g\circ f\in\mathcal{Hom}_{\mathbb{F}}\mathcal{(U, W)}$.</li>
 </ul>
 <h3 id="Definition-2"><a href="#Definition-2" class="headerlink" title="Definition 2"></a>Definition 2</h3><ul>
 <li>给定线性空间 $\mathcal{U, V}$, 若存在线性双射 $f:\mathcal{U}\rightarrow\mathcal{V}$, 则称 $\mathcal{U, V}$ 线性同构, 同构定义了一种等价关系.</li>
@@ -490,7 +490,7 @@
 </li>
 </ul>
 <h3 id="Definition-3"><a href="#Definition-3" class="headerlink" title="Definition 3"></a>Definition 3</h3><ul>
-<li>对于 $n$ 维线性空间 $\mathcal{V}$ 的两组基 $(e_1, \dots, e_n)$ 与 $(t_1, \dots, t_n)$,<br>$(t_1, \dots, t_n)=(e_1, \dots, e_n)\left( \begin{matrix}<br>t_{11}&amp;		\cdots&amp;		t_{1n}\<br>\vdots&amp;		&amp;		\vdots\<br>t_{n1}&amp;		\cdots&amp;		t_{nn}\<br>\end{matrix} \right)  =(e_1, \dots, e_n)T$, 称 $T$ 为过渡矩阵.</li>
+<li>对于 $n$ 维线性空间 $\mathcal{V}$ 的两组基 $(e_1, \dots, e_n)$ 与 $(t_1, \dots, t_n)$,<br>$(t_1, \dots, t_n)=(e_1, \dots, e_n)\left( \begin{matrix}<br>t_{11}&amp;        \cdots&amp;        t_{1n}\\<br>\vdots&amp;        &amp;        \vdots\\<br>t_{n1}&amp;        \cdots&amp;        t_{nn}\\<br>\end{matrix} \right)  =(e_1, \dots, e_n)T$, 称 $T$ 为过渡矩阵.</li>
 <li>对$\forall x\in\mathcal{V}$, <ul>
 <li>若 $x=(e_1, \dots, e_n)(x_1, \dots, x_n)^T=(t_1, \dots, t_n)(y_1, \dots, y_n)^T$,<br>那么有 $(x_1, \dots, x_n)^T=T(y_1, \dots, y_n)^T$, 这是由基的表示法的唯一性所决定的.</li>
 </ul>
@@ -507,7 +507,7 @@
 <li>称 $F$ 为基 $e_1,\dots, e_n, i_1, \dots, i_m$ 下的表示矩阵.</li>
 </ul>
 <h3 id="Tip-1"><a href="#Tip-1" class="headerlink" title="Tip 1"></a>Tip 1</h3><ul>
-<li>$\mathcal{Hom}<em>{\mathbb{F}}\mathcal{(U, V)}\xrightarrow{\sigma</em>{e_1,\dots, e_n, i_1, \dots, i_m}}\mathbb{F}^{m\times n}$ 是一个同构映射.</li>
+<li>$\mathcal{Hom}_{\mathbb{F}}\mathcal{(U, V)}\xrightarrow{\sigma_{e_1,\dots, e_n, i_1, \dots, i_m}}\mathbb{F}^{m\times n}$ 是一个同构映射.</li>
 </ul>
 <h3 id="Tip-2"><a href="#Tip-2" class="headerlink" title="Tip 2"></a>Tip 2</h3><ul>
 <li>表示矩阵相乘表示基底相传递.</li>
@@ -535,31 +535,31 @@
 </ul>
 <h2 id="Chapter-2-欧氏空间"><a href="#Chapter-2-欧氏空间" class="headerlink" title="Chapter 2 欧氏空间"></a>Chapter 2 欧氏空间</h2><h3 id="Definition-1-1"><a href="#Definition-1-1" class="headerlink" title="Definition 1"></a>Definition 1</h3><ul>
 <li>给定线性空间 $\mathcal{V}/\mathbb{R}$, $\left&lt;\cdot, \cdot\right&gt;:\mathcal{V}\times\mathcal{V}\rightarrow\mathbb{R}$, 满足 $\forall a,b\in\mathcal{V}$, 有<ul>
-<li>$a)$ 对称性: $\left&lt;a, b\right&gt; = \left&lt;b, a\right&gt;$;</li>
-<li>$b)$ 双线性性: $\left&lt;k_1a_1+k_2a_2, b\right&gt; = k_1\left&lt;a_1, b\right&gt; + k_2\left&lt;a_2, b\right&gt;$;</li>
-<li>$c)$ 正定性: $\left&lt;a, a\right&gt; \ge 0$, 取等当且仅当 $a = 0$.</li>
+<li>$a)$ 对称性: $\left<a, b\right=""> = \left<b, a\right="">$;</b,></a,></li>
+<li>$b)$ 双线性性: $\left<k_1a_1+k_2a_2, b\right=""> = k_1\left<a_1, b\right=""> + k_2\left<a_2, b\right="">$;</a_2,></a_1,></k_1a_1+k_2a_2,></li>
+<li>$c)$ 正定性: $\left<a, a\right=""> \ge 0$, 取等当且仅当 $a = 0$.</a,></li>
 </ul>
 </li>
 <li>则称二元函数是 $\mathcal{V}$ 上的一个内积, 具有内积的线性空间称为一个实内积空间,或欧氏空间.</li>
 </ul>
 <h3 id="Example-1-1"><a href="#Example-1-1" class="headerlink" title="Example 1"></a>Example 1</h3><ul>
-<li>$\mathbb{R}^n\quad \left&lt;a, b\right&gt; = a^Tb$ 是 $\mathbb{R}^n$上的标准内积. </li>
-<li>现在考虑一般的情况 $\left&lt;a, b\right&gt; = a^TAb$, 其中 $A\in\mathbb{R}^{n\times n}$. <ul>
-<li>为了满足对称性 $\left&lt;a, b\right&gt; = a^TAb = \left&lt;b, a\right&gt; =  b^TAa = a^TA^Tb$, 需要 $A$ 对称;</li>
-<li>为了满足正定性 $\left&lt;a, a\right&gt; = a^TAa \ge 0$, 需要 $A$ 正定;</li>
+<li>$\mathbb{R}^n\quad \left<a, b\right=""> = a^Tb$ 是 $\mathbb{R}^n$上的标准内积. </a,></li>
+<li>现在考虑一般的情况 $\left<a, b\right=""> = a^TAb$, 其中 $A\in\mathbb{R}^{n\times n}$. <ul>
+<li>为了满足对称性 $\left<a, b\right=""> = a^TAb = \left<b, a\right=""> =  b^TAa = a^TA^Tb$, 需要 $A$ 对称;</b,></a,></li>
+<li>为了满足正定性 $\left<a, a\right=""> = a^TAa \ge 0$, 需要 $A$ 正定; </a,></li>
 </ul>
-</li>
+</a,></li>
 <li>此时双线性性是显然满足的; </li>
 <li>所以只要 $A$ 对称正定, $\mathbb{R}^n$ 上的二元函数 $\left(a, b\right)\rightarrow a^TAb$ 是内积.</li>
 </ul>
 <h3 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h3><ul>
-<li>$\mathbb{R}^{m\times n}\quad \left&lt;A, B\right&gt; = trace(B^TA)$ 是 $\mathbb{R}^{m\times n}$ 上的标准内积.</li>
+<li>$\mathbb{R}^{m\times n}\quad \left<a, b\right=""> = trace(B^TA)$ 是 $\mathbb{R}^{m\times n}$ 上的标准内积. </a,></li>
 </ul>
 <h3 id="Example-3"><a href="#Example-3" class="headerlink" title="Example 3"></a>Example 3</h3><ul>
-<li>$\mathcal{C}\left[a, b\right]\quad \left&lt;f, g\right&gt; = \int_a^b{f\left( x \right) g\left( x \right) dx}$ 是 $\mathcal{C}\left[a, b\right]$ 上的标准内积.</li>
+<li>$\mathcal{C}\left[a, b\right]\quad \left<f, g\right=""> = \int_a^b{f\left( x \right) g\left( x \right) dx}$ 是 $\mathcal{C}\left[a, b\right]$ 上的标准内积.</f,></li>
 </ul>
 <h3 id="Definition-2-1"><a href="#Definition-2-1" class="headerlink" title="Definition 2"></a>Definition 2</h3><ul>
-<li>定义向量的长度 $\left| a \right|=\sqrt{\left&lt;a,a\right&gt;}$, 对 $a\in\mathcal{V}$;</li>
+<li>定义向量的长度 $\left| a \right|=\sqrt{\left<a,a\right>}$, 对 $a\in\mathcal{V}$;</a,a\right></li>
 <li>定义向量间的距离为 $\left| a-b \right|$, 对 $a, b\in\mathcal{V}$.</li>
 </ul>
 <h3 id="Property-1-1"><a href="#Property-1-1" class="headerlink" title="Property 1"></a>Property 1</h3><ul>
@@ -585,7 +585,7 @@
 <li>$(a_1, \dots, a_r) = (q_1, \dots, q_r)R$, $R$ 为上三角阵.</li>
 </ul>
 <h3 id="Example-4"><a href="#Example-4" class="headerlink" title="Example 4"></a>Example 4</h3><ul>
-<li>定义 $\left&lt;f, g\right&gt; = \int_{-1}^{1}{f\left( x \right) g\left( x \right) dx}$ 是 $\mathbb{R}\left[x\right]$ 上的标准内积, </li>
+<li>定义 $\left<f, g\right=""> = \int_{-1}^{1}{f\left( x \right) g\left( x \right) dx}$ 是 $\mathbb{R}\left[x\right]$ 上的标准内积, </f,></li>
 <li>对 $1, x, x^2, \dots$ 这组基进行 $Gram Schmidt$ 正交化(这里 $\mathbb{R}\left[x\right]$ 指实数域 $\mathbb{R}$ 上的多项式空间).</li>
 <li>这里不妨考虑简单情形, 对 $q_1=1, q_2=x, q_3=x^2$ 进行 $Gram Schmidt$ 正交化, 得到 $\tilde{q}_1=1, \tilde{q}_2=x, \tilde{q}_3=x^2 - \frac{1}{3}$.</li>
 </ul>
@@ -595,7 +595,7 @@
 <h3 id="Question-3"><a href="#Question-3" class="headerlink" title="Question 3"></a>Question 3</h3><ul>
 <li>如何利用坐标计算内积?</li>
 <li>欧氏空间 $\mathcal{V}$ 一组基底为 $a_1,a_2,\dots,a_n$, $x,y\in\mathcal{V}$, 在这组基下的坐标分别为 $(x_1,\dots,x_n)^T, (y_1,\dots,y_n)^T$,<ul>
-<li>$\left&lt;x, y\right&gt; = \left&lt;\sum_{i = 1}^n{a_ix_i}, \sum_{j = 1}^n{a_jy_j}\right&gt; =<br>\sum_{i = 1}^n\sum_{j = 1}^n x_iy_j\left&lt;a_i, a_j\right&gt; = {\hat{x}}^TG\hat{y},$</li>
+<li>$\left<x, y\right=""> = \left&lt;\sum_{i = 1}^n{a_ix_i}, \sum_{j = 1}^n{a_jy_j}\right&gt; =<br>\sum_{i = 1}^n\sum_{j = 1}^n x_iy_j\left<a_i, a_j\right=""> = {\hat{x}}^TG\hat{y},$</a_i,></x,></li>
 </ul>
 </li>
 <li>其中 $G$ 称为内积在基 $a_1,a_2,\dots,a_n$ 下的 $Gram$ 矩阵, $\hat{x}$, $\hat{y}$ 称为 $x, y$ 在这组基下的坐标.</li>
@@ -608,8 +608,14 @@
 </li>
 <li>设内积在基 $(e_1, \dots, e_n)$ 下的 $Gram$ 矩阵为 $G$, 在基 $(t_1, \dots, t_n)$ 下的 $Gram$ 矩阵为 $\tilde{G}$, 容易得到</li>
 </ul>
-<p>$$<br>\begin{aligned}<br>\tilde{x}^T\tilde{G}\tilde{y} &amp;= \left&lt;(t_1, \dots, t_n)\tilde{x}, (t_1, \dots, t_n)\tilde{y}\right&gt; \<br>                      &amp;= \left&lt;(e_1, \dots, e_n)\hat{x}, (e_1, \dots, e_n)\hat{y}\right&gt; \<br>                      &amp;= \left&lt;(e_1, \dots, e_n)(T\tilde{x}), (e_1, \dots, e_n)(T\tilde{y})\right&gt; \<br>                      &amp;= (T\tilde{x})^TG(T\tilde{y}) \<br>                      &amp;= \tilde{x}^T(T^TGT)\tilde{y}<br>\end{aligned}, \forall\tilde{x}, \tilde{y},<br>$$</p>
-<ul>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\tilde{x}^T\tilde{G}\tilde{y} &= \left<(t_1, \dots, t_n)\tilde{x}, (t_1, \dots, t_n)\tilde{y}\right> \\
+                      &= \left<(e_1, \dots, e_n)\hat{x}, (e_1, \dots, e_n)\hat{y}\right> \\
+                      &= \left<(e_1, \dots, e_n)(T\tilde{x}), (e_1, \dots, e_n)(T\tilde{y})\right> \\
+                      &= (T\tilde{x})^TG(T\tilde{y}) \\
+                      &= \tilde{x}^T(T^TGT)\tilde{y}
+\end{aligned}, \forall\tilde{x}, \tilde{y},</script><ul>
 <li>其中 $(t_1, \dots, t_n) = (e_1, \dots, e_n)T$.</li>
 </ul>
 <h3 id="Property-3"><a href="#Property-3" class="headerlink" title="Property 3"></a>Property 3</h3><ul>
@@ -622,19 +628,25 @@
 <li>对欧氏空间 $\mathcal{V}$ 与 $\mathcal{U}$, 如果 $\mathcal{U}\subset\mathcal{V}$, 则称 $\mathcal{U}$ 为 $\mathcal{V}$ 的子空间.</li>
 </ul>
 <h3 id="Definition-5"><a href="#Definition-5" class="headerlink" title="Definition 5"></a>Definition 5</h3><ul>
-<li>$\mathcal{M}$ 是欧氏空间 $\mathcal{V}$ 的子欧氏空间, 称 ${\mathcal{M}}^{\bot} = \left{a \in \mathcal{V} \mid \left&lt;a, b\right&gt; = 0, \forall b \in \mathcal{V}\right}$ 为其正交补.</li>
+<li>$\mathcal{M}$ 是欧氏空间 $\mathcal{V}$ 的子欧氏空间, 称 ${\mathcal{M}}^{\bot} = \left\{a \in \mathcal{V} \mid \left<a, b\right=""> = 0, \forall b \in \mathcal{V}\right\}$ 为其正交补.</a,></li>
 </ul>
 <h3 id="Property-4"><a href="#Property-4" class="headerlink" title="Property 4"></a>Property 4</h3><ul>
 <li>$\mathcal{M}^{\bot}$ 是欧氏空间 $\mathcal{V}$ 的子空间.</li>
 </ul>
 <h3 id="Question-5"><a href="#Question-5" class="headerlink" title="Question 5"></a>Question 5</h3><ul>
 <li>$\mathcal{M, N}$ 是 $\mathcal{V}$ 的子空间, 是否存在同时包含 $\mathcal{M, N}$ 的属于 $\mathcal{V}$ 的最小子空间?</li>
-<li>考虑 $\left{m + n\mid m\in\mathcal{M}, n\in\mathcal{N}\right}$, 称为 $M$ 和 $N$ 的和, 记作 $\mathcal{M}+\mathcal{N}$, 它满足所需要求.</li>
+<li>考虑 $\left\{m + n\mid m\in\mathcal{M}, n\in\mathcal{N}\right\}$, 称为 $M$ 和 $N$ 的和, 记作 $\mathcal{M}+\mathcal{N}$, 它满足所需要求.</li>
 </ul>
-<h3 id="Property-5"><a href="#Property-5" class="headerlink" title="Property 5"></a>Property 5</h3><p>- </p>
-<p>$$<br>\begin{equation}<br>\mathcal{M}\cap \mathcal{M}^{\bot} = \varnothing<br>\end{equation}<br>$$</p>
-<p>$$<br>\begin{equation}<br>\mathcal{M} + \mathcal{M}^{\bot} = \mathcal{V}<br>\end{equation}<br>$$</p>
-<ul>
+<h3 id="Property-5"><a href="#Property-5" class="headerlink" title="Property 5"></a>Property 5</h3><ul>
+<li><script type="math/tex; mode=display">
+\begin{equation}
+\mathcal{M}\cap \mathcal{M}^{\bot} = \varnothing
+\end{equation}</script></li>
+</ul>
+<script type="math/tex; mode=display">
+\begin{equation}
+\mathcal{M} + \mathcal{M}^{\bot} = \mathcal{V}
+\end{equation}</script><ul>
 <li>设 $\mathcal{M}$ 的一组正交基为 $q_1, \dots, q_r$, 根据基扩充定理, 可扩充 $q_{r+1}, \dots, q_n$,<br>使得 $(q_1, q_2, \dots, q_n)$ 构成 $\mathcal{V}$ 的一组正交基, 那么 ${\mathcal{M}}^{\bot}$ 的一组正交基即为 $q_{r+1}, \dots, q_n$.</li>
 </ul>
 <h3 id="Property-6"><a href="#Property-6" class="headerlink" title="Property 6"></a>Property 6</h3><ul>
@@ -642,27 +654,27 @@
 <li>$(\mathcal{M}^{\bot})^{\bot} = \mathcal{M}$.</li>
 </ul>
 <h2 id="Chapter-3-欧氏空间上的线性映射"><a href="#Chapter-3-欧氏空间上的线性映射" class="headerlink" title="Chapter 3 欧氏空间上的线性映射"></a>Chapter 3 欧氏空间上的线性映射</h2><h3 id="Definition-1-2"><a href="#Definition-1-2" class="headerlink" title="Definition 1"></a>Definition 1</h3><ul>
-<li>给定欧氏空间 $\left(\mathcal{U}, \left&lt; \cdot, \cdot\right&gt;<em>{\mathcal{U}}\right)$, $\left(\mathcal{V}, \left&lt; \cdot, \cdot\right&gt;</em>{\mathcal{V}}\right)$, $f\in\mathscr{Hom}\mathcal{(U, V)}, g\in\mathscr{Hom}\mathcal{(V, U)}$,</li>
-<li>使得 $\forall x\in\mathcal{U},y\in\mathcal{V}$, 有$$\left&lt;f(x),y\right&gt;<em>{\mathcal{V}}=\left&lt;x,g(y)\right&gt;</em>{\mathcal{U}},$$<br>则称 $g$ 为 $f$ 的共轭映射或伴随映射, $g=f^*$.</li>
+<li>给定欧氏空间 $\left(\mathcal{U}, \left&lt; \cdot, \cdot\right&gt;_{\mathcal{U}}\right)$, $\left(\mathcal{V}, \left&lt; \cdot, \cdot\right&gt;_{\mathcal{V}}\right)$, $f\in\mathscr{Hom}\mathcal{(U, V)}, g\in\mathscr{Hom}\mathcal{(V, U)}$,</li>
+<li>使得 $\forall x\in\mathcal{U},y\in\mathcal{V}$, 有<script type="math/tex">\left<f(x),y\right>_{\mathcal{V}}=\left<x,g(y)\right>_{\mathcal{U}},</script><br>则称 $g$ 为 $f$ 的共轭映射或伴随映射, $g=f^*$.</li>
 </ul>
 <h3 id="Property-1-2"><a href="#Property-1-2" class="headerlink" title="Property 1"></a>Property 1</h3><ul>
 <li>$\left(f^<em>\right)^</em>=f$.<ul>
-<li>$\forall x\in\mathcal{U},y\in\mathcal{V}$,<br>有 $\left&lt;(f^*)^*(x),y\right&gt;<em>{\mathcal{V}}=\left&lt;y,(f^*)^*(x)\right&gt;</em>{\mathcal{V}}=\left&lt;f^*(y),x\right&gt;<em>{\mathcal{U}}=\left&lt;x,f^*(y)\right&gt;</em>{\mathcal{U}}=\left&lt;f(x),y\right&gt;<em>{\mathcal{V}}$,<br>从而 $\left&lt;(f^*)^*(x)-f(x),y\right&gt;</em>{\mathcal{V}}=0$, $\forall x\in\mathcal{U},y\in\mathcal{V}$.<br>故 $(f^*)^*(x)-f(x)=0$, $\forall x\in\mathcal{U}$.<br>进而有 $\left(f^<em>\right)^</em>=f$ 成立.</li>
+<li>$\forall x\in\mathcal{U},y\in\mathcal{V}$,<br>有 $\left&lt;(f^<em>)^</em>(x),y\right&gt;_{\mathcal{V}}=\left<y,(f^*)^*(x)\right>_{\mathcal{V}}=\left<f^*(y),x\right>_{\mathcal{U}}=\left<x,f^*(y)\right>_{\mathcal{U}}=\left<f(x),y\right>_{\mathcal{V}}$,<br>从而 $\left&lt;(f^<em>)^</em>(x)-f(x),y\right&gt;_{\mathcal{V}}=0$, $\forall x\in\mathcal{U},y\in\mathcal{V}$.<br>故 $(f^<em>)^</em>(x)-f(x)=0$, $\forall x\in\mathcal{U}$.<br>进而有 $\left(f^<em>\right)^</em>=f$ 成立.</f(x),y\right></x,f^*(y)\right></f^*(y),x\right></y,(f^*)^*(x)\right></li>
 </ul>
 </li>
 </ul>
 <h3 id="Property-2-1"><a href="#Property-2-1" class="headerlink" title="Property 2"></a>Property 2</h3><ul>
-<li>$(g\circ f)^*=f^<em>\circ g^</em>$.</li>
+<li>$(g\circ f)^<em>=f^</em>\circ g^*$.</li>
 </ul>
 <h3 id="Question-1-2"><a href="#Question-1-2" class="headerlink" title="Question 1"></a>Question 1</h3><ul>
 <li>如何从矩阵的角度理解伴随映射? <ul>
-<li>$1)$ 基本情形: 考虑 $\mathcal{U}=\mathbb{R}^n, \mathcal{V}=\mathbb{R}^m$ 及其上的标准内积,<br>$$f\in\mathcal{Hom}\mathcal{(U, V)}\xrightarrow{\quad\quad\quad\quad}A\in\mathbb{R}^{m\times n}, x\rightarrow Ax, x\in\mathbb{R}^n;$$<br>$$f^*\in\mathcal{Hom}\mathcal{(V, U)}\xrightarrow{\quad\quad\quad\quad}B\in\mathbb{R}^{n\times m}, y\rightarrow By, y\in\mathbb{R}^n.$$<br>$\forall x\in\mathbb{R}^n, y\in\mathbb{R}^m$,<br>有 $y^TAx=\left&lt;Ax,y\right&gt;=\left&lt;f(x),y\right&gt;=\left&lt;x,f^*(y)\right&gt;=\left&lt;x,By\right&gt;=y^TB^Tx$,<br>进而 $A=B^T$ 成立.</li>
-<li>$2)$ 一般情形: 假定 $\mathcal{U},\mathcal{V}$ 的一组标准正交基分别为<br>$$u_1, u_2, \dots, u_n, v_1, v_2, \dots, v_m.$$<br>考虑 $\left&lt;(f(u_i),v_j\right&gt;<em>{\mathcal{V}}=\left&lt;u_i, f^*(v_j)\right&gt;</em>{\mathcal{U}}, \forall 1\le i\le n, 1\le j\le m$.<br>其中:<br>$LHS=\left&lt;(v_1, \dots, v_m)(f_{1i}, \dots, f_{mi})^T, v_j\right&gt;<em>{\mathcal{V}}=\left&lt;\sum_{k=1}^mv_kf_{ki},v_j\right&gt;</em>{\mathcal{V}}=f_{ji}$,<br>$RHS=\left&lt;u_i, (u_1, \dots, u_n)(g_{1j}, \dots, g_{nj})^T\right&gt;<em>{\mathcal{U}}=\left&lt;u_i,\sum_{k=1}^nu_kg_{kj}\right&gt;</em>{\mathcal{V}}=g_{ij}$,<br>因此 $\forall 1\le i\le n, 1\le j\le m, f_{ji}=g_{ij}$ 成立. 即 $F=G^T$.</li>
+<li>$1)$ 基本情形: 考虑 $\mathcal{U}=\mathbb{R}^n, \mathcal{V}=\mathbb{R}^m$ 及其上的标准内积,<script type="math/tex; mode=display">f\in\mathcal{Hom}\mathcal{(U, V)}\xrightarrow{\quad\quad\quad\quad}A\in\mathbb{R}^{m\times n}, x\rightarrow Ax, x\in\mathbb{R}^n;</script><script type="math/tex; mode=display">f^*\in\mathcal{Hom}\mathcal{(V, U)}\xrightarrow{\quad\quad\quad\quad}B\in\mathbb{R}^{n\times m}, y\rightarrow By, y\in\mathbb{R}^n.</script>$\forall x\in\mathbb{R}^n, y\in\mathbb{R}^m$,<br>有 $y^TAx=\left<ax,y\right>=\left<f(x),y\right>=\left<x,f^*(y)\right>=\left<x,by\right>=y^TB^Tx$,<br>进而 $A=B^T$ 成立.</x,by\right></x,f^*(y)\right></f(x),y\right></ax,y\right></li>
+<li>$2)$ 一般情形: 假定 $\mathcal{U},\mathcal{V}$ 的一组标准正交基分别为<script type="math/tex; mode=display">u_1, u_2, \dots, u_n, v_1, v_2, \dots, v_m.</script>考虑 $\left&lt;(f(u_i),v_j\right&gt;_{\mathcal{V}}=\left<u_i, f^*(v_j)\right="">_{\mathcal{U}}, \forall 1\le i\le n, 1\le j\le m$.<br>其中:<br>$LHS=\left&lt;(v_1, \dots, v_m)(f_{1i}, \dots, f_{mi})^T, v_j\right&gt;_{\mathcal{V}}=\left&lt;\sum_{k=1}^mv_kf_{ki},v_j\right&gt;_{\mathcal{V}}=f_{ji}$,<br>$RHS=\left<u_i, (u_1,="" \dots,="" u_n)(g_{1j},="" g_{nj})^t\right="">_{\mathcal{U}}=\left<u_i,\sum_{k=1}^nu_kg_{kj}\right>_{\mathcal{V}}=g_{ij}$,<br>因此 $\forall 1\le i\le n, 1\le j\le m, f_{ji}=g_{ij}$ 成立. 即 $F=G^T$.</u_i,\sum_{k=1}^nu_kg_{kj}\right></u_i,></u_i,></li>
 </ul>
 </li>
 </ul>
 <h3 id="Definition-2-2"><a href="#Definition-2-2" class="headerlink" title="Definition 2"></a>Definition 2</h3><ul>
-<li>给定欧氏空间 $\left(\mathcal{U}, \left&lt; \cdot, \cdot\right&gt;\right)$, $f\in\mathcal{Hom}\mathcal{(U, U)}$, 若 $\forall x,y\in\mathcal{U}$, 有$$\left&lt;f(x),y\right&gt;=\left&lt;x,f(y)\right&gt;,$$<br>则称 $f$ 为 $\mathcal{U}$ 上的一个自伴变换(对称变换).</li>
+<li>给定欧氏空间 $\left(\mathcal{U}, \left&lt; \cdot, \cdot\right&gt;\right)$, $f\in\mathcal{Hom}\mathcal{(U, U)}$, 若 $\forall x,y\in\mathcal{U}$, 有<script type="math/tex">\left<f(x),y\right>=\left<x,f(y)\right>,</script><br>则称 $f$ 为 $\mathcal{U}$ 上的一个自伴变换(对称变换).</li>
 </ul>
 <h3 id="Property-3-1"><a href="#Property-3-1" class="headerlink" title="Property 3"></a>Property 3</h3><ul>
 <li>$f\in\mathcal{Hom}\mathcal{(U, U)}$, $dim\mathcal{U}=n$.<ul>
@@ -670,23 +682,23 @@
 <li>$2)$ $f$ 为对称变换 $\Longleftrightarrow$ $f$ 在任意标准正交基下的矩阵都是对称矩阵.</li>
 </ul>
 </li>
-<li><em><strong>Proof:</strong></em><ul>
-<li>$1)$ $\Longleftarrow:$ $\left&lt;x,f(y)\right&gt;=\left&lt;x,f^*(y)\right&gt;=\left&lt;f(x),y\right&gt;$;<br>$\quad\Longrightarrow: f^*(y)=\sum\limits_{i=1}^n\left&lt;v_i, f^*(y)\right&gt;v_i =\sum\limits_{i=1}^n\left&lt;f(y), v_i\right&gt;v_i =\sum\limits_{i=1}^n\left&lt;f(y), v_i\right&gt;v_i=f(y)$, $\forall y\in\mathcal{U}$, 故 $f=f^*$.</li>
+<li><strong><em>Proof:</em></strong><ul>
+<li>$1)$ $\Longleftarrow:$ $\left<x,f(y)\right>=\left<x,f^*(y)\right>=\left<f(x),y\right>$;<br>$\quad\Longrightarrow: f^<em>(y)=\sum\limits_{i=1}^n\left&lt;v_i, f^</em>(y)\right&gt;v_i =\sum\limits_{i=1}^n\left<f(y), v_i\right="">v_i =\sum\limits_{i=1}^n\left<f(y), v_i\right="">v_i=f(y)$, $\forall y\in\mathcal{U}$, 故 $f=f^*$.</f(y),></f(y),></f(x),y\right></x,f^*(y)\right></x,f(y)\right></li>
 <li>$2)$ $\Longleftarrow:$ 设 $f$ 在标准正交基下的矩阵为 $A$, 则 $f$ 对称 $\Longrightarrow$ $f=f^*$ $\Longrightarrow$ $A=A^T$ $\Longrightarrow$ $A$ 对称.<br>$\quad\Longrightarrow:$ 在 $Chapter 1$ 中已经证明.</li>
 </ul>
 </li>
 </ul>
 <h3 id="Example-1-2"><a href="#Example-1-2" class="headerlink" title="Example 1"></a>Example 1</h3><ul>
-<li>$\mathbb{R}^{n\times n}\quad \left&lt;A, B\right&gt; = trace(B^TA)$ 是 $\mathbb{R}^{n\times n}$ 上的标准内积.<br>$$f:\mathbb{R}^{n\times n}\rightarrow\mathbb{R}^{n\times n}\quad A\rightarrow A^T.$$</li>
-<li>考虑 $\left&lt;f(A), B\right&gt;=trace(B^TA^T)=trace(AB)=trace(BA)$,<br>则 $\left&lt;A, f^*(B)\right&gt;=trace(f^*(B)^TA)$, 那么 $f^*=f$.</li>
+<li>$\mathbb{R}^{n\times n}\quad \left<a, b\right=""> = trace(B^TA)$ 是 $\mathbb{R}^{n\times n}$ 上的标准内积.<script type="math/tex; mode=display">f:\mathbb{R}^{n\times n}\rightarrow\mathbb{R}^{n\times n}\quad A\rightarrow A^T.</script></a,></li>
+<li>考虑 $\left<f(a), b\right="">=trace(B^TA^T)=trace(AB)=trace(BA)$,<br>则 $\left<a, f^*(b)\right="">=trace(f^<em>(B)^TA)$, 那么 $f^</em>=f$.</a,></f(a),></li>
 </ul>
 <h3 id="Example-2-1"><a href="#Example-2-1" class="headerlink" title="Example 2"></a>Example 2</h3><ul>
-<li>$\mathcal{C}_T^\infty(\mathbb{R})=\left{f\in\mathcal{C}^\infty(\mathbb{R})\mid f(x)=f(x+T),\forall x\in\mathbb{R}\right}$</li>
-<li>$\left&lt;f, g\right&gt; = \int_a^b{f\left(x\right) g\left( x \right) dx}$ 是 $\mathcal{C}\left[a, b\right]$ 上的标准内积.<br>$$D:\mathcal{C}_T^\infty(\mathbb{R})\rightarrow\mathcal{C}_T^\infty(\mathbb{R})\quad f\rightarrow f’.$$</li>
-<li>由 $\left&lt;D(f), g\right&gt;=\int_0^Tf’(x)g(x)dx=\int_0^Tg(x)df(x)=fg|_0^T-\int_0^Tf(x)g’(x)dx=-\int_0^Tf(x)g’(x)dx=\left&lt;f, -D(g)\right&gt;$, 那么 $d^*=-D$.</li>
+<li>$\mathcal{C}_T^\infty(\mathbb{R})=\left\{f\in\mathcal{C}^\infty(\mathbb{R})\mid f(x)=f(x+T),\forall x\in\mathbb{R}\right\}$</li>
+<li>$\left<f, g\right=""> = \int_a^b{f\left(x\right) g\left( x \right) dx}$ 是 $\mathcal{C}\left[a, b\right]$ 上的标准内积.<script type="math/tex; mode=display">D:\mathcal{C}_T^\infty(\mathbb{R})\rightarrow\mathcal{C}_T^\infty(\mathbb{R})\quad f\rightarrow f'.</script></f,></li>
+<li>由 $\left<d(f), g\right="">=\int_0^Tf’(x)g(x)dx=\int_0^Tg(x)df(x)=fg|_0^T-\int_0^Tf(x)g’(x)dx=-\int_0^Tf(x)g’(x)dx=\left<f, -d(g)\right="">$, 那么 $d^*=-D$.</f,></d(f),></li>
 </ul>
 <h3 id="Definition-3-2"><a href="#Definition-3-2" class="headerlink" title="Definition 3"></a>Definition 3</h3><ul>
-<li>给定欧氏空间 $\left(\mathcal{U}, \left&lt; \cdot, \cdot\right&gt;\right)$, $f\in\mathcal{Hom}\mathcal{(U, U)}$, 若 $\forall x,y\in\mathcal{U}$, 有$$\left&lt;f(x),f(y)\right&gt;=\left&lt;x,y\right&gt;,$$<br>则称 $f$ 为 $\mathcal{U}$ 上的一个正交变换.</li>
+<li>给定欧氏空间 $\left(\mathcal{U}, \left&lt; \cdot, \cdot\right&gt;\right)$, $f\in\mathcal{Hom}\mathcal{(U, U)}$, 若 $\forall x,y\in\mathcal{U}$, 有<script type="math/tex">\left<f(x),f(y)\right>=\left<x,y\right>,</script><br>则称 $f$ 为 $\mathcal{U}$ 上的一个正交变换.</li>
 </ul>
 <h3 id="Property-4-1"><a href="#Property-4-1" class="headerlink" title="Property 4"></a>Property 4</h3><ul>
 <li>$f\in\mathcal{Hom}\mathcal{(U, U)}$, 以下命题等价:<ul>
@@ -698,7 +710,7 @@
 </ul>
 <h3 id="Property-5-1"><a href="#Property-5-1" class="headerlink" title="Property 5"></a>Property 5</h3><ul>
 <li>$f\in\mathcal{Hom}\mathcal{(U, U)}$.<ul>
-<li>$1)$ $f$ 为正交变换 $\Longleftrightarrow$ $f\circ f^*=f^*\circ f=id_{\mathcal{U}}$;</li>
+<li>$1)$ $f$ 为正交变换 $\Longleftrightarrow$ $f\circ f^<em>=f^</em>\circ f=id_{\mathcal{U}}$;</li>
 <li>$2)$ $f$ 为保距变换 $\Longleftrightarrow$ $f$ 在任意标准正交基下的矩阵都是正交矩阵.</li>
 </ul>
 </li>
@@ -718,46 +730,46 @@
 </ul>
 <h2 id="Chapter-4-酉空间"><a href="#Chapter-4-酉空间" class="headerlink" title="Chapter 4 酉空间"></a>Chapter 4 酉空间</h2><h3 id="Question-1-3"><a href="#Question-1-3" class="headerlink" title="Question 1"></a>Question 1</h3><ul>
 <li>能否在复向量空间 $\mathcal{V}$ 上定义内积?</li>
-<li>注意到如果不对内积的定义进行修改, 考虑内积 $\left&lt;ia, ia\right&gt;$, 那么正定性与双线性性是彼此矛盾的.</li>
+<li>注意到如果不对内积的定义进行修改, 考虑内积 $\left<ia, ia\right="">$, 那么正定性与双线性性是彼此矛盾的.</ia,></li>
 </ul>
 <h3 id="Definition-1-3"><a href="#Definition-1-3" class="headerlink" title="Definition 1"></a>Definition 1</h3><ul>
 <li>给定线性空间$\mathcal{V}/\mathbb{C}$, $\left&lt;\cdot, \cdot\right&gt;:\mathcal{V}\times\mathcal{V}\rightarrow\mathbb{C}$, 满足$\forall a,b\in\mathcal{V}$, 有<ul>
-<li>$a)$ 共轭对称性: $\left&lt;a, b\right&gt; = \overline{\left&lt;b, a\right&gt;}$;</li>
-<li>$b)$ 线性性和共轭线性性: $\left&lt;k_1a_1+k_2a_2, b\right&gt; = k_1\left&lt;a_1, b\right&gt; + k_2\left&lt;a_2, b\right&gt;$;<br>$\quad\qquad\qquad\qquad\qquad\left&lt;a, k_1b_1+k_2b_2\right&gt; = \overline{k_1}\left&lt;a, b_1\right&gt; + \overline{k_2}\left&lt;a, b_2\right&gt;$;</li>
-<li>$c)$ 正定性: $\left&lt;a, a\right&gt; \ge 0$, 取等当且仅当 $a = 0$.</li>
+<li>$a)$ 共轭对称性: $\left<a, b\right=""> = \overline{\left<b, a\right="">}$;</b,></a,></li>
+<li>$b)$ 线性性和共轭线性性: $\left<k_1a_1+k_2a_2, b\right=""> = k_1\left<a_1, b\right=""> + k_2\left<a_2, b\right="">$;<br>$\quad\qquad\qquad\qquad\qquad\left<a, k_1b_1+k_2b_2\right=""> = \overline{k_1}\left<a, b_1\right=""> + \overline{k_2}\left<a, b_2\right="">$;</a,></a,></a,></a_2,></a_1,></k_1a_1+k_2a_2,></li>
+<li>$c)$ 正定性: $\left<a, a\right=""> \ge 0$, 取等当且仅当 $a = 0$.</a,></li>
 </ul>
 </li>
 <li>则称二元函数是 $\mathcal{V}$ 上的一个内积, $\mathcal{V}$ 是一个酉空间.</li>
 </ul>
 <h3 id="Example-1-3"><a href="#Example-1-3" class="headerlink" title="Example 1"></a>Example 1</h3><ul>
-<li>$\mathbb{C}^n\quad \left&lt;a, b\right&gt; = \overline{b}^Ta$ 是 $\mathbb{C}^n$上的标准内积.<br>$D$ 是对角元素均为正的对角阵, $\left&lt;a, b\right&gt; = \overline{b}^TDa$.</li>
+<li>$\mathbb{C}^n\quad \left<a, b\right=""> = \overline{b}^Ta$ 是 $\mathbb{C}^n$上的标准内积.<br>$D$ 是对角元素均为正的对角阵, $\left<a, b\right=""> = \overline{b}^TDa$.</a,></a,></li>
 </ul>
 <h3 id="Example-2-2"><a href="#Example-2-2" class="headerlink" title="Example 2"></a>Example 2</h3><ul>
-<li>$\mathbb{C}^{m\times n}\quad \left&lt;A, B\right&gt; = trace(\overline{B}^TA)$ 是 $\mathbb{C}^{m\times n}$ 上的标准内积.</li>
+<li>$\mathbb{C}^{m\times n}\quad \left<a, b\right=""> = trace(\overline{B}^TA)$ 是 $\mathbb{C}^{m\times n}$ 上的标准内积.</a,></li>
 </ul>
 <h3 id="Property-1-3"><a href="#Property-1-3" class="headerlink" title="Property 1"></a>Property 1</h3><ul>
 <li><p>$(Cauchy-Schwarz\ Inequality)$</p>
-<p>$\left| \left&lt;a, b\right&gt; \right|$ ≤ $\left| a \right|\cdot \left| b \right| $.</p>
+<p>$\left| \left<a, b\right=""> \right|$ ≤ $\left| a \right|\cdot \left| b \right| $.</a,></p>
 </li>
 <li><p>等号成立当且仅当 $a, b$ 共线, 其中 $a, b\in$ 酉空间 $\mathcal{V}$.</p>
 </li>
 </ul>
 <h3 id="Definition-2-3"><a href="#Definition-2-3" class="headerlink" title="Definition 2"></a>Definition 2</h3><ul>
-<li>给定酉空间 $\left(\mathcal{V}, \left&lt; \cdot, \cdot\right&gt;_{\mathcal{V}}\right)$, $f, g\in\mathcal{Hom}\mathcal{(V, V)}$, 使得 $\forall x, y\in\mathcal{V}$, 有$$\left&lt;f(x),y\right&gt;=\left&lt;x,g(y)\right&gt;,$$</li>
+<li>给定酉空间 $\left(\mathcal{V}, \left&lt; \cdot, \cdot\right&gt;_{\mathcal{V}}\right)$, $f, g\in\mathcal{Hom}\mathcal{(V, V)}$, 使得 $\forall x, y\in\mathcal{V}$, 有<script type="math/tex">\left<f(x),y\right>=\left<x,g(y)\right>,</script></li>
 <li>则称 $g$ 为 $f$ 的共轭映射或伴随映射, $g=f^*$.</li>
 </ul>
 <h3 id="Question-2-2"><a href="#Question-2-2" class="headerlink" title="Question 2"></a>Question 2</h3><ul>
 <li>如何从矩阵的角度理解伴随映射?<ul>
-<li>$1)$ 基本情形: 考虑 $\mathcal{U}=\mathbb{C}^n, \mathcal{V}=\mathbb{C}^m$ 及其上的标准内积,<br>$$f\in\mathcal{Hom}\mathcal{(U, V)}\xrightarrow{\quad\quad\quad\quad}A\in\mathbb{C}^{m\times n}, x\rightarrow Ax, x\in\mathbb{R}^n;$$<br>$$f^*\in\mathcal{Hom}\mathcal{(V, U)}\xrightarrow{\quad\quad\quad\quad}B\in\mathbb{C}^{n\times m}, y\rightarrow By, y\in\mathbb{R}^n.$$<br>$\forall x\in\mathbb{R}^n, y\in\mathbb{R}^m$, 有 $\overline{y}^TAx=\left&lt;Ax,y\right&gt;=\left&lt;f(x),y\right&gt;=\left&lt;x,f^*(y)\right&gt;=\left&lt;x,By\right&gt;=\overline{y}^T\overline{B}^Tx$,<br>进而 $A=\overline{B}^T, B=\overline{A}^T:=A^H$ 成立.</li>
-<li>$2)$ 一般情形: 假定 $\mathcal{U},\mathcal{V}$ 的一组标准正交基分别为<br>$$u_1, u_2, \dots, u_n, v_1, v_2, \dots, v_m.$$<br>设 $f:\mathcal{U}\rightarrow\mathcal{V}$ 在两组基下表示矩阵为 $F$, 则 $f^*:\mathcal{V}\rightarrow\mathcal{U}$ 的表示矩阵为 $F^H$.</li>
+<li>$1)$ 基本情形: 考虑 $\mathcal{U}=\mathbb{C}^n, \mathcal{V}=\mathbb{C}^m$ 及其上的标准内积,<script type="math/tex; mode=display">f\in\mathcal{Hom}\mathcal{(U, V)}\xrightarrow{\quad\quad\quad\quad}A\in\mathbb{C}^{m\times n}, x\rightarrow Ax, x\in\mathbb{R}^n;</script><script type="math/tex; mode=display">f^*\in\mathcal{Hom}\mathcal{(V, U)}\xrightarrow{\quad\quad\quad\quad}B\in\mathbb{C}^{n\times m}, y\rightarrow By, y\in\mathbb{R}^n.</script>$\forall x\in\mathbb{R}^n, y\in\mathbb{R}^m$, 有 $\overline{y}^TAx=\left<ax,y\right>=\left<f(x),y\right>=\left<x,f^*(y)\right>=\left<x,by\right>=\overline{y}^T\overline{B}^Tx$,<br>进而 $A=\overline{B}^T, B=\overline{A}^T:=A^H$ 成立.</x,by\right></x,f^*(y)\right></f(x),y\right></ax,y\right></li>
+<li>$2)$ 一般情形: 假定 $\mathcal{U},\mathcal{V}$ 的一组标准正交基分别为<script type="math/tex; mode=display">u_1, u_2, \dots, u_n, v_1, v_2, \dots, v_m.</script>设 $f:\mathcal{U}\rightarrow\mathcal{V}$ 在两组基下表示矩阵为 $F$, 则 $f^*:\mathcal{V}\rightarrow\mathcal{U}$ 的表示矩阵为 $F^H$.</li>
 </ul>
 </li>
 </ul>
 <h3 id="Definition-2-4"><a href="#Definition-2-4" class="headerlink" title="Definition 2"></a>Definition 2</h3><ul>
 <li>给定酉空间 $\mathcal{V}$, 其上的变换 $f\in\mathcal{Hom}\mathcal{(V, V)}$ 以及相应的矩阵 $A$. 使得 $\forall x, y\in\mathcal{V}$, 有<ul>
-<li>$a)$ (自伴变换) $\left&lt;f(x),y\right&gt;=\left&lt;x,f(y)\right&gt; \leftrightarrow f=f^* \leftrightarrow A=A^H$;</li>
-<li>$b)$ (酉变换) $\left&lt;f(x),f(y)\right&gt;=\left&lt;x,y\right&gt; \leftrightarrow ff^*=f^*f=id_{\mathcal{V}} \leftrightarrow AA^H=A^HA=I$;</li>
-<li>$c)$ (正规变换) $ff^*=f^*f \leftrightarrow AA^H=A^HA$.</li>
+<li>$a)$ (自伴变换) $\left<f(x),y\right>=\left<x,f(y)\right> \leftrightarrow f=f^* \leftrightarrow A=A^H$;</x,f(y)\right></f(x),y\right></li>
+<li>$b)$ (酉变换) $\left<f(x),f(y)\right>=\left<x,y\right> \leftrightarrow ff^<em>=f^</em>f=id_{\mathcal{V}} \leftrightarrow AA^H=A^HA=I$;</x,y\right></f(x),f(y)\right></li>
+<li>$c)$ (正规变换) $ff^<em>=f^</em>f \leftrightarrow AA^H=A^HA$.</li>
 </ul>
 </li>
 </ul>
@@ -1170,7 +1182,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">85k</span>
+                        class="white-color">73k</span>
             
             
             

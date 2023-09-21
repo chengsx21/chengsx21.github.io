@@ -474,7 +474,6 @@
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">long</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">long</span> x<span class="token punctuation">,</span> <span class="token keyword">long</span> y<span class="token punctuation">,</span> <span class="token keyword">long</span> z<span class="token punctuation">,</span> <span class="token keyword">long</span> w<span class="token punctuation">)</span> <span class="token punctuation">{</span> 
 	<span class="token keyword">return</span> <span class="token number">32</span> <span class="token operator">*</span> x <span class="token operator">+</span> <span class="token number">8</span> <span class="token operator">*</span> y <span class="token operator">+</span> <span class="token number">4</span> <span class="token operator">*</span> z <span class="token operator">+</span> w<span class="token punctuation">;</span> 
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">add:
 	leaq (%rsi,%rdi,4), %rsi
 	leaq (%rcx,%rsi,8), %rcx
@@ -484,7 +483,7 @@
 <li><p>$X86-64$ 体系结构中的条件跳转指令 $jg$ 是用于带符号数比较还是无符号数比较的? 其产生跳转的成立条件是 ~(SF^OF) &amp; ~ZF​ 为真, 请解释为何是这一条件. </p>
 <p><strong>答:</strong></p>
 <p>条件跳转指令 $jg$ 是用于带符号数比较的.</p>
-<p>考虑被比较的两个数 $a, b$, 当 $\text{<del>(SF^OF)&amp;</del>ZF}$ 为真时: </p>
+<p>考虑被比较的两个数 $a, b$, 当 $\text{~(SF^OF)&amp;~ZF}$ 为真时: </p>
 <p>有 $\text{~(SF^OF)}$ 为真, 则 $\text{SF^OF}$为假, 从而 $\text{SF = OF = 1}$ 或 $\text{SF = OF = 0}$, </p>
 <p>即此时 $a\le b$.</p>
 <p>同时有 $\text{~ZF}$ 为真, 则 $\text{ZF}$为假, 从而 $\text{ZF = 0}$, </p>
@@ -500,7 +499,6 @@
 	leaq 	12(%rsp), __④__ 
 	movl 	$0, %eax 
 	call 	swap<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">swap</span><span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token operator">*</span>a<span class="token punctuation">,</span> <span class="token keyword">int</span> <span class="token operator">*</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span> 
 <span class="token keyword">void</span> <span class="token function">call_swap</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
 <span class="token punctuation">{</span> 
@@ -508,7 +506,6 @@
 	<span class="token keyword">int</span> zip2 <span class="token operator">=</span> __②__<span class="token punctuation">;</span> 
 	__③__<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>① :  <u>$15213</u></p>
 <p>② :  <u>91125</u></p>
 <p>③ :  <u>swap(&amp;zip1, &amp;zip2)</u></p>
@@ -526,7 +523,6 @@
     <span class="token punctuation">}</span> 
     <span class="token keyword">return</span> x<span class="token punctuation">;</span> 
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">looper: 
     movl 	$0, %eax 
     movl 	$0, %edx 
@@ -555,7 +551,6 @@
     <span class="token keyword">long</span> ret <span class="token operator">=</span> t3 <span class="token operator">&amp;</span> t5<span class="token punctuation">;</span> 
     <span class="token keyword">return</span> ret<span class="token punctuation">;</span> 
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>对应如下汇编指令, 请写出每条指令之后目标寄存器存储的变量/临时变量值.</p>
 <pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">v2permute: 
     movq 	%rdx, %r8
@@ -567,16 +562,15 @@
     addq 	%rdx, %rcx 
     imulq 	(%rdi), %rax 
     andq 	(%rdi,%rcx,8), %rax<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>① : <u>y</u></p>
 <p>② : <u>z</u></p>
 <p>③ : <u>8253 * x</u></p>
-<p>④ : <u>8253 * x + 2 * y</u></p>
-<p>⑤ : <u>array[8253 * x + 2 * y]</u></p>
-<p>⑥ : <u>16 * array[8253 * x + 2 * y]</u></p>
-<p>⑦ : <u>16 * array[8253 * x + 2 * y] + z</u></p>
-<p>⑧ : <u>array[0] * 8253 * x</u></p>
-<p>⑨ : <u>array[16 * array[8253 * x + 2 * y] + z] &amp; (array[0] * 8253 * x)</u></p>
+<p>④ : <u>8253 <em> x + 2 </em> y</u></p>
+<p>⑤ : <u>array[8253 <em> x + 2 </em> y]</u></p>
+<p>⑥ : <u>16 <em> array[8253 </em> x + 2 * y]</u></p>
+<p>⑦ : <u>16 <em> array[8253 </em> x + 2 * y] + z</u></p>
+<p>⑧ : <u>array[0] <em> 8253 </em> x</u></p>
+<p>⑨ : <u>array[16 <em> array[8253 </em> x + 2 <em> y] + z] &amp; (array[0] </em> 8253 * x)</u></p>
 </li>
 <li><p>请对照下面的 $C$ 语言代码与相应汇编 $(Linux X86-64)$, 给出 $M$、$N$ 的值.</p>
 <pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">copy_element: 
@@ -591,7 +585,6 @@
     addq    %rax, %rsi 
     movl    %edx, mat1(,%rsi,4) 
     ret<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">M</span> <span class="token expression"><span class="token number">13</span></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">N</span> <span class="token expression"><span class="token number">7</span></span></span>
 <span class="token keyword">int</span> mat1<span class="token punctuation">[</span>M<span class="token punctuation">]</span><span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span> 
@@ -988,7 +981,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">85k</span>
+                        class="white-color">73k</span>
             
             
             

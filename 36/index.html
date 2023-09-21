@@ -477,22 +477,16 @@
 	<span class="token function">p2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
 	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span> 
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">/* bar.c */</span> 
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span> </span>
 <span class="token keyword">extern</span> <span class="token keyword">char</span> main<span class="token punctuation">;</span> 
 <span class="token keyword">void</span> <span class="token function">p2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span> 
 	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"0x%x\n"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>main<span class="token punctuation">)</span><span class="token punctuation">;</span> 
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>( 具体取决于编译器实现 )</p>
-<ol>
-<li>请问能否正常联合编译? 如果可以联合编译则运行结果如何? 请说明你给出的回答的理由.</li>
-</ol>
+<p>1) 请问能否正常联合编译? 如果可以联合编译则运行结果如何? 请说明你给出的回答的理由.</p>
 <p><strong>答:</strong> 可以正常联合编译. 运行结果为编译后 <code>main()</code> 函数的地址. 因为 <code>main</code> 函数在 <code>bar.c</code> 中声明, 联合编译后 <code>p2()</code> 函数会输出变量 <code>main</code> 存储的值, 即编译后 <code>main()</code> 函数的地址.</p>
-<ol start="2">
-<li>如果去掉 <code>bar.c</code> 中的 <code>extern</code> 关键字, 能否正常联合编译? 如果可以联合编译则运行结果如何? 请说明你给出的回答的理由.</li>
-</ol>
+<p>2) 如果去掉 <code>bar.c</code> 中的 <code>extern</code> 关键字, 能否正常联合编译? 如果可以联合编译则运行结果如何? 请说明你给出的回答的理由. </p>
 <p><strong>答:</strong> 可以正常联合编译. 运行结果为编译后 <code>main()</code> 函数的地址. (因为 <code>main</code> 为强定义, 会覆盖未初始化的弱定义 <code>char main</code>, 链接时不在乎类型.) 删去之后联合编译, 会在 <code>foo.c</code> 中得到其定义, 联合编译后 <code>p2()</code> 函数会输出 <code>main()</code> 函数的地址.</p>
 </li>
 <li><p>对于如下代码 <code>foo.c</code>, 如果编译为 <code>foo.o</code>, 那么在 <code>elf</code> 文件的以下段中, 会出现哪些符号? (如果有多种合法分布情况, 则任意给出一种即可).</p>
@@ -511,13 +505,11 @@
 <span class="token number">15</span>          <span class="token function">process</span><span class="token punctuation">(</span>a<span class="token operator">+</span>i<span class="token punctuation">,</span> b<span class="token operator">+</span>i<span class="token punctuation">,</span> c<span class="token operator">+</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span> 
 <span class="token number">16</span>      <span class="token punctuation">}</span> 
 <span class="token number">17</span>  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>( <code>gcc</code> 的内联函数需为 <code>static inline</code>. )</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">.bss: a, b, c.
 .data: 无. 
 .text: total_process.
 .symtab: add, process, a, b, c.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>其中对于 <code>total_process</code> 函数中用到的符号, 哪些会在编译期被定位, 哪些会在链接期被定位?</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">编译期定位的符号: i, total_process.
 链接期定位的符号: a, b, c.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
@@ -528,25 +520,19 @@
 <li>内存访问是针对 <strong><code>1</code> 字节的字</strong>(即本题的 <code>word</code> 就是 <code>1</code> 个 <code>byte</code>)</li>
 <li>虚拟地址 <code>16</code> 位宽 / 物理地址 <code>14</code> 位  </li>
 <li>页面大小为 <code>1024</code> 字节  </li>
-<li><code>TLB</code> 是 <code>4</code> 路组相联 (<code>4-way set associative</code>), 共有 <code>16</code> 个表项</li>
+<li><code>TLB</code> 是 <code>4</code> 路组相联 (<code>4-way set associative</code>), 共有 <code>16</code> 个表项  </li>
 </ul>
 <p>在下表中, 所有数字都是十六进制的. 前 <code>32</code> 页的 <code>TLB</code> 和页表内容如下：</p>
-<p><img src="D:/Shortcut/Class/22%20%E7%A7%8B/CSAPP/Homework/Hw/pic/4.png"></p>
-<ol>
-<li>下面的框显示了虚拟地址的格式. 指出字段用于确定以下内容: VPO / VPN / TLBI / TLBT/</li>
-</ol>
+<p><img src="D:/Shortcut/Class/22%20%E7%A7%8B/CSAPP/Homework/Hw/pic/4.png" alt=""></p>
+<p>1) 下面的框显示了虚拟地址的格式. 指出字段用于确定以下内容: VPO / VPN / TLBI / TLBT/</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">VPN: <span class="token number">15</span> - <span class="token number">10</span>
 VPO: <span class="token number">9</span> - <span class="token number">0</span>
 TLBI: <span class="token number">11</span> - <span class="token number">10</span>
 TLBT: <span class="token number">15</span> - <span class="token number">12</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>类似的标注出物理地址的格式: PPO / PPN </p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">PPN: <span class="token number">13</span> - <span class="token number">10</span>
 PPO: <span class="token number">9</span> - <span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<ol start="2">
-<li>对于给定的两个虚拟地址 (<code>0x2F09</code>、<code>0x0C53</code>), 请分别表示出相应的 <code>TLB</code> 表项和物理地址, 并指出 <code>TLB</code> 是否命中、是否发生 <code>page fault</code>. 如 <code>page fault</code>, 请在 <code>PPN</code> 中输入 <code>-</code>, <code>C</code> 部分留白.</li>
-</ol>
+<p>2) 对于给定的两个虚拟地址 (<code>0x2F09</code>、<code>0x0C53</code>), 请分别表示出相应的 <code>TLB</code> 表项和物理地址, 并指出 <code>TLB</code> 是否命中、是否发生 <code>page fault</code>. 如 <code>page fault</code>, 请在 <code>PPN</code> 中输入 <code>-</code>, <code>C</code> 部分留白.</p>
 <p><strong>答:</strong></p>
 <p><strong>0x2F09:</strong></p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">A:
@@ -562,7 +548,6 @@ B:
 C:
     Physical Address:
     留白.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><strong>0x0C53:</strong></p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">A:
     Virtual Address:
@@ -579,58 +564,7 @@ C:
     <span class="token number">11</span> 0100 0101 0011<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>程序运行之前需要为程序分配对应的内存空间, 并为内存空间赋予一定的初始值和属性, 下表为 <code>x86</code> 架构下用户空间的内存映射关系. 请填写下表, 并说明可执行文件对应的段 (<code>.data</code>, <code>.bss</code>, <code>.init</code>, <code>.rodata</code>, <code>.text</code>) 段分别会被以什么属性映射到哪部分内存空间中.</p>
-<table>
-<thead>
-<tr>
-<th align="center">内存起始地址</th>
-<th align="center">内存类型</th>
-<th align="center">内存初始值</th>
-<th align="center">内存属性</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">0xFFFFFFFF</td>
-<td align="center">内核地址</td>
-<td align="center">系统决定</td>
-<td align="center">不可读不可写</td>
-</tr>
-<tr>
-<td align="center">0xC0000000</td>
-<td align="center">栈</td>
-<td align="center"><strong>0(默认)</strong></td>
-<td align="center"><strong>可读可写</strong></td>
-</tr>
-<tr>
-<td align="center"><strong>由可执行文件决定</strong></td>
-<td align="center"><strong>共享库内存映射区</strong></td>
-<td align="center"><strong>共享库文件与可执行文件决定</strong></td>
-<td align="center"><strong>只读</strong></td>
-</tr>
-<tr>
-<td align="center">0x40000000</td>
-<td align="center">运行时堆空间</td>
-<td align="center"><strong>操作系统决定</strong></td>
-<td align="center"><strong>可读可写</strong></td>
-</tr>
-<tr>
-<td align="center">由可执行文件决定</td>
-<td align="center"><strong>可读写数据段</strong></td>
-<td align="center">.<strong>data由可执行文件决定, <br>.bss为 0</strong></td>
-<td align="center">可读可写</td>
-</tr>
-<tr>
-<td align="center"><strong>由可执行文件决定</strong></td>
-<td align="center"><strong>只读数据</strong></td>
-<td align="center"><strong>可执行文件决定</strong></td>
-<td align="center"><strong>只读</strong></td>
-</tr>
-<tr>
-<td align="center">0x08048000</td>
-<td align="center">保留内存地址</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-</tbody></table>
+<p>|     内存起始地址     |       内存类型       |                内存初始值                 |   内存属性   |<br>| :—————————: | :—————————: | :———————————————————-: | :—————: |<br>|      0xFFFFFFFF      |       内核地址       |                 系统决定                  | 不可读不可写 |<br>|      0xC0000000      |          栈          |                <strong>0(默认)</strong>                | <strong>可读可写</strong> |<br>| <strong>由可执行文件决定</strong> | <strong>共享库内存映射区</strong> |      <strong>共享库文件与可执行文件决定</strong>       |   <strong>只读</strong>   |<br>|      0x40000000      |     运行时堆空间     |             <strong>操作系统决定</strong>              | <strong>可读可写</strong> |<br>|   由可执行文件决定   |   <strong>可读写数据段</strong>   | .<strong>data由可执行文件决定, <br>.bss为 0</strong> |   可读可写   |<br>| <strong>由可执行文件决定</strong> |     <strong>只读数据</strong>     |            <strong>可执行文件决定</strong>             |   <strong>只读</strong>   |<br>|      0x08048000      |     保留内存地址     |                                           |              |</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">.data:  可读可写  映射到可读写数据段.
 .bss:  可读可写  映射到可读写数据段.
 .text:  只读  映射到只读数据.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
@@ -1026,7 +960,7 @@ C:
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">85k</span>
+                        class="white-color">73k</span>
             
             
             

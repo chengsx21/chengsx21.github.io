@@ -479,7 +479,6 @@
 ll tree<span class="token punctuation">[</span><span class="token number">16</span> <span class="token operator">*</span> MAX <span class="token operator">+</span> <span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 使用 tree[] 来模拟一棵线段树.</span>
 ll label<span class="token punctuation">[</span><span class="token number">16</span> <span class="token operator">*</span> MAX <span class="token operator">+</span> <span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 懒惰标记.</span>
 <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>给出的卡牌数为 $n\in[1, 2^{31})$, 显然不可能以此作为叶节点规模建立一棵线段树; 由于给出的卡牌操作序列数为 $m\in[1, 200000]$, 其包含的端点数最多为 $400000$, 我们将这些端点排序、去重之后, 得到新的 $k$ 个端点, 记录在 <code>arr[]</code> 中, 并对这 $k$ 个端点和它们分出来的 $k - 1$ 个区间这个假想的扩充数组建立线段树.</p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
 <span class="token comment">// Line 5</span>
@@ -490,8 +489,7 @@ ll label<span class="token punctuation">[</span><span class="token number">16</s
 ll arr<span class="token punctuation">[</span><span class="token number">2</span><span class="token operator">*</span> MAX <span class="token operator">+</span> <span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 对离散化的线段端点序列进行排序与去重.</span>
 ll operations<span class="token punctuation">[</span>MAX <span class="token operator">+</span> <span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 记录操作序列.</span>
 <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>具体而言, 若去重排序后留下的端点为 ${0, 2, 6, 10, 11}$, 那么我们只需对 ${[0, 0], [1, 1], [2, 2], [3, 5], [6, 6], [7, 9], [10, 10], [11, 10], [11, 11]}$ 建立线段树. 同时我们为每个区间 $[a, b]$ 定义长度 $real_length(a, b) = b - a + 1$, 注意到这里出现的不合理区间 $[11, 10]$ 的长度被定义为 $0$, 一定程度上便于我们进行理解 (这相当于一个空区间).</p>
+<p>具体而言, 若去重排序后留下的端点为 $\{0, 2, 6, 10, 11\}$, 那么我们只需对 $\{[0, 0], [1, 1], [2, 2], [3, 5], [6, 6], [7, 9], [10, 10], [11, 10], [11, 11]\}$ 建立线段树. 同时我们为每个区间 $[a, b]$ 定义长度 $real_length(a, b) = b - a + 1$, 注意到这里出现的不合理区间 $[11, 10]$ 的长度被定义为 $0$, 一定程度上便于我们进行理解 (这相当于一个空区间).</p>
 <h4 id="读入数据"><a href="#读入数据" class="headerlink" title="读入数据"></a>读入数据</h4><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
 <span class="token comment">// Line 94</span>
 <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> m<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -504,7 +502,6 @@ ll operations<span class="token punctuation">[</span>MAX <span class="token oper
     operations<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> y<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>读入数据时, 记录下每次操作的具体内容, 并将操作序列的端点记录在 <code>arr[]</code> 中.</p>
 <h4 id="重排序与建树"><a href="#重排序与建树" class="headerlink" title="重排序与建树"></a>重排序与建树</h4><p>使用 <code>&lt;stdlib.h&gt;</code> 中的 <code>qsort()</code> 函数对读入的 <code>arr[]</code> 序列进行排序;</p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">// Line 22</span>
@@ -515,13 +512,11 @@ ll <span class="token function">uniquify_array</span> <span class="token punctua
     length <span class="token operator">=</span> <span class="token operator">++</span>l<span class="token punctuation">;</span>
     <span class="token keyword">return</span> length<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>使用 <code>uniquify_array()</code> 对有序序列 <code>arr[]</code> 进行去重, 参考了课件 <code>02-D1</code> 部分的算法.</p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
 <span class="token comment">// Line 107</span>
 maxcnt <span class="token operator">=</span> <span class="token number">2</span> <span class="token operator">*</span> cnt <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
 <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><code>maxcnt</code> 即为线段树的规模大小, 无需进行初始化.</p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
 <span class="token comment">// Line 109</span>
@@ -533,7 +528,6 @@ maxcnt <span class="token operator">=</span> <span class="token number">2</span>
     <span class="token keyword">else</span> cout <span class="token operator">&lt;&lt;</span> <span class="token function">do_query</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> maxcnt<span class="token punctuation">,</span> left<span class="token punctuation">,</span> right<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>在 <code>arr</code> 中记录排序与去重后的离散化的线段端点, 那么我们假想的扩充数组的长度为 <code>maxcnt = 2 * cnt - 1</code>. 对于每一次操作给出的端点 <code>x</code>, <code>y</code>, 我们通过二分查找得到其在 <code>arr[]</code> 中的坐标 <code>left</code>, <code>right</code>, 其在扩充数组中的对应的端点为 <code>2 * left</code>, <code>2 * right</code>.</p>
 <p>以下函数参数中的 <code>k</code>, <code>l</code>, <code>r</code> 分别代表树的编号, 编号为 <code>k</code> 的树的左端点, 编号为 <code>k</code> 的树的右端点, <code>x</code>, <code>y</code> 分别代表操作区间的左端点, 右端点.</p>
 <h4 id="push-down操作"><a href="#push-down操作" class="headerlink" title="push_down操作"></a>push_down操作</h4><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">// Line 39</span>
@@ -541,7 +535,6 @@ maxcnt <span class="token operator">=</span> <span class="token number">2</span>
     tree<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">+=</span> num <span class="token operator">*</span> <span class="token function">real_length</span><span class="token punctuation">(</span>l<span class="token punctuation">,</span> r<span class="token punctuation">,</span> arr<span class="token punctuation">)</span><span class="token punctuation">;</span>
     label<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">+=</span> num<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><code>update()</code> 更新编号为 <code>k</code> 的树的线段和和与懒惰标记, 即此时我们不进行数据的下放, 而是以懒惰标记的形式将其暂存在 <code>label[]</code> 内.</p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">// Line 45</span>
 <span class="token keyword">void</span> <span class="token function">push_down</span><span class="token punctuation">(</span><span class="token keyword">int</span> k<span class="token punctuation">,</span> <span class="token keyword">int</span> l<span class="token punctuation">,</span> <span class="token keyword">int</span> r<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -550,14 +543,12 @@ maxcnt <span class="token operator">=</span> <span class="token number">2</span>
     <span class="token function">update</span><span class="token punctuation">(</span><span class="token function">right_son</span><span class="token punctuation">(</span>k<span class="token punctuation">)</span><span class="token punctuation">,</span> mid <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> r<span class="token punctuation">,</span> label<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     label<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><code>push_down</code> 操作分别更新左右子树的和与懒惰标记, 并且将自身懒惰标记置零.</p>
 <h4 id="翻牌操作"><a href="#翻牌操作" class="headerlink" title="翻牌操作"></a>翻牌操作</h4><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">// Line 34</span>
 ll <span class="token function">real_length</span><span class="token punctuation">(</span><span class="token keyword">int</span> l<span class="token punctuation">,</span> <span class="token keyword">int</span> r<span class="token punctuation">,</span> ll<span class="token operator">*</span> arr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">return</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span><span class="token punctuation">(</span>r <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">-</span> <span class="token punctuation">(</span>r <span class="token operator">%</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">-</span> arr<span class="token punctuation">[</span>l <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">-</span> <span class="token punctuation">(</span>l <span class="token operator">%</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><code>real_length()</code> 线段树中两端点间的实际线段长度, 我们使用实际长度对 <code>tree[k]</code> 进行更新与维护.</p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">// Line 53</span>
 <span class="token keyword">void</span> <span class="token function">do_add</span><span class="token punctuation">(</span><span class="token keyword">int</span> k<span class="token punctuation">,</span> <span class="token keyword">int</span> l<span class="token punctuation">,</span> <span class="token keyword">int</span> r<span class="token punctuation">,</span> <span class="token keyword">int</span> x<span class="token punctuation">,</span> <span class="token keyword">int</span> y<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -572,7 +563,6 @@ ll <span class="token function">real_length</span><span class="token punctuation
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <ul>
 <li>若 <code>add</code> 区间与子树区间不交, 直接返回;</li>
 <li>若子树区间包含在 <code>add</code> 区间内, 直接更新当前子树的和与懒惰标记;</li>
@@ -592,7 +582,6 @@ ll <span class="token function">do_query</span><span class="token punctuation">(
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><code>do_add()</code> 与 <code>do_query()</code> 在逻辑上完全相同.</p>
 <ul>
 <li>若 <code>query</code> 区间与子树区间不交, 直接返回;</li>
@@ -616,7 +605,6 @@ ll arr<span class="token punctuation">[</span><span class="token number">2</span
 ll operations<span class="token punctuation">[</span>MAX <span class="token operator">+</span> <span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 记录操作序列.</span>
 <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>空间消耗最坏情况约为: $(16 + 16 + 2 + 3)\times 2\times 10^5 \times 8B = 56MB$, 在题目要求范围内.</p>
 
                 
@@ -1009,7 +997,7 @@ ll operations<span class="token punctuation">[</span>MAX <span class="token oper
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">85k</span>
+                        class="white-color">73k</span>
             
             
             

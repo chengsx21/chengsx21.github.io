@@ -478,7 +478,6 @@
 		<span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token function">eat_peaches</span><span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">;</span> 
 	<span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">eat_peaches:
     cmpl $10, __①__
     je   __②__
@@ -493,7 +492,6 @@
 .L2:
     addq __⑥__, %rsp
     ret<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-c" data-language="c"><code class="language-c">①<span class="token operator">:</span> <span class="token operator">%</span>edi
 ②<span class="token operator">:</span> <span class="token punctuation">.</span>L3
 ③<span class="token operator">:</span> <span class="token operator">%</span>rax
@@ -511,7 +509,6 @@
 	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"a[0] = 0x%x, a[1] = 0x%x, buf = %s\n"</span><span class="token punctuation">,</span> 
 	a<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> a<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> buf<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">.LC0:
 	.string "a[0] = 0x%x, a[1] = 0x%x, buf = %s\n"
 foo:
@@ -533,41 +530,17 @@ foo:
     popq  %rbx
     popq  %rbp
     ret<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
  <center>
 
-<table>
-<thead>
-<tr>
-<th align="center">变量</th>
-<th align="center">十进制形式的 $offset$ (或者说明)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>a</code></td>
-<td align="center">经过优化, 未在栈帧中存储</td>
-</tr>
-<tr>
-<td align="center"><code>a[2]</code></td>
-<td align="center">经过优化, 未在栈帧中存储</td>
-</tr>
-<tr>
-<td align="center"><code>x</code></td>
-<td align="center">存储在 <code>%rbx</code> 中, 未在栈帧中存储</td>
-</tr>
-<tr>
-<td align="center"><code>buf</code></td>
-<td align="center">$-32$</td>
-</tr>
-<tr>
-<td align="center"><code>buf[3]</code></td>
-<td align="center">$-29$</td>
-</tr>
-<tr>
-<td align="center"><code>%rbx</code> 的保存值</td>
-<td align="center">$-8$</td>
-</tr>
-</tbody></table>
+|      变量       | 十进制形式的 $offset$ (或者说明) |
+| :-------------: | :------------------------------: |
+|       `a`       |          经过优化, 未在栈帧中存储          |
+|     `a[2]`      |          经过优化, 未在栈帧中存储          |
+|       `x`       | 存储在 `%rbx` 中, 未在栈帧中存储 |
+|      `buf`      |              $-32$               |
+|    `buf[3]`     |              $-29$               |
+| `%rbx` 的保存值  |               $-8$               |
+
  </center>
 </li>
 <li><p>过程调用以及返回的顺序在一般情况下都是 “过程返回的顺序恰好与调用顺序相反”, 但是我们可以利用汇编以及对运行栈的理解来编写汇编过程打破这一惯例.</p>
@@ -602,7 +575,6 @@ SET:
     pushl 60(%eax)         #(E)
     movl 48(%eax), %eax
     ret<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>(1) <code>SET​</code> 过程的返回地址是什么, 其返回值是多少? </p>
 <p><strong>解答:</strong></p>
 <p>返回地址为 <code>GET</code> 函数的下一条地址; 返回值为 $1$.</p>
@@ -615,9 +587,7 @@ SET:
 <p>$(D)$ 指令需填入 $72$.</p>
 </li>
 <li><p>请分别对照下列的 $C$ 代码与对应的汇编代码, 解释下 $C$ 函数是如何传入 <code>struct​</code> 类型参数的, 可以通过画出 <code>call input_struct</code> 时栈的 $layout$, 并辅以说明来解释.</p>
-<ol>
-<li><code>gcc –Og ...​</code></li>
-</ol>
+<p>1) <code>gcc –Og ...​</code></p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">typedef</span> <span class="token keyword">struct</span><span class="token punctuation">{</span>
 	<span class="token keyword">int</span> age<span class="token punctuation">;</span> <span class="token keyword">int</span> bye<span class="token punctuation">;</span> <span class="token keyword">int</span> coo<span class="token punctuation">;</span> <span class="token keyword">int</span> ddd<span class="token punctuation">;</span> <span class="token keyword">int</span> eee<span class="token punctuation">;</span>
 <span class="token punctuation">}</span> TEST_Struct<span class="token punctuation">;</span>
@@ -634,7 +604,6 @@ SET:
 	main_struct<span class="token punctuation">.</span>eee <span class="token operator">=</span> i<span class="token punctuation">;</span>
 	<span class="token keyword">return</span> <span class="token function">input_struct</span><span class="token punctuation">(</span>main_struct<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">input_struct:
     movl 8(%rsp), %eax    #age
     addl %eax, %eax
@@ -656,7 +625,6 @@ function2:
     call input_struct
     addq $56, %rsp
     ret<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><strong>解答：</strong></p>
 <p>在栈帧中存储结构体实例. 在发生调用 <code>call input_struct​</code> 前, 在 <code>24(%rsp)</code> 开始由低地址向高地址存储 <code>age</code>, <code>bye</code>, <code>coo</code>, <code>ddd</code>. 随后将这些信息转移到 <code>%rsp</code> 开始的低地址内存中, 并附加 <code>eee</code>.</p>
 <div align="center"><img src="/pic/9.png" width="20%" height="20%"></div>
@@ -664,9 +632,7 @@ function2:
 <p>调用 <code>call input_struct</code> 后, 返回地址被压入栈中, 此时通过 <code>8(%rsp)</code> 访问的即是 <code>in_struct.age</code>, 通过 <code>24(%rsp)</code> 访问的即是 <code>in_struct.eee</code>.</p>
 <div align="center"><img src="/pic/10.png" width="20%" height="20%"></div>
 
-<ol start="2">
-<li>$C$ 代码不变, 通过 <code>gcc -O1/2 ...</code> 编译后的汇编如下:</li>
-</ol>
+<p>2) $C$ 代码不变, 通过 <code>gcc -O1/2 ...</code> 编译后的汇编如下: </p>
 <pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">input_struct:
     movl 24(%rsp), %eax
     movl 8(%rsp), %edx
@@ -676,20 +642,16 @@ function2:
     movl i(%rip), %eax
     leal (%rax,%rax,2), %eax
     ret<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>请分析针对这段代码, 编译器做了什么优化工作.</p>
 <p><strong>解答:</strong></p>
 <p>使用一步 <code>leal</code> 指令替代原本的两步 <code>addl</code> 指令;</p>
 <p>直接使用全局变量 <code>i</code> 代替已知相等的 <code>in_struct.age</code>、 <code>in_struct.age</code> 进行计算.</p>
-<ol start="3">
-<li>如果在上面的 $C$ 代码的 <code>int​ input_struct</code> 声明前加上 ​<code>static</code>, 经 <code>gcc –O1/2 ...</code> 编译后的代码如下:</li>
-</ol>
+<p>3) 如果在上面的 $C$ 代码的 <code>int​ input_struct</code> 声明前加上 ​<code>static</code>, 经 <code>gcc –O1/2 ...</code> 编译后的代码如下:</p>
 <pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">function2:
     movl i(%rip), %eax
     leal (%rax,%rax,2), %eax
     ret
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>请分析针对这段代码, 编译器做了什么优化工作.</p>
 <p><strong>解答:</strong></p>
 <p>将 <code>int input_struct</code> 声明为 <code>static</code> 后只会被当前编译单元被调用, 优化 <code>function2</code> 后无需调用 <code>input_struct</code>, 因此可以不进行编译.</p>
@@ -713,7 +675,6 @@ function2:
     <span class="token keyword">struct</span> <span class="token class-name">s2</span> <span class="token operator">*</span>i<span class="token punctuation">;</span>
     <span class="token keyword">char</span> j<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">A.proc1:
 	pushl %ebp
 	movl %esp, %ebp
@@ -722,11 +683,9 @@ function2:
 	movl %ebp, %esp
 	popl %ebp
 	ret<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">proc1</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">s2</span> <span class="token operator">*</span>x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">return</span> x<span class="token operator">-&gt;</span> __________<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">B.proc2:
 	pushl %ebp
 	movl %esp, %ebp
@@ -736,11 +695,9 @@ function2:
 	movl %ebp, %esp
 	popl %ebp
 	ret<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">proc2</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">s1</span> <span class="token operator">*</span>x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">return</span> x<span class="token operator">-&gt;</span> __________<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">C.proc3:
 	pushl %ebp
 	movl %esp, %ebp
@@ -750,11 +707,9 @@ function2:
 	movl %ebp, %esp
 	popl %ebp
 	ret<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">char</span> <span class="token function">proc3</span><span class="token punctuation">(</span><span class="token keyword">union</span> u1 <span class="token operator">*</span>x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">return</span> x<span class="token operator">-&gt;</span> __________<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">D.proc4:
 	pushl %ebp
 	movl %esp, %ebp
@@ -766,11 +721,9 @@ function2:
 	movl %ebp, %esp
 	popl %ebp
 	ret<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">char</span> <span class="token function">proc4</span><span class="token punctuation">(</span><span class="token keyword">union</span> u1 <span class="token operator">*</span>x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">return</span> x<span class="token operator">-&gt;</span> __________<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-c" data-language="c"><code class="language-c">A<span class="token operator">:</span> f<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> 
 B<span class="token operator">:</span> b<span class="token punctuation">.</span>i<span class="token operator">-&gt;</span>f<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span>
 C<span class="token operator">:</span> i<span class="token operator">-&gt;</span>e
@@ -801,21 +754,18 @@ using namespace std<span class="token punctuation">;</span>
     std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"e[0].d: "</span> <span class="token operator">&lt;&lt;</span> s<span class="token punctuation">.</span>e<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>d <span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>运行结果:</p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c">size of A<span class="token operator">:</span> <span class="token number">96</span>
 a<span class="token operator">:</span> <span class="token operator">-</span><span class="token number">21846</span>
 b<span class="token operator">:</span> <span class="token number">12297829382473034410</span>
 e<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>c<span class="token operator">:</span> <span class="token operator">-</span><span class="token number">1431655766</span>
 e<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>d<span class="token operator">:</span> <span class="token operator">-</span><span class="token number">3.72066e-103</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>请补全以下类型和常数:</p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c">T1<span class="token operator">:</span> <span class="token keyword">short</span>
 T2<span class="token operator">:</span> <span class="token keyword">unsigned</span> <span class="token keyword">long</span> <span class="token keyword">long</span>
 T3<span class="token operator">:</span> <span class="token keyword">int</span>
 T4<span class="token operator">:</span> <span class="token keyword">double</span>
 N<span class="token operator">:</span> <span class="token number">5</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><code>struct A​</code> 的内存布局 (需绘制出 <code>struct B</code> 中各变量):</p>
 </li>
 </ol>
@@ -1212,7 +1162,7 @@ N<span class="token operator">:</span> <span class="token number">5</span><span 
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">85k</span>
+                        class="white-color">73k</span>
             
             
             

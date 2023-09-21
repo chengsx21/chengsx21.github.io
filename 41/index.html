@@ -482,7 +482,6 @@
     AvlNode<span class="token operator">*</span> Root<span class="token punctuation">;</span> <span class="token comment">// 根节点.</span>
     AvlNode f<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span>  <span class="token comment">// 节点数组.</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>参考了<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/Just-monika/solution-p3369">这篇文章</a>实现了 <code>AvlNode</code> 结构体, 并以数组形式给出 <code>AvlTree</code> 结构.</p>
 <h5 id="1-1-Maintain"><a href="#1-1-Maintain" class="headerlink" title="1.1 Maintain()"></a>1.1 Maintain()</h5><p><code>Maintain(current)</code> 首先根据当前节点的平衡因子 <code>BanlanceFactor(current)</code> 判断是否需要调用 <code>LeftRotate()</code> 与 <code>RightRotate()</code> 接口进行左旋、右旋重构, 同时利用这两个接口实现了 <code>LeftAdjust()</code> 与 <code>RightAdjust()</code> 接口进行双旋重构.</p>
 <h5 id="1-2-Insert-与-Remove"><a href="#1-2-Insert-与-Remove" class="headerlink" title="1.2 Insert() 与 Remove()"></a>1.2 Insert() 与 Remove()</h5><p><code>AVLTree</code> 在 <code>Insert()</code> 与 <code>Remove()</code> 后首先通过 <code>PushUp(current)</code> 进行高度更新, 将当前节点高度更新为子节点的最大高度加 $1$.</p>
@@ -502,7 +501,6 @@
 <span class="token keyword">struct</span> <span class="token class-name">SplayTree</span> <span class="token punctuation">{</span>
     SplayNode t<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 节点数组.</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>参考了<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/cjyyb/solution-p3369">这篇文章</a>实现了 <code>SplayNode</code> 结构体, 并以数组形式给出 <code>SplayTree</code> 结构.</p>
 <h5 id="2-1-Splay"><a href="#2-1-Splay" class="headerlink" title="2.1 Splay()"></a>2.1 Splay()</h5><p>首先实现了 <code>Rotate()</code> 接口进行单旋操作, 接着利用 <code>Rotate()</code> 接口实现了 <code>Splay()</code> 接口进行双旋操作.</p>
 <h5 id="2-2-Insert"><a href="#2-2-Insert" class="headerlink" title="2.2 Insert()"></a>2.2 Insert()</h5><p><code>SplayTree</code> 在 <code>Insert()</code> 时逐层查询需要插入节点的位置, 直到到达叶节点. 插入节点后执行 <code>Splay(pointer, 0)</code> 将其伸展至根节点即可.</p>
@@ -522,7 +520,6 @@
 <h4 id="3-测例生成"><a href="#3-测例生成" class="headerlink" title="3. 测例生成"></a>3. 测例生成</h4><p>使用 <code>bitmap</code> 数据结构记录 <code>Tree</code> 中数据的存在情况. 如果 <code>bitmap</code> 某一位设置为 <code>1</code>, 则相应值的节点存在于树中, 只能进行删除操作; 如果 <code>bitmap</code> 某一位设置为 <code>0</code>, 则相应值的节点不存在于树中, 只能进行插入操作。</p>
 <pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">// 随机数种子.
 srand((int)time(0));<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <p>使用当前时间作为随机数种子, 充分保证了生成数据的随机性. 尝试生成一个 <code>Insert()</code> 数据点时, 随机访问一个位置, 若 <code>bitmap-&gt;test(rand_num) == 0</code>, 则可以在该处进行插入操作, 否则随机查询下一个位置; 尝试生成一个 <code>Remove()</code> 数据点时, 随机访问一个位置, 若 <code>bitmap-&gt;test(rand_num) == 1</code>, 则可以在该处进行插入操作, 否则遍历查询其之后的位置, 直到找到一个可以删除的数据点; 尝试生成一个全局 <code>Search()</code> 数据点时, 随机访问一个位置即可; 尝试生成一个局部 <code>Search()</code> 数据点时, 首先随机访问一个位置, 并在一定范围内随机生成数据即可.</p>
 <h4 id="4-测试脚本"><a href="#4-测试脚本" class="headerlink" title="4. 测试脚本"></a>4. 测试脚本</h4><p>编写了 <code>avl.sh</code> 脚本对 <code>AVLTree</code> 数据结构进行测试.</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#avl.sh</span>
@@ -532,7 +529,6 @@ srand((int)time(0));<span aria-hidden="true" class="line-numbers-rows"><span></s
     <span class="token builtin class-name">echo</span> <span class="token string">"Test Case <span class="token variable">$i</span>:"</span> <span class="token operator">&gt;&gt;</span> avl.out
     <span class="token punctuation">{</span> <span class="token function">time</span> ./avl <span class="token operator">&lt;</span>Data/<span class="token variable">$i</span>.in <span class="token operator">&gt;</span>Data/<span class="token variable">$i</span>.out<span class="token punctuation">;</span> <span class="token punctuation">}</span> <span class="token operator"><span class="token file-descriptor important">2</span>&gt;&gt;</span> avl.out
 <span class="token keyword">done</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>编写了 <code>splay.sh</code> 脚本对 <code>SplayTree</code> 数据结构进行测试.</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#splay.sh</span>
 <span class="token comment">#!/bin/bash</span>
@@ -541,164 +537,179 @@ srand((int)time(0));<span aria-hidden="true" class="line-numbers-rows"><span></s
     <span class="token builtin class-name">echo</span> <span class="token string">"Test Case <span class="token variable">$i</span>:"</span> <span class="token operator">&gt;&gt;</span> splay.out
     <span class="token punctuation">{</span> <span class="token function">time</span> ./splay <span class="token operator">&lt;</span>Data/<span class="token variable">$i</span>.in <span class="token operator">&gt;</span>Data/<span class="token variable">$i</span>.out<span class="token punctuation">;</span> <span class="token punctuation">}</span> <span class="token operator"><span class="token file-descriptor important">2</span>&gt;&gt;</span> splay.out
 <span class="token keyword">done</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="三、性能分析"><a href="#三、性能分析" class="headerlink" title="三、性能分析"></a>三、性能分析</h3><h4 id="1-generator-1-cpp-数据"><a href="#1-generator-1-cpp-数据" class="headerlink" title="1. generator_1.cpp 数据"></a>1. <code>generator_1.cpp</code> 数据</h4><p>对应于 <code>01.in</code> ~ <code>03.in</code>.</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="center">数据规模</th>
-<th align="center">AVL</th>
-<th align="center">Splay</th>
+<th style="text-align:center">数据规模</th>
+<th style="text-align:center">AVL</th>
+<th style="text-align:center">Splay</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">1e2</td>
-<td align="center">time:0.027s</td>
-<td align="center">time:0.028s</td>
+<tbody>
+<tr>
+<td style="text-align:center">1e2</td>
+<td style="text-align:center">time:0.027s</td>
+<td style="text-align:center">time:0.028s</td>
 </tr>
 <tr>
-<td align="center">1e4</td>
-<td align="center">time:0.026s</td>
-<td align="center">time:0.153s</td>
+<td style="text-align:center">1e4</td>
+<td style="text-align:center">time:0.026s</td>
+<td style="text-align:center">time:0.153s</td>
 </tr>
 <tr>
-<td align="center">1e6</td>
-<td align="center">time:0.540s</td>
-<td align="center">time:0.737s</td>
+<td style="text-align:center">1e6</td>
+<td style="text-align:center">time:0.540s</td>
+<td style="text-align:center">time:0.737s</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <ul>
 <li>在完全随机数据下, <code>AVLTree</code> 性能优于 <code>SplayTree</code>.</li>
 <li>由于数据的随机性, <code>SplayTree</code> 数据访问的局部性差, 缓存策略效果不大, 其每次操作都需进行 $O(\log n)$ 次的旋转, 性能不如 <code>AVLTree</code>. 随着数据规模的增大, <code>AVLTree</code> 的性能优势逐渐扩大.</li>
 </ul>
 <h4 id="2-generator-2-cpp-数据"><a href="#2-generator-2-cpp-数据" class="headerlink" title="2. generator_2.cpp 数据"></a>2. <code>generator_2.cpp</code> 数据</h4><p>对应于 <code>04.in</code> ~ <code>09.in</code>.</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="center">数据规模</th>
-<th align="center">AVL</th>
-<th align="center">Splay</th>
+<th style="text-align:center">数据规模</th>
+<th style="text-align:center">AVL</th>
+<th style="text-align:center">Splay</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">1e2(8:2)</td>
-<td align="center">time:0.022s</td>
-<td align="center">time:0.015s</td>
+<tbody>
+<tr>
+<td style="text-align:center">1e2(8:2)</td>
+<td style="text-align:center">time:0.022s</td>
+<td style="text-align:center">time:0.015s</td>
 </tr>
 <tr>
-<td align="center">1e2(6:4)</td>
-<td align="center">time:0.021s</td>
-<td align="center">time:0.015s</td>
+<td style="text-align:center">1e2(6:4)</td>
+<td style="text-align:center">time:0.021s</td>
+<td style="text-align:center">time:0.015s</td>
 </tr>
 <tr>
-<td align="center">1e4(8:2)</td>
-<td align="center">time:0.026s</td>
-<td align="center">time:0.023s</td>
+<td style="text-align:center">1e4(8:2)</td>
+<td style="text-align:center">time:0.026s</td>
+<td style="text-align:center">time:0.023s</td>
 </tr>
 <tr>
-<td align="center">1e4(6:4)</td>
-<td align="center">time:0.025s</td>
-<td align="center">time:0.020s</td>
+<td style="text-align:center">1e4(6:4)</td>
+<td style="text-align:center">time:0.025s</td>
+<td style="text-align:center">time:0.020s</td>
 </tr>
 <tr>
-<td align="center">1e6(8:2)</td>
-<td align="center">time:1.455s</td>
-<td align="center">time:1.730s</td>
+<td style="text-align:center">1e6(8:2)</td>
+<td style="text-align:center">time:1.455s</td>
+<td style="text-align:center">time:1.730s</td>
 </tr>
 <tr>
-<td align="center">1e6(6:4)</td>
-<td align="center">time:1.273s</td>
-<td align="center">time:2.057s</td>
+<td style="text-align:center">1e6(6:4)</td>
+<td style="text-align:center">time:1.273s</td>
+<td style="text-align:center">time:2.057s</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <ul>
 <li>在先插入后删除数据下, 数据规模较小时 <code>SplayTree</code> 性能占优, 数据规模较大时 <code>AVLTree</code> 性能占优.</li>
 <li>数据规模较小时, 两种数据结构插入与删除操作的效率相近, <code>SplayTree</code> 性能略占优; 数据规模较大时, <code>AVLTree</code> 相较 <code>SplayTree</code> 在删除操作的优势体现的更为明显.</li>
 </ul>
 <h4 id="3-generator-3-cpp-数据"><a href="#3-generator-3-cpp-数据" class="headerlink" title="3. generator_3.cpp 数据"></a>3. <code>generator_3.cpp</code> 数据</h4><p>对应于 <code>10.in</code> ~ <code>15.in</code>.</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="center">数据规模</th>
-<th align="center">AVL</th>
-<th align="center">Splay</th>
+<th style="text-align:center">数据规模</th>
+<th style="text-align:center">AVL</th>
+<th style="text-align:center">Splay</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">1e2(8:2)</td>
-<td align="center">time:0.021s</td>
-<td align="center">time:0.023s</td>
+<tbody>
+<tr>
+<td style="text-align:center">1e2(8:2)</td>
+<td style="text-align:center">time:0.021s</td>
+<td style="text-align:center">time:0.023s</td>
 </tr>
 <tr>
-<td align="center">1e2(2:8)</td>
-<td align="center">time:0.027s</td>
-<td align="center">time:0.026s</td>
+<td style="text-align:center">1e2(2:8)</td>
+<td style="text-align:center">time:0.027s</td>
+<td style="text-align:center">time:0.026s</td>
 </tr>
 <tr>
-<td align="center">1e4(8:2)</td>
-<td align="center">time:0.025s</td>
-<td align="center">time:0.024s</td>
+<td style="text-align:center">1e4(8:2)</td>
+<td style="text-align:center">time:0.025s</td>
+<td style="text-align:center">time:0.024s</td>
 </tr>
 <tr>
-<td align="center">1e4(2:8)</td>
-<td align="center">time:0.025s</td>
-<td align="center">time:0.026s</td>
+<td style="text-align:center">1e4(2:8)</td>
+<td style="text-align:center">time:0.025s</td>
+<td style="text-align:center">time:0.026s</td>
 </tr>
 <tr>
-<td align="center">1e6(8:2)</td>
-<td align="center">time:1.232s</td>
-<td align="center">time:1.512s</td>
+<td style="text-align:center">1e6(8:2)</td>
+<td style="text-align:center">time:1.232s</td>
+<td style="text-align:center">time:1.512s</td>
 </tr>
 <tr>
-<td align="center">1e6(2:8)</td>
-<td align="center">time:0.739s</td>
-<td align="center">time:1.288s</td>
+<td style="text-align:center">1e6(2:8)</td>
+<td style="text-align:center">time:0.739s</td>
+<td style="text-align:center">time:1.288s</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <ul>
 <li>在先插入后删除数据下, 数据规模较小时 <code>AVLTree</code> 性能略占优, 数据规模较大时 <code>AVLTree</code> 性能明显占优.</li>
 <li>数据规模较小时, <code>AVLTree</code> 的性能略微优于 <code>SplayTree</code>. 随着数据规模的增大, 数据访问的局部性下降, <code>AVLTree</code> 和 <code>SplayTree</code> 性能均略微下降; 由于 <code>SplayTree</code> 每次操作都需进行 $O(\log n)$ 次的旋转, 受到的影响较大, 因此 <code>AVLTree</code> 性能明显占优.</li>
 </ul>
 <h4 id="4-generator-4-cpp-数据"><a href="#4-generator-4-cpp-数据" class="headerlink" title="4. generator_4.cpp 数据"></a>4. <code>generator_4.cpp</code> 数据</h4><p>对应于 <code>16.in</code> ~ <code>21.in</code>.</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="center">数据规模</th>
-<th align="center">AVL</th>
-<th align="center">Splay</th>
+<th style="text-align:center">数据规模</th>
+<th style="text-align:center">AVL</th>
+<th style="text-align:center">Splay</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">1e2(8:2)</td>
-<td align="center">time:0.021s</td>
-<td align="center">time:0.020s</td>
+<tbody>
+<tr>
+<td style="text-align:center">1e2(8:2)</td>
+<td style="text-align:center">time:0.021s</td>
+<td style="text-align:center">time:0.020s</td>
 </tr>
 <tr>
-<td align="center">1e2(2:8)</td>
-<td align="center">time:0.021s</td>
-<td align="center">time:0.022s</td>
+<td style="text-align:center">1e2(2:8)</td>
+<td style="text-align:center">time:0.021s</td>
+<td style="text-align:center">time:0.022s</td>
 </tr>
 <tr>
-<td align="center">1e4(8:2)</td>
-<td align="center">time:0.026s</td>
-<td align="center">time:0.023s</td>
+<td style="text-align:center">1e4(8:2)</td>
+<td style="text-align:center">time:0.026s</td>
+<td style="text-align:center">time:0.023s</td>
 </tr>
 <tr>
-<td align="center">1e4(2:8)</td>
-<td align="center">time:0.025s</td>
-<td align="center">time:0.024s</td>
+<td style="text-align:center">1e4(2:8)</td>
+<td style="text-align:center">time:0.025s</td>
+<td style="text-align:center">time:0.024s</td>
 </tr>
 <tr>
-<td align="center">1e6(8:2)</td>
-<td align="center">time:1.094s</td>
-<td align="center">time:1.073s</td>
+<td style="text-align:center">1e6(8:2)</td>
+<td style="text-align:center">time:1.094s</td>
+<td style="text-align:center">time:1.073s</td>
 </tr>
 <tr>
-<td align="center">1e6(2:8)</td>
-<td align="center">time:0.358s</td>
-<td align="center">time:0.276s</td>
+<td style="text-align:center">1e6(2:8)</td>
+<td style="text-align:center">time:0.358s</td>
+<td style="text-align:center">time:0.276s</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <ul>
 <li>在先插入后局部查找数据下, 数据规模较小时两种数据结构性能相近, 数据规模较大时 <code>SplayTree</code> 性能略占优.</li>
 <li><code>SplayTree</code> 的理想优势在于数据访问的局部性, 在连续局部查找下, 搜索的数据越发集中, 随着数据规模的增大与查找操作比例的提高, <code>SplayTree</code> 的优势逐渐体现.</li>
@@ -1095,7 +1106,7 @@ srand((int)time(0));<span aria-hidden="true" class="line-numbers-rows"><span></s
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">85k</span>
+                        class="white-color">73k</span>
             
             
             
