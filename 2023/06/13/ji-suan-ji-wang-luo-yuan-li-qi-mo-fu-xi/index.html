@@ -1,0 +1,2137 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="计算机网络原理 期末复习, Endeavor">
+    <meta name="description" content="Computer Network Final Notes">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>计算机网络原理 期末复习 | Endeavor</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+    <style>
+        body{
+            background-image: url(https://s2.loli.net/2023/08/15/K54zSXytBfVcnZm.png);
+            background-repeat:no-repeat;
+            background-size: 100% 100%;
+            background-attachment:fixed;
+        }
+    </style>
+
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Endeavor" type="application/atom+xml">
+</head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Endeavor</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/GifExplorer-docs" class="waves-effect waves-light">
+      
+      <i class="fas fa-film" style="zoom: 0.6;"></i>
+      
+      <span>GifDocs</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/sast-summer-training-2023" class="waves-effect waves-light">
+      
+      <i class="fas fa-book" style="zoom: 0.6;"></i>
+      
+      <span>SkillDocs</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Endeavor</div>
+        <div class="logo-desc">
+            
+            Blog of Chengsx
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/GifExplorer-docs" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-film"></i>
+			
+			GifDocs
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/sast-summer-training-2023" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-book"></i>
+			
+			SkillDocs
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/chengsx21/" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/chengsx21/" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">计算机网络原理 期末复习</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/CS/">
+                                <span class="chip bg-color">CS</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/CS/" class="post-category">
+                                CS
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-06-13
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2023-09-22
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    15 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Computer-Network-Final-Notes"><a href="#Computer-Network-Final-Notes" class="headerlink" title="Computer Network Final Notes"></a>Computer Network Final Notes</h1><blockquote>
+<p><em>Some useful (maybe) facts are first shown.</em></p>
+</blockquote>
+<ul>
+<li><p><strong>Protocal Stack</strong></p>
+  <div align="center"><img src="/pic/136.png" width="100%" height="100%"></div>
+</li>
+<li><p><strong>Turing Award</strong></p>
+<ul>
+<li><strong>Bob Metcalfe</strong>: Father of Ethernet</li>
+<li><strong>Vinton G. Cerf &amp; Robert E. Kahn</strong>: TCP/IP</li>
+<li><strong>Tim Berners-Lee</strong>: Web &amp; HTTP</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><em>Now comes the crazy things!</em></p>
+</blockquote>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><h3 id="Connect-end-systems-to-edge-router"><a href="#Connect-end-systems-to-edge-router" class="headerlink" title="Connect end systems to edge router"></a>Connect end systems to edge router</h3><ul>
+<li><strong>Residential</strong> access networks</li>
+<li><strong>Institutional</strong> access networks (school, company)</li>
+<li><strong>Mobile</strong> access networks (WiFi, 4G/5G)<ul>
+<li><strong>Wireless local</strong> area networks<ul>
+<li>802.11 (WiFi)</li>
+</ul>
+</li>
+<li><strong>Wide-area cellular</strong> access networks<ul>
+<li>4G cellular networks</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Links-physical-media"><a href="#Links-physical-media" class="headerlink" title="Links physical media"></a>Links physical media</h3><ul>
+<li><strong>Twisted pair</strong> (TP)</li>
+<li><strong>Coaxial cable</strong></li>
+<li><strong>Fiber optic cable</strong><ul>
+<li>high-speed operation</li>
+<li><strong>low error rate</strong></li>
+</ul>
+</li>
+<li><strong>Wireless radio</strong><ul>
+<li>no physical “wire”</li>
+<li><strong>broadcast</strong>, “half-duplex”</li>
+<li><strong>propagation environment effects</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="Packet-switching"><a href="#Packet-switching" class="headerlink" title="Packet switching"></a>Packet switching</h3><ul>
+<li><strong>On-demand allocation</strong><ul>
+<li>Store-and-forward</li>
+<li>Great for “bursty” data</li>
+<li><strong>Resource sharing</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="Circuit-switching"><a href="#Circuit-switching" class="headerlink" title="Circuit switching"></a>Circuit switching</h3><ul>
+<li><strong>Reserved resources</strong><ul>
+<li>Dedicated, <strong>no resource sharing</strong></li>
+<li>FDMA and TDMA</li>
+</ul>
+</li>
+</ul>
+<h3 id="Network-of-networks"><a href="#Network-of-networks" class="headerlink" title="Network of networks"></a>Network of networks</h3><ul>
+<li><p><strong>Global Transit ISP</strong></p>
+</li>
+<li><p><strong>Content Provider Network</strong> (<strong>bypassing tier-1, regional ISPs</strong>)</p>
+</li>
+<li><p><strong>Internet Exchange Point</strong></p>
+</li>
+<li><p>Regional ISP</p>
+</li>
+<li><p>Access ISP</p>
+  <div align="center"><img src="/pic/137.png" width="100%" height="100%"></div>
+
+</li>
+</ul>
+<h3 id="Performance"><a href="#Performance" class="headerlink" title="Performance"></a>Performance</h3><ul>
+<li><p>Delay:</p>
+<script type="math/tex; mode=display">
+  d_{nodal}=d_{proc}+d_{queue}+d_{trans}+d_{prop}</script></li>
+<li><p><strong>Throughput</strong>: <strong>bottleneck link</strong> on end-end path that constrains throughput</p>
+</li>
+</ul>
+<h3 id="Security"><a href="#Security" class="headerlink" title="Security"></a>Security</h3><ul>
+<li><strong>Packet Sniffing</strong>:<ul>
+<li><strong>broadcast</strong> media (shared Ethernet, wireless)</li>
+<li>promiscuous network interface reads/records all packets</li>
+</ul>
+</li>
+<li><strong>IP spoofing</strong>:<ul>
+<li>injection of packet with false source address</li>
+</ul>
+</li>
+<li><strong>Denial of Service</strong>:<ul>
+<li>overwhelme resource with bogus traffic</li>
+<li>make resources (server, bandwidth) unavailable</li>
+</ul>
+</li>
+</ul>
+<h2 id="Application-layer"><a href="#Application-layer" class="headerlink" title="Application layer"></a>Application layer</h2><h3 id="Network-app"><a href="#Network-app" class="headerlink" title="Network app"></a>Network app</h3><ul>
+<li>Run on <strong>end systems</strong></li>
+<li>Not run on <strong>network-core devices</strong></li>
+<li>(<strong>Network layer protocols</strong> in every Internet device: <strong>hosts, routers</strong>)</li>
+</ul>
+<h3 id="Client-server-paradigm"><a href="#Client-server-paradigm" class="headerlink" title="Client-server paradigm"></a>Client-server paradigm</h3><ul>
+<li>Server:<ul>
+<li>permanent IP address</li>
+<li>often in data centers, for scaling</li>
+</ul>
+</li>
+<li>Client:<ul>
+<li><strong>intermittently</strong> connected</li>
+<li><strong>dynamic IP addresses</strong></li>
+<li>do <strong>not communicate directly</strong> with each other</li>
+</ul>
+</li>
+<li>Examples: <strong>HTTP, IMAP, FTP</strong></li>
+</ul>
+<h3 id="Peer-peer-architecture"><a href="#Peer-peer-architecture" class="headerlink" title="Peer-peer architecture"></a>Peer-peer architecture</h3><ul>
+<li>Peer:<ul>
+<li><strong>intermittently</strong> connected</li>
+<li><strong>dynamic IP addresses</strong></li>
+<li>arbitrary end systems <strong>directly communicate</strong></li>
+<li><strong>self scalability</strong> – new peers bring new service capacity and service demands</li>
+</ul>
+</li>
+<li>Example: <strong>P2P file sharing</strong></li>
+</ul>
+<h3 id="TSL"><a href="#TSL" class="headerlink" title="TSL"></a>TSL</h3><ul>
+<li><strong>Application-layer protocal</strong>, Provides <strong>encrypted TCP connections</strong></li>
+</ul>
+<h3 id="HTTP-Hypertext-Transfer-Protocol"><a href="#HTTP-Hypertext-Transfer-Protocol" class="headerlink" title="HTTP (Hypertext Transfer Protocol)"></a>HTTP (Hypertext Transfer Protocol)</h3><ul>
+<li><p>Web’s <strong>Application-layer protocol</strong>, use <strong>TCP</strong></p>
+  <div align="center"><img src="/pic/138.png" width="100%" height="100%"></div>
+</li>
+<li><p><strong>Stateless</strong>: server maintains no information about past client requests</p>
+</li>
+<li><p>Developments:</p>
+<ul>
+<li>HTTP 1.1:<ul>
+<li><strong>persistent</strong> HTTP</li>
+<li>multiple, pipelined GETs over single TCP connection</li>
+<li><strong>FCFS</strong> scheduling, <strong>HOL</strong> <strong>blocking</strong></li>
+<li>loss recovery stalls object transmission</li>
+</ul>
+</li>
+<li>HTTP/2:<ul>
+<li>transmission order based on client-specified <strong>priority</strong>, interleaved</li>
+<li>divide objects into frames, <strong>mitigate HOL blocking</strong></li>
+<li>loss recovery stalls object transmission</li>
+</ul>
+</li>
+<li>HTTP/3:<ul>
+<li>adds <strong>security</strong>, per object error- &amp; congestion-control (more pipelining) <strong>over UDP</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h3><ul>
+<li>Components:<ul>
+<li>header line of <strong>HTTP response message</strong></li>
+<li>header line in next <strong>HTTP request message</strong></li>
+<li>file kept on <strong>user’s host</strong>, managed by user’s browser</li>
+<li>back-end <strong>database at web site</strong></li>
+</ul>
+</li>
+<li><div align="center"><img src="/pic/139.png" width="100%" height="100%"></div></li>
+<li>Used for:<ul>
+<li>authorization</li>
+<li>recommendations</li>
+<li>user session state</li>
+</ul>
+</li>
+<li><strong>GDPR</strong> (EU General Data Protection Regulation)</li>
+</ul>
+<h3 id="Web-caches"><a href="#Web-caches" class="headerlink" title="Web caches"></a>Web caches</h3><ul>
+<li>Acts as <strong>both client and server</strong></li>
+<li><div align="center"><img src="/pic/140.png" width="100%" height="100%"></div></li>
+<li>Browser caching: <strong>Conditional GET</strong></li>
+<li>Pros:<ul>
+<li>reduce <strong>end-end response time</strong></li>
+<li>reduce <strong>traffic</strong> on institution’s <strong>access link</strong></li>
+<li>enables content providers to <strong>effectively deliver content</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="SMTP-Simple-Mail-Transfer-Protocol"><a href="#SMTP-Simple-Mail-Transfer-Protocol" class="headerlink" title="SMTP (Simple Mail Transfer Protocol)"></a>SMTP (Simple Mail Transfer Protocol)</h3><ul>
+<li>E-mail’s <strong>Application-layer protocol</strong>, use <strong>TCP</strong></li>
+<li>Use <strong>persistent connections</strong></li>
+<li>Comparison:<ul>
+<li>HTTP<ul>
+<li>client <strong>pull</strong></li>
+<li>each object encapsulated in its own response message</li>
+</ul>
+</li>
+<li>SMTP<ul>
+<li>client <strong>push</strong></li>
+<li>multiple objects sent in multipart message</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Mail access protocol</strong>: retrieval from server<ul>
+<li><strong>IMAP</strong> (Internet Mail Access Protocol)</li>
+<li><strong>POP</strong></li>
+<li><strong>HTTP</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="DNS-Domain-Name-System"><a href="#DNS-Domain-Name-System" class="headerlink" title="DNS (Domain Name System)"></a>DNS (Domain Name System)</h3><ul>
+<li><strong>Application-layer protocol</strong>, <strong>distributed</strong> and <strong>hierarchical</strong> database</li>
+<li><p>Services:</p>
+<ul>
+<li>hostname to IP address translation</li>
+<li>host aliasing<ul>
+<li>canonical, alias names</li>
+</ul>
+</li>
+<li>mail server aliasing</li>
+<li><strong>load distribution</strong><ul>
+<li><strong>replicated IP addresses</strong> correspond to <strong>one name</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Decentralized</strong>:</p>
+<ul>
+<li><strong>single point of failure</strong></li>
+<li><strong>traffic volume</strong></li>
+<li><strong>distant</strong> centralized database</li>
+<li><strong>maintenance</strong></li>
+</ul>
+</li>
+<li><strong>DNSSEC</strong> – provides security</li>
+<li><strong>ICANN</strong> - manages root DNS domain</li>
+<li><strong>Local</strong> DNS server:<ul>
+<li>local cache of recent translation pairs</li>
+<li>doesn’t strictly belong to hierarchy</li>
+<li><strong>forwarding request into DNS hierarchy</strong></li>
+<li>TLD servers typically cached, <strong>allowing root server bypass</strong></li>
+</ul>
+</li>
+<li><strong>Iterated</strong> query &amp; <strong>Recursive</strong> query</li>
+<li>DNS <strong>records</strong>:<ul>
+<li>type = A<ul>
+<li>hostname - IP address</li>
+</ul>
+</li>
+<li>type = CNAME<ul>
+<li>alias name - canonical name</li>
+</ul>
+</li>
+<li>type = NS<ul>
+<li>domain - hostname of authoritative name server</li>
+</ul>
+</li>
+<li>type = MX<ul>
+<li>name - name of SMTP mail server</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Example</strong>:<ul>
+<li><strong>register</strong> name at DNS registrar<ul>
+<li>provide names, IP addresses of authoritative name server</li>
+<li>inserts NS, A RRs into .com TLD server<ul>
+<li>(networkutopia.com, dns1.networkutopia.com, NS)</li>
+<li>(dns1.networkutopia.com, 212.212.212.1, A)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>create authoritative server locally</strong> with IP address 212.212.212.1<ul>
+<li>type A record for www.networkuptopia.com</li>
+<li>type MX record for networkutopia.com</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="P2P"><a href="#P2P" class="headerlink" title="P2P"></a>P2P</h3><ul>
+<li><strong>File distribution time</strong>:<ul>
+<li>client-server: $\max\{NF/u_s,F/d_{min}\}$</li>
+<li>P2P: $\max\{F/u_s,F/d_{min},NF/(u_s+\sum u_i)\}$</li>
+<li><div align="center"><img src="/pic/141.png" width="100%" height="100%"></div></li>
+</ul>
+</li>
+<li>File distribution: <strong>BitTorrent</strong><ul>
+<li>tracker</li>
+<li>torrent</li>
+<li>churn</li>
+<li><strong>Sending chunks: tit-for-tat</strong><ul>
+<li>sends chunks to four peers sending her chunks at highest rate </li>
+<li>other peers <strong>choked</strong></li>
+<li>every 30 secs select another peer, starts sending chunks</li>
+<li>optimistically <strong>unchoke</strong> this peer</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Video-Streaming-and-CDNs"><a href="#Video-Streaming-and-CDNs" class="headerlink" title="Video Streaming and CDNs"></a>Video Streaming and CDNs</h3><ul>
+<li>Challenges:<ul>
+<li><strong>server-to-client bandwidth varies</strong></li>
+<li><strong>changing network congestion levels</strong></li>
+<li><strong>packet loss, delay due to congestion</strong></li>
+</ul>
+</li>
+<li><strong>DASH</strong> (Dynamic, Adaptive Streaming over HTTP)<ul>
+<li><strong>Application-layer protocol</strong>, use <strong>HTTP</strong> and <strong>TCP</strong></li>
+<li>Server:<ul>
+<li>divides video file into <strong>chunks</strong>, encoded at different <strong>rates</strong></li>
+<li>files <strong>replicated</strong> in various <strong>CDN nodes</strong></li>
+<li>provides <strong>URLs</strong> for different chunks (<strong>manifest file</strong>)</li>
+</ul>
+</li>
+<li>Client:<ul>
+<li>periodically <strong>estimates server-to-client bandwidth</strong></li>
+<li><strong>consulting manifest</strong>, requests one chunk at a time </li>
+<li>choose rates at <strong>different time</strong> and from <strong>different servers</strong></li>
+<li><strong>“Intelligence” at client</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>single, large “mega-server”:</strong><ul>
+<li><strong>single point of failure</strong></li>
+<li>point of network <strong>congestion</strong></li>
+<li><strong>long path</strong> to distant clients</li>
+</ul>
+</li>
+<li><strong>CDN</strong>:<ul>
+<li>multiple copies of videos at <strong>geographically distributed sites</strong><ul>
+<li><strong>enter deep</strong>: push servers deep into many access networks</li>
+<li><strong>bring home</strong>: smaller number of larger clusters in POPs near access nets</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Transport-Layer"><a href="#Transport-Layer" class="headerlink" title="Transport Layer"></a>Transport Layer</h2><h3 id="Services-not-available"><a href="#Services-not-available" class="headerlink" title="Services not available"></a>Services not available</h3><ul>
+<li><strong>Delay</strong> guarantees</li>
+<li><strong>Bandwidth</strong> guarantees</li>
+</ul>
+<h3 id="Demultiplexing"><a href="#Demultiplexing" class="headerlink" title="Demultiplexing"></a>Demultiplexing</h3><ul>
+<li><strong>Connectionless</strong>:<ul>
+<li>UDP: using destination <strong>port number</strong> (only)</li>
+</ul>
+</li>
+<li><strong>Connection-oriented</strong>:<ul>
+<li>TCP: using <strong>4-tuple</strong>, <strong>IP addresses and port numbers</strong></li>
+<li>support <strong>simultaneous TCP sockets</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="UDP-User-Datagram-Protocol"><a href="#UDP-User-Datagram-Protocol" class="headerlink" title="UDP (User Datagram Protocol)"></a>UDP (User Datagram Protocol)</h3><div align="center"><img src="/pic/142.png" width="100%" height="100%"></div>
+
+<ul>
+<li>Pros:<ul>
+<li><strong>No connection establishment</strong> (which <strong>adds RTT delay</strong>)</li>
+<li><strong>No connection state</strong> at sender, receiver</li>
+<li><strong>Small header size</strong></li>
+<li><strong>No congestion control</strong>, blast away as fast as desired</li>
+<li>Helps with <strong>reliability</strong> (checksum)</li>
+</ul>
+</li>
+<li><strong>Used by</strong>:<ul>
+<li>streaming multimedia apps</li>
+<li><strong>DNS</strong></li>
+<li><strong>DHCP</strong></li>
+<li><strong>SNMP</strong></li>
+<li><strong>HTTP/3</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="RDT-Reliable-Data-Transfer-Protocol"><a href="#RDT-Reliable-Data-Transfer-Protocol" class="headerlink" title="RDT (Reliable Data Transfer Protocol)"></a>RDT (Reliable Data Transfer Protocol)</h3><ul>
+<li><p><strong>Stop and Wait</strong>:</p>
+  <div align="center"><img src="/pic/143.png" width="100%" height="100%"></div>
+
+  <div align="center"><img src="/pic/144.png" width="100%" height="100%"></div>
+
+  <div align="center"><img src="/pic/145.png" width="100%" height="100%"></div>
+</li>
+<li><p><strong>Go-Back-N</strong>:</p>
+  <div align="center"><img src="/pic/146.png" width="100%" height="100%"></div>
+</li>
+<li><p><strong>Selective repeat</strong>:</p>
+  <div align="center"><img src="/pic/147.png" width="100%" height="100%"></div>
+
+</li>
+</ul>
+<h3 id="TCP-Transfer-Control-Protocol"><a href="#TCP-Transfer-Control-Protocol" class="headerlink" title="TCP (Transfer Control Protocol)"></a>TCP (Transfer Control Protocol)</h3><div align="center"><img src="/pic/148.png" width="100%" height="100%"></div>
+
+<ul>
+<li><p>Retransmission:</p>
+  <div align="center"><img src="/pic/149.png" width="100%" height="100%"></div>
+
+  <div align="center"><img src="/pic/150.png" width="100%" height="100%"></div>
+</li>
+<li><p><strong>Flow control</strong>:</p>
+<ul>
+<li>network layer <strong>delivers</strong> data <strong>faster</strong> than application layer <strong>removes</strong> data from socket buffers</li>
+<li><strong>receiver “advertises” free buffer space</strong> in <strong>rwnd</strong> in TCP header</li>
+<li><strong>sender limits amount of unACKed data</strong> to received <strong>rwnd</strong></li>
+</ul>
+</li>
+<li><p><strong>Connection management</strong>:</p>
+<ul>
+<li><p>2-way handshake:</p>
+<ul>
+<li><strong>half open connection</strong> (no client)</li>
+<li><strong>dup data accepted</strong></li>
+</ul>
+</li>
+<li><p>3-way handshake:</p>
+  <div align="center"><img src="/pic/151.png" width="100%" height="100%"></div>
+
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Congestion-control"><a href="#Congestion-control" class="headerlink" title="Congestion control"></a>Congestion control</h3><ul>
+<li><p><strong>Costs</strong> of congestion: </p>
+<ul>
+<li><strong>needed retransmissions</strong>: more work for given receiver throughput</li>
+<li><strong>unneeded retransmissions</strong>: link carries multiple copies of a packet</li>
+<li><p><strong>packet dropped</strong>: upstream capacity and buffering wasted</p>
+<div align="center"><img src="/pic/152.png" width="100%" height="100%"></div>
+</li>
+</ul>
+</li>
+<li><p><strong>End-end</strong> congestion control:</p>
+<ul>
+<li><strong>no explicit feedback</strong> from network</li>
+<li>congestion <strong>inferred</strong> from <strong>observed loss, delay</strong></li>
+<li>taken by: <strong>TCP</strong></li>
+</ul>
+</li>
+<li><p><strong>Network-assisted</strong> congestion control:</p>
+<ul>
+<li><strong>router</strong>s provide <strong>direct feedback</strong> to hosts</li>
+<li>taken by: <strong>TCP ECN, ATM, DECbit</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="AIMD-Additive-Increase-Multiplicative-Decrease"><a href="#AIMD-Additive-Increase-Multiplicative-Decrease" class="headerlink" title="AIMD (Additive Increase Multiplicative Decrease)"></a>AIMD (Additive Increase Multiplicative Decrease)</h3><ul>
+<li><p><strong>Multiplicative decrease</strong>:</p>
+<ul>
+<li><strong>Cut in half</strong> on loss detected by triple duplicate ACK (<strong>TCP Reno</strong>)</li>
+<li><strong>Cut to 1 MSS</strong> when loss detected by timeout (<strong>TCP Tahoe</strong>)</li>
+</ul>
+</li>
+<li><p>(1) TCP <strong>slow start</strong>:</p>
+  <div align="center"><img src="/pic/153.png" width="100%" height="100%"></div>
+</li>
+<li><p>(2) TCP <strong>congestion avoidance</strong>:</p>
+  <div align="center"><img src="/pic/154.png" width="100%" height="100%"></div>
+</li>
+<li><p><strong>AIMD Summary</strong>:</p>
+  <div align="center"><img src="/pic/155.png" width="100%" height="100%"></div>
+
+</li>
+</ul>
+<h3 id="Other-congestion-control-methods"><a href="#Other-congestion-control-methods" class="headerlink" title="Other congestion control methods"></a>Other congestion control methods</h3><ul>
+<li><p><strong>TCP CUBIC</strong></p>
+<ul>
+<li><p>Increase W as <strong>function of cube distance</strong> between time and K</p>
+  <div align="center"><img src="/pic/156.png" width="100%" height="100%"></div>
+</li>
+</ul>
+</li>
+<li><p><strong>Delay-based TCP congestion control</strong></p>
+<ul>
+<li>Minimum observed RTT (uncongested path)</li>
+<li>Measured throughput <strong>close to</strong> uncongested throughput:<ul>
+<li><strong>increase cwnd linearly</strong></li>
+</ul>
+</li>
+<li>Measured throughput <strong>far below</strong> uncongested throughout:<ul>
+<li><strong>decrease cwnd linearly</strong></li>
+</ul>
+</li>
+<li><strong>Without inducing/forcing loss</strong></li>
+</ul>
+</li>
+<li><p><strong>ECN</strong> (Explicit congestion notification)</p>
+<ul>
+<li><strong>congestion indication</strong> carried to <strong>destination</strong></li>
+<li><strong>destination</strong> sets <strong>ECE bit</strong> on <strong>ACK segment</strong> to <strong>notify sender</strong></li>
+<li>involves <strong>IP</strong> (header <strong>ECN bit</strong>) and <strong>TCP</strong> (header <strong>C, E bit</strong>)</li>
+</ul>
+</li>
+</ul>
+<h3 id="QUIC-Quick-UDP-Internet-Connections"><a href="#QUIC-Quick-UDP-Internet-Connections" class="headerlink" title="QUIC (Quick UDP Internet Connections)"></a>QUIC (Quick UDP Internet Connections)</h3><ul>
+<li><strong>Application-layer protocol</strong>, use <strong>UDP</strong><ul>
+<li>increase performance of HTTP</li>
+<li>deployed on many Google servers, apps</li>
+<li>parallelism streams, <strong>no HOL blocking</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="Network-Layer-Data-Plane"><a href="#Network-Layer-Data-Plane" class="headerlink" title="Network Layer: Data Plane"></a>Network Layer: Data Plane</h2><h3 id="Input-port-functions"><a href="#Input-port-functions" class="headerlink" title="Input port functions"></a>Input port functions</h3><div align="center"><img src="/pic/157.png" width="100%" height="100%"></div>
+
+<ul>
+<li><strong>Decentralized switching</strong>: <ul>
+<li>Using <strong>header field values</strong>, <strong>lookup output port</strong> using <strong>forwarding table</strong> in memory (“<strong>match plus action</strong>”)</li>
+<li><strong>destination-based forwarding</strong>: based on destination <strong>IP address</strong></li>
+<li><strong>generalized forwarding</strong>: based on any set of <strong>header field values</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="Switching-fabrics"><a href="#Switching-fabrics" class="headerlink" title="Switching fabrics:"></a><strong>Switching fabrics</strong>:</h3><ul>
+<li>Switching via <strong>memory</strong>:<ul>
+<li>speed limited by memory bandwidth (2 bus crossings per gram)</li>
+</ul>
+</li>
+<li>Switching via <strong>bus</strong>:<ul>
+<li>switching speed limited by bus bandwidth</li>
+</ul>
+</li>
+<li><strong>Switching via interconnection network</strong>:<ul>
+<li>n$\times$n switch from multiple stages of smaller switches</li>
+</ul>
+</li>
+</ul>
+<h3 id="Output-port-functions"><a href="#Output-port-functions" class="headerlink" title="Output port functions"></a>Output port functions</h3><div align="center"><img src="/pic/158.png" width="100%" height="100%"></div>
+
+<ul>
+<li><strong>Queueing</strong> and <strong>loss</strong> due to output port <strong>buffer overflow</strong></li>
+<li>Buffer management: <strong>drop</strong> and <strong>marking</strong></li>
+<li><strong>Packet scheduling</strong>: which packet to send next on link<ul>
+<li><strong>FCFS</strong></li>
+<li><strong>Priority</strong>: FCFS within priority class</li>
+<li><strong>Round Robin</strong> (RR): cyclically, repeatedly scans class queues</li>
+<li><strong>Weighted Fair Queueing</strong> (WFQ): minimum bandwidth guarantee</li>
+</ul>
+</li>
+</ul>
+<h3 id="IP-addressing"><a href="#IP-addressing" class="headerlink" title="IP addressing"></a>IP addressing</h3><div align="center"><img src="/pic/159.png" width="100%" height="100%"></div>
+
+<ul>
+<li><strong>Subnets</strong>: device interfaces reaching each other <strong>without passing a router</strong></li>
+<li><strong>CIDR</strong> (Classless InterDomain Routing)</li>
+<li><strong>DHCP</strong> (Dynamic Host Configuration Protocol)<ul>
+<li><strong>Application-layer protocal</strong>, use <strong>UDP</strong></li>
+<li>Pros:<ul>
+<li>can <strong>renew</strong> its lease on address in use</li>
+<li><strong>allows reuse</strong> of addresses (hold address while connected/on)</li>
+<li><strong>support for mobile</strong> users who join/leave network </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Hierarchical addressing</strong>:<ul>
+<li><strong>route aggregation</strong></li>
+<li>allows efficient advertisement of routing information</li>
+</ul>
+</li>
+<li><strong>ICANN</strong>: allocates IP addresses</li>
+</ul>
+<h3 id="NAT-Network-Address-Translation"><a href="#NAT-Network-Address-Translation" class="headerlink" title="NAT (Network Address Translation)"></a>NAT (Network Address Translation)</h3><ul>
+<li>Devices in <strong>local network</strong> share <strong>one IPv4 address</strong> as outside is concerned</li>
+<li>Pros:<ul>
+<li>just <strong>one IP address</strong> needed from provider ISP for <strong>all devices</strong></li>
+<li><strong>change address</strong> of host in local network <strong>without notifying outside</strong> </li>
+<li><strong>change ISP</strong> without changing addresses of devices in local network</li>
+<li>security: devices inside local net <strong>not directly addressable</strong> by outside</li>
+</ul>
+</li>
+<li>Remember in <strong>NAT translation table</strong></li>
+<li>Violates <strong>end-to-end argument</strong> (<strong>port manipulation</strong> by <strong>network-layer</strong>)</li>
+</ul>
+<h3 id="Tunneling"><a href="#Tunneling" class="headerlink" title="Tunneling"></a>Tunneling</h3><div align="center"><img src="/pic/160.png" width="100%" height="100%"></div>
+
+<ul>
+<li><p><strong>IPv6 datagram</strong> as <strong>payload</strong> in IPv4 datagram <strong>among IPv4 routers</strong></p>
+  <div align="center"><img src="/pic/161.png" width="100%" height="100%"></div>
+
+</li>
+</ul>
+<h3 id="Generalized-forwarding"><a href="#Generalized-forwarding" class="headerlink" title="Generalized forwarding"></a>Generalized forwarding</h3><ul>
+<li><strong>“match plus action”</strong> abstraction: match <strong>bits in packet header</strong> in <strong>any layers</strong>, take action<ul>
+<li>matching over many fields (<strong>link-, network-, transport-layer</strong>)</li>
+<li>drop, forward, modify, or send matched packet to controller</li>
+<li>“program” network-wide behaviors</li>
+</ul>
+</li>
+</ul>
+<h3 id="Architectural-Principles-of-the-Internet"><a href="#Architectural-Principles-of-the-Internet" class="headerlink" title="Architectural Principles of the Internet"></a>Architectural Principles of the Internet</h3><ul>
+<li>Three cornerstone beliefs:<ul>
+<li><strong>simple connectivity</strong></li>
+<li><strong>IP protocol: that narrow waist</strong></li>
+<li><strong>intelligence, complexity at network edge</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="Network-Layer-Control-Plane"><a href="#Network-Layer-Control-Plane" class="headerlink" title="Network Layer: Control Plane"></a>Network Layer: Control Plane</h2><h3 id="Routing-protocols"><a href="#Routing-protocols" class="headerlink" title="Routing protocols"></a>Routing protocols</h3><ul>
+<li><strong>Link state</strong>:<ul>
+<li><strong>centralized</strong></li>
+<li><strong>iterative</strong></li>
+<li>link costs depend on <strong>traffic volume</strong>, route oscillations possible</li>
+</ul>
+</li>
+<li><strong>Distance vector</strong>:<ul>
+<li><strong>distributed</strong></li>
+<li><strong>iterative</strong></li>
+<li><strong>asynchronous</strong></li>
+<li><strong>self-stopping</strong></li>
+<li>good news travels fast, bad news travels slow (<strong>count-to-infinity</strong>)</li>
+</ul>
+</li>
+</ul>
+<h3 id="Intra-ISP-routing"><a href="#Intra-ISP-routing" class="headerlink" title="Intra-ISP routing"></a>Intra-ISP routing</h3><ul>
+<li><p>Focus on <strong>performance</strong></p>
+</li>
+<li><p><strong>Aggregate routers into regions</strong> as <strong>autonomous systems (AS)</strong></p>
+<ul>
+<li>Routers in same AS run <strong>same intra-AS protocol</strong></li>
+<li>Routers in different AS run <strong>different intra-AS protocols</strong></li>
+<li><strong>Gateways</strong> perform <strong>inter-AS as well as intra-AS routing</strong></li>
+</ul>
+</li>
+<li><p><strong>Forwarding table</strong> configured by <strong>intra- &amp; inter-AS routing algorithms</strong></p>
+</li>
+<li><p><strong>RIP</strong> (Routing Information Protocol)</p>
+<ul>
+<li><strong>Application-layer protocal</strong>, use <strong>UDP</strong></li>
+<li>classic <strong>DV</strong></li>
+<li>no longer widely used</li>
+</ul>
+</li>
+<li><p><strong>EIGRP</strong> (Enhanced Interior Gateway Routing Protocol)</p>
+<ul>
+<li><strong>Network-layer protocal</strong></li>
+<li><strong>DV</strong> based</li>
+</ul>
+</li>
+<li><p><strong>OSPF</strong> (Open Shortest Path First)</p>
+<ul>
+<li><p><strong>Network-layer protocal</strong>, use <strong>IP</strong></p>
+</li>
+<li><p><strong>LS</strong> routing</p>
+</li>
+<li><p><strong>IS-IS</strong> protocol (ISO standard) essentially same as <strong>OSPF</strong></p>
+</li>
+<li><p><strong>Hierarchical</strong>:</p>
+<ul>
+<li><strong>two-level</strong> hierarchy: local area, backbone.</li>
+<li><p>each node has detailed <strong>area topology</strong> (only direction to others)</p>
+<div align="center"><img src="/pic/162.png" width="100%" height="100%"></div>
+
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Inter-ISP-routing"><a href="#Inter-ISP-routing" class="headerlink" title="Inter-ISP routing"></a>Inter-ISP routing</h3><ul>
+<li><strong>Policy</strong> dominates over <strong>performance</strong></li>
+<li><strong>BGP</strong> (Border Gateway Protocol)<ul>
+<li><strong>Application-layer protocal</strong>, use <strong>TCP</strong></li>
+<li><strong>path vector</strong> protocol</li>
+<li><strong>policy-based</strong> routing: AS1 gateway router 1c chooses path AS3,X</li>
+<li><div align="center"><img src="/pic/163.png" width="100%" height="100%"></div></li>
+<li>Route selection:<ul>
+<li><strong>local preference</strong> value attribute: <strong>policy</strong> decision</li>
+<li><strong>shortest AS-PATH</strong></li>
+<li><strong>closest NEXT-HOP router</strong> <strong>(hot potato routing)</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="SDN-Software-defined-networking"><a href="#SDN-Software-defined-networking" class="headerlink" title="SDN (Software defined networking)"></a>SDN (Software defined networking)</h3><ul>
+<li><p><strong>Logically centralized</strong> control plane:</p>
+<ul>
+<li><strong>easier</strong> network <strong>management</strong>: avoid misconfigurations, greater flexibility of flows</li>
+<li><strong>table-based</strong> forwarding allows <strong>easier</strong> centralized “<strong>programming</strong>”</li>
+<li><strong>open implementation</strong> of control plane</li>
+</ul>
+</li>
+<li><p>Components:</p>
+<ul>
+<li>Data-plane <strong>switches</strong></li>
+<li>SDN <strong>controller</strong>: distributed for performance, scalability, robustness</li>
+<li>Network-control <strong>apps</strong>: unbundled</li>
+</ul>
+</li>
+<li><p><strong>SDN controller</strong>:</p>
+<ul>
+<li><strong>interface layer</strong> to network control apps: abstractions API</li>
+<li>network-wide <strong>state management</strong>: a distributed database</li>
+<li><strong>communication</strong>: communicate between controller and switches</li>
+</ul>
+</li>
+<li><p><strong>OpenFlow protocol</strong>:</p>
+<ul>
+<li>operates between <strong>controller and switch</strong></li>
+<li><strong>Application-layer protocal</strong>, use <strong>TCP</strong> to exchange messages</li>
+<li>distinct from <strong>OpenFlow API</strong> (specify generalized forwarding actions)</li>
+</ul>
+</li>
+<li><p>Example:</p>
+  <div align="center"><img src="/pic/164.png" width="100%" height="100%"></div>
+</li>
+<li><p><strong>ODL controller</strong>:</p>
+<ul>
+<li><strong>Service Abstraction Layer</strong>: interconnects internal, external applications and services</li>
+</ul>
+</li>
+</ul>
+<h3 id="ICMP-Internet-Control-Message-Protocol"><a href="#ICMP-Internet-Control-Message-Protocol" class="headerlink" title="ICMP (Internet Control Message Protocol)"></a>ICMP (Internet Control Message Protocol)</h3><ul>
+<li>Communicate <strong>network-level</strong> information</li>
+<li><strong>Network-layer protocal</strong>, carried in <strong>IP datagrams</strong>.</li>
+</ul>
+<h3 id="Network-management"><a href="#Network-management" class="headerlink" title="Network management"></a>Network management</h3><ul>
+<li><p>Components:</p>
+<ul>
+<li>Managing server</li>
+<li>Managed device</li>
+<li>Network management protocol</li>
+</ul>
+</li>
+<li><p><strong>SNMP</strong> (Simple Network Management Protocol):</p>
+  <div align="center"><img src="/pic/165.png" width="100%" height="100%"></div>
+
+<ul>
+<li><strong>Application-layer protocol</strong>, use <strong>UDP</strong></li>
+<li><strong>SMI</strong> (Structure of Management Information): data definition language</li>
+</ul>
+</li>
+</ul>
+<h2 id="Link-Layer-and-LANs"><a href="#Link-Layer-and-LANs" class="headerlink" title="Link Layer and LANs"></a>Link Layer and LANs</h2><h3 id="Services"><a href="#Services" class="headerlink" title="Services"></a>Services</h3><ul>
+<li>implemented in <strong>network interface card (NIC)</strong> or on a chip</li>
+<li>combination of <strong>hardware, software, firmware</strong><ul>
+<li>framing</li>
+<li><strong>link access</strong></li>
+<li><strong>reliable delivery</strong><ul>
+<li>seldom used on <strong>low bit-error links</strong></li>
+</ul>
+</li>
+<li>flow control</li>
+<li><strong>error detection &amp; correction</strong><ul>
+<li><strong>CRC</strong>: used in <strong>Ethernet</strong>, <strong>802.11 WiFi</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Multiple-Access-Protocols"><a href="#Multiple-Access-Protocols" class="headerlink" title="Multiple Access Protocols"></a>Multiple Access Protocols</h3><ul>
+<li><p>Channel Partitioning</p>
+<ul>
+<li><strong>TDMA, FDMA</strong></li>
+</ul>
+</li>
+<li><p>Random Access: detect and recover from collisions</p>
+<ul>
+<li><p><strong>ALOHA, slotted ALOHA</strong></p>
+</li>
+<li><p><strong>CSMA, CSMA/CD, CSMA/CA</strong></p>
+  <div align="center"><img src="/pic/166.png" width="100%" height="100%"></div>
+</li>
+</ul>
+</li>
+<li><p>Taking Turns</p>
+<ul>
+<li><strong>Polling, Token Passing</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="ARP-Address-Resolution-Protocol"><a href="#ARP-Address-Resolution-Protocol" class="headerlink" title="ARP (Address Resolution Protocol)"></a>ARP (Address Resolution Protocol)</h3><ul>
+<li><strong>Network-layer - Link-layer protocal</strong></li>
+<li>MAC <strong>flat address</strong>:<ul>
+<li><strong>portability</strong> </li>
+<li>move interface from one LAN to another</li>
+</ul>
+</li>
+<li>Routing <strong>within a subnet</strong> or <strong>to another subnet</strong></li>
+</ul>
+<h3 id="Ethernet"><a href="#Ethernet" class="headerlink" title="Ethernet"></a>Ethernet</h3><ul>
+<li><p>Physical topology:</p>
+<ul>
+<li>bus</li>
+<li>switched</li>
+</ul>
+</li>
+<li><p><strong>Ethernet frame</strong></p>
+  <div align="center"><img src="/pic/167.png" width="100%" height="100%"></div>
+
+<ul>
+<li>receive frame with matching destination address or with broadcast address (ARP packet), pass data in frame to network layer protocol</li>
+<li>otherwise discard frame</li>
+</ul>
+</li>
+<li><p><strong>Unreliable</strong>, <strong>connectionless</strong>, unslotted <strong>CSMA/CD with binary backoff</strong></p>
+</li>
+</ul>
+<h3 id="Switch"><a href="#Switch" class="headerlink" title="Switch"></a>Switch</h3><ul>
+<li>Store and <strong>selectively forward</strong> </li>
+<li><strong>Transparent</strong>, <strong>no collisions</strong></li>
+<li><strong>Plug-and-play</strong>, <strong>self-learning</strong></li>
+</ul>
+<h3 id="VLANs"><a href="#VLANs" class="headerlink" title="VLANs"></a>VLANs</h3><ul>
+<li>Reasons:<ul>
+<li>scaling: all <strong>layer-2 broadcast traffic</strong> must <strong>cross entire LAN</strong> </li>
+<li>efficiency, security, privacy, efficiency issues</li>
+</ul>
+</li>
+<li><strong>Port-based VLAN</strong>:<ul>
+<li><strong>multiple virtual LANS</strong> over <strong>single physical LAN infrastructure</strong></li>
+<li><strong>traffic isolation</strong></li>
+<li><strong>dynamic membership</strong></li>
+<li><strong>forwarding between VLANS via routing</strong></li>
+<li><strong>trunk</strong> port:<ul>
+<li>carry frames between <strong>VLANS over multiple physical switches</strong></li>
+<li>frames must carry <strong>VLAN ID info</strong></li>
+<li><strong>802.1Q protocol</strong> adds/removed additional header fields</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="MPLS-Multiprotocol-label-switching"><a href="#MPLS-Multiprotocol-label-switching" class="headerlink" title="MPLS (Multiprotocol label switching)"></a>MPLS (Multiprotocol label switching)</h3><ul>
+<li>Between <strong>Ethernet</strong> and <strong>IP</strong></li>
+<li><strong>high-speed IP forwarding</strong> among network of <strong>label-switched router</strong></li>
+<li>MPLS <strong>forwarding table</strong> distinct from IP forwarding tables</li>
+<li><strong>Flexibility</strong><ul>
+<li><strong>traffic engineering</strong>: use <strong>destination and source addresses</strong> to route flows to same destination differently</li>
+<li><strong>fast reroute</strong>: <strong>pre-computed backup paths</strong> in case of link failure</li>
+</ul>
+</li>
+</ul>
+<h3 id="Datacenter-networks"><a href="#Datacenter-networks" class="headerlink" title="Datacenter networks"></a>Datacenter networks</h3><ul>
+<li>Network elements:<ul>
+<li>Border routers</li>
+<li>Tier-1 switches</li>
+<li>Tier-2 switches</li>
+<li>Top of Rack (TOR) switch</li>
+<li>Server racks</li>
+</ul>
+</li>
+<li><strong>Load balancer</strong><ul>
+<li><strong>application-layer routing</strong></li>
+<li>hiding data center internals from client</li>
+</ul>
+</li>
+</ul>
+<h2 id="Wireless-and-Mobile-Networks"><a href="#Wireless-and-Mobile-Networks" class="headerlink" title="Wireless and Mobile Networks"></a>Wireless and Mobile Networks</h2><h3 id="Wireless-network-taxonomy"><a href="#Wireless-network-taxonomy" class="headerlink" title="Wireless network taxonomy"></a>Wireless network taxonomy</h3><ul>
+<li><div align="center"><img src="/pic/168.png" width="100%" height="100%"></div>
+
+</li>
+</ul>
+<h3 id="Wireless-link-characteristics"><a href="#Wireless-link-characteristics" class="headerlink" title="Wireless link characteristics"></a>Wireless link characteristics</h3><ul>
+<li>Differences from wired link:<ul>
+<li><strong>decreased signal strength</strong></li>
+<li><strong>interference</strong> from other sources</li>
+<li><strong>multipath propagation</strong></li>
+</ul>
+</li>
+<li><strong>SNR</strong> (signal-to-noise ratio)<ul>
+<li><strong>given physical layer</strong>: increase power $\rightarrow$ increase SNR $\rightarrow$ decrease BER</li>
+<li><strong>given SNR</strong>: choose physical layer to meet BER requirement, giving highest throughput</li>
+</ul>
+</li>
+<li><strong>Hidden terminal problem &amp; Signal attenuation</strong></li>
+</ul>
+<h3 id="IEEE-802-11-Wireless-LAN"><a href="#IEEE-802-11-Wireless-LAN" class="headerlink" title="IEEE 802.11 Wireless LAN"></a>IEEE 802.11 Wireless LAN</h3><ul>
+<li><p>BSS (Basic Service Set)</p>
+<ul>
+<li>wireless hosts</li>
+<li>access point: base station</li>
+</ul>
+</li>
+<li><p><strong>Active scanning</strong>: </p>
+<ul>
+<li><strong>Probe Request frame</strong> broadcast from H1</li>
+<li><strong>Probe Response frames</strong> sent from APs</li>
+<li>Association Request frame sent to selected AP </li>
+<li>Association Response frame sent from selected AP to H1</li>
+</ul>
+</li>
+<li><p><strong>Passive scanning</strong>:</p>
+<ul>
+<li><strong>Beacon frames</strong> sent from APs</li>
+<li>Association Request frame sent to selected AP </li>
+<li>Association Response frame sent from selected AP to H1</li>
+</ul>
+</li>
+<li><p><strong>CSMA/CA</strong></p>
+  <div align="center"><img src="/pic/169.png" width="100%" height="100%"></div>
+
+  <div align="center"><img src="/pic/170.png" width="100%" height="100%"></div>
+
+<ul>
+<li>difficult to sense collisions: weak received signal due to fading</li>
+<li>can’t sense all collisions in any case: hidden terminal, fading</li>
+</ul>
+</li>
+<li><p>802.11 frame</p>
+  <div align="center"><img src="/pic/171.png" width="100%" height="100%"></div>
+
+  <div align="center"><img src="/pic/172.png" width="100%" height="100%"></div>
+</li>
+<li><p>Advanced capabilities:</p>
+<ul>
+<li><strong>Rate adaptation</strong><ul>
+<li>dynamically change transmission rate as mobile moves</li>
+<li>BER becomes too high, switch to lower transmission rate but with lower BER</li>
+</ul>
+</li>
+<li><strong>Power management</strong><ul>
+<li>beacon frame contains list of mobiles with AP-to-mobile frames waiting to be sent</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Bluetooth</strong> (Personal area networks)</p>
+<ul>
+<li><strong>replacement for cables</strong></li>
+<li><strong>ad hoc</strong>: no infrastructure</li>
+<li>master <strong>polls</strong> clients, grants requests for client transmissions</li>
+<li><strong>parked mode</strong>: clients can park and later wakeup</li>
+<li><strong>bootstrapping</strong>: nodes self-assemble into piconet (plug and play)</li>
+</ul>
+</li>
+</ul>
+<h3 id="4G-LTE-Network"><a href="#4G-LTE-Network" class="headerlink" title="4G LTE Network"></a>4G LTE Network</h3><ul>
+<li>LTE data plane protocol stack<ul>
+<li><strong>Packet Data Convergence</strong>: header compression, encryption</li>
+<li><strong>Radio Link Control Protocol</strong>: fragmentation/reassembly </li>
+<li><strong>Medium Access</strong>: requesting, use of radio transmission slots</li>
+</ul>
+</li>
+</ul>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Chengsx</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://chengsx21.github.io/2023/06/13/ji-suan-ji-wang-luo-yuan-li-qi-mo-fu-xi/">http://chengsx21.github.io/2023/06/13/ji-suan-ji-wang-luo-yuan-li-qi-mo-fu-xi/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Chengsx</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/CS/">
+                                    <span class="chip bg-color">CS</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2023/06/13/ji-suan-ji-wang-luo-yuan-li-qi-mo-fu-xi/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="计算机网络原理 期末复习">
+                        
+                        <span class="card-title">计算机网络原理 期末复习</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Computer Network Final Notes
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-06-13
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/CS/" class="post-category">
+                                    CS
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/CS/">
+                        <span class="chip bg-color">CS</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/06/04/ren-gong-zhi-neng-dao-lun-bi-ji-4/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="人工智能导论 笔记4">
+                        
+                        <span class="card-title">人工智能导论 笔记4</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Introduction to Artificial Intelligence - Note 4
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-06-04
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/CS/" class="post-category">
+                                    CS
+                                </a>
+                            
+                            <a href="/categories/CS/IAI/" class="post-category">
+                                    IAI
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/IAI/">
+                        <span class="chip bg-color">IAI</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+    });
+</script>
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022-2023</span>
+            
+            <a href="/about" target="_blank">Chengsx</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+                <span id="translate">|&nbsp;繁/简：</span><a id="translateLink" href="javascript:translatePage();">繁</a>
+            
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">84.6k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2022";
+                        var startMonth = "8";
+                        var startDate = "26";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/chengsx21" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:954738480@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=954738480" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 954738480" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="https://feedly.com/i/subscription/feed/http://endeavor-blog.cn/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+        <script type="text/javascript" src="/js/tw_cn.js"></script>
+        <script type="text/javascript">
+          var defaultEncoding = 2; //网站编写字体是否繁体，1-繁体，2-简体
+          var translateDelay = 0; //延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
+          var cookieDomain = "http://chengsx21.github.io"; //Cookie地址, 一定要设定, 通常为你的网址
+          var msgToTraditionalChinese = "繁"; //此处可以更改为你想要显示的文字
+          var msgToSimplifiedChinese = "简"; //同上，但两处均不建议更改
+          var translateButtonId = "translateLink"; //默认互换id
+          translateInitilization();
+        </script>
+    
+    
+    
+        
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
+            }
+        </script>
+    
+
+    <!--单击显示文字-->
+    <script type="text/javascript" src="/js/click-show-text.js"></script>
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":180,"height":300},"mobile":{"show":false,"react":{"opacity":0.7}}});</script></body>
+
+</html>
