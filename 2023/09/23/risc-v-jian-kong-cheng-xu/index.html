@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="形式语言与自动机 作业1, Endeavor">
-    <meta name="description" content="FL&amp;A Hw1">
+    <meta name="keywords" content="计算机组成原理 笔记2, Endeavor">
+    <meta name="description" content="组成原理课程笔记 RISC-V 监控程序">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>形式语言与自动机 作业1 | Endeavor</title>
+    <title>计算机组成原理 笔记2 | Endeavor</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
     <style>
@@ -368,12 +368,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">形式语言与自动机 作业1</h1>
+                    <h1 class="description center-align post-title">计算机组成原理 笔记2</h1>
                 </div>
             </div>
         </div>
@@ -397,8 +397,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/FL-A/">
-                                <span class="chip bg-color">FL&amp;A</span>
+                            <a href="/tags/COD/">
+                                <span class="chip bg-color">COD</span>
                             </a>
                         
                     </div>
@@ -413,8 +413,8 @@
                                 CS
                             </a>
                         
-                            <a href="/categories/CS/FL-A/" class="post-category">
-                                FL&A
+                            <a href="/categories/CS/COD/" class="post-category">
+                                COD
                             </a>
                         
                     </div>
@@ -426,21 +426,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-10-12
+                    2023-09-23
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-09-22
+                    2023-09-27
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.4k
+                    4k
                 </div>
                 
 
@@ -470,344 +470,362 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="必做题"><a href="#必做题" class="headerlink" title="必做题"></a>必做题</h2><h3 id="Ex-5-1-1-b"><a href="#Ex-5-1-1-b" class="headerlink" title="Ex 5.1.1 (b)"></a>Ex 5.1.1 (b)</h3><p>​    一个可行的上下文无关文法是:</p>
-<p>​    \begin{equation*}</p>
-<p>​        \begin{aligned}</p>
-<p>​            S &amp;\rightarrow AB \mid CD \\</p>
-<p>​            A &amp;\rightarrow aA \mid \varepsilon \\</p>
-<p>​            B &amp;\rightarrow bBc \mid bE \mid cD \\</p>
-<p>​            C &amp;\rightarrow aCb \mid bE \mid aA \\</p>
-<p>​            D &amp;\rightarrow cD \mid \varepsilon \\</p>
-<p>​            E &amp;\rightarrow bE \mid \varepsilon</p>
-<p>​        \end{aligned}</p>
-<p>​    \end{equation*}</p>
-<h3 id="Ex-5-1-2-c"><a href="#Ex-5-1-2-c" class="headerlink" title="Ex 5.1.2 (c)"></a>Ex 5.1.2 (c)</h3><p>​    一个最左推导:</p>
-<p>​    \begin{equation*}</p>
-<p>​        \begin{aligned}</p>
-<p>​            S &amp;\mathop{\Longrightarrow}_{lm} A1B \mathop{\Longrightarrow}_{lm} 0A1B \mathop{\Longrightarrow}_{lm} 00A1B \\</p>
-<p>​              &amp;\mathop{\Longrightarrow}_{lm} 000A1B \mathop{\Longrightarrow}_{lm} 0001B \mathop{\Longrightarrow}_{lm} 00011B \\</p>
-<p>​              &amp;\mathop{\Longrightarrow}_{lm} 00011;</p>
-<p>​        \end{aligned}</p>
-<p>​    \end{equation*}</p>
-<p>​    一个最右推导:</p>
-<p>​    \begin{equation*}</p>
-<p>​        \begin{aligned}</p>
-<p>​            S &amp;\mathop{\Longrightarrow}_{rm} A1B \mathop{\Longrightarrow}_{rm} A11B \mathop{\Longrightarrow}_{rm} A11 \\</p>
-<p>​              &amp;\mathop{\Longrightarrow}_{rm} 0A11 \mathop{\Longrightarrow}_{rm} 00A11 \mathop{\Longrightarrow}_{rm} 000A11 \\</p>
-<p>​              &amp;\mathop{\Longrightarrow}_{rm} 00011.</p>
-<p>​        \end{aligned}</p>
-<p>​    \end{equation*}</p>
-<h3 id="Ex-5-1-6-b"><a href="#Ex-5-1-6-b" class="headerlink" title="Ex 5.1.6 (b)"></a>Ex 5.1.6 (b)</h3><p>​    对推导 $\beta\mathop{\Longrightarrow}^{*}\limits\gamma$ 中的步数进行归纳:</p>
-<p>​    \textbf{<strong>基础:</strong>} 如果该推导是一步完成的, 即$\thinspace\beta\Longrightarrow\gamma$, 那么由</p>
-<p>​    <script type="math/tex">\alpha\mathop{\Longrightarrow}^{*}\limits\beta, \thinspace\beta\Longrightarrow\gamma,</script></p>
-<p>​    可得</p>
-<p>​    <script type="math/tex">\alpha\mathop{\Longrightarrow}^{*}\limits\gamma,</script></p>
-<p>​    因而基础得证.</p>
-<p>​    \textbf{<strong>归纳:</strong>} 现在假定该推导共包含 $n + 1$ 步, 其中 $n\ge 1$, 并且对于任何 $n$ 步完成的推导上述命题都为真; 也就是说, 如果 $\beta\mathop{\Longrightarrow}^{<em>}\limits\gamma$ 可在 $n$ 步内完成, 那么有 $\alpha\mathop{\Longrightarrow}^{</em>}\limits\gamma$ 成立.</p>
-<p>​    考虑一个 $\beta\mathop{\Longrightarrow}^{*}\limits\gamma$ 的$n + 1$步推导, 它一定是如下形式:</p>
-<p>​    <script type="math/tex">\beta\mathop{\Longrightarrow}^{*}\limits\omega\Longrightarrow\gamma,</script></p>
-<p>​    其中 $\beta\mathop{\Longrightarrow}^{*}\limits\omega$ 是一个 $n$ 步推导.</p>
-<p>​    那么根据归纳假设可知, 有 $\alpha\mathop{\Longrightarrow}^{*}\limits\omega$ 成立,</p>
-<p>​    </p>
-<p>​    进而由 $\omega\Longrightarrow\gamma$ 可得</p>
-<p>​    <script type="math/tex">\alpha\mathop{\Longrightarrow}^{*}\limits\gamma.</script></p>
-<h3 id="Ex-5-1-8"><a href="#Ex-5-1-8" class="headerlink" title="Ex 5.1.8"></a>Ex 5.1.8</h3><p>​    分为两步来证明.</p>
-<p>​    $\centerdot$ 先证明若串 $\omega$ 中包含相同个数的 $a$ 和 $b$, 则 $\omega\in L(G)$.</p>
-<p>​    易知此时 $\vert\omega\vert$ 为偶数, 对 $\vert\omega\vert$ 进行归纳:</p>
-<p>​    \textbf{<strong>基础:</strong>} 如果 $\vert\omega\vert = 0$ 或者 $\vert\omega\vert = 2$, 即 $\omega$ 是 $\varepsilon, ab, ba$, 那么由产生式</p>
-<p>​    <script type="math/tex">S \rightarrow aSbS \mid bSaS \mid \varepsilon,</script></p>
-<p>​    可得</p>
-<p>​    <script type="math/tex">S\mathop{\Longrightarrow}^{*}\limits\varepsilon, ab, ba,</script></p>
-<p>​    即</p>
-<p>​    <script type="math/tex">S\mathop{\Longrightarrow}^{*}\limits\omega, \thinspace\omega\in L(G).</script></p>
-<p>​    至此基础得证.</p>
-<p>​    \textbf{<strong>归纳:</strong>} 现在假定 $\vert\omega\vert = 2n$, 其中 $n\ge 2$, 并且对任何 $\vert\omega_0\vert \le 2n - 2$上述命题都为真; 也就是说, 如果 $\vert\omega_0\vert \le 2n - 2$, 那么有 $\omega_0\in L(G)$成立.</p>
-<p>​    由于 $\omega$ 包含的 $a, b$ 的数量相等, 不妨设 $\omega$ 以 $a$ 开头, 并取其中所包含的一个 $b$, 使得</p>
-<p>​    <script type="math/tex">\omega = aubv,</script></p>
-<p>​    其中 $u, v\in \left\{a, b\right\}^{*}$, 当然有 $\vert u\vert, \vert v\vert \le 2n - 2$.</p>
-<p>​    那么由归纳假设, 有</p>
-<p>​    <script type="math/tex">u, v\in L(G),</script></p>
-<p>​    即</p>
-<p>​    <script type="math/tex">S\mathop{\Longrightarrow}^{*}\limits u, v.</script></p>
-<p>​    那么容易得到</p>
-<p>​    <script type="math/tex">S\Longrightarrow aSbS \mathop{\Longrightarrow}^{*}\limits aubS \mathop{\Longrightarrow}^{*}\limits aubv = \omega,</script></p>
-<p>​    进而</p>
-<p>​    <script type="math/tex">S\mathop{\Longrightarrow}^{*}\limits \omega, \thinspace\omega\in L(G).</script></p>
-<p>​    至此归纳得证.</p>
-<p>​    $\centerdot$ 再证明若 $\omega\in L(G)$, 即 $S\mathop{\Longrightarrow}^{*}\limits\omega$, 则$\omega$中包含相同个数的 $a$ 和 $b$.</p>
-<p>​    对推导 $S\mathop{\Longrightarrow}^{*}\limits\omega$ 中的步数进行归纳:</p>
-<p>​    \textbf{<strong>基础:</strong>} 如果该推导是$1$步完成的, 那么由 $S\Longrightarrow\varepsilon$</p>
-<p>​    可得</p>
-<p>​    <script type="math/tex">\omega = \varepsilon,</script></p>
-<p>​    其包含的 $a, b$ 个数均为 $0$. 至此基础得证.</p>
-<p>​    \textbf{<strong>归纳:</strong>} 现在假定该推导共包含 $n + 1$ 步, 其中 $n\ge 3$, 并且对于任何 $n$ 步以内完成的推导上述命题都为真; 也就是说, 如果 $S\mathop{\Longrightarrow}^{*}\limits\omega$ 可在 $n$ 步内完成, 那么有$\omega$中包含相同个数的 $a$ 和 $b$.</p>
-<p>​    考虑一个 $S\mathop{\Longrightarrow}^{*}\limits\omega$ 的 $n + 1$ 步推导, 它一定是如下形式:</p>
-<p>​    <script type="math/tex">S\Longrightarrow aSbS\mathop{\Longrightarrow}^{*}\limits\omega,</script></p>
-<p>​    或</p>
-<p>​    <script type="math/tex">S\Longrightarrow bSaS\mathop{\Longrightarrow}^{*}\limits\omega,</script></p>
-<p>​    其中 $aSbS\mathop{\Longrightarrow}^{<em>}\limits\omega$, $bSaS\mathop{\Longrightarrow}^{</em>}\limits\omega$ 均是一个 $n$ 步推导.</p>
-<p>​    由 $a, b$ 地位的对称性, 只需考虑第一种情况, 由 $aSbS\mathop{\Longrightarrow}^{*}\limits\omega$ 可得</p>
-<p>​    <script type="math/tex">\omega = aubv,</script></p>
-<p>​    其中 $u, v\in \left\{a, b\right\}^{*}$, </p>
-<p>​    那么容易知道推导 $S\mathop{\Longrightarrow}^{<em>}\limits u$, $S\mathop{\Longrightarrow}^{</em>}\limits v$ 的步数都在 $n$ 步以内.</p>
-<p>​    根据归纳假设可知, $u, v $中包含相同个数的 $a$ 和 $b$.</p>
-<p>​    进而可得 $\omega = aubv$ 中包含相同个数的 $a$ 和 $b$.</p>
-<p>​    至此归纳得证.</p>
-<h3 id="Ex-5-2-2"><a href="#Ex-5-2-2" class="headerlink" title="Ex 5.2.2"></a>Ex 5.2.2</h3><p>​    对推导 $S\mathop{\Longrightarrow}^{*}\limits\omega$ 中的步数 $m$ 进行归纳:</p>
-<p>​    \textbf{<strong>基础:</strong>} 如果 $m = 1$, 那么有产生式 $S\rightarrow\omega$, 其中 $\omega\ne\varepsilon$.</p>
-<p>​    从而有以下 $n + 1$ 个节点的分析树:</p>
-<p>​    <img src="/pic/06.png" alt=""></p>
-<p>​    至此基础得证.</p>
-<p>​    \textbf{<strong>归纳:</strong>} 现在假定 $m\ge 2$, 且对 $m - 1$ 步以内完成的推导上述命题为真.</p>
-<p>​    设第一步使用了产生式 $S\rightarrow X_1X_2\cdots X_k$, </p>
-<p>​    </p>
-<p>​    那么全部推导形如 $S\rightarrow X_1X_2\cdots X_k\mathop{\Longrightarrow}^{*}\limits\omega$.</p>
-<p>​    可以将 $\omega$ 断开成 $\omega = \omega_1\omega_2\cdots\omega_k$, 其中</p>
-<p>​    $(1)$ 若 $\omega_i$ 为终结符, 则 $\omega_i = X_i$, 可以认为$m_i = 0$;</p>
-<p>​    $(2)$ 若 $\omega_i$ 为非终结符, 则 $X_i\mathop{\Longrightarrow}^{*}\limits\omega_i$, 且推导步数 $m_i &lt; m$. 由归纳假设, 存在根节点为 $X_i$ 的子分析树, 其节点数为 $\vert\omega_i\vert + m_i$.</p>
-<p>​    因此我们得到如下关系:</p>
-<p>​    <script type="math/tex">m = m_1 + m_2 + \cdots + m_k + 1.</script></p>
-<p>​    从而有一棵结果为 $\omega$ 的分析树:</p>
-<p> <img src="/pic/07.png" alt=""></p>
-<p>​    其节点数为:</p>
-<p>​    <script type="math/tex">1 + \sum_{i = 1}^{k}\limits\left(\vert\omega_i\vert + m_i\right) = \sum_{i = 1}^{k}\vert\omega_i\vert + \left(\sum_{i = 1}^{k}m_i + 1\right) = n + m.</script></p>
-<p>​    至此归纳得证.</p>
-<h3 id="Ex-5-4-7-a"><a href="#Ex-5-4-7-a" class="headerlink" title="Ex 5.4.7 (a)"></a>Ex 5.4.7 (a)</h3><p>   一个最左推导:</p>
-<p>​    \begin{equation*}</p>
-<p>​        \begin{aligned}</p>
-<p>​            E &amp;\mathop{\Longrightarrow}_{lm} {+}EE \mathop{\Longrightarrow}_{lm} {+}{<em>}EEE \mathop{\Longrightarrow}_{lm} {+}{</em>}{-}EEEE \\</p>
-<p>​              &amp;\mathop{\Longrightarrow}_{lm} {+}{<em>}{-}xEEE \mathop{\Longrightarrow}_{lm} {+}{</em>}{-}xyEE \mathop{\Longrightarrow}_{lm} {+}{*}{-}xyxE \\</p>
-<p>​              &amp;\mathop{\Longrightarrow}_{lm} {+}{*}{-}xyxy;</p>
-<p>​        \end{aligned}</p>
-<p>​    \end{equation*}</p>
-<p>​    一个最右推导:</p>
-<p>​    \begin{equation*}</p>
-<p>​        \begin{aligned}</p>
-<p>​            E &amp;\mathop{\Longrightarrow}_{rm} {+}EE \mathop{\Longrightarrow}_{rm} {+}Ey \mathop{\Longrightarrow}_{rm} {+}{*}EEy \\</p>
-<p>​              &amp;\mathop{\Longrightarrow}_{rm} {+}{<em>}Exy \mathop{\Longrightarrow}_{rm} {+}{</em>}{-}EExy \mathop{\Longrightarrow}_{rm} {+}{*}{-}Eyxy \\</p>
-<p>​              &amp;\mathop{\Longrightarrow}_{rm} {+}{*}{-}xyxy;</p>
-<p>​        \end{aligned}</p>
-<p>​    \end{equation*}</p>
-<p>​    一棵语法分析树为:</p>
-<p>  <img src="/pic/08.png" alt=""></p>
-<h3 id="Ex-1-1"><a href="#Ex-1-1" class="headerlink" title="*Ex 1 (1)"></a>*Ex 1 (1)</h3><p>​    一个可行的上下文无关文法是:</p>
-<p>​    \begin{equation*}</p>
-<p>​        \begin{aligned}</p>
-<p>​            S &amp;\rightarrow AB \\</p>
-<p>​            A &amp;\rightarrow aAbb \mid \varepsilon \\</p>
-<p>​            B &amp;\rightarrow Bc \mid \varepsilon.</p>
-<p>​        \end{aligned}</p>
-<p>​    \end{equation*}</p>
-<h3 id="Ex-1-2"><a href="#Ex-1-2" class="headerlink" title="*Ex 1 (2)"></a>*Ex 1 (2)</h3><p>​    一个可行的上下文无关文法是:</p>
-<p>​    \begin{equation*}</p>
-<p>​        \begin{aligned}</p>
-<p>​            S &amp;\rightarrow AB \\</p>
-<p>​            A &amp;\rightarrow aAb \mid \varepsilon \\</p>
-<p>​            B &amp;\rightarrow bBc \mid \varepsilon.</p>
-<p>​        \end{aligned}</p>
-<p>​    \end{equation*}</p>
-<h3 id="Ex-1-3"><a href="#Ex-1-3" class="headerlink" title="*Ex 1 (3)"></a>*Ex 1 (3)</h3><p>​    一个可行的上下文无关文法是:</p>
-<p>​    \begin{equation*}</p>
-<p>​        \begin{aligned}</p>
-<p>​            S &amp;\rightarrow aSd \mid A \mid B \\</p>
-<p>​            A &amp;\rightarrow aAc \mid C \\</p>
-<p>​            B &amp;\rightarrow bBd \mid C \\</p>
-<p>​            C &amp;\rightarrow bCc \mid \varepsilon.</p>
-<p>​        \end{aligned}</p>
-<p>​    \end{equation*}</p>
-<h3 id="Ex-1-4"><a href="#Ex-1-4" class="headerlink" title="*Ex 1 (4)"></a>*Ex 1 (4)</h3><p>​    一个可行的上下文无关文法是:</p>
-<p>​    \begin{equation*}</p>
-<p>​        \begin{aligned}</p>
-<p>​            S &amp;\rightarrow AB \mid CD \\</p>
-<p>​            A &amp;\rightarrow aAb \mid \varepsilon \\</p>
-<p>​            B &amp;\rightarrow bBd \mid D \\</p>
-<p>​            C &amp;\rightarrow aCc \mid A \\</p>
-<p>​            D &amp;\rightarrow cDd \mid \varepsilon.</p>
-<p>​        \end{aligned}</p>
-<p>​    \end{equation*}</p>
-<h3 id="Ex-1-5"><a href="#Ex-1-5" class="headerlink" title="*Ex 1 (5)"></a>*Ex 1 (5)</h3><p>​    一个可行的上下文无关文法是:</p>
-<p>​    \begin{equation*}</p>
-<p>​        \begin{aligned}</p>
-<p>​            S &amp;\rightarrow Ab \\</p>
-<p>​            A &amp;\rightarrow BAC \mid a \\</p>
-<p>​            B &amp;\rightarrow a \mid b \\</p>
-<p>​            C &amp;\rightarrow a \mid b.</p>
-<p>​        \end{aligned}</p>
-<p>​    \end{equation*}</p>
-<h3 id="Ex-1-6"><a href="#Ex-1-6" class="headerlink" title="*Ex 1 (6)"></a>*Ex 1 (6)</h3><p>​    一个可行的上下文无关文法是:</p>
-<p>​    \begin{equation*}</p>
-<p>​        \begin{aligned}</p>
-<p>​            S &amp;\rightarrow D \mid AC \mid ABC \\</p>
-<p>​            A &amp;\rightarrow aA \mid \varepsilon \\</p>
-<p>​            B &amp;\rightarrow bB \mid bb \\</p>
-<p>​            C &amp;\rightarrow cC \mid \varepsilon \\</p>
-<p>​            D &amp;\rightarrow aDc \mid b.</p>
-<p>​        \end{aligned}</p>
-<p>​    \end{equation*}</p>
-<p>\end{proof}</p>
-<p>\subsection<em>{</em>Ex 2}</p>
-<p>\begin{proof}[Solution:]</p>
-<p>​    一个二义文法是:</p>
-<p>​    \begin{equation*}</p>
-<p>​        \begin{aligned}</p>
-<p>​            S &amp;\rightarrow aS \mid aaSb \mid \varepsilon.</p>
-<p>​        \end{aligned}</p>
-<p>​    \end{equation*}</p>
-<p>​    一个非二义文法是:</p>
-<p>​    \begin{equation*}</p>
-<p>​        \begin{aligned}</p>
-<p>​            S &amp;\rightarrow aS \mid T \\</p>
-<p>​            T &amp;\rightarrow aaTb \mid \varepsilon. </p>
-<p>​        \end{aligned}</p>
-<p>​    \end{equation*}</p>
-<p>\end{proof}</p>
-<p>\subsection<em>{</em>Ex 3}</p>
-<p>\begin{proof}[Solution:]</p>
-<p>​    题中文法所定义语言的一个无二义文法是:</p>
-<p>​    \begin{equation*}</p>
-<p>​        \begin{aligned}</p>
-<p>​            S &amp;\rightarrow Sad \mid Sbd \mid Scd \mid d.</p>
-<p>​        \end{aligned}</p>
-<p>​    \end{equation*}</p>
-<h3 id="Ex-4"><a href="#Ex-4" class="headerlink" title="*Ex 4"></a>*Ex 4</h3><p>​    我们证明更强的结论:</p>
-<p>​    若 $S\mathop{\Longrightarrow}^{*}\limits\omega$, 推导步数为 $l + 1$, 其中 $l\ge 0$, 那么</p>
-<p>​    <script type="math/tex">\omega = (01)^k \in L = \left\{(01)^k\mid k\ge 0\right\}.</script></p>
-<p>​    若 $T\mathop{\Longrightarrow}^{*}\limits\phi$, 推导步数为 $l + 1$, 其中 $l\ge 0$, 那么</p>
-<p>​    <script type="math/tex">\phi = (10)^k \in M = \left\{(10)^k\mid k\ge 0\right\}.</script></p>
-<p>​    对推导步数进行归纳:</p>
-<p>​    \textbf{<strong>基础:</strong>} 如果 $l = 0$, 那么有推导 $S\Longrightarrow\varepsilon = \omega = (01)^0$, </p>
-<p>​    </p>
-<p>​    因此 omega = (01)^0\in L = \left\{(01)^k\mid k\ge 0\right\}$.</p>
-<p>​    同理有推导 $T\Longrightarrow\varepsilon = \phi = (10)^0$, </p>
-<p>​    </p>
-<p>​    因此 $\phi = (10)^0\in M = \left\{(10)^k\mid k\ge 0\right\}$.</p>
-<p>​    至此基础得证.</p>
-<p>​    \textbf{<strong>归纳:</strong>} 现在假定推导步数为 $l + 1$, 且对 $l$ 步完成的推导上述命题为真.</p>
-<p>​    考虑推导</p>
-<p>​    <script type="math/tex">S\Longrightarrow 0T1\mathop{\Longrightarrow}^{*}\limits\omega = 0\phi_01,</script></p>
-<p>​    其中 $T\mathop{\Longrightarrow}^{*}\limits\phi_0$ 是一个 $l$ 步的推导.</p>
-<p>​    那么由归纳假设, 得</p>
-<p>​    <script type="math/tex">\phi_0 = (10)^{l - 1},</script></p>
-<p>​    此时</p>
-<p>​    <script type="math/tex">\omega = 0\phi_01 = 0(10)^{l - 1}1 = (01)^l.</script></p>
-<p>​    </p>
-<p>​    再考虑推导</p>
-<p>​    <script type="math/tex">T\Longrightarrow 1S0\mathop{\Longrightarrow}^{*}\limits\phi = 1\omega_00,</script></p>
-<p>​    其中 $S\mathop{\Longrightarrow}^{*}\limits\omega_0$ 是一个$l$步的推导.</p>
-<p>​    那么由归纳假设, 得</p>
-<p>​    <script type="math/tex">\omega_0 = (01)^{l - 1},</script></p>
-<p>​    进而</p>
-<p>​    <script type="math/tex">\phi = 1\omega_00 = 1(01)^{l - 1}0 = (10)^l.</script></p>
-<p>​    </p>
-<p>​    至此归纳得证.</p>
-<p>​    综上所述, 我们证明了若 $S\mathop{\Longrightarrow}^{*}\limits\omega$, 则有</p>
-<p>​    <script type="math/tex">\omega\in L = \left\{(01)^k\mid k\ge 0\right\}.</script></p>
-<h2 id="思考题"><a href="#思考题" class="headerlink" title="思考题"></a>思考题</h2><h3 id="Ex-5-1-1-c"><a href="#Ex-5-1-1-c" class="headerlink" title="Ex 5.1.1 (c)"></a>Ex 5.1.1 (c)</h3><p>​    一个可行的上下文无关文法是:</p>
-<p>​    \begin{equation*}</p>
-<p>​        \begin{aligned}</p>
-<p>​            S &amp;\rightarrow O \mid E \\</p>
-<p>​            O &amp;\rightarrow COC \mid a \mid b \\</p>
-<p>​            E &amp;\rightarrow AB \mid BA \\</p>
-<p>​            A &amp;\rightarrow CAC \mid a \\</p>
-<p>​            B &amp;\rightarrow CBC \mid b \\</p>
-<p>​            C &amp;\rightarrow a \mid b.</p>
-<p>​        \end{aligned}</p>
-<p>​    \end{equation*}</p>
-<h3 id="Ex-5-1-7-a"><a href="#Ex-5-1-7-a" class="headerlink" title="Ex 5.1.7 (a)}"></a>Ex 5.1.7 (a)}</h3><p>​    对任意 $\omega\in L(G)$, 我们证明 $\omega$ 不含子串 $ba$.</p>
-<p>​    对 $\vert\omega\vert$ 进行归纳:</p>
-<p>​    \textbf{<strong>基础:</strong>} 如果 $\vert\omega\vert = 1$, 那么 $\omega$ 是 $a$ 或者 $b$, </p>
-<p>​    因此 $\omega$ 当然不含子串 $ba$. 至此基础得证.</p>
-<p>​    \textbf{<strong>归纳:</strong>} 现在假定 $\vert\omega\vert = n$, 其中 $n\ge 2$, 并且对任何长度小于 $n$ 的串 $\omega_0\in L(G)$ 上述命题都为真.</p>
-<p>​    </p>
-<p>​    也就是说, 如果 $\vert\omega_0\vert \le n - 1$, 那么 $\omega_0$ 不含子串 $ba$.</p>
-<p>​    考虑推导 $S\mathop{\Longrightarrow}^{*}\limits\omega$ 的第一步.</p>
-<p>​    若该推导形如</p>
-<p>​    <script type="math/tex">S\Longrightarrow aS \mathop{\Longrightarrow}^{*}\limits \omega = a\omega_1,</script></p>
-<p>​    可知 $\vert\omega_1\vert = n - 1$. 由归纳假设得 $\omega_1$ 中不含子串 $ba$.</p>
-<p>​    又因为 $\omega = a\omega_1$ 以 $a$ 开头, 所以 $\omega$ 中不含子串 $ba$.</p>
-<p>​    若该推导形如</p>
-<p>​    <script type="math/tex">S\Longrightarrow Sb \mathop{\Longrightarrow}^{*}\limits \omega = \omega_2b,</script></p>
-<p>​    可知 $\vert\omega_2\vert = n - 1$. 由归纳假设得 $\omega_2$ 中不含子串 $ba$.</p>
-<p>​    又因为 $\omega = \omega_2b$ 以 $b$ 结尾, 所以 $\omega$ 中不含子串 $ba$.</p>
-<p>​    至此归纳得证.</p>
-<h3 id="Ex-5-4-7-b"><a href="#Ex-5-4-7-b" class="headerlink" title="Ex 5.4.7 (b)"></a>Ex 5.4.7 (b)</h3><p>​    给出:</p>
-<p>​    \textbf{<strong>引理 1:</strong>} 一个前缀表达式的运算符节点数比操作数节点数少 $1$.</p>
-<p>​    \textbf{<strong>引理 2:</strong>} 一个前缀表达式从后往前计数, 操作数严格多于运算符节点数.</p>
-<p>​    下面反证: 假设这个文法是有歧义的, 也即存在一个长 $n$ 的前缀表达式, 有 $2$ 种不同的方法将其解析为一棵语法分析树. </p>
-<p>​    </p>
-<p>​    假设方法 $1$ 中 $[1, m]$ 为第一棵子树, $[m + 1, n]$ 为第二棵子树;</p>
-<p>​    </p>
-<p>​    方法 $2$ 中 $[1, k]$ 为第一棵子树, $[k + 1, n]$ 为第二棵子树, 并且 $k &gt; m$.</p>
-<p>​    </p>
-<p>​    由引理 $1$, 区间 $[m + 1, k]$ 必须包含同样数目的运算符节点与操作数节点, 而这个区间是方法 $2$ 中左子树对应表达式的末尾, 这与引理 $2$ 矛盾.</p>
-<p>​    </p>
-<p>​    所以一个前缀表达式不可能有多于一种解析为语法分析树方法, 即题中所给文法是无歧义的.</p>
-<h3 id="Ex-1"><a href="#Ex-1" class="headerlink" title="*Ex 1"></a>*Ex 1</h3><p>​    分为两步来证明.</p>
-<p>​    $\centerdot$ 先证明若串 $\omega$ 形如 $a^ib^jc^k\thinspace(\mbox{其中}\thinspace i + j \le k)$, 则 $\omega\in L(G)$.</p>
-<p>​    记 $l = k - i - j$, 我们给出一个推导 $S\mathop{\Longrightarrow}^{*}\limits\omega$ 的构造.</p>
-<p>​    \begin{equation*}</p>
-<p>​        \begin{aligned}</p>
-<p>​            S &amp;\Longrightarrow aSc \mathop{\Longrightarrow}^{*}\limits a^iSc^i \\</p>
-<p>​              &amp;\Longrightarrow a^iAc^i \Longrightarrow a^ibAc^{i + 1} \\</p>
-<p>​              &amp;\mathop{\Longrightarrow}^{*}\limits a^ib^jAc^{i + j} \Longrightarrow a^ib^jBc^{i + j} \\</p>
-<p>​              &amp;\Longrightarrow a^ib^jBc^{i + j + 1} \mathop{\Longrightarrow}^{*}\limits a^ib^jBc^{i + j + l} \\ </p>
-<p>​              &amp;\Longrightarrow a^ib^jc^{i + j + l} = a^ib^jc^k = \omega.</p>
-<p>​        \end{aligned}</p>
-<p>​    \end{equation*}</p>
-<p>​    从而 $\omega\in L(G)$.</p>
-<p>​    $\centerdot$ 再证明若 $\omega\in L(G)$, 即 $S\mathop{\Longrightarrow}^{*}\limits\omega$, 则 $\omega$ 形如 $a^ib^jc^k\thinspace(\mbox{其中}\thinspace i + j \le k)$.</p>
-<p>​    容易得到这个推导的步数至少为 $3$. 对推导 $S\mathop{\Longrightarrow}^{*}\limits\omega$ 中的步数进行归纳:</p>
-<p>​    \textbf{<strong>基础:</strong>} 如果该推导是 $3$ 步完成的, 那么由 $S\Longrightarrow A\Longrightarrow B\Longrightarrow\varepsilon$,</p>
-<p>​    可得</p>
-<p>​    <script type="math/tex">\omega = \varepsilon = a^0b^0c^0,</script></p>
-<p>​    满足 $i + j = 0 + 0 \le 0 = k $成立. 至此基础得证.</p>
-<p>​    \textbf{<strong>归纳:</strong>} 现在假定该推导共包含 $n + 1$ 步, 其中 $n\ge 3$, 并且对于任何 $n$ 步以内完成的推导上述命题都为真.</p>
-<p>​    容易知道第 $n + 1$ 步推导一定使用了产生式:</p>
-<p>​    <script type="math/tex">B\longrightarrow\varepsilon,</script></p>
-<p>​    若第 $n$ 步推导使用了产生式:</p>
-<p>​    <script type="math/tex">B\longrightarrow Bc,</script></p>
-<p>​    那么全部推导过程形如</p>
-<p>​    <script type="math/tex">S\mathop{\Longrightarrow}^{*}\limits uBv \Longrightarrow uBcv \Longrightarrow ucv = \omega.</script></p>
-<p>​    不妨考虑一个 $n$ 步的推导</p>
-<p>​    <script type="math/tex">S\mathop{\Longrightarrow}^{*}\limits uBv \Longrightarrow uv.</script></p>
-<p>​    由归纳假设, 串 $uv$ 形如 $a^{i’}b^{j’}c^{k’}, \mbox{其中}\thinspace i’ + j’ \le k’$.</p>
-<p>​    那么串 $\omega = ucv$ 形如 $a^ib^jc^k = a^{i’}b^{j’}c^{k’ + 1}$, </p>
-<p>​    </p>
-<p>​    其中 $ i + j =  i’ + j’ \le k’ &lt; k’ + 1 = k.$ 从而 $\omega\in L(G)$.</p>
-<p>​    若第 $n$ 步推导使用了产生式:</p>
-<p>​    <script type="math/tex">A\longrightarrow B,</script></p>
-<p>​    考虑第 $n - 1$ 步. 若第 $n - 1$ 步推导使用了产生式:</p>
-<p>​    <script type="math/tex">A\longrightarrow bAc,</script></p>
-<p>​    那么全部推导过程形如</p>
-<p>​    <script type="math/tex">S\mathop{\Longrightarrow}^{*}\limits pAq \Longrightarrow pbAcq \Longrightarrow pbBcq \Longrightarrow pbcq = \omega.</script></p>
-<p>​    不妨考虑一个 $n$ 步的推导</p>
-<p>​    <script type="math/tex">S\mathop{\Longrightarrow}^{*}\limits pAq \Longrightarrow pBq \Longrightarrow pq.</script></p>
-<p>​    由归纳假设, 串 $pq$ 形如 $a^{i’}b^{j’}c^{k’}, \mbox{其中}\thinspace i’ + j’ \le k’$.</p>
-<p>​    那么串 $\omega = pbcq$ 形如 $a^ib^jc^k = a^{i’}b^{j’ + 1}c^{k’ + 1}$,</p>
-<p>​    </p>
-<p>​    其中 $i + j =  i’ + j’ + 1 \le k’ + 1 = k.$ 从而 $\omega\in L(G)$.</p>
-<p>​    若第 $n - 1$ 步推导使用了产生式:</p>
-<p>​    <script type="math/tex">S\longrightarrow A,</script></p>
-<p>​    那么考虑第 $n - 2$ 步. 易知第 $n - 2$ 步推导只能使用了产生式:</p>
-<p>​    <script type="math/tex">S\longrightarrow aSc,</script></p>
-<p>​    </p>
-<p>​    那么全部推导过程形如</p>
-<p>​    <script type="math/tex">S\mathop{\Longrightarrow}^{*}\limits xSy \Longrightarrow xaScy \Longrightarrow xaAcy \Longrightarrow xaBcy = \Longrightarrow xacy \omega.</script></p>
-<p>​    不妨考虑一个 $n$ 步的推导</p>
-<p>​    <script type="math/tex">S\mathop{\Longrightarrow}^{*}\limits xSy \Longrightarrow xAy \Longrightarrow xBy \Longrightarrow xy.</script></p>
-<p>​    由归纳假设, 串 $xy$ 形如 $a^{i’}b^{j’}c^{k’}, \mbox{其中}\thinspace i’ + j’ \le k’$.</p>
-<p>​    那么串 $\omega = xacy$ 形如 $a^ib^jc^k = a^{i’ + 1}b^{j’}c^{k’ + 1}$,</p>
-<p>​    </p>
-<p>​    其中 $i + j =  i’ + 1 + j’ \le k’ + 1 = k.$ 从而 $\omega\in L(G)$.</p>
-<p>​    至此归纳得证.</p>
-<h3 id="Ex-3"><a href="#Ex-3" class="headerlink" title="*Ex 3"></a>*Ex 3</h3><p>​    一个可行的上下文无关文法是:</p>
-<p>​    \begin{equation*}</p>
-<p>​        \begin{aligned}</p>
-<p>​            S &amp;\rightarrow BA \\</p>
-<p>​            A &amp;\rightarrow aAa \mid bAb \mid acBca \mid bcBcb \\</p>
-<p>​            B &amp;\rightarrow aB \mid bB \mid acB \mid bcB \mid \varepsilon.</p>
-<p>​        \end{aligned}</p>
-<p>​    \end{equation*}</p>
+                <h1 id="RISC-V-监控程序"><a href="#RISC-V-监控程序" class="headerlink" title="RISC-V 监控程序"></a>RISC-V 监控程序</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p><strong>Thinpad</strong> 教学计算机搭配了监控程序, 能够接受用户命令, 支持输入汇编指令并运行, 查看寄存器及内存状态. 监控程序可在实现的 32/64 位 <strong>RISC-V</strong> CPU 上运行, 一方面帮助理解、掌握 RISC-V 指令系统及其软件开发, 另一方面作为验证 CPU 功能正确性的标准. </p>
+<p>监控程序分为 <strong>Kernel</strong> 和 <strong>Term</strong> 两个部分. 其中 Kernel 使用 RISC-V 汇编语言编写, 运行在 Thinpad 上学生实现的 <strong>CPU</strong> 中, 用于<strong>管理硬件资源</strong>; Term 是上位机程序, 使用 Python 语言编写, 有基于命令行的用户界面, 达到与<strong>用户交互</strong>的目的. Kernel 和 Term 直接通过串口通信, 即用户在 Term 界面中输入的命令、代码经过 Term 处理后, 通过串口传输给 Kernel 程序; 反过来, Kernel 输出的信息也会通过串口传输到 Term 并展示给用户. </p>
+<h2 id="Kernel"><a href="#Kernel" class="headerlink" title="Kernel"></a>Kernel</h2><p>Kernel 使用汇编语言编写, 使用到的指令有 20 余条, 均符合 RISC-V 规范. Kernel 提供了三种不同的版本, 以适应不同的档次的 CPU 实现: 第一档为<strong>基础版本</strong>, 直接基本的 I/O 和命令执行功能, 不依赖异常、中断、csr 等处理器特征, 适合于最简单的 CPU 实现; 第二档<strong>支持中断</strong>, 使用中断方式完成串口的 I/O 功能, 需要处理器实现中断处理机制, 及相关的 csr 寄存器; 第三档进一步增加了<strong>页表的应用</strong>, 要求处理器支持基于 Sv32 或者 Sv39 的内存映射, 更加接近于操作系统对处理器的需求. </p>
+<p>为了在硬件上运行 Kernel 程序, 我们首先要对 Kernel 的汇编代码进行编译. 在 <code>kernel</code> 文件夹下面, 有汇编代码和 Makefile 文件, 我们可以使用 make 工具编译 Kernel 程序. 假设当前目录为 <code>kernel</code> , 目标版本为基础版本, 在终端中运行命令:</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">make</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>即可开始编译流程. 如果顺利结束, 将生成 <code>kernel.elf</code> 和 <code>kernel.bin</code> 文件, 即可执行文件. 要在模拟器中运行它, 可以使用命令:</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">make</span> sim<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>它会在 <strong>QEMU</strong> 中启动监控程序, 并等待 Term 程序连接. 本文后续章节介绍了如何使用 Term 连接模拟器. 需要注意的是, 如果需要打开一些开关, 需要在每条命令中传递参数, 比如:</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">make</span> <span class="token assign-left variable">EN_INT</span><span class="token operator">=</span>y sim<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>而不是</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">make</span> <span class="token assign-left variable">EN_INT</span><span class="token operator">=</span>y
+<span class="token function">make</span> sim<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>目前所有可能出现的开关有: </p>
+<ol>
+<li><code>EN_INT</code>: 打开中断、异常和用户态支持, 默认关闭. </li>
+<li><code>EN_PAGING</code>: 打开页表支持, 要求 <code>EN_INT</code> 已打开, 默认关闭. </li>
+<li><code>EN_FENCEI</code>: 如果实现了 L1 Cache 并且分离了 I Cache 和 D Cache 则应当开启, 在写入代码后执行 <code>FENCE.I</code> 指令, 默认关闭. </li>
+<li><code>EN_UART16550</code>: 如果实现了 UART 16550 兼容的串口控制器则要开启, 否则可以关闭, 默认开启. </li>
+</ol>
+<p>若要在硬件上运行, 使用开发板提供的工具, 将 <code>kernel.bin</code> 写入内存 0x80000000 地址位置, 并让处理器复位从 0x80000000 地址处开始执行, Kernel 就运行起来了. </p>
+<p>Kernel 运行后会先通过串口输出版本号, 该功能可作为检验其正常运行的标志. 之后 Kernel 将等待 Term 从串口发来的命令, 关于 Term 的使用将在后续章节描述.  </p>
+<h3 id="基础版本"><a href="#基础版本" class="headerlink" title="基础版本"></a>基础版本</h3><p>基础版本的 Kernel 共使用了 19 条不同的指令, 它们是: </p>
+<pre class="line-numbers language-asm" data-language="asm"><code class="language-asm">ADD   0000000SSSSSsssss000ddddd0110011
+ADDI  iiiiiiiiiiiisssss000ddddd0010011
+AND   0000000SSSSSsssss111ddddd0110011
+ANDI  iiiiiiiiiiiisssss111ddddd0010011
+AUIPC iiiiiiiiiiiiiiiiiiiiddddd0010111
+BEQ   iiiiiiiSSSSSsssss000iiiii1100011
+BNE   iiiiiiiSSSSSsssss001iiiii1100011
+JAL   iiiiiiiiiiiiiiiiiiiiddddd1101111
+JALR  iiiiiiiiiiiisssss000ddddd1100111
+LB    iiiiiiiiiiiisssss000ddddd0000011
+LUI   iiiiiiiiiiiiiiiiiiiiddddd0110111
+LW    iiiiiiiiiiiisssss010ddddd0000011
+OR    0000000SSSSSsssss110ddddd0110011
+ORI   iiiiiiiiiiiisssss110ddddd0010011
+SB    iiiiiiiSSSSSsssss000iiiii0100011
+SLLI  0000000iiiiisssss001ddddd0010011
+SRLI  0000000iiiiisssss101ddddd0010011
+SW    iiiiiiiSSSSSsssss010iiiii0100011
+XOR   0000000SSSSSsssss100ddddd0110011<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>如果实现的是 RISC-V 64 位, 则额外需要实现以下指令: </p>
+<pre class="line-numbers language-asm" data-language="asm"><code class="language-asm">ADDIW iiiiiiiiiiiisssss000ddddd0011011
+LD    iiiiiiiiiiiisssss011ddddd0000011
+SD    iiiiiiiSSSSSsssss011iiiii0100011<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>在以上指令里面, 很多指令的功能是相近的, 分类以后, 实际上只需要实现如下的几种指令, 然后很容易就可以扩展到其它指令:</p>
+<pre class="line-numbers language-none"><code class="language-none">ADD: ADDI, AND, ANDI, OR, ORI, SLLI, SRLI, XOR, ADDIW
+AUIPC:
+BEQ: BNE
+JAL:
+JALR:
+LB: LW, LD
+LUI:
+SB: SW, SD<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>实际上只需要实现上面的八条指令, 简单扩展即可实现需要的所有指令. 根据 RISC-V 规范正确实现这些指令后, 程序才能正常工作. </p>
+<p>监控程序使用了 8 MB 的内存空间, 其中约 1 MB 由 Kernel 使用, 剩下的空间留给用户程序. 此外, 为了支持串口通信, 还设置了一个内存以外的地址区域, 用于串口收发. 具体内存地址的分配方法如下表所示: </p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>地址区间</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0x80000000-0x800FFFFF</td>
+<td>监控程序代码</td>
+</tr>
+<tr>
+<td>0x80100000-0x803FFFFF</td>
+<td>用户程序代码</td>
+</tr>
+<tr>
+<td>0x80400000-0x807EFFFF</td>
+<td>用户程序数据</td>
+</tr>
+<tr>
+<td>0x807F0000-0x807FFFFF</td>
+<td>监控程序数据</td>
+</tr>
+<tr>
+<td>0x10000000-0x10000007</td>
+<td>串口数据及状态</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>串口控制器按照 <a target="_blank" rel="noopener" href="https://www.lammertbies.nl/comm/info/serial-uart">16550 UART 的寄存器</a> 的子集实现, 访问的代码位于 <code>kern/utils.S</code> , 其部分数据格式为:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>地址</th>
+<th>位</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0x10000000</td>
+<td>[7:0]</td>
+<td>串口数据, 读、写地址分别表示串口接收、发送一个字节</td>
+</tr>
+<tr>
+<td>0x10000005</td>
+<td>[5]</td>
+<td>只读, 为 1 时表示串口空闲, 可发送数据</td>
+</tr>
+<tr>
+<td>0x10000005</td>
+<td>[0]</td>
+<td>只读, 为 1 时表示串口收到数据</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>默认情况下还会按照 UART 16550 的初始化流程进行一些寄存器的配置. 在 QEMU 中运行的时候, 请保持 <code>EN_UART16550=y</code> 默认行为. 如果采用自定义的实现, 请设置 <code>EN_UART16550=n</code> 以去掉这些寄存器操作, 或者忽略掉这些操作 (但初始化时仍会输出额外字符, 因为 RBR THR 和 DLL 在同一个地址). 如果使用了 AXI UART16550 作为串口控制器, 请参考代码注释并修改 <code>kernel/include/serial.h</code> 中的常量, 并设置 <code>EN_UART16550=y</code>. </p>
+<p>Kernel 的入口地址为 0x80000000, 对应汇编代码 <code>kern/init.S</code> 中的 <code>START:</code> 标签. 在完成必要的初始化流程后, Kernel 输出版本信息, 随后进入 shell 线程, 与用户交互. shell 线程会等待串口输入, 执行输入的命令, 并通过串口返回结果, 如此往复运行. </p>
+<p>当收到启动用户程序的命令后, 用户线程代替 shell 线程的活动. 用户程序的寄存器, 保存在从 0x807F0000 开始的连续 <code>31*XLEN</code> 字节中, 依次对应 x1 到 x31 用户寄存器, 每次启动用户程序时从上述地址装载寄存器值, 用户程序运行结束后保存到上述地址. </p>
+<h3 id="进阶一-中断和异常支持"><a href="#进阶一-中断和异常支持" class="headerlink" title="进阶一: 中断和异常支持"></a>进阶一: 中断和异常支持</h3><p>作为扩展功能之一, Kernel 支持中断方式的 I/O, 和 Syscall 功能. 要启用这一功能, 编译时的命令变为: </p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">make</span> <span class="token assign-left variable">EN_INT</span><span class="token operator">=</span>y<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这一编译选项, 会使得代码编译时增加宏定义 <code>ENABLE_INT</code> , 从而使能中断相关的代码. 为支持中断, CPU 要额外实现以下指令</p>
+<pre class="line-numbers language-asm" data-language="asm"><code class="language-asm">CSRRC  ccccccccccccsssss011ddddd1110011
+CSRRS  ccccccccccccsssss010ddddd1110011
+CSRRW  ccccccccccccsssss001ddddd1110011
+EBREAK 00000000000100000000000001110011
+ECALL  00000000000000000000000001110011
+MRET   00110000001000000000000001110011
+SLTU   0000000SSSSSsssss011ddddd0110011<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>此外还需要实现 CSR 寄存器的这些字段: </p>
+<ol>
+<li><code>mtvec</code>: BASE, MODE</li>
+<li><code>mscratch</code></li>
+<li><code>mepc</code></li>
+<li><code>mcause</code>: Interrupt, Exception Code</li>
+<li><code>mstatus</code>: MPP</li>
+<li><code>mie</code>: MTIE</li>
+<li><code>mip</code>: MTIP</li>
+</ol>
+<p>CSR 寄存器字段功能定义见 RISC-V 特权态规范. 监控程序对于异常、中断的使用方式如下: </p>
+<ul>
+<li>入口函数 <code>EXCEPTION_HANDLER</code>, 根据异常号跳转至相应的异常处理程序. </li>
+<li>初始化时设置 <code>mtvec = EXCEPTION_HANDLER</code>, 使用正常中断模式 (<code>MODE = DIRECT</code>); 如果不支持 <code>MODE = DIRECT</code> (利用 <code>mtvec</code> 的 <code>WARL</code> 判断), 则会使用向量中断模式 (<code>MODE = VECTORED</code>). </li>
+<li>用户程序在 U-mode 中运行 (<code>mret</code> 时 <code>mstatus.MPP = 0</code>), 通过 <code>ebreak</code> 回到 M-mode, 在异常处理中跳回到 SHELL. </li>
+<li>异常帧保存 31 个通用寄存器及 <code>mepc</code> 寄存器. </li>
+<li>禁止发生嵌套异常. </li>
+<li>支持 <code>SYS_putc</code> 系统调用, 调用方法参考 <code>UTEST_PUTC</code> 函数. 写串口忙等待, 与禁止嵌套异常不冲突. </li>
+<li>当发生不能处理的中断时, 表示出现严重错误, 终止当前任务, 自行重启. 并且发送错误信号 0x80 提醒 Term. </li>
+</ul>
+<p>为了支持时钟中断, 还需要实现 CLINT 设备的两个 MMIO 寄存器: </p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>地址</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0x200BFF8</td>
+<td>mtime, 64 位, 可读写. 表示当前时间</td>
+</tr>
+<tr>
+<td>0x2004000</td>
+<td>mtimecmp, 64 位, 可读写. 表示下次时钟中断时间</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>在 CLINT 设备的实现中, 需要每隔固定时间将 <code>mtime</code> 的值 +1, 并且当 <code>mtime &gt;= mtimecmp</code> 时拉高时钟中断信号, 然后 CPU 核心将 <code>mip.MTIP</code> 置 1. 当 <code>mip.MTIP</code>, <code>mie.MTIE</code> 同时为 1, 且当前特权态下全局中断启用时, CPU 即触发时钟中断. </p>
+<p>具体参见 RISC-V 特权态手册 <em>3.1.10 Machine Timer Registers (mtime and mtimecmp)</em>. 有了时钟中断以后, Kernel 就可以杀掉运行超时的用户程序. </p>
+<h3 id="进阶二-页表支持"><a href="#进阶二-页表支持" class="headerlink" title="进阶二: 页表支持"></a>进阶二: 页表支持</h3><p>在支持异常处理的基础上, 可以进一步使能页表支持, 从而实现用户态地址映射. 要启用这一功能, 编译时的命令变为: </p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">make</span> <span class="token assign-left variable">EN_INT</span><span class="token operator">=</span>y <span class="token assign-left variable">EN_PAGING</span><span class="token operator">=</span>y<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>CPU 需要额外实现以下指令</p>
+<pre class="line-numbers language-asm" data-language="asm"><code class="language-asm">SFENCE.VMA  0001001SSSSSsssss000000001110011<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>如果没有实现 TLB, 可把 <code>SFENCE.VMA</code> 实现为 NOP. 此外还需要实现 csr 寄存器: </p>
+<ol>
+<li><code>satp</code>: MODE, PPN</li>
+</ol>
+<p>以及页表相关的几个异常, RV32 需要实现 Sv32 的页表格式, RV64 需要实现 Sv39 的页表格式. 为了简化, 实际的映射是线性映射, Sv32 映射的方式在下面给出: </p>
+<ul>
+<li>`va[0x00000000, 0x002FFFFF] = pa[0x80100000, 0x803FFFFF] DAGUX-RV 用户态代码</li>
+<li>va[0x7FC10000, 0x7FFFFFFF] = pa[0x80400000, 0x807EFFFF] DAGU-WRV 用户态数据</li>
+<li>va[0x80000000, 0x80000FFF] = pa[0x80000000, 0x80000FFF] DAGUX-RV 用于返回内核态</li>
+<li>va[0x80001000, 0x80001FFF] = pa[0x80001000, 0x80001FFF] DAGUX-RV 用于运行 UTEST 程序 (CRYPTONIGHT 除外)</li>
+<li>va[0x80100000, 0x80100FFF] = pa[0x80100000, 0x80100FFF] DAGUX-RV 方便测试</li>
+</ul>
+<p>Sv39 下为了实现的方便, 映射的地址比以上的地址区域更大一些: </p>
+<ul>
+<li>va[0x00000000, 0x002FFFFF] = pa[0x80100000, 0x803FFFFF] DAGUX-RV 用户态代码</li>
+<li>va[0x7FC10000, 0x7FFFFFFF] = pa[0x80400000, 0x807EFFFF] DAGU-WRV 用户态数据</li>
+<li>va[0x80000000, 0x801FFFFF] = pa[0x80000000, 0x801FFFFF] DAGUX-RV 用于返回内核态、运行 UTEST 程序和方便测试</li>
+</ul>
+<p>其它地址都未经映射, 访问则会引发异常. </p>
+<p>初始化过程: </p>
+<ol>
+<li>根据 RV32 还是 RV64 选择 Sv32 或者 Sv39 的页表进行填写</li>
+<li>将页表的物理地址写入 <code>satp</code> 并配置好模式, 启用 U-mode 下的页表映射机制. </li>
+<li>通过 <code>sfence.vma</code> 指令刷新 TLB. </li>
+<li>将用户栈指针设为 0x80000000. </li>
+</ol>
+<h2 id="Term"><a href="#Term" class="headerlink" title="Term"></a>Term</h2><p>Term 程序运行在实验者电脑上, 提供监控程序交互界面. Term 支持以下命令: </p>
+<ul>
+<li><code>R</code>: 按照 x1 至 x31 的顺序返回用户程序寄存器值. </li>
+<li><code>D</code>: 显示从指定地址开始的一段内存区域中的数据. </li>
+<li><code>A</code>: 用户输入汇编指令, 并放置到指定地址上. </li>
+<li><code>F</code>: 从文件读入汇编指令并放置到指定地址上, 格式与 A 命令相同. </li>
+<li><code>U</code>: 从指定地址读取一定长度的数据, 并显示反汇编结果. </li>
+<li><code>G</code>: 执行指定地址的用户程序. </li>
+<li><code>T</code>: 查看页表内容, 仅在启用页表时有效. </li>
+<li><code>Q</code>: 退出 Term. </li>
+</ul>
+<p>利用这些命令, 实验者可以输入一段汇编程序, 检查数据是否正确写入, 并让程序在处理器上运行验证. Term 程序位于 <code>term</code> 文件夹中, 可执行文件为 <code>term.py</code> . 对于本地的 Thinpad, 运行程序时用 <code>-s</code> 选项指定串口. 例如: </p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">python term.py <span class="token parameter variable">-s</span> COM3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>或者</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">python term.py <span class="token parameter variable">-s</span> /dev/ttyACM0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>连接远程实验平台 Thinpad 或 QEMU 模拟器时, 使用 -t 选项指定 IP 和端口. 如: </p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">python term.py <span class="token parameter variable">-t</span> <span class="token number">127.0</span>.0.1:6666<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="测试程序"><a href="#测试程序" class="headerlink" title="测试程序"></a>测试程序</h3><p>监控程序附带了几个测试程序, 代码见 <code>kern/test.S</code> . 可以通过命令</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">make</span> <span class="token assign-left variable">EN_XXX</span><span class="token operator">=</span>y show-utest<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>来查看测试程序入口地址. 记下这些地址, 并在 Term 中使用 <code>G</code> 命令运行它们. </p>
+<ul>
+<li><p><code>CRYPTONIGHT</code> 测试模仿了 CryptoNight 算法, 它会进行很多次的随机访存, 数据缓存命中率会很低. 运行结束后, 寄存器 <code>t0</code> 保存的是最终结果, 32 位下应该是 <code>a2e31a85</code>, 64 位下应该是 <code>ffffffff861c65d4</code>. </p>
+</li>
+<li><p><code>SPIN</code> 测试是一个死循环, 用来测试时钟中断能否正确杀掉超时程序. </p>
+</li>
+</ul>
+<h3 id="用户程序编写"><a href="#用户程序编写" class="headerlink" title="用户程序编写"></a>用户程序编写</h3><p>根据监控程序设计, 用户程序的代码区为 0x80100000-0x803FFFFF, 实验时需要把用户程序写入这一区域. 用户程序的最后需要以 <code>jr ra</code> 结束, 保证正确返回监控程序. </p>
+<p>在输入用户程序的过程中, 可以用汇编指令, 可以直接写 16 进制的机器码, 还可以写 label (见以下例子中 <code>loop:</code>). 以下是一次输入用户程序并运行的过程演示: </p>
+<pre class="line-numbers language-asm" data-language="asm"><code class="language-asm">connecting to 127.0.0.1:6666...connected
+running in 32bit, xlen = 4
+&gt;&gt; a
+addr: 0x80100000
+one instruction per line, empty line to end.
+[0x80100000] li a0, 5
+[0x80100004] li t0, 0
+[0x80100008] 00000313
+[0x8010000c] loop:
+[0x8010000c] add t1, t1, t0
+[0x80100010] addi t0, t0, 1
+[0x80100014] bne a0, t0, loop
+[0x80100018] jr ra
+[0x8010001c]
+&gt;&gt; u
+addr: 0x80100000
+num: 32
+0x80100000:	00500513	li	a0,5
+0x80100004: 00000293	li	t0,0
+0x80100008: 00000313	li	t1,0
+0x8010000c: 00530333	add	t1,t1,t0
+0x80100010: 00128293	addi	t0,t0,1
+0x80100014: fe551ce3	bne	a0,t0,0x8010000c
+0x80100018: 00008067	ret
+0x8010001c: 00000000	...
+&gt;&gt; g
+addr: 0x80100000
+
+elapsed time: 0.000s
+&gt;&gt; r
+R1 (ra)    = 0x80000414
+R2 (sp)    = 0x807fff00
+R3 (gp)    = 0x00000000
+R4 (tp)    = 0x00000000
+R5 (t0)    = 0x00000005
+R6 (t1)    = 0x0000000a
+R7 (t2)    = 0x00000000
+R8 (s0/fp) = 0x80000000
+R9 (s1)    = 0x00000000
+R10(a0)    = 0x00000005
+R11(a1)    = 0x00000000
+R12(a2)    = 0x00000000
+R13(a3)    = 0x00000000
+R14(a4)    = 0x00000000
+R15(a5)    = 0x00000000
+R16(a6)    = 0x00000000
+R17(a7)    = 0x00000000
+R18(s2)    = 0x00000000
+R19(s3)    = 0x00000000
+R20(s4)    = 0x00000000
+R21(s5)    = 0x00000000
+R22(s6)    = 0x00000000
+R23(s7)    = 0x00000000
+R24(s8)    = 0x00000000
+R25(s9)    = 0x00000000
+R26(s10)   = 0x80100000
+R27(s11)   = 0x00000000
+R28(t3)    = 0x00000000
+R29(t4)    = 0x00000000
+R30(t5)    = 0x00000000
+R31(t6)    = 0x00000000
+&gt;&gt; q<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>当处理器和 Kernel 支持异常功能时 (即上文所述 <code>EN_INT=y</code>), 用户还可以用 Syscall 的方式打印字符. 打印字符的系统调用号为 30. 使用时, 用户把调用号保存在 s0 寄存器, 打印字符参数保存在 a0 寄存器, 并执行 syscall 指令, a0 寄存器的低八位将作为字符打印. 例如: </p>
+<pre class="line-numbers language-asm" data-language="asm"><code class="language-asm">li s0, 30           # 系统调用号
+li a0, 0x4F         # 'O'
+ecall
+li a0, 0x4B         # 'K'
+ecall
+jr ra<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>用 <code>A</code> 命令输入的汇编指令支持常见的伪指令 (pseudo instructions), 并且地址也会相应地变化, 如:</p>
+<pre class="line-numbers language-asm" data-language="asm"><code class="language-asm">connecting to 127.0.0.1:6666...connected
+running in 32bit, xlen = 4
+&gt;&gt; A
+addr: 0x80100000
+one instruction per line, empty line to end.
+[0x80100000] li a0, 0x12345678
+[0x80100008] li t0, 0x23333332
+[0x80100010] ret
+[0x80100014]
+&gt;&gt; U
+addr: 0x80100000
+num: 20
+0x80100000:     12345537        lui     a0,0x12345
+0x80100004:     67850513        addi    a0,a0,1656
+0x80100008:     233332b7        lui     t0,0x23333
+0x8010000c:     33228293        addi    t0,t0,818
+0x80100010:     00008067        ret
+&gt;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>如果是 RV64, 上面的 <code>addi</code> 指令会相应地变成 <code>addiw</code> 指令. </p>
+<h2 id="在-QEMU-里调试监控程序"><a href="#在-QEMU-里调试监控程序" class="headerlink" title="在 QEMU 里调试监控程序"></a>在 QEMU 里调试监控程序</h2><p>在 Makefile 中提供了 <code>debug</code> 目标, 它会编译 kernel 并且运行 QEMU: </p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token builtin class-name">cd</span> kernel
+$ <span class="token function">make</span> debug
+qemu-system-riscv32 <span class="token parameter variable">-M</span> virt <span class="token parameter variable">-m</span> 32M <span class="token parameter variable">-kernel</span> kernel.elf <span class="token parameter variable">-nographic</span> <span class="token parameter variable">-monitor</span> stdio <span class="token parameter variable">-serial</span> tcp::6666,server <span class="token parameter variable">-S</span> <span class="token parameter variable">-s</span>
+QEMU <span class="token number">5.0</span>.0 monitor - <span class="token builtin class-name">type</span> <span class="token string">'help'</span> <span class="token keyword">for</span> <span class="token function">more</span> information
+<span class="token punctuation">(</span>qemu<span class="token punctuation">)</span> qemu-system-riscv32: <span class="token parameter variable">-serial</span> tcp::6666,server: info: QEMU waiting <span class="token keyword">for</span> connection on: disconnected:tcp::::6666,server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>之后它会在 6666 端口上等待 term 的连接. 另起一个窗口, 运行 term 连接到 <code>localhost:6666</code>: </p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ python3 term/term.py <span class="token parameter variable">-t</span> <span class="token number">127.0</span>.0.1:6666 <span class="token parameter variable">-c</span>
+connecting to <span class="token number">127.0</span>.0.1:6666<span class="token punctuation">..</span>.connected<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>这一步连上以后, 就可以用 gdb 挂载到 qemu 里的 kernel 上了. 采用<strong>比较新</strong>的 gdb 或者 SiFive 的 riscv64-elf-unknown-gdb (Windows 最好用这个) 都是可以的. 命令: </p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ riscv64-unknown-elf-gdb kernel/kernel.elf
+GNU gdb <span class="token punctuation">(</span>SiFive GDB <span class="token number">8.3</span>.0-2019.08.0<span class="token punctuation">)</span> <span class="token number">8.3</span>
+Copyright <span class="token punctuation">(</span>C<span class="token punctuation">)</span> <span class="token number">2019</span> Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version <span class="token number">3</span> or later <span class="token operator">&lt;</span>http://gnu.org/licenses/gpl.html<span class="token operator">&gt;</span>
+This is <span class="token function">free</span> software: you are <span class="token function">free</span> to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type <span class="token string">"show copying"</span> and <span class="token string">"show warranty"</span> <span class="token keyword">for</span> details.
+This GDB was configured as <span class="token string">"--host=x86_64-w64-mingw32 --target=riscv64-unknown-elf"</span><span class="token builtin class-name">.</span>
+Type <span class="token string">"show configuration"</span> <span class="token keyword">for</span> configuration details.
+For bug reporting instructions, please see:
+<span class="token operator">&lt;</span>https://github.com/sifive/freedom-tools/issues<span class="token operator">&gt;</span>.
+Find the GDB manual and other documentation resources online at:
+    <span class="token operator">&lt;</span>http://www.gnu.org/software/gdb/documentation/<span class="token operator">&gt;</span>.
+
+For help, <span class="token builtin class-name">type</span> <span class="token string">"help"</span><span class="token builtin class-name">.</span>
+Type <span class="token string">"apropos word"</span> to search <span class="token keyword">for</span> commands related to <span class="token string">"word"</span><span class="token punctuation">..</span>.
+Reading symbols from kernel/kernel.elf<span class="token punctuation">..</span>.
+<span class="token punctuation">(</span>gdb<span class="token punctuation">)</span> target remote localhost:1234
+Remote debugging using localhost:1234
+0x00001000 <span class="token keyword">in</span> ?? <span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span>gdb<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>之后就可以正常进行调试. </p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul>
+<li>CPU 采用的 RISC-V 指令集标准: The RISC-V Instruction Set Manual Volume I: User-Level ISA Document</li>
+<li>RISC-V 中断及 Sv32/Sv39 等特权态资源: The RISC-V Instruction Set Manual Volume II: Privileged Architecture</li>
+</ul>
 
                 
             </div>
@@ -834,7 +852,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://chengsx21.github.io/2022/10/12/xing-shi-yu-yan-yu-zi-dong-ji-zuo-ye-1/">http://chengsx21.github.io/2022/10/12/xing-shi-yu-yan-yu-zi-dong-ji-zuo-ye-1/</a>
+                    <a href="http://chengsx21.github.io/2023/09/23/risc-v-jian-kong-cheng-xu/">http://chengsx21.github.io/2023/09/23/risc-v-jian-kong-cheng-xu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -872,8 +890,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/FL-A/">
-                                    <span class="chip bg-color">FL&amp;A</span>
+                                <a href="/tags/COD/">
+                                    <span class="chip bg-color">COD</span>
                                 </a>
                             
                         </div>
@@ -956,23 +974,23 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/10/15/xing-shi-yu-yan-yu-zi-dong-ji-zuo-ye-2/">
+                <a href="/2023/09/28/systemverilog-ru-men-shi-yong/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="形式语言与自动机 作业2">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="计算机组成原理 笔记3">
                         
-                        <span class="card-title">形式语言与自动机 作业2</span>
+                        <span class="card-title">计算机组成原理 笔记3</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            FL&A Hw2
+                            组成原理课程笔记 SV入门使用
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-10-15
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-09-28
                         </span>
                         <span class="publish-author">
                             
@@ -982,8 +1000,8 @@
                                     CS
                                 </a>
                             
-                            <a href="/categories/CS/FL-A/" class="post-category">
-                                    FL&A
+                            <a href="/categories/CS/COD/" class="post-category">
+                                    COD
                                 </a>
                             
                             
@@ -993,8 +1011,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/FL-A/">
-                        <span class="chip bg-color">FL&amp;A</span>
+                    <a href="/tags/COD/">
+                        <span class="chip bg-color">COD</span>
+                    </a>
+                    
+                    <a href="/tags/SV/">
+                        <span class="chip bg-color">SV</span>
                     </a>
                     
                 </div>
@@ -1008,30 +1030,34 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/10/09/e-luo-si-gai-kuang/">
+                <a href="/2023/09/19/ji-suan-ji-zhi-ling-xi-tong/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="俄罗斯概况">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="计算机组成原理 笔记1">
                         
-                        <span class="card-title">俄罗斯概况</span>
+                        <span class="card-title">计算机组成原理 笔记1</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            俄语(第二外国语)(1) 文化常识
+                            组成原理课程笔记 计算机指令系统
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-09
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-09-19
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Russian/" class="post-category">
-                                    Russian
+                            <a href="/categories/CS/" class="post-category">
+                                    CS
+                                </a>
+                            
+                            <a href="/categories/CS/COD/" class="post-category">
+                                    COD
                                 </a>
                             
                             
@@ -1041,8 +1067,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Russian/">
-                        <span class="chip bg-color">Russian</span>
+                    <a href="/tags/COD/">
+                        <span class="chip bg-color">COD</span>
                     </a>
                     
                 </div>
@@ -1167,13 +1193,6 @@
 </main>
 
 
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
-    });
-</script>
-
 
 
     <footer class="page-footer bg-color">
@@ -1195,7 +1214,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">84.6k</span>
+                        class="white-color">97.2k</span>
             
             
             

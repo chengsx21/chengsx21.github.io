@@ -1,0 +1,1869 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="计算机组成原理 笔记4, Endeavor">
+    <meta name="description" content="组成原理课程笔记 SV实例">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>计算机组成原理 笔记4 | Endeavor</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+    <style>
+        body{
+            background-image: url(https://s2.loli.net/2023/08/15/K54zSXytBfVcnZm.png);
+            background-repeat:no-repeat;
+            background-size: 100% 100%;
+            background-attachment:fixed;
+        }
+    </style>
+
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Endeavor" type="application/atom+xml">
+</head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Endeavor</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/GifExplorer-docs" class="waves-effect waves-light">
+      
+      <i class="fas fa-film" style="zoom: 0.6;"></i>
+      
+      <span>GifDocs</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/sast-summer-training-2023" class="waves-effect waves-light">
+      
+      <i class="fas fa-book" style="zoom: 0.6;"></i>
+      
+      <span>SkillDocs</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Endeavor</div>
+        <div class="logo-desc">
+            
+            Blog of Chengsx
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/GifExplorer-docs" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-film"></i>
+			
+			GifDocs
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/sast-summer-training-2023" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-book"></i>
+			
+			SkillDocs
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/chengsx21/" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/chengsx21/" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">计算机组成原理 笔记4</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/COD/">
+                                <span class="chip bg-color">COD</span>
+                            </a>
+                        
+                            <a href="/tags/SV/">
+                                <span class="chip bg-color">SV</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/CS/" class="post-category">
+                                CS
+                            </a>
+                        
+                            <a href="/categories/CS/COD/" class="post-category">
+                                COD
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-10-02
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2023-09-27
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    5.6k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    23 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="SystemVerilog实例"><a href="#SystemVerilog实例" class="headerlink" title="SystemVerilog实例"></a>SystemVerilog实例</h1><blockquote>
+<p><span class="github-emoji"><span>❓</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2753.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> A Hard Journey…</p>
+</blockquote>
+<h2 id="加法器"><a href="#加法器" class="headerlink" title="加法器"></a>加法器</h2><h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><p>实现一个 2 位加法器: 输入两个非负整数, 输出这两个数的和.</p>
+<p>输入: </p>
+<ol>
+<li><code>a</code>: 宽度为 2, 表示输入的第一个非负整数;</li>
+<li><code>b</code>: 宽度为 2, 表示输入的第二个非负整数.</li>
+</ol>
+<p>输出: </p>
+<ol>
+<li><code>c</code>: 宽度为 2, 表示 <code>a + b</code>, 溢出的部分舍弃.</li>
+</ol>
+<h3 id="电路"><a href="#电路" class="headerlink" title="电路"></a>电路</h3><p>对于这一类<strong>输出仅随着输入变化而变化</strong>的信号, 通常使用<strong>组合逻辑</strong>来实现. 特点是输出完全依赖于输入, 没有内部状态, 和时间无关. </p>
+<p>根据真值表, 可以得到输出与输入的关系 (<code>a_0</code> 表示 <code>a</code> 的最低位). 电路图如下: </p>
+<p><img src="/pic/193.svg" alt=""></p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>实际上直接写 <code>a + b</code> 就可以了, EDA 工具会自动完成逻辑转换. </p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span class="token keyword">module</span> add2 <span class="token punctuation">(</span>
+  <span class="token keyword">input</span> <span class="token keyword">wire</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> a<span class="token punctuation">,</span>
+  <span class="token keyword">input</span> <span class="token keyword">wire</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> b<span class="token punctuation">,</span>
+  <span class="token keyword">output</span> <span class="token keyword">wire</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> c
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">assign</span> c <span class="token operator">=</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+<span class="token keyword">endmodule</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>一个很容易犯的错误是在 <code>output wire [1:0] c</code> 后面多写了一个逗号. 不要把这里的 <code>assign c = a + b</code> 理解为赋值, 而是把它看成信号的连接: 通过一系列的逻辑门, 计算得到 <code>a + b</code> 的结果, 再把结果连接到输出信号 <code>c</code> 上.</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>回顾上面的电路, 最大的特点是<strong>输入一变化, 输出就跟着变</strong>, 并且与时间无关, 这种电路称为<strong>组合电路</strong> (<strong>组合逻辑电路</strong>). </p>
+<h2 id="按钮开关"><a href="#按钮开关" class="headerlink" title="按钮开关"></a>按钮开关</h2><h3 id="需求-1"><a href="#需求-1" class="headerlink" title="需求"></a>需求</h3><p>实现一个控制台灯的按钮开关: 按下开关的时候, 灯会亮起来; 再次按下开关的时候, 灯就熄灭了. </p>
+<p>输入: </p>
+<ol>
+<li><code>button</code>: 1 表示按钮被按下, 0 表示按钮处于弹起状态.</li>
+</ol>
+<p>输出: </p>
+<ol>
+<li><code>light</code>: 1 表示灯亮起, 0 表示灯熄灭.</li>
+</ol>
+<h3 id="电路-1"><a href="#电路-1" class="headerlink" title="电路"></a>电路</h3><p><code>light</code> 输出与它本身的历史状态有关, 并且正好是取反的关系. 如果依然采用组合逻辑来实现, 写出形如 <code>light &lt;= ~light;</code> 的代码, 对应的电路就出现了环路, 此时 <code>light</code> 会不断在 <code>0</code> 和 <code>1</code> 之间震荡.</p>
+<p>这一类<strong>输出与历史状态相关</strong>, 并且<strong>输出在某个信号的上升沿变化</strong>的信号, 通常使用<strong>时序逻辑</strong>来实现. 把 <code>button</code> 连接到触发器的 <code>C</code> 端口, 就实现了上升沿触发的目的; 为了实现每次触发, 让输出的结果取反, 可以把触发器的 <code>Q</code> 经过一个非门再连接到触发器的 <code>D</code> 端口: </p>
+<p><img src="/pic/194.svg" alt=""></p>
+<p>这个电路也成了一个环, 引入触发器的作用, 使得只有在时钟上升沿时, 触发器的输入 D 会引发输出 Q 的变化, 而当时钟上升沿结束以后, 输出 Q 也许会导致输入 D 变化, 但是输出 Q 是稳定不变的, 因此不会出现循环振荡. </p>
+<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><p>时序逻辑里, 需要显式的声明一个寄存器 (对应电路里的触发器), 并<strong>严格</strong>把信号<strong>连接</strong>到触发器的输入 D 端口. </p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span class="token keyword">module</span> button <span class="token punctuation">(</span>
+  <span class="token keyword">input</span> <span class="token keyword">wire</span> button<span class="token punctuation">,</span>
+  <span class="token keyword">output</span> <span class="token keyword">wire</span> light
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">logic</span> light_reg<span class="token punctuation">;</span>
+	<span class="token keyword">assign</span> light <span class="token operator">=</span> light_reg<span class="token punctuation">;</span>
+  <span class="token important">always_ff @</span> <span class="token punctuation">(</span><span class="token keyword">posedge</span> button<span class="token punctuation">)</span> <span class="token keyword">begin</span>
+  	light_reg <span class="token operator">&lt;=</span> <span class="token operator">~</span>light_reg<span class="token punctuation">;</span>
+	<span class="token keyword">end</span>
+<span class="token keyword">endmodule</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>需要显式声明一个触发器, 称为 <code>light_reg</code>, 然后采用 <code>assign light = light_reg</code> 语句把触发器的输出 Q 端口连接到输出信号 <code>light</code> 上. 接下来实现 <code>light_reg</code> 在 <code>button</code> 上升沿时, 将当前的值取反.</p>
+<p>这里把 <code>light_reg</code> 的输出 Q 经过非门连接到 <code>light_reg</code> 的输入 D 中. 换句话说, 出现在 <code>&lt;=</code> 右侧的都是触发器的输出 Q 端口, 而出现在 <code>&lt;=</code> 左侧的都是触发器的输入 D 端口. 这里的 <code>&lt;=</code> 要理解为信号的连接, 而不是软件编程中的赋值.</p>
+<h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><p>时序逻辑电路和组合逻辑电路最大的区别在于可以<strong>记录历史, 并且在一定的条件 (输入信号 C 的上升沿) 下触发更新</strong> . 根据这个特点, 我们就可以保存状态, 在上升沿事件的“带领”下更新内部状态.</p>
+<h2 id="秒表"><a href="#秒表" class="headerlink" title="秒表"></a>秒表</h2><h3 id="需求-2"><a href="#需求-2" class="headerlink" title="需求"></a>需求</h3><p>设计一个秒表: 输出一个数字, 每秒加一; 按下复位按钮恢复到零. </p>
+<p>输入: </p>
+<ol>
+<li><code>reset</code>: 1 表示复位按钮被按下, 需要清零; 0 表示不需要清零.</li>
+<li><code>clock</code>: 频率为 1MHz 的时钟.</li>
+</ol>
+<p>输出: </p>
+<ol>
+<li><code>timer</code>: 4 位的数字, 表示目前经过的秒数.</li>
+</ol>
+<p>为了实现秒表, 需要外部的时钟连接到电路的输入 <code>clock</code> 中, 可以在内部逻辑中, 每一次时钟上升沿给计数器加一, 当计数器加到 1,000,000 次就知道经过了 1s 时间. </p>
+<h3 id="波形"><a href="#波形" class="headerlink" title="波形"></a>波形</h3><p>秒表每秒输出都会加一, 说明内部需要保存状态, 需要用<strong>时序逻辑</strong>来实现这一部分功能. 可以用一个寄存器 <code>timer_reg</code> 来保存当前的秒数, 把寄存器的输出连接到 <code>timer</code> 输出上, 只要保证每 1s 中让 <code>timer_reg</code> 加一即可. </p>
+<p>如何实现每 1s 让 <code>timer_reg</code> 加一? 上面引入了一个频率为 1MHz 的时钟, 每 1us 都有一次时钟上升沿, 为了记忆经过了多少次上升沿又是一个状态, 用一个寄存器 <code>counter_reg</code> 来保存当前经过了多少次上升沿.</p>
+<p>每次上升沿 <code>counter_reg</code> 加一, 当加到 1,000,000 时给 <code>timer_reg</code> 加一, 同时让 <code>counter_reg</code> 恢复到 0, 这样就实现了秒表的计时功能. </p>
+<p>需求里面的复位按钮有两种实现方法: </p>
+<ol>
+<li>按下按钮, 输出变成 0, 符合输入一变输出立即跟着变的特点, 所以可以用<strong>组合逻辑</strong> 实现: <code>timer = reset ? 0 : timer_reg</code>; 在时钟上升沿, 如果发现 <code>reset == 1</code>, 设置 <code>timer_reg = 0</code> 和 <code>counter_reg = 0</code>, 松开按钮时会从 0 开始计时. </li>
+<li>按下按钮, 在时钟上升沿如果发现 <code>reset == 1</code>, 就设置 <code>timer_reg = 0</code> 和 <code>counter_reg = 0</code>; 从下一个周期开始, 输出的 <code>timer = timer_reg</code> 就变成了 0.</li>
+</ol>
+<h3 id="电路-2"><a href="#电路-2" class="headerlink" title="电路"></a>电路</h3><p>两组寄存器 <code>timer_reg</code> 和 <code>counter_reg</code>. <code>counter_reg</code> 在每个 <code>clock</code> 上升沿进行更新, <code>timer_reg</code> 在每个 <code>clock</code> 的上升沿进行更新, 这些 “可能” 在电路上对应用组合逻辑实现的选择器. 最后把 <code>timer_reg</code> 的输出连接到 <code>timer</code> 输出即可.</p>
+<p><img src="/pic/195.svg" alt=""></p>
+<h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span class="token keyword">module</span> timer <span class="token punctuation">(</span>
+  <span class="token keyword">input</span> <span class="token keyword">wire</span> clock<span class="token punctuation">,</span>
+  <span class="token keyword">input</span> <span class="token keyword">wire</span> reset<span class="token punctuation">,</span>
+  <span class="token keyword">output</span> <span class="token keyword">wire</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> timer
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">logic</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> timer_reg<span class="token punctuation">;</span>
+  <span class="token keyword">logic</span> <span class="token punctuation">[</span><span class="token number">19</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> counter_reg<span class="token punctuation">;</span>
+  <span class="token comment">// sequential</span>
+  <span class="token important">always_ff @</span> <span class="token punctuation">(</span><span class="token keyword">posedge</span> clock<span class="token punctuation">)</span> <span class="token keyword">begin</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>reset<span class="token punctuation">)</span> <span class="token keyword">begin</span>
+      timer_reg <span class="token operator">&lt;=</span> <span class="token number">4'b0</span><span class="token punctuation">;</span>
+      counter_reg <span class="token operator">&lt;=</span> <span class="token number">20'b0</span><span class="token punctuation">;</span>
+    <span class="token keyword">end</span> <span class="token keyword">else</span> <span class="token keyword">begin</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>counter_reg <span class="token operator">==</span> <span class="token number">20'd999999</span><span class="token punctuation">)</span> <span class="token keyword">begin</span>
+        timer_reg <span class="token operator">&lt;=</span> timer_reg <span class="token operator">+</span> <span class="token number">4'b1</span><span class="token punctuation">;</span>
+        counter_reg <span class="token operator">&lt;=</span> <span class="token number">20'b0</span><span class="token punctuation">;</span>
+      <span class="token keyword">end</span> <span class="token keyword">else</span> <span class="token keyword">begin</span>
+        counter_reg <span class="token operator">&lt;=</span> counter_reg <span class="token operator">+</span> <span class="token number">20'b1</span><span class="token punctuation">;</span>
+      <span class="token keyword">end</span>
+    <span class="token keyword">end</span>
+  <span class="token keyword">end</span>
+  <span class="token comment">// combinatorial</span>
+  <span class="token keyword">assign</span> timer <span class="token operator">=</span> timer_reg<span class="token punctuation">;</span>
+<span class="token keyword">endmodule</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>接下来按照上面的思路来实现 <code>timer_reg</code> 和 <code>counter_reg</code> 的逻辑. 由于二者的判断是类似的, 可以直接合并起来. 上面的代码中, 语义上是<strong>当 XX 条件发生时, 向 YY 寄存器写入 ZZ</strong>, 实际电路则是 <code>ZZ &lt;= XX ? YY : ZZ</code>, 如果所有写入的条件都不满足, 则保留原来的状态.</p>
+<h3 id="总结-2"><a href="#总结-2" class="headerlink" title="总结"></a>总结</h3><p>经过这个例子, 我们学会了如何用 <code>if-then-else</code> 的方式更新寄存器, 而不用手动去写 <code>ZZ = XX ? YY : ZZ</code> 的代码.</p>
+<h2 id="计数器"><a href="#计数器" class="headerlink" title="计数器"></a>计数器</h2><h3 id="需求-3"><a href="#需求-3" class="headerlink" title="需求"></a>需求</h3><p>设计一个计数器: 一个计数按钮, 每按一次计数加一; 一个复位按钮, 按下时计数恢复到零; 同时输出两位十进制的数, 显示目前按了多少次计数按钮. </p>
+<p>输入信号: </p>
+<ol>
+<li><code>clock</code>: 频率为 1MHz 的时钟.</li>
+<li><code>reset</code>: 1 表示复位按钮被按下, 0 表示没有按下.</li>
+<li><code>button</code>: 1 表示计数按钮被按下, 0 表示没有按下.</li>
+</ol>
+<p>输出信号: </p>
+<ol>
+<li><code>ones</code>: 输出次数的个位数, 4 位.</li>
+<li><code>tens</code>: 输出次数的十位数, 4 位.</li>
+</ol>
+<h3 id="波形-1"><a href="#波形-1" class="headerlink" title="波形"></a>波形</h3><p>能否在 <code>button</code> 的时钟上升沿触发, 让寄存器加一? 由于按钮的本身特性, 按下按钮的几 ms 内是不稳定的, 不断在 <code>0</code> 和 <code>1</code> 之间抖动, 最后才趋向稳定. </p>
+<p>为了消除这个抖动的影响 (Debounce), 可以记录最近若干次 <code>button</code> 的历史值, 如果连续一段时间都处于一个固定的值, 可以认为按钮处于这个状态.</p>
+<p>计数器是一个内部状态, 需要用寄存器来实现. 能否把去抖以后的信号作为时钟信号来驱动? 如果可能的话, 尽量减少用非时钟信号作为上边沿触发, <strong>尽量把相关的时序逻辑都放在同一个时钟域中</strong>. 如果涉及不同时钟域之间的信号处理, 之后会介绍一些用于实现跨时钟域 (CDC) 的正确电路实现方法. <strong>建议只用一个时钟, 让这个时钟驱动所有的寄存器</strong>. </p>
+<p>可以在时钟的上升沿来检测 <code>button_debounced</code> 从 <code>0</code> 变成了 <code>1</code>, 具体思路是: </p>
+<ol>
+<li>设置一个寄存器 <code>button_debounced_delay</code>, 相对 <code>button_debounced</code> 有一个周期的延迟;</li>
+<li>当 <code>button_debounced == 1</code> 且 <code>button_debounced_delay == 0</code> 时, 就检测到了一个从 <code>0</code> 变成 <code>1</code> 的过程, 对计数器加一. </li>
+</ol>
+<h3 id="电路-3"><a href="#电路-3" class="headerlink" title="电路"></a>电路</h3><h4 id="模块化设计"><a href="#模块化设计" class="headerlink" title="模块化设计"></a>模块化设计</h4><p>代码主要有两部分, 一部分是消抖, 一部分是计数和输出逻辑. 消抖逻辑比较独立, 可以拆出来做成一部分电路, 然后连接到计数和输出逻辑部分.</p>
+<p>消抖模块 (Debouncer) : </p>
+<p>输入: </p>
+<ol>
+<li><code>clock</code>: 频率为 1MHz 的时钟.</li>
+<li><code>reset</code>: 1 表示复位按钮被按下, 0 表示没有按下.</li>
+<li><code>button</code>: 1 表示计数按钮被按下, 0 表示没有按下.</li>
+</ol>
+<p>输出: </p>
+<ol>
+<li><code>button_debounced</code>: 消抖后的计数按钮信号, 高有效.</li>
+</ol>
+<p>计数模块 (Counter) : </p>
+<p>输入: </p>
+<ol>
+<li><code>clock</code>: 频率为 1MHz 的时钟.</li>
+<li><code>reset</code>: 1 表示复位按钮被按下, 0 表示没有按下.</li>
+<li><code>button_debounced</code>: 消抖后的计数按钮信号, 高有效.</li>
+</ol>
+<p>输出: </p>
+<ol>
+<li><code>ones</code>: 输出次数的个位数, 4 位.</li>
+<li><code>tens</code>: 输出次数的十位数, 4 位.</li>
+</ol>
+<p><img src="/pic/196.svg" alt=""></p>
+<h4 id="消抖模块"><a href="#消抖模块" class="headerlink" title="消抖模块"></a>消抖模块</h4><p>需要记录下历史输入, 才可以判断是否 10,000 个周期都保持稳定. 用 10,000 个 1 位的寄存器有些浪费, 可以用一个寄存器来记录目前稳定了多少个周期. </p>
+<ol>
+<li>寄存器 <code>last_button_reg</code> 记录上一个周期 <code>button</code>.</li>
+<li>寄存器 <code>counter_reg</code> 用来保存一个计数, 当 <code>button == last_button_reg</code> 时, 说明 <code>button</code> 保持稳定, 那么 <code>counter_reg = counter_reg + 1</code>; 否则清零重新计数</li>
+<li>寄存器 <code>button_debounced_reg</code> 保存当前输出的消抖结果, 当 <code>counter_reg = 10000</code> 的时候, 更新 <code>button_debounced_reg = last_button_reg</code>. </li>
+</ol>
+<p>最后把 <code>button_debounced_reg</code> 连接到 <code>button_debounced</code> 输出. </p>
+<h4 id="计数模块"><a href="#计数模块" class="headerlink" title="计数模块"></a>计数模块</h4><p>接收来自消抖模块的输出 <code>button_debounced</code>, 检测到从 <code>0</code> 变成 <code>1</code> 的时候计数器加一. 能不能用一个完整的寄存器保存计数, 输出设置 <code>ones = counter_reg % 10</code> 和 <code>tens = counter_reg / 10</code>? 不建议, 因为除法和取模运算会耗费大量的逻辑门, 并且延迟比较大. 如果位数更多, 产生的电路复杂度和延迟可能是不可接受的. 考虑到这里每次对 <code>counter_reg</code> 的操作只有加一和清零, 可以添加 <code>ones_reg</code> 和 <code>tens_reg</code> 寄存器, 实现加一和清零的操作, 并且手动处理进位.</p>
+<p>用一个寄存器检测按下的计数按钮, 即 <code>button_debounced</code> 从 <code>0</code> 变成 <code>1</code>: </p>
+<ol>
+<li>寄存器 <code>button_debounced_reg</code> 保存上一周期的 <code>button_debounced</code>.</li>
+<li>如果 <code>button_debounced == 1 &amp;&amp; button_debounced_reg == 0</code>, 说明检测到了从 <code>0</code> 变成了 <code>1</code>.</li>
+</ol>
+<p>最后是 <code>ones_reg</code> 和 <code>tens_reg</code>, 连接到输出的 <code>ones</code> 和 <code>tens</code> 信号即可. </p>
+<h3 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h3><p>首先是消抖电路: </p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span class="token keyword">module</span> debouncer <span class="token punctuation">(</span>
+  <span class="token keyword">input</span> <span class="token keyword">wire</span> clock<span class="token punctuation">,</span>
+  <span class="token keyword">input</span> <span class="token keyword">wire</span> reset<span class="token punctuation">,</span>
+  <span class="token keyword">input</span> <span class="token keyword">wire</span> button<span class="token punctuation">,</span>
+  <span class="token keyword">output</span> <span class="token keyword">wire</span> button_debounced
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">logic</span> last_button_reg<span class="token punctuation">;</span>
+  <span class="token keyword">logic</span> <span class="token punctuation">[</span><span class="token number">15</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> counter_reg<span class="token punctuation">;</span>
+  <span class="token keyword">logic</span> button_debounced_reg<span class="token punctuation">;</span>
+
+  <span class="token important">always_ff @</span> <span class="token punctuation">(</span><span class="token keyword">posedge</span> clock<span class="token punctuation">)</span> <span class="token keyword">begin</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>reset<span class="token punctuation">)</span> <span class="token keyword">begin</span>
+      last_button_reg <span class="token operator">&lt;=</span> <span class="token number">1'b0</span><span class="token punctuation">;</span>
+      counter_reg <span class="token operator">&lt;=</span> <span class="token number">16'b0</span><span class="token punctuation">;</span>
+      button_debounced_reg <span class="token operator">&lt;=</span> <span class="token number">1'b0</span><span class="token punctuation">;</span>
+    <span class="token keyword">end</span> <span class="token keyword">else</span> <span class="token keyword">begin</span>
+      last_button_reg <span class="token operator">&lt;=</span> button<span class="token punctuation">;</span>
+
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>button <span class="token operator">==</span> last_button_reg<span class="token punctuation">)</span> <span class="token keyword">begin</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>counter_reg <span class="token operator">==</span> <span class="token number">16'd10000</span><span class="token punctuation">)</span> <span class="token keyword">begin</span>
+          button_debounced_reg <span class="token operator">&lt;=</span> last_button_reg<span class="token punctuation">;</span>
+        <span class="token keyword">end</span> <span class="token keyword">else</span> <span class="token keyword">begin</span>
+          counter_reg <span class="token operator">&lt;=</span> counter_reg <span class="token operator">+</span> <span class="token number">16'b1</span><span class="token punctuation">;</span>
+        <span class="token keyword">end</span>
+      <span class="token keyword">end</span> <span class="token keyword">else</span> <span class="token keyword">begin</span>
+        counter_reg <span class="token operator">&lt;=</span> <span class="token number">16'b0</span><span class="token punctuation">;</span>
+      <span class="token keyword">end</span>
+    <span class="token keyword">end</span>
+  <span class="token keyword">end</span>
+
+  <span class="token keyword">assign</span> button_debounced <span class="token operator">=</span> button_debounced_reg<span class="token punctuation">;</span>
+<span class="token keyword">endmodule</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>接着是计数器部分: </p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span class="token keyword">module</span> counter <span class="token punctuation">(</span>
+  <span class="token keyword">input</span> <span class="token keyword">wire</span> clock<span class="token punctuation">,</span>
+  <span class="token keyword">input</span> <span class="token keyword">wire</span> reset<span class="token punctuation">,</span>
+  <span class="token keyword">input</span> <span class="token keyword">wire</span> button_debounced<span class="token punctuation">,</span>
+  <span class="token keyword">output</span> <span class="token keyword">wire</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> ones<span class="token punctuation">,</span>
+  <span class="token keyword">output</span> <span class="token keyword">wire</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> tens
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">logic</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> ones_reg<span class="token punctuation">;</span>
+  <span class="token keyword">logic</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> tens_reg<span class="token punctuation">;</span>
+  <span class="token keyword">logic</span> button_debounced_reg<span class="token punctuation">;</span>
+
+  <span class="token important">always_ff @</span> <span class="token punctuation">(</span><span class="token keyword">posedge</span> clock<span class="token punctuation">)</span> <span class="token keyword">begin</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>reset<span class="token punctuation">)</span> <span class="token keyword">begin</span>
+      ones_reg <span class="token operator">&lt;=</span> <span class="token number">4'b0</span><span class="token punctuation">;</span>
+      tens_reg <span class="token operator">&lt;=</span> <span class="token number">4'b0</span><span class="token punctuation">;</span>
+      button_debounced_reg <span class="token operator">&lt;=</span> <span class="token number">1'b0</span><span class="token punctuation">;</span>
+    <span class="token keyword">end</span> <span class="token keyword">else</span> <span class="token keyword">begin</span>
+      button_debounced_reg <span class="token operator">&lt;=</span> button_debounced<span class="token punctuation">;</span>
+
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>button_debounced <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>button_debounced_reg<span class="token punctuation">)</span> <span class="token keyword">begin</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>ones_reg <span class="token operator">==</span> <span class="token number">4'd9</span><span class="token punctuation">)</span> <span class="token keyword">begin</span>
+          ones_reg <span class="token operator">&lt;=</span> <span class="token number">4'b0</span><span class="token punctuation">;</span>
+          tens_reg <span class="token operator">&lt;=</span> tens_reg <span class="token operator">+</span> <span class="token number">4'b1</span><span class="token punctuation">;</span>
+        <span class="token keyword">end</span> <span class="token keyword">else</span> <span class="token keyword">begin</span>
+          ones_reg <span class="token operator">&lt;=</span> ones_reg <span class="token operator">+</span> <span class="token number">4'b1</span><span class="token punctuation">;</span>
+        <span class="token keyword">end</span>
+      <span class="token keyword">end</span>
+    <span class="token keyword">end</span>
+  <span class="token keyword">end</span>
+
+  <span class="token keyword">assign</span> ones <span class="token operator">=</span> ones_reg<span class="token punctuation">;</span>
+  <span class="token keyword">assign</span> tens <span class="token operator">=</span> tens_reg<span class="token punctuation">;</span>
+
+<span class="token keyword">endmodule</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>最后再用一个顶层 <code>module</code> 把两个模块合起来: </p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span class="token keyword">module</span> counter_top <span class="token punctuation">(</span>
+  <span class="token keyword">input</span> <span class="token keyword">wire</span> clock<span class="token punctuation">,</span>
+  <span class="token keyword">input</span> <span class="token keyword">wire</span> reset<span class="token punctuation">,</span>
+  <span class="token keyword">input</span> <span class="token keyword">wire</span> button<span class="token punctuation">,</span>
+  <span class="token keyword">output</span> <span class="token keyword">wire</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> ones<span class="token punctuation">,</span>
+  <span class="token keyword">output</span> <span class="token keyword">wire</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> tens
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">wire</span> button_debounced<span class="token punctuation">;</span>
+
+  debouncer debouncer_component <span class="token punctuation">(</span>
+    <span class="token punctuation">.</span><span class="token function">clock</span><span class="token punctuation">(</span>clock<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">.</span><span class="token function">reset</span><span class="token punctuation">(</span>reset<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">.</span><span class="token function">button</span><span class="token punctuation">(</span>button<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">.</span><span class="token function">button_debounced</span><span class="token punctuation">(</span>button_debounced<span class="token punctuation">)</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  counter counter_component <span class="token punctuation">(</span>
+    <span class="token punctuation">.</span><span class="token function">clock</span><span class="token punctuation">(</span>clock<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">.</span><span class="token function">reset</span><span class="token punctuation">(</span>reset<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">.</span><span class="token function">button_debounced</span><span class="token punctuation">(</span>button_debounced<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">.</span><span class="token function">ones</span><span class="token punctuation">(</span>ones<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">.</span><span class="token function">tens</span><span class="token punctuation">(</span>tens<span class="token punctuation">)</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">endmodule</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>button_debounced</code> 是两个内部模块之间的, 所以声明了一个 <code>wire</code> 把两个模块的输入输出连起来, 其他信号则是直接连接到顶层模块的输入输出信号. </p>
+<h2 id="无状态仲裁器-优先级编码器"><a href="#无状态仲裁器-优先级编码器" class="headerlink" title="无状态仲裁器 (优先级编码器)"></a>无状态仲裁器 (优先级编码器)</h2><h3 id="需求-4"><a href="#需求-4" class="headerlink" title="需求"></a>需求</h3><p>设计一个仲裁器: 假想多个用户同时访问同一个资源, 但是资源同时只能给一个用户使用, 这时需要使用一个仲裁器, 选择出一个幸运儿, 其他用户则需要等待. 假设资源的访问是 “立即” 完成的, 资源正在使用的时候, 使用权不会被其他用户抢走.</p>
+<p>输入: </p>
+<ol>
+<li><code>request</code>: 宽度为 4, 每一位 1 表示对应的用户请求访问资源, 0 表示不请求.</li>
+</ol>
+<p>输出: </p>
+<ol>
+<li><code>valid</code>: 1 表示有用户请求访问资源, 0 表示无用户请求访问资源.</li>
+<li><code>user</code>: 宽度为 2, 如果有用户请求访问资源时, 输出获得资源的用户的编号.</li>
+</ol>
+<h3 id="电路-4"><a href="#电路-4" class="headerlink" title="电路"></a>电路</h3><p>仲裁器的输出完全由输入决定, 没有内部状态, 所以可以用<strong>组合逻辑</strong>来实现.  <code>valid</code> 信号比较简单, 直接把所有输入用或门连接在一起即可. 如何找到请求的用户里, 编号最小的那一个? 可以分情况讨论: </p>
+<ol>
+<li><code>request=0000</code>, 输出的 <code>user</code> 可以是任意值.</li>
+<li><code>request=???1</code>, 此时 <code>user=0, valid=1</code>.</li>
+<li><code>request=??10</code>, 此时 <code>user=1, valid=1</code>.</li>
+<li><code>request=?100</code>, 此时 <code>user=2, valid=1</code>.</li>
+<li><code>request=1000</code>, 此时 <code>user=3, valid=1</code>.</li>
+</ol>
+<p>上面五个条件遍历了所有可能的情况. 在实现组合逻辑的时候, 一定要<strong>考虑所有情况, 并且每个情况下每个信号都要得到一个结果</strong>, 否则不可避免会引入锁存器.</p>
+<p><img src="/pic/197.svg" alt=""></p>
+<h3 id="代码-4"><a href="#代码-4" class="headerlink" title="代码"></a>代码</h3><pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span class="token keyword">module</span> priority_encoder <span class="token punctuation">(</span>
+  <span class="token keyword">input</span> <span class="token keyword">wire</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> request<span class="token punctuation">,</span>
+  <span class="token keyword">output</span> <span class="token keyword">wire</span> valid<span class="token punctuation">,</span>
+  <span class="token keyword">output</span> <span class="token keyword">wire</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> user
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">logic</span> valid_comb<span class="token punctuation">;</span>
+  <span class="token keyword">logic</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> user_comb<span class="token punctuation">;</span>
+
+  <span class="token important">always_comb</span> <span class="token keyword">begin</span>
+    valid_comb <span class="token operator">=</span> <span class="token number">1'b0</span><span class="token punctuation">;</span>
+    user_comb <span class="token operator">=</span> <span class="token number">2'd0</span><span class="token punctuation">;</span>
+    <span class="token keyword">casez</span> <span class="token punctuation">(</span>request<span class="token punctuation">)</span>
+      <span class="token number">4'b???1</span><span class="token punctuation">:</span> <span class="token keyword">begin</span>
+        valid_comb <span class="token operator">=</span> <span class="token number">1'b1</span><span class="token punctuation">;</span>
+        user_comb <span class="token operator">=</span> <span class="token number">2'd0</span><span class="token punctuation">;</span>
+      <span class="token keyword">end</span>
+      <span class="token number">4'b??10</span><span class="token punctuation">:</span> <span class="token keyword">begin</span>
+        valid_comb <span class="token operator">=</span> <span class="token number">1'b1</span><span class="token punctuation">;</span>
+        user_comb <span class="token operator">=</span> <span class="token number">2'd1</span><span class="token punctuation">;</span>
+      <span class="token keyword">end</span>
+      <span class="token number">4'b?100</span><span class="token punctuation">:</span> <span class="token keyword">begin</span>
+        valid_comb <span class="token operator">=</span> <span class="token number">1'b1</span><span class="token punctuation">;</span>
+        user_comb <span class="token operator">=</span> <span class="token number">2'd2</span><span class="token punctuation">;</span>
+      <span class="token keyword">end</span>
+      <span class="token number">4'b1000</span><span class="token punctuation">:</span> <span class="token keyword">begin</span>
+        valid_comb <span class="token operator">=</span> <span class="token number">1'b1</span><span class="token punctuation">;</span>
+        user_comb <span class="token operator">=</span> <span class="token number">2'd3</span><span class="token punctuation">;</span>
+      <span class="token keyword">end</span>
+    <span class="token keyword">endcase</span>
+  <span class="token keyword">end</span>
+
+  <span class="token keyword">assign</span> valid <span class="token operator">=</span> valid_comb<span class="token punctuation">;</span>
+  <span class="token keyword">assign</span> user <span class="token operator">=</span> user_comb<span class="token punctuation">;</span>
+<span class="token keyword">endmodule</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>实现组合逻辑电路的一种方法是用 <code>assign</code>, 如 <code>assign valid = |request</code>; 但是涉及更复杂的组合逻辑时, 会比较复杂. 可以在 <code>always_comb</code> 块中灵活地使用各种条件语句, 包括 <code>casez</code> 语句, 首先设置了一个默认的结果, 这样如果下面所有的 <code>casez</code> 都不满足, 那么输出的就是默认值.</p>
+<h3 id="总结-3"><a href="#总结-3" class="headerlink" title="总结"></a>总结</h3><p>总结规律: </p>
+<ol>
+<li>确定输入输出;</li>
+<li>确定需要哪些寄存器;</li>
+<li>实现时序逻辑;</li>
+<li>实现组合逻辑.</li>
+</ol>
+<h2 id="循环优先级仲裁器"><a href="#循环优先级仲裁器" class="headerlink" title="循环优先级仲裁器"></a>循环优先级仲裁器</h2><h3 id="需求-5"><a href="#需求-5" class="headerlink" title="需求"></a>需求</h3><p>实现一个循环优先级仲裁器 (round robin arbiter), 根据最后一次获取资源的用户, 决定下一次获取资源的优先级. 当一个用户 <code>A</code> 不再获取资源 (对应位 <code>request</code> 从 <code>1</code> 变成 <code>0</code>) 时, 重新选择一个可以获取资源的用户, 优先级是从 <code>A</code> 的下一个用户开始为最高优先级, 如果溢出了就绕回.</p>
+<p>输入: </p>
+<ol>
+<li><code>request</code>: 宽度为 4, 每一位 1 表示对应的用户请求访问资源, 0 表示不请求.</li>
+<li><code>clock</code>: 1MHz 的时钟.</li>
+<li><code>reset</code>: 复位信号.</li>
+</ol>
+<p>输出: </p>
+<ol>
+<li><code>valid</code>: 1 表示有用户请求访问资源, 0 表示无用户请求访问资源.</li>
+<li><code>user</code>: 宽度为 2, 如果有用户请求访问资源时, 输出获得资源的用户的编号.</li>
+</ol>
+<h3 id="波形-2"><a href="#波形-2" class="headerlink" title="波形"></a>波形</h3><p>相比上一个例子, 有两个比较大的区别: </p>
+<ol>
+<li>无状态仲裁器中, 如果出现了优先级更高的用户, 资源的访问权立即切换; 循环优先级仲裁器中, 只有用户放弃了请求才会切换;</li>
+<li>仲裁时, 优先级根据最后一次获得访问权的用户来决定.</li>
+</ol>
+<h3 id="电路-5"><a href="#电路-5" class="headerlink" title="电路"></a>电路</h3><p>由于优先级和最后一次获得访问权的用户有关, 需要<strong>时序逻辑</strong>实现. 用 <code>user_reg</code> 记录最后一次获得访问权的用户编号: </p>
+<ol>
+<li>什么时候更新: 上一个周期没有用户获得访问权, 这个周期 <code>request</code> 不等于零; 当前周期获得访问权的用户对应的 <code>request</code> 位由 <code>1</code> 变成了 <code>0</code>.</li>
+<li>更新成什么: 按照优先级顺序在 <code>request</code> 里选出目前优先级最高的用户.</li>
+</ol>
+<p>由此, 在这一类内部具有状态, 又需要在输入变化的同一个周期输出的情况, 需要用时序逻辑来保存状态, 同时用组合逻辑来实现同周期的输出, 把二者结合起来.</p>
+<p>第一部分是修改后的优先级编码器, 额外添加输入 <code>last_user</code> 表示最后一次获得访问权的用户编号. </p>
+<p>第二部分是维护 <code>user_reg</code> 状态. 第一个模块是上面提到的修改后的优先级编码器, 第二个模块是整体的循环优先级仲裁器, 内部例化第一个模块. </p>
+<h3 id="代码-5"><a href="#代码-5" class="headerlink" title="代码"></a>代码</h3><p>实现第一部分逻辑, 根据最后一次获取资源的用户编号确定优先级的优先级编码器: </p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span class="token keyword">module</span> rr_priority_encoder <span class="token punctuation">(</span>
+  <span class="token keyword">input</span> <span class="token keyword">wire</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> request<span class="token punctuation">,</span>
+  <span class="token keyword">input</span> <span class="token keyword">wire</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> last_user<span class="token punctuation">,</span>
+  <span class="token keyword">output</span> <span class="token keyword">wire</span> valid<span class="token punctuation">,</span>
+  <span class="token keyword">output</span> <span class="token keyword">wire</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> user
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">logic</span> valid_comb<span class="token punctuation">;</span>
+  <span class="token keyword">logic</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> user_comb<span class="token punctuation">;</span>
+
+  <span class="token important">always_comb</span> <span class="token keyword">begin</span>
+    valid_comb <span class="token operator">=</span> <span class="token number">1'b0</span><span class="token punctuation">;</span>
+    user_comb <span class="token operator">=</span> <span class="token number">2'd0</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// naive way</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>last_user <span class="token operator">==</span> <span class="token number">2'd3</span><span class="token punctuation">)</span> <span class="token keyword">begin</span>
+      <span class="token keyword">casez</span> <span class="token punctuation">(</span>request<span class="token punctuation">)</span>
+        <span class="token number">4'b???1</span><span class="token punctuation">:</span> <span class="token keyword">begin</span>
+          valid_comb <span class="token operator">=</span> <span class="token number">1'b1</span><span class="token punctuation">;</span>
+          user_comb <span class="token operator">=</span> <span class="token number">2'd0</span><span class="token punctuation">;</span>
+        <span class="token keyword">end</span>
+        <span class="token number">4'b??10</span><span class="token punctuation">:</span> <span class="token keyword">begin</span>
+          valid_comb <span class="token operator">=</span> <span class="token number">1'b1</span><span class="token punctuation">;</span>
+          user_comb <span class="token operator">=</span> <span class="token number">2'd1</span><span class="token punctuation">;</span>
+        <span class="token keyword">end</span>
+        <span class="token number">4'b?100</span><span class="token punctuation">:</span> <span class="token keyword">begin</span>
+          valid_comb <span class="token operator">=</span> <span class="token number">1'b1</span><span class="token punctuation">;</span>
+          user_comb <span class="token operator">=</span> <span class="token number">2'd2</span><span class="token punctuation">;</span>
+        <span class="token keyword">end</span>
+        <span class="token number">4'b1000</span><span class="token punctuation">:</span> <span class="token keyword">begin</span>
+          valid_comb <span class="token operator">=</span> <span class="token number">1'b1</span><span class="token punctuation">;</span>
+          user_comb <span class="token operator">=</span> <span class="token number">2'd3</span><span class="token punctuation">;</span>
+        <span class="token keyword">end</span>
+      <span class="token keyword">endcase</span>
+    <span class="token keyword">end</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>last_user <span class="token operator">==</span> <span class="token number">2'd0</span><span class="token punctuation">)</span> <span class="token keyword">begin</span>
+      <span class="token keyword">casez</span> <span class="token punctuation">(</span>request<span class="token punctuation">)</span>
+        <span class="token number">4'b??1?</span><span class="token punctuation">:</span> <span class="token keyword">begin</span>
+          valid_comb <span class="token operator">=</span> <span class="token number">1'b1</span><span class="token punctuation">;</span>
+          user_comb <span class="token operator">=</span> <span class="token number">2'd1</span><span class="token punctuation">;</span>
+        <span class="token keyword">end</span>
+        <span class="token number">4'b?10?</span><span class="token punctuation">:</span> <span class="token keyword">begin</span>
+          valid_comb <span class="token operator">=</span> <span class="token number">1'b1</span><span class="token punctuation">;</span>
+          user_comb <span class="token operator">=</span> <span class="token number">2'd2</span><span class="token punctuation">;</span>
+        <span class="token keyword">end</span>
+        <span class="token number">4'b100?</span><span class="token punctuation">:</span> <span class="token keyword">begin</span>
+          valid_comb <span class="token operator">=</span> <span class="token number">1'b1</span><span class="token punctuation">;</span>
+          user_comb <span class="token operator">=</span> <span class="token number">2'd3</span><span class="token punctuation">;</span>
+        <span class="token keyword">end</span>
+        <span class="token number">4'b0001</span><span class="token punctuation">:</span> <span class="token keyword">begin</span>
+          valid_comb <span class="token operator">=</span> <span class="token number">1'b1</span><span class="token punctuation">;</span>
+          user_comb <span class="token operator">=</span> <span class="token number">2'd0</span><span class="token punctuation">;</span>
+        <span class="token keyword">end</span>
+      <span class="token keyword">endcase</span>
+    <span class="token keyword">end</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>last_user <span class="token operator">==</span> <span class="token number">2'd1</span><span class="token punctuation">)</span> <span class="token keyword">begin</span>
+      <span class="token keyword">casez</span> <span class="token punctuation">(</span>request<span class="token punctuation">)</span>
+        <span class="token number">4'b?1??</span><span class="token punctuation">:</span> <span class="token keyword">begin</span>
+          valid_comb <span class="token operator">=</span> <span class="token number">1'b1</span><span class="token punctuation">;</span>
+          user_comb <span class="token operator">=</span> <span class="token number">2'd2</span><span class="token punctuation">;</span>
+        <span class="token keyword">end</span>
+        <span class="token number">4'b10??</span><span class="token punctuation">:</span> <span class="token keyword">begin</span>
+          valid_comb <span class="token operator">=</span> <span class="token number">1'b1</span><span class="token punctuation">;</span>
+          user_comb <span class="token operator">=</span> <span class="token number">2'd3</span><span class="token punctuation">;</span>
+        <span class="token keyword">end</span>
+        <span class="token number">4'b00?1</span><span class="token punctuation">:</span> <span class="token keyword">begin</span>
+          valid_comb <span class="token operator">=</span> <span class="token number">1'b1</span><span class="token punctuation">;</span>
+          user_comb <span class="token operator">=</span> <span class="token number">2'd0</span><span class="token punctuation">;</span>
+        <span class="token keyword">end</span>
+        <span class="token number">4'b0010</span><span class="token punctuation">:</span> <span class="token keyword">begin</span>
+          valid_comb <span class="token operator">=</span> <span class="token number">1'b1</span><span class="token punctuation">;</span>
+          user_comb <span class="token operator">=</span> <span class="token number">2'd1</span><span class="token punctuation">;</span>
+        <span class="token keyword">end</span>
+      <span class="token keyword">endcase</span>
+    <span class="token keyword">end</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>last_user <span class="token operator">==</span> <span class="token number">2'd2</span><span class="token punctuation">)</span> <span class="token keyword">begin</span>
+      <span class="token keyword">casez</span> <span class="token punctuation">(</span>request<span class="token punctuation">)</span>
+        <span class="token number">4'b1???</span><span class="token punctuation">:</span> <span class="token keyword">begin</span>
+          valid_comb <span class="token operator">=</span> <span class="token number">1'b1</span><span class="token punctuation">;</span>
+          user_comb <span class="token operator">=</span> <span class="token number">2'd3</span><span class="token punctuation">;</span>
+        <span class="token keyword">end</span>
+        <span class="token number">4'b0??1</span><span class="token punctuation">:</span> <span class="token keyword">begin</span>
+          valid_comb <span class="token operator">=</span> <span class="token number">1'b1</span><span class="token punctuation">;</span>
+          user_comb <span class="token operator">=</span> <span class="token number">2'd0</span><span class="token punctuation">;</span>
+        <span class="token keyword">end</span>
+        <span class="token number">4'b0?10</span><span class="token punctuation">:</span> <span class="token keyword">begin</span>
+          valid_comb <span class="token operator">=</span> <span class="token number">1'b1</span><span class="token punctuation">;</span>
+          user_comb <span class="token operator">=</span> <span class="token number">2'd1</span><span class="token punctuation">;</span>
+        <span class="token keyword">end</span>
+        <span class="token number">4'b0100</span><span class="token punctuation">:</span> <span class="token keyword">begin</span>
+          valid_comb <span class="token operator">=</span> <span class="token number">1'b1</span><span class="token punctuation">;</span>
+          user_comb <span class="token operator">=</span> <span class="token number">2'd2</span><span class="token punctuation">;</span>
+        <span class="token keyword">end</span>
+      <span class="token keyword">endcase</span>
+    <span class="token keyword">end</span>
+  <span class="token keyword">end</span>
+
+  <span class="token keyword">assign</span> valid <span class="token operator">=</span> valid_comb<span class="token punctuation">;</span>
+  <span class="token keyword">assign</span> user <span class="token operator">=</span> user_comb<span class="token punctuation">;</span>
+
+<span class="token keyword">endmodule</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>接着是循环优先级仲裁器: </p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span class="token keyword">module</span> rr_arbiter <span class="token punctuation">(</span>
+  <span class="token keyword">input</span> <span class="token keyword">wire</span> clock<span class="token punctuation">,</span>
+  <span class="token keyword">input</span> <span class="token keyword">wire</span> reset<span class="token punctuation">,</span>
+  <span class="token keyword">input</span> <span class="token keyword">wire</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> request<span class="token punctuation">,</span>
+  <span class="token keyword">output</span> <span class="token keyword">wire</span> valid<span class="token punctuation">,</span>
+  <span class="token keyword">output</span> <span class="token keyword">wire</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> user
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">logic</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> user_reg<span class="token punctuation">;</span>
+  <span class="token keyword">logic</span> valid_reg<span class="token punctuation">;</span>
+
+  <span class="token keyword">logic</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> user_comb<span class="token punctuation">;</span>
+  <span class="token keyword">logic</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> priority_encoder_user_comb<span class="token punctuation">;</span>
+
+  rr_priority_encoder rr_priority_encoder_inst <span class="token punctuation">(</span>
+    <span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span>request<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">.</span><span class="token function">last_user</span><span class="token punctuation">(</span>user_reg<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">.</span><span class="token function">valid</span><span class="token punctuation">(</span>valid<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">.</span><span class="token function">user</span><span class="token punctuation">(</span>priority_encoder_user_comb<span class="token punctuation">)</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// sequential</span>
+  <span class="token important">always_ff @</span> <span class="token punctuation">(</span><span class="token keyword">posedge</span> clock<span class="token punctuation">)</span> <span class="token keyword">begin</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>reset<span class="token punctuation">)</span> <span class="token keyword">begin</span>
+      user_reg <span class="token operator">&lt;=</span> <span class="token number">2'd0</span><span class="token punctuation">;</span>
+      valid_reg <span class="token operator">&lt;=</span> <span class="token number">1'b0</span><span class="token punctuation">;</span>
+    <span class="token keyword">end</span> <span class="token keyword">else</span> <span class="token keyword">begin</span>
+      valid_reg <span class="token operator">&lt;=</span> valid<span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>valid_reg <span class="token operator">&amp;&amp;</span> valid<span class="token punctuation">)</span> <span class="token keyword">begin</span>
+        <span class="token comment">// case 1: non valid -&gt; valid</span>
+        user_reg <span class="token operator">&lt;=</span> priority_encoder_user_comb<span class="token punctuation">;</span>
+      <span class="token keyword">end</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>valid_reg <span class="token operator">&amp;&amp;</span> valid <span class="token operator">&amp;&amp;</span> request<span class="token punctuation">[</span>user_reg<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">begin</span>
+        <span class="token comment">// case 2: persist</span>
+      <span class="token keyword">end</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>valid_reg <span class="token operator">&amp;&amp;</span> valid <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>request<span class="token punctuation">[</span>user_reg<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">begin</span>
+        <span class="token comment">// case 3: next user</span>
+        user_reg <span class="token operator">&lt;=</span> priority_encoder_user_comb<span class="token punctuation">;</span>
+      <span class="token keyword">end</span>
+    <span class="token keyword">end</span>
+  <span class="token keyword">end</span>
+
+  <span class="token comment">// combinatorial</span>
+  <span class="token important">always_comb</span> <span class="token keyword">begin</span>
+    <span class="token comment">// default</span>
+    user_comb <span class="token operator">=</span> <span class="token number">2'b0</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>valid_reg <span class="token operator">&amp;&amp;</span> valid<span class="token punctuation">)</span> <span class="token keyword">begin</span>
+      <span class="token comment">// case 1: non valid -&gt; valid</span>
+      user_comb <span class="token operator">=</span> priority_encoder_user_comb<span class="token punctuation">;</span>
+    <span class="token keyword">end</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>valid_reg <span class="token operator">&amp;&amp;</span> valid <span class="token operator">&amp;&amp;</span> request<span class="token punctuation">[</span>user_reg<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">begin</span>
+      <span class="token comment">// case 2: persist</span>
+      user_comb <span class="token operator">=</span> user_reg<span class="token punctuation">;</span>
+    <span class="token keyword">end</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>valid_reg <span class="token operator">&amp;&amp;</span> valid <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>request<span class="token punctuation">[</span>user_reg<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">begin</span>
+      <span class="token comment">// case 3: next user</span>
+      user_comb <span class="token operator">=</span> priority_encoder_user_comb<span class="token punctuation">;</span>
+    <span class="token keyword">end</span>
+  <span class="token keyword">end</span>
+
+  <span class="token keyword">assign</span> user <span class="token operator">=</span> user_comb<span class="token punctuation">;</span>
+
+<span class="token keyword">endmodule</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="仿真"><a href="#仿真" class="headerlink" title="仿真"></a>仿真</h2><p><strong>描述数字电路的 Verilog 和用来仿真的 Verilog 使用完全不同的编写思路和实现方法.</strong> 前者与电路一一对应, 而后者更像是 C 这种过程式的编程语言.</p>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span class="token keyword">module</span> add2 <span class="token punctuation">(</span>
+  <span class="token keyword">input</span> <span class="token keyword">wire</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> a<span class="token punctuation">,</span>
+  <span class="token keyword">input</span> <span class="token keyword">wire</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> b<span class="token punctuation">,</span>
+  <span class="token keyword">output</span> <span class="token keyword">wire</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> c
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">assign</span> c <span class="token operator">=</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+<span class="token keyword">endmodule</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>要给这个模块输入数据, 要人为地设置模块的输入: </p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span class="token constant">`timescale</span> <span class="token number">1</span>ns<span class="token operator">/</span><span class="token number">1</span>ps
+<span class="token keyword">module</span> add2_tb <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">reg</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> a<span class="token punctuation">;</span>
+  <span class="token keyword">reg</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> b<span class="token punctuation">;</span>
+  <span class="token keyword">wire</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> c<span class="token punctuation">;</span>
+
+  <span class="token keyword">initial</span> <span class="token keyword">begin</span>
+    a <span class="token operator">=</span> <span class="token number">2'b01</span><span class="token punctuation">;</span>
+    b <span class="token operator">=</span> <span class="token number">2'b10</span><span class="token punctuation">;</span>
+    <span class="token number">#1</span><span class="token punctuation">;</span>
+    <span class="token kernel-function property">$finish</span><span class="token punctuation">;</span>
+  <span class="token keyword">end</span>
+
+  add2 inst <span class="token punctuation">(</span>
+    <span class="token punctuation">.</span><span class="token function">a</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">.</span><span class="token function">b</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">.</span><span class="token function">c</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">endmodule</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>由于 <code>c</code> 连接到 <code>add2</code> 模块的输出, 所以要用 <code>wire</code>; 其他要输入到 <code>add2</code> 模块中, 所以用 <code>reg</code>. 运行 <code>#1;</code> 命令, 表示等待 <code>1ns</code>, 然后再运行 <code>$finish;</code>, 表示仿真结束.</p>
+<h3 id="时钟"><a href="#时钟" class="headerlink" title="时钟"></a>时钟</h3><p>仿真一个带有时序逻辑的模块, 使用前面的秒表的例子: </p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span class="token keyword">module</span> timer <span class="token punctuation">(</span>
+  <span class="token keyword">input</span> <span class="token keyword">wire</span> clock<span class="token punctuation">,</span>
+  <span class="token keyword">input</span> <span class="token keyword">wire</span> reset<span class="token punctuation">,</span>
+  <span class="token keyword">output</span> <span class="token keyword">wire</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> timer
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">reg</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> timer_reg<span class="token punctuation">;</span>
+  <span class="token keyword">reg</span> <span class="token punctuation">[</span><span class="token number">19</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> counter_reg<span class="token punctuation">;</span>
+
+  <span class="token comment">// sequential</span>
+  <span class="token important">always @</span> <span class="token punctuation">(</span><span class="token keyword">posedge</span> clock<span class="token punctuation">)</span> <span class="token keyword">begin</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>reset<span class="token punctuation">)</span> <span class="token keyword">begin</span>
+      timer_reg <span class="token operator">&lt;=</span> <span class="token number">4'b0</span><span class="token punctuation">;</span>
+      counter_reg <span class="token operator">&lt;=</span> <span class="token number">20'b0</span><span class="token punctuation">;</span>
+    <span class="token keyword">end</span> <span class="token keyword">else</span> <span class="token keyword">begin</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>counter_reg <span class="token operator">==</span> <span class="token number">20'd999999</span><span class="token punctuation">)</span> <span class="token keyword">begin</span>
+        timer_reg <span class="token operator">&lt;=</span> timer_reg <span class="token operator">+</span> <span class="token number">4'b1</span><span class="token punctuation">;</span>
+        counter_reg <span class="token operator">&lt;=</span> <span class="token number">20'b0</span><span class="token punctuation">;</span>
+      <span class="token keyword">end</span> <span class="token keyword">else</span> <span class="token keyword">begin</span>
+        counter_reg <span class="token operator">&lt;=</span> counter_reg <span class="token operator">+</span> <span class="token number">20'b1</span><span class="token punctuation">;</span>
+      <span class="token keyword">end</span>
+    <span class="token keyword">end</span>
+  <span class="token keyword">end</span>
+
+  <span class="token comment">// combinatorial</span>
+  <span class="token keyword">assign</span> timer <span class="token operator">=</span> timer_reg<span class="token punctuation">;</span>
+<span class="token keyword">endmodule</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>例化 <code>timer</code> 模块, 连接输入输出信号. 时钟信号以一个固定的频率在 0 和 1 之间变化. 如果频率是 50MHz, 那么一个周期每 10ns 变化一次. 这样下去就可以构造出一个时钟信号:</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span class="token keyword">initial</span> <span class="token keyword">begin</span>
+  reset <span class="token operator">=</span> <span class="token number">1'b0</span><span class="token punctuation">;</span>
+  clock <span class="token operator">=</span> <span class="token number">1'b1</span><span class="token punctuation">;</span>
+  <span class="token number">#10</span><span class="token punctuation">;</span>
+  clock <span class="token operator">=</span> <span class="token number">1'b0</span><span class="token punctuation">;</span>
+  <span class="token number">#10</span><span class="token punctuation">;</span>
+  clock <span class="token operator">=</span> <span class="token number">1'b1</span><span class="token punctuation">;</span>
+  <span class="token number">#10</span><span class="token punctuation">;</span>
+  clock <span class="token operator">=</span> <span class="token number">1'b0</span><span class="token punctuation">;</span>
+  <span class="token number">#10</span><span class="token punctuation">;</span>
+<span class="token keyword">end</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>希望仿真更多时钟周期, 自动生成时钟信号:</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span class="token keyword">initial</span> <span class="token keyword">begin</span>
+  reset <span class="token operator">=</span> <span class="token number">1'b0</span><span class="token punctuation">;</span>
+  clock <span class="token operator">=</span> <span class="token number">1'b1</span><span class="token punctuation">;</span>
+<span class="token keyword">end</span>
+<span class="token important">always</span> <span class="token number">#10</span> clock <span class="token operator">=</span> <span class="token operator">~</span>clock<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="复位"><a href="#复位" class="headerlink" title="复位"></a>复位</h3><p>处理好时钟后仿真上面的代码, 会发现 <code>timer</code> 输出一直是 <code>x</code>, 因为 <code>timer</code> 没有被复位. 需要先设置 <code>reset</code> 为 1, 再设置 <code>reset</code> 为 0: </p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span class="token keyword">initial</span> <span class="token keyword">begin</span>
+  reset <span class="token operator">=</span> <span class="token number">1'b0</span><span class="token punctuation">;</span>
+  clock <span class="token operator">=</span> <span class="token number">1'b1</span><span class="token punctuation">;</span>
+  <span class="token number">#10</span><span class="token punctuation">;</span>
+  reset <span class="token operator">=</span> <span class="token number">1'b1</span><span class="token punctuation">;</span>
+  <span class="token number">#10</span><span class="token punctuation">;</span>
+  reset <span class="token operator">=</span> <span class="token number">1'b0</span><span class="token punctuation">;</span>
+<span class="token keyword">end</span>
+
+<span class="token important">always</span> <span class="token number">#10</span> clock <span class="token operator">=</span> <span class="token operator">~</span>clock<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="构造输入"><a href="#构造输入" class="headerlink" title="构造输入"></a>构造输入</h3><p>目前的仿真顶层模块没有提供要测试的模块的其他输入信号, 还需要针对特定的协议人为构造输入.</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span class="token keyword">reg</span> ps2_clock<span class="token punctuation">;</span>
+<span class="token keyword">reg</span> ps2_data<span class="token punctuation">;</span>
+
+ps2_keyboard dut <span class="token punctuation">(</span>
+  <span class="token punctuation">.</span><span class="token function">clock</span><span class="token punctuation">(</span>clock<span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">.</span><span class="token function">reset</span><span class="token punctuation">(</span>reset<span class="token punctuation">)</span><span class="token punctuation">,</span>
+
+  <span class="token punctuation">.</span><span class="token function">ps2_clock</span><span class="token punctuation">(</span>ps2_clock<span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">.</span><span class="token function">ps2_data</span><span class="token punctuation">(</span>ps2_data<span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>按照 PS/2 的协议, 按顺序给 ps2_clock 和 ps2_data 赋值, 穿插着延迟语句.</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">ps2_data <span class="token operator">=</span> <span class="token number">1'b1</span><span class="token punctuation">;</span>
+ps2_clock <span class="token operator">=</span> <span class="token number">1'b1</span><span class="token punctuation">;</span>
+<span class="token number">#5</span><span class="token punctuation">;</span>
+
+<span class="token comment">// start bit</span>
+ps2_data <span class="token operator">=</span> <span class="token number">1'b0</span><span class="token punctuation">;</span>
+<span class="token number">#5</span><span class="token punctuation">;</span>
+ps2_clock <span class="token operator">=</span> <span class="token number">1'b0</span><span class="token punctuation">;</span>
+<span class="token number">#5</span><span class="token punctuation">;</span>
+ps2_clock <span class="token operator">=</span> <span class="token number">1'b1</span><span class="token punctuation">;</span>
+
+<span class="token comment">// scancode[0] = 0</span>
+ps2_data <span class="token operator">=</span> <span class="token number">1'b0</span><span class="token punctuation">;</span>
+<span class="token number">#5</span><span class="token punctuation">;</span>
+ps2_clock <span class="token operator">=</span> <span class="token number">1'b0</span><span class="token punctuation">;</span>
+<span class="token number">#5</span><span class="token punctuation">;</span>
+ps2_clock <span class="token operator">=</span> <span class="token number">1'b1</span><span class="token punctuation">;</span>
+
+<span class="token comment">// scancode[1] = 0</span>
+ps2_data <span class="token operator">=</span> <span class="token number">1'b0</span><span class="token punctuation">;</span>
+<span class="token number">#5</span><span class="token punctuation">;</span>
+ps2_clock <span class="token operator">=</span> <span class="token number">1'b0</span><span class="token punctuation">;</span>
+<span class="token number">#5</span><span class="token punctuation">;</span>
+ps2_clock <span class="token operator">=</span> <span class="token number">1'b1</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+<span class="token comment">// scancode[7] = 1</span>
+ps2_data <span class="token operator">=</span> <span class="token number">1'b1</span><span class="token punctuation">;</span>
+<span class="token number">#5</span><span class="token punctuation">;</span>
+ps2_clock <span class="token operator">=</span> <span class="token number">1'b0</span><span class="token punctuation">;</span>
+<span class="token number">#5</span><span class="token punctuation">;</span>
+ps2_clock <span class="token operator">=</span> <span class="token number">1'b1</span><span class="token punctuation">;</span>
+
+<span class="token comment">// parity = 1</span>
+ps2_data <span class="token operator">=</span> <span class="token number">1'b1</span><span class="token punctuation">;</span>
+<span class="token number">#5</span><span class="token punctuation">;</span>
+ps2_clock <span class="token operator">=</span> <span class="token number">1'b0</span><span class="token punctuation">;</span>
+<span class="token number">#5</span><span class="token punctuation">;</span>
+ps2_clock <span class="token operator">=</span> <span class="token number">1'b1</span><span class="token punctuation">;</span>
+
+<span class="token comment">// stop</span>
+ps2_data <span class="token operator">=</span> <span class="token number">1'b1</span><span class="token punctuation">;</span>
+<span class="token number">#5</span><span class="token punctuation">;</span>
+ps2_clock <span class="token operator">=</span> <span class="token number">1'b0</span><span class="token punctuation">;</span>
+<span class="token number">#5</span><span class="token punctuation">;</span>
+ps2_clock <span class="token operator">=</span> <span class="token number">1'b1</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>更进一步, 如果想要重复发送 scancode, 只不过内容会更改, 可以把这一步骤封装成 task, 完整写法见 <a target="_blank" rel="noopener" href="https://git.tsinghua.edu.cn/digital-design-lab/project-template/-/blob/2076e9ffc1ff3e923365a9e79d6a944544a3b8e8/src/keyboard_tb.v#L12">Tsinghua GitLab</a>.</p>
+<h3 id="总结-4"><a href="#总结-4" class="headerlink" title="总结"></a>总结</h3><p>总结一下: </p>
+<ul>
+<li>单独写一个仿真顶层模块, 例化要测试的模块.</li>
+<li>测试模块的输入输出接到 <code>reg</code> 或者 <code>wire</code>.</li>
+<li>时序逻辑在 <code>initial</code> 块初始化时钟信号, 用 <code>always #10 clock = ~clock;</code> 生成时钟信号.</li>
+<li>复位信号在 <code>initial</code> 块内, 仿真信号由 0 变成 1, 再由 1 变成 0.</li>
+<li>输入信号在 <code>initial</code> 块内, 对对应的 <code>reg</code> 信号进行赋值.</li>
+</ul>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Chengsx</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://chengsx21.github.io/2023/10/02/systemverilog-shi-li/">http://chengsx21.github.io/2023/10/02/systemverilog-shi-li/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Chengsx</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/COD/">
+                                    <span class="chip bg-color">COD</span>
+                                </a>
+                            
+                                <a href="/tags/SV/">
+                                    <span class="chip bg-color">SV</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2023/10/02/systemverilog-shi-li/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="计算机组成原理 笔记4">
+                        
+                        <span class="card-title">计算机组成原理 笔记4</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            组成原理课程笔记 SV实例
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-02
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/CS/" class="post-category">
+                                    CS
+                                </a>
+                            
+                            <a href="/categories/CS/COD/" class="post-category">
+                                    COD
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/COD/">
+                        <span class="chip bg-color">COD</span>
+                    </a>
+                    
+                    <a href="/tags/SV/">
+                        <span class="chip bg-color">SV</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/09/28/systemverilog-ru-men-shi-yong/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="计算机组成原理 笔记3">
+                        
+                        <span class="card-title">计算机组成原理 笔记3</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            组成原理课程笔记 SV入门使用
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-09-28
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/CS/" class="post-category">
+                                    CS
+                                </a>
+                            
+                            <a href="/categories/CS/COD/" class="post-category">
+                                    COD
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/COD/">
+                        <span class="chip bg-color">COD</span>
+                    </a>
+                    
+                    <a href="/tags/SV/">
+                        <span class="chip bg-color">SV</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022-2023</span>
+            
+            <a href="/about" target="_blank">Chengsx</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+                <span id="translate">|&nbsp;繁/简：</span><a id="translateLink" href="javascript:translatePage();">繁</a>
+            
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">97.2k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2022";
+                        var startMonth = "8";
+                        var startDate = "26";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/chengsx21" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:954738480@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=954738480" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 954738480" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="https://feedly.com/i/subscription/feed/https://endeavor-blog.cn/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+        <script type="text/javascript" src="/js/tw_cn.js"></script>
+        <script type="text/javascript">
+          var defaultEncoding = 2; //网站编写字体是否繁体，1-繁体，2-简体
+          var translateDelay = 0; //延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
+          var cookieDomain = "http://chengsx21.github.io"; //Cookie地址, 一定要设定, 通常为你的网址
+          var msgToTraditionalChinese = "繁"; //此处可以更改为你想要显示的文字
+          var msgToSimplifiedChinese = "简"; //同上，但两处均不建议更改
+          var translateButtonId = "translateLink"; //默认互换id
+          translateInitilization();
+        </script>
+    
+    
+    
+        
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
+            }
+        </script>
+    
+
+    <!--单击显示文字-->
+    <script type="text/javascript" src="/js/click-show-text.js"></script>
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":180,"height":300},"mobile":{"show":false,"react":{"opacity":0.7}}});</script></body>
+
+</html>
