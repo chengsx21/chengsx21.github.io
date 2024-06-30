@@ -22,7 +22,7 @@
     
     <style>
         body{
-            background-image: url(https://s2.loli.net/2023/08/15/K54zSXytBfVcnZm.png);
+            background-image: url(https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301735336.png);
             background-repeat:no-repeat;
             background-size: 100% 100%;
             background-attachment:fixed;
@@ -388,7 +388,7 @@
 
 <script>
     // 每天切换 banner 图.  Switch banner image every day.
-    var bannerUrl = "/medias/banner/" + new Date().getMinutes() + '.jpg';
+    var bannerUrl = "/medias/banner/" + new Date().getMinutes() % 10 + '.jpg';
     $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
 </script>
 
@@ -409,38 +409,11 @@
             <div class="tag-chips">
                 
                 
-                <a href="/tags/DSA/" title="DSA: 13">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-active "
-                            data-tagname="DSA" style="background-color: #F9EBEA;">DSA
-                        <span class="tag-length">13</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/tags/Git/" title="Git: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Git" style="background-color: #F5EEF8;">Git
+                            data-tagname="Git" style="background-color: #F9EBEA;">Git
                         <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/COD/" title="COD: 4">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="COD" style="background-color: #D5F5E3;">COD
-                        <span class="tag-length">4</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Russian/" title="Russian: 3">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Russian" style="background-color: #E8F8F5;">Russian
-                        <span class="tag-length">3</span>
                     </span>
                 </a>
                 
@@ -448,26 +421,17 @@
                 <a href="/tags/Programming/" title="Programming: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Programming" style="background-color: #FEF9E7;">Programming
+                            data-tagname="Programming" style="background-color: #F5EEF8;">Programming
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/IAI/" title="IAI: 4">
+                <a href="/tags/Intro-to-AI/" title="Intro to AI: 4">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="IAI" style="background-color: #F8F9F9;">IAI
+                            data-tagname="Intro to AI" style="background-color: #D5F5E3;">Intro to AI
                         <span class="tag-length">4</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/SV/" title="SV: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="SV" style="background-color: #82E0AA;">SV
-                        <span class="tag-length">2</span>
                     </span>
                 </a>
                 
@@ -475,17 +439,35 @@
                 <a href="/tags/Maths/" title="Maths: 8">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Maths" style="background-color: #D7BDE2;">Maths
+                            data-tagname="Maths" style="background-color: #E8F8F5;">Maths
                         <span class="tag-length">8</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/FL-A/" title="FL&A: 11">
+                <a href="/tags/Russian/" title="Russian: 3">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="FL&A" style="background-color: #A3E4D7;">FL&A
+                            data-tagname="Russian" style="background-color: #FEF9E7;">Russian
+                        <span class="tag-length">3</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Automata/" title="Automata: 11">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Automata" style="background-color: #F8F9F9;">Automata
                         <span class="tag-length">11</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/DSA/" title="DSA: 13">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-active "
+                            data-tagname="DSA" style="background-color: #82E0AA;">DSA
+                        <span class="tag-length">13</span>
                     </span>
                 </a>
                 
@@ -493,8 +475,17 @@
                 <a href="/tags/Probability-Theory/" title="Probability Theory: 8">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Probability Theory" style="background-color: #85C1E9;">Probability Theory
+                            data-tagname="Probability Theory" style="background-color: #D7BDE2;">Probability Theory
                         <span class="tag-length">8</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Compiler/" title="Compiler: 6">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Compiler" style="background-color: #A3E4D7;">Compiler
+                        <span class="tag-length">6</span>
                     </span>
                 </a>
                 
@@ -502,8 +493,35 @@
                 <a href="/tags/CSAPP/" title="CSAPP: 8">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="CSAPP" style="background-color: #F8C471;">CSAPP
+                            data-tagname="CSAPP" style="background-color: #85C1E9;">CSAPP
                         <span class="tag-length">8</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Organization-Design/" title="Organization & Design: 8">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Organization & Design" style="background-color: #F8C471;">Organization & Design
+                        <span class="tag-length">8</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/SV/" title="SV: 6">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="SV" style="background-color: #F9E79F;">SV
+                        <span class="tag-length">6</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Network-Security/" title="Network Security: 7">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Network Security" style="background-color: #F9EBEA;">Network Security
+                        <span class="tag-length">7</span>
                     </span>
                 </a>
                 
@@ -511,7 +529,7 @@
                 <a href="/tags/CS/" title="CS: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="CS" style="background-color: #F9E79F;">CS
+                            data-tagname="CS" style="background-color: #D5F5E3;">CS
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -529,7 +547,7 @@
             
             <div class="article tag-post col s12 m6 l4" data-tags="DSA" data-aos="fade-up">
                 <div class="card">
-                    <a href="/2022/10/17/risk/">
+                    <a href="/2022/10/17/shu-ju-jie-gou-risk/">
                         <div class="card-image tag-image">
                             
                             <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Risk">
@@ -564,7 +582,7 @@
             
             <div class="article tag-post col s12 m6 l4" data-tags="DSA" data-aos="fade-up">
                 <div class="card">
-                    <a href="/2022/09/30/graphics/">
+                    <a href="/2022/09/30/shu-ju-jie-gou-graphics/">
                         <div class="card-image tag-image">
                             
                             <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Graphics">
@@ -599,7 +617,7 @@
             
             <div class="article tag-post col s12 m6 l4" data-tags="DSA" data-aos="fade-up">
                 <div class="card">
-                    <a href="/2022/09/27/a-b-problem/">
+                    <a href="/2022/09/27/shu-ju-jie-gou-a-b-problem/">
                         <div class="card-image tag-image">
                             
                             <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="A+B Problem">
@@ -670,7 +688,7 @@
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2022-2023</span>
+                <span id="year">2022-2024</span>
             
             <a href="/about" target="_blank">Chengsx</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
@@ -681,7 +699,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">98.4k</span>
+                        class="white-color">131.8k</span>
             
             
             

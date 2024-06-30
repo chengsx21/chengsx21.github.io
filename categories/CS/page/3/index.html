@@ -22,7 +22,7 @@
     
     <style>
         body{
-            background-image: url(https://s2.loli.net/2023/08/15/K54zSXytBfVcnZm.png);
+            background-image: url(https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301735336.png);
             background-repeat:no-repeat;
             background-size: 100% 100%;
             background-attachment:fixed;
@@ -388,7 +388,7 @@
 
 <script>
     // 每天切换 banner 图.  Switch banner image every day.
-    var bannerUrl = "/medias/banner/" + new Date().getMinutes() + '.jpg';
+    var bannerUrl = "/medias/banner/" + new Date().getMinutes() % 10 + '.jpg';
     $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
 </script>
 
@@ -410,11 +410,20 @@
                 
                 
                 
-                <a href="/categories/CS/" title="CS: 43">
+                <a href="/categories/CS/" title="CS: 60">
                     <span class="chip center-align waves-effect waves-light
                              chip-active "
                             style="background-color: #F9EBEA;">CS
-                        <span class="tag-length">43</span>
+                        <span class="tag-length">60</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/CS/Intro-to-AI/" title="Intro to AI: 4">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F5EEF8;">Intro to AI
+                        <span class="tag-length">4</span>
                     </span>
                 </a>
                 
@@ -422,35 +431,8 @@
                 <a href="/categories/CS/Git/" title="Git: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F5EEF8;">Git
+                            style="background-color: #D5F5E3;">Git
                         <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/CS/DSA/" title="DSA: 13">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #D5F5E3;">DSA
-                        <span class="tag-length">13</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/CS/COD/" title="COD: 4">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #E8F8F5;">COD
-                        <span class="tag-length">4</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/Russian/" title="Russian: 3">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #FEF9E7;">Russian
-                        <span class="tag-length">3</span>
                     </span>
                 </a>
                 
@@ -458,17 +440,8 @@
                 <a href="/categories/CS/Other/" title="Other: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F8F9F9;">Other
+                            style="background-color: #E8F8F5;">Other
                         <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/CS/IAI/" title="IAI: 4">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #82E0AA;">IAI
-                        <span class="tag-length">4</span>
                     </span>
                 </a>
                 
@@ -476,8 +449,26 @@
                 <a href="/categories/Maths/" title="Maths: 8">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #D7BDE2;">Maths
+                            style="background-color: #FEF9E7;">Maths
                         <span class="tag-length">8</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/Russian/" title="Russian: 3">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F8F9F9;">Russian
+                        <span class="tag-length">3</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/CS/Automata/" title="Automata: 11">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #82E0AA;">Automata
+                        <span class="tag-length">11</span>
                     </span>
                 </a>
                 
@@ -485,8 +476,17 @@
                 <a href="/categories/Maths/Algebra/" title="Algebra: 3">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #A3E4D7;">Algebra
+                            style="background-color: #D7BDE2;">Algebra
                         <span class="tag-length">3</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/CS/DSA/" title="DSA: 13">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #A3E4D7;">DSA
+                        <span class="tag-length">13</span>
                     </span>
                 </a>
                 
@@ -500,29 +500,20 @@
                 </a>
                 
                 
-                <a href="/categories/CS/FL-A/" title="FL&A: 11">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #F8C471;">FL&A
-                        <span class="tag-length">11</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/categories/Math/" title="Math: 8">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F9E79F;">Math
+                            style="background-color: #F8C471;">Math
                         <span class="tag-length">8</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/Math/Probability-Theory/" title="Probability Theory: 8">
+                <a href="/categories/CS/Compiler/" title="Compiler: 6">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F8F9F9;">Probability Theory
-                        <span class="tag-length">8</span>
+                            style="background-color: #F9E79F;">Compiler
+                        <span class="tag-length">6</span>
                     </span>
                 </a>
                 
@@ -536,11 +527,38 @@
                 </a>
                 
                 
+                <a href="/categories/CS/Organization-Design/" title="Organization & Design: 8">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F8C471;">Organization & Design
+                        <span class="tag-length">8</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/CS/Network-Security/" title="Network Security: 7">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F9EBEA;">Network Security
+                        <span class="tag-length">7</span>
+                    </span>
+                </a>
+                
+                
                 <a href="/categories/Maths/Test/" title="Test: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
                             style="background-color: #F5EEF8;">Test
                         <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/Math/Probability-Theory/" title="Probability Theory: 8">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F8F9F9;">Probability Theory
+                        <span class="tag-length">8</span>
                     </span>
                 </a>
                 
@@ -558,23 +576,23 @@
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2022/11/27/xing-shi-yu-yan-yu-zi-dong-ji-zuo-ye-6/">
+                    <a href="/2023/09/17/ji-suan-ji-wang-luo-an-quan-ji-zhu-bi-ji-1/">
                         <div class="card-image tag-image">
                             
-                            <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="形式语言与自动机 作业6">
+                            <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="计算机网络安全技术 笔记1">
                             
-                            <span class="card-title">形式语言与自动机 作业6</span>
+                            <span class="card-title">计算机网络安全技术 笔记1</span>
                         </div>
                     </a>
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                FL&A Hw6
+                                课程概论
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-27
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-09-17
                             </span>
                             <span class="publish-author">
                                 
@@ -584,8 +602,8 @@
                                     CS
                                 </a>
                                 
-                                <a href="/categories/CS/FL-A/" class="post-category">
-                                    FL&A
+                                <a href="/categories/CS/Network-Security/" class="post-category">
+                                    Network Security
                                 </a>
                                 
                                 
@@ -596,8 +614,8 @@
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/FL-A/">
-                            <span class="chip bg-color">FL&amp;A</span>
+                        <a href="/tags/Network-Security/">
+                            <span class="chip bg-color">Network Security</span>
                         </a>
                         
                     </div>
@@ -607,23 +625,264 @@
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2022/11/25/ji-suan-ji-xi-tong-gai-lun-lab-2/">
+                    <a href="/2023/06/13/ji-suan-ji-wang-luo-yuan-li-qi-mo-fu-xi/">
                         <div class="card-image tag-image">
                             
-                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="计算机系统概论 Lab 2">
+                            <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="计算机网络原理 期末复习">
                             
-                            <span class="card-title">计算机系统概论 Lab 2</span>
+                            <span class="card-title">计算机网络原理 期末复习</span>
                         </div>
                     </a>
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                CSAPP Lab2
+                                计算机网络原理课程笔记
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-25
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-06-13
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/CS/" class="post-category">
+                                    CS
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/CS/">
+                            <span class="chip bg-color">CS</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2023/06/04/ren-gong-zhi-neng-dao-lun-bi-ji-4/">
+                        <div class="card-image tag-image">
+                            
+                            <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="人工智能导论 笔记4">
+                            
+                            <span class="card-title">人工智能导论 笔记4</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                统计机器学习
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-06-04
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/CS/" class="post-category">
+                                    CS
+                                </a>
+                                
+                                <a href="/categories/CS/Intro-to-AI/" class="post-category">
+                                    Intro to AI
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Intro-to-AI/">
+                            <span class="chip bg-color">Intro to AI</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2023/05/12/ren-gong-zhi-neng-dao-lun-bi-ji-3/">
+                        <div class="card-image tag-image">
+                            
+                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="人工智能导论 笔记3">
+                            
+                            <span class="card-title">人工智能导论 笔记3</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                对抗搜索
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-12
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/CS/" class="post-category">
+                                    CS
+                                </a>
+                                
+                                <a href="/categories/CS/Intro-to-AI/" class="post-category">
+                                    Intro to AI
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Intro-to-AI/">
+                            <span class="chip bg-color">Intro to AI</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2023/04/17/ren-gong-zhi-neng-dao-lun-bi-ji-2/">
+                        <div class="card-image tag-image">
+                            
+                            <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="人工智能导论 笔记2">
+                            
+                            <span class="card-title">人工智能导论 笔记2</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                神经网络和深度学习
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-04-17
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/CS/" class="post-category">
+                                    CS
+                                </a>
+                                
+                                <a href="/categories/CS/Intro-to-AI/" class="post-category">
+                                    Intro to AI
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Intro-to-AI/">
+                            <span class="chip bg-color">Intro to AI</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2023/03/15/ren-gong-zhi-neng-dao-lun-bi-ji-1/">
+                        <div class="card-image tag-image">
+                            
+                            <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="人工智能导论 笔记1">
+                            
+                            <span class="card-title">人工智能导论 笔记1</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                搜索问题
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-15
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/CS/" class="post-category">
+                                    CS
+                                </a>
+                                
+                                <a href="/categories/CS/Intro-to-AI/" class="post-category">
+                                    Intro to AI
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Intro-to-AI/">
+                            <span class="chip bg-color">Intro to AI</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2022/12/25/ji-suan-ji-xi-tong-gai-lun-lab-3/">
+                        <div class="card-image tag-image">
+                            
+                            <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="计算机系统概论 Lab 3">
+                            
+                            <span class="card-title">计算机系统概论 Lab 3</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                Malloc Lab 实验报告
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-12-25
                             </span>
                             <span class="publish-author">
                                 
@@ -656,23 +915,72 @@
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2022/11/23/nearest-neighbour/">
+                    <a href="/2022/12/22/xing-shi-yu-yan-yu-zi-dong-ji-zuo-ye-11/">
                         <div class="card-image tag-image">
                             
-                            <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Nearest Neighbour">
+                            <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="形式语言与自动机 作业11">
                             
-                            <span class="card-title">Nearest Neighbour</span>
+                            <span class="card-title">形式语言与自动机 作业11</span>
                         </div>
                     </a>
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                DSA CST 3-6 解题报告
+                                形式语言与自动机 Hw11
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-23
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-12-22
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/CS/" class="post-category">
+                                    CS
+                                </a>
+                                
+                                <a href="/categories/CS/Automata/" class="post-category">
+                                    Automata
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Automata/">
+                            <span class="chip bg-color">Automata</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2022/12/20/shu-ju-jie-gou-bbst/">
+                        <div class="card-image tag-image">
+                            
+                            <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="BBST">
+                            
+                            <span class="card-title">BBST</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                DSA Lab3 解题报告
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-12-20
                             </span>
                             <span class="publish-author">
                                 
@@ -705,23 +1013,23 @@
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2022/11/21/build/">
+                    <a href="/2022/12/17/xing-shi-yu-yan-yu-zi-dong-ji-zuo-ye-10/">
                         <div class="card-image tag-image">
                             
-                            <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Build">
+                            <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="形式语言与自动机 作业10">
                             
-                            <span class="card-title">Build</span>
+                            <span class="card-title">形式语言与自动机 作业10</span>
                         </div>
                     </a>
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                DSA CST 3-1 解题报告
+                                形式语言与自动机 Hw10
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-21
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-12-17
                             </span>
                             <span class="publish-author">
                                 
@@ -731,8 +1039,8 @@
                                     CS
                                 </a>
                                 
-                                <a href="/categories/CS/DSA/" class="post-category">
-                                    DSA
+                                <a href="/categories/CS/Automata/" class="post-category">
+                                    Automata
                                 </a>
                                 
                                 
@@ -743,302 +1051,8 @@
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/DSA/">
-                            <span class="chip bg-color">DSA</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2022/11/18/kidd/">
-                        <div class="card-image tag-image">
-                            
-                            <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Kidd">
-                            
-                            <span class="card-title">Kidd</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                DSA CST 3-4-2 解题报告
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-18
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/CS/" class="post-category">
-                                    CS
-                                </a>
-                                
-                                <a href="/categories/CS/DSA/" class="post-category">
-                                    DSA
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/DSA/">
-                            <span class="chip bg-color">DSA</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2022/11/16/not-found/">
-                        <div class="card-image tag-image">
-                            
-                            <img src="/medias/featureimages/27.jpg" class="responsive-img" alt="Not Found">
-                            
-                            <span class="card-title">Not Found</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                DSA CST 3-2 解题报告
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-16
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/CS/" class="post-category">
-                                    CS
-                                </a>
-                                
-                                <a href="/categories/CS/DSA/" class="post-category">
-                                    DSA
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/DSA/">
-                            <span class="chip bg-color">DSA</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2022/11/13/hashfun/">
-                        <div class="card-image tag-image">
-                            
-                            <img src="/medias/featureimages/26.jpg" class="responsive-img" alt="HashFun">
-                            
-                            <span class="card-title">HashFun</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                DSA CST Lab2 解题报告
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-13
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/CS/" class="post-category">
-                                    CS
-                                </a>
-                                
-                                <a href="/categories/CS/DSA/" class="post-category">
-                                    DSA
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/DSA/">
-                            <span class="chip bg-color">DSA</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2022/11/07/xing-shi-yu-yan-yu-zi-dong-ji-zuo-ye-5/">
-                        <div class="card-image tag-image">
-                            
-                            <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="形式语言与自动机 作业5">
-                            
-                            <span class="card-title">形式语言与自动机 作业5</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                FL&A Hw5
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-07
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/CS/" class="post-category">
-                                    CS
-                                </a>
-                                
-                                <a href="/categories/CS/FL-A/" class="post-category">
-                                    FL&A
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/FL-A/">
-                            <span class="chip bg-color">FL&amp;A</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2022/11/04/ji-suan-ji-xi-tong-gai-lun-lab-1/">
-                        <div class="card-image tag-image">
-                            
-                            <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="计算机系统概论 Lab 1">
-                            
-                            <span class="card-title">计算机系统概论 Lab 1</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                CSAPP Lab1
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-04
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/CS/" class="post-category">
-                                    CS
-                                </a>
-                                
-                                <a href="/categories/CS/CSAPP/" class="post-category">
-                                    CSAPP
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/CSAPP/">
-                            <span class="chip bg-color">CSAPP</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2022/11/01/xing-shi-yu-yan-yu-zi-dong-ji-zuo-ye-4/">
-                        <div class="card-image tag-image">
-                            
-                            <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="形式语言与自动机 作业4">
-                            
-                            <span class="card-title">形式语言与自动机 作业4</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                FL&A Hw4
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-01
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/CS/" class="post-category">
-                                    CS
-                                </a>
-                                
-                                <a href="/categories/CS/FL-A/" class="post-category">
-                                    FL&A
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/FL-A/">
-                            <span class="chip bg-color">FL&amp;A</span>
+                        <a href="/tags/Automata/">
+                            <span class="chip bg-color">Automata</span>
                         </a>
                         
                     </div>
@@ -1062,7 +1076,7 @@
             
         </div>
         <div class="page-info col m4 l4 hide-on-small-only">
-            <div class="center-align b-text-gray">3 / 5</div>
+            <div class="center-align b-text-gray">3 / 6</div>
         </div>
         <div class="col s6 m4 l4">
             
@@ -1086,7 +1100,7 @@
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2022-2023</span>
+                <span id="year">2022-2024</span>
             
             <a href="/about" target="_blank">Chengsx</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
@@ -1097,7 +1111,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">98.4k</span>
+                        class="white-color">131.8k</span>
             
             
             

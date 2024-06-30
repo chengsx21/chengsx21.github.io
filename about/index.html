@@ -22,7 +22,7 @@
     
     <style>
         body{
-            background-image: url(https://s2.loli.net/2023/08/15/K54zSXytBfVcnZm.png);
+            background-image: url(https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301735336.png);
             background-repeat:no-repeat;
             background-size: 100% 100%;
             background-attachment:fixed;
@@ -395,7 +395,7 @@
 
 <script>
     // 每天切换 banner 图.  Switch banner image every day.
-    var bannerUrl = "/medias/banner/" + new Date().getMinutes() + '.jpg';
+    var bannerUrl = "/medias/banner/" + new Date().getMinutes() % 10 + '.jpg';
     $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
 </script>
 
@@ -412,21 +412,21 @@
                     <div class="post-statis col l4 hide-on-med-and-down" data-aos="zoom-in-right">
                         
 <div class="statis">
-    <span class="count"><a href="/">62</a></span>
+    <span class="count"><a href="/">79</a></span>
     <span class="name">文章</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/categories">15</a></span>
+    <span class="count"><a href="/categories">17</a></span>
     <span class="name">分类</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">12</a></span>
+    <span class="count"><a href="/tags">14</a></span>
     <span class="name">标签</span>
 </div>
 
@@ -442,21 +442,21 @@
                                 <div class="post-statis hide-on-large-only" data-aos="zoom-in-right">
                                     
 <div class="statis">
-    <span class="count"><a href="/">62</a></span>
+    <span class="count"><a href="/">79</a></span>
     <span class="name">文章</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/categories">15</a></span>
+    <span class="count"><a href="/categories">17</a></span>
     <span class="name">分类</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">12</a></span>
+    <span class="count"><a href="/tags">14</a></span>
     <span class="name">标签</span>
 </div>
 
@@ -590,7 +590,7 @@
         },
         xAxis: {
             type: 'category',
-            data: ["2022-11","2022-12","2023-01","2023-02","2023-03","2023-04","2023-05","2023-06","2023-07","2023-08","2023-09","2023-10","2023-11"]
+            data: ["2023-06","2023-07","2023-08","2023-09","2023-10","2023-11","2023-12","2024-01","2024-02","2024-03","2024-04","2024-05","2024-06"]
         },
         yAxis: {
             type: 'value',
@@ -600,7 +600,7 @@
                 name: '文章篇数',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [12,12,0,1,3,3,4,2,0,0,3,1,0],
+                data: [2,0,0,4,7,6,3,1,0,0,0,0,0],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
@@ -642,7 +642,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"CS","value":43},{"name":"Git","value":1},{"name":"DSA","value":13},{"name":"COD","value":4},{"name":"Russian","value":3},{"name":"Other","value":1},{"name":"IAI","value":4},{"name":"Maths","value":8},{"name":"Algebra","value":3},{"name":"Geometry","value":3},{"name":"FL&A","value":11},{"name":"Math","value":8},{"name":"Probability Theory","value":8},{"name":"CSAPP","value":8},{"name":"Test","value":2}],
+                data: [{"name":"CS","value":60},{"name":"Intro to AI","value":4},{"name":"Git","value":1},{"name":"Other","value":1},{"name":"Maths","value":8},{"name":"Russian","value":3},{"name":"Automata","value":11},{"name":"Algebra","value":3},{"name":"DSA","value":13},{"name":"Geometry","value":3},{"name":"Math","value":8},{"name":"Compiler","value":6},{"name":"CSAPP","value":8},{"name":"Organization & Design","value":8},{"name":"Network Security","value":7},{"name":"Test","value":2},{"name":"Probability Theory","value":8}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -666,7 +666,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["DSA","FL&A","Maths","Probability Theory","CSAPP","COD","IAI","Russian","SV","Git"]
+                data: ["DSA","Automata","Maths","Probability Theory","CSAPP","Organization & Design","Network Security","Compiler","SV","Intro to AI"]
             }
         ],
         yAxis: [
@@ -679,7 +679,7 @@
                 type: 'bar',
                 color: ['#82d3f4'],
                 barWidth : 18,
-                data: [13,11,8,8,8,4,4,3,2,1],
+                data: [13,11,8,8,8,8,7,6,6,4],
                 markPoint: {
                     symbolSize: 45,
                     data: [{
@@ -827,26 +827,8 @@
         <div class="tag-chips center-align">
             
             
-            <a href="/tags/DSA/">
-                <span class="chip center-align waves-effect waves-light chip-default">DSA</span>
-            </a>
-            
-            
-            
             <a href="/tags/Git/">
                 <span class="chip center-align waves-effect waves-light chip-default">Git</span>
-            </a>
-            
-            
-            
-            <a href="/tags/COD/">
-                <span class="chip center-align waves-effect waves-light chip-default">COD</span>
-            </a>
-            
-            
-            
-            <a href="/tags/Russian/">
-                <span class="chip center-align waves-effect waves-light chip-default">Russian</span>
             </a>
             
             
@@ -857,14 +839,8 @@
             
             
             
-            <a href="/tags/IAI/">
-                <span class="chip center-align waves-effect waves-light chip-default">IAI</span>
-            </a>
-            
-            
-            
-            <a href="/tags/SV/">
-                <span class="chip center-align waves-effect waves-light chip-default">SV</span>
+            <a href="/tags/Intro-to-AI/">
+                <span class="chip center-align waves-effect waves-light chip-default">Intro to AI</span>
             </a>
             
             
@@ -875,8 +851,20 @@
             
             
             
-            <a href="/tags/FL-A/">
-                <span class="chip center-align waves-effect waves-light chip-default">FL&A</span>
+            <a href="/tags/Russian/">
+                <span class="chip center-align waves-effect waves-light chip-default">Russian</span>
+            </a>
+            
+            
+            
+            <a href="/tags/Automata/">
+                <span class="chip center-align waves-effect waves-light chip-default">Automata</span>
+            </a>
+            
+            
+            
+            <a href="/tags/DSA/">
+                <span class="chip center-align waves-effect waves-light chip-default">DSA</span>
             </a>
             
             
@@ -887,8 +875,32 @@
             
             
             
+            <a href="/tags/Compiler/">
+                <span class="chip center-align waves-effect waves-light chip-default">Compiler</span>
+            </a>
+            
+            
+            
             <a href="/tags/CSAPP/">
                 <span class="chip center-align waves-effect waves-light chip-default">CSAPP</span>
+            </a>
+            
+            
+            
+            <a href="/tags/Organization-Design/">
+                <span class="chip center-align waves-effect waves-light chip-default">Organization & Design</span>
+            </a>
+            
+            
+            
+            <a href="/tags/SV/">
+                <span class="chip center-align waves-effect waves-light chip-default">SV</span>
+            </a>
+            
+            
+            
+            <a href="/tags/Network-Security/">
+                <span class="chip center-align waves-effect waves-light chip-default">Network Security</span>
             </a>
             
             
@@ -966,7 +978,7 @@
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2022-2023</span>
+                <span id="year">2022-2024</span>
             
             <a href="/about" target="_blank">Chengsx</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
@@ -977,7 +989,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">98.4k</span>
+                        class="white-color">131.8k</span>
             
             
             
