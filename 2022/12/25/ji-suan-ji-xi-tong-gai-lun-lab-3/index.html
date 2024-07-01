@@ -368,7 +368,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -433,7 +433,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-06-30
+                    2024-07-02
                 </div>
                 
 
@@ -470,7 +470,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Lab-3-Malloc-Lab-实验报告"><a href="#Lab-3-Malloc-Lab-实验报告" class="headerlink" title="Lab 3 Malloc Lab 实验报告"></a>Lab 3 Malloc Lab 实验报告</h1><h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><ul>
+                <h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><ul>
 <li>使用 $C$ 语言实现一个 $Dynamic$ $Storage$ $Allocater$.</li>
 <li>实现并优化 $malloc$, $free$, $realloc$ 等功能.</li>
 <li>熟练 $gdb$ 调试技巧.</li>
@@ -528,10 +528,10 @@ Score <span class="token operator">=</span> <span class="token punctuation">(</s
 </blockquote>
 <h2 id="Version-1"><a href="#Version-1" class="headerlink" title="Version 1"></a>Version 1</h2><p>参考 $CSAPP3e$ : $9.9.12$ 中的实现, 采用 $Implicit$ $Free$ $List$ 组织空闲块.</p>
 <h3 id="Block-Structure-1"><a href="#Block-Structure-1" class="headerlink" title="Block Structure"></a>Block Structure</h3><p>一个 $block$ 的结构被组织为:</p>
-<p><img src="/pic/46.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301958229.png" alt=""></p>
 <p>考虑 $Boundary$ $Tags$ 与 $Alignment$ 条件, 此时 $minimum$ $block$ $size$ 为 $4 * WSIZE\,(32\,Bytes)$.</p>
 <p>$Implicit$ $Free$ $List$ 被组织为:</p>
-<p><img src="/pic/47.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301958230.png" alt=""></p>
 <p>其中 $heap_listp$ 初始默认指向 $Prologue$ $Block$, 而 $Epilogue$ $Block$ 在进行 $coalesce$ 时可以用于消除边界条件.</p>
 <h3 id="Macros"><a href="#Macros" class="headerlink" title="Macros"></a>Macros</h3><p>相关 $Macro$ $Definition$ 完全参考了 $CSAPP3e$ : $9.9.12$ 中的实现.</p>
 <h3 id="Helper-Functions-1"><a href="#Helper-Functions-1" class="headerlink" title="Helper Functions"></a>Helper Functions</h3><h4 id="first-fit"><a href="#first-fit" class="headerlink" title="first_fit"></a>first_fit</h4><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token operator">*</span><span class="token function">first_fit</span><span class="token punctuation">(</span>size_t asize<span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -673,7 +673,7 @@ Score <span class="token operator">=</span> <span class="token punctuation">(</s
 </blockquote>
 <h2 id="Version-2"><a href="#Version-2" class="headerlink" title="Version 2"></a>Version 2</h2><p>采用 $Explicit$ $Free$ $List$ 组织空闲块, 使用的数据结构为 $Double$ $Linked$ $List$.</p>
 <h3 id="Block-Structure-2"><a href="#Block-Structure-2" class="headerlink" title="Block Structure"></a>Block Structure</h3><p>一个 $block$ 的结构被组织为:</p>
-<p><img src="/pic/48.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301958231.png" alt=""></p>
 <p>考虑 $Boundary$ $Tags$ 与 $Alignment$ 条件, 此时 $minimum$ $block$ $size$ 为 $4 * WSIZE\,(32\,Bytes)$.</p>
 <h3 id="Macros-1"><a href="#Macros-1" class="headerlink" title="Macros"></a>Macros</h3><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">/* 前/后 block 中 payloader 的起始地址 */</span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name function">PREV_BLK</span><span class="token expression"><span class="token punctuation">(</span>bp<span class="token punctuation">)</span>  <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">void</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">(</span>bp<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token function">GET_SIZE</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">void</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">(</span>bp<span class="token punctuation">)</span> <span class="token operator">-</span> DSIZE<span class="token punctuation">)</span><span class="token punctuation">)</span></span></span>
@@ -955,7 +955,7 @@ Score <span class="token operator">=</span> <span class="token punctuation">(</s
                 <a href="/2022/12/28/e-yu-qi-mo-fu-xi/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Russian End-of-term Revision">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Russian End-of-term Revision">
                         
                         <span class="card-title">Russian End-of-term Revision</span>
                     </div>
@@ -1000,23 +1000,23 @@ Score <span class="token operator">=</span> <span class="token punctuation">(</s
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/12/22/xing-shi-yu-yan-yu-zi-dong-ji-zuo-ye-11/">
+                <a href="/2022/12/20/shu-ju-jie-gou-bbst/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="形式语言与自动机 作业11">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="BBST">
                         
-                        <span class="card-title">形式语言与自动机 作业11</span>
+                        <span class="card-title">BBST</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            形式语言与自动机 Hw11
+                            DSA Lab3 解题报告
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-12-22
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-12-20
                             </span>
                         <span class="publish-author">
                             
@@ -1026,8 +1026,8 @@ Score <span class="token operator">=</span> <span class="token punctuation">(</s
                                     CS
                                 </a>
                             
-                            <a href="/categories/CS/Automata/" class="post-category">
-                                    Automata
+                            <a href="/categories/CS/DSA/" class="post-category">
+                                    DSA
                                 </a>
                             
                             
@@ -1037,8 +1037,8 @@ Score <span class="token operator">=</span> <span class="token punctuation">(</s
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Automata/">
-                        <span class="chip bg-color">Automata</span>
+                    <a href="/tags/DSA/">
+                        <span class="chip bg-color">DSA</span>
                     </a>
                     
                 </div>
@@ -1191,7 +1191,7 @@ Score <span class="token operator">=</span> <span class="token punctuation">(</s
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">131.8k</span>
+                        class="white-color">124k</span>
             
             
             

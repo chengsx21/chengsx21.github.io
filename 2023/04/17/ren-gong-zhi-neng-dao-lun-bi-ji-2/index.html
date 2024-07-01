@@ -368,7 +368,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -433,7 +433,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-06-30
+                    2024-07-02
                 </div>
                 
 
@@ -472,7 +472,7 @@
             <div id="articleContent">
                 <h1 id="第二章-神经网络和深度学习"><a href="#第二章-神经网络和深度学习" class="headerlink" title="第二章 神经网络和深度学习"></a>第二章 神经网络和深度学习</h1><h2 id="神经网络-——-从数字识别说起"><a href="#神经网络-——-从数字识别说起" class="headerlink" title="神经网络 —— 从数字识别说起"></a>神经网络 —— 从数字识别说起</h2><ul>
 <li><p>深度学习 $\subseteq$ 机器学习 $\subseteq$ 人工智能.</p>
-  <div align="center"><img src="/pic/61.png" width="100%" height="100%"></div>
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301959787.png" alt=""></p>
 </li>
 <li><p>$w_i(1\le i\le n)$ 表示<strong>数字模式</strong>, $x_i(1\le i\le n)$ 表示<strong>数字图像</strong>, 大小表示<strong>匹配程度</strong>.</p>
 <script type="math/tex; mode=display">
@@ -483,22 +483,21 @@
 <li><p><strong>增加偏置项</strong>: 使 <strong>Sigmoid</strong> 函数平移.</p>
 <script type="math/tex; mode=display">
   net=\sum_{i=1}^{n}w_i\cdot x_i+b;\\
-  y=sigmoid(net).</script>  <div align="center"><img src="/pic/62.png" width="100%" height="100%"></div>
-
-  <div align="center"><img src="/pic/63.png" width="100%" height="100%"></div>
+  y=sigmoid(net).</script><p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301959788.png" alt=""></p>
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301959789.png" alt=""></p>
 </li>
 <li><p><strong>神经元</strong>代表一个<strong>模式</strong>, 其输出为匹配结果.</p>
 </li>
 <li><p><strong>神经网络的扩展</strong>:</p>
 <ul>
 <li><p><strong>横向</strong> —— 增加模式.</p>
-  <div align="center"><img src="/pic/64.png" width="100%" height="100%"></div>
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301959790.png" alt=""></p>
 </li>
 <li><p><strong>纵向</strong> —— 局部模式.</p>
-  <div align="center"><img src="/pic/65.png" width="100%" height="100%"></div>
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301959791.png" alt=""></p>
 </li>
 <li><p><strong>网络更深</strong> —— 模式组合.</p>
-  <div align="center"><img src="/pic/66.png" width="100%" height="100%"></div>
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301959792.png" alt=""></p>
 </li>
 </ul>
 </li>
@@ -514,7 +513,7 @@
 <li><p>神经元:</p>
 <script type="math/tex; mode=display">
   net=\sum_{i=1}^{n}w_i\cdot x_i+b=\sum_{i=0}^{n}w_i\cdot x_i;\\
-  o=g(net).</script>  <div align="center"><img src="/pic/67.png" width="100%" height="100%"></div>
+  o=g(net).</script><p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301959793.png" alt=""></p>
 </li>
 <li><p><strong>激活函数</strong>:</p>
 <ul>
@@ -528,8 +527,7 @@
 </li>
 <li><p><strong>Softmax</strong> 函数.</p>
 <script type="math/tex; mode=display">
-  o_k=\dfrac{e^{net_k}}{\sum\limits_{i=1}^{m}e^{net_i}}.</script>  <div align="center"><img src="/pic/68.png" width="100%" height="100%"></div>
-
+  o_k=\dfrac{e^{net_k}}{\sum\limits_{i=1}^{m}e^{net_i}}.</script><p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301959794.png" alt=""></p>
 </li>
 </ul>
 </li>
@@ -566,7 +564,7 @@
   E_d(w)=\dfrac{1}{2}\sum_{k=1}^{m}(t_{kd}-o_{kd})^2.</script></li>
 <li><p>对所有样本的误差:</p>
 <script type="math/tex; mode=display">
-  E(w)=\sum_{d=1}^{n}E_d(w)=\dfrac{1}{2}\sum_{d=1}^{n}\sum_{k=1}^{m}(t_{kd}-o_{kd})^2.</script>  <div align="center"><img src="/pic/69.png" width="100%" height="100%"></div>
+  E(w)=\sum_{d=1}^{n}E_d(w)=\dfrac{1}{2}\sum_{d=1}^{n}\sum_{k=1}^{m}(t_{kd}-o_{kd})^2.</script><p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301959795.png" alt=""></p>
 </li>
 </ul>
 </li>
@@ -582,22 +580,21 @@
 <li>随机梯度下降算法.</li>
 <li>小批量梯度下降算法.</li>
 </ul>
-<div align="center"><img src="/pic/70.png" width="100%" height="100%"></div>
+<p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301959796.png" alt=""></p>
 </li>
 <li><p><strong>输出层</strong> (只影响<strong>一个输出</strong>):</p>
-  <div align="center"><img src="/pic/71.png" width="100%" height="100%"></div>
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301959797.png" alt=""></p>
 </li>
 <li><p><strong>隐含层</strong> (影响<strong>多个输出</strong>):</p>
-  <div align="center"><img src="/pic/72.png" width="100%" height="100%"></div>
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301959798.png" alt=""></p>
 </li>
 <li><p>整体梯度计算:</p>
-  <div align="center"><img src="/pic/73.png" width="100%" height="100%"></div>
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301959799.png" alt=""></p>
 </li>
 </ul>
 </li>
 <li><p><strong>反向传播算法 (BP算法)</strong>: 随机梯度下降算法的一种实现.</p>
-  <div align="center"><img src="/pic/75.png" width="100%" height="100%"></div>
-
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301959800.png" alt=""></p>
 <ul>
 <li>随机梯度下降版: <strong>初始化所有权值为小的随机值</strong>, 如 $[-0.05,0.05]$.</li>
 <li>算法条件:<ul>
@@ -614,8 +611,7 @@
   H_d(w)=-\sum_{k=1}^{M}t_{kd}\log o_{kd}.\\
   H(w)=\sum_{d=1}^{N}H_d(w)=-\sum_{d=1}^{N}\sum_{k=1}^{M}t_{kd}\log o_{kd}.</script><p>  其中 $t_{kd}$ 为样本的<strong>希望</strong>输出值, $o_{kd}$ 为样本的<strong>实际</strong>输出值, 需要为概率值. 这给出了<strong>两个不同的概率分布间的距离</strong>. 对于<strong>分类问题</strong>, 对于给定输入样本 $d$, 只有 $d$ 对应的希望输出为 1, 其他为 0. 此时</p>
 <script type="math/tex; mode=display">
-  H_d(w)=-\log o_{kd}.\\</script>  <div align="center"><img src="/pic/75.png" width="100%" height="100%"></div>
-
+  H_d(w)=-\log o_{kd}.\\</script><p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301959801.png" alt=""></p>
 </li>
 </ul>
 <h2 id="卷积神经网络-CNN"><a href="#卷积神经网络-CNN" class="headerlink" title="卷积神经网络 (CNN)"></a>卷积神经网络 (CNN)</h2><ul>
@@ -634,8 +630,7 @@
 </ul>
 </li>
 <li><p>提取局部模式:</p>
-  <div align="center"><img src="/pic/76.png" width="100%" height="100%"></div>
-
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301959802.png" alt=""></p>
 <ul>
 <li><p><strong>局部连接</strong>, <strong>权值共享</strong>.</p>
 </li>
@@ -644,8 +639,7 @@
 <li><p><strong>多卷积核</strong>: 一个卷积核产生一个通道, 输出的<strong>通道数</strong>等于<strong>卷积核数</strong>.</p>
 </li>
 <li><p><strong>多输入通道</strong> (例: <strong>RGB</strong> 识别):</p>
-  <div align="center"><img src="/pic/77.png" width="100%" height="100%"></div>
-
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301959803.png" alt=""></p>
 <p>  此时视为<strong>多厚度单卷积核</strong>.</p>
 </li>
 <li><p><strong>卷积核大小</strong>: 多层小卷积实现大卷积 (两层 3×3 卷积等效 5×5 卷积).</p>
@@ -657,60 +651,53 @@
 </ul>
 </li>
 <li><p><strong>LeNet 神经网络</strong> (数字识别):</p>
-  <div align="center"><img src="/pic/78.png" width="100%" height="100%"></div>
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301959804.png" alt=""></p>
 </li>
 <li><p><strong>VGG-16 神经网络</strong> (图像识别):</p>
-  <div align="center"><img src="/pic/79.png" width="100%" height="100%"></div>
-
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301959805.png" alt=""></p>
 </li>
 </ul>
 <h2 id="梯度消失问题"><a href="#梯度消失问题" class="headerlink" title="梯度消失问题"></a>梯度消失问题</h2><ul>
 <li><p>网络深度过深时:</p>
-  <div align="center"><img src="/pic/80.png" width="100%" height="100%"></div>
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301959806.png" alt=""></p>
 </li>
 <li><p>使用 <strong>ReLU</strong> 激活函数, 其导数恒为 1:</p>
-  <div align="center"><img src="/pic/81.png" width="100%" height="100%"></div>
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301959807.png" alt=""></p>
 </li>
 <li><p><strong>GoogLeNet 神经网络</strong> (类比高楼供水系统):</p>
-  <div align="center"><img src="/pic/82.png" width="100%" height="100%"></div>
-
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301959808.png" alt=""></p>
 <p>  神经元依靠<strong>就近输出</strong>进行<strong>训练</strong>时的<strong>梯度计算补偿</strong>, 训练结束后只采用最终输出.</p>
 <ul>
 <li><p><strong>Inception 模块</strong>:</p>
-  <div align="center"><img src="/pic/83.png" width="100%" height="100%"></div>
-
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301959809.png" alt=""></p>
 <p>  同时使用<strong>不同大小的卷积核.</strong></p>
 </li>
 <li><p><strong>降维 Inception 模块</strong>:</p>
-  <div align="center"><img src="/pic/84.png" width="100%" height="100%"></div>
-
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301959810.png" alt=""></p>
 <p>  <strong>使用 1×1 卷积降维</strong>.</p>
 </li>
 <li><p><strong>Inception 模块详析</strong>:</p>
-  <div align="center"><img src="/pic/85.png" width="100%" height="100%"></div>
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301959811.png" alt=""></p>
 </li>
 </ul>
 </li>
 <li><p><strong>ResNet 残差网络</strong>:</p>
 <ul>
 <li><p>神经网络的<strong>退化</strong>现象 (与<strong>网络结构</strong>有关):</p>
-  <div align="center"><img src="/pic/86.png" width="100%" height="100%"></div>
-
-  <div align="center"><img src="/pic/87.png" width="100%" height="100%"></div>
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301959812.png" alt=""></p>
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301959813.png" alt=""></p>
 </li>
 <li><p>残差模块:</p>
-  <div align="center"><img src="/pic/88.png" width="100%" height="100%"></div>
-
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301959814.png" alt=""></p>
 <p>  <strong>恒等映射</strong>的存在<strong>解决了梯度消失问题</strong>.</p>
-  <div align="center"><img src="/pic/89.png" width="100%" height="100%"></div>
-
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301959815.png" alt=""></p>
 </li>
 </ul>
 </li>
 </ul>
 <h2 id="过拟合问题"><a href="#过拟合问题" class="headerlink" title="过拟合问题"></a>过拟合问题</h2><ul>
 <li><p>神经网络的<strong>过拟合</strong>问题 (<strong>与网络结构无关, 与训练轮次有关</strong>):</p>
-  <div align="center"><img src="/pic/90.png" width="100%" height="100%"></div>
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301959816.png" alt=""></p>
 </li>
 <li><p><strong>使用验证集</strong>: 用于调整超参数.</p>
 </li>
@@ -747,18 +734,16 @@
 </ul>
 </li>
 <li><p><strong>分布式表示</strong>: 相比于独热编码, 是一种稠密表示.</p>
-  <div align="center"><img src="/pic/91.png" width="100%" height="100%"></div>
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301959817.png" alt=""></p>
 </li>
 <li><p><strong>词嵌入</strong>: 把词向量从高维空间嵌入到低维空间中的一个方法.</p>
 </li>
 <li><p><strong>神经网络语言模型</strong>: 用神经网络实现的语言模型.</p>
-  <div align="center"><img src="/pic/92.png" width="100%" height="100%"></div>
-
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301959818.png" alt=""></p>
 <p>  标准的<strong>全连接网络</strong> (<strong>前向神经网络</strong>):</p>
-  <div align="center"><img src="/pic/93.png" width="100%" height="100%"></div>
-
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301959819.png" alt=""></p>
 <p>  语言模型同时训练<strong>词向量</strong>和<strong>权重</strong>:</p>
-  <div align="center"><img src="/pic/94.png" width="100%" height="100%"></div>
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301959820.png" alt=""></p>
 </li>
 <li><p><strong>训练</strong>神经网络语言模型: 让<strong>联合概率最大化</strong>估计概率 (<strong>最大似然估计</strong>).</p>
 <ul>
@@ -781,15 +766,13 @@
 </ul>
 </li>
 <li><p><strong>训练</strong>词向量:</p>
-  <div align="center"><img src="/pic/95.png" width="100%" height="100%"></div>
-
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301959821.png" alt=""></p>
 <p>  每个词<strong>随机给定</strong>词向量, 并在进行训练<strong>实时更新</strong> (<strong>输入层</strong>相当于一个<strong>新增的隐含层</strong>). 通过训练语言模型, 得到词向量 (<strong>自监督</strong>).</p>
 </li>
 <li><p><strong>word2vec模型</strong>: 一种<strong>简化的神经网络语言模型</strong>.</p>
 <ul>
 <li><p><strong>连续词袋模型 (CBOW)</strong>: <strong>不考虑</strong>上下文中词的<strong>顺序</strong>.</p>
-  <div align="center"><img src="/pic/96.png" width="100%" height="100%"></div>
-
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301959822.png" alt=""></p>
 <p>  <strong>输出处理</strong>得到的 $x_w$ 的长度即为<strong>一个词向量的长度</strong>, 使用<strong>语料库预生成</strong>的 <strong>Huffman Tree</strong> 替换隐含层及输出层. <strong>每次训练</strong>时只计算<strong>与该词有关的参数</strong>, 且越是<strong>常用词</strong>涉及的<strong>参数越少</strong>, <strong>训练速度快</strong>.</p>
 <p>  $W$ 经过霍夫曼树每个节点时的概率为:</p>
 <script type="math/tex; mode=display">
@@ -804,8 +787,7 @@
 </ul>
 </li>
 <li><p><strong>TextCNN</strong>: 词向量应用——情感分类问题.</p>
-  <div align="center"><img src="/pic/97.png" width="100%" height="100%"></div>
-
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301959823.png" alt=""></p>
 </li>
 </ul>
 <h2 id="循环神经网络-RNN"><a href="#循环神经网络-RNN" class="headerlink" title="循环神经网络 (RNN)"></a>循环神经网络 (RNN)</h2><ul>
@@ -831,24 +813,21 @@
 </ul>
 </li>
 <li><p><strong>循环模块</strong>:</p>
-  <div align="center"><img src="/pic/98.png" width="100%" height="100%"></div>
-
-  <div align="center"><img src="/pic/99.png" width="100%" height="100%"></div>
-
-  <div align="center"><img src="/pic/100.png" width="100%" height="100%"></div>
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301959824.png" alt=""></p>
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301959825.png" alt=""></p>
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302007947.png" alt=""></p>
 </li>
 <li><p><strong>循环神经网络的训练</strong>: 与具体任务结合.</p>
-  <div align="center"><img src="/pic/101.png" width="100%" height="100%"></div>
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302007948.png" alt=""></p>
 </li>
 <li><p><strong>例</strong>: <strong>看图说话</strong>问题</p>
-  <div align="center"><img src="/pic/102.png" width="100%" height="100%"></div>
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302007949.png" alt=""></p>
 </li>
 <li><p><strong>双向循环神经网络</strong>: 防止<strong>序列前面的内容被后面的内容淹没</strong>.</p>
-  <div align="center"><img src="/pic/103.png" width="100%" height="100%"></div>
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302007950.png" alt=""></p>
 </li>
 <li><p><strong>序列到序列循环神经网络</strong>: 机器翻译、问答系统.</p>
-  <div align="center"><img src="/pic/104.png" width="100%" height="100%"></div>
-
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302007951.png" alt=""></p>
 </li>
 </ul>
 <h2 id="长短期记忆网络-LSTM"><a href="#长短期记忆网络-LSTM" class="headerlink" title="长短期记忆网络 (LSTM)"></a>长短期记忆网络 (LSTM)</h2><ul>
@@ -859,28 +838,18 @@
 </ul>
 </li>
 <li><p><strong>LSTM</strong> 模块:</p>
-  <div align="center"><img src="/pic/105.png" width="100%" height="100%"></div>
-
-  <div align="center"><img src="/pic/106.png" width="100%" height="100%"></div>
-
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302007953.png" alt=""></p>
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302007954.png" alt=""></p>
 <p>  通过<strong>状态</strong>解决<strong>梯度消失问题</strong>; 通过<strong>“门”</strong>进行<strong>选择</strong>, 结构一样, 参数不同.</p>
 <p>  同简单 <strong>RNN</strong> 一样, <strong>LSTM</strong> 模块也是<strong>共用</strong>的.</p>
 </li>
 <li><p><strong>LSTM</strong> 具体结构:</p>
-  <div align="center"><img src="/pic/107.png" width="100%" height="100%"></div>
-
-  <div align="center"><img src="/pic/108.png" width="100%" height="100%"></div>
-
-  <div align="center"><img src="/pic/109.png" width="100%" height="100%"></div>
-
-  <div align="center"><img src="/pic/110.png" width="100%" height="100%"></div>
-
-  <div align="center"><img src="/pic/111.png" width="100%" height="100%"></div>
-
-  <div align="center"><img src="/pic/112.png" width="100%" height="100%"></div>
-
-
-
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302007955.png" alt=""></p>
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302007956.png" alt=""></p>
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302007957.png" alt=""></p>
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302007958.png" alt=""></p>
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302007959.png" alt=""></p>
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302007960.png" alt=""></p>
 </li>
 </ul>
 
@@ -1034,7 +1003,7 @@
                 <a href="/2023/04/22/gai-lu-lun-yu-shu-li-tong-ji-bi-ji-5/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="概率论与数理统计 笔记5">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="概率论与数理统计 笔记5">
                         
                         <span class="card-title">概率论与数理统计 笔记5</span>
                     </div>
@@ -1086,7 +1055,7 @@
                 <a href="/2023/04/11/gai-lu-lun-yu-shu-li-tong-ji-bi-ji-4/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="概率论与数理统计 笔记4">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="概率论与数理统计 笔记4">
                         
                         <span class="card-title">概率论与数理统计 笔记4</span>
                     </div>
@@ -1274,7 +1243,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">131.8k</span>
+                        class="white-color">124k</span>
             
             
             

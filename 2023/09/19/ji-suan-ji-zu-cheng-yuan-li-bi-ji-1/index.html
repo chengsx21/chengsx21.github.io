@@ -368,7 +368,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/24.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -433,7 +433,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-06-30
+                    2024-07-02
                 </div>
                 
 
@@ -470,8 +470,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="计算机指令系统"><a href="#计算机指令系统" class="headerlink" title="计算机指令系统"></a>计算机指令系统</h1><h2 id="Risc-V-指令"><a href="#Risc-V-指令" class="headerlink" title="Risc-V 指令"></a>Risc-V 指令</h2><h3 id="U-型"><a href="#U-型" class="headerlink" title="U 型"></a>U 型</h3><p><img src="/pic/173.png" alt=""></p>
-<p><img src="/pic/174.png" alt=""></p>
+                <h1 id="计算机指令系统"><a href="#计算机指令系统" class="headerlink" title="计算机指令系统"></a>计算机指令系统</h1><h2 id="Risc-V-指令"><a href="#Risc-V-指令" class="headerlink" title="Risc-V 指令"></a>Risc-V 指令</h2><h3 id="U-型"><a href="#U-型" class="headerlink" title="U 型"></a>U 型</h3><p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302012440.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302012441.png" alt=""></p>
 <ul>
 <li><strong>lui</strong> 和 <strong>auipc</strong> 主要用于构造大的常量数值和链接.</li>
 <li><strong>lui</strong> 设置寄存器高位立即数, 用两条指令便可以任意偏移量转移控制流或者加载任意 32 位数据.<ul>
@@ -485,7 +485,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="UJ-J-型"><a href="#UJ-J-型" class="headerlink" title="UJ/J 型"></a>UJ/J 型</h3><p><img src="/pic/175.png" alt=""></p>
+<h3 id="UJ-J-型"><a href="#UJ-J-型" class="headerlink" title="UJ/J 型"></a>UJ/J 型</h3><p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302012442.png" alt=""></p>
 <ul>
 <li><strong>J</strong> 类型的直接字段在 <strong>U</strong> 类型的基础上旋转了 12 位. 这可以降低指令信号扇出和立即数多路复用的成本, 并简化低端实现中的数据通路逻辑.</li>
 <li>由于指令长度必须是两个字节的倍数, <strong>J</strong> 格式的分支和跳转地址必须向左移动 1 位以将地址乘以 2, 给予分支和跳转指令更大的跳转范围, 进行符号扩展后再添加到 PC 上, 得到跳转地址.</li>
@@ -495,7 +495,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="I-型-1"><a href="#I-型-1" class="headerlink" title="I 型 - 1"></a>I 型 - 1</h3><p><img src="/pic/176.png" alt=""></p>
+<h3 id="I-型-1"><a href="#I-型-1" class="headerlink" title="I 型 - 1"></a>I 型 - 1</h3><p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302012443.png" alt=""></p>
 <ul>
 <li>跳转链接指令的寄存器版本 <strong>jalr</strong> 同样是多用途的.<ul>
 <li>可以调用地址是动态计算出来的函数.</li>
@@ -504,25 +504,22 @@
 </ul>
 </li>
 </ul>
-<p><img src="/pic/177.png" alt=""></p>
-<p><img src="/pic/178.png" alt=""></p>
-<h3 id="I-型-2"><a href="#I-型-2" class="headerlink" title="I 型 - 2"></a>I 型 - 2</h3><p><img src="/pic/179.png" alt=""></p>
-<p><img src="/pic/180.png" alt=""></p>
-<p><img src="/pic/181.png" alt=""></p>
-<p><img src="/pic/182.png" alt=""></p>
-<p><img src="/pic/183.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302012444.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302012445.png" alt=""></p>
+<h3 id="I-型-2"><a href="#I-型-2" class="headerlink" title="I 型 - 2"></a>I 型 - 2</h3><p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302012446.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302013730.png" alt=""><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302013731.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302013732.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302013733.png" alt=""></p>
 <ul>
 <li><strong>slli</strong> 和 <strong>srli</strong> 的 shamt[4:0] 为移动量, 范围都是[4:0], 因为在 RV32I 中最大的移位量是 31 位.</li>
 <li>imm[10] 用来区分移位类型, 其中 <strong>slli</strong> 和 <strong>srli</strong> 指令机器码的 bit 30 为 0, 而 <strong>srai</strong> 指令机器码的 bit 30 为 1.</li>
 </ul>
-<h3 id="R-型"><a href="#R-型" class="headerlink" title="R 型"></a>R 型</h3><p><img src="/pic/184.png" alt=""></p>
-<p><img src="/pic/185.png" alt=""></p>
-<p><img src="/pic/186.png" alt=""></p>
-<p><img src="/pic/187.png" alt=""></p>
-<h3 id="S-型"><a href="#S-型" class="headerlink" title="S 型"></a>S 型</h3><p><img src="/pic/188.png" alt=""></p>
-<p><img src="/pic/189.png" alt=""></p>
-<h3 id="SB-B-型"><a href="#SB-B-型" class="headerlink" title="SB/B 型"></a>SB/B 型</h3><p><img src="/pic/190.png" alt=""></p>
-<p><img src="/pic/191.png" alt=""></p>
+<h3 id="R-型"><a href="#R-型" class="headerlink" title="R 型"></a>R 型</h3><p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302013734.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302013735.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302013736.png" alt=""><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302013737.png" alt=""></p>
+<h3 id="S-型"><a href="#S-型" class="headerlink" title="S 型"></a>S 型</h3><p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302013738.png" alt=""><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302013739.png" alt=""></p>
+<h3 id="SB-B-型"><a href="#SB-B-型" class="headerlink" title="SB/B 型"></a>SB/B 型</h3><p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302013740.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302013741.png" alt=""></p>
 <ul>
 <li><strong>B</strong> 类型的立即数字段在 <strong>S</strong> 类型的基础上旋转了 1 位. 这可以降低指令信号扇出和立即数多路复用的成本, 并简化低端实现中的数据通路逻辑.</li>
 <li>由于指令长度必须是两个字节的倍数, <strong>B</strong> 格式的分支和跳转地址必须向左移动 1 位以将地址乘以 2, 给予分支和跳转指令更大的跳转范围, 进行符号扩展后再添加到 PC 上, 得到跳转地址.</li>
@@ -678,7 +675,7 @@
                 <a href="/2023/09/23/ji-suan-ji-zu-cheng-yuan-li-bi-ji-2/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="计算机组成原理 笔记2">
+                        <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="计算机组成原理 笔记2">
                         
                         <span class="card-title">计算机组成原理 笔记2</span>
                     </div>
@@ -730,7 +727,7 @@
                 <a href="/2023/09/17/ji-suan-ji-wang-luo-an-quan-ji-zhu-bi-ji-1/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="计算机网络安全技术 笔记1">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="计算机网络安全技术 笔记1">
                         
                         <span class="card-title">计算机网络安全技术 笔记1</span>
                     </div>
@@ -911,7 +908,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">131.8k</span>
+                        class="white-color">124k</span>
             
             
             

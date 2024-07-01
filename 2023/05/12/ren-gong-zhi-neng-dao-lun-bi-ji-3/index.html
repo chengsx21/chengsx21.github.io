@@ -368,7 +368,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -433,7 +433,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-06-30
+                    2024-07-02
                 </div>
                 
 
@@ -478,7 +478,7 @@
 <li><p>目标: <strong>对方不犯错</strong>的情况下<strong>结局对自己有利</strong> (有利节点的数值&gt;0).</p>
 </li>
 <li><p>圆形为<strong>极小节点</strong>, 正方形为<strong>极大节点</strong>, 自己应该始终沿着极大值行进.</p>
-  <div align="center"><img src="/pic/113.png" width="100%" height="100%"></div>
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302007961.png" alt=""></p>
 </li>
 <li><p>模仿人类下棋思考过程, 但<strong>有限深度内的穷举</strong>不可行.</p>
 </li>
@@ -498,9 +498,8 @@
 <ul>
 <li><strong>极小 ≤ 极大, 剪枝.</strong></li>
 <li><p><strong>极大 ≥ 极小, 剪枝.</strong></p>
-<div align="center"><img src="/pic/114.png" width="100%" height="100%"></div>
-
-<div align="center"><img src="/pic/115.png" width="100%" height="100%"></div>
+<p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302007962.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302007963.png" alt=""></p>
 </li>
 </ul>
 </li>
@@ -531,7 +530,7 @@
 <ul>
 <li>对具有较大希望节点的<strong>利用</strong>.</li>
 <li><p>对尚未充分了解节点的<strong>探索</strong>.</p>
-<div align="center"><img src="/pic/116.png" width="100%" height="100%"></div>
+<p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302007964.png" alt=""></p>
 </li>
 </ul>
 </li>
@@ -575,8 +574,7 @@
 <li><p><strong>获胜次数相对于本节点角度</strong>, <strong>方便进行选择.</strong></p>
 </li>
 <li><p>假设 $c=0$, 此时 $I_j=\overline{X}_j$.</p>
-  <div align="center"><img src="/pic/117.png" width="100%" height="100%"></div>
-
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302007965.png" alt=""></p>
 </li>
 </ul>
 </li>
@@ -592,7 +590,7 @@
 <ul>
 <li>缩小了搜索<strong>范围</strong>.</li>
 <li><p>提高了模拟<strong>水平</strong>.</p>
-<div align="center"><img src="/pic/118.png" width="100%" height="100%"></div>
+<p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302007966.png" alt=""></p>
 </li>
 <li><p><strong>策略网络</strong>:</p>
 <ul>
@@ -607,7 +605,7 @@
 <li><p><strong>损失函数</strong>:</p>
 <script type="math/tex; mode=display">
   L(w)=-t_a\log p_a.</script><p>  其中 $t_a$ 为当前棋局下棋手落子在 $a$ 处时为 1, 否则为 0; $p_a$ 为策略网络在 $a$ 处落子的概率.</p>
-  <div align="center"><img src="/pic/119.png" width="100%" height="100%"></div>
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302007967.png" alt=""></p>
 </li>
 </ul>
 </li>
@@ -624,7 +622,7 @@
 <li><p><strong>损失函数</strong>:</p>
 <script type="math/tex; mode=display">
   L(w)=(R-V(s))^2.</script><p>  其中 $R$ 为棋局的胜负, 胜为 1, 负为 -1; $V(s)$ 为估值网络的输出, 即预测的收益.</p>
-  <div align="center"><img src="/pic/120.png" width="100%" height="100%"></div>
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302008757.png" alt=""></p>
 </li>
 </ul>
 </li>
@@ -652,14 +650,13 @@
 </ul>
 </li>
 <li><p><strong>AlphaGo</strong> 中的 <strong>MCTS</strong> 过程:</p>
-  <div align="center"><img src="/pic/121.png" width="100%" height="100%"></div>
-
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302008758.png" alt=""></p>
 <ul>
 <li>用 $Q(s_a)+u(s_a)$ 代替信心上限 $I_j$, 优先选择 $Q(s_a)+u(s_a)$ 大的子节点.</li>
 <li>遇到叶节点 $s_l$ 结束, 该节点被选中.</li>
 <li>生成 $s_l$ 的<strong>所有子节点</strong>, 但是<strong>不进行模拟</strong>.</li>
 <li><p>规定了<strong>最大节点深度</strong>.</p>
-<div align="center"><img src="/pic/122.png" width="100%" height="100%"></div>
+<p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302008759.png" alt=""></p>
 </li>
 <li><p>对 $s_l$ 进行模拟, 计算:</p>
 <script type="math/tex; mode=display">
@@ -714,7 +711,7 @@
 <li>假设获胜者的行为都是正确的, 负者行为都是不正确的.</li>
 <li>假设获负时对权重的修改量大小与获胜时一样, 方向相反.</li>
 </ul>
-<div align="center"><img src="/pic/123.png" width="100%" height="100%"></div>
+<p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302008760.png" alt=""></p>
 </li>
 <li><p><strong>AlphaGo</strong>: <strong>先监督学习, 再强化学习.</strong></p>
 </li>
@@ -737,13 +734,12 @@
 <li><p>损失函数: $L(w)=(E-V(s,a))^2$.</p>
 </li>
 <li><p><strong>基于价值评估的强化学习</strong>学到了每个落子点<strong>获取最大收益的概率</strong>.</p>
-<div align="center"><img src="/pic/124.png" width="100%" height="100%"></div>
+<p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302008761.png" alt=""></p>
 </li>
 </ul>
 </li>
 <li><p>基于<strong>演员-评价方法</strong>的强化学习:</p>
-  <div align="center"><img src="/pic/125.png" width="100%" height="100%"></div>
-
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302008762.png" alt=""></p>
 <ul>
 <li><p>收益增量:</p>
 <ul>
@@ -772,8 +768,7 @@
 </ul>
 </li>
 <li><p><strong>基于演员-评价方法的强化学习</strong>强调<strong>重要行棋点的学习</strong>, 学到了每个落子点获取<strong>最大收益增量的概率</strong>.</p>
-<div align="center"><img src="/pic/126.png" width="100%" height="100%"></div>
-
+<p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302008764.png" alt=""></p>
 </li>
 </ul>
 </li>
@@ -797,7 +792,7 @@
 <li><p>策略网络输出: <strong>19×19+1</strong>, <strong>多了一个 “放弃” 行为.</strong></p>
 </li>
 <li><p>估值网络输出: 当前棋局的<strong>估值</strong>, 取值范围为 $[-1, 1]$.</p>
-<div align="center"><img src="/pic/127.png" width="100%" height="100%"></div>
+<p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302008765.png" alt=""></p>
 </li>
 </ul>
 </li>
@@ -1032,7 +1027,7 @@
                 <a href="/2023/05/20/gai-lu-lun-yu-shu-li-tong-ji-bi-ji-7/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="概率论与数理统计 笔记7">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="概率论与数理统计 笔记7">
                         
                         <span class="card-title">概率论与数理统计 笔记7</span>
                     </div>
@@ -1084,7 +1079,7 @@
                 <a href="/2023/05/07/gai-lu-lun-yu-shu-li-tong-ji-bi-ji-6/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="概率论与数理统计 笔记6">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="概率论与数理统计 笔记6">
                         
                         <span class="card-title">概率论与数理统计 笔记6</span>
                     </div>
@@ -1272,7 +1267,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">131.8k</span>
+                        class="white-color">124k</span>
             
             
             

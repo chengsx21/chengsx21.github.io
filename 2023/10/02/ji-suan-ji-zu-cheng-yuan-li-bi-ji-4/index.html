@@ -368,7 +368,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -437,7 +437,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-06-30
+                    2024-07-02
                 </div>
                 
 
@@ -489,7 +489,7 @@
 </ol>
 <h3 id="电路"><a href="#电路" class="headerlink" title="电路"></a>电路</h3><p>对于这一类<strong>输出仅随着输入变化而变化</strong>的信号, 通常使用<strong>组合逻辑</strong>来实现. 特点是输出完全依赖于输入, 没有内部状态, 和时间无关. </p>
 <p>根据真值表, 可以得到输出与输入的关系 (<code>a_0</code> 表示 <code>a</code> 的最低位). 电路图如下: </p>
-<p><img src="/pic/193.svg" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302013743.svg" alt=""></p>
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>实际上直接写 <code>a + b</code> 就可以了, EDA 工具会自动完成逻辑转换. </p>
 <pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span class="token keyword">module</span> add2 <span class="token punctuation">(</span>
   <span class="token keyword">input</span> <span class="token keyword">wire</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> a<span class="token punctuation">,</span>
@@ -511,7 +511,7 @@
 </ol>
 <h3 id="电路-1"><a href="#电路-1" class="headerlink" title="电路"></a>电路</h3><p><code>light</code> 输出与它本身的历史状态有关, 并且正好是取反的关系. 如果依然采用组合逻辑来实现, 写出形如 <code>light &lt;= ~light;</code> 的代码, 对应的电路就出现了环路, 此时 <code>light</code> 会不断在 <code>0</code> 和 <code>1</code> 之间震荡.</p>
 <p>这一类<strong>输出与历史状态相关</strong>, 并且<strong>输出在某个信号的上升沿变化</strong>的信号, 通常使用<strong>时序逻辑</strong>来实现. 把 <code>button</code> 连接到触发器的 <code>C</code> 端口, 就实现了上升沿触发的目的; 为了实现每次触发, 让输出的结果取反, 可以把触发器的 <code>Q</code> 经过一个非门再连接到触发器的 <code>D</code> 端口: </p>
-<p><img src="/pic/194.svg" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302013744.svg" alt=""></p>
 <p>这个电路也成了一个环, 引入触发器的作用, 使得只有在时钟上升沿时, 触发器的输入 D 会引发输出 Q 的变化, 而当时钟上升沿结束以后, 输出 Q 也许会导致输入 D 变化, 但是输出 Q 是稳定不变的, 因此不会出现循环振荡. </p>
 <h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><p>时序逻辑里, 需要显式的声明一个寄存器 (对应电路里的触发器), 并<strong>严格</strong>把信号<strong>连接</strong>到触发器的输入 D 端口. </p>
 <pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span class="token keyword">module</span> button <span class="token punctuation">(</span>
@@ -547,7 +547,7 @@
 <li>按下按钮, 在时钟上升沿如果发现 <code>reset == 1</code>, 就设置 <code>timer_reg = 0</code> 和 <code>counter_reg = 0</code>; 从下一个周期开始, 输出的 <code>timer = timer_reg</code> 就变成了 0.</li>
 </ol>
 <h3 id="电路-2"><a href="#电路-2" class="headerlink" title="电路"></a>电路</h3><p>两组寄存器 <code>timer_reg</code> 和 <code>counter_reg</code>. <code>counter_reg</code> 在每个 <code>clock</code> 上升沿进行更新, <code>timer_reg</code> 在每个 <code>clock</code> 的上升沿进行更新, 这些 “可能” 在电路上对应用组合逻辑实现的选择器. 最后把 <code>timer_reg</code> 的输出连接到 <code>timer</code> 输出即可.</p>
-<p><img src="/pic/195.svg" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302013745.svg" alt=""></p>
 <h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span class="token keyword">module</span> timer <span class="token punctuation">(</span>
   <span class="token keyword">input</span> <span class="token keyword">wire</span> clock<span class="token punctuation">,</span>
   <span class="token keyword">input</span> <span class="token keyword">wire</span> reset<span class="token punctuation">,</span>
@@ -618,7 +618,7 @@
 <li><code>ones</code>: 输出次数的个位数, 4 位.</li>
 <li><code>tens</code>: 输出次数的十位数, 4 位.</li>
 </ol>
-<p><img src="/pic/196.svg" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302013746.svg" alt=""></p>
 <h4 id="消抖模块"><a href="#消抖模块" class="headerlink" title="消抖模块"></a>消抖模块</h4><p>需要记录下历史输入, 才可以判断是否 10,000 个周期都保持稳定. 用 10,000 个 1 位的寄存器有些浪费, 可以用一个寄存器来记录目前稳定了多少个周期. </p>
 <ol>
 <li>寄存器 <code>last_button_reg</code> 记录上一个周期 <code>button</code>.</li>
@@ -747,7 +747,7 @@
 <li><code>request=1000</code>, 此时 <code>user=3, valid=1</code>.</li>
 </ol>
 <p>上面五个条件遍历了所有可能的情况. 在实现组合逻辑的时候, 一定要<strong>考虑所有情况, 并且每个情况下每个信号都要得到一个结果</strong>, 否则不可避免会引入锁存器.</p>
-<p><img src="/pic/197.svg" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302013747.svg" alt=""></p>
 <h3 id="代码-4"><a href="#代码-4" class="headerlink" title="代码"></a>代码</h3><pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span class="token keyword">module</span> priority_encoder <span class="token punctuation">(</span>
   <span class="token keyword">input</span> <span class="token keyword">wire</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> request<span class="token punctuation">,</span>
   <span class="token keyword">output</span> <span class="token keyword">wire</span> valid<span class="token punctuation">,</span>
@@ -1280,7 +1280,7 @@ ps2_clock <span class="token operator">=</span> <span class="token number">1'b1<
                 <a href="/2023/10/04/ji-suan-ji-wang-luo-an-quan-ji-zhu-bi-ji-2/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="计算机网络安全技术 笔记2">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="计算机网络安全技术 笔记2">
                         
                         <span class="card-title">计算机网络安全技术 笔记2</span>
                     </div>
@@ -1332,7 +1332,7 @@ ps2_clock <span class="token operator">=</span> <span class="token number">1'b1<
                 <a href="/2023/09/28/ji-suan-ji-zu-cheng-yuan-li-bi-ji-3/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="计算机组成原理 笔记3">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="计算机组成原理 笔记3">
                         
                         <span class="card-title">计算机组成原理 笔记3</span>
                     </div>
@@ -1517,7 +1517,7 @@ ps2_clock <span class="token operator">=</span> <span class="token number">1'b1<
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">131.8k</span>
+                        class="white-color">124k</span>
             
             
             

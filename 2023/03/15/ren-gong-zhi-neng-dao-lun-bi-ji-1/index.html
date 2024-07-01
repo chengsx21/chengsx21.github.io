@@ -368,7 +368,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -433,7 +433,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-06-30
+                    2024-07-02
                 </div>
                 
 
@@ -474,7 +474,7 @@
 <li><p>优先扩展深度深的节点.</p>
 </li>
 <li><p><strong>例</strong>  皇后问题 (<strong>深度优先+回溯</strong>).</p>
-  <div align="center"><img src="/pic/49.png" width="100%" height="100%"></div>
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301958232.png" alt=""></p>
 </li>
 <li><p>性质:</p>
 <ul>
@@ -488,7 +488,7 @@
 </ul>
 <h2 id="宽度优先搜索"><a href="#宽度优先搜索" class="headerlink" title="宽度优先搜索"></a>宽度优先搜索</h2><ul>
 <li><p>优先扩展深度浅的节点.</p>
-  <div align="center"><img src="/pic/50.png" width="100%" height="100%"></div>
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301958233.png" alt=""></p>
 </li>
 <li><p>性质:</p>
 <ul>
@@ -501,14 +501,15 @@
 </ul>
 <h2 id="Dijkstra-算法"><a href="#Dijkstra-算法" class="headerlink" title="Dijkstra 算法"></a>Dijkstra 算法</h2><ul>
 <li><p>宽度优先没有考虑两个节点间的距离.</p>
-  <div align="center"><img src="/pic/51.png" width="100%" height="100%"></div>
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301958234.png" alt=""></p>
 </li>
 <li><p>优先扩展距离起点最近的节点, 直到终点距离最短.</p>
-  <div align="center"><img src="/pic/52.png" width="100%" height="100%"></div>
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301958235.png" alt=""></p>
 </li>
 <li><p>优点: 当问题<strong>有解</strong>时, 可以找到<strong>最佳解</strong>.</p>
 </li>
-<li>不足: 只考虑了<strong>节点距离起点</strong>的距离, 没有考虑<strong>节点到终点</strong>的距离.</li>
+<li><p>不足: 只考虑了<strong>节点距离起点</strong>的距离, 没有考虑<strong>节点到终点</strong>的距离.</p>
+</li>
 </ul>
 <h2 id="启发式图搜索"><a href="#启发式图搜索" class="headerlink" title="启发式图搜索"></a>启发式图搜索</h2><ul>
 <li><p>引入<strong>启发知识</strong>, 保证找到<strong>最佳解</strong>时, 尽可能<strong>减少搜索范围</strong>, 提高<strong>搜索效率</strong>.</p>
@@ -526,15 +527,14 @@
 <li><p>$g(n)$, $h(n)$, $f(n)$ 分别是 $g^*(n)$, $h^*(n)$, $f^*(n)$ 的<strong>估计值</strong>.</p>
 </li>
 <li><p>用 $f(n)$ 对待扩展节点<strong>进行评价</strong>, 优先扩展 $f(n)$ 值最小的节点, 直到 $f(终点)$ 最小.</p>
-  <div align="center"><img src="/pic/53.png" width="100%" height="100%"></div>
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301958236.png" alt=""></p>
 </li>
 <li><p>$m_j$: 扩展时<strong>第一次生成</strong>, 父节点标记为 $n$.</p>
 </li>
 <li><p>$m_k$: 已生成<strong>尚未扩展</strong>, 比较 $f(m_k)$, $f(n,m_k)$ 决定是否重标记父节点.</p>
 </li>
 <li><p>$m_l$: 已生成<strong>已扩展</strong>, 比较 $f(m_l)$, $f(n,m_l)$ 决定是否重标记父节点, 并重新扩展.</p>
-  <div align="center"><img src="/pic/54.png" width="100%" height="100%"></div>
-
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301958237.png" alt=""></p>
   <pre class="line-numbers language-pseudocode" data-language="pseudocode"><code class="language-pseudocode"># A-algorithm(s): s 为初始节点
 OPEN=(s), CLOSED=(), f(s)=g(s)+h(s);
 while OPEN 不空 do:
@@ -557,7 +557,7 @@ return FAIL;<span aria-hidden="true" class="line-numbers-rows"><span></span><spa
 <li><p>从目标开始, 顺序访问<strong>父节点</strong>, 直到初始节点, 得到<strong>解路径</strong>.</p>
 </li>
 <li><p><strong>例(八数码问题)</strong>  定义 $g(n)$ 为到当前节点的耗散值, $h(n)$ 为当前节点<strong>不在位</strong>的将牌数.</p>
-  <div align="center"><img src="/pic/55.png" width="100%" height="100%"></div>
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301958238.png" alt=""></p>
 </li>
 </ul>
 </li>
@@ -591,11 +591,10 @@ return FAIL;<span aria-hidden="true" class="line-numbers-rows"><span></span><spa
 <li><p>因 <strong>A</strong> 算法对 $m_l$ 类节点可能要<strong>重新放回</strong>到 <strong>OPEN</strong> 表中, 因此可能会导致多次<strong>重复扩展</strong>同一个节点, 导致<strong>搜索效率下降</strong>.</p>
 </li>
 <li><p>扩展未找到<strong>初始节点</strong>到<strong>当前节点</strong>的<strong>最短路径</strong>; 距离<strong>越近</strong>, 估计应<strong>越准</strong>.</p>
-  <div align="center"><img src="/pic/56.png" width="100%" height="100%"></div>
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301958239.png" alt=""></p>
 </li>
 <li><p><strong>对 $h$ 加以限制</strong>: 第一次扩展节点时, 就找到了从 $s$ 到该节点的最短路径.</p>
-  <div align="center"><img src="/pic/57.png" width="100%" height="100%"></div>
-
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301958240.png" alt=""></p>
 <p>  此时称 $h$ 是单调的.</p>
 <ul>
 <li><p><strong>定理</strong>  若 $h(n)$ 是单调的, 则 <strong>A*</strong> 扩展了节点 $n$ 之后, 就已经找到了到达节点 $n$ 的最佳路径. 即当 <strong>A*</strong> 选 $n$ 扩展时, 有 $g(n)=g^*(n)$.</p>
@@ -629,8 +628,7 @@ while OPEN 不空 do：
     		OPEN 中的节点按 f 值从小到大排序;
    	end while
 return FAIL;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<div align="center"><img src="/pic/58.png" width="100%" height="100%"></div>
-
+<p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301958241.png" alt=""></p>
 </li>
 </ul>
 </li>
@@ -643,8 +641,7 @@ return FAIL;<span aria-hidden="true" class="line-numbers-rows"><span></span><spa
 <li><p><strong>随机搜索</strong>算法.</p>
 </li>
 <li><p><strong>动态规划</strong>算法 (当 $\forall\,n$, 有 $h(n)=0$, <strong>A*</strong> 算法即为动态规划): <strong>viterbi</strong> 算法.</p>
-  <div align="center"><img src="/pic/59.png" width="100%" height="100%"></div>
-
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301958242.png" alt=""></p>
 <script type="math/tex; mode=display">
   Q(W_{i,j})=\begin{cases}
   \min\limits_k(Q(W_{i-1,k})+D(W_{i-1,k},W_{i,j})),&i\ne 0\\
@@ -659,7 +656,8 @@ return FAIL;<span aria-hidden="true" class="line-numbers-rows"><span></span><spa
   P(S)=\prod_{i=1}^{n}P(w_i\mid w_{i-1}).</script><p>  需要求</p>
 <script type="math/tex; mode=display">
   \min\Big(-\sum_{i=1}^{n}\log\big(P(w_i\mid w_{i-1})\big)\Big)</script><p>  对应的句子.</p>
-  <div align="center"><img src="/pic/60.png" width="100%" height="100%"></div></li>
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406301959786.png" alt=""></p>
+</li>
 </ul>
 
                 
@@ -812,7 +810,7 @@ return FAIL;<span aria-hidden="true" class="line-numbers-rows"><span></span><spa
                 <a href="/2023/03/24/gai-lu-lun-yu-shu-li-tong-ji-bi-ji-3/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="概率论与数理统计 笔记3">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="概率论与数理统计 笔记3">
                         
                         <span class="card-title">概率论与数理统计 笔记3</span>
                     </div>
@@ -864,7 +862,7 @@ return FAIL;<span aria-hidden="true" class="line-numbers-rows"><span></span><spa
                 <a href="/2023/03/08/gai-lu-lun-yu-shu-li-tong-ji-bi-ji-2/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="概率论与数理统计 笔记2">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="概率论与数理统计 笔记2">
                         
                         <span class="card-title">概率论与数理统计 笔记2</span>
                     </div>
@@ -1052,7 +1050,7 @@ return FAIL;<span aria-hidden="true" class="line-numbers-rows"><span></span><spa
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">131.8k</span>
+                        class="white-color">124k</span>
             
             
             

@@ -368,7 +368,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -433,7 +433,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-06-30
+                    2024-07-02
                 </div>
                 
 
@@ -478,8 +478,7 @@
 <li><p>统计学习从<strong>数据</strong>出发, 提取特征, 抽象模型, 发现知识, 回到分析与预测.</p>
 </li>
 <li><p>统计学习的目标就是考虑学习什么样的模型和如何学习, 以使模型能对数据进行准确的预测和分析, 具有<strong>优秀的理论基础与可解释性</strong>.</p>
-  <div align="center"><img src="/pic/128.png" width="100%" height="100%"></div>
-
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302008766.png" alt=""></p>
 <p>  其中 $x_i$ 为<strong>特征</strong>, $y_i$ 为<strong>标签</strong>. <strong>学习算法</strong> <strong>A</strong> 根据<strong>训练集</strong> <strong>D</strong> 从<strong>假设空间</strong> <strong>H</strong> 中选择一个<strong>最好的</strong> $g\approx f$.</p>
 </li>
 <li><p><strong>统计学习三要素:</strong></p>
@@ -518,8 +517,7 @@
 </ul>
 </li>
 <li><p><strong>线性可分支持向量机</strong>:</p>
-  <div align="center"><img src="/pic/129.png" width="100%" height="100%"></div>
-
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302008767.png" alt=""></p>
 <p>  通过<strong>间隔最大化</strong>得到分类超平面:</p>
 <script type="math/tex; mode=display">
   w^*\cdot x+b^*=0.</script><p>  相应的决策函数:</p>
@@ -541,26 +539,22 @@
   \min_{w,b}\max_{\alpha}L(w,b,\alpha)=\max_{\alpha}\min_{w,b}L(w,b,\alpha).</script><p>  对 $w, b$ 求偏导令其为 0 并代入, 得到<strong>对偶问题</strong>:</p>
 <script type="math/tex; mode=display">
   \min_{\alpha}\Big(\dfrac{1}{2}\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_i\alpha_jy_iy_j(x_i\cdot x_j)-\sum_{i=1}^{N}\alpha_i\Big)\quad s.t.\quad \sum_{i=1}^{N}\alpha_iy_i=0.</script><p>  获得 $w^<em>,b^</em>$:</p>
-  <div align="center"><img src="/pic/130.png" width="100%" height="100%"></div>
-
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302008768.png" alt=""></p>
 <p>  <strong>与 $\alpha_i&gt;0$ 对应的实例 $x_i$ 就是支持向量.</strong></p>
 </li>
 <li><p><strong>线性支持向量机</strong>:</p>
-  <div align="center"><img src="/pic/131.png" width="100%" height="100%"></div>
-
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302008769.png" alt=""></p>
 <p>  转化为<strong>凸二次规划</strong>问题:</p>
 <script type="math/tex; mode=display">
   \min_{w,b}(\dfrac{1}{2}\Vert w\Vert^2+C\sum_{i=1}^{N}\xi_i)\quad s.t.\quad y_i(w\cdot x_i+b)\ge 1-\xi_i,\,1\le i\le N.</script><p>  得到<strong>对偶问题</strong>:</p>
 <script type="math/tex; mode=display">
   \min_{\alpha}\Big(\dfrac{1}{2}\sum_{i,j=1}^{N}\alpha_i\alpha_jy_iy_j(x_i\cdot x_j)-\sum_{i=1}^{N}\alpha_i\Big)\, s.t.\,0\le\alpha_i\le C, \sum_{i=1}^{N}\alpha_iy_i=0.</script><p>  获得 $w^<em>,b^</em>$:</p>
-  <div align="center"><img src="/pic/132.png" width="100%" height="100%"></div>
-
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302008770.png" alt=""></p>
 <p>  <strong>与 $\alpha_i&gt;0$ 对应的实例 $x_i$ 就是支持向量.</strong></p>
-  <div align="center"><img src="/pic/133.png" width="100%" height="100%"></div>
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302008771.png" alt=""></p>
 </li>
 <li><p><strong>非线性支持向量机</strong>:</p>
-  <div align="center"><img src="/pic/134.png" width="100%" height="100%"></div>
-
+<p>  <img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302008772.png" alt=""></p>
 <p>  利用<strong>变换</strong>:</p>
 <script type="math/tex; mode=display">
   z=\phi(x)=((x^{(1)})^2,(x^{(2)})^2)^T.</script><p>  将原空间的椭圆:</p>
@@ -588,8 +582,7 @@ K(x,z)=(x\cdot z+1)^p.</script></li>
 K(x,z)=\exp\big(-\dfrac{\Vert x-z\Vert^2}{2\sigma^2}\big).</script><p>得到<strong>最终对偶问题</strong>:</p>
 <script type="math/tex; mode=display">
 \min_{\alpha}\Big(\dfrac{1}{2}\sum_{i,j=1}^{N}\alpha_i\alpha_jy_iy_jK(x_i,x_j)-\sum_{i=1}^{N}\alpha_i\Big)\, s.t.\,\alpha_i\le C, \sum_{i=1}^{N}\alpha_iy_i=0.</script><p>获得 $w^<em>,b^</em>$:</p>
-<div align="center"><img src="/pic/135.png" width="100%" height="100%"></div>
-
+<p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202406302008773.png" alt=""></p>
 <p>其中 <strong>$w$ 无法直接得到</strong>, 此时情况为<strong>超曲面</strong>.</p>
 </li>
 </ul>
@@ -885,7 +878,7 @@ K(x,z)=\exp\big(-\dfrac{\Vert x-z\Vert^2}{2\sigma^2}\big).</script><p>得到<str
                 <a href="/2023/06/13/ji-suan-ji-wang-luo-yuan-li-qi-mo-fu-xi/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="计算机网络原理 期末复习">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="计算机网络原理 期末复习">
                         
                         <span class="card-title">计算机网络原理 期末复习</span>
                     </div>
@@ -933,7 +926,7 @@ K(x,z)=\exp\big(-\dfrac{\Vert x-z\Vert^2}{2\sigma^2}\big).</script><p>得到<str
                 <a href="/2023/05/28/gai-lu-lun-yu-shu-li-tong-ji-bi-ji-8/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="概率论与数理统计 笔记8">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="概率论与数理统计 笔记8">
                         
                         <span class="card-title">概率论与数理统计 笔记8</span>
                     </div>
@@ -1121,7 +1114,7 @@ K(x,z)=\exp\big(-\dfrac{\Vert x-z\Vert^2}{2\sigma^2}\big).</script><p>得到<str
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">131.8k</span>
+                        class="white-color">124k</span>
             
             
             
