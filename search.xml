@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>机器学习-分类模型指标</title>
+      <link href="/2024/07/02/ji-qi-xue-xi-fen-lei-mo-xing-zhi-biao/"/>
+      <url>/2024/07/02/ji-qi-xue-xi-fen-lei-mo-xing-zhi-biao/</url>
+      
+        <content type="html"><![CDATA[<h2 id="分类问题"><a href="#分类问题" class="headerlink" title="分类问题"></a>分类问题</h2><p>有一个判断性别的机器学习模型, 使用它来判断「是否为男性」时, 会出现 4 种情况:</p><p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202408021629912.png" alt=""></p><p>这 4 种情况构成了混淆矩阵:</p><p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202408021631896.png" alt=""></p><p>其中 T/F 描述机器判断结果的正确性, P/N 描述机器判断分类的正负性.</p><h2 id="基础分类指标"><a href="#基础分类指标" class="headerlink" title="基础分类指标"></a>基础分类指标</h2><h3 id="准确率-Accuracy"><a href="#准确率-Accuracy" class="headerlink" title="准确率 Accuracy"></a>准确率 Accuracy</h3><p><strong>准确率</strong>为预测正确的结果占总样本的百分比:</p><p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202408071617941.png" alt=""></p><p>可以判断总的正确率, 但是在<strong>样本不平衡</strong>的情况下, 不能作为指标来衡量结果. 在正样本占 90%, 负样本占 10% 的总样本中, 样本严重不平衡. 这种情况只需将全部样本预测为正即可得到 90% 的准确率, 结果含有水分, 准确率失效.</p><h3 id="查准率-Precision"><a href="#查准率-Precision" class="headerlink" title="查准率 Precision"></a>查准率 Precision</h3><p><strong>查准率</strong>为所有被<u>预测为正</u>的样本中<u>实际为正</u>的样本的概率:</p><p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202408071631976.png" alt=""></p><p>查准率代表对<strong>正样本结果</strong>中的预测准确程度, 有多少把握预测正确; 而准确率则代表<strong>整体</strong>的预测准确程度, 包括正样本和负样本.</p><h3 id="查全率-Recall"><a href="#查全率-Recall" class="headerlink" title="查全率 Recall"></a>查全率 Recall</h3><p><strong>查全率</strong>为所有<u>实际为正</u>的样本中被<u>预测为正</u>的样本的概率:</p><p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202408081033339.png" alt=""></p><p>查全率越高, 代表实际用户被预测出来的概率越高.</p><h3 id="F1分数-F1-Score"><a href="#F1分数-F1-Score" class="headerlink" title="F1分数 F1$_$Score"></a>F1分数 F1$_$Score</h3><p>Precision 和 Recall 之间的关系用 P-R 曲线来表达:</p><p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202408081046768.jpg" alt=""></p><p>以逻辑回归举例, 输出是一个 0 到 1 之间的概率数字, 根据这个概率判断用户好坏, 必须定义一个<strong>阈值</strong>. 为了找到一个最合适的阈值满足我们的要求, 必须遍历 0 到 1 之间所有的阈值, 每个阈值下都对应着一对 Precision 和 Recall, 从而得到了这条曲线.</p><p>想要找到二者之间的<strong>平衡点</strong>, 就需要一个新的指标 <strong>F1$_$Score</strong>. F1$_$Score 同时考虑了 Precision 和 Recall, 让二者同时达到最高, 公式为:</p><script type="math/tex; mode=display">\text{F1\_Score}=\dfrac{2*\text{Precision}*\text{Recall}}{\text{Precision}+\text{Recall}}</script><p>P-R 曲线的两个指标都<strong>聚焦于正样本</strong>, 适合评估在相同的类别分布下正例的预测情况.</p><h2 id="样本不平衡处理"><a href="#样本不平衡处理" class="headerlink" title="样本不平衡处理"></a>样本不平衡处理</h2><h3 id="灵敏度-Sensitivity-特异度-Specificity-真正率-TPR-假正率-FPR"><a href="#灵敏度-Sensitivity-特异度-Specificity-真正率-TPR-假正率-FPR" class="headerlink" title="灵敏度 Sensitivity/特异度 Specificity/真正率 TPR/假正率 FPR"></a>灵敏度 Sensitivity/特异度 Specificity/真正率 TPR/假正率 FPR</h3><p>以下指标能<strong>无视样本不平衡</strong>:</p><script type="math/tex; mode=display">\text{Sensitivity}=\dfrac{\text{TP}}{\text{TP}+\text{FN}},\quad\text{Specificity}=\dfrac{\text{TN}}{\text{FP}+\text{TN}}</script><p>Sensitivity 为实际为正的样本被预测为正的概率, Specificity 为实际为负的样本被预测为负的概率. 由于关心正样本, 所以使用 1 - Specificity, 查看负样本被错误预测为正的概率.</p><script type="math/tex; mode=display">\text{TPR}=\text{Sensitivity}=\dfrac{\text{TP}}{\text{TP}+\text{FN}},\quad\text{FPR}=1-\text{Specificity}=\dfrac{\text{FP}}{\text{FP}+\text{TN}}</script><p>TPR 和 FPR 分别<strong>从实际表现的各个结果角度出发</strong>, 在实际的正样本和负样本中来观察相关概率, <strong>无论样本是否平衡</strong>, 都不会被影响. TPR 只关注正样本中有多少被真正覆盖, FPR 只关注负样本中有多少被错误覆盖的.</p><h3 id="从「条件概率」说起"><a href="#从「条件概率」说起" class="headerlink" title="从「条件概率」说起"></a>从「条件概率」说起</h3><p>假设 X 为预测值, Y 为真实值, 可以将这些指标按条件概率表示:</p><script type="math/tex; mode=display">\begin{aligned}&\text{Precision}=\Pr(Y=1|X=1)\\&\text{Recall}=\text{Sensitivity}=\Pr(X=1|Y=1)\\&\text{Specificity}=\Pr(X=0|Y=0)\end{aligned}</script><p>如果先以实际结果为条件 (Recall/Sensitivity/Specificity), 就只需考虑一种样本; 而先以预测值为条件 (Precision), 需要同时考虑正样本和负样本. 所以<strong>先以实际结果为条件</strong>的指标都<strong>不受样本不平衡的影响</strong>, 相反<strong>以预测结果为条件</strong>就会<strong>受到样本不平衡的影响</strong>.</p><h3 id="接受者操作特征曲线-ROC"><a href="#接受者操作特征曲线-ROC" class="headerlink" title="接受者操作特征曲线 ROC"></a>接受者操作特征曲线 ROC</h3><p><strong>ROC 曲线</strong>的横坐标为假正率 FPR, 纵坐标为真正率 TPR:</p><p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202408081120109.jpg" alt=""></p><p>与 P-R 曲线类似, ROC 曲线也通过<strong>遍历所有阈值</strong>来绘制:</p><p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202408081122132.gif" alt=""></p><p><strong>改变阈值</strong>只是改变预测的正负样本数, 即 TPR 和 FPR, 但是曲线本身不变. FPR 表示模型虚报的响应程度, 而 TPR 表示模型预测响应的覆盖程度. <strong>TPR 越高</strong>, 同时 <strong>FPR 越低</strong>, 即 ROC 曲线越陡, 那么模型性能越好:</p><p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202408081123478.gif" alt=""></p><p>当测试集中的<strong>正负样本的分布变化</strong>时, TPR 和 FPR 能无视样本不平衡, ROC 曲线<strong>聚焦于整体</strong>, 保持不变, 使其成为较均衡的评估方法.</p><h3 id="曲线下面积-AUC"><a href="#曲线下面积-AUC" class="headerlink" title="曲线下面积 AUC"></a>曲线下面积 AUC</h3><p>为了计算 ROC 曲线上的点, 可以使用不同的分类阈值多次评估逻辑回归模型, 但效率非常低. 一种基于排序的高效算法可以提供此类信息, 称为 <strong>AUC</strong>.</p><p>可以断言, AUC 越大, 模型效果越好. <strong>随机判断响应与否</strong>, 正负样本覆盖率都是 50%, 表示随机效果, 对应的 ROC 曲线即对角线. 在最坏情况下总有 TPR=FPR, 即 AUC = 0.5; 如果AUC &lt; 0.5, 只要取反预测类别, 便得到了 AUC &gt; 0.5 的分类器.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> CS </category>
+          
+          <category> AI </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Machine Learning </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>操作系统 Lab 5</title>
       <link href="/2024/06/09/cao-zuo-xi-tong-lab-5/"/>
       <url>/2024/06/09/cao-zuo-xi-tong-lab-5/</url>

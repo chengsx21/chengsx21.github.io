@@ -6,7 +6,7 @@
   <link href="http://chengsx21.github.io/atom.xml" rel="self"/>
   
   <link href="http://chengsx21.github.io/"/>
-  <updated>2024-08-02T07:44:57.767Z</updated>
+  <updated>2024-08-08T03:39:23.662Z</updated>
   <id>http://chengsx21.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>机器学习-分类模型指标</title>
+    <link href="http://chengsx21.github.io/2024/07/02/ji-qi-xue-xi-fen-lei-mo-xing-zhi-biao/"/>
+    <id>http://chengsx21.github.io/2024/07/02/ji-qi-xue-xi-fen-lei-mo-xing-zhi-biao/</id>
+    <published>2024-07-02T08:23:25.000Z</published>
+    <updated>2024-08-08T03:39:23.662Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="分类问题"><a href="#分类问题" class="headerlink" title="分类问题"></a>分类问题</h2><p>有一个判断性别的机器学习模型, 使用它来判断「是否为男性」时, 会出现 4 种情况:</p><p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202408021629912.png" alt=""></p><p>这 4 种情况构成了混淆矩阵:</p><p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202408021631896.png" alt=""></p><p>其中 T/F 描述机器判断结果的正确性, P/N 描述机器判断分类的正负性.</p><h2 id="基础分类指标"><a href="#基础分类指标" class="headerlink" title="基础分类指标"></a>基础分类指标</h2><h3 id="准确率-Accuracy"><a href="#准确率-Accuracy" class="headerlink" title="准确率 Accuracy"></a>准确率 Accuracy</h3><p><strong>准确率</strong>为预测正确的结果占总样本的百分比:</p><p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202408071617941.png" alt=""></p><p>可以判断总的正确率, 但是在<strong>样本不平衡</strong>的情况下, 不能作为指标来衡量结果. 在正样本占 90%, 负样本占 10% 的总样本中, 样本严重不平衡. 这种情况只需将全部样本预测为正即可得到 90% 的准确率, 结果含有水分, 准确率失效.</p><h3 id="查准率-Precision"><a href="#查准率-Precision" class="headerlink" title="查准率 Precision"></a>查准率 Precision</h3><p><strong>查准率</strong>为所有被<u>预测为正</u>的样本中<u>实际为正</u>的样本的概率:</p><p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202408071631976.png" alt=""></p><p>查准率代表对<strong>正样本结果</strong>中的预测准确程度, 有多少把握预测正确; 而准确率则代表<strong>整体</strong>的预测准确程度, 包括正样本和负样本.</p><h3 id="查全率-Recall"><a href="#查全率-Recall" class="headerlink" title="查全率 Recall"></a>查全率 Recall</h3><p><strong>查全率</strong>为所有<u>实际为正</u>的样本中被<u>预测为正</u>的样本的概率:</p><p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202408081033339.png" alt=""></p><p>查全率越高, 代表实际用户被预测出来的概率越高.</p><h3 id="F1分数-F1-Score"><a href="#F1分数-F1-Score" class="headerlink" title="F1分数 F1$_$Score"></a>F1分数 F1$_$Score</h3><p>Precision 和 Recall 之间的关系用 P-R 曲线来表达:</p><p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202408081046768.jpg" alt=""></p><p>以逻辑回归举例, 输出是一个 0 到 1 之间的概率数字, 根据这个概率判断用户好坏, 必须定义一个<strong>阈值</strong>. 为了找到一个最合适的阈值满足我们的要求, 必须遍历 0 到 1 之间所有的阈值, 每个阈值下都对应着一对 Precision 和 Recall, 从而得到了这条曲线.</p><p>想要找到二者之间的<strong>平衡点</strong>, 就需要一个新的指标 <strong>F1$_$Score</strong>. F1$_$Score 同时考虑了 Precision 和 Recall, 让二者同时达到最高, 公式为:</p><script type="math/tex; mode=display">\text{F1\_Score}=\dfrac{2*\text{Precision}*\text{Recall}}{\text{Precision}+\text{Recall}}</script><p>P-R 曲线的两个指标都<strong>聚焦于正样本</strong>, 适合评估在相同的类别分布下正例的预测情况.</p><h2 id="样本不平衡处理"><a href="#样本不平衡处理" class="headerlink" title="样本不平衡处理"></a>样本不平衡处理</h2><h3 id="灵敏度-Sensitivity-特异度-Specificity-真正率-TPR-假正率-FPR"><a href="#灵敏度-Sensitivity-特异度-Specificity-真正率-TPR-假正率-FPR" class="headerlink" title="灵敏度 Sensitivity/特异度 Specificity/真正率 TPR/假正率 FPR"></a>灵敏度 Sensitivity/特异度 Specificity/真正率 TPR/假正率 FPR</h3><p>以下指标能<strong>无视样本不平衡</strong>:</p><script type="math/tex; mode=display">\text{Sensitivity}=\dfrac{\text{TP}}{\text{TP}+\text{FN}},\quad\text{Specificity}=\dfrac{\text{TN}}{\text{FP}+\text{TN}}</script><p>Sensitivity 为实际为正的样本被预测为正的概率, Specificity 为实际为负的样本被预测为负的概率. 由于关心正样本, 所以使用 1 - Specificity, 查看负样本被错误预测为正的概率.</p><script type="math/tex; mode=display">\text{TPR}=\text{Sensitivity}=\dfrac{\text{TP}}{\text{TP}+\text{FN}},\quad\text{FPR}=1-\text{Specificity}=\dfrac{\text{FP}}{\text{FP}+\text{TN}}</script><p>TPR 和 FPR 分别<strong>从实际表现的各个结果角度出发</strong>, 在实际的正样本和负样本中来观察相关概率, <strong>无论样本是否平衡</strong>, 都不会被影响. TPR 只关注正样本中有多少被真正覆盖, FPR 只关注负样本中有多少被错误覆盖的.</p><h3 id="从「条件概率」说起"><a href="#从「条件概率」说起" class="headerlink" title="从「条件概率」说起"></a>从「条件概率」说起</h3><p>假设 X 为预测值, Y 为真实值, 可以将这些指标按条件概率表示:</p><script type="math/tex; mode=display">\begin{aligned}&\text{Precision}=\Pr(Y=1|X=1)\\&\text{Recall}=\text{Sensitivity}=\Pr(X=1|Y=1)\\&\text{Specificity}=\Pr(X=0|Y=0)\end{aligned}</script><p>如果先以实际结果为条件 (Recall/Sensitivity/Specificity), 就只需考虑一种样本; 而先以预测值为条件 (Precision), 需要同时考虑正样本和负样本. 所以<strong>先以实际结果为条件</strong>的指标都<strong>不受样本不平衡的影响</strong>, 相反<strong>以预测结果为条件</strong>就会<strong>受到样本不平衡的影响</strong>.</p><h3 id="接受者操作特征曲线-ROC"><a href="#接受者操作特征曲线-ROC" class="headerlink" title="接受者操作特征曲线 ROC"></a>接受者操作特征曲线 ROC</h3><p><strong>ROC 曲线</strong>的横坐标为假正率 FPR, 纵坐标为真正率 TPR:</p><p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202408081120109.jpg" alt=""></p><p>与 P-R 曲线类似, ROC 曲线也通过<strong>遍历所有阈值</strong>来绘制:</p><p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202408081122132.gif" alt=""></p><p><strong>改变阈值</strong>只是改变预测的正负样本数, 即 TPR 和 FPR, 但是曲线本身不变. FPR 表示模型虚报的响应程度, 而 TPR 表示模型预测响应的覆盖程度. <strong>TPR 越高</strong>, 同时 <strong>FPR 越低</strong>, 即 ROC 曲线越陡, 那么模型性能越好:</p><p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202408081123478.gif" alt=""></p><p>当测试集中的<strong>正负样本的分布变化</strong>时, TPR 和 FPR 能无视样本不平衡, ROC 曲线<strong>聚焦于整体</strong>, 保持不变, 使其成为较均衡的评估方法.</p><h3 id="曲线下面积-AUC"><a href="#曲线下面积-AUC" class="headerlink" title="曲线下面积 AUC"></a>曲线下面积 AUC</h3><p>为了计算 ROC 曲线上的点, 可以使用不同的分类阈值多次评估逻辑回归模型, 但效率非常低. 一种基于排序的高效算法可以提供此类信息, 称为 <strong>AUC</strong>.</p><p>可以断言, AUC 越大, 模型效果越好. <strong>随机判断响应与否</strong>, 正负样本覆盖率都是 50%, 表示随机效果, 对应的 ROC 曲线即对角线. 在最坏情况下总有 TPR=FPR, 即 AUC = 0.5; 如果AUC &lt; 0.5, 只要取反预测类别, 便得到了 AUC &gt; 0.5 的分类器.</p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;分类问题&quot;&gt;&lt;a href=&quot;#分类问题&quot; class=&quot;headerlink&quot; title=&quot;分类问题&quot;&gt;&lt;/a&gt;分类问题&lt;/h2&gt;&lt;p&gt;有一个判断性别的机器学习模型, 使用它来判断「是否为男性」时, 会出现 4 种情况:&lt;/p&gt;
+&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="CS" scheme="http://chengsx21.github.io/categories/CS/"/>
+    
+    <category term="AI" scheme="http://chengsx21.github.io/categories/CS/AI/"/>
+    
+    
+    <category term="Machine Learning" scheme="http://chengsx21.github.io/tags/Machine-Learning/"/>
+    
+  </entry>
   
   <entry>
     <title>操作系统 Lab 5</title>
@@ -568,37 +598,6 @@
     
     
     <category term="Principles of Compiler" scheme="http://chengsx21.github.io/tags/Principles-of-Compiler/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>计算机组成原理 笔记7</title>
-    <link href="http://chengsx21.github.io/2023/11/16/ji-suan-ji-zu-cheng-yuan-li-bi-ji-7/"/>
-    <id>http://chengsx21.github.io/2023/11/16/ji-suan-ji-zu-cheng-yuan-li-bi-ji-7/</id>
-    <published>2023-11-16T09:18:57.000Z</published>
-    <updated>2024-08-01T10:29:16.762Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Exception"><a href="#Exception" class="headerlink" title="Exception"></a>Exception</h1><h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><ol><li><p>在支持中断异常的监控程序当中一共涉及几个内核态? 监控程序工作在什么内核态上? 什么时候会进入用户态 (U 态)?</p><p> <strong>答:</strong> 1 个; M 态; 在 <code>shell.S</code> 中执行 G 命令进入 <code>.ENTER_UESR</code> 执行 <code>mret</code>.</p></li><li><p>观察监控程序中 CSR 寄存器的变化. 监控程序在执行 G 命令执行用户程序时, 是如何切换内核态, 并跳转到对应位置的?</p><p> <strong>答:</strong> 设置 mepc, mpp, 执行 <code>mret</code> 指令跳转到对应位置.</p></li><li><p>用户程序执行 ecall 指令之后会发生什么?</p><p> <strong>答:</strong> 引发异常, 进入 M 态 <code>EXCEPTION_HANDLER</code>, 执行 <code>.HANDLE_ECALL</code> 代码段.</p></li><li><p>考虑中断处理. 监控程序的异常处理函数中严格过滤掉了在 M 态发生的时钟中断. 如何在异常处理函数中判断当前处理的异常发生在什么态? 来自 M 态的时钟中断会发生吗?</p><p> <strong>答:</strong> 读取 mstatus.mpp, 判断当前状态; 不会被发生和处理.</p></li><li><p>中断发生的具体条件是什么? 监控程序中发生的中断类型是?</p><p> <strong>答:</strong> mie 和 mip 相应位置 1; 时钟中断.</p></li><li><p>用户程序在执行完成后 (执行 <code>jr ra</code> 指令回到监控程序后) 会发生什么?</p><p> <strong>答:</strong> 跳转到 <code>.USERRET_USER</code>.</p></li><li><p>如何判断 CPU 当前运行在什么内核态? 这个信息有暴露给软件吗?</p><p> <strong>答:</strong> 在 CPU 内部每个流水阶段传递内核态信息; 没有, 软件只有在处理异常时可以获取发生异常时 CPU 的状态.</p></li><li><p>如何读写 mtime 和 mtimecmp 寄存器 (与串口的状态和数据寄存器进行类比)?</p><p> <strong>答:</strong> 在 mem_master 中重定向时钟寄存器地址, 增加单独的读写逻辑.</p></li><li><p>监控程序在处理 mtvec 寄存器时使用了复杂的逻辑. 结合 Privileged 2.3 节解释其原因, 并理解什么是 WARL.</p><p> <strong>答:</strong> mtvec 寄存器用于定义异常处理程序的基地址, RISC-V 允许两种异常处理模式: 直接模式和向量模式, 通过 mtvec 寄存器的最低位来设置; WARL 属性意味着对于某些寄存器, 当写入一个地址时, 系统可能会进行某些内部调整或转换, 但读取时, 总是得到你写入的地址.</p></li></ol><h2 id="Exception-1"><a href="#Exception-1" class="headerlink" title="Exception"></a>Exception</h2><ul><li>处理器<strong>内部产生</strong>, 可能可恢复, 也可能无法恢复.</li><li>异常恢复后重新执行<strong>本条指令</strong>.</li><li><p>IF: 访存地址不对齐; 访存缺页.</p><ul><li>ID: 非法指令.</li></ul></li><li><p>EXE: 除 0 计算.</p></li><li><p>MEM: 访存地址不对齐; 访存缺页.</p></li><li><p>WB: 无.</p></li></ul><h2 id="Interruption"><a href="#Interruption" class="headerlink" title="Interruption"></a>Interruption</h2><ul><li>处理器<strong>外部产生</strong>, 可恢复执行.</li><li>中断处理后跳到<strong>下一条指令</strong>执行.</li><li>保存和恢复由软件和硬件一同进行. 通用寄存器由软件操作, 特殊寄存器 (包括 PC, cause, IE) 由硬件进行.</li><li>发生中断时, 硬件将 PC 设为<strong>中断处理函数入口地址</strong>, 入口地址可以使用固定常数 (MIPS), 硬件将其进行硬编码, 也可以写入特殊寄存器 (Risc-V), 由硬件进行设置. 中断处理函数可以有<strong>多个</strong>, 操作系统提供多个入口; 也可以有<strong>一个</strong>, 根据中断 cause 跳转到不同的地址, 如中断向量表.</li><li>将中断安排在 <strong>EXE 和 MEM 阶段之间</strong>, 等待前面指令执行完毕, 使用 bubble 信号排空后面的指令, 再进行中断异常处理, 称为<strong>精确的中断和异常</strong>.</li></ul><h2 id="Privileged-Mode"><a href="#Privileged-Mode" class="headerlink" title="Privileged Mode"></a>Privileged Mode</h2><ul><li>硬件隔离: 性能损失少; 软件隔离: 性能损失多.</li><li>mtvec, mepc, mcause 在异常处理中由硬件保存.</li><li>mie, mip, mtval, mscratch, mstatus.</li><li>内存隔离机制: 通知 CPU 内存地址范围及处理权限, 将 APP 与 OS 隔离.<ul><li>地址映射将 APP 与 APP 隔离;</li><li>限制用户程序不更改监控程序;</li><li>限制 MEM 段 load/store 指令的行为;</li><li>否则抛出异常 (X86: Segment; Risc-V: PMP).</li></ul></li><li>只有 mret 将 pc 设置为 mepc, 切换 M 模式为 U 模式. 可以通过将 mepc 设置为其他程序的运行入口, 实现<strong>操作系统调度器</strong>.</li><li>异常、中断、硬件控制 (外设) 由 M 模式进行, 例如发起系统调用时, U 模式会主动切换到 M 模式, 相当于主动触发异常.</li><li><strong>进入</strong>中断处理函数<strong>前</strong>, 硬件保存中断地址到 mepc, 中断原因到 mcause, 将地址置为 mtvec, 将 mstatus 中的中断使能 mie 保存到 mpie, mie 置 0, 将权限模式保存到 mpp; <strong>进入</strong>中断处理函数<strong>后</strong>, 软件保存 mepc, mcause 到 stack 上, 然后软件将 mie 置 1, 此时可以支持嵌套的中断和异常; <strong>离开</strong>中断处理函数<strong>前</strong>, 软件将 mie 置 0, 并恢复 mepc, mcause, 硬件将 mie 置 1.</li></ul>]]></content>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;Exception&quot;&gt;&lt;a href=&quot;#Exception&quot; class=&quot;headerlink&quot; title=&quot;Exception&quot;&gt;&lt;/a&gt;Exception&lt;/h1&gt;&lt;h2 id=&quot;Q-amp-A&quot;&gt;&lt;a href=&quot;#Q-amp-A&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="CS" scheme="http://chengsx21.github.io/categories/CS/"/>
-    
-    <category term="Organization &amp; Design" scheme="http://chengsx21.github.io/categories/CS/Organization-Design/"/>
-    
-    
-    <category term="Organization &amp; Design" scheme="http://chengsx21.github.io/tags/Organization-Design/"/>
-    
-    <category term="SV" scheme="http://chengsx21.github.io/tags/SV/"/>
     
   </entry>
   
