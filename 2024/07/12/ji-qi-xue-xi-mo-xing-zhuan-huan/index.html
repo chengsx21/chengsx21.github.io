@@ -440,14 +440,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    770
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -470,7 +470,119 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id=""><a href="#" class="headerlink" title=" "></a> </h2>
+                <h2 id="格式汇总"><a href="#格式汇总" class="headerlink" title="格式汇总"></a>格式汇总</h2><p>重现模型的关键是模型结构/模型参数/数据集, 当提供或者希望被提供这些信息, 需要一个交流的规范, 而 <strong>.pt/.pth/.bin/.onnx</strong> 就是约定的格式.</p>
+<p>使用 <code>torch.load()</code> 方法加载模型信息时, 不根据文件后缀进行模型读取, 而是根据模型文件的内容自动识别.</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>格式</th>
+<th>解释</th>
+<th>适用场景</th>
+<th>对应后缀</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.pt/.pth</td>
+<td>PyTorch 的默认模型文件格式, 保存和加载<strong>完整的</strong> PyTorch 模型, 包含模型的结构和参数等信息。</td>
+<td>需要保存和加载完整的 PyTorch 模型, 例如在训练中保存最佳的模型, 或在部署中加载训练好的模型.</td>
+<td>.pt/.pth</td>
+</tr>
+<tr>
+<td>.bin</td>
+<td>通用二进制格式, 保存和加载各种类型的模型和数据.</td>
+<td>需要将 PyTorch 模型转换为通用的二进制格式.</td>
+<td>.bin</td>
+</tr>
+<tr>
+<td>ONNX</td>
+<td>通用模型交换格式, 将模型从一个深度学习框架转换到另一个深度学习框架或硬件平台. PyTorch 中使用 torch.onnx.export 将模型转换为 ONNX 格式.</td>
+<td>需要将 PyTorch 模型转换为其他深度学习框架或硬件平台可用的格式.</td>
+<td>.onnx</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="pt-pth格式"><a href="#pt-pth格式" class="headerlink" title=".pt/.pth格式"></a>.pt/.pth格式</h2><p>完整的 Pytorch 模型文件, 包含如下参数:</p>
+<ul>
+<li><code>model_state_dict</code>: 模型参数</li>
+<li><code>optimizer_state_dict</code>: 优化器状态</li>
+<li><code>epoch</code>: 训练轮数</li>
+<li><code>loss</code>: 损失值</li>
+</ul>
+<p>其中 <code>model.state_dict()</code> 返回包含所有参数和持久化缓存的字典, <code>torch.save()</code> 将所有组件保存到文件中,</p>
+<h3 id="模型保存"><a href="#模型保存" class="headerlink" title="模型保存"></a>模型保存</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> torch
+<span class="token keyword">import</span> torch<span class="token punctuation">.</span>nn <span class="token keyword">as</span> nn
+
+<span class="token keyword">class</span> <span class="token class-name">Net</span><span class="token punctuation">(</span>nn<span class="token punctuation">.</span>Module<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+model <span class="token operator">=</span> Net<span class="token punctuation">(</span><span class="token punctuation">)</span>
+torch<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token string">'epoch'</span><span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+    <span class="token string">'model_state_dict'</span><span class="token punctuation">:</span> model<span class="token punctuation">.</span>state_dict<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token string">'optimizer_state_dict'</span><span class="token punctuation">:</span> optimizer<span class="token punctuation">.</span>state_dict<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token string">'loss'</span><span class="token punctuation">:</span> loss
+<span class="token punctuation">}</span><span class="token punctuation">,</span> PATH<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="模型加载"><a href="#模型加载" class="headerlink" title="模型加载"></a>模型加载</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> torch
+<span class="token keyword">import</span> torch<span class="token punctuation">.</span>nn <span class="token keyword">as</span> nn
+
+<span class="token keyword">class</span> <span class="token class-name">Net</span><span class="token punctuation">(</span>nn<span class="token punctuation">.</span>Module<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+model <span class="token operator">=</span> Net<span class="token punctuation">(</span><span class="token punctuation">)</span>
+optimizer <span class="token operator">=</span> optim<span class="token punctuation">.</span>SGD<span class="token punctuation">(</span>model<span class="token punctuation">.</span>parameters<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> lr<span class="token operator">=</span><span class="token number">0.001</span><span class="token punctuation">,</span> momentum<span class="token operator">=</span><span class="token number">0.9</span><span class="token punctuation">)</span>
+checkpoint <span class="token operator">=</span> torch<span class="token punctuation">.</span>load<span class="token punctuation">(</span>PATH<span class="token punctuation">)</span>
+model<span class="token punctuation">.</span>load_state_dict<span class="token punctuation">(</span>checkpoint<span class="token punctuation">[</span><span class="token string">'model_state_dict'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+optimizer<span class="token punctuation">.</span>load_state_dict<span class="token punctuation">(</span>checkpoint<span class="token punctuation">[</span><span class="token string">'optimizer_state_dict'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+epoch <span class="token operator">=</span> checkpoint<span class="token punctuation">[</span><span class="token string">'epoch'</span><span class="token punctuation">]</span>
+loss <span class="token operator">=</span> checkpoint<span class="token punctuation">[</span><span class="token string">'loss'</span><span class="token punctuation">]</span>
+model<span class="token punctuation">.</span><span class="token builtin">eval</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="bin-格式"><a href="#bin-格式" class="headerlink" title=".bin 格式"></a>.bin 格式</h2><p>二进制文件, 保存模型的参数和持久化缓存. 文件大小较小, 加载速度较快, 在生产环境中使用较多.</p>
+<h3 id="保存模型"><a href="#保存模型" class="headerlink" title="保存模型"></a>保存模型</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> torch
+<span class="token keyword">import</span> torch<span class="token punctuation">.</span>nn <span class="token keyword">as</span> nn
+
+<span class="token keyword">class</span> <span class="token class-name">Net</span><span class="token punctuation">(</span>nn<span class="token punctuation">.</span>Module<span class="token punctuation">)</span><span class="token punctuation">:</span>
+	<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+model <span class="token operator">=</span> Net<span class="token punctuation">(</span><span class="token punctuation">)</span>
+torch<span class="token punctuation">.</span>save<span class="token punctuation">(</span>model<span class="token punctuation">.</span>state_dict<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> PATH<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="加载模型"><a href="#加载模型" class="headerlink" title="加载模型"></a>加载模型</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> torch
+<span class="token keyword">import</span> torch<span class="token punctuation">.</span>nn <span class="token keyword">as</span> nn
+
+<span class="token keyword">class</span> <span class="token class-name">Net</span><span class="token punctuation">(</span>nn<span class="token punctuation">.</span>Module<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+model <span class="token operator">=</span> Net<span class="token punctuation">(</span><span class="token punctuation">)</span>
+model<span class="token punctuation">.</span>load_state_dict<span class="token punctuation">(</span>torch<span class="token punctuation">.</span>load<span class="token punctuation">(</span>PATH<span class="token punctuation">)</span><span class="token punctuation">)</span>
+model<span class="token punctuation">.</span><span class="token builtin">eval</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="onnx-格式"><a href="#onnx-格式" class="headerlink" title=".onnx 格式"></a>.onnx 格式</h2><p>PyTorch 提供 <code>torch.onnx.export</code> 函数将模型转化为 ONNX 格式, 在其他深度学习框架中使用.</p>
+<h3 id="保存模型-1"><a href="#保存模型-1" class="headerlink" title="保存模型"></a>保存模型</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> torch
+<span class="token keyword">import</span> torch<span class="token punctuation">.</span>onnx
+
+model <span class="token operator">=</span> torch<span class="token punctuation">.</span>nn<span class="token punctuation">.</span>Linear<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+torch<span class="token punctuation">.</span>save<span class="token punctuation">(</span>model<span class="token punctuation">.</span>state_dict<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"model.bin"</span><span class="token punctuation">)</span>
+
+model <span class="token operator">=</span> torch<span class="token punctuation">.</span>nn<span class="token punctuation">.</span>Linear<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+model<span class="token punctuation">.</span>load_state_dict<span class="token punctuation">(</span>torch<span class="token punctuation">.</span>load<span class="token punctuation">(</span><span class="token string">"model.bin"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+example_input <span class="token operator">=</span> torch<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+torch<span class="token punctuation">.</span>onnx<span class="token punctuation">.</span>export<span class="token punctuation">(</span>model<span class="token punctuation">,</span> example_input<span class="token punctuation">,</span> <span class="token string">"model.onnx"</span><span class="token punctuation">,</span> input_names<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"input"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> output_names<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"output"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="加载模型-1"><a href="#加载模型-1" class="headerlink" title="加载模型"></a>加载模型</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> onnx
+<span class="token keyword">import</span> onnxruntime
+
+<span class="token comment"># 将 ONNX 文件转化为 ORT 格式</span>
+onnx_model <span class="token operator">=</span> onnx<span class="token punctuation">.</span>load<span class="token punctuation">(</span><span class="token string">"model.onnx"</span><span class="token punctuation">)</span>
+ort_session <span class="token operator">=</span> onnxruntime<span class="token punctuation">.</span>InferenceSession<span class="token punctuation">(</span><span class="token string">"model.onnx"</span><span class="token punctuation">)</span>
+input_data <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>random<span class="token punctuation">(</span>size<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>astype<span class="token punctuation">(</span>np<span class="token punctuation">.</span>float32<span class="token punctuation">)</span>
+outputs <span class="token operator">=</span> ort_session<span class="token punctuation">.</span>run<span class="token punctuation">(</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token string">"input"</span><span class="token punctuation">:</span> input_data<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="保存完整模型"><a href="#保存完整模型" class="headerlink" title="保存完整模型"></a>保存完整模型</h2><p>之前的方式都保存了 <code>.state_dict()</code>, 但没有保存模型的结构, 使用时必须<strong>重新定义相同结构的模型</strong>, 才能够加载模型参数进行使用. 想把整个模型都保存下来, 可以按如下操作:</p>
+<h3 id="保存模型-2"><a href="#保存模型-2" class="headerlink" title="保存模型"></a>保存模型</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python">PATH <span class="token operator">=</span> <span class="token string">"entire_model.pt"</span>
+torch<span class="token punctuation">.</span>save<span class="token punctuation">(</span>model<span class="token punctuation">,</span> PATH<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="加载模型-2"><a href="#加载模型-2" class="headerlink" title="加载模型"></a>加载模型</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python">model <span class="token operator">=</span> torch<span class="token punctuation">.</span>load<span class="token punctuation">(</span><span class="token string">"entire_model.pt"</span><span class="token punctuation">)</span>
+model<span class="token punctuation">.</span><span class="token builtin">eval</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
                 
             </div>
             <hr/>
@@ -861,7 +973,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">137.6k</span>
+                        class="white-color">138.4k</span>
             
             
             
