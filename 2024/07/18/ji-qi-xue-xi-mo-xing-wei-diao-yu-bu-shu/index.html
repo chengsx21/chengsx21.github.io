@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Git入门学习, Endeavor">
-    <meta name="description" content="A brief introduction to Git learning">
+    <meta name="keywords" content="机器学习-模型微调与部署, Endeavor">
+    <meta name="description" content="实习项目 快手商品图片相似度识别">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Git入门学习 | Endeavor</title>
+    <title>机器学习-模型微调与部署 | Endeavor</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
     <style>
@@ -373,7 +373,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Git入门学习</h1>
+                    <h1 class="description center-align post-title">机器学习-模型微调与部署</h1>
                 </div>
             </div>
         </div>
@@ -397,8 +397,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Git/">
-                                <span class="chip bg-color">Git</span>
+                            <a href="/tags/Machine-Learning/">
+                                <span class="chip bg-color">Machine Learning</span>
                             </a>
                         
                     </div>
@@ -413,8 +413,8 @@
                                 CS
                             </a>
                         
-                            <a href="/categories/CS/Git/" class="post-category">
-                                Git
+                            <a href="/categories/CS/AI/" class="post-category">
+                                AI
                             </a>
                         
                     </div>
@@ -426,28 +426,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-09-23
+                    2024-07-18
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-07-02
+                    2024-08-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    702
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    6 分
                 </div>
                 
 
@@ -470,90 +470,155 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="What-Are-VCSs"><a href="#What-Are-VCSs" class="headerlink" title="What Are VCSs?"></a>What Are VCSs?</h2><p>Version control systems (VCSs) are tools used to track changes to a folder and its contents in a series of snapshots. They also maintain metadata like who created each snapshot, messages associated with each snapshot, and so on.</p>
-<p>While other VCSs exist, <strong>Git</strong> is the de facto standard for version control. </p>
-<h2 id="Data-Model"><a href="#Data-Model" class="headerlink" title="Data Model"></a>Data Model</h2><p>Git has a well-thought-out model that enables maintaining history, supporting branches, and collaboration.</p>
-<h3 id="Snapshots"><a href="#Snapshots" class="headerlink" title="Snapshots"></a>Snapshots</h3><p>Git models the history of a collection of files and folders within some top-level directory as a series of snapshots.</p>
-<ul>
-<li>File — Blob</li>
-<li>Directory — Tree </li>
-<li>Snapshot — The top-level tree being tracked</li>
-</ul>
-<h3 id="History-Relating-snapshots"><a href="#History-Relating-snapshots" class="headerlink" title="History: Relating snapshots"></a>History: Relating snapshots</h3><p>In Git, a history is a directed acyclic graph (DAG) of snapshots. This means that each snapshot in Git refers to a set of “parents”, the snapshots that preceded it. Moreover, a snapshot might descend from multiple parents due to combining (merging) two parallel branches of development.</p>
-<h3 id="Data-model-As-pseudocode"><a href="#Data-model-As-pseudocode" class="headerlink" title="Data model: As pseudocode"></a>Data model: As pseudocode</h3><p>It is instructive to see Git’s data model written down in pseudocode.</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token builtin">type</span> blob <span class="token operator">=</span> array<span class="token operator">&lt;</span>byte<span class="token operator">&gt;</span>
-<span class="token builtin">type</span> tree <span class="token operator">=</span> <span class="token builtin">map</span><span class="token operator">&lt;</span>string<span class="token punctuation">,</span> tree <span class="token operator">|</span> blob<span class="token operator">&gt;</span>
-<span class="token builtin">type</span> commit <span class="token operator">=</span> struct <span class="token punctuation">{</span>
-    parents<span class="token punctuation">:</span> array<span class="token operator">&lt;</span>commit<span class="token operator">&gt;</span>
-    author<span class="token punctuation">:</span> string
-    message<span class="token punctuation">:</span> string
-    snapshot<span class="token punctuation">:</span> tree
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="Objects-and-Content-Addressing"><a href="#Objects-and-Content-Addressing" class="headerlink" title="Objects and Content-Addressing"></a>Objects and Content-Addressing</h3><p>An “object” is a blob, tree, or commit. In Git data store, all objects are content-addressed by <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/SHA-1">SHA-1 hash</a>.</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token builtin">type</span> <span class="token builtin">object</span> <span class="token operator">=</span> blob <span class="token operator">|</span> tree <span class="token operator">|</span> commit
-objects <span class="token operator">=</span> <span class="token builtin">map</span><span class="token operator">&lt;</span>string<span class="token punctuation">,</span> <span class="token builtin">object</span><span class="token operator">&gt;</span>
-<span class="token keyword">def</span> <span class="token function">store</span><span class="token punctuation">(</span><span class="token builtin">object</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token builtin">id</span> <span class="token operator">=</span> sha1<span class="token punctuation">(</span><span class="token builtin">object</span><span class="token punctuation">)</span>
-    objects<span class="token punctuation">[</span><span class="token builtin">id</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token builtin">object</span>
-<span class="token keyword">def</span> <span class="token function">load</span><span class="token punctuation">(</span><span class="token builtin">id</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">return</span> objects<span class="token punctuation">[</span><span class="token builtin">id</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="References"><a href="#References" class="headerlink" title="References"></a>References</h3><p>Git’s solution is human-readable names for SHA-1 hashes, called “references”. References are mutable pointers to commits. For example, the <code>master</code> reference usually points to the latest commit in the main branch of development. Moreover, “where we currently are” is a special reference called “HEAD”.</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">references <span class="token operator">=</span> <span class="token builtin">map</span><span class="token operator">&lt;</span>string<span class="token punctuation">,</span> string<span class="token operator">&gt;</span>
-<span class="token keyword">def</span> <span class="token function">update_reference</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> <span class="token builtin">id</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    references<span class="token punctuation">[</span>name<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token builtin">id</span>
-<span class="token keyword">def</span> <span class="token function">read_reference</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">return</span> references<span class="token punctuation">[</span>name<span class="token punctuation">]</span>
-<span class="token keyword">def</span> <span class="token function">load_reference</span><span class="token punctuation">(</span>name_or_id<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">if</span> name_or_id <span class="token keyword">in</span> references<span class="token punctuation">:</span>
-        <span class="token keyword">return</span> load<span class="token punctuation">(</span>references<span class="token punctuation">[</span>name_or_id<span class="token punctuation">]</span><span class="token punctuation">)</span>
-    <span class="token keyword">else</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> load<span class="token punctuation">(</span>name_or_id<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="Repositories"><a href="#Repositories" class="headerlink" title="Repositories"></a>Repositories</h3><p>A Git <em>repository</em> is the data <code>objects</code> and <code>references</code>.</p>
-<h2 id="Staging-Area"><a href="#Staging-Area" class="headerlink" title="Staging Area"></a>Staging Area</h2><p>For example, imagine a scenario where you have debugging print statements added all over your code, along with a bugfix; you want to commit the bugfix while discarding all the print statements.</p>
-<p>Git accommodates such scenarios by allowing you to specify which modifications should be included in the next snapshot through a mechanism called the “staging area”.</p>
-<h2 id="Command-Line-Interface"><a href="#Command-Line-Interface" class="headerlink" title="Command-Line Interface"></a>Command-Line Interface</h2><h3 id="Basics"><a href="#Basics" class="headerlink" title="Basics"></a>Basics</h3><ul>
-<li><code>git help &lt;command&gt;</code>: get help for a command</li>
-<li><code>git init</code>: create a new git repo with data stored in the <code>.git</code> directory</li>
-<li><code>git status</code>: tell what is going on</li>
-<li><code>git add &lt;filename&gt;</code>: add files to staging area</li>
-<li><code>git commit</code>: create a new commit<ul>
-<li>Write <a target="_blank" rel="noopener" href="https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html">good commit messages</a>!</li>
-<li>More reasons to write <a target="_blank" rel="noopener" href="https://chris.beams.io/posts/git-commit/">good commit messages</a>!</li>
-</ul>
-</li>
-<li><code>git log</code>: show a flattened log of history</li>
-<li><code>git log --all --graph --decorate</code>: visualizes history as a DAG</li>
-<li><code>git diff &lt;filename&gt;</code>: show changes made to the staging area</li>
-<li><code>git diff &lt;revision&gt; &lt;filename&gt;</code>: show differences in a file between snapshots</li>
-<li><code>git checkout &lt;revision&gt;</code>: update HEAD and current branch</li>
-</ul>
-<h3 id="Branching-and-Merging"><a href="#Branching-and-Merging" class="headerlink" title="Branching and Merging"></a>Branching and Merging</h3><ul>
-<li><code>git branch</code>: show branches</li>
-<li><code>git branch &lt;name&gt;</code>: create a branch</li>
-<li><code>git checkout -b &lt;name&gt;</code>: create a branch and switch to it</li>
-<li><code>git merge &lt;revision&gt;</code>: merge into current branch</li>
-<li><code>git mergetool</code>: use a fancy tool to help resolve merge conflicts</li>
-<li><code>git rebase</code>: rebase set of patches onto a new base</li>
-</ul>
-<h3 id="Remotes"><a href="#Remotes" class="headerlink" title="Remotes"></a>Remotes</h3><ul>
-<li><code>git remote</code>: list remotes</li>
-<li><code>git remote add &lt;name&gt; &lt;url&gt;</code>: add a remote</li>
-<li><code>git push &lt;remote&gt; &lt;local branch&gt;:&lt;remote branch&gt;</code>: send objects to remote and update remote reference</li>
-<li><code>git branch --set-upstream-to=&lt;remote&gt;/&lt;remote branch&gt;</code>: set up correspondence between local and remote branch</li>
-<li><code>git fetch</code>: retrieve objects/references from a remote</li>
-<li><code>git pull</code>: same as <code>git fetch; git merge</code></li>
-<li><code>git clone</code>: download repository from remote</li>
-</ul>
-<h3 id="Undo"><a href="#Undo" class="headerlink" title="Undo"></a>Undo</h3><ul>
-<li><code>git config</code>: Git is <a target="_blank" rel="noopener" href="https://git-scm.com/docs/git-config">highly customizable</a></li>
-<li><code>git clone --depth=1</code>: shallow clone, without entire version history</li>
-<li><code>git add -p</code>: interactive staging</li>
-<li><code>git rebase -i</code>: interactive rebasing</li>
-<li><code>git blame</code>: show who last edited which line</li>
-<li><code>git stash</code>: temporarily remove modifications to working directory</li>
-<li><code>git bisect</code>: binary search history</li>
-<li><code>.gitignore</code>: <a target="_blank" rel="noopener" href="https://git-scm.com/docs/gitignore">specify</a> intentionally untracked files to ignore</li>
-</ul>
+                <h2 id="项目架构"><a href="#项目架构" class="headerlink" title="项目架构"></a><strong>项目架构</strong></h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">├── app.py
+├── Chinese-CLIP
+├── Data
+│     ├── datasets
+│     │     └── Kwai
+│     │           ├── lmdb
+│     │           ├── train_imgs.tsv
+│     │           ├── train_texts.jsonl
+│     │           ├── valid_imgs.tsv
+│     │           └── valid_texts.jsonl
+│     ├── deploy
+│     ├── experiments
+│     └── pretrained_weights
+├── database.py
+├── model.py
+├── RawData
+│     ├── *.csv
+│     ├── dataset.py
+│     ├── merged_output.csv
+│     ├── merge.py
+│     └── preprocess.py
+├── requirements.txt
+├── Scripts
+│     ├── eval_img_txt_feat.sh
+│     ├── extract_img_txt_feat.sh
+│     ├── extract_train_img_feat.sh
+│     ├── extract_valid_img_feat.sh
+│     ├── finetune_clip.sh
+│     ├── onnx_clip.sh
+│     └── tensor_clip.sh
+├── static
+├── templates
+└── Testcodes
+      ├── onnx.py
+      ├── tensor.py
+      └── version.py<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Anaconda-安装"><a href="#Anaconda-安装" class="headerlink" title="Anaconda 安装"></a><strong>Anaconda 安装</strong></h2><p>使用 arch 命令观察到物理机架构为 x86_64，从 <a target="_blank" rel="noopener" href="https://repo.anaconda.com/archive/">Anaconda 官方</a>下载对应版本的安装脚本。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">wget</span> <span class="token parameter variable">-c</span> <span class="token string">"https://repo.anaconda.com/archive/Anaconda3-2024.06-1-Linux-x86_64.sh"</span> --no-check-certificate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="Torch-安装"><a href="#Torch-安装" class="headerlink" title="Torch 安装"></a><strong>Torch 安装</strong></h2><p>使用 <strong>nvidia-smi</strong> 命令查看物理机的 GPU 基础信息：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202408141552529.png" alt=""></p>
+<p>GPU 最高支持 11.4 版本的 CUDA，在 <a target="_blank" rel="noopener" href="https://pytorch.org/get-started/previous-versions/">PyTorch 官方网站</a>上查找 CUDA-11.3 对应的 PyTorch 版本安装 (因为 CUDA-11.4 是一个奇怪的版本，没有对应的 PyTorch 版本支持)。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">conda create <span class="token parameter variable">-n</span> clip <span class="token assign-left variable">python</span><span class="token operator">==</span><span class="token number">3.9</span>
+pip <span class="token function">install</span> <span class="token assign-left variable">torch</span><span class="token operator">==</span><span class="token number">1.12</span>.1+cu113 <span class="token assign-left variable">torchvision</span><span class="token operator">==</span><span class="token number">0.13</span>.1+cu113 <span class="token assign-left variable">torchaudio</span><span class="token operator">==</span><span class="token number">0.12</span>.1 --extra-index-url https://download.pytorch.org/whl/cu113<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="模型下载与依赖安装"><a href="#模型下载与依赖安装" class="headerlink" title="模型下载与依赖安装"></a><strong>模型下载与依赖安装</strong></h2><p>选择使用大规模中文数据预训练的<a target="_blank" rel="noopener" href="https://github.com/OFA-Sys/Chinese-CLIP">中文 Clip 模型</a>作为基座模型，进行微调。</p>
+<p>使用 ssh 克隆仓库出现无法连接 GitHub 22 端口的报错，因此使用 https 克隆仓库。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> clone https://github.com/OFA-Sys/Chinese-CLIP.git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>安装如下依赖：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token assign-left variable">coremltools</span><span class="token operator">==</span><span class="token number">7.2</span>
+<span class="token assign-left variable">Flask</span><span class="token operator">==</span><span class="token number">3.0</span>.3
+<span class="token assign-left variable">Flask_Cors</span><span class="token operator">==</span><span class="token number">4.0</span>.1
+<span class="token assign-left variable">jieba</span><span class="token operator">==</span><span class="token number">0.42</span>.1
+<span class="token assign-left variable">modelscope</span><span class="token operator">==</span><span class="token number">1.17</span>.1
+<span class="token assign-left variable">numpy</span><span class="token operator">==</span><span class="token number">1.24</span>.0
+<span class="token assign-left variable">onnxmltools</span><span class="token operator">==</span><span class="token number">1.11</span>.1
+<span class="token assign-left variable">onnxruntime_gpu</span><span class="token operator">==</span><span class="token number">1.13</span>.1
+<span class="token assign-left variable">pandas</span><span class="token operator">==</span><span class="token number">2.2</span>.2
+<span class="token assign-left variable">Pillow</span><span class="token operator">==</span><span class="token number">10.4</span>.0
+<span class="token assign-left variable">pinecone</span><span class="token operator">==</span><span class="token number">5.0</span>.1
+<span class="token assign-left variable">Requests</span><span class="token operator">==</span><span class="token number">2.32</span>.3
+<span class="token assign-left variable">setuptools</span><span class="token operator">==</span><span class="token number">69.5</span>.1
+<span class="token assign-left variable">six</span><span class="token operator">==</span><span class="token number">1.16</span>.0
+<span class="token assign-left variable">tensorrt</span><span class="token operator">==</span><span class="token number">8.2</span>.5.1
+<span class="token assign-left variable">timm</span><span class="token operator">==</span><span class="token number">1.0</span>.8
+<span class="token assign-left variable">torch</span><span class="token operator">==</span><span class="token number">1.12</span>.1+cu113
+<span class="token assign-left variable">torchvision</span><span class="token operator">==</span><span class="token number">0.13</span>.1+cu113
+<span class="token assign-left variable">tqdm</span><span class="token operator">==</span><span class="token number">4.66</span>.4<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="数据集构建-Reference"><a href="#数据集构建-Reference" class="headerlink" title="数据集构建 [Reference]"></a><strong>数据集构建</strong> <a target="_blank" rel="noopener" href="https://github.com/OFA-Sys/Chinese-CLIP/blob/master/README.md#数据集格式预处理">[Reference]</a></h2><p>从以 CSV 格式存储的 200w 量级的数据集中过滤出图片 id，标题与 url，格式如下：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token number">405482801733,205</span>肥肥佳人时尚胶片百搭鞋,https://u1-203.ecukwai.com/bs2/image-kwaishop-product/item_image-493137733-d2b1fdad3bb94f9a8f2cd7720a9ffcbb.jpg<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>在 <strong>RawData/dataset.py</strong> 中实现了 <strong>ImageProcessor</strong> 与 <strong>TextProcessor 类</strong>，分别将图片原始文件转换为 base64 格式，标题拆分为关键词组并过滤无关字符，最终构建映射关系，并分别保存在 <strong>Data/datasets/Kwai/*.tsv</strong> 与 <strong>Data/datasets/Kwai/*.jsonl</strong> 中。</p>
+<p>使用如下命令将 tsv 和 jsonl 文件序列化，转换为内存索引的 LMDB 数据库文件，以方便训练时的随机读取：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">python Chinese-CLIP/cn_clip/preprocess/build_lmdb_dataset.py <span class="token punctuation">\</span>
+    <span class="token parameter variable">--data_dir</span> DATA/datasets/kwai
+    <span class="token parameter variable">--splits</span> train,valid<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>最终生成的数据集组织如下：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">└── Data
+      └── datasets
+             └── Kwai
+                   ├── lmdb
+                   ├── train_imgs.tsv
+                   ├── train_texts.jsonl
+                   ├── valid_imgs.tsv
+                   └── valid_texts.jsonl<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="模型微调-Reference"><a href="#模型微调-Reference" class="headerlink" title="模型微调 [Reference]"></a><strong>模型微调</strong> <a target="_blank" rel="noopener" href="https://github.com/OFA-Sys/Chinese-CLIP/blob/master/README.md#模型finetune">[Reference]</a></h2><p>参考 <strong>Scripts/finetune_clip.sh</strong> 进行模型微调。</p>
+<h2 id="Pinecone-向量数据库部署-Reference"><a href="#Pinecone-向量数据库部署-Reference" class="headerlink" title="Pinecone 向量数据库部署 [Reference]"></a><strong>Pinecone 向量数据库部署</strong> <a target="_blank" rel="noopener" href="https://docs.pinecone.io/guides/get-started/quickstart">[Reference]</a></h2><p>安装 Pinecone For Python：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip <span class="token function">install</span> <span class="token string">"pinecone-client[grpc]"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>为将数据集中的图片批量存入数据库，先运行脚本 <strong>Scripts/extract_train_img_feat.sh</strong> 和 <strong>Scripts/extract_valid_img_feat.sh</strong> 将 base64 格式的图片数据向量化。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># Scripts/extract_train_img_feat.sh</span>
+<span class="token assign-left variable">resume</span><span class="token operator">=</span>Data/pretrained_weights/YOUR_MODEL
+
+python <span class="token parameter variable">-u</span> Chinese-CLIP/cn_clip/eval/extract_features.py <span class="token punctuation">\</span>
+    --extract-image-feats <span class="token punctuation">\</span>
+    --image-data<span class="token operator">=</span><span class="token string">"Data/datasets/Kwai/lmdb/train/imgs"</span> <span class="token punctuation">\</span>
+    --image-feat-output-path<span class="token operator">=</span><span class="token string">"Data/datasets/Kwai/train_imgs.img_feat.jsonl"</span><span class="token punctuation">\</span>
+    --img-batch-size<span class="token operator">=</span><span class="token number">32</span> <span class="token punctuation">\</span>
+    --context-length<span class="token operator">=</span><span class="token number">52</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">--resume</span><span class="token operator">=</span><span class="token variable">${resume}</span> <span class="token punctuation">\</span>
+    --vision-model<span class="token operator">=</span>ViT-B-16<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>参考 Pinecone 官方文档，在 <strong>database.py</strong> 中实现了图片向量写入数据库以及数据库查询功能：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202408141558108.png" alt=""></p>
+<p>打开 Pinecone 网页端，观察到图片数据与 url 已经存入。</p>
+<h2 id="模型部署与格式转换-Reference"><a href="#模型部署与格式转换-Reference" class="headerlink" title="模型部署与格式转换 [Reference]"></a><strong>模型部署与格式转换</strong> <a target="_blank" rel="noopener" href="https://github.com/OFA-Sys/Chinese-CLIP/blob/master/deployment.md">[Reference]</a></h2><p>对 PyTorch 模型进行 ONNX &amp; TensorRT 格式的转换，以实现推理加速。首先需要注意 CUDA，ONNX 与 TensorRT 的版本匹配关系。</p>
+<h3 id="ONNX-格式转换"><a href="#ONNX-格式转换" class="headerlink" title="ONNX 格式转换"></a><strong>ONNX 格式转换</strong></h3><p>安装 ONNX 库：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip <span class="token function">install</span> <span class="token assign-left variable">onnx</span><span class="token operator">==</span><span class="token number">1.13</span>.0 onnxruntime-gpu<span class="token operator">==</span><span class="token number">1.13</span>.1 <span class="token assign-left variable">onnxmltools</span><span class="token operator">==</span><span class="token number">1.11</span>.1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>运行脚本 <strong>Scripts/onnx_clip.sh</strong>，将 PyTorch 模型转换为 ONNX 格式：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">python Chinese-CLIP/cn_clip/deploy/pytorch_to_onnx.py <span class="token punctuation">\</span>
+       --model-arch ViT-B-16 <span class="token punctuation">\</span>
+       --pytorch-ckpt-path Data/pretrained_weights/YOUR_MODEL <span class="token punctuation">\</span>
+       --save-onnx-path Data/deploy/vit-b-16/vit-b-16 <span class="token punctuation">\</span>
+       --convert-text --convert-vision<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="TensorRT-格式转换"><a href="#TensorRT-格式转换" class="headerlink" title="TensorRT 格式转换"></a><strong>TensorRT 格式转换</strong></h3><p>安装 TensorRT 库：</p>
+<p>运行如下代码得到 CUDA 版本为 11.3，cuDNN 版本为 8.3.2。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> torch
+<span class="token keyword">print</span><span class="token punctuation">(</span>torch<span class="token punctuation">.</span>version<span class="token punctuation">.</span>cuda<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>torch<span class="token punctuation">.</span>backends<span class="token punctuation">.</span>cudnn<span class="token punctuation">.</span>version<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>TensorRT 的版本选择需要与 CUDA 与 cuDNN 严格兼容，在 <a target="_blank" rel="noopener" href="https://developer.nvidia.com/nvidia-tensorrt-8x-download">NVIDIA 官方网站</a>安装相应的 TensorRT-8.2.5.1 版本，在本地下载安装包后使用 sftp 传输到物理机上。</p>
+<p>使用的 Python 虚拟环境为 3.9，在有关目录下依次安装：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip <span class="token function">install</span> tensorrt-8.2.5.1-cp39-none-linux_x86_64.whl
+pip <span class="token function">install</span> graphsurgeon-0.4.5-py2.py3-none-any.whl
+pip <span class="token function">install</span> onnx_graphsurgeon-0.3.12-py2.py3-none-any.whl<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>添加如下环境变量到 .bashrc 中：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">export</span> <span class="token assign-left variable">LD_LIBRARY_PATH</span><span class="token operator">=</span><span class="token variable">$LD_LIBRARY_PATH</span>:~/TensorRT-8.2.5.1/lib
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">LD_LIBRARY_PATH</span><span class="token operator">=</span><span class="token variable">$LD_LIBRARY_PATH</span>:~/anaconda3/envs/kwai/lib/python3.9/site-packages/torch/lib
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token environment constant">$PATH</span>:~/TensorRT-8.2.5.1/bin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>运行如下代码得到 TensorRT 版本为 8.2.5.1。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> tensorrt 
+<span class="token keyword">print</span><span class="token punctuation">(</span>tensorrt<span class="token punctuation">.</span>__version__<span class="token punctuation">)</span> 
+<span class="token keyword">assert</span> tensorrt<span class="token punctuation">.</span>Builder<span class="token punctuation">(</span>tensorrt<span class="token punctuation">.</span>Logger<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>运行脚本 <strong>Scripts/tensor_clip.sh</strong>，将 ONNX 模型转换为 TensorRT 格式：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">python Chinese-CLIP/cn_clip/deploy/onnx_to_tensorrt.py <span class="token punctuation">\</span>
+    --model-arch ViT-B-16 <span class="token punctuation">\</span>
+    --save-tensorrt-path Data/deploy/vit-b-16/vit-b-16 <span class="token punctuation">\</span>
+    --convert-text <span class="token punctuation">\</span>
+    --text-onnx-path Data/deploy/vit-b-16/YOUR_MODEL <span class="token punctuation">\</span>
+    --convert-vision <span class="token punctuation">\</span>
+    --vision-onnx-path Data/deploy/vit-b-16/YOUR_MODEL <span class="token punctuation">\</span>
+    <span class="token parameter variable">--fp16</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>转换时遇到了报错：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token string">'tensorrt.tensorrt.IBuilderConfig'</span> object has no attribute <span class="token string">'set_memory_pool_limit'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>在 <strong>Chinese-CLIP/cn_clip/deploy/tensorrt_utils.py</strong> 中第 147 行进行如下修改即可：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">-</span> config<span class="token punctuation">.</span>set_memory_pool_limit<span class="token punctuation">(</span>trt<span class="token punctuation">.</span>tensorrt<span class="token punctuation">.</span>MemoryPoolType<span class="token punctuation">.</span>DLA_GLOBAL_DRAM<span class="token punctuation">,</span> workspace_size<span class="token punctuation">)</span>
+<span class="token operator">+</span> config<span class="token punctuation">.</span>max_workspace_size <span class="token operator">=</span> workspace_size<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="系统运行流程"><a href="#系统运行流程" class="headerlink" title="系统运行流程"></a><strong>系统运行流程</strong></h2><ol>
+<li>用户访问<a target="_blank" rel="noopener" href="https://kwaipic.corp.kuaishou.com/home">网页</a>，在前端上传一张图片。</li>
+<li>后端对图片进行 resize，并由 TensorRT 模型推理得到特征向量。</li>
+<li>后端通过特征向量查询 Pinecone 数据库，得到相似度较高的图片 id 与 url，并在前端展示。</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202408141559904.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202408141559141.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/chengsx21/ImageBed/pic/202408141559318.png" alt=""></p>
 
                 
             </div>
@@ -580,7 +645,7 @@ objects <span class="token operator">=</span> <span class="token builtin">map</s
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://chengsx21.github.io/2022/09/23/git-ru-men-xue-xi/">http://chengsx21.github.io/2022/09/23/git-ru-men-xue-xi/</a>
+                    <a href="http://chengsx21.github.io/2024/07/18/ji-qi-xue-xi-mo-xing-wei-diao-yu-bu-shu/">http://chengsx21.github.io/2024/07/18/ji-qi-xue-xi-mo-xing-wei-diao-yu-bu-shu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -618,8 +683,8 @@ objects <span class="token operator">=</span> <span class="token builtin">map</s
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Git/">
-                                    <span class="chip bg-color">Git</span>
+                                <a href="/tags/Machine-Learning/">
+                                    <span class="chip bg-color">Machine Learning</span>
                                 </a>
                             
                         </div>
@@ -698,28 +763,29 @@ objects <span class="token operator">=</span> <span class="token builtin">map</s
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/09/27/shu-ju-jie-gou-a-b-problem/">
+                <a href="/2024/07/18/ji-qi-xue-xi-mo-xing-wei-diao-yu-bu-shu/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="A+B Problem">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="机器学习-模型微调与部署">
                         
-                        <span class="card-title">A+B Problem</span>
+                        <span class="card-title">机器学习-模型微调与部署</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            DSA 1-1 解题报告
+                            实习项目 快手商品图片相似度识别
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-09-27
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-07-18
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -728,19 +794,20 @@ objects <span class="token operator">=</span> <span class="token builtin">map</s
                                     CS
                                 </a>
                             
-                            <a href="/categories/CS/DSA/" class="post-category">
-                                    DSA
+                            <a href="/categories/CS/AI/" class="post-category">
+                                    AI
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Data-Structure-Algorithm/">
-                        <span class="chip bg-color">Data Structure &amp; Algorithm</span>
+                    <a href="/tags/Machine-Learning/">
+                        <span class="chip bg-color">Machine Learning</span>
                     </a>
                     
                 </div>
@@ -754,34 +821,34 @@ objects <span class="token operator">=</span> <span class="token builtin">map</s
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/09/19/ji-he-yi-kui-09-19/">
+                <a href="/2024/07/12/ji-qi-xue-xi-mo-xing-zhuan-huan/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="几何一窥">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="机器学习-模型转换(1)">
                         
-                        <span class="card-title">几何一窥</span>
+                        <span class="card-title">机器学习-模型转换(1)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            熟悉基本定理(氵题)
+                            Pytorch 格式模型详解
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-07-12
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Maths/" class="post-category">
-                                    Maths
+                            <a href="/categories/CS/" class="post-category">
+                                    CS
                                 </a>
                             
-                            <a href="/categories/Maths/Geometry/" class="post-category">
-                                    Geometry
+                            <a href="/categories/CS/AI/" class="post-category">
+                                    AI
                                 </a>
                             
                             
@@ -791,8 +858,8 @@ objects <span class="token operator">=</span> <span class="token builtin">map</s
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Maths/">
-                        <span class="chip bg-color">Maths</span>
+                    <a href="/tags/Machine-Learning/">
+                        <span class="chip bg-color">Machine Learning</span>
                     </a>
                     
                 </div>
@@ -916,6 +983,13 @@ objects <span class="token operator">=</span> <span class="token builtin">map</s
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+    });
+</script>
 
 
 
